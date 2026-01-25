@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.A: Graph Quadratic Equations</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            border-bottom: 3px solid #00003d;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .section-number {
+            color: #00003d;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #00003d;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        .intro-text {
+            font-size: 1.05em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        h2 {
+            color: #00003d;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00003d;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #004d99;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            color: #00003d;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .objectives {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .objectives ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        .objectives li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .section-content {
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .definition {
+            background-color: #fffacd;
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .definition strong {
+            color: #00003d;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border: 2px solid #00003d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .example h4 {
+            color: #00003d;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .key-equation {
+            background-color: #e6f2ff;
+            border: 2px solid #004d99;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #00003d;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .summary {
+            background-color: #f0f4f8;
+            border-left: 5px solid #00003d;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+        .summary h3 {
+            margin-top: 0;
+        }
+        .summary ul {
+            list-style-position: inside;
+        }
+        .summary li {
+            margin-bottom: 8px;
+        }
+        .practice-problems {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+        .practice-problems h3 {
+            margin-top: 0;
+        }
+        .problem {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #004d99;
+        }
+        .answer-key {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 40px;
+        }
+        .answer-key h3 {
+            margin-top: 0;
+        }
+        .answer {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #28a745;
+        }
+        .historical-note {
+            background-color: #ffe6e6;
+            border-left: 4px solid #ff6666;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .historical-note strong {
+            color: #cc0000;
+        }
+        .key-point {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .key-point strong {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- TITLE PAGE -->
+        <div class="title-page">
+            <div class="section-number">SECTION 6.A</div>
+            <h1>Graph Quadratic Equations</h1>
+            <div class="intro-text">
+                Parabolas are everywhere—from the arc of a basketball to the path of a satellite. In this section, you'll learn how to graph quadratic equations by identifying their key features: the vertex, axis of symmetry, and important points. You'll discover how changing the equation transforms the parabola and why the parameters $a$, $h$, and $k$ tell a story about the graph.
+            </div>
+        </div>
+
+        <!-- LEARNING OBJECTIVES -->
+        <section class="objectives">
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>I can graph quadratic equations by identifying the vertex, axis of symmetry, and key points on parabolas.</li>
+                <li>I can apply transformations to the parent function $y = x^2$ to sketch parabolas with vertical and horizontal shifts, reflections, and stretches.</li>
+                <li>I can use technology strategically to verify my graphs and explore the relationships between parameters in different forms of quadratic equations.</li>
+            </ul>
+        </section>
+
+        <!-- INTRODUCTION SECTION -->
+        <section class="section-content">
+            <h2>Introduction: The World of Parabolas</h2>
+            <p>
+                Quadratic equations create parabolas, one of the most important curves in mathematics and the natural world. Whether you're designing a bridge, launching a projectile, or optimizing profit, parabolas describe the situation. By learning to graph these functions, you gain a visual understanding that connects the algebraic equation to its real-world meaning.
+            </p>
+            
+            <h3>Real-World Connection</h3>
+            <p>
+                A basketball player shoots from the free throw line. The ball follows a parabolic path, reaching its maximum height about 10 feet above the ground before falling through the net. The equation describing this path is a quadratic function. Architects use parabolic shapes in tunnels and bridges because they distribute weight efficiently. Understanding how to graph these curves helps engineers and scientists solve practical problems.
+            </p>
+
+            <div class="historical-note">
+                <strong>Historical Note:</strong> The ancient Greeks studied parabolas as conic sections—curves created by slicing a cone. Apollonius of Perga described these curves around 200 BCE. Centuries later, Galileo discovered that objects in projectile motion follow parabolic paths, connecting abstract mathematics to physics.
+            </div>
+        </section>
+
+        <!-- KEY VOCABULARY AND CONCEPTS -->
+        <section class="section-content">
+            <h2>Key Vocabulary and Concepts</h2>
+            
+            <div class="definition">
+                <strong>Parabola:</strong> A U-shaped curve created by a quadratic function. It can open upward (when $a > 0$) or downward (when $a < 0$).
+            </div>
+
+            <div class="definition">
+                <strong>Vertex:</strong> The lowest point on an upward-opening parabola or the highest point on a downward-opening parabola. This is where the parabola changes direction.
+            </div>
+
+            <div class="definition">
+                <strong>Axis of Symmetry:</strong> A vertical line that divides the parabola into two mirror-image halves. The equation of this line is $x = h$, where $h$ is the x-coordinate of the vertex.
+            </div>
+
+            <h3>Three Forms of Quadratic Equations</h3>
+            <p>
+                Quadratic equations can be written in different forms, each revealing different information about the parabola:
+            </p>
+
+            <div class="key-equation">
+                <strong>Standard Form:</strong> $$y = ax^2 + bx + c$$
+                <p style="margin-top: 15px; font-size: 0.95em;">This form makes the y-intercept easy to find: it's the value of $c$.</p>
+            </div>
+
+            <div class="key-equation">
+                <strong>Vertex Form:</strong> $$y = a(x - h)^2 + k$$
+                <p style="margin-top: 15px; font-size: 0.95em;">This form shows the vertex directly: $(h, k)$ is where the parabola peaks or bottoms out.</p>
+            </div>
+
+            <h3>Understanding the Parameters</h3>
+            <p>
+                In vertex form $y = a(x - h)^2 + k$, each parameter tells you something specific:
+            </p>
+            <ul style="margin-left: 30px; margin-bottom: 15px;">
+                <li><strong>$a$:</strong> Controls the "width" and direction. If $a > 0$, the parabola opens up. If $a < 0$, it opens down. Larger $|a|$ makes it narrower.</li>
+                <li><strong>$h$:</strong> Shifts the parabola left or right. The vertex moves to $(h, k)$.</li>
+                <li><strong>$k$:</strong> Shifts the parabola up or down. The vertex moves to $(h, k)$.</li>
+            </ul>
+        </section>
+
+        <!-- EXAMPLE PROBLEMS -->
+        <section class="section-content">
+            <h2>Example Problems</h2>
+
+            <div class="example">
+                <h4>Example 1: Finding the Vertex and Axis of Symmetry from Standard Form</h4>
+                <p><strong>Problem:</strong> Graph $y = -2x^2 + 8x - 3$ by finding the vertex and axis of symmetry.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> First, identify $a = -2$, $b = 8$, and $c = -3$.</p>
+                    <p>Find the x-coordinate of the vertex using the formula $x = -\frac{b}{2a}$:</p>
+                    $$x = -\frac{8}{2(-2)} = -\frac{8}{-4} = 2$$
+                    <p>The axis of symmetry is $x = 2$.</p>
+                    <p>Find the y-coordinate by substituting $x = 2$ into the equation:</p>
+                    $$y = -2(2)^2 + 8(2) - 3 = -2(4) + 16 - 3 = -8 + 16 - 3 = 5$$
+                    <p><strong>Vertex:</strong> $(2, 5)$ and <strong>Axis of Symmetry:</strong> $x = 2$</p>
+                    <p>Since $a = -2 < 0$, the parabola opens downward with its maximum point at $(2, 5)$.</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 2: Graphing Using Vertex Form</h4>
+                <p><strong>Problem:</strong> Graph $y = 2(x - 3)^2 - 5$ by identifying transformations of $y = x^2$.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> The equation is already in vertex form $y = a(x - h)^2 + k$ where $a = 2$, $h = 3$, and $k = -5$.</p>
+                    <p>This tells us that $y = x^2$ has been transformed by:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>Shifted right 3 units (because of $x - 3$)</li>
+                        <li>Shifted down 5 units (because of $-5$)</li>
+                        <li>Stretched vertically by a factor of 2 (because $a = 2$)</li>
+                    </ul>
+                    <p><strong>Vertex:</strong> $(3, -5)$</p>
+                    <p><strong>Axis of Symmetry:</strong> $x = 3$</p>
+                    <p>Since $a = 2 > 0$, the parabola opens upward. To graph, plot the vertex and a few more points symmetric about $x = 3$:</p>
+                    <ul style="margin-left: 20px;">
+                        <li>When $x = 2$: $y = 2(2 - 3)^2 - 5 = 2(1) - 5 = -3$, giving point $(2, -3)$</li>
+                        <li>When $x = 4$: $y = 2(4 - 3)^2 - 5 = 2(1) - 5 = -3$, giving point $(4, -3)$</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 3: Converting from Standard to Vertex Form</h4>
+                <p><strong>Problem:</strong> Rewrite $y = x^2 - 4x + 7$ in vertex form by completing the square.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> To complete the square, group the $x$ terms and find the constant to add/subtract.</p>
+                    <p>Take half of the coefficient of $x$ and square it: $\left(\frac{-4}{2}\right)^2 = (-2)^2 = 4$</p>
+                    $$y = x^2 - 4x + 7$$
+                    $$y = (x^2 - 4x + 4) - 4 + 7$$
+                    $$y = (x - 2)^2 + 3$$
+                    <p><strong>Vertex form:</strong> $y = (x - 2)^2 + 3$</p>
+                    <p><strong>Vertex:</strong> $(2, 3)$ and <strong>Axis of Symmetry:</strong> $x = 2$</p>
+                    <p>The parabola opens upward and has been shifted right 2 units and up 3 units from the parent function $y = x^2$.</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 4: Finding Key Points on a Parabola</h4>
+                <p><strong>Problem:</strong> Graph $y = -\frac{1}{2}x^2 + 2x + 4$ by finding the vertex, y-intercept, and x-intercepts.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> First, find the vertex using $x = -\frac{b}{2a}$ where $a = -\frac{1}{2}$, $b = 2$, and $c = 4$.</p>
+                    $$x = -\frac{2}{2(-\frac{1}{2})} = -\frac{2}{-1} = 2$$
+                    <p>Substitute $x = 2$:</p>
+                    $$y = -\frac{1}{2}(2)^2 + 2(2) + 4 = -\frac{1}{2}(4) + 4 + 4 = -2 + 8 = 6$$
+                    <p><strong>Vertex:</strong> $(2, 6)$</p>
+                    <p><strong>Y-intercept:</strong> Set $x = 0$: $y = 4$, giving point $(0, 4)$</p>
+                    <p><strong>X-intercepts:</strong> Set $y = 0$ and solve: $0 = -\frac{1}{2}x^2 + 2x + 4$</p>
+                    <p>Multiply by $-2$: $0 = x^2 - 4x - 8$</p>
+                    <p>Using the quadratic formula: $x = \frac{4 \pm \sqrt{16 + 32}}{2} = \frac{4 \pm \sqrt{48}}{2} = \frac{4 \pm 4\sqrt{3}}{2} = 2 \pm 2\sqrt{3}$</p>
+                    <p><strong>X-intercepts:</strong> $(2 - 2\sqrt{3}, 0)$ and $(2 + 2\sqrt{3}, 0)$, or approximately $(-1.46, 0)$ and $(5.46, 0)$</p>
+                    <p>Since $a = -\frac{1}{2} < 0$, the parabola opens downward with its maximum at $(2, 6)$.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUMMARY SECTION -->
+        <section class="summary">
+            <h3>Summary of Key Concepts</h3>
+            <ul>
+                <li><strong>Parabolas</strong> are U-shaped curves created by quadratic functions. They open upward when $a > 0$ and downward when $a < 0$.</li>
+                <li>The <strong>vertex</strong> is the turning point of the parabola, found at $(h, k)$ in vertex form or using $x = -\frac{b}{2a}$ in standard form.</li>
+                <li>The <strong>axis of symmetry</strong> is the vertical line $x = h$ (or $x = -\frac{b}{2a}$) that divides the parabola into two symmetric halves.</li>
+                <li><strong>Vertex form</strong> $y = a(x - h)^2 + k$ directly shows the vertex and makes transformations clear.</li>
+                <li><strong>Standard form</strong> $y = ax^2 + bx + c$ makes the y-intercept obvious and is useful for finding intercepts.</li>
+                <li>The parameter $a$ controls the width and direction: larger $|a|$ makes the parabola narrower, and the sign determines whether it opens up or down.</li>
+                <li><strong>Transformations</strong> of $y = x^2$ include horizontal shifts ($h$), vertical shifts ($k$), reflections (negative $a$), and stretches/compressions ($|a|$).</li>
+                <li><strong>Technology</strong> like graphing calculators and software can verify your hand-drawn graphs and help you explore how changing parameters affects the parabola.</li>
+            </ul>
+        </section>
+
+        <!-- KEY EQUATIONS TABLE -->
+        <h2>Key Equations and Forms</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Form Name</th>
+                    <th>Equation</th>
+                    <th>What It Shows</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Standard Form</td>
+                    <td>$$y = ax^2 + bx + c$$</td>
+                    <td>Y-intercept is $c$; use to find intercepts and convert to vertex form</td>
+                </tr>
+                <tr>
+                    <td>Vertex Form</td>
+                    <td>$$y = a(x - h)^2 + k$$</td>
+                    <td>Vertex is $(h, k)$; axis of symmetry is $x = h$; shows transformations clearly</td>
+                </tr>
+                <tr>
+                    <td>Vertex x-coordinate</td>
+                    <td>$$x = -\frac{b}{2a}$$</td>
+                    <td>Finds the x-coordinate of the vertex in standard form</td>
+                </tr>
+                <tr>
+                    <td>Parent Function</td>
+                    <td>$$y = x^2$$</td>
+                    <td>The simplest parabola; vertex at origin $(0, 0)$; opens upward</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- PRACTICE PROBLEMS -->
+        <section class="practice-problems">
+            <h3>Practice Problems</h3>
+            
+            <div class="problem">
+                <strong>Problem 1 (Easy):</strong> Graph $y = (x - 1)^2 + 2$. Identify the vertex and axis of symmetry.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 2 (Easy):</strong> For the parabola $y = -3x^2 + 6x - 1$, find the x-coordinate of the vertex using $x = -\frac{b}{2a}$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 3 (Medium):</strong> Rewrite $y = 2x^2 + 12x + 5$ in vertex form by completing the square.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 4 (Medium):</strong> The parabola $y = ax^2$ is shifted 3 units left and 4 units up. Write the equation in vertex form if $a = -2$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 5 (Medium):</strong> Find the vertex, axis of symmetry, and y-intercept of $y = x^2 - 6x + 8$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 6 (Harder):</strong> A parabola passes through the points $(1, 5)$, $(3, 1)$, and $(5, 5)$. Determine the equation in vertex form, identifying the vertex first.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 7 (Harder):</strong> Compare the parabolas $y = 2x^2$ and $y = \frac{1}{2}(x - 4)^2 - 3$. Which opens upward? Which is narrower? How are they positioned relative to each other?
+            </div>
+
+            <div class="problem">
+                <strong>Problem 8 (Harder):</strong> The height of a projectile is given by $h(t) = -16t^2 + 64t + 32$, where $t$ is time in seconds and $h$ is height in feet. Find the maximum height and the time when it occurs.
+            </div>
+        </section>
+
+        <!-- ANSWER KEY -->
+        <section class="answer-key">
+            <h3>Answer Key</h3>
+
+            <div class="answer">
+                <strong>Answer 1:</strong> Vertex: $(1, 2)$; Axis of Symmetry: $x = 1$. The parabola opens upward and has been shifted right 1 unit and up 2 units from $y = x^2$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 2:</strong> $x = -\frac{6}{2(-3)} = -\frac{6}{-6} = 1$. The x-coordinate of the vertex is 1.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 3:</strong> Start with $y = 2x^2 + 12x + 5$. Factor out 2 from the $x$ terms: $y = 2(x^2 + 6x) + 5$. Complete the square inside the parentheses: $(6/2)^2 = 9$. So $y = 2(x^2 + 6x + 9 - 9) + 5 = 2((x + 3)^2 - 9) + 5 = 2(x + 3)^2 - 18 + 5 = 2(x + 3)^2 - 13$. The vertex form is $y = 2(x + 3)^2 - 13$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 4:</strong> Start with $y = -2x^2$. Shift left 3 units: $y = -2(x + 3)^2$. Shift up 4 units: $y = -2(x + 3)^2 + 4$. This is the equation in vertex form.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 5:</strong> For $y = x^2 - 6x + 8$, use $x = -\frac{b}{2a} = -\frac{-6}{2(1)} = 3$. When $x = 3$: $y = (3)^2 - 6(3) + 8 = 9 - 18 + 8 = -1$. Vertex: $(3, -1)$; Axis of Symmetry: $x = 3$; Y-intercept: $(0, 8)$ (set $x = 0$: $y = 8$).
+            </div>
+
+            <div class="answer">
+                <strong>Answer 6:</strong> The parabola is symmetric about its vertex. Notice that $(1, 5)$ and $(5, 5)$ have the same y-value, so the axis of symmetry is at $x = \frac{1 + 5}{2} = 3$. The vertex x-coordinate is 3. At $x = 3$, from the point $(3, 1)$, we have $k = 1$, so the vertex is $(3, 1)$. Using the vertex form $y = a(x - 3)^2 + 1$ and the point $(1, 5)$: $5 = a(1 - 3)^2 + 1 = 4a + 1$, so $4a = 4$ and $a = 1$. The equation is $y = (x - 3)^2 + 1$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 7:</strong> Both open upward (both have positive $a$). The parabola $y = 2x^2$ is narrower because $|2| > |1/2|$. The parabola $y = 2x^2$ has its vertex at the origin $(0, 0)$, while $y = \frac{1}{2}(x - 4)^2 - 3$ has its vertex at $(4, -3)$. The second parabola is shifted right 4 units and down 3 units from the first.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 8:</strong> For $h(t) = -16t^2 + 64t + 32$, find the vertex using $t = -\frac{b}{2a} = -\frac{64}{2(-16)} = -\frac{64}{-32} = 2$ seconds. At $t = 2$: $h(2) = -16(2)^2 + 64(2) + 32 = -16(4) + 128 + 32 = -64 + 128 + 32 = 96$ feet. The maximum height is 96 feet, occurring at $t = 2$ seconds.
+            </div>
+        </section>
+    </div>
+</body>
+</html>

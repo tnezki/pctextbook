@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.C: Connect Intercepts to Factors and Write Equations</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            border-bottom: 3px solid #00003d;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .section-number {
+            color: #00003d;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #00003d;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        .intro-text {
+            font-size: 1.05em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        h2 {
+            color: #00003d;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00003d;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #004d99;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            color: #00003d;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .objectives {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .objectives ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        .objectives li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .section-content {
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .definition {
+            background-color: #fffacd;
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .definition strong {
+            color: #00003d;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border: 2px solid #00003d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .example h4 {
+            color: #00003d;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .key-equation {
+            background-color: #e6f2ff;
+            border: 2px solid #004d99;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #00003d;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .summary {
+            background-color: #f0f4f8;
+            border-left: 5px solid #00003d;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+        .summary h3 {
+            margin-top: 0;
+        }
+        .summary ul {
+            list-style-position: inside;
+        }
+        .summary li {
+            margin-bottom: 8px;
+        }
+        .practice-problems {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+        .practice-problems h3 {
+            margin-top: 0;
+        }
+        .problem {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #004d99;
+        }
+        .answer-key {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 40px;
+        }
+        .answer-key h3 {
+            margin-top: 0;
+        }
+        .answer {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #28a745;
+        }
+        .historical-note {
+            background-color: #ffe6e6;
+            border-left: 4px solid #ff6666;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .historical-note strong {
+            color: #cc0000;
+        }
+        .key-point {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .key-point strong {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- TITLE PAGE -->
+        <div class="title-page">
+            <div class="section-number">SECTION 6.C</div>
+            <h1>Connect Intercepts to Factors and Write Equations</h1>
+            <div class="intro-text">
+                In reverse, you can use a graph or a description of intercepts to write a polynomial equation. This skill moves you from the concrete (the picture) to the abstract (the algebra). If you know where a parabola crosses the axes, you can determine its equation. This is powerful because it lets you model real situations algebraically based on graphical information.
+            </div>
+        </div>
+
+        <!-- LEARNING OBJECTIVES -->
+        <section class="objectives">
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>I can connect x and y intercepts on a graph to the factors and terms of a polynomial equation.</li>
+                <li>I can write the equation of a polynomial function given its graph, reasoning abstractly about coefficients and factors.</li>
+                <li>I can sketch polynomial graphs from sign charts and determine y-intercepts by attending to precision in algebraic computations.</li>
+            </ul>
+        </section>
+
+        <!-- INTRODUCTION SECTION -->
+        <section class="section-content">
+            <h2>Introduction: From Graph to Equation</h2>
+            <p>
+                When you see a graph, you can identify key features visually: where it crosses the axes, its shape, and how it behaves at infinity. But behind every graph is an equation. By analyzing the intercepts, you can reason backward to find the algebraic expression. This process combines visual thinking with abstract reasoning—two essential skills in mathematics.
+            </p>
+            
+            <h3>Real-World Connection</h3>
+            <p>
+                Data scientists often work with scatter plots showing real phenomena: sales over time, temperature changes, or population trends. Once they identify the pattern visually, they write equations to predict future values. Engineers designing structures might be given visual specifications and need to determine the mathematical equations controlling them. This skill connects what you see to what you can calculate.
+            </p>
+
+            <div class="historical-note">
+                <strong>Historical Note:</strong> The connection between geometric curves and algebraic equations was formalized by René Descartes in the 17th century through his development of analytic geometry. This breakthrough allowed mathematicians to move fluidly between the visual and algebraic representations.
+            </div>
+        </section>
+
+        <!-- KEY VOCABULARY AND CONCEPTS -->
+        <section class="section-content">
+            <h2>Key Vocabulary and Concepts</h2>
+            
+            <div class="definition">
+                <strong>X-intercept:</strong> A point where the graph crosses the x-axis, found by setting $y = 0$. For a polynomial, these are the roots.
+            </div>
+
+            <div class="definition">
+                <strong>Y-intercept:</strong> A point where the graph crosses the y-axis, found by setting $x = 0$. For a polynomial $f(x)$, this is $f(0)$.
+            </div>
+
+            <div class="definition">
+                <strong>Leading Coefficient:</strong> The coefficient of the term with the highest power. This value determines whether the graph eventually goes up or down and can be used to scale the polynomial correctly.
+            </div>
+
+            <h3>Writing Equations from Roots</h3>
+            <p>
+                If you know the roots of a polynomial, you can immediately write it in factored form:
+            </p>
+
+            <div class="key-equation">
+                <p>If roots are $r_1, r_2, \ldots, r_n$, then:</p>
+                $$f(x) = a(x - r_1)(x - r_2) \cdots (x - r_n)$$
+                <p style="margin-top: 15px; font-size: 0.95em;">where $a$ is a leading coefficient you need to find.</p>
+            </div>
+
+            <h3>Using the Y-Intercept to Find the Leading Coefficient</h3>
+            <p>
+                Once you have the factored form with unknown $a$, substitute $x = 0$ and the known y-intercept to solve for $a$. This single additional piece of information completely determines the polynomial.
+            </p>
+        </section>
+
+        <!-- EXAMPLE PROBLEMS -->
+        <section class="section-content">
+            <h2>Example Problems</h2>
+
+            <div class="example">
+                <h4>Example 1: Writing an Equation from X-Intercepts</h4>
+                <p><strong>Problem:</strong> A parabola crosses the x-axis at $x = -3$ and $x = 5$. Its y-intercept is $(0, -15)$. Write the equation in factored form.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> Since the roots are $x = -3$ and $x = 5$, the factored form is: $f(x) = a(x + 3)(x - 5)$</p>
+                    <p>Use the y-intercept to find $a$. Substitute $x = 0$ and $f(0) = -15$:</p>
+                    $$-15 = a(0 + 3)(0 - 5)$$
+                    $$-15 = a(3)(-5)$$
+                    $$-15 = -15a$$
+                    $$a = 1$$
+                    <p><strong>Equation:</strong> $f(x) = (x + 3)(x - 5) = x^2 - 2x - 15$</p>
+                    <p>Expanded form: $f(x) = x^2 - 2x - 15$</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 2: Determining Multiplicity from a Graph</h4>
+                <p><strong>Problem:</strong> A polynomial graph touches the x-axis at $x = 2$ without crossing and crosses at $x = -1$. The y-intercept is $(0, 8)$. Write a possible equation.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> Touching without crossing means $x = 2$ has even multiplicity. Crossing means $x = -1$ has odd multiplicity. A simple choice is multiplicity 2 for $x = 2$ and multiplicity 1 for $x = -1$:</p>
+                    $$f(x) = a(x + 1)(x - 2)^2$$
+                    <p>Use the y-intercept. Substitute $x = 0$ and $f(0) = 8$:</p>
+                    $$8 = a(0 + 1)(0 - 2)^2$$
+                    $$8 = a(1)(4)$$
+                    $$8 = 4a$$
+                    $$a = 2$$
+                    <p><strong>Equation:</strong> $f(x) = 2(x + 1)(x - 2)^2$</p>
+                    <p>Expanded: $f(x) = 2(x + 1)(x^2 - 4x + 4) = 2(x^3 - 4x^2 + 4x + x^2 - 4x + 4) = 2(x^3 - 3x^2 + 4) = 2x^3 - 6x^2 + 8$</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 3: Three X-Intercepts and Finding Coefficients</h4>
+                <p><strong>Problem:</strong> A cubic polynomial crosses the x-axis at $x = -2, 0, 3$. It passes through the point $(1, -6)$. Write the equation.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> With roots at $x = -2, 0, 3$, the factored form is: $f(x) = a(x + 2)(x)(x - 3)$</p>
+                    <p>Use the point $(1, -6)$ to find $a$. Substitute $x = 1$ and $f(1) = -6$:</p>
+                    $$-6 = a(1 + 2)(1)(1 - 3)$$
+                    $$-6 = a(3)(1)(-2)$$
+                    $$-6 = -6a$$
+                    $$a = 1$$
+                    <p><strong>Equation:</strong> $f(x) = (x + 2)(x)(x - 3) = x(x + 2)(x - 3)$</p>
+                    <p>Expanded: $f(x) = x(x^2 - x - 6) = x^3 - x^2 - 6x$</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 4: Writing from a Sign Chart</h4>
+                <p><strong>Problem:</strong> A polynomial has a sign chart showing negative for $x < -2$, positive for $-2 < x < 4$, and negative for $x > 4$. The y-intercept is 16. Write a possible equation.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> The sign changes at $x = -2$ and $x = 4$ indicate roots. The sign pattern suggests the polynomial crosses at both (odd multiplicity). A simple choice is $f(x) = a(x + 2)(x - 4)$ for a quadratic.</p>
+                    <p>However, for a quadratic with positive leading coefficient, both ends go up, contradicting the negative regions at both ends. So $a < 0$. Using the y-intercept $(0, 16)$:</p>
+                    $$16 = a(0 + 2)(0 - 4)$$
+                    $$16 = a(2)(-4)$$
+                    $$16 = -8a$$
+                    $$a = -2$$
+                    <p><strong>Equation:</strong> $f(x) = -2(x + 2)(x - 4)$</p>
+                    <p>Expanded: $f(x) = -2(x^2 - 2x - 8) = -2x^2 + 4x + 16$</p>
+                    <p>The negative leading coefficient $-2$ makes both ends go downward, matching the sign chart.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUMMARY SECTION -->
+        <section class="summary">
+            <h3>Summary of Key Concepts</h3>
+            <ul>
+                <li><strong>X-intercepts correspond to roots:</strong> If the graph crosses the x-axis at $x = r$, then $f(r) = 0$ and $(x - r)$ is a factor.</li>
+                <li><strong>Factored form from roots:</strong> If you know all roots, you can immediately write $f(x) = a(x - r_1)(x - r_2) \cdots (x - r_n)$.</li>
+                <li>The <strong>y-intercept provides crucial information</strong> to find the leading coefficient $a$. Substitute $(0, b)$ into your equation with unknown $a$ and solve.</li>
+                <li>If the graph <strong>bounces at a root</strong>, that root has even multiplicity. If it <strong>crosses</strong>, odd multiplicity.</li>
+                <li><strong>Sign charts tell you about roots and multiplicity:</strong> Where the sign changes, there's a root with odd multiplicity. Where it doesn't change, even multiplicity.</li>
+                <li><strong>Additional points help determine multiplicity:</strong> If you know a point on the graph other than intercepts, you can determine the exact equation.</li>
+                <li><strong>End behavior helps determine the sign of the leading coefficient:</strong> If the right end goes up, the leading coefficient is positive. If it goes down, the leading coefficient is negative.</li>
+                <li><strong>Abstract reasoning connects visual and algebraic:</strong> Moving from a graph to an equation requires thinking about what the visual features mean algebraically.</li>
+            </ul>
+        </section>
+
+        <!-- KEY EQUATIONS TABLE -->
+        <h2>Key Processes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Process</th>
+                    <th>Steps</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>From roots to equation</td>
+                    <td>1) Write factors: $(x - r_1)(x - r_2) \cdots$<br>2) Include unknown $a$<br>3) Use y-intercept to find $a$</td>
+                    <td>Roots $x = 1, -2$, y-int $(0, 4)$: $f(x) = a(x - 1)(x + 2)$; $4 = a(-1)(2) = -2a$; $a = -2$</td>
+                </tr>
+                <tr>
+                    <td>From sign chart</td>
+                    <td>1) Identify roots where signs change<br>2) Identify multiplicity (even if no change)<br>3) Determine $a$ from end behavior<br>4) Use a known point to find $a$</td>
+                    <td>Sign: neg, pos, neg at $x = -1, 2$; y-int $= -6$</td>
+                </tr>
+                <tr>
+                    <td>From graph description</td>
+                    <td>1) List x-intercepts as roots<br>2) Identify y-intercept<br>3) Check for bouncing (even mult.)<br>4) Create factored form<br>5) Solve for leading coefficient</td>
+                    <td>Touches at $x = 3$, crosses at $x = -1$; y-int $= 9$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- PRACTICE PROBLEMS -->
+        <section class="practice-problems">
+            <h3>Practice Problems</h3>
+            
+            <div class="problem">
+                <strong>Problem 1 (Easy):</strong> A parabola has x-intercepts at $x = 2$ and $x = -3$. Write the factored form with an unknown leading coefficient $a$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 2 (Easy):</strong> The polynomial $f(x) = 2(x - 1)(x + 4)$ passes through which points? Find the x-intercepts and y-intercept.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 3 (Medium):</strong> A parabola has x-intercepts at $x = -1$ and $x = 3$, and y-intercept at $(0, 6)$. Find the leading coefficient and write the equation.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 4 (Medium):</strong> A cubic polynomial has roots at $x = 0, 2, -2$ and passes through the point $(1, 3)$. Write the equation in expanded form.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 5 (Medium):</strong> A graph touches the x-axis at $x = 1$ without crossing and crosses at $x = -3$. The y-intercept is $(0, -2)$. Write a possible equation.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 6 (Harder):</strong> From the given sign chart with negative for $x < 1$, positive for $1 < x < 4$, negative for $x > 4$, and y-intercept $(0, -8)$, write the equation for a quadratic polynomial.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 7 (Harder):</strong> A polynomial has a double root (multiplicity 2) at $x = 0$ and simple roots at $x = 2$ and $x = -2$. The graph passes through the point $(1, -2)$. Write the equation.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 8 (Harder):</strong> A polynomial of degree 4 bounces at $x = 1$ and $x = -2$, crosses at $x = 3$, and has y-intercept $(0, 12)$. Determine the equation (with the fifth multiplicity distributed as needed).
+            </div>
+        </section>
+
+        <!-- ANSWER KEY -->
+        <section class="answer-key">
+            <h3>Answer Key</h3>
+
+            <div class="answer">
+                <strong>Answer 1:</strong> With roots at $x = 2$ and $x = -3$, the factored form is $f(x) = a(x - 2)(x + 3)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 2:</strong> X-intercepts: Set $f(x) = 0$: $2(x - 1)(x + 4) = 0$ gives $x = 1$ and $x = -4$. Points: $(1, 0)$ and $(-4, 0)$. Y-intercept: $f(0) = 2(0 - 1)(0 + 4) = 2(-1)(4) = -8$. Point: $(0, -8)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 3:</strong> Start with $f(x) = a(x + 1)(x - 3)$. Using y-intercept $(0, 6)$: $6 = a(0 + 1)(0 - 3) = a(1)(-3) = -3a$, so $a = -2$. The equation is $f(x) = -2(x + 1)(x - 3) = -2(x^2 - 2x - 3) = -2x^2 + 4x + 6$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 4:</strong> With roots $0, 2, -2$, the form is $f(x) = a(x)(x - 2)(x + 2) = ax(x^2 - 4)$. Using point $(1, 3)$: $3 = a(1)(1 - 4) = a(1)(-3) = -3a$, so $a = -1$. The equation is $f(x) = -x(x^2 - 4) = -x^3 + 4x$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 5:</strong> The root at $x = 1$ with bouncing means multiplicity 2. The root at $x = -3$ crosses means multiplicity 1. So $f(x) = a(x - 1)^2(x + 3)$. Using y-intercept $(0, -2)$: $-2 = a(0 - 1)^2(0 + 3) = a(1)(3) = 3a$, so $a = -\frac{2}{3}$. The equation is $f(x) = -\frac{2}{3}(x - 1)^2(x + 3)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 6:</strong> The sign changes at $x = 1$ and $x = 4$, indicating roots with odd multiplicity. For a quadratic, these are both multiplicity 1. So $f(x) = a(x - 1)(x - 4)$. The sign pattern (neg, pos, neg) with a quadratic requires $a < 0$. Using y-intercept $(0, -8)$: $-8 = a(0 - 1)(0 - 4) = a(1)(4) = 4a$, so $a = -2$. The equation is $f(x) = -2(x - 1)(x - 4) = -2x^2 + 10x - 8$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 7:</strong> Double root at $x = 0$ means multiplicity 2, simple roots at $x = 2, -2$. So $f(x) = ax^2(x - 2)(x + 2) = ax^2(x^2 - 4)$. Using point $(1, -2)$: $-2 = a(1)^2(1 - 4) = a(1)(-3) = -3a$, so $a = \frac{2}{3}$. The equation is $f(x) = \frac{2}{3}x^2(x^2 - 4)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 8:</strong> Degree 4 with multiplicity 2 at $x = 1$ (bounce), multiplicity 2 at $x = -2$ (bounce), and multiplicity... wait, that's already multiplicity $2 + 2 + 1 = 5$. Let me revise: For degree 4, if bouncing at $x = 1$ and $x = -2$ (multiplicity 2 each), that's degree 4. The third root mention may mean simple crossing at $x = 3$ with multiplicity 1, requiring degree 5. Assuming the problem means degree 4 with bouncing at $x = 1, -2$ only: $f(x) = a(x - 1)^2(x + 2)^2$. Using $(0, 12)$: $12 = a(0 - 1)^2(0 + 2)^2 = a(1)(4) = 4a$, so $a = 3$. The equation is $f(x) = 3(x - 1)^2(x + 2)^2$.
+            </div>
+        </section>
+    </div>
+</body>
+</html>

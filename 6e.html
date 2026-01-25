@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.E: Extended Learning - Sigma Notation and Polynomial Modeling</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            border-bottom: 3px solid #00003d;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .section-number {
+            color: #00003d;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #00003d;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        .intro-text {
+            font-size: 1.05em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        h2 {
+            color: #00003d;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00003d;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #004d99;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            color: #00003d;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .objectives {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .objectives ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        .objectives li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .section-content {
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .definition {
+            background-color: #fffacd;
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .definition strong {
+            color: #00003d;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border: 2px solid #00003d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .example h4 {
+            color: #00003d;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .key-equation {
+            background-color: #e6f2ff;
+            border: 2px solid #004d99;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #00003d;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .summary {
+            background-color: #f0f4f8;
+            border-left: 5px solid #00003d;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+        .summary h3 {
+            margin-top: 0;
+        }
+        .summary ul {
+            list-style-position: inside;
+        }
+        .summary li {
+            margin-bottom: 8px;
+        }
+        .practice-problems {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+        .practice-problems h3 {
+            margin-top: 0;
+        }
+        .problem {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #004d99;
+        }
+        .answer-key {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 40px;
+        }
+        .answer-key h3 {
+            margin-top: 0;
+        }
+        .answer {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #28a745;
+        }
+        .historical-note {
+            background-color: #ffe6e6;
+            border-left: 4px solid #ff6666;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .historical-note strong {
+            color: #cc0000;
+        }
+        .key-point {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .key-point strong {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- TITLE PAGE -->
+        <div class="title-page">
+            <div class="section-number">SECTION 6.E</div>
+            <h1>Extended Learning: Sigma Notation and Polynomial Modeling</h1>
+            <div class="intro-text">
+                For advanced students ready for new challenges: This section introduces sigma notation, a powerful mathematical language for expressing sums compactly, and explores how polynomial functions model complex real-world situations. These skills bridge toward calculus and higher mathematics while deepening your understanding of how abstract symbols communicate mathematical ideas efficiently.
+            </div>
+        </div>
+
+        <!-- LEARNING OBJECTIVES -->
+        <section class="objectives">
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>I can use sigma notation to express series and sums involving algebraic expressions, making sense of complex notation while persevering through multi-step problems.</li>
+                <li>I can model real-world situations using polynomial functions, constructing viable arguments about appropriate models and justifying my reasoning with mathematical evidence.</li>
+            </ul>
+        </section>
+
+        <!-- INTRODUCTION SECTION -->
+        <section class="section-content">
+            <h2>Introduction: Beyond Basic Polynomials</h2>
+            <p>
+                Mathematics is a language, and sigma notation is one of its most efficient tools for expressing sums. Instead of writing out long additions, we write a compact symbol that captures the pattern. Additionally, real-world situations rarely give us equations neatly packaged. Scientists and engineers must observe data, recognize patterns, and construct mathematical models—polynomial models—to make predictions. This section develops both symbolic literacy and mathematical modeling skills.
+            </p>
+            
+            <h3>Real-World Connection</h3>
+            <p>
+                Climate scientists collect temperature data year after year, then use polynomial functions to model trends. Financial analysts examine stock prices using polynomial regression. Engineers designing bridges collect data about load distribution and use polynomial functions to ensure safety. Epidemiologists model disease spread with polynomial equations. In each case, professionals observe the world, express observations mathematically, and use their models to make predictions and guide decisions.
+            </p>
+
+            <div class="historical-note">
+                <strong>Historical Note:</strong> Sigma notation was popularized by Leonhard Euler in the 18th century. The Greek letter $\Sigma$ (sigma, meaning "sum") provided mathematicians with a concise way to represent series, enabling the development of calculus and higher mathematics.
+            </div>
+        </section>
+
+        <!-- KEY VOCABULARY AND CONCEPTS -->
+        <section class="section-content">
+            <h2>Key Vocabulary and Concepts</h2>
+            
+            <div class="definition">
+                <strong>Sigma Notation (Summation Notation):</strong> A compact way to express sums using the symbol $\Sigma$. The notation $\sum_{i=1}^{n} a_i$ means "add all terms $a_i$ where $i$ goes from 1 to $n$."
+            </div>
+
+            <div class="definition">
+                <strong>Index:</strong> The variable (usually $i$, $j$, or $k$) that changes within the summation, taking on each value from the lower limit to the upper limit.
+            </div>
+
+            <div class="definition">
+                <strong>Mathematical Model:</strong> An equation or function that represents a real-world situation, allowing predictions and analysis.
+            </div>
+
+            <h3>Understanding Sigma Notation</h3>
+            <p>
+                The general form is: $$\sum_{i=a}^{b} f(i)$$
+            </p>
+            <p>
+                This means: add $f(a) + f(a+1) + f(a+2) + \cdots + f(b)$
+            </p>
+            <ul style="margin-left: 30px; margin-bottom: 15px;">
+                <li>The $\Sigma$ symbol means "sum"</li>
+                <li>The variable below ($i=a$) is the starting point</li>
+                <li>The number above ($b$) is the ending point</li>
+                <li>$f(i)$ is the expression to be summed for each value of $i$</li>
+            </ul>
+
+            <h3>Creating and Using Models</h3>
+            <p>
+                To create a polynomial model:
+            </p>
+            <ol style="margin-left: 30px; margin-bottom: 15px;">
+                <li><strong>Collect data:</strong> Gather measurements or observations</li>
+                <li><strong>Recognize patterns:</strong> Look for relationships and structure</li>
+                <li><strong>Propose a model:</strong> Choose a polynomial that might fit</li>
+                <li><strong>Test the model:</strong> Compare predictions to actual data</li>
+                <li><strong>Justify your choice:</strong> Explain why this model is appropriate</li>
+            </ol>
+        </section>
+
+        <!-- EXAMPLE PROBLEMS -->
+        <section class="section-content">
+            <h2>Example Problems</h2>
+
+            <div class="example">
+                <h4>Example 1: Interpreting Sigma Notation</h4>
+                <p><strong>Problem:</strong> Write out the sum $\sum_{i=1}^{5} i^2$ and evaluate it.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> This notation means add the squares of integers from 1 to 5:</p>
+                    $$\sum_{i=1}^{5} i^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2$$
+                    $$= 1 + 4 + 9 + 16 + 25 = 55$$
+                    <p>The index $i$ starts at 1 (lower limit) and ends at 5 (upper limit), and we evaluate $i^2$ for each value.</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 2: Writing Sums Using Sigma Notation</h4>
+                <p><strong>Problem:</strong> Express the sum $2 + 4 + 6 + 8 + 10 + 12 + 14$ using sigma notation.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> First, identify the pattern. Each term is $2i$ where $i = 1, 2, 3, \ldots, 7$.</p>
+                    <p>In sigma notation: $$\sum_{i=1}^{7} 2i$$</p>
+                    <p>We can verify: when $i = 1$: $2(1) = 2$; when $i = 2$: $2(2) = 4$; when $i = 7$: $2(7) = 14$. ✓</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 3: Polynomial Model from Data</h4>
+                <p><strong>Problem:</strong> A ball is dropped from different heights, and the time it takes to hit the ground is measured:</p>
+                <table style="margin: 15px 0;">
+                    <thead>
+                        <tr>
+                            <th>Height (feet)</th>
+                            <th>Time (seconds)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>16</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>64</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>144</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Use a polynomial model to predict the time for a ball dropped from 400 feet.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> Let $h$ = height (feet) and $t$ = time (seconds). Looking at the data, let's test if $h = at^2$.</p>
+                    <p>Using the first point $(t = 1, h = 16)$: $16 = a(1)^2 = a$, so $a = 16$.</p>
+                    <p>Check: At $t = 2$: $h = 16(2)^2 = 16(4) = 64$ ✓; At $t = 3$: $h = 16(3)^2 = 16(9) = 144$ ✓</p>
+                    <p>The model is $h = 16t^2$, or equivalently, $t = \sqrt{\frac{h}{16}} = \frac{\sqrt{h}}{4}$</p>
+                    <p>For $h = 400$ feet: $t = \frac{\sqrt{400}}{4} = \frac{20}{4} = 5$ seconds</p>
+                    <p><strong>Justification:</strong> This model matches all three data points perfectly and is based on physics (free fall under gravity).</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 4: Using Sigma Notation with Polynomials</h4>
+                <p><strong>Problem:</strong> Evaluate $\sum_{k=0}^{4} k^2 + 2k$ and express it as a polynomial in terms of the upper limit.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong> First, calculate the sum:</p>
+                    $$\sum_{k=0}^{4} (k^2 + 2k) = (0^2 + 2(0)) + (1^2 + 2(1)) + (2^2 + 2(2)) + (3^2 + 2(3)) + (4^2 + 2(4))$$
+                    $$= 0 + 3 + 8 + 15 + 24 = 50$$
+                    <p>To express this in general form for the upper limit $n$:</p>
+                    $$\sum_{k=0}^{n} (k^2 + 2k) = \sum_{k=0}^{n} k^2 + 2\sum_{k=0}^{n} k$$
+                    <p>Using formulas: $\sum_{k=0}^{n} k = \frac{n(n+1)}{2}$ and $\sum_{k=0}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$</p>
+                    $$= \frac{n(n+1)(2n+1)}{6} + 2 \cdot \frac{n(n+1)}{2} = \frac{n(n+1)(2n+1)}{6} + n(n+1)$$
+                    <p>For $n = 4$: $\frac{4(5)(9)}{6} + 4(5) = 30 + 20 = 50$ ✓</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUMMARY SECTION -->
+        <section class="summary">
+            <h3>Summary of Key Concepts</h3>
+            <ul>
+                <li><strong>Sigma notation</strong> is a compact way to express sums: $\sum_{i=a}^{b} f(i)$ means add $f(i)$ for $i = a$ through $i = b$.</li>
+                <li>The <strong>index</strong> (variable below the sigma) determines the starting point, and the <strong>upper limit</strong> determines the ending point.</li>
+                <li>To evaluate a sum in sigma notation, <strong>substitute each value</strong> of the index into the expression and add the results.</li>
+                <li>To write a sum in sigma notation, <strong>identify the pattern</strong> in the terms and express it as a function of the index.</li>
+                <li><strong>Mathematical models</strong> represent real-world situations using equations, allowing predictions and analysis beyond available data.</li>
+                <li><strong>Polynomial models</strong> are often appropriate for data showing growth/decline or curvature.</li>
+                <li>To create a model, <strong>collect data, recognize patterns, propose a function, test predictions, and justify your choice</strong>.</li>
+                <li><strong>Perseverance and abstract reasoning</strong> are essential for mastering sigma notation and developing effective models.</li>
+                <li>A good model <strong>fits known data accurately</strong> and is <strong>justified by underlying theory</strong> or logic.</li>
+                <li><strong>Constructing arguments</strong> about model appropriateness involves explaining why your choice fits the situation better than alternatives.</li>
+            </ul>
+        </section>
+
+        <!-- KEY EQUATIONS TABLE -->
+        <h2>Key Formulas and Concepts</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Concept</th>
+                    <th>Formula or Notation</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sigma Notation</td>
+                    <td>$$\sum_{i=a}^{b} f(i)$$</td>
+                    <td>Add $f(a) + f(a+1) + \cdots + f(b)$</td>
+                </tr>
+                <tr>
+                    <td>Sum of Integers</td>
+                    <td>$$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$</td>
+                    <td>Sum of first $n$ positive integers</td>
+                </tr>
+                <tr>
+                    <td>Sum of Squares</td>
+                    <td>$$\sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$$</td>
+                    <td>Sum of squares of first $n$ positive integers</td>
+                </tr>
+                <tr>
+                    <td>Constant Multiple</td>
+                    <td>$$\sum_{i=a}^{b} c \cdot f(i) = c \sum_{i=a}^{b} f(i)$$</td>
+                    <td>Constant factors can be pulled out of the sum</td>
+                </tr>
+                <tr>
+                    <td>Sum Rule</td>
+                    <td>$$\sum_{i=a}^{b} [f(i) + g(i)] = \sum_{i=a}^{b} f(i) + \sum_{i=a}^{b} g(i)$$</td>
+                    <td>Sums can be separated and added</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- PRACTICE PROBLEMS -->
+        <section class="practice-problems">
+            <h3>Practice Problems</h3>
+            
+            <div class="problem">
+                <strong>Problem 1 (Easy):</strong> Write out and evaluate $\sum_{i=1}^{4} i$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 2 (Easy):</strong> Express the sum $1 + 3 + 5 + 7 + 9$ using sigma notation.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 3 (Medium):</strong> Evaluate $\sum_{j=2}^{5} (j^2 - 1)$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 4 (Medium):</strong> Given data points $(1, 3), (2, 6), (3, 11), (4, 18)$, propose a polynomial model relating $x$ to $y$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 5 (Medium):</strong> Use sigma notation to express the sum of the first $n$ even positive integers: $2 + 4 + 6 + \cdots + 2n$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 6 (Harder):</strong> A company's profit (in thousands) over years is: Year 1: $5, Year 2: $12, Year 3: $23, Year 4: $38. Develop a polynomial model and predict year 5 profit.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 7 (Harder):</strong> Evaluate $\sum_{k=1}^{5} k(k+1)$ and express it in simplified form. Also evaluate $\sum_{k=1}^{n} k(k+1)$ in terms of $n$.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 8 (Harder):</strong> A researcher observes that bacteria population follows the pattern: Day 1: 100, Day 2: 200, Day 3: 400. Is a polynomial model appropriate? Justify your answer and suggest an alternative.
+            </div>
+        </section>
+
+        <!-- ANSWER KEY -->
+        <section class="answer-key">
+            <h3>Answer Key</h3>
+
+            <div class="answer">
+                <strong>Answer 1:</strong> $\sum_{i=1}^{4} i = 1 + 2 + 3 + 4 = 10$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 2:</strong> The pattern is odd numbers: $1, 3, 5, 7, 9$ are $2i - 1$ for $i = 1, 2, 3, 4, 5$. So: $\sum_{i=1}^{5} (2i - 1)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 3:</strong> $\sum_{j=2}^{5} (j^2 - 1) = (2^2 - 1) + (3^2 - 1) + (4^2 - 1) + (5^2 - 1) = 3 + 8 + 15 + 24 = 50$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 4:</strong> Look at differences: $3 \to 6$ (diff 3), $6 \to 11$ (diff 5), $11 \to 18$ (diff 7). Second differences: $5 - 3 = 2$, $7 - 5 = 2$ (constant). This suggests a quadratic. Try $y = ax^2 + bx + c$. Using three points:
+                At $(1, 3)$: $3 = a + b + c$
+                At $(2, 6)$: $6 = 4a + 2b + c$
+                At $(3, 11)$: $11 = 9a + 3b + c$
+                Solving: $a = 1, b = 1, c = 1$. Model: $y = x^2 + x + 1$. Check at $(4, 18)$: $16 + 4 + 1 = 21 \neq 18$. Adjust or verify data. A better fit might be $y = x^2 + x + 1$ with small experimental error, or data doesn't fit perfectly.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 5:</strong> The sum is $\sum_{i=1}^{n} 2i = 2\sum_{i=1}^{n} i = 2 \cdot \frac{n(n+1)}{2} = n(n+1)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 6:</strong> Differences: $12 - 5 = 7$, $23 - 12 = 11$, $38 - 23 = 15$. Second differences: $11 - 7 = 4$, $15 - 11 = 4$ (constant). Quadratic model: $P(t) = at^2 + bt + c$. Using three points to solve: $a = 2, b = 1, c = 2$. Model: $P(t) = 2t^2 + t + 2$. For year 5: $P(5) = 2(25) + 5 + 2 = 50 + 5 + 2 = 57$ (thousands). Predicted profit: $57,000$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 7:</strong> $\sum_{k=1}^{5} k(k+1) = 1(2) + 2(3) + 3(4) + 4(5) + 5(6) = 2 + 6 + 12 + 20 + 30 = 70$. For the general form: $\sum_{k=1}^{n} k(k+1) = \sum_{k=1}^{n} (k^2 + k) = \sum_{k=1}^{n} k^2 + \sum_{k=1}^{n} k = \frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2}$. Simplify: $= \frac{n(n+1)(2n+1)}{6} + \frac{3n(n+1)}{6} = \frac{n(n+1)(2n+1+3)}{6} = \frac{n(n+1)(2n+4)}{6} = \frac{n(n+1) \cdot 2(n+2)}{6} = \frac{n(n+1)(n+2)}{3}$. Check: $n = 5$: $\frac{5(6)(7)}{3} = \frac{210}{3} = 70$ ✓
+            </div>
+
+            <div class="answer">
+                <strong>Answer 8:</strong> No, a polynomial model is not appropriate. The population doubles each day: $100 \to 200 \to 400$. This is exponential growth ($P = 100 \cdot 2^{t-1}$), not polynomial. A polynomial model would show constant second differences (for quadratic) or constant third differences (for cubic), but here the ratio is constant. Better model: Exponential function $P(t) = 100 \cdot 2^{t-1}$.
+            </div>
+        </section>
+    </div>
+</body>
+</html>

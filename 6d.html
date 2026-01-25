@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.D: Determine Key Features of Polynomial Functions</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            border-bottom: 3px solid #00003d;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .section-number {
+            color: #00003d;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #00003d;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+        .intro-text {
+            font-size: 1.05em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        h2 {
+            color: #00003d;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00003d;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #004d99;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            color: #00003d;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .objectives {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .objectives ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        .objectives li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .section-content {
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .definition {
+            background-color: #fffacd;
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .definition strong {
+            color: #00003d;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border: 2px solid #00003d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .example h4 {
+            color: #00003d;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .key-equation {
+            background-color: #e6f2ff;
+            border: 2px solid #004d99;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #00003d;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .summary {
+            background-color: #f0f4f8;
+            border-left: 5px solid #00003d;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+        .summary h3 {
+            margin-top: 0;
+        }
+        .summary ul {
+            list-style-position: inside;
+        }
+        .summary li {
+            margin-bottom: 8px;
+        }
+        .practice-problems {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+        }
+        .practice-problems h3 {
+            margin-top: 0;
+        }
+        .problem {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #004d99;
+        }
+        .answer-key {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 40px;
+        }
+        .answer-key h3 {
+            margin-top: 0;
+        }
+        .answer {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid #28a745;
+        }
+        .historical-note {
+            background-color: #ffe6e6;
+            border-left: 4px solid #ff6666;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .historical-note strong {
+            color: #cc0000;
+        }
+        .key-point {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .key-point strong {
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- TITLE PAGE -->
+        <div class="title-page">
+            <div class="section-number">SECTION 6.D</div>
+            <h1>Determine Key Features of Polynomial Functions</h1>
+            <div class="intro-text">
+                Every polynomial function has distinctive features that define its character: its degree, the behavior of its roots, where it intersects the axes, and how it behaves at extreme values. By identifying these features, you create a complete picture of the function's behavior. This section consolidates everything you've learned into a systematic process for analyzing any polynomial.
+            </div>
+        </div>
+
+        <!-- LEARNING OBJECTIVES -->
+        <section class="objectives">
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>I can identify and interpret key features of polynomial functions, including degree, leading coefficient, x and y intercepts, and end behavior.</li>
+                <li>I can determine whether polynomial functions exhibit even or odd degree behavior from their graphs and look for regularity in patterns.</li>
+                <li>I can analyze the effects of degree, roots, and leading coefficient on the shape and position of polynomial graphs.</li>
+            </ul>
+        </section>
+
+        <!-- INTRODUCTION SECTION -->
+        <section class="section-content">
+            <h2>Introduction: Understanding Complete Polynomial Behavior</h2>
+            <p>
+                Analyzing a polynomial function is like understanding a person's character. You look at many features to get the complete picture. A polynomial's degree tells you its potential complexity, the leading coefficient tells you its ultimate direction, the roots tell you where it changes sides of the axis, and more. Together, these features paint a detailed portrait of how the function behaves across the entire real number line.
+            </p>
+            
+            <h3>Real-World Connection</h3>
+            <p>
+                Climate scientists use polynomial models to analyze long-term temperature trends. By understanding the degree, intercepts, and turning points, they can predict whether temperatures will continue rising, stabilize, or cycle. Financial analysts use similar techniques to identify market trends and predict economic cycles. Understanding polynomial features helps professionals make informed predictions from mathematical models.
+            </p>
+
+            <div class="historical-note">
+                <strong>Historical Note:</strong> The systematic analysis of polynomial features emerged from the work of mathematicians in the 18th and 19th centuries. Isaac Newton and other pioneers developed techniques to study the complete behavior of functions, laying groundwork for modern calculus and analysis.
+            </div>
+        </section>
+
+        <!-- KEY VOCABULARY AND CONCEPTS -->
+        <section class="section-content">
+            <h2>Key Vocabulary and Concepts</h2>
+            
+            <div class="definition">
+                <strong>Degree:</strong> The highest power of $x$ in the polynomial. The degree determines the maximum number of roots and broadly describes the function's shape.
+            </div>
+
+            <div class="definition">
+                <strong>End Behavior:</strong> The direction the graph goes as $x \to \infty$ and $x \to -\infty$. Determined by the degree and leading coefficient.
+            </div>
+
+            <div class="definition">
+                <strong>Turning Points:</strong> Local maxima or minima where the graph changes from increasing to decreasing or vice versa. A polynomial of degree $n$ has at most $n - 1$ turning points.
+            </div>
+
+            <h3>Key Features to Analyze</h3>
+            <p>
+                For any polynomial function, systematically identify these features:
+            </p>
+            <ul style="margin-left: 30px; margin-bottom: 15px;">
+                <li><strong>Degree</strong>: What's the highest power of $x$?</li>
+                <li><strong>Leading coefficient</strong>: Is it positive or negative? How does it affect the graph?</li>
+                <li><strong>X-intercepts (roots)</strong>: Where does the graph cross or touch the x-axis?</li>
+                <li><strong>Y-intercept</strong>: Where does the graph cross the y-axis? This is $f(0)$.</li>
+                <li><strong>End behavior</strong>: Where does the graph go as $x \to \pm\infty$?</li>
+                <li><strong>Domain and range</strong>: What $x$-values are possible? What $y$-values are possible?</li>
+                <li><strong>Turning points</strong>: How many local max/min does it have?</li>
+                <li><strong>Symmetry</strong>: Is it even, odd, or neither?</li>
+            </ul>
+
+            <h3>Even and Odd Polynomials</h3>
+            <p>
+                A polynomial is <strong>even</strong> if it contains only even powers: $f(-x) = f(x)$. These graphs are symmetric about the y-axis. A polynomial is <strong>odd</strong> if it contains only odd powers: $f(-x) = -f(x)$. These graphs are symmetric about the origin.
+            </p>
+        </section>
+
+        <!-- EXAMPLE PROBLEMS -->
+        <section class="section-content">
+            <h2>Example Problems</h2>
+
+            <div class="example">
+                <h4>Example 1: Complete Analysis of a Quadratic</h4>
+                <p><strong>Problem:</strong> Analyze the polynomial $f(x) = -2x^2 + 8x - 6$ by identifying all key features.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong></p>
+                    <p><strong>Degree:</strong> 2 (quadratic)</p>
+                    <p><strong>Leading coefficient:</strong> $-2$ (negative, so parabola opens downward)</p>
+                    <p><strong>Y-intercept:</strong> $f(0) = -6$, point $(0, -6)$</p>
+                    <p><strong>X-intercepts:</strong> Set $f(x) = 0$: $-2x^2 + 8x - 6 = 0$, divide by $-2$: $x^2 - 4x + 3 = 0$, factor: $(x - 1)(x - 3) = 0$. Roots: $x = 1$ and $x = 3$</p>
+                    <p><strong>Vertex (turning point):</strong> At $x = -\frac{b}{2a} = -\frac{8}{2(-2)} = 2$. Then $f(2) = -2(4) + 8(2) - 6 = -8 + 16 - 6 = 2$. Vertex: $(2, 2)$ (maximum point)</p>
+                    <p><strong>End behavior:</strong> As $x \to \pm\infty$, $f(x) \to -\infty$ (since $a = -2 < 0$)</p>
+                    <p><strong>Domain:</strong> All real numbers $(-\infty, \infty)$</p>
+                    <p><strong>Range:</strong> $(-\infty, 2]$ (all values up to and including the maximum 2)</p>
+                    <p><strong>Even/Odd:</strong> Neither (has both even and odd degree terms when expanded)</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 2: Cubic Polynomial Analysis</h4>
+                <p><strong>Problem:</strong> Analyze $f(x) = x^3 - 4x$ for all key features.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong></p>
+                    <p><strong>Degree:</strong> 3 (cubic)</p>
+                    <p><strong>Leading coefficient:</strong> $1$ (positive)</p>
+                    <p><strong>Y-intercept:</strong> $f(0) = 0$, point $(0, 0)$</p>
+                    <p><strong>X-intercepts:</strong> Factor: $f(x) = x(x^2 - 4) = x(x - 2)(x + 2)$. Roots: $x = 0, 2, -2$</p>
+                    <p><strong>End behavior:</strong> Degree is odd with positive leading coefficient: as $x \to -\infty$, $f(x) \to -\infty$; as $x \to +\infty$, $f(x) \to +\infty$</p>
+                    <p><strong>Turning points:</strong> A cubic has at most 2 turning points. Without calculus, we observe the roots are at $-2, 0, 2$. Local maximum between $-2$ and $0$, local minimum between $0$ and $2$.</p>
+                    <p><strong>Symmetry:</strong> Check: $f(-x) = (-x)^3 - 4(-x) = -x^3 + 4x = -(x^3 - 4x) = -f(x)$. This is an odd function (symmetry about the origin).</p>
+                    <p><strong>Domain:</strong> All real numbers</p>
+                    <p><strong>Range:</strong> All real numbers (cubic goes from $-\infty$ to $+\infty$)</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 3: Analyzing from a Description</h4>
+                <p><strong>Problem:</strong> A polynomial graph touches (but doesn't cross) the x-axis at $x = -1$ and $x = 3$. It crosses at $x = 0$. The leading coefficient is positive. Determine the degree and describe key features.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong></p>
+                    <p><strong>Root multiplicities:</strong> Touching without crossing means even multiplicity at $x = -1$ and $x = 3$. Crossing means odd multiplicity at $x = 0$. Minimum: multiplicity 2 at two roots and multiplicity 1 at one root = degree $2 + 2 + 1 = 5$ (odd).</p>
+                    <p><strong>Degree:</strong> At least 5 (could be higher if some multiplicities are greater than stated)</p>
+                    <p><strong>Leading coefficient:</strong> Positive (given)</p>
+                    <p><strong>End behavior:</strong> Odd degree with positive leading coefficient: as $x \to -\infty$, $f(x) \to -\infty$; as $x \to +\infty$, $f(x) \to +\infty$</p>
+                    <p><strong>Domain and Range:</strong> Domain is all real numbers. Range is all real numbers (odd degree polynomial).</p>
+                    <p><strong>Turning points:</strong> At least 2 (one between the left and middle roots, one between the middle and right roots). Could have more.</p>
+                    <p><strong>X-intercepts:</strong> $x = -1, 0, 3$</p>
+                    <p><strong>Y-intercept:</strong> Can't determine without more information, but $f(0) = 0$ (since 0 is a root)</p>
+                </div>
+            </div>
+
+            <div class="example">
+                <h4>Example 4: Fourth-Degree Polynomial Analysis</h4>
+                <p><strong>Problem:</strong> Analyze $f(x) = (x - 1)^2(x^2 - 4)$ for all key features.</p>
+                <div class="solution">
+                    <p><strong>Solution:</strong></p>
+                    <p><strong>Expand to identify degree:</strong> $(x - 1)^2(x - 2)(x + 2) = (x^2 - 2x + 1)(x^2 - 4)$. Degree is 4 (even).</p>
+                    <p><strong>Roots:</strong> From the factored form: $x = 1$ (multiplicity 2), $x = 2$ (multiplicity 1), $x = -2$ (multiplicity 1)</p>
+                    <p><strong>Behavior at roots:</strong> Touches and bounces at $x = 1$; crosses at $x = 2$ and $x = -2$</p>
+                    <p><strong>Leading coefficient:</strong> Expanding the leading terms: $(x^2)(x^2) = x^4$ with coefficient 1 (positive)</p>
+                    <p><strong>End behavior:</strong> Even degree with positive leading coefficient: as $x \to \pm\infty$, $f(x) \to +\infty$ (both ends go up)</p>
+                    <p><strong>Y-intercept:</strong> $f(0) = (0 - 1)^2(0 - 2)(0 + 2) = (1)(-2)(2) = -4$, point $(0, -4)$</p>
+                    <p><strong>Domain and Range:</strong> Domain is all real numbers. Range: starts at some minimum value and goes to $+\infty$. The minimum occurs between two of the roots.</p>
+                    <p><strong>Turning points:</strong> At most $4 - 1 = 3$ turning points.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUMMARY SECTION -->
+        <section class="summary">
+            <h3>Summary of Key Concepts</h3>
+            <ul>
+                <li><strong>Degree</strong> determines the basic shape and the maximum number of roots and turning points.</li>
+                <li>The <strong>leading coefficient</strong> (positive or negative) determines end behavior along with the degree.</li>
+                <li><strong>End behavior</strong> for odd-degree polynomials: opposite directions at each end. For even-degree: same direction at both ends.</li>
+                <li><strong>Roots</strong> (x-intercepts) tell you where the graph crosses or touches the x-axis. Multiplicity determines whether it crosses (odd) or bounces (even).</li>
+                <li>The <strong>y-intercept</strong> is always $f(0)$ and is easy to find from the equation.</li>
+                <li>A polynomial of degree $n$ has at most $n - 1$ turning points (local maxima or minima).</li>
+                <li><strong>Even polynomials</strong> (only even power terms) are symmetric about the y-axis: $f(-x) = f(x)$.</li>
+                <li><strong>Odd polynomials</strong> (only odd power terms) are symmetric about the origin: $f(-x) = -f(x)$.</li>
+                <li><strong>Domain</strong> of polynomial functions is always all real numbers.</li>
+                <li><strong>Range</strong> depends on the degree and behavior. Odd-degree polynomials have range of all real numbers. Even-degree polynomials have restricted ranges.</li>
+            </ul>
+        </section>
+
+        <!-- KEY EQUATIONS TABLE -->
+        <h2>Key Features Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>How to Find It</th>
+                    <th>What It Tells You</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Degree</td>
+                    <td>Highest power of $x$</td>
+                    <td>Shape, number of roots, turning points</td>
+                </tr>
+                <tr>
+                    <td>Leading Coefficient</td>
+                    <td>Coefficient of highest power term</td>
+                    <td>End behavior direction (combined with degree)</td>
+                </tr>
+                <tr>
+                    <td>X-intercepts</td>
+                    <td>Solve $f(x) = 0$</td>
+                    <td>Where graph crosses/touches x-axis</td>
+                </tr>
+                <tr>
+                    <td>Y-intercept</td>
+                    <td>Calculate $f(0)$</td>
+                    <td>Where graph crosses y-axis</td>
+                </tr>
+                <tr>
+                    <td>End Behavior</td>
+                    <td>Use degree and leading coefficient</td>
+                    <td>Where graph goes as $x \to \pm\infty$</td>
+                </tr>
+                <tr>
+                    <td>Turning Points</td>
+                    <td>Local max/min (max of $n-1$ for degree $n$)</td>
+                    <td>Where graph changes from increasing to decreasing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- PRACTICE PROBLEMS -->
+        <section class="practice-problems">
+            <h3>Practice Problems</h3>
+            
+            <div class="problem">
+                <strong>Problem 1 (Easy):</strong> For $f(x) = 3x^2 - 12x + 9$, identify the degree, leading coefficient, and y-intercept.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 2 (Easy):</strong> Is $f(x) = x^4 - 3x^2 + 5$ even, odd, or neither? Justify your answer.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 3 (Medium):</strong> For $f(x) = -x^3 + 6x$, find the x-intercepts, y-intercept, and describe the end behavior.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 4 (Medium):</strong> A polynomial has degree 4, positive leading coefficient, and roots at $x = -2, 0, 3$. Describe its end behavior and the general shape of its graph.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 5 (Medium):</strong> For $f(x) = (x + 2)^2(x - 1)$, identify the roots, multiplicities, and describe what the graph does at each root.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 6 (Harder):</strong> Analyze the polynomial $f(x) = 2x^4 - 8x^2$ completely: degree, leading coefficient, x and y intercepts, end behavior, and symmetry.
+            </div>
+
+            <div class="problem">
+                <strong>Problem 7 (Harder):</strong> A polynomial graph has both ends going downward, crosses the x-axis at $x = -3, 1, 4$, and bounces at $x = 0$. What is the minimum possible degree?
+            </div>
+
+            <div class="problem">
+                <strong>Problem 8 (Harder):</strong> For the polynomial $f(x) = x^5 - 5x^3 + 4x$, find all intercepts, determine if it's even/odd, and explain the end behavior.
+            </div>
+        </section>
+
+        <!-- ANSWER KEY -->
+        <section class="answer-key">
+            <h3>Answer Key</h3>
+
+            <div class="answer">
+                <strong>Answer 1:</strong> Degree: 2. Leading coefficient: 3. Y-intercept: $f(0) = 3(0)^2 - 12(0) + 9 = 9$, point $(0, 9)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 2:</strong> Even. Check: $f(-x) = (-x)^4 - 3(-x)^2 + 5 = x^4 - 3x^2 + 5 = f(x)$. The function contains only even powers, so it's even (symmetric about the y-axis).
+            </div>
+
+            <div class="answer">
+                <strong>Answer 3:</strong> X-intercepts: $f(x) = -x^3 + 6x = -x(x^2 - 6) = 0$ gives $x = 0$ or $x = \pm\sqrt{6}$. Y-intercept: $f(0) = 0$, point $(0, 0)$. End behavior: Degree 3 (odd), leading coefficient $-1$ (negative), so as $x \to -\infty$, $f(x) \to +\infty$; as $x \to +\infty$, $f(x) \to -\infty$ (up-left, down-right).
+            </div>
+
+            <div class="answer">
+                <strong>Answer 4:</strong> Degree 4 is even. Positive leading coefficient means both ends go upward. The graph comes up from the left, crosses the x-axis at $x = -2, 0, 3$, and goes up to the right. There are at most 3 turning points.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 5:</strong> Roots: $x = -2$ (multiplicity 2) and $x = 1$ (multiplicity 1). At $x = -2$, the graph touches the x-axis and bounces (multiplicity 2 is even). At $x = 1$, the graph crosses the x-axis (multiplicity 1 is odd).
+            </div>
+
+            <div class="answer">
+                <strong>Answer 6:</strong> Degree: 4. Leading coefficient: 2 (positive). Y-intercept: $f(0) = 0$, point $(0, 0)$. X-intercepts: $f(x) = 2x^4 - 8x^2 = 2x^2(x^2 - 4) = 2x^2(x - 2)(x + 2) = 0$ gives $x = 0$ (multiplicity 2), $x = 2$, $x = -2$. End behavior: Both ends go upward (even degree, positive leading coefficient). Symmetry: Even function because $f(-x) = 2(-x)^4 - 8(-x)^2 = 2x^4 - 8x^2 = f(x)$.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 7:</strong> Both ends going downward means even degree with negative leading coefficient. Crosses at 3 points ($x = -3, 1, 4$) with odd multiplicity, and bounces at $x = 0$ with even multiplicity. Minimum: odd multiplicities at 3 roots (multiply 1 each = 3) plus even multiplicity at 1 root (multiplicity 2) = degree $1 + 1 + 1 + 2 = 5$. But degree 5 is odd, so ends go opposite directions. For even degree with both ends down, we need degree at least 6. Possibility: $f(x) = -a(x + 3)(x - 1)(x - 4)(x)^2(x - b)$ for some $b$, giving degree 6.
+            </div>
+
+            <div class="answer">
+                <strong>Answer 8:</strong> X-intercepts: $f(x) = x^5 - 5x^3 + 4x = x(x^4 - 5x^2 + 4) = x(x^2 - 1)(x^2 - 4) = x(x - 1)(x + 1)(x - 2)(x + 2) = 0$. Roots: $x = 0, \pm 1, \pm 2$. Y-intercept: $f(0) = 0$. Symmetry: Check $f(-x) = (-x)^5 - 5(-x)^3 + 4(-x) = -x^5 + 5x^3 - 4x = -(x^5 - 5x^3 + 4x) = -f(x)$. This is odd (symmetric about the origin). End behavior: Degree 5 (odd), leading coefficient 1 (positive), so as $x \to -\infty$, $f(x) \to -\infty$; as $x \to +\infty$, $f(x) \to +\infty$ (down-left, up-right).
+            </div>
+        </section>
+    </div>
+</body>
+</html>
