@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precalculus Curriculum Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 5px 15px;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #001f4d, #003d7a);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .semester-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .semester {
+            flex: 1 1 0%;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .semester h2 {
+            color: #001f4d;
+            border-bottom: 3px solid #d4a300;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .module {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0 3px 6px;
+        }
+
+        .module h3 {
+            color: #001f4d;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .topic-list {
+            list-style-type: none;
+        }
+
+        .topic-list li {
+            margin-bottom: 8px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .topic-list li:last-child {
+            border-bottom: none;
+        }
+
+        .topic-list a {
+            text-decoration: none;
+            color: #d4a300;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        .topic-list a:hover {
+            color: #001f4d;
+            transform: translateX(5px);
+        }
+
+        .topic-number {
+            display: inline-block;
+            width: 50px;
+            font-weight: bold;
+            color: #003d7a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eeeeee;
+        }
+
+        @media (max-width: 768px) {
+            .semester-container {
+                flex-direction: column;
+            }
+            .semester {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Precalculus Curriculum</h1>
+            <div class="subtitle">First and Second Semester Learning Targets</div>
+        </header>
+
+        <div class="semester-container">
+            <div class="semester">
+                <h2>First Semester Topics</h2>
+
+                <div class="module">
+                    <h3>Module 1. Foundational Skills</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/1a.html"><span class="topic-number">1.A</span> Recognize functions and evaluate expressions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/1b.html"><span class="topic-number">1.B</span> Simplify expressions with exponents and radicals</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/1c.html"><span class="topic-number">1.C</span> Apply basic trigonometry to right triangles</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/1d.html"><span class="topic-number">1.D</span> Apply trigonometry to real world problems</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/1e.html"><span class="topic-number">1.E</span> Calculate average rate of change</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 2. Solving and Systems</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/2a.html"><span class="topic-number">2.A</span> Write the equation of a line</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/2b.html"><span class="topic-number">2.B</span> Solve linear and quadratic equations</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/2c.html"><span class="topic-number">2.C</span> Solve linear systems of equations</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/2d.html"><span class="topic-number">2.D</span> Solve nonlinear systems of equations</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/2e.html"><span class="topic-number">2.E</span> Write and simplify average rate of change expressions</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 3. Function Operations, Inverses, and Piecewise</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/3a.html"><span class="topic-number">3.A</span> Complete operations with functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/3b.html"><span class="topic-number">3.B</span> Write equations of inverse functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/3c.html"><span class="topic-number">3.C</span> Graph and evaluate piecewise-defined functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/3d.html"><span class="topic-number">3.D</span> Transform functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/3e.html"><span class="topic-number">3.E</span> Simplify and manipulate the difference quotient</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 4. Function Analysis and Domain/Range</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/4a.html"><span class="topic-number">4.A</span> Identify domain and range from graphs</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/4b.html"><span class="topic-number">4.B</span> Describe functions and their properties</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/4c.html"><span class="topic-number">4.C</span> Identify even and odd functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/4d.html"><span class="topic-number">4.D</span> State end behavior of functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/4e.html"><span class="topic-number">4.E</span> Limit as x approaches infinity</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 5. Unit Circle and Trigonometric Identities</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/5a.html"><span class="topic-number">5.A</span> Work with radians, degrees, and unit circle</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/5b.html"><span class="topic-number">5.B</span> Determine sine, cosine, tangent of special angles</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/5c.html"><span class="topic-number">5.C</span> Graph sinusoidal functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/5d.html"><span class="topic-number">5.D</span> Solve trigonometric equations</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/5e.html"><span class="topic-number">5.E</span> Optimization problems</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="semester">
+                <h2>Second Semester Topics</h2>
+
+                <div class="module">
+                    <h3>Module 6. Polynomial Functions and Equations</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/6a.html"><span class="topic-number">6.A</span> Graph quadratic equations</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/6b.html"><span class="topic-number">6.B</span> Sketch graphs of polynomial functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/6c.html"><span class="topic-number">6.C</span> Connect intercepts to factors</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/6d.html"><span class="topic-number">6.D</span> Determine key features of polynomials</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/6e.html"><span class="topic-number">6.E</span> Use sigma notation</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 7. Trigonometric Solutions and Identities</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/7a.html"><span class="topic-number">7.A</span> Determine sine, cosine, tangent of special angles</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/7b.html"><span class="topic-number">7.B</span> Apply double-angle and Pythagorean identities</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/7c.html"><span class="topic-number">7.C</span> Apply half-angle identity</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/7d.html"><span class="topic-number">7.D</span> Solve advanced trigonometric equations</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/7e.html"><span class="topic-number">7.E</span> Approximate area under the curve</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 8. Polynomial and Rational Expressions</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/8a.html"><span class="topic-number">8.A</span> Factor expressions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/8b.html"><span class="topic-number">8.B</span> Complete operations with rational expressions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/8c.html"><span class="topic-number">8.C</span> Simplify complex fractions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/8d.html"><span class="topic-number">8.D</span> Divide polynomials</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/8e.html"><span class="topic-number">8.E</span> Evaluate limits from a graph</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 9. Rational Functions and Asymptotes</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/9a.html"><span class="topic-number">9.A</span> Graph transformations of rational functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/9b.html"><span class="topic-number">9.B</span> Identify asymptotes</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/9c.html"><span class="topic-number">9.C</span> Graph reciprocal functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/9d.html"><span class="topic-number">9.D</span> Solve and graph polynomial equations</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/9e.html"><span class="topic-number">9.E</span> Evaluate limits from expressions</a></li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>Module 10. Exponential and Logarithmic Functions</h3>
+                    <ul class="topic-list">
+                        <li><a href="https://tnezki.github.io/pctextbook/10a.html"><span class="topic-number">10.A</span> Rewrite expressions using logarithm properties</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/10b.html"><span class="topic-number">10.B</span> Graph transformations of logarithmic functions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/10c.html"><span class="topic-number">10.C</span> Solve equations with exponents and logarithms</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/10d.html"><span class="topic-number">10.D</span> Solve logarithm functions with extraneous solutions</a></li>
+                        <li><a href="https://tnezki.github.io/pctextbook/10e.html"><span class="topic-number">10.E</span> Derivative: Power Rule</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Precalculus Curriculum Navigation Page | Each learning target links to a separate HTML file</p>
+        </footer>
+    </div>
+</body>
+</html>
