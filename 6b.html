@@ -1,585 +1,454 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section 6.B: Sketch Graphs of Polynomial Functions in Factored Form</title>
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            }
-        };
-    </script>
-    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .title-page {
-            text-align: center;
-            border-bottom: 3px solid #00003d;
-            padding-bottom: 30px;
-            margin-bottom: 40px;
-        }
-        .section-number {
-            color: #00003d;
-            font-size: 1.3em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        h1 {
-            color: #00003d;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            margin-top: 0;
-        }
-        .intro-text {
-            font-size: 1.05em;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-            font-style: italic;
-        }
-        h2 {
-            color: #00003d;
-            font-size: 1.8em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-left: 5px solid #00003d;
-            padding-left: 15px;
-        }
-        h3 {
-            color: #004d99;
-            font-size: 1.3em;
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        h4 {
-            color: #00003d;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-        .objectives {
-            background-color: #f0f4f8;
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 30px;
-        }
-        .objectives ul {
-            list-style-position: inside;
-            margin-left: 20px;
-        }
-        .objectives li {
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .section-content {
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
-        .definition {
-            background-color: #fffacd;
-            border-left: 4px solid #ffd700;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .definition strong {
-            color: #00003d;
-        }
-        .example {
-            background-color: #f9f9f9;
-            border: 2px solid #00003d;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 6px;
-        }
-        .example h4 {
-            color: #00003d;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        .solution {
-            background-color: #f0f0f0;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 4px;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-        .key-equation {
-            background-color: #e6f2ff;
-            border: 2px solid #004d99;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 6px;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: white;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #00003d;
-            color: white;
-            font-weight: bold;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .summary {
-            background-color: #f0f4f8;
-            border-left: 5px solid #00003d;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 6px;
-        }
-        .summary h3 {
-            margin-top: 0;
-        }
-        .summary ul {
-            list-style-position: inside;
-        }
-        .summary li {
-            margin-bottom: 8px;
-        }
-        .practice-problems {
-            background-color: #f0f4f8;
-            padding: 20px;
-            border-radius: 6px;
-            margin: 30px 0;
-        }
-        .practice-problems h3 {
-            margin-top: 0;
-        }
-        .problem {
-            background-color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border-left: 4px solid #004d99;
-        }
-        .answer-key {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 40px;
-        }
-        .answer-key h3 {
-            margin-top: 0;
-        }
-        .answer {
-            background-color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border-left: 4px solid #28a745;
-        }
-        .historical-note {
-            background-color: #ffe6e6;
-            border-left: 4px solid #ff6666;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-        .historical-note strong {
-            color: #cc0000;
-        }
-        .key-point {
-            background-color: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        .key-point strong {
-            color: #2e7d32;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Section 6.B</title>
+
+<script>
+window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+body {
+    margin: 0.5in;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* 20x20 sketch grid */
+.graph-grid {
+    width: 420px;
+    height: 420px;
+    margin: 20px 0;
+    border: 2px solid #555;
+    background-image:
+        linear-gradient(to right, #666 1px, transparent 1px),
+        linear-gradient(to bottom, #666 1px, transparent 1px);
+    background-size: 21px 21px;
+}
+
+/* 10x10 multiplicity grid */
+.small-grid {
+    width: 200px;
+    height: 200px;
+    border: 1.5px solid #555;
+    background-image:
+        linear-gradient(to right, #666 1px, transparent 1px),
+        linear-gradient(to bottom, #666 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.workspace {
+    min-height: 220px;
+    margin-top: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 15px 0;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+.question {
+    margin-top: 25px;
+    font-size: 1.05em;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <!-- TITLE PAGE -->
-        <div class="title-page">
-            <div class="section-number">SECTION 6.B</div>
-            <h1>Sketch Graphs of Polynomial Functions in Factored Form</h1>
-            <div class="intro-text">
-                When a polynomial is written in factored form, it reveals the roots—the x-intercepts where the graph crosses the x-axis. In this section, you'll learn to use these roots to sketch accurate polynomial graphs without plotting dozens of points. You'll discover how the structure of the factors tells you exactly where the graph touches or crosses the axis, and whether the parabola bounces or passes through each root.
-            </div>
-        </div>
 
-        <!-- LEARNING OBJECTIVES -->
-        <section class="objectives">
-            <h2>Learning Objectives</h2>
-            <ul>
-                <li>I can sketch the graph of a polynomial function from its factored form, using roots to determine key features and behavior.</li>
-                <li>I can create and interpret sign charts to analyze where polynomial functions are positive and negative, connecting structure to behavior.</li>
-                <li>I can look for and use the structure of factored form to make predictions about the shape and key features of polynomial graphs.</li>
-            </ul>
-        </section>
+<h1>SECTION 6.B<br>Sketch Graphs of Polynomial Functions in Factored Form</h1>
 
-        <!-- INTRODUCTION SECTION -->
-        <section class="section-content">
-            <h2>Introduction: Reading Graphs from Factors</h2>
-            <p>
-                The factored form of a polynomial is like a blueprint for its graph. Each factor tells you where the graph intersects the x-axis, and how the polynomial behaves at that intersection. By understanding this structure, you can sketch a polynomial's shape without relying on a calculator or plotting many points. This skill connects algebra to geometry in a powerful way.
-            </p>
-            
-            <h3>Real-World Connection</h3>
-            <p>
-                Engineers designing roller coasters use polynomial functions to create smooth curves. The factored form helps them identify critical points where the track changes direction or touches a boundary. Scientists studying population dynamics use polynomials to model how populations rise and fall. Understanding how factors determine the graph's shape helps in both designing and analyzing real-world systems.
-            </p>
+<h2>Learning Objectives</h2>
 
-            <div class="historical-note">
-                <strong>Historical Note:</strong> The Fundamental Theorem of Algebra, proven by Carl Friedrich Gauss in 1799, states that every polynomial of degree $n$ has exactly $n$ roots (counting multiplicity). This theorem connects the algebraic factors to the visual behavior of the graph.
-            </div>
-        </section>
+<p>I can sketch the graph of a polynomial function from its factored form, using roots to determine key features and behavior.</p>
+<p>I can create and interpret sign charts to analyze where polynomial functions are positive and negative, connecting structure to behavior.</p>
+<p>I can look for and use the structure of factored form to make predictions about the shape and key features of polynomial graphs.</p>
 
-        <!-- KEY VOCABULARY AND CONCEPTS -->
-        <section class="section-content">
-            <h2>Key Vocabulary and Concepts</h2>
-            
-            <div class="definition">
-                <strong>Root (or Zero):</strong> A value of $x$ where the polynomial equals zero, $f(x) = 0$. Graphically, roots are where the parabola crosses or touches the x-axis.
-            </div>
+<h2>Introduction: Reading Graphs from Factors</h2>
 
-            <div class="definition">
-                <strong>Multiplicity:</strong> The number of times a factor appears in the polynomial. If $(x - 2)$ appears twice, the root $x = 2$ has multiplicity 2.
-            </div>
+<p>
+The factored form of a polynomial is like a blueprint for its graph. Each factor tells you where the graph intersects the x-axis, and how the polynomial behaves at that intersection. By understanding this structure, you can sketch a polynomial's shape without relying on a calculator or plotting many points. This skill connects algebra to geometry in a powerful way.
+</p>
 
-            <div class="definition">
-                <strong>Sign Chart:</strong> A table or diagram that shows whether the polynomial is positive or negative in each interval between roots, helping you visualize the graph's shape.
-            </div>
+<h2>Real-World Connection</h2>
 
-            <h3>How Multiplicity Affects the Graph</h3>
-            <p>
-                When a root has an odd multiplicity, the graph crosses the x-axis at that point. When a root has an even multiplicity, the graph touches the x-axis but bounces back without crossing.
-            </p>
+<p>
+Engineers designing roller coasters use polynomial functions to create smooth curves. The factored form helps them identify critical points where the track changes direction or touches a boundary. Scientists studying population dynamics use polynomials to model how populations rise and fall. Understanding how factors determine the graph's shape helps in both designing and analyzing real-world systems.
+</p>
 
-            <div class="key-point">
-                <strong>Multiplicity Rules:</strong>
-                <ul style="margin-left: 30px; margin-top: 10px;">
-                    <li><strong>Multiplicity 1:</strong> The graph crosses the x-axis sharply.</li>
-                    <li><strong>Multiplicity 2:</strong> The graph touches the x-axis and bounces back (looks like it's tangent to the axis).</li>
-                    <li><strong>Multiplicity 3 or higher:</strong> The graph crosses with a flatter appearance, touching the axis multiple times conceptually.</li>
-                </ul>
-            </div>
+<h2>Historical Note</h2>
 
-            <h3>Understanding Factored Form</h3>
-            <p>
-                A polynomial in factored form looks like: $f(x) = a(x - r_1)(x - r_2)(x - r_3) \cdots$
-            </p>
-            <p>
-                where $r_1, r_2, r_3, \ldots$ are the roots and $a$ is the leading coefficient. The value of $a$ determines whether the polynomial eventually goes up or down as $x$ increases to infinity.
-            </p>
-        </section>
+<p>
+The Fundamental Theorem of Algebra, proven by Carl Friedrich Gauss in 1799, states that every polynomial of degree $n$ has exactly $n$ roots (counting multiplicity). This theorem connects the algebraic factors to the visual behavior of the graph.
+</p>
 
-        <!-- EXAMPLE PROBLEMS -->
-        <section class="section-content">
-            <h2>Example Problems</h2>
+<hr>
 
-            <div class="example">
-                <h4>Example 1: Sketching from Factored Form with Simple Roots</h4>
-                <p><strong>Problem:</strong> Sketch the graph of $f(x) = (x - 1)(x + 2)(x - 4)$ using the roots.</p>
-                <div class="solution">
-                    <p><strong>Solution:</strong> First, identify the roots from the factored form: $x = 1$, $x = -2$, and $x = 4$. All have multiplicity 1, so the graph crosses the x-axis at each root.</p>
-                    <p>The leading coefficient is $a = 1$ (positive), and the polynomial has degree 3 (odd), so the graph goes down on the left and up on the right.</p>
-                    <p>Create a sign chart to determine the sign of $f(x)$ in each interval:</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Interval</th>
-                                <th>$x < -2$</th>
-                                <th>$-2 < x < 1$</th>
-                                <th>$1 < x < 4$</th>
-                                <th>$x > 4$</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Test Point</td>
-                                <td>$x = -3$</td>
-                                <td>$x = 0$</td>
-                                <td>$x = 2$</td>
-                                <td>$x = 5$</td>
-                            </tr>
-                            <tr>
-                                <td>Sign of $f(x)$</td>
-                                <td>Negative</td>
-                                <td>Positive</td>
-                                <td>Negative</td>
-                                <td>Positive</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><strong>Key Points:</strong> Roots at $x = -2, 1, 4$. The graph is negative for $x < -2$, positive for $-2 < x < 1$, negative for $1 < x < 4$, and positive for $x > 4$.</p>
-                </div>
-            </div>
+<h2>Multiplicities Visually</h2>
 
-            <div class="example">
-                <h4>Example 2: Understanding Multiplicity</h4>
-                <p><strong>Problem:</strong> Sketch $f(x) = (x - 2)^2(x + 1)$ and explain how the multiplicity affects the graph.</p>
-                <div class="solution">
-                    <p><strong>Solution:</strong> Identify the roots: $x = 2$ (multiplicity 2) and $x = -1$ (multiplicity 1).</p>
-                    <p>At $x = 2$, the graph touches the x-axis and bounces back because multiplicity is even. At $x = -1$, the graph crosses because multiplicity is odd.</p>
-                    <p>The leading coefficient is $a = 1$ (positive) and degree is 3 (odd), so the graph goes down on the left and up on the right.</p>
-                    <p>Sign chart:</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Interval</th>
-                                <th>$x < -1$</th>
-                                <th>$-1 < x < 2$</th>
-                                <th>$x > 2$</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Test Point</td>
-                                <td>$x = -2$</td>
-                                <td>$x = 0$</td>
-                                <td>$x = 3$</td>
-                            </tr>
-                            <tr>
-                                <td>Sign of $f(x)$</td>
-                                <td>Negative</td>
-                                <td>Positive</td>
-                                <td>Positive</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><strong>Key Observations:</strong> The graph comes from below the x-axis, crosses at $x = -1$, stays positive, touches and bounces at $x = 2$ (no sign change), then continues upward.</p>
-                </div>
-            </div>
+<p>Your teacher will sketch examples of different multiplicities below.</p>
 
-            <div class="example">
-                <h4>Example 3: Analyzing End Behavior</h4>
-                <p><strong>Problem:</strong> For $f(x) = -(x + 3)(x - 1)^2(x - 5)$, determine the roots, their multiplicities, and the end behavior.</p>
-                <div class="solution">
-                    <p><strong>Solution:</strong> Roots: $x = -3$ (multiplicity 1), $x = 1$ (multiplicity 2), $x = 5$ (multiplicity 1).</p>
-                    <p>The leading coefficient is $a = -1$ (negative) and the degree is 4 (even), so the graph goes down on both left and right (below the x-axis as $x \to -\infty$ and as $x \to +\infty$).</p>
-                    <p>Sign chart:</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Interval</th>
-                                <th>$x < -3$</th>
-                                <th>$-3 < x < 1$</th>
-                                <th>$1 < x < 5$</th>
-                                <th>$x > 5$</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Test Point</td>
-                                <td>$x = -4$</td>
-                                <td>$x = 0$</td>
-                                <td>$x = 3$</td>
-                                <td>$x = 6$</td>
-                            </tr>
-                            <tr>
-                                <td>Sign of $f(x)$</td>
-                                <td>Negative</td>
-                                <td>Positive</td>
-                                <td>Positive</td>
-                                <td>Negative</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><strong>Key Features:</strong> Crosses at $x = -3$, touches and bounces at $x = 1$, crosses at $x = 5$. Graph goes below the x-axis at both ends.</p>
-                </div>
-            </div>
+<table>
+<tr>
+<th>Multiplicity 1</th>
+<th>Multiplicity 2</th>
+<th>Multiplicity 3</th>
+<th>Even</th>
+<th>Odd</th>
+</tr>
+<tr>
+<td><div class="small-grid"></div></td>
+<td><div class="small-grid"></div></td>
+<td><div class="small-grid"></div></td>
+<td><div class="small-grid"></div></td>
+<td><div class="small-grid"></div></td>
+</tr>
+</table>
 
-            <div class="example">
-                <h4>Example 4: Sketching from Factored Form with Finding Y-Intercept</h4>
-                <p><strong>Problem:</strong> Sketch $f(x) = 2(x + 2)(x - 3)$ and find the y-intercept.</p>
-                <div class="solution">
-                    <p><strong>Solution:</strong> Roots: $x = -2$ and $x = 3$, both with multiplicity 1 (graph crosses at both). Leading coefficient $a = 2$ (positive) and degree 2 (even), so both ends go upward.</p>
-                    <p>For the y-intercept, set $x = 0$: $f(0) = 2(0 + 2)(0 - 3) = 2(2)(-3) = -12$. The y-intercept is $(0, -12)$.</p>
-                    <p>Sign chart:</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Interval</th>
-                                <th>$x < -2$</th>
-                                <th>$-2 < x < 3$</th>
-                                <th>$x > 3$</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Test Point</td>
-                                <td>$x = -3$</td>
-                                <td>$x = 0$</td>
-                                <td>$x = 4$</td>
-                            </tr>
-                            <tr>
-                                <td>Sign of $f(x)$</td>
-                                <td>Positive</td>
-                                <td>Negative</td>
-                                <td>Positive</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p><strong>Sketch Description:</strong> Parabola opens upward, crosses x-axis at $x = -2$ and $x = 3$, passes through y-intercept $(0, -12)$, with vertex somewhere between the roots.</p>
-                </div>
-            </div>
-        </section>
+<hr>
 
-        <!-- SUMMARY SECTION -->
-        <section class="summary">
-            <h3>Summary of Key Concepts</h3>
-            <ul>
-                <li><strong>Factored form</strong> directly reveals the roots (x-intercepts) of a polynomial function.</li>
-                <li>A <strong>root's multiplicity</strong> tells you how the graph behaves at that point: odd multiplicity means crossing, even multiplicity means bouncing.</li>
-                <li>A <strong>sign chart</strong> helps you determine whether the polynomial is positive or negative in each interval between roots.</li>
-                <li>To create a sign chart, test a point in each interval by substituting into the factored form and determining the resulting sign.</li>
-                <li>The <strong>leading coefficient</strong> ($a$) determines end behavior: positive means the right end goes up, negative means it goes down.</li>
-                <li>The <strong>degree</strong> of the polynomial determines the other end: even degree means both ends go the same direction, odd degree means opposite directions.</li>
-                <li>The <strong>y-intercept</strong> is found by setting $x = 0$ in the factored form.</li>
-                <li>By combining information about roots, multiplicity, sign changes, and end behavior, you can sketch an accurate graph without plotting many points.</li>
-            </ul>
-        </section>
+<h2>Key Vocabulary and Concepts</h2>
 
-        <!-- KEY EQUATIONS TABLE -->
-        <h2>Key Concepts</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Concept</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Factored Form</td>
-                    <td>$$f(x) = a(x - r_1)(x - r_2)\cdots(x - r_n)$$</td>
-                    <td>$f(x) = 2(x + 1)(x - 3)$ has roots at $x = -1, 3$</td>
-                </tr>
-                <tr>
-                    <td>Multiplicity Odd</td>
-                    <td>Graph crosses the x-axis at this root</td>
-                    <td>$(x - 2)^1$ or $(x - 2)^3$ cause crossing</td>
-                </tr>
-                <tr>
-                    <td>Multiplicity Even</td>
-                    <td>Graph touches and bounces at this root (no crossing)</td>
-                    <td>$(x - 2)^2$ or $(x - 2)^4$ cause bouncing</td>
-                </tr>
-                <tr>
-                    <td>End Behavior (Odd Degree)</td>
-                    <td>Opposite directions at each end</td>
-                    <td>If $a > 0$: down-left, up-right</td>
-                </tr>
-                <tr>
-                    <td>End Behavior (Even Degree)</td>
-                    <td>Same direction at both ends</td>
-                    <td>If $a > 0$: both ends up</td>
-                </tr>
-            </tbody>
-        </table>
+<p><strong>Root (or Zero):</strong> A value of $x$ where the polynomial equals zero, $f(x) = 0$. Graphically, roots are where the graph crosses or touches the x-axis.</p>
 
-        <!-- PRACTICE PROBLEMS -->
-        <section class="practice-problems">
-            <h3>Practice Problems</h3>
-            
-            <div class="problem">
-                <strong>Problem 1 (Easy):</strong> Identify the roots and their multiplicities for $f(x) = (x - 2)(x + 5)$.
-            </div>
+<p><strong>Multiplicity:</strong> The number of times a factor appears in the polynomial. If $(x - 2)$ appears twice, the root $x = 2$ has multiplicity 2.</p>
 
-            <div class="problem">
-                <strong>Problem 2 (Easy):</strong> For $f(x) = (x + 1)^2(x - 3)$, which roots have even multiplicity and which have odd multiplicity?
-            </div>
+<h3>How Multiplicity Affects the Graph</h3>
 
-            <div class="problem">
-                <strong>Problem 3 (Medium):</strong> Create a sign chart for $f(x) = (x - 1)(x + 4)$ and determine where the function is positive and negative.
-            </div>
+<p>
+When a root has an odd multiplicity, the graph crosses the x-axis at that point. When a root has an even multiplicity, the graph touches the x-axis but bounces back without crossing.
+</p>
 
-            <div class="problem">
-                <strong>Problem 4 (Medium):</strong> For $f(x) = -3(x + 2)(x - 1)(x - 4)$, describe the end behavior and determine if the graph crosses or bounces at each root.
-            </div>
+<ul>
+<li><strong>Multiplicity 1:</strong> The graph crosses the x-axis sharply.</li>
+<li><strong>Multiplicity 2:</strong> The graph touches the x-axis and bounces back.</li>
+<li><strong>Multiplicity 3 or higher:</strong> The graph crosses with a flatter appearance.</li>
+</ul>
 
-            <div class="problem">
-                <strong>Problem 5 (Medium):</strong> Find the y-intercept of $f(x) = 2(x - 3)(x + 1)$ by setting $x = 0$.
-            </div>
+<h3>Understanding Factored Form</h3>
 
-            <div class="problem">
-                <strong>Problem 6 (Harder):</strong> Sketch the graph of $f(x) = (x - 2)^2(x + 1)$ by identifying roots, multiplicities, y-intercept, and creating a sign chart.
-            </div>
+<p>
+A polynomial in factored form looks like: $f(x) = a(x - r_1)(x - r_2)(x - r_3)\cdots$
+</p>
 
-            <div class="problem">
-                <strong>Problem 7 (Harder):</strong> For $f(x) = -2(x)^2(x - 3)$, determine the degree, leading coefficient, end behavior, and describe the key features of the graph.
-            </div>
+<p>
+The value of $a$ determines whether the polynomial eventually goes up or down as $x$ increases to infinity.
+</p>
 
-            <div class="problem">
-                <strong>Problem 8 (Harder):</strong> A polynomial $f(x) = a(x - r_1)(x - r_2)^2(x - r_3)$ has roots at $x = -3, 0, 2$. If the y-intercept is 12, find the value of $a$.
-            </div>
-        </section>
+<hr>
 
-        <!-- ANSWER KEY -->
-        <section class="answer-key">
-            <h3>Answer Key</h3>
+<h2>Examples</h2>
 
-            <div class="answer">
-                <strong>Answer 1:</strong> Roots: $x = 2$ (multiplicity 1) and $x = -5$ (multiplicity 1). Both have odd multiplicity, so the graph crosses at both roots.
-            </div>
+<h3>Example 1</h3>
+<p>Sketch the graph of $f(x) = (x - 1)(x + 2)(x - 4)$ using the roots.</p>
+<div class="graph-grid"></div>
+<div class="workspace"></div>
 
-            <div class="answer">
-                <strong>Answer 2:</strong> Even multiplicity: $x = -1$ (multiplicity 2). Odd multiplicity: $x = 3$ (multiplicity 1). The graph bounces at $x = -1$ and crosses at $x = 3$.
-            </div>
+<h3>Example 2</h3>
+<p>Sketch $f(x) = (x - 2)^2(x + 1)$ and explain how the multiplicity affects the graph.</p>
+<div class="graph-grid"></div>
+<div class="workspace"></div>
 
-            <div class="answer">
-                <strong>Answer 3:</strong> Roots are $x = 1$ and $x = -4$. Sign chart shows: negative for $x < -4$, positive for $-4 < x < 1$, negative for $x > 1$.
-            </div>
+<h3>Example 3</h3>
+<p>For $f(x) = -(x + 3)(x - 1)^2(x - 5)$, determine the roots, their multiplicities, and the end behavior.</p>
+<div class="graph-grid"></div>
+<div class="workspace"></div>
 
-            <div class="answer">
-                <strong>Answer 4:</strong> Degree is 3 (odd), leading coefficient is $-3$ (negative), so end behavior is up-left and down-right. All roots $x = -2, 1, 4$ have multiplicity 1 (odd), so the graph crosses at each root.
-            </div>
+<h3>Example 4</h3>
+<p>Sketch $f(x) = 2(x + 2)(x - 3)$ and find the y-intercept.</p>
+<div class="graph-grid"></div>
+<div class="workspace"></div>
 
-            <div class="answer">
-                <strong>Answer 5:</strong> $f(0) = 2(0 - 3)(0 + 1) = 2(-3)(1) = -6$. The y-intercept is $(0, -6)$.
-            </div>
+<hr>
 
-            <div class="answer">
-                <strong>Answer 6:</strong> Roots: $x = 2$ (multiplicity 2, bounces) and $x = -1$ (multiplicity 1, crosses). Y-intercept: $f(0) = (0 - 2)^2(0 + 1) = 4(1) = 4$, so $(0, 4)$. Sign chart: negative for $x < -1$, positive for $-1 < x < 2$, positive for $x > 2$ (the positive region doesn't change at $x = 2$ because of the bounce). The graph comes from below left, crosses at $x = -1$, stays positive, touches and bounces at $x = 2$, continues upward to the right.
-            </div>
+<h2>Summary of Key Concepts</h2>
 
-            <div class="answer">
-                <strong>Answer 7:</strong> Degree is 3 (odd), leading coefficient is $-2$ (negative). End behavior: up-left, down-right. Roots: $x = 0$ (multiplicity 2, bounces) and $x = 3$ (multiplicity 1, crosses). Y-intercept: $(0, 0)$. The graph comes from above left, touches and bounces at $x = 0$ (staying above the axis), crosses at $x = 3$, then goes below the axis to the right.
-            </div>
+<ul>
+<li><strong>Factored form</strong> directly reveals the roots (x-intercepts).</li>
+<li>A <strong>root's multiplicity</strong> tells you how the graph behaves at that point: odd multiplicity means crossing, even multiplicity means bouncing.</li>
+<li>The <strong>leading coefficient</strong> determines end behavior.</li>
+<li>The <strong>degree</strong> determines whether ends go same or opposite directions.</li>
+<li>The <strong>y-intercept</strong> is found by setting $x = 0$.</li>
+<li>By combining information about roots, multiplicity, and end behavior, you can sketch an accurate graph without plotting many points.</li>
+</ul>
 
-            <div class="answer">
-                <strong>Answer 8:</strong> The roots are at $x = -3, 0, 2$ with the given multiplicities. So $f(x) = a(x + 3)(x - 0)^2(x - 2) = a(x + 3)x^2(x - 2)$. For the y-intercept at $x = 0$: we have a factor of $x^2$, so the y-intercept is 0, not 12. However, if the problem means the y-intercept is 12 when evaluating the function elsewhere, or if there's an additional constant factor, the setup would be different. Assuming the y-intercept is 12 and the roots are $x = -3, 1, 2$ (instead of 0), then $f(x) = a(x + 3)(x - 1)^2(x - 2)$. At $x = 0$: $f(0) = a(3)(-1)^2(-2) = a(3)(1)(-2) = -6a = 12$, so $a = -2$.
-            </div>
-        </section>
-    </div>
-</body>
-</html>
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Easy</h3>
+
+<div class="question">1. Identify the roots and multiplicities for $f(x) = (x - 2)(x + 5)$.</div>
+<div class="workspace"></div>
+
+<div class="question">2. For $f(x) = (x + 1)^2(x - 3)$, identify even and odd multiplicities.</div>
+<div class="workspace"></div>
+
+<div class="question">3. Identify the degree and leading coefficient of $f(x) = -2(x - 1)(x + 3)$.</div>
+<div class="workspace"></div>
+
+<div class="question">4. Determine whether $f(x) = (x - 4)^3$ crosses or bounces at its root.</div>
+<div class="workspace"></div>
+
+<h3>Medium</h3>
+
+<div class="question">5. Find the y-intercept of $f(x) = 2(x - 3)(x + 1)$.</div>
+<div class="workspace"></div>
+
+<div class="question">6. Describe the end behavior of $f(x) = -3(x + 2)(x - 1)(x - 4)$.</div>
+<div class="workspace"></div>
+
+<div class="question">7. Identify the roots and sketch $f(x) = (x - 2)^2(x + 1)$.</div>
+<div class="graph-grid"></div>
+<div class="workspace"></div>
+
+<div class="question">8. Identify the roots and sketch $f(x) = -2x^2(x - 3)$.</div>
+<div class="graph-grid"></div>
+<div class="workspace"></div>
+
+<h3>Hard</h3>
+
+<div class="question">9. Sketch $f(x) = (x + 3)(x - 1)^2(x - 5)$.</div>
+<div class="graph-grid"></div>
+<div class="workspace"></div>
+
+<div class="question">10. Construct a polynomial with roots at -2 (multiplicity 2) and 3 (multiplicity 1).</div>
+<div class="workspace"></div>
+
+<div class="question">11. Construct a polynomial of degree 4 with two simple roots and one double root.</div>
+<div class="workspace"></div>
+
+<div class="question">12. A polynomial $f(x) = a(x + 3)x^2(x - 2)$ has y-intercept 12. Find $a$.</div>
+<div class="workspace"></div>
+
+<h3>Challenge</h3>
+
+<div class="question">13. Write a polynomial with one even multiplicity root and two odd multiplicity roots.</div>
+<div class="workspace"></div>
+
+<div class="question">14. A polynomial has odd degree and negative leading coefficient. Describe its end behavior.</div>
+<div class="workspace"></div>
+
+<div class="question">15. Explain how multiplicity affects the local shape of a graph.</div>
+<div class="workspace"></div>
+
+<h3>Justify</h3>
+
+<div class="question">16. Explain why even multiplicity roots do not change the sign of a function.</div>
+<div style="min-height:300px;"></div>
+
+<div class="question">17. Justify how the Fundamental Theorem of Algebra relates to the number of x-intercepts.</div>
+<div style="min-height:300px;"></div>
+
+<div class="question">18. Explain how factored form allows you to sketch a graph without plotting many points.</div>
+<div style="min-height:300px;"></div>
+
+<div style="page-break-before:always;"></div>
+
+<h2>Solutions</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1.</strong>  
+$f(x) = (x - 2)(x + 5)$  
+
+Roots: $x = 2$ and $x = -5$  
+
+Both have multiplicity 1 (each factor appears once), so the graph crosses the x-axis at both roots.
+</p>
+
+<p><strong>2.</strong>  
+$f(x) = (x + 1)^2(x - 3)$  
+
+Root at $x = -1$ has multiplicity 2 (even).  
+Root at $x = 3$ has multiplicity 1 (odd).  
+
+The graph bounces at $x = -1$ and crosses at $x = 3$.
+</p>
+
+<p><strong>3.</strong>  
+$f(x) = -2(x - 1)(x + 3)$  
+
+Degree = 2 (two linear factors).  
+Leading coefficient = $-2$.  
+
+The polynomial has even degree and negative leading coefficient.
+</p>
+
+<p><strong>4.</strong>  
+$f(x) = (x - 4)^3$  
+
+Root: $x = 4$ with multiplicity 3 (odd).  
+
+The graph crosses the x-axis at $x = 4$, but with a flatter appearance than multiplicity 1.
+</p>
+
+<hr>
+
+<h3>Medium</h3>
+
+<p><strong>5.</strong>  
+$f(x) = 2(x - 3)(x + 1)$  
+
+Find the y-intercept by setting $x = 0$:
+
+\[
+f(0) = 2(0 - 3)(0 + 1) = 2(-3)(1) = -6
+\]
+
+Y-intercept: $(0, -6)$
+</p>
+
+<p><strong>6.</strong>  
+$f(x) = -3(x + 2)(x - 1)(x - 4)$  
+
+Degree = 3 (odd).  
+Leading coefficient = $-3$ (negative).  
+
+End behavior:  
+As $x \to -\infty$, $f(x) \to +\infty$ (up on the left).  
+As $x \to +\infty$, $f(x) \to -\infty$ (down on the right).
+</p>
+
+<p><strong>7.</strong>  
+$f(x) = (x - 2)^2(x + 1)$  
+
+Roots: $x = 2$ (multiplicity 2), $x = -1$ (multiplicity 1).  
+
+The graph crosses at $x = -1$ and bounces at $x = 2$.  
+
+Degree = 3 (odd), leading coefficient positive.  
+End behavior: down on left, up on right.
+</p>
+
+<p><strong>8.</strong>  
+$f(x) = -2x^2(x - 3)$  
+
+Roots: $x = 0$ (multiplicity 2), $x = 3$ (multiplicity 1).  
+
+The graph bounces at $x = 0$ and crosses at $x = 3$.  
+
+Degree = 3 (odd), leading coefficient negative.  
+End behavior: up on left, down on right.
+</p>
+
+<hr>
+
+<h3>Hard</h3>
+
+<p><strong>9.</strong>  
+$f(x) = (x + 3)(x - 1)^2(x - 5)$  
+
+Roots:  
+$x = -3$ (1),  
+$x = 1$ (2),  
+$x = 5$ (1).  
+
+Cross at $x = -3$ and $x = 5$.  
+Bounce at $x = 1$.  
+
+Degree = 4 (even), leading coefficient positive.  
+End behavior: up on both ends.
+</p>
+
+<p><strong>10.</strong>  
+A polynomial with roots at $x = -2$ (multiplicity 2) and $x = 3$ (multiplicity 1):
+
+\[
+f(x) = a(x + 2)^2(x - 3)
+\]
+
+If no leading coefficient specified, choose $a = 1$:
+
+\[
+f(x) = (x + 2)^2(x - 3)
+\]
+</p>
+
+<p><strong>11.</strong>  
+Example:
+
+\[
+f(x) = (x - 1)(x + 2)(x - 3)^2
+\]
+
+Roots: $1$, $-2$, and $3$ (multiplicity 2).  
+
+Degree = 4.  
+One double root and two simple roots.
+</p>
+
+<p><strong>12.</strong>  
+$f(x) = a(x + 3)x^2(x - 2)$  
+
+Y-intercept occurs at $x = 0$.  
+
+\[
+f(0) = a(3)(0)^2(-2) = 0
+\]
+
+Since $x^2$ is a factor, the y-intercept must be 0.  
+
+Therefore, no value of $a$ can make the y-intercept equal to 12.
+</p>
+
+<hr>
+
+<h3>Challenge</h3>
+
+<p><strong>13.</strong>  
+Example:
+
+\[
+f(x) = (x - 1)^2(x + 3)(x - 4)
+\]
+
+Root at $x = 1$ has even multiplicity.  
+Roots at $x = -3$ and $x = 4$ have odd multiplicity.
+</p>
+
+<p><strong>14.</strong>  
+If degree is odd and leading coefficient is negative:
+
+As $x \to -\infty$, $f(x) \to +\infty$.  
+As $x \to +\infty$, $f(x) \to -\infty$.
+
+The graph rises on the left and falls on the right.
+</p>
+
+<p><strong>15.</strong>  
+Multiplicity affects local behavior at a root:
+
+Odd multiplicity → graph crosses the axis.  
+Even multiplicity → graph touches and bounces.  
+
+Higher multiplicity produces a flatter shape near the root.
+</p>
+
+<hr>
+
+<h3>Justify</h3>
+
+<p><strong>16.</strong>  
+An even multiplicity root does not change the sign of the function because the factor is squared (or raised to an even power). The value remains positive on both sides of the root, so the graph does not cross the axis.
+</p>
+
+<p><strong>17.</strong>  
+The Fundamental Theorem of Algebra states that a polynomial of degree $n$ has exactly $n$ roots (counting multiplicity). This explains why the number of x-intercepts corresponds to the total multiplicities of the factors.
+</p>
+
+<p><strong>18.</strong>  
+Factored form reveals the roots immediately. Knowing the roots, multiplicities, degree, and leading coefficient allows you to determine intercepts and end behavior, making it possible to sketch the graph without plotting many points.
+</p>
