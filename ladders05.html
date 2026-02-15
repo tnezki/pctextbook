@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 05: Unit Circle and Trigonometric Functions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 05: Unit Circle and Trigonometric Functions</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will work with radians, degrees, and the unit circle including positive and negative angles, determine exact trigonometric values for special angles including all six functions, graph and write equations for transformations of sinusoidal functions, solve trigonometric equations on a specified interval, and extend learning through optimization problems involving area, perimeter, cost, and cubic situations.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 5.A: Work with Radians, Degrees, and the Unit Circle</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Convert between radians and degrees and rotate angles in both positive and negative directions on the coordinate plane.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Identify and place positive and negative angles in standard position, recognizing coterminal angles and direction of rotation.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Name an angle in standard position given a point on the unit circle, identifying the corresponding radian measure and quadrant.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 5.B: Determine the Sine, Cosine, and/or Tangent of Special Angles in the Unit Circle</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Determine exact values of sine and cosine for special angles in radians graphically using the unit circle.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Evaluate exact values of sine, cosine, and tangent for special angles in radians by applying unit circle structure and repeated reasoning.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate exact values of cosecant, secant, and cotangent for special angles in radians using reciprocal identities.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 5.C: Graph or Write the Equation for Transformations of a Sinusoidal Function</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Identify the period of a sinusoidal function from its graph by measuring the length of one complete cycle for sine and cosine.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Graph transformations of sinusoidal functions including vertical stretches and compressions, reflections, and vertical and horizontal shifts.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Write the equation of a sinusoidal function given its key features or graph, including amplitude, period, phase shift, and vertical shift.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 5.D: Solve Trigonometric Equations</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve basic trigonometric equations involving sine and cosine in radians on the interval [0, 2&pi;) using unit circle reasoning.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Solve trigonometric equations that require factoring in a trinomial style by finding all solutions on [0, 2&pi;).</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve trigonometric equations involving secant and cosecant by converting to sine and cosine and solving on [0, 2&pi;).</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 5.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve optimization problems involving area and perimeter by writing a function, finding its maximum or minimum, and interpreting the result in context.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Solve optimization problems involving cost by modeling the situation with a function and determining the input that minimizes or maximizes cost.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve optimization problems involving cubic situations by setting up the objective function, finding critical values, and justifying the optimal solution.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 05: Unit Circle and Trigonometric Functions</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can solve optimization problems involving cost and cubic situations by writing and analyzing a function to find the value that minimizes or maximizes the objective, justifying my solution.</td><td class="col-mp">4. Model with Math &amp; 3. Construct Viable Arguments</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can solve optimization problems involving area and perimeter by writing a function, identifying its maximum or minimum, and interpreting the result in context.</td><td class="col-mp">4. Model with Math &amp; 1. Make Sense of Problems &amp; Persevere</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can solve trigonometric equations involving sine, cosine, secant, and cosecant on [0, 2&pi;), including equations requiring trinomial-style factoring.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 1. Make Sense of Problems &amp; Persevere</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can graph transformations of sinusoidal functions and write the equation of a sine or cosine function from its graph or given features.</td><td class="col-mp">6. Attend to Precision &amp; 5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can evaluate exact values of all six trigonometric functions for special angles in radians using the unit circle and reciprocal identities.</td><td class="col-mp">8. Look for Regularity in Repeated Reasoning &amp; 7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can determine exact values of sine and cosine graphically from the unit circle and reason about the coordinates at special radian measures.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can convert between radians and degrees, rotate positive and negative angles in standard position, and name angles given a point on the unit circle.</td><td class="col-mp">5. Use Tools Strategically &amp; 6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Radian-degree conversion tasks and angle rotation activities with positive and negative angles</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Graphical exact value tasks for sine and cosine from the unit circle in radians</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Exact value assessments for all six trig functions at special angles using reciprocal identities</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Sinusoidal transformation graphing tasks and equation-writing from graphs and features</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Trig equation problem sets on [0, 2&pi;) including basic, trinomial-style, and sec/csc equations</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Optimization tasks involving area and perimeter with function modeling and interpretation</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Cost and cubic optimization problems requiring objective function setup and critical value justification</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>

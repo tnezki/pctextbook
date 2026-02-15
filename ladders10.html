@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 10: Exponential and Logarithmic Functions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 10: Exponential and Logarithmic Functions</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will rewrite expressions using properties of logarithms, graph transformations of exponential and logarithmic functions, solve exponential and logarithmic equations &mdash; including those with extraneous solutions &mdash; and extend learning by applying the Power Rule to find derivatives of polynomial functions.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 10.A: Rewrite Expressions Using the Properties of Logarithms</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Condense logarithmic expressions into a single logarithm by applying the product, quotient, and power properties.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Expand logarithmic expressions at Level 1 by applying the product, quotient, and power properties to rewrite a single logarithm.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Expand logarithmic expressions at Level 3, including complex expressions with roots and multiple factors, attending to precision.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 10.B: Graph Basic Transformations of the Family of Logarithmic Functions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Identify and describe key features of exponential and logarithmic functions including domain, range, intercepts, and asymptotes.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Make a table of values, plot points, graph logarithmic functions at Level 1, and determine domain and range.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Graph exponential and logarithmic functions including transformations such as shifts, reflections, and stretches.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 10.C: Solve Equations with Exponents and Logarithms</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve exponential equations at Level 1 by rewriting both sides with a common base and applying properties of exponents.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Solve basic logarithmic equations by converting between logarithmic and exponential form.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve first-degree logarithmic equations by applying logarithm properties and isolating the variable.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 10.D: Solve Logarithmic Functions with Extraneous Solutions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve second-degree logarithmic equations at Level 1 by condensing, converting to exponential form, and solving the resulting quadratic.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Solve second-degree logarithmic equations at Level 2, including complex cases, and check all solutions for extraneous values.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve natural logarithmic equations by applying properties of ln and the inverse relationship between e and the natural logarithm.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 10.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find derivatives of polynomial functions by applying the Power Rule to each term and simplifying.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Evaluate a derivative function at a given value to find the instantaneous rate of change at a specific point.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Apply the Power Rule at Level 2, including functions with fractional and negative exponents.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Apply the Power Rule at Level 3 to more complex polynomial and rational expressions, persevering through multi-step differentiation.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 10: Exponential and Logarithmic Functions</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can apply the Power Rule to complex polynomial and rational expressions with fractional and negative exponents, persevering through multi-step differentiation.</td><td class="col-mp">1. Make Sense of Problems &amp; Persevere &amp; 8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can find derivatives of polynomial functions using the Power Rule, evaluate derivative functions at specific values, and model instantaneous rate of change.</td><td class="col-mp">4. Model with Math &amp; 2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can solve second-degree and natural logarithmic equations, identify extraneous solutions, and justify each step with algebraic reasoning.</td><td class="col-mp">3. Construct Viable Arguments &amp; 6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can solve exponential and logarithmic equations by applying properties of logs and converting between exponential and logarithmic form.</td><td class="col-mp">7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can graph exponential and logarithmic functions including transformations and identify key features such as domain, range, intercepts, and asymptotes.</td><td class="col-mp">5. Use Tools Strategically &amp; 6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can make a table of values and graph logarithmic functions at Level 1, determining domain and range and reasoning about asymptotic behavior.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can rewrite logarithmic expressions by expanding and condensing using the product, quotient, and power properties, looking for and using structure.</td><td class="col-mp">7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Expanding and condensing logarithm expression tasks across Level 1 and Level 3</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Table-and-graph activities for logarithmic functions with domain and range identification</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Graphing tasks for exponential and logarithmic transformations using technology</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Equation-solving problem sets covering exponential, basic log, and first-degree log equations</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Second-degree and natural log equation sets with extraneous solution verification</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Power Rule application tasks with derivative evaluation at specific values</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Advanced Power Rule problem sets with fractional and negative exponents and multi-step differentiation</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>

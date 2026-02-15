@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 03: Function Operations, Inverses, and Piecewise Functions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 03: Function Operations, Inverses, and Piecewise Functions</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will perform operations with functions including composition, write and interpret inverse functions algebraically and graphically, graph and evaluate piecewise-defined functions, and apply graphing form y = a(b(x &minus; h))^n + k to transform parent functions including linear, quadratic, cubic, radical, cube root, absolute value, and reciprocal functions.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 3.A: Complete Operations with Functions, Including Composition</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate and simplify compositions of functions by substituting one function into another and simplifying the result.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find and simplify the composition of functions written in terms of x, including (f &deg; g)(x) and (g &deg; f)(x), attending to order.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Perform and interpret function operations and compositions from mixed representations including equations, tables, and graphs.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 3.B: Write the Equation of the Inverse of a Function or Determine if Two Functions Are Inverses</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find the inverse of a linear function by switching x and y and solving for y, and verify using composition.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find the inverse of multi-step functions by applying inverse operations in reverse order and simplifying.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Determine whether two functions are inverses graphically by identifying reflection symmetry over the line y = x.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 3.C: Graph and/or Evaluate Piecewise-Defined Functions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate piecewise-defined functions by identifying the correct piece for a given input value and substituting.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Graph piecewise-defined functions at Level 1 by graphing each piece over its restricted domain with correct endpoints.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Write the equation of a piecewise-defined function from a graph at Level 1 by identifying each piece&rsquo;s rule and domain restriction.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 3.D: Transform Functions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Apply graphing form y = a(b(x &minus; h))^n + k to graph transformations of parent functions including linear, quadratic, cubic, radical, cube root, absolute value, and reciprocal functions.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Identify and describe the effect of stretch and compression parameters on the shape of a function&rsquo;s graph.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Graph transformations of non-standard function shapes, including W-type and other non-parent forms, by applying transformation rules systematically.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 3.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Simplify the difference quotient for a given function by substituting x+h, expanding, and fully simplifying the expression.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Interpret secant line limits graphically by connecting the behavior of the difference quotient as h approaches zero to the slope of the tangent line.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate secant line limits numerically by computing difference quotient values for smaller and smaller values of h and identifying the limiting value.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Draw tangent lines to curves at a given point and estimate instantaneous rate of change from the slope of the tangent line.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 03: Function Operations, Inverses, and Piecewise Functions</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can evaluate secant line limits numerically and graphically, draw tangent lines at a point, and connect the difference quotient to instantaneous rate of change.</td><td class="col-mp">1. Make Sense of Problems &amp; Persevere &amp; 3. Construct Viable Arguments</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can simplify the difference quotient for a given function by substituting x+h and simplifying, and interpret secant line limits graphically as h approaches zero.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can apply graphing form y = a(b(x &minus; h))^n + k to graph transformations of multiple parent functions and identify the effect of stretch, compression, and reflection parameters.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can graph and evaluate piecewise-defined functions by identifying the correct piece for each input and graphing each piece over its restricted domain.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively &amp; 5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can find the inverse of linear and multi-step functions algebraically and determine whether two functions are inverses graphically using reflection over y = x.</td><td class="col-mp">7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can find and simplify compositions of functions in terms of x, including (f &deg; g)(x) and (g &deg; f)(x), reasoning carefully about the order of composition.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively &amp; 6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can evaluate compositions of functions from equations, tables, and graphs and perform basic function operations, using tools strategically to verify results.</td><td class="col-mp">5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Function composition and operations tasks from mixed representations including equations, tables, and graphs</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Composition of functions in terms of x tasks, including (f &deg; g)(x) and (g &deg; f)(x) with simplification</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Inverse function tasks for linear and multi-step functions with graphical verification over y = x</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Piecewise function evaluation and graphing tasks including writing equations from graphs</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Transformation graphing tasks across multiple parent function families using graphing form</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Difference quotient simplification tasks and graphical secant line limit interpretation</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Numerical secant line limit tables, tangent line drawing tasks, and instantaneous rate of change estimation</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>

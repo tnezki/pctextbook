@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 09: Rational Functions and Asymptotes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 09: Rational Functions and Asymptotes</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will graph transformations of rational functions, identify horizontal, vertical, and slant asymptotes algebraically, analyze reciprocal functions and their key features, and solve polynomial equations &mdash; connecting algebraic structure to graphical behavior while applying mathematical practices to model real-world situations and extend learning through limits of rational functions.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 9.A: Graph Transformations of Rational Functions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Graph basic rational functions by identifying key features including domain, range, and asymptotic behavior from the equation.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Graph rational functions by applying transformations and analyzing how parameters affect the shape and position of the graph.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Determine key features of a rational graph including intercepts, asymptotes, holes, and end behavior from its equation.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 9.B: Identify Horizontal, Vertical, and Slant Asymptotes</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find vertical asymptotes algebraically by identifying values that make the denominator zero after factoring and canceling.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find horizontal asymptotes algebraically by comparing the degrees of the numerator and denominator polynomials.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find slant asymptotes using polynomial division and determine whether a rational function has a horizontal or slant asymptote.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 9.C: Graph Reciprocal Functions and Identify Their Asymptotes</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find x-intercepts of rational functions algebraically by setting the numerator equal to zero and solving.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find y-intercepts of rational functions algebraically by substituting x = 0 and simplifying.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Determine a complete set of features of a rational graph at Level 2, including intercepts, asymptotes, holes, and behavior near asymptotes.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 9.D: Solve and Graph Polynomial Equations</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find all integer roots of a polynomial equation using the Integer Root Theorem and synthetic or long division to factor completely.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find all roots of a polynomial equation including irrational roots by applying the Integer Root Theorem and the quadratic formula.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Write the equation of a polynomial function from its graph by identifying roots, multiplicities, and the leading coefficient.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 9.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find holes in rational functions algebraically by identifying factors that cancel from numerator and denominator.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Write limits from a graph of a rational function using correct limit notation, including one-sided and two-sided limits at holes.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate limits of rational functions using direct substitution when the function is defined at the point.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Evaluate limits of rational functions at holes by factoring, canceling, and substituting to find the limiting value.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 09: Rational Functions and Asymptotes</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can evaluate limits of rational functions at holes by factoring and canceling, and write limits from rational graphs using correct notation.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively &amp; 6. Attend to Precision</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can find holes in rational functions algebraically and evaluate limits using direct substitution, modeling the behavior of the function near undefined points.</td><td class="col-mp">4. Model with Math &amp; 1. Make Sense of Problems &amp; Persevere</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can solve polynomial equations to find all integer and irrational roots using the Integer Root Theorem and write a polynomial function from its graph.</td><td class="col-mp">8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can find x- and y-intercepts of rational functions algebraically and determine a complete set of features of a rational graph.</td><td class="col-mp">7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can find vertical, horizontal, and slant asymptotes algebraically by analyzing the structure of the rational expression.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can graph rational functions by applying transformations and attending to precision when identifying asymptotes, intercepts, and key features.</td><td class="col-mp">6. Attend to Precision &amp; 5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can graph basic rational functions by identifying domain, range, and asymptotic behavior and use tools strategically to verify my graphs.</td><td class="col-mp">5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Basic rational function graphing activities with guided scaffolds and graphing technology</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Transformation-based graphing tasks and precision-focused feature identification</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Algebraic asymptote analysis for vertical, horizontal, and slant cases</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Intercept and feature identification tasks including Level 2 rational graph analysis</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Integer Root Theorem problem sets and polynomial equation writing from graphs</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Hole identification and direct substitution limit tasks with graphical connections</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Limit evaluation at holes with factoring/canceling and formal limit notation from graphs</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>

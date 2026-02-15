@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 01: Foundational Skills</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 01: Foundational Skills</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will recognize and evaluate functions using function notation, simplify expressions involving exponents and radicals, apply basic trigonometry to right triangles using special angles and the six trigonometric ratios, and solve real-world problems involving angles, sides, and forces in triangles using trigonometric relationships.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 1.A: Recognize Functions and Evaluate Expressions Given in Function Notation</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Determine whether a set of ordered pairs represents a function by applying the definition of a function and the vertical line test.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Identify functions given by equations by reasoning about whether each input produces exactly one output.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate function expressions at Level 1 by substituting given values into function notation and simplifying.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 1.B: Simplify Expressions with Exponents and Radicals</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Rewrite exponential expressions by applying the product, quotient, power, zero, and negative exponent rules.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Evaluate basic exponential functions by substituting values and applying properties of exponents to simplify.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Plug values into exponential formulas and evaluate, attending to precision when working with growth and decay models.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 1.C: Apply Basic Trigonometry to Right Triangles</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find exact side lengths in special right triangles (30-60-90 and 45-45-90) and express answers in radical form.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Evaluate sine, cosine, and tangent for angles not on the unit circle using right triangle ratios.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Determine exact values of trigonometric functions for special angles using structure and repeated reasoning.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 1.D: Apply Trigonometry to Real World Problems</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find unknown angles in a right triangle using inverse trigonometric functions and attend to precision in degree measure.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find unknown sides in a right triangle by selecting and applying the appropriate trigonometric ratio.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve real-world force problems by applying trigonometry to decompose vectors and analyze triangle relationships.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 1.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find the average rate of change of a function from a table of values by calculating the ratio of change in output to change in input over a specified interval.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find the average rate of change of a function from an equation by evaluating the function at the endpoints of a given interval and applying the rate of change formula.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find the average rate of change from a graph by identifying output values at two points and reasoning about the slope of the secant line over the interval.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Interpret the average rate of change in context by attaching appropriate units and explaining the meaning of the rate in the situation.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 01: Foundational Skills</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can interpret the average rate of change in context by attaching appropriate units and explaining its meaning in the situation, constructing a viable argument about what the rate communicates.</td><td class="col-mp">3. Construct Viable Arguments &amp; 4. Model with Math</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can find the average rate of change from a table, equation, and graph over a specified interval and reason about the secant line connecting two points.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively &amp; 1. Make Sense of Problems &amp; Persevere</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can evaluate exact values of trigonometric functions for special angles and apply sine, cosine, and tangent to non-unit circle triangles using structure and repeated reasoning.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can find exact side lengths in special right triangles and express answers in radical form, attending to precision.</td><td class="col-mp">6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can rewrite and evaluate exponential expressions by applying exponent rules and plugging values into exponential formulas.</td><td class="col-mp">8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can identify functions by equation and from sets of points, and evaluate function expressions at Level 1 by substituting values into function notation.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can determine whether a set of ordered pairs is a function by applying the definition of a function and using tools such as mapping diagrams and the vertical line test.</td><td class="col-mp">5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Function identification activities using sets of points, tables, and mapping diagrams</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Function notation evaluation tasks and equation-based function identification</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Exponent rule rewriting tasks and exponential formula evaluation problem sets</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Special right triangle exact value tasks with radical expression answers</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Trigonometric exact value assessments and non-unit circle ratio problems</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Average rate of change tasks from tables, equations, and graphs over specified intervals</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Contextual rate of change problems requiring unit interpretation and written explanation</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>

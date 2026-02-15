@@ -1,239 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Module Outline 06: Polynomial Functions and Equations</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 06: POLYNOMIAL FUNCTIONS AND EQUATIONS</title>
 <style>
-@page {
-    margin: 0.25in;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11pt;
-    line-height: 1.3;
-    margin: 0.25in;
-    color: #333333;
-}
-
-/* Main Module Title (Dark Navy) */
-h1 {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
     font-size: 14pt;
-    margin-bottom: 6px;
-    font-weight: 700;
-    color: #1F3A5F;
-}
-
-/* Section Headers (Lighter Blue) */
-h2 {
-    font-size: 12pt;
-    margin-top: 14px;
+    font-weight: bold;
+    padding: 10px 14px;
     margin-bottom: 4px;
-    font-weight: 700;
-    color: #2E5C8A;
-}
-
-/* Essential Standard + Learning Objectives (Same Lighter Blue) */
-.blue-label {
-    font-weight: 700;
-    color: #2E5C8A;
-}
-
-p {
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
     margin-top: 4px;
-    margin-bottom: 4px;
-}
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
 
-ul {
-    margin-top: 2px;
-    margin-bottom: 6px;
-    padding-left: 18px;
-}
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
 </style>
 </head>
-
 <body>
 
-<h1>Module Outline 06: Polynomial Functions and Equations</h1>
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 06: POLYNOMIAL FUNCTIONS AND EQUATIONS</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will understand polynomial functions and equations, including how to graph, factor, and solve them, and how to connect algebraic representations to graphical features while applying mathematical practices to model real-world situations and extend learning through series notation.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 6.A: Graph Quadratic Equations</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Graph quadratic equations by identifying the vertex, axis of symmetry, and key points on parabolas.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Apply transformations to the parent function y = x&sup2; to sketch parabolas with vertical and horizontal shifts, reflections, and stretches.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Use technology strategically to verify my graphs and explore the relationships between parameters in different forms of quadratic equations.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 6.B: Sketch Graphs of Polynomial Functions in Factored Form</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Sketch the graph of a polynomial function from its factored form, using roots to determine key features and behavior.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Create and interpret sign charts to analyze where polynomial functions are positive and negative, connecting structure to behavior.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Look for and use the structure of factored form to make predictions about the shape and key features of polynomial graphs.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 6.C: Connect Intercepts to Factors and Write Equations</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Connect x and y intercepts on a graph to the factors and terms of a polynomial equation.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Write the equation of a polynomial function given its graph, reasoning abstractly about coefficients and factors.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Sketch polynomial graphs from sign charts and determine y-intercepts by attending to precision in algebraic computations.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 6.D: Determine Key Features of Polynomial Functions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Identify and interpret key features of polynomial functions, including degree, leading coefficient, x and y intercepts, and end behavior.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Determine whether polynomial functions exhibit even or odd degree behavior from their graphs and look for regularity in patterns.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Analyze the effects of degree, roots, and leading coefficient on the shape and position of polynomial graphs.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Use sigma notation to express series and sums involving algebraic expressions, making sense of complex notation while persevering through multi-step problems.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Model real-world situations using polynomial functions, constructing viable arguments about appropriate models and justifying my reasoning with mathematical evidence.</div>
 
-<p><span class="blue-label">Essential Standard</span><br>
-Students will understand polynomial functions and equations, including how to graph, factor, and solve them, and how to connect algebraic representations to graphical features while applying mathematical practices to model real-world situations and extend learning through series notation.
-</p>
+</div>
 
-<h2>Section 6.A: Graph Quadratic Equations</h2>
-
-<p><span class="blue-label">Learning Objectives – I can...</span></p>
-<ul>
-<li>Graph quadratic equations by identifying the vertex, axis of symmetry, and key points on parabolas.</li>
-<li>Apply transformations to the parent function y = x² to sketch parabolas with vertical and horizontal shifts, reflections, and stretches.</li>
-<li>Use technology strategically to verify my graphs and explore the relationships between parameters in different forms of quadratic equations.</li>
-</ul>
-
-<h2>Section 6.B: Sketch Graphs of Polynomial Functions in Factored Form</h2>
-
-<p><span class="blue-label">Learning Objectives – I can...</span></p>
-<ul>
-<li>Sketch the graph of a polynomial function from its factored form, using roots to determine key features and behavior.</li>
-<li>Create and interpret sign charts to analyze where polynomial functions are positive and negative, connecting structure to behavior.</li>
-<li>Look for and use the structure of factored form to make predictions about the shape and key features of polynomial graphs.</li>
-</ul>
-
-<h2>Section 6.C: Connect Intercepts to Factors and Write Equations</h2>
-
-<p><span class="blue-label">Learning Objectives – I can...</span></p>
-<ul>
-<li>Connect x and y intercepts on a graph to the factors and terms of a polynomial equation.</li>
-<li>Write the equation of a polynomial function given its graph, reasoning abstractly about coefficients and factors.</li>
-<li>Sketch polynomial graphs from sign charts and determine y-intercepts by attending to precision in algebraic computations.</li>
-</ul>
-
-<h2>Section 6.D: Determine Key Features of Polynomial Functions</h2>
-
-<p><span class="blue-label">Learning Objectives – I can...</span></p>
-<ul>
-<li>Identify and interpret key features of polynomial functions, including degree, leading coefficient, x and y intercepts, and end behavior.</li>
-<li>Determine whether polynomial functions exhibit even or odd degree behavior from their graphs and look for regularity in patterns.</li>
-<li>Analyze the effects of degree, roots, and leading coefficient on the shape and position of polynomial graphs.</li>
-</ul>
-
-<h2>Above and Beyond: Extended Learning</h2>
-
-<p><span class="blue-label">Learning Objectives – I can...</span></p>
-<ul>
-<li>Use sigma notation to express series and sums involving algebraic expressions, making sense of complex notation while persevering through multi-step problems.</li>
-<li>Model real-world situations using polynomial functions, constructing viable arguments about appropriate models and justifying my reasoning with mathematical evidence.</li>
-</ul>
-
-<div style="page-break-before: always;"></div>
-
-<h1 style="color:#2E5C8A; font-size:14pt; font-weight:700;">
-LEARNING LADDER 06: POLYNOMIAL FUNCTIONS AND EQUATIONS
-</h1>
-
-<p>
-This learning ladder contains 7 rungs aligned with the 8 Math Practices.
-The bottom 5 rungs represent essential learning that average students should master.
-The top 2 rungs represent extended learning for advanced students.
-</p>
-
-<table style="width:100%; border-collapse:collapse; font-size:11pt;">
-<tr style="background-color:#E6E6E6; font-weight:700;">
-    <td style="border:1px solid #999; padding:6px;">Rung</td>
-    <td style="border:1px solid #999; padding:6px;">I Can Statement</td>
-    <td style="border:1px solid #999; padding:6px;">Math Practice</td>
-    <td style="border:1px solid #999; padding:6px;">Level</td>
-</tr>
-
-<!-- Extended Rungs -->
-<tr style="background-color:#F3E5C5;">
-    <td style="border:1px solid #999; padding:6px; text-align:center;">7</td>
-    <td style="border:1px solid #999; padding:6px;">
-        I can model real-world situations with polynomial functions, construct viable arguments about appropriate models, and justify my reasoning.
-    </td>
-    <td style="border:1px solid #999; padding:6px;">
-        4. Model with Math & 3. Construct Arguments
-    </td>
-    <td style="border:1px solid #999; padding:6px;">Extended</td>
-</tr>
-
-<tr style="background-color:#F3E5C5;">
-    <td style="border:1px solid #999; padding:6px; text-align:center;">6</td>
-    <td style="border:1px solid #999; padding:6px;">
-        I can use sigma notation and summation properties to solve problems involving series and make sense of complex expressions.
-    </td>
-    <td style="border:1px solid #999; padding:6px;">
-        1. Make Sense of Problems & Persevere
-    </td>
-    <td style="border:1px solid #999; padding:6px;">Extended</td>
-</tr>
-
-<!-- Essential Rungs -->
-<tr style="background-color:#DBE5F1;">
-    <td style="border:1px solid #999; padding:6px; text-align:center;">5</td>
-    <td style="border:1px solid #999; padding:6px;">
-        I can determine key features of polynomial functions including end behavior, turning points, and intercepts.
-    </td>
-    <td style="border:1px solid #999; padding:6px;">
-        8. Look for Regularity in Repeated Reasoning
-    </td>
-    <td style="border:1px solid #999; padding:6px;">Essential</td>
-</tr>
-
-<tr style="background-color:#DBE5F1;">
-    <td style="border:1px solid #999; padding:6px; text-align:center;">4</td>
-    <td style="border:1px solid #999; padding:6px;">
-        I can connect x and y intercepts to factors and write the equation of a polynomial function given its graph.
-    </td>
-    <td style="border:1px solid #999; padding:6px;">
-        2. Reason Abstractly & Quantitatively
-    </td>
-    <td style="border:1px solid #999; padding:6px;">Essential</td>
-</tr>
-
-<tr style="background-color:#DBE5F1;">
-    <td style="border:1px solid #999; padding:6px; text-align:center;">3</td>
-    <td style="border:1px solid #999; padding:6px;">
-        I can sketch the graph of a polynomial function from its factored form and use the roots to determine key features.
-    </td>
-    <td style="border:1px solid #999; padding:6px;">
-        7. Look for & Use Structure
-    </td>
-    <td style="border:1px solid #999; padding:6px;">Essential</td>
-</tr>
-
-<tr style="background-color:#DBE5F1;">
-    <td style="border:1px solid #999; padding:6px; text-align:center;">2</td>
-    <td style="border:1px solid #999; padding:6px;">
-        I can apply transformations to parent functions and attend to precision when describing shifts, reflections, and stretches.
-    </td>
-    <td style="border:1px solid #999; padding:6px;">
-        6. Attend to Precision
-    </td>
-    <td style="border:1px solid #999; padding:6px;">Essential</td>
-</tr>
-
-<tr style="background-color:#DBE5F1;">
-    <td style="border:1px solid #999; padding:6px; text-align:center;">1</td>
-    <td style="border:1px solid #999; padding:6px;">
-        I can graph quadratic equations by identifying the vertex, axis of symmetry, and key points.
-    </td>
-    <td style="border:1px solid #999; padding:6px;">
-        5. Use Tools Strategically
-    </td>
-    <td style="border:1px solid #999; padding:6px;">Essential</td>
-</tr>
-
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 06: POLYNOMIAL FUNCTIONS AND EQUATIONS</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can model real-world situations with polynomial functions, construct viable arguments about appropriate models, and justify my reasoning.</td><td class="col-mp">4. Model with Math &amp; 3. Construct Arguments</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can use sigma notation and summation properties to solve problems involving series and make sense of complex expressions.</td><td class="col-mp">1. Make Sense of Problems &amp; Persevere</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can determine key features of polynomial functions including end behavior, turning points, and intercepts.</td><td class="col-mp">8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can connect x and y intercepts to factors and write the equation of a polynomial function given its graph.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can sketch the graph of a polynomial function from its factored form and use the roots to determine key features.</td><td class="col-mp">7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can apply transformations to parent functions and attend to precision when describing shifts, reflections, and stretches.</td><td class="col-mp">6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can graph quadratic equations by identifying the vertex, axis of symmetry, and key points.</td><td class="col-mp">5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
 </table>
-<br><br>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Graphing activities with guided scaffolds and graphing technology</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Transformation problems and function notation applications</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Sketching from factored form and sign analysis</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Writing equations from graphs and intercept identification</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Feature identification worksheets and graphing analysis</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Sigma notation application and series problem sets</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Real-world modeling project and mathematical argumentation</td></tr>
+</table>
 
-<h2 style="color:#2E5C8A; font-size:12pt; font-weight:700;">
-Progress Tracking
-</h2>
-
-<p>
-Students self-assess on each rung using the following scale:
-</p>
-
-<p>
-Not Yet: I need more instruction and practice<br>
-Getting There: I understand most of it but need more practice<br>
-Got It!: I can do this independently
-</p>
-
-<h2 style="color:#2E5C8A; font-size:12pt; font-weight:700; margin-top:12px;">
-Assessment Methods
-</h2>
-
-<p>
-Rung 1: Graphing activities with guided scaffolds and graphing technology<br>
-Rung 2: Transformation problems and function notation applications<br>
-Rung 3: Sketching from factored form and sign analysis<br>
-Rung 4: Writing equations from graphs and intercept identification<br>
-Rung 5: Feature identification worksheets and graphing analysis<br>
-Rung 6: Sigma notation application and series problem sets<br>
-Rung 7: Real-world modeling project and mathematical argumentation
-</p>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 04: Function Analysis and Domain/Range</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 04: Function Analysis and Domain/Range</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will identify domain and range from graphs, describe function behavior including increasing and decreasing intervals, intercepts, and extrema, classify functions as even or odd algebraically and graphically, state end behavior of polynomial and rational functions, and extend learning by evaluating limits as x approaches positive and negative infinity.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 4.A: Identify Domain and Range from Graphs</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find the domain of a function from its graph by identifying all input values for which the function is defined, using interval notation.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Find the range of a function from its graph by identifying all output values the function produces, using interval notation.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Identify domain and range visually from a variety of graph types including continuous, discrete, and piecewise functions.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 4.B: Describe Functions &mdash; Increasing/Decreasing, Intercepts, Extrema</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Identify whether a function is increasing, decreasing, or constant on an interval and classify it as linear or nonlinear from its graph.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;State the intervals on which a function is increasing or decreasing using interval notation, reasoning about the direction of the graph.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Identify x- and y-intercepts, local maxima, and local minima from a graph and distinguish between positive and negative intervals.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 4.C: Identify Even and Odd Functions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Classify polynomial functions as even, odd, or neither by testing algebraic symmetry using f(&minus;x) = f(x) or f(&minus;x) = &minus;f(x).</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Identify even and odd functions from a graph by recognizing y-axis symmetry for even functions and origin symmetry for odd functions.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Use tables of values to determine whether a function is even, odd, or neither by checking for symmetry in the input-output pairs.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 4.D: State the End Behavior of a Polynomial or Rational Function</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Describe the end behavior of a function graphically using arrow notation, identifying what happens as x approaches positive and negative infinity.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Determine the end behavior of a polynomial or rational function algebraically from its leading term and degree.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Identify polynomial terminology including degree, leading coefficient, standard form, and classify polynomials by name and number of terms.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 4.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find limits as x approaches positive and negative infinity from a table of values by recognizing the value the function approaches.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Write limit notation for expressions as x approaches infinity, interpreting the behavior of functions from their algebraic form.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Write limits as x approaches infinity for logarithmic and exponential functions and interpret their long-run behavior.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Identify vertical and horizontal asymptotes as limits graphically, writing limit notation to describe behavior near asymptotes.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 04: Function Analysis and Domain/Range</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can write limit notation for expressions, logarithmic and exponential functions, and identify vertical and horizontal asymptotes as limits graphically.</td><td class="col-mp">3. Construct Viable Arguments &amp; 2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can find limits as x approaches positive and negative infinity from tables and expressions, and connect limit behavior to end behavior and asymptotes.</td><td class="col-mp">1. Make Sense of Problems &amp; Persevere &amp; 8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can determine end behavior of polynomial and rational functions algebraically and graphically using arrow notation and leading term analysis.</td><td class="col-mp">8. Look for Regularity in Repeated Reasoning &amp; 7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can classify functions as even, odd, or neither algebraically using f(&minus;x), graphically using symmetry, and from tables of values.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can identify increasing and decreasing intervals, intercepts, local extrema, and positive and negative intervals of a function from its graph.</td><td class="col-mp">6. Attend to Precision &amp; 2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can find the domain and range of a function from its graph using interval notation for continuous, discrete, and piecewise function types.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can identify domain and range visually from a variety of graphs and use tools strategically including graphing technology to explore function behavior.</td><td class="col-mp">5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Visual domain and range identification tasks from a variety of graph types</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Domain and range problems using interval notation for continuous, discrete, and piecewise graphs</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Function behavior analysis tasks: increasing/decreasing intervals, intercepts, extrema, and sign charts</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Even and odd function classification tasks using algebraic tests, graphs, and tables</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>End behavior tasks using arrow notation and algebraic leading term analysis</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Limit-to-infinity tasks from tables and expressions with end behavior connections</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Limit notation writing tasks for expressions, logarithmic/exponential functions, and asymptote identification</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>

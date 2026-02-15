@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 08: Polynomial and Rational Expressions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 08: Polynomial and Rational Expressions</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will factor polynomial expressions, perform operations with rational expressions, simplify complex fractions, and divide polynomials, connecting algebraic structure to procedural fluency while applying mathematical practices to model real-world situations and extend learning through limits.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 8.A: Factor Expressions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Factor trinomial expressions using structural patterns including leading coefficient recognition (Level 1 and Level 2).</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Factor expressions with a binomial greatest common factor by identifying and extracting common polynomial factors.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Look for and use the structure of polynomial expressions to choose and apply the most efficient factoring strategy.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 8.B: Complete Operations with Rational Expressions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Simplify rational expressions by factoring numerators and denominators and canceling common factors, attending to restrictions on the variable.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Multiply and divide rational expressions using factoring and cancellation, reasoning abstractly about equivalent forms.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Add and subtract rational expressions by finding common denominators and combining numerators precisely.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 8.C: Simplify Complex Fractions</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Add and subtract fractions containing variables by identifying least common denominators and simplifying results.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Multiply and divide fractions with variables, including using complex fraction structure as a division strategy.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Simplify complex fractions by rewriting them as division problems or using the LCD method, persevering through multi-step simplifications.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 8.D: Divide Polynomials</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Divide polynomials using long division, connecting the process to numerical long division and interpreting remainders.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Apply synthetic division as an efficient algorithm for dividing by linear binomials and verify using the box method.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Use the polynomial division box method to organize and confirm division results, looking for regularity across methods.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 8.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate one-sided and two-sided limits from graphs, identifying left-hand and right-hand limit values at a point.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Classify discontinuities from graphs as continuous, infinite, jump, or removable, and express limits using formal notation for logarithmic and exponential functions.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Find limits from a table of values and make sense of limit behavior as inputs approach a value from either direction.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 08: Polynomial and Rational Expressions</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can evaluate limits from a graph, interpret one-sided and two-sided limits, and analyze continuity, infinite, jump, and removable discontinuities.</td><td class="col-mp">4. Model with Math &amp; 3. Construct Arguments</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can evaluate limits from tables and graphs including logarithmic and exponential functions, and write limit notation correctly.</td><td class="col-mp">1. Make Sense of Problems &amp; Persevere</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can divide polynomials using long division, synthetic division, and the box method, and interpret the remainder.</td><td class="col-mp">8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can simplify complex fractions by applying operations with fractions containing variables, and reason about equivalent forms.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can add, subtract, multiply, and divide rational expressions by finding common denominators and attending to precision.</td><td class="col-mp">6. Attend to Precision</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can simplify rational expressions and multiply or divide rational expressions by factoring and canceling common factors.</td><td class="col-mp">7. Look for &amp; Use Structure</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can factor polynomial expressions including trinomials (L1 and L2) and expressions with a binomial GCF using structure and strategic tools.</td><td class="col-mp">5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Factoring activities with guided scaffolds and algebra tiles or structure-based strategies</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Rational expression simplification and multiplication/division problem sets</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Adding and subtracting rational expressions with common denominator work</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Complex fraction simplification tasks and equivalent form analysis</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Polynomial division using multiple methods and remainder interpretation</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Limit notation and table-based limit evaluation with logarithmic/exponential graphs</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Graphical limit analysis project and argumentation about continuity and discontinuity</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 02: Solving and Systems</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; background: #f0f0f0; color: #000; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.3in auto;
+    padding: 0.25in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    page-break-after: always;
+  }
+  /* ── Navy title bar ── */
+  .title-bar {
+    background: #1F3864;
+    color: #fff;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 10px 14px;
+    margin-bottom: 4px;
+  }
+  /* ── Essential Standard ── */
+  .essential-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+  .essential-body {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  /* ── Section header ── */
+  .section-header {
+    background: #D6E4F0;
+    color: #1F3864;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 1px solid #1F3864;
+    margin-top: 4px;
+  }
+  /* ── Obj label ── */
+  .obj-label {
+    background: #EAF1F8;
+    color: #1F3864;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 4px 12px;
+    border: 1px solid #888888;
+  }
+  /* ── Obj rows ── */
+  .obj-row {
+    padding: 5px 12px 5px 28px;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+  }
+  .obj-row.even { background: #FFFFFF; }
+  .obj-row.odd  { background: #EAF1F8; }
+  .spacer { height: 5px; }
+
+  /* ── Ladder table ── */
+  .ladder-desc {
+    border: 1px solid #AAAAAA;
+    padding: 7px 12px;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  table.ladder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    table-layout: fixed;
+  }
+  table.ladder th {
+    background: #1F3864;
+    color: #fff;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+  table.ladder td {
+    font-size: 10pt;
+    padding: 6px 8px;
+    border: 1px solid #AAAAAA;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.ladder .col-rung  { width: 5%; text-align: center; font-weight: bold; color: #1F3864; font-size: 11pt; }
+  table.ladder .col-ican  { width: 57%; }
+  table.ladder .col-mp    { width: 24%; }
+  table.ladder .col-level { width: 14%; text-align: center; font-weight: bold; color: #1F3864; }
+  tr.extended td { background: #D9E2F3; }
+  tr.ess-even td { background: #EAF1F8; }
+  tr.ess-odd  td { background: #F5FAFF; }
+
+  /* ── Two-col blocks (Progress / Assessment) ── */
+  .block-header {
+    background: #1F3864;
+    color: #fff;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+  table.two-col {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+  }
+  table.two-col td {
+    font-size: 10.5pt;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  table.two-col .label-col { width: 19%; font-weight: bold; color: #1F3864; }
+  table.two-col tr.tc-even td { background: #EAF1F8; }
+  table.two-col tr.tc-odd  td { background: #FFFFFF; }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 100%; padding: 0.25in; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1: OUTLINE ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Module 02: Solving and Systems</div>
+<div class="spacer"></div>
+<div class="essential-header">Essential Standard</div>
+<div class="essential-body">Students will write equations of lines from given information in multiple forms, solve multi-step linear and quadratic equations including equations with variables in the denominator, solve linear systems using substitution and elimination, solve nonlinear systems involving lines and parabolas, and extend learning by writing and simplifying the difference quotient to express average rate of change from x to x+h.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 2.A: Write the Equation of a Line from Given Information</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Write the equation of a line in slope-intercept form and point-slope form, preferring y = a(x &minus; h) + k, given slope and a point or two points.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Write the equation of a line from a table of values, a graph, or two coordinate points by identifying slope and using point-slope form.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Write and interpret the equation of a line in real-life situations, modeling the relationship between quantities and explaining slope and intercept in context.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 2.B: Solve Linear and Quadratic Equations</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve multi-step linear equations with variables on both sides and the distributive property, attending to precision in each step.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Solve quadratic equations by factoring to find rational solutions, including cases requiring rearrangement into standard form.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve equations with variables in the denominator of the form 3/x = ... that result in linear or quadratic equations, checking for extraneous solutions.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 2.C: Solve Linear Systems of Equations</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve a system of linear equations using substitution by isolating a variable and substituting into the second equation.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Solve a system of linear equations using elimination by adding or subtracting equations to eliminate a variable.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Interpret solutions to linear systems graphically by identifying the point of intersection and explaining what it means in context.</div>
+<div class="spacer"></div>
+<div class="section-header">Section 2.D: Solve Nonlinear Systems of Equations</div>
+<div class="obj-label">Learning Objectives – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Solve a system consisting of a line and a parabola algebraically and verify solutions graphically.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Solve a system of two parabolas by setting the equations equal and solving the resulting equation.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Interpret solutions to nonlinear systems graphically by identifying intersection points and reasoning about the number of solutions.</div>
+<div class="spacer"></div>
+<div class="section-header">Above and Beyond: Extended Learning (Section 2.E)</div>
+<div class="obj-label">Learning Objectives for Above and Beyond – I can…</div>
+<div class="obj-row even">•&nbsp;&nbsp;Simplify the difference quotient for a given function by substituting x+h, expanding, and simplifying the expression.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Evaluate function expressions at Level 2 by substituting complex expressions including binomials into function notation.</div>
+<div class="obj-row even">•&nbsp;&nbsp;Evaluate function expressions at Level 3, including compositions and multi-step substitutions, reasoning abstractly throughout.</div>
+<div class="obj-row odd">•&nbsp;&nbsp;Interpret secant line limits graphically to connect the difference quotient to the concept of instantaneous rate of change.</div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2: LADDER ═══════════════════ -->
+<div class="page">
+<div class="title-bar">Learning Ladder  Module 02: Solving and Systems</div>
+<div class="spacer"></div>
+<div class="ladder-desc">This learning ladder contains 7 rungs aligned with the 8 Math Practices. The bottom 5 rungs represent essential learning that average students should master. The top 2 rungs represent extended learning for advanced students.</div>
+<div class="spacer"></div>
+<table class="ladder">
+<colgroup><col class="col-rung"><col class="col-ican"><col class="col-mp"><col class="col-level"></colgroup>
+<thead><tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>Level</th></tr></thead>
+<tbody>
+<tr class="extended"><td class="col-rung">7</td><td class="col-ican">I can simplify the difference quotient and evaluate complex function expressions at Levels 2 and 3, and interpret secant line limits graphically to connect to instantaneous rate of change.</td><td class="col-mp">1. Make Sense of Problems &amp; Persevere &amp; 2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Extended</td></tr>
+<tr class="extended"><td class="col-rung">6</td><td class="col-ican">I can write and simplify an expression for the average rate of change from x to x+h by substituting into the difference quotient formula and simplifying.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 8. Look for Regularity in Repeated Reasoning</td><td class="col-level">Extended</td></tr>
+<tr class="ess-even"><td class="col-rung">5</td><td class="col-ican">I can solve nonlinear systems involving a line and a parabola or two parabolas algebraically, and interpret the number and meaning of solutions graphically.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively &amp; 5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">4</td><td class="col-ican">I can solve linear systems of equations using substitution and elimination, and interpret the solution graphically as the point of intersection.</td><td class="col-mp">7. Look for &amp; Use Structure &amp; 4. Model with Math</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">3</td><td class="col-ican">I can solve multi-step linear equations, quadratic equations by factoring, and equations with variables in the denominator, checking for extraneous solutions.</td><td class="col-mp">6. Attend to Precision &amp; 1. Make Sense of Problems &amp; Persevere</td><td class="col-level">Essential</td></tr>
+<tr class="ess-odd"><td class="col-rung">2</td><td class="col-ican">I can write the equation of a line from a table, graph, or two points using point-slope form and slope-intercept form, reasoning about slope and intercept.</td><td class="col-mp">2. Reason Abstractly &amp; Quantitatively</td><td class="col-level">Essential</td></tr>
+<tr class="ess-even"><td class="col-rung">1</td><td class="col-ican">I can write the equation of a line from real-life situations and given information in y = a(x &minus; h) + k form, interpreting slope and intercept in context.</td><td class="col-mp">4. Model with Math &amp; 5. Use Tools Strategically</td><td class="col-level">Essential</td></tr>
+</tbody></table>
+<div class="spacer"></div>
+<div class="block-header">Progress Tracking</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Not Yet:</td><td>I need more instruction and practice</td></tr>
+<tr class="tc-odd"><td class="label-col">Getting There:</td><td>I understand most of it but need more practice</td></tr>
+<tr class="tc-even"><td class="label-col">Got It!</td><td>I can do this independently</td></tr>
+</table>
+<div class="spacer"></div>
+<div class="block-header">Assessment Methods</div>
+<table class="two-col">
+<tr class="tc-even"><td class="label-col">Rung 1:</td><td>Equation-writing tasks from real-life situations using point-slope and slope-intercept forms</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 2:</td><td>Line equation tasks from tables, graphs, and coordinate pairs</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 3:</td><td>Multi-step linear, factorable quadratic, and variable-in-denominator equation problem sets</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 4:</td><td>Linear system tasks solved by substitution and elimination with graphical verification</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 5:</td><td>Nonlinear system problems involving line-parabola and parabola-parabola pairs with graphical interpretation</td></tr>
+<tr class="tc-odd"><td class="label-col">Rung 6:</td><td>Difference quotient simplification tasks with Level 2 function substitutions</td></tr>
+<tr class="tc-even"><td class="label-col">Rung 7:</td><td>Level 3 function evaluation, complex difference quotient tasks, and secant line limit interpretation from graphs</td></tr>
+</table>
+
+</div>
+
+</body>
+</html>
