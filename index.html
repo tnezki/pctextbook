@@ -29,16 +29,25 @@ header {
 .semesters {
     display: flex;
     gap: 40px;
-    align-items: flex-start;
+    align-items: stretch;   /* This is the key */
 }
 
+
 .semester {
-    flex: 1;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
 }
+
+.semester .module:last-child {
+    margin-bottom: 0;
+}
+
 
 .semester h2 {
     border-bottom: 4px solid #d4a300;
     padding-bottom: 8px;
+    color: #0b2a4a;
 }
 
 .module {
@@ -80,6 +89,46 @@ a:hover {
     font-size: 0.95rem;
 }
 
+/* Bottom Resource Box */
+
+.bottom-resources {
+    max-width: 1300px;
+    margin: 50px auto 60px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.bottom-resources h2 {
+    text-align: center;
+    color: #0b2a4a;
+    margin-bottom: 25px;
+    border-bottom: 4px solid #d4a300;
+    padding-bottom: 10px;
+}
+
+.resource-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.resource-links a {
+    background: #0b2a4a;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.resource-links a:hover {
+    background: #d4a300;
+    color: #0b2a4a;
+}
+
 @media (max-width: 900px) {
     .semesters {
         flex-direction: column;
@@ -91,8 +140,8 @@ a:hover {
 <body>
 
 <header>
-    <h1>Precalculus Curriculum</h1>
-    <p>First and Second Semester Learning Targets</p>
+<h1>Precalculus Curriculum</h1>
+<p>First and Second Semester Learning Targets</p>
 </header>
 
 <div class="container">
@@ -101,88 +150,93 @@ a:hover {
 <!-- ================= FIRST SEMESTER ================= -->
 
 <div class="semester">
-<h2>First Semester Topics</h2>
+<h2>First Semester</h2>
 
+<!-- MODULE 01 -->
 <div class="module">
-<h3>Module 1. Foundational Skills</h3>
+<h3>Module 01: Foundational Skills</h3>
 <ul>
-<li><a href="1a.html">1.A Recognize functions and evaluate expressions</a></li>
-<li><a href="1b.html">1.B Simplify expressions with exponents and radicals</a></li>
-<li><a href="1c.html">1.C Apply basic trigonometry to right triangles</a></li>
-<li><a href="1d.html">1.D Apply trigonometry to real world problems</a></li>
-<li><a href="1e.html">1.E Calculate average rate of change</a></li>
+<li><a href="1a.html">1.A Recognize Functions and Evaluate Expressions Given in Function Notation</a></li>
+<li><a href="1b.html">1.B Simplify Expressions with Exponents and Radicals</a></li>
+<li><a href="1c.html">1.C Apply Basic Trigonometry to Right Triangles</a></li>
+<li><a href="1d.html">1.D Apply Trigonometry to Real World Problems</a></li>
+<li><a href="1e.html">1.E Average Rate of Change</a></li>
 </ul>
 <div class="resources">
 <a href="summary01.html">Summary</a> |
-<a href="bank01.html">Bank</a> |
+<a href="bank01.html">Master Bank</a> |
 <a href="notes01.html">Teacher Notes</a> |
 <a href="ladders01.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 02 -->
 <div class="module">
-<h3>Module 2. Solving and Systems</h3>
+<h3>Module 02: Solving and Systems</h3>
 <ul>
-<li><a href="2a.html">2.A Write the equation of a line</a></li>
-<li><a href="2b.html">2.B Solve linear and quadratic equations</a></li>
-<li><a href="2c.html">2.C Solve linear systems of equations</a></li>
-<li><a href="2d.html">2.D Solve nonlinear systems of equations</a></li>
-<li><a href="2e.html">2.E Write and simplify average rate of change expressions</a></li>
+<li><a href="2a.html">2.A Write the Equation of a Line from Given Information</a></li>
+<li><a href="2b.html">2.B Solve Linear and Quadratic Equations</a></li>
+<li><a href="2c.html">2.C Solve Linear Systems of Equations</a></li>
+<li><a href="2d.html">2.D Solve Nonlinear Systems of Equations</a></li>
+<li><a href="2e.html">2.E Difference Quotient</a></li>
 </ul>
 <div class="resources">
 <a href="summary02.html">Summary</a> |
-<a href="bank02.html">Bank</a> |
+<a href="bank02.html">Master Bank</a> |
 <a href="notes02.html">Teacher Notes</a> |
 <a href="ladders02.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 03 -->
 <div class="module">
-<h3>Module 3. Function Operations, Inverses, and Piecewise</h3>
+<h3>Module 03: Function Operations, Inverses, and Piecewise Functions</h3>
 <ul>
-<li><a href="3a.html">3.A Complete operations with functions</a></li>
-<li><a href="3b.html">3.B Write equations of inverse functions</a></li>
-<li><a href="3c.html">3.C Graph and evaluate piecewise-defined functions</a></li>
-<li><a href="3d.html">3.D Transform functions</a></li>
-<li><a href="3e.html">3.E Simplify and manipulate the difference quotient</a></li>
+<li><a href="3a.html">3.A Complete Operations with Functions, Including Composition</a></li>
+<li><a href="3b.html">3.B Write the Equation of the Inverse of a Function</a></li>
+<li><a href="3c.html">3.C Graph and/or Evaluate Piecewise-Defined Functions</a></li>
+<li><a href="3d.html">3.D Transform Functions</a></li>
+<li><a href="3e.html">3.E Secant Line Limits</a></li>
 </ul>
 <div class="resources">
 <a href="summary03.html">Summary</a> |
-<a href="bank03.html">Bank</a> |
+<a href="bank03.html">Master Bank</a> |
 <a href="notes03.html">Teacher Notes</a> |
 <a href="ladders03.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 04 -->
 <div class="module">
-<h3>Module 4. Function Analysis and Domain/Range</h3>
+<h3>Module 04: Function Analysis and Domain/Range</h3>
 <ul>
-<li><a href="4a.html">4.A Identify domain and range from graphs</a></li>
-<li><a href="4b.html">4.B Describe functions and their properties</a></li>
-<li><a href="4c.html">4.C Identify even and odd functions</a></li>
-<li><a href="4d.html">4.D State end behavior of functions</a></li>
-<li><a href="4e.html">4.E Limit as x approaches infinity</a></li>
+<li><a href="4a.html">4.A Identify Domain and Range from Graphs</a></li>
+<li><a href="4b.html">4.B Describe Functions – Increasing/Decreasing, Intercepts, Extrema</a></li>
+<li><a href="4c.html">4.C Identify Even and Odd Functions</a></li>
+<li><a href="4d.html">4.D State End Behavior of a Polynomial or Rational Function</a></li>
+<li><a href="4e.html">4.E Limits at Infinity</a></li>
 </ul>
 <div class="resources">
 <a href="summary04.html">Summary</a> |
-<a href="bank04.html">Bank</a> |
+<a href="bank04.html">Master Bank</a> |
 <a href="notes04.html">Teacher Notes</a> |
 <a href="ladders04.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 05 -->
 <div class="module">
-<h3>Module 5. Unit Circle and Trigonometric Identities</h3>
+<h3>Module 05: Unit Circle and Trigonometric Functions</h3>
 <ul>
-<li><a href="5a.html">5.A Work with radians, degrees, and unit circle</a></li>
-<li><a href="5b.html">5.B Determine sine, cosine, tangent of special angles</a></li>
-<li><a href="5c.html">5.C Graph sinusoidal functions</a></li>
-<li><a href="5d.html">5.D Solve trigonometric equations</a></li>
-<li><a href="5e.html">5.E Optimization problems</a></li>
+<li><a href="5a.html">5.A Work with Radians, Degrees, and the Unit Circle</a></li>
+<li><a href="5b.html">5.B Determine Exact Trigonometric Values</a></li>
+<li><a href="5c.html">5.C Transformations of Sinusoidal Functions</a></li>
+<li><a href="5d.html">5.D Solve Trigonometric Equations</a></li>
+<li><a href="5e.html">5.E Optimization</a></li>
 </ul>
 <div class="resources">
 <a href="summary05.html">Summary</a> |
-<a href="bank05.html">Bank</a> |
+<a href="bank05.html">Master Bank</a> |
 <a href="notes05.html">Teacher Notes</a> |
 <a href="ladders05.html">Ladders</a>
 </div>
@@ -193,95 +247,111 @@ a:hover {
 <!-- ================= SECOND SEMESTER ================= -->
 
 <div class="semester">
-<h2>Second Semester Topics</h2>
+<h2>Second Semester</h2>
 
+<!-- MODULE 06 -->
 <div class="module">
-<h3>Module 6. Polynomial Functions and Equations</h3>
+<h3>Module 06: Polynomial Functions and Equations</h3>
 <ul>
-<li><a href="6a.html">6.A Graph quadratic equations</a></li>
-<li><a href="6b.html">6.B Sketch graphs of polynomial functions</a></li>
-<li><a href="6c.html">6.C Connect intercepts to factors</a></li>
-<li><a href="6d.html">6.D Determine key features of polynomials</a></li>
-<li><a href="6e.html">6.E Use sigma notation</a></li>
+<li><a href="6a.html">6.A Graph Quadratic Equations</a></li>
+<li><a href="6b.html">6.B Sketch Graphs of Polynomial Functions</a></li>
+<li><a href="6c.html">6.C Connect Intercepts to Factors</a></li>
+<li><a href="6d.html">6.D Determine Key Features of Polynomial Functions</a></li>
+<li><a href="6e.html">6.E Sigma Notation</a></li>
 </ul>
 <div class="resources">
 <a href="summary06.html">Summary</a> |
-<a href="bank06.html">Bank</a> |
-<a href="https://docs.google.com/document/d/13BQJHZ-prDJT33Ss5MnDwvhkQ5u7IVJ9RJMoucJsZyE/edit?usp=sharing">Teacher Notes</a> |
+<a href="bank06.html">Master Bank</a> |
+<a href="notes06.html">Teacher Notes</a> |
 <a href="ladders06.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 07 -->
 <div class="module">
-<h3>Module 7. Trigonometric Solutions and Identities</h3>
+<h3>Module 07: Trigonometric Solutions and Identities</h3>
 <ul>
-<li><a href="7a.html">7.A Determine sine, cosine, tangent of special angles</a></li>
-<li><a href="7b.html">7.B Apply double-angle and Pythagorean identities</a></li>
-<li><a href="7c.html">7.C Apply half-angle identity</a></li>
-<li><a href="7d.html">7.D Solve advanced trigonometric equations</a></li>
-<li><a href="7e.html">7.E Approximate area under the curve</a></li>
+<li><a href="7a.html">7.A Exact Trigonometric Values</a></li>
+<li><a href="7b.html">7.B Double-Angle and Pythagorean Identities</a></li>
+<li><a href="7c.html">7.C Half-Angle, Sum, and Difference Identities</a></li>
+<li><a href="7d.html">7.D Solving Advanced Trigonometric Equations</a></li>
+<li><a href="7e.html">7.E Approximate Area Under the Curve</a></li>
 </ul>
 <div class="resources">
 <a href="summary07.html">Summary</a> |
-<a href="bank07.html">Bank</a> |
-<a href="https://docs.google.com/document/d/1S2h-zsI1j_xC6Ux6npAGjui56WXdmhYlfQhnupSotPw/edit?usp=sharing">Teacher Notes</a> |
+<a href="bank07.html">Master Bank</a> |
+<a href="notes07.html">Teacher Notes</a> |
 <a href="ladders07.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 08 -->
 <div class="module">
-<h3>Module 8. Polynomial and Rational Expressions</h3>
+<h3>Module 08: Polynomial and Rational Expressions</h3>
 <ul>
-<li><a href="8a.html">8.A Factor expressions</a></li>
-<li><a href="8b.html">8.B Complete operations with rational expressions</a></li>
-<li><a href="8c.html">8.C Simplify complex fractions</a></li>
-<li><a href="8d.html">8.D Divide polynomials</a></li>
-<li><a href="8e.html">8.E Evaluate limits from a graph</a></li>
+<li><a href="8a.html">8.A Factor Expressions</a></li>
+<li><a href="8b.html">8.B Complete Operations with Rational Expressions</a></li>
+<li><a href="8c.html">8.C Simplify Complex Fractions</a></li>
+<li><a href="8d.html">8.D Divide Polynomials</a></li>
+<li><a href="8e.html">8.E Evaluate Limits from a Graph</a></li>
 </ul>
 <div class="resources">
 <a href="summary08.html">Summary</a> |
-<a href="bank08.html">Bank</a> |
+<a href="bank08.html">Master Bank</a> |
 <a href="notes08.html">Teacher Notes</a> |
 <a href="ladders08.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 09 -->
 <div class="module">
-<h3>Module 9. Rational Functions and Asymptotes</h3>
+<h3>Module 09: Rational Functions and Asymptotes</h3>
 <ul>
-<li><a href="9a.html">9.A Graph transformations of rational functions</a></li>
-<li><a href="9b.html">9.B Identify asymptotes</a></li>
-<li><a href="9c.html">9.C Graph reciprocal functions</a></li>
-<li><a href="9d.html">9.D Solve and graph polynomial equations</a></li>
-<li><a href="9e.html">9.E Evaluate limits from expressions</a></li>
+<li><a href="9a.html">9.A Graph Transformations of Rational Functions</a></li>
+<li><a href="9b.html">9.B Identify Horizontal, Vertical, and Slant Asymptotes</a></li>
+<li><a href="9c.html">9.C Graph Reciprocal Functions</a></li>
+<li><a href="9d.html">9.D Solve Polynomial Equations</a></li>
+<li><a href="9e.html">9.E Evaluate Limits from Expressions</a></li>
 </ul>
 <div class="resources">
 <a href="summary09.html">Summary</a> |
-<a href="bank09.html">Bank</a> |
+<a href="bank09.html">Master Bank</a> |
 <a href="notes09.html">Teacher Notes</a> |
 <a href="ladders09.html">Ladders</a>
 </div>
 </div>
 
+<!-- MODULE 10 -->
 <div class="module">
-<h3>Module 10. Exponential and Logarithmic Functions</h3>
+<h3>Module 10: Exponential and Logarithmic Functions</h3>
 <ul>
-<li><a href="10a.html">10.A Rewrite expressions using logarithm properties</a></li>
-<li><a href="10b.html">10.B Graph transformations of logarithmic functions</a></li>
-<li><a href="10c.html">10.C Solve equations with exponents and logarithms</a></li>
-<li><a href="10d.html">10.D Solve logarithm functions with extraneous solutions</a></li>
+<li><a href="10a.html">10.A Rewrite Expressions Using Logarithm Properties</a></li>
+<li><a href="10b.html">10.B Graph Transformations of Logarithmic Functions</a></li>
+<li><a href="10c.html">10.C Solve Equations with Exponents and Logarithms</a></li>
+<li><a href="10d.html">10.D Solve Logarithmic Equations with Extraneous Solutions</a></li>
 <li><a href="10e.html">10.E Derivative: Power Rule</a></li>
 </ul>
 <div class="resources">
 <a href="summary10.html">Summary</a> |
-<a href="bank10.html">Bank</a> |
+<a href="bank10.html">Master Bank</a> |
 <a href="notes10.html">Teacher Notes</a> |
 <a href="ladders10.html">Ladders</a>
 </div>
 </div>
 
 </div>
+</div>
+</div>
 
+<!-- Bottom Resource Box -->
+
+<div class="bottom-resources">
+<h2>Additional Resources</h2>
+<div class="resource-links">
+<a href="Precalculus_All_Ladders.html">All Ladders</a>
+<a href="#">Graph Paper</a>
+<a href="https://www.desmos.com/calculator" target="_blank">Desmos</a>
+<a href="https://www.geogebra.org/graphing" target="_blank">GeoGebra</a>
 </div>
 </div>
 
