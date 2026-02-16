@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quiz __MODULE__ Versions</title>
+
+<script>
+window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+body {
+    margin: 0.25in;
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+}
+
+.header-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+.subheader {
+    font-style: italic;
+    margin-bottom: 2px;
+}
+
+.quiz-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.quiz-table td {
+    width: 50%;
+    vertical-align: top;
+    padding: 1px 6px 6px 6px;
+    height: 4.6in;
+    background-image:
+        linear-gradient(to right, #cfcfcf 1px, transparent 1px),
+        linear-gradient(to bottom, #cfcfcf 1px, transparent 1px);
+    background-size: 20px 20px;
+    border: none;
+}
+
+.quiz-table td:first-child {
+    border-right: 2px solid black;
+}
+
+.quiz-table td p {
+    margin: 0px 4px;
+}
+
+.back-table td {
+    height: 9.5in;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========================================================= -->
+<!-- ===================== TEMPLATE NOTES ==================== -->
+<!-- ========================================================= -->
+
+<!--
+INSTRUCTIONS FOR FUTURE SELF:
+
+1. Replace __MODULE__ in the <title> and headers.
+2. Insert 6 quiz versions below.
+3. For each version:
+   - Questions 1–4 = Essential (Sections A–D)
+   - Questions 5–6 = Extended (Section E)
+   - Scramble order between versions
+   - Slight wording variation
+   - Do NOT copy Master Bank questions verbatim
+4. Keep EXACT structure:
+   - quiz-table
+   - page-break-before between front/back
+   - quiz-cell style unchanged
+5. After Version 6:
+   - Add Answer Key section
+   - Page break
+   - Add Holistic Rubric section
+6. Never modify CSS.
+7. Never nest HTML documents.
+8. Never alter heights (4.6in / 9.5in).
+9. Always keep vertical divider only.
+10. All six versions must be in ONE file.
+-->
+
+<!-- ========================================================= -->
+<!-- =================== QUIZ VERSION BLOCK ================== -->
+<!-- ========================================================= -->
+
+<!-- COPY THIS BLOCK 6 TIMES AND RENAME v1–v6 -->
+
+<div class="header-line">
+    <div>Quiz __MODULE__ v1</div>
+    <div>Name: ____________________________</div>
+</div>
+
+<div class="subheader">
+Essential Skills – Must show work for full credit.
+</div>
+
+<table class="quiz-table">
+<tr>
+<td>
+<strong>1.</strong> __ESSENTIAL_QUESTION_1__
+</td>
+<td>
+<strong>2.</strong> __ESSENTIAL_QUESTION_2__
+</td>
+</tr>
+<tr>
+<td>
+<strong>3.</strong> __ESSENTIAL_QUESTION_3__
+</td>
+<td>
+<strong>4.</strong> __ESSENTIAL_QUESTION_4__
+</td>
+</tr>
+</table>
+
+<div style="page-break-before: always;"></div>
+
+<div class="subheader">
+Above & Beyond
+</div>
+
+<table class="quiz-table back-table">
+<tr>
+<td>
+<strong>5.</strong> __EXTENDED_QUESTION_1__
+</td>
+<td>
+<strong>6.</strong> __EXTENDED_QUESTION_2__
+</td>
+</tr>
+</table>
+
+<!-- ========================================================= -->
+<!-- =================== END OF TEMPLATE ===================== -->
+<!-- ========================================================= -->
+
+</body>
+</html>
