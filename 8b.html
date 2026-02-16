@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Section 8.B</title>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+body {
+  margin: 0.5in;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Workspace system */
+.workspace {
+  width: 100%;
+}
+
+.workspace.regular {
+  height: 420px;
+}
+
+.workspace.large {
+  height: 600px;
+}
+
+.workspace.small {
+  height: 300px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Global Grid Definition -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="grid"
+             width="20"
+             height="20"
+             patternUnits="userSpaceOnUse">
+      <path d="M20 0 L0 0 0 20"
+            fill="none"
+            stroke="#555"
+            stroke-width="1.2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<h1>SECTION 8.B<br>Complete Operations with Rational Expressions</h1>
+
+<p>
+Rational expressions are fractions that contain polynomials in the numerator, denominator, or both. Just as numerical fractions can be simplified and combined, rational expressions follow similar structural rules. In this section, you will apply factoring to simplify, multiply, divide, add, and subtract rational expressions. Structural awareness from Section 8.A now becomes essential.
+</p>
+
+<hr>
+
+<h2>Learning Objectives</h2>
+
+<ul>
+<li>I can simplify rational expressions by factoring numerators and denominators and canceling common factors, attending to restrictions on the variable.</li>
+<li>I can multiply and divide rational expressions using factoring and cancellation, reasoning abstractly about equivalent forms.</li>
+<li>I can add and subtract rational expressions by finding common denominators and combining numerators precisely.</li>
+</ul>
+
+<hr>
+
+<h2>Introduction: Rational Expressions as Algebraic Fractions</h2>
+
+<p>
+A rational expression is a quotient of two polynomials. The same principles that govern numerical fractions apply here: factors can cancel, common denominators are required for addition and subtraction, and division can be rewritten as multiplication by a reciprocal.
+</p>
+
+<p>
+However, unlike numerical fractions, rational expressions require factoring to expose cancelable factors. Without factoring, simplification is often impossible. This section builds directly on your factoring fluency and extends it into fractional algebra.
+</p>
+
+<p>
+Understanding rational expressions prepares you for graphing rational functions, identifying holes and asymptotes, and evaluating limits in later sections.
+</p>
+
+<hr>
+
+<h2>Real-World Connection</h2>
+
+<p>
+Rational expressions are used in physics to model rates such as speed, density, and pressure. Engineers use rational formulas to calculate efficiency ratios and system stability. In economics, cost per unit and revenue per item often produce rational models. Simplifying these expressions correctly ensures accurate interpretation of real-world quantities.
+</p>
+
+<hr>
+
+<h2>Historical Note</h2>
+
+<p>
+The study of rational expressions developed as algebra evolved beyond solving simple equations. Renaissance mathematicians formalized fraction manipulation rules for symbolic expressions, extending arithmetic reasoning into abstract algebra. These structural principles remain foundational in modern algebra and calculus.
+</p>
+
+<hr>
+
+<h2>Key Vocabulary and Concepts</h2>
+
+<p><strong>Rational Expression:</strong> A quotient of two polynomials where the denominator is not zero.</p>
+
+<p><strong>Restriction:</strong> A value of the variable that makes the denominator equal to zero and must be excluded from the domain.</p>
+
+<p><strong>Equivalent Expressions:</strong> Expressions that represent the same value for all permissible values of the variable.</p>
+
+<p><strong>Common Denominator:</strong> A shared denominator used to combine rational expressions through addition or subtraction.</p>
+
+<p><strong>Reciprocal:</strong> The multiplicative inverse of a fraction; used when dividing rational expressions.</p>
+
+<hr>
+<h2>Core Strategies for Rational Expressions</h2>
+
+<p>
+Operations with rational expressions follow the same structural rules as numerical fractions. However, factoring is required to expose cancelable factors before simplifying.
+</p>
+
+<ol>
+<li>Factor completely before canceling.</li>
+<li>State all restrictions.</li>
+<li>Multiply numerators and denominators when multiplying.</li>
+<li>Rewrite division as multiplication by the reciprocal.</li>
+<li>Use common denominators when adding or subtracting.</li>
+</ol>
+
+<hr>
+
+<h3>Example 1 — Simplify a Rational Expression</h3>
+
+<p>
+Simplify:
+</p>
+
+\[
+\frac{x^2 - 9}{x - 3}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 2 — Multiply Rational Expressions</h3>
+
+<p>
+Multiply:
+</p>
+
+\[
+\frac{x}{x - 2} \cdot \frac{x - 2}{3}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 3 — Divide Rational Expressions</h3>
+
+<p>
+Divide:
+</p>
+
+\[
+\frac{x^2 - 4}{x} \div \frac{x - 2}{x}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 4 — Add Rational Expressions</h3>
+
+<p>
+Add:
+</p>
+
+\[
+\frac{1}{x} + \frac{2}{x - 1}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 5 — Subtract Rational Expressions</h3>
+
+<p>
+Subtract:
+</p>
+
+\[
+\frac{3}{x + 2} - \frac{1}{x + 2}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+<h2>Summary of Key Concepts</h2>
+
+<ul>
+<li>Always factor completely before simplifying.</li>
+<li>Cancel only common factors, not terms.</li>
+<li>State all restrictions clearly.</li>
+<li>Rewrite division as multiplication by the reciprocal.</li>
+<li>Find common denominators before adding or subtracting.</li>
+</ul>
+
+<hr>
+
+<h2>Strategy Checklist</h2>
+
+<ol>
+<li>Factor numerators and denominators completely.</li>
+<li>Identify restrictions (values that make denominators zero).</li>
+<li>Cancel only common factors.</li>
+<li>When multiplying, multiply straight across.</li>
+<li>When dividing, multiply by the reciprocal.</li>
+<li>When adding or subtracting, use a common denominator.</li>
+</ol>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<h3>Canceling Terms Instead of Factors</h3>
+
+<p>
+Students sometimes attempt to cancel terms across addition or subtraction. Only factors may cancel.
+</p>
+
+<h3>Forgetting Restrictions</h3>
+
+<p>
+Even if a factor cancels, the original denominator restriction remains.
+</p>
+
+<h3>Skipping Factoring</h3>
+
+<p>
+Many rational expressions cannot be simplified without first factoring completely.
+</p>
+
+<h3>Incorrect Reciprocal When Dividing</h3>
+
+<p>
+Division must be rewritten as multiplication by the reciprocal of the second fraction.
+</p>
+
+<hr>
+<h2>Practice Problems</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1.</strong> Simplify:
+\[
+\frac{x^2 - 16}{x - 4}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>2.</strong> Multiply:
+\[
+\frac{x}{x + 3} \cdot \frac{x + 3}{5}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>3.</strong> Divide:
+\[
+\frac{x^2 - 9}{x} \div \frac{x - 3}{x}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>4.</strong> Simplify:
+\[
+\frac{x^2 - 25}{x^2 - 5x}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Medium</h3>
+
+<p><strong>5.</strong> Add:
+\[
+\frac{2}{x} + \frac{3}{x}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>6.</strong> Subtract:
+\[
+\frac{5}{x - 1} - \frac{2}{x - 1}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>7.</strong> Simplify:
+\[
+\frac{x^2 - 4}{x^2 - 2x}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>8.</strong> Add:
+\[
+\frac{1}{x} + \frac{2}{x - 1}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Hard</h3>
+
+<p><strong>9.</strong> Simplify:
+\[
+\frac{x^2 - 9}{x^2 - x - 6}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>10.</strong> Multiply:
+\[
+\frac{x^2 - 4}{x - 2} \cdot \frac{x}{x + 2}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>11.</strong> Divide:
+\[
+\frac{x^2 - 16}{x^2 - 4} \div \frac{x - 4}{x + 2}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>12.</strong> Add:
+\[
+\frac{3}{x + 2} + \frac{1}{x - 2}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Challenge</h3>
+
+<p><strong>13.</strong> Create a rational expression that simplifies to:
+\[
+\frac{x + 2}{3}
+\]
+but has a removable discontinuity.
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>14.</strong> Create two rational expressions that require a common denominator before combining.</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>15.</strong> Construct a rational expression with two restrictions in its domain.</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Justify</h3>
+
+<p><strong>16.</strong> Explain why a canceled factor still creates a restriction in the domain.</p>
+
+<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>17.</strong> Justify why factoring is required before simplifying rational expressions.</p>
+
+<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>18.</strong> Explain why canceling terms instead of factors leads to incorrect results.</p>
+
+<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+<h2>Solutions</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1.</strong>
+\[
+\frac{x^2 - 16}{x - 4}
+= \frac{(x - 4)(x + 4)}{x - 4}
+= x + 4
+\quad (x \ne 4)
+\]
+</p>
+
+<p><strong>2.</strong>
+\[
+\frac{x}{x + 3} \cdot \frac{x + 3}{5}
+= \frac{x}{5}
+\quad (x \ne -3)
+\]
+</p>
+
+<p><strong>3.</strong>
+Rewrite division as multiplication by the reciprocal:
+\[
+\frac{x^2 - 9}{x} \cdot \frac{x}{x - 3}
+\]
+Factor:
+\[
+\frac{(x - 3)(x + 3)}{x} \cdot \frac{x}{x - 3}
+\]
+Cancel:
+\[
+x + 3
+\quad (x \ne 0,\, x \ne 3)
+\]
+</p>
+
+<p><strong>4.</strong>
+\[
+\frac{x^2 - 25}{x^2 - 5x}
+= \frac{(x - 5)(x + 5)}{x(x - 5)}
+= \frac{x + 5}{x}
+\quad (x \ne 0,\, x \ne 5)
+\]
+</p>
+
+<hr>
+
+<h3>Medium</h3>
+
+<p><strong>5.</strong>
+\[
+\frac{2}{x} + \frac{3}{x}
+= \frac{5}{x}
+\quad (x \ne 0)
+\]
+</p>
+
+<p><strong>6.</strong>
+\[
+\frac{5}{x - 1} - \frac{2}{x - 1}
+= \frac{3}{x - 1}
+\quad (x \ne 1)
+\]
+</p>
+
+<p><strong>7.</strong>
+\[
+\frac{x^2 - 4}{x^2 - 2x}
+= \frac{(x - 2)(x + 2)}{x(x - 2)}
+= \frac{x + 2}{x}
+\quad (x \ne 0,\, x \ne 2)
+\]
+</p>
+
+<p><strong>8.</strong>
+Common denominator:
+\[
+\frac{1}{x} + \frac{2}{x - 1}
+= \frac{x - 1}{x(x - 1)} + \frac{2x}{x(x - 1)}
+= \frac{3x - 1}{x(x - 1)}
+\quad (x \ne 0,\, x \ne 1)
+\]
+</p>
+
+<hr>
+
+<h3>Hard</h3>
+
+<p><strong>9.</strong>
+\[
+\frac{x^2 - 9}{x^2 - x - 6}
+= \frac{(x - 3)(x + 3)}{(x - 3)(x + 2)}
+= \frac{x + 3}{x + 2}
+\quad (x \ne 3,\, x \ne -2)
+\]
+</p>
+
+<p><strong>10.</strong>
+\[
+\frac{x^2 - 4}{x - 2} \cdot \frac{x}{x + 2}
+= \frac{(x - 2)(x + 2)}{x - 2} \cdot \frac{x}{x + 2}
+= x
+\quad (x \ne 2,\, x \ne -2)
+\]
+</p>
+
+<p><strong>11.</strong>
+\[
+\frac{x^2 - 16}{x^2 - 4} \div \frac{x - 4}{x + 2}
+= \frac{(x - 4)(x + 4)}{(x - 2)(x + 2)} \cdot \frac{x + 2}{x - 4}
+= \frac{x + 4}{x - 2}
+\quad (x \ne \pm 2,\, x \ne 4)
+\]
+</p>
+
+<p><strong>12.</strong>
+Common denominator:
+\[
+\frac{3}{x + 2} + \frac{1}{x - 2}
+= \frac{3(x - 2) + (x + 2)}{(x + 2)(x - 2)}
+= \frac{4x - 4}{x^2 - 4}
+\quad (x \ne \pm 2)
+\]
+</p>
+
+<hr>
+
+<h3>Challenge</h3>
+
+<p><strong>13.</strong>
+Example:
+\[
+\frac{(x - 1)(x + 2)}{3(x - 1)}
+= \frac{x + 2}{3}
+\quad (x \ne 1)
+\]
+</p>
+
+<p><strong>14.</strong>
+Example:
+\[
+\frac{1}{x} + \frac{1}{x + 1}
+\]
+</p>
+
+<p><strong>15.</strong>
+Example:
+\[
+\frac{x}{(x - 2)(x + 3)}
+\quad (x \ne 2,\, x \ne -3)
+\]
+</p>
+
+<hr>
+
+<h3>Justify</h3>
+
+<p><strong>16.</strong>
+A canceled factor still creates a restriction because the original denominator cannot equal zero. Even though the factor cancels algebraically, it remains excluded from the domain.
+</p>
+
+<p><strong>17.</strong>
+Factoring exposes common factors that can cancel. Without factoring, simplification may incorrectly cancel terms instead of factors.
+</p>
+
+<p><strong>18.</strong>
+Canceling terms instead of factors ignores structural grouping. Only factors multiplied together may cancel, not terms separated by addition or subtraction.
+</p>
+
+</body>
+</html>

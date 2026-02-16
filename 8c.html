@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Section 8.C</title>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+body {
+  margin: 0.5in;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Workspace system */
+.workspace {
+  width: 100%;
+}
+
+.workspace.regular {
+  height: 420px;
+}
+
+.workspace.small {
+  height: 300px;
+}
+
+.workspace.large {
+  height: 600px;
+}
+
+.workspace.extra-large {
+  height: 750px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Global Grid Definition -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="grid"
+             width="20"
+             height="20"
+             patternUnits="userSpaceOnUse">
+      <path d="M20 0 L0 0 0 20"
+            fill="none"
+            stroke="#555"
+            stroke-width="1.2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<h1>SECTION 8.C<br>Simplify Complex Fractions</h1>
+
+<p>
+A complex fraction is a fraction that contains another fraction in the numerator, the denominator, or both. While they may appear intimidating at first glance, complex fractions follow the same structural rules as rational expressions. In this section, you will simplify complex fractions by applying factoring, common denominators, and reciprocal reasoning.
+</p>
+
+<hr>
+
+<h2>Learning Objectives</h2>
+
+<ul>
+<li>I can add and subtract fractions containing variables by identifying least common denominators and simplifying results.</li>
+<li>I can multiply and divide fractions with variables, including using complex fraction structure as a division strategy.</li>
+<li>I can simplify complex fractions by rewriting them as division problems or using the LCD method, persevering through multi-step simplifications.</li>
+</ul>
+
+<hr>
+
+<h2>Introduction</h2>
+
+<p>
+A complex fraction is simply a division problem written in layered form. The key to simplifying complex fractions is recognizing that the entire numerator is divided by the entire denominator.
+</p>
+
+<p>
+There are two primary strategies:
+</p>
+
+<ul>
+<li>Rewrite the complex fraction as multiplication by the reciprocal.</li>
+<li>Multiply every term by the least common denominator to eliminate smaller fractions.</li>
+</ul>
+
+<p>
+Both methods rely on structural understanding and careful algebraic manipulation.
+</p>
+
+<hr>
+
+<h2>Real-World Connection</h2>
+
+<p>
+Complex fractional structures appear in physics formulas involving ratios of rates, electrical resistance calculations, and fluid dynamics equations. Engineers often simplify layered fractional expressions to make formulas usable in applied settings.
+</p>
+
+<hr>
+
+<h2>Historical Note</h2>
+
+<p>
+The manipulation of complex fractional expressions became increasingly important as algebra evolved in the Renaissance period. As symbolic notation improved, mathematicians formalized rules for simplifying nested rational structures, laying groundwork for modern algebraic manipulation techniques.
+</p>
+
+<hr>
+
+<h2>Key Vocabulary and Concepts</h2>
+
+<p><strong>Complex Fraction:</strong> A fraction that contains another fraction in the numerator, denominator, or both.</p>
+
+<p><strong>Least Common Denominator (LCD):</strong> The smallest common denominator used to combine or eliminate fractional components.</p>
+
+<p><strong>Reciprocal:</strong> The multiplicative inverse of a fraction; used when dividing rational expressions.</p>
+
+<p><strong>Equivalent Expressions:</strong> Different algebraic forms that represent the same value for all permissible inputs.</p>
+
+<hr>
+<h2>Core Strategies</h2>
+
+<p>
+There are two primary methods for simplifying complex fractions:
+</p>
+
+<ol>
+<li>Rewrite the complex fraction as multiplication by the reciprocal.</li>
+<li>Multiply every term in the numerator and denominator by the least common denominator (LCD).</li>
+</ol>
+
+<hr>
+
+<h3>Example 1</h3>
+
+<p><strong>Simplify:</strong></p>
+
+\[
+\frac{\frac{x}{3}}{\frac{2}{x}}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 2</h3>
+
+<p><strong>Simplify:</strong></p>
+
+\[
+\frac{\frac{1}{x} + \frac{2}{x}}{\frac{3}{x}}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 3</h3>
+
+<p><strong>Simplify:</strong></p>
+
+\[
+\frac{\frac{x^2 - 4}{x}}{\frac{x - 2}{x}}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 4</h3>
+
+<p><strong>Simplify:</strong></p>
+
+\[
+\frac{\frac{3}{x} - \frac{1}{x}}{\frac{2}{x}}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 5</h3>
+
+<p><strong>Simplify:</strong></p>
+
+\[
+\frac{\frac{x}{x+1}}{\frac{2}{x+1}}
+\]
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+<h2>Summary of Key Concepts</h2>
+
+<ul>
+<li>A complex fraction is a division problem written in layered form.</li>
+<li>Rewrite division as multiplication by the reciprocal.</li>
+<li>Multiply every term by the least common denominator when appropriate.</li>
+<li>Factor completely before canceling.</li>
+<li>State all restrictions clearly.</li>
+</ul>
+
+<hr>
+
+<h2>Strategy Checklist</h2>
+
+<ol>
+<li>Identify the overall numerator and denominator.</li>
+<li>Decide whether to use the reciprocal method or LCD method.</li>
+<li>Factor all expressions completely.</li>
+<li>Cancel only common factors.</li>
+<li>Rewrite the simplified expression clearly.</li>
+<li>State all restrictions.</li>
+</ol>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<h3>Canceling Terms Instead of Factors</h3>
+
+<p>
+Only factors may cancel. Terms separated by addition or subtraction cannot be canceled.
+</p>
+
+<h3>Ignoring the Overall Fraction Structure</h3>
+
+<p>
+The entire numerator is divided by the entire denominator. Treat the fraction as one division problem.
+</p>
+
+<h3>Forgetting to Factor First</h3>
+
+<p>
+Factoring is required before simplification in many complex fractions.
+</p>
+
+<h3>Missing Restrictions</h3>
+
+<p>
+Even when factors cancel, original denominator restrictions remain.
+</p>
+
+<hr>
+<h2>Practice Problems</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1.</strong> Simplify:
+\[
+\frac{\frac{x+1}{x}}{\frac{1}{x}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>2.</strong> Simplify:
+\[
+\frac{\frac{x+2}{x}}{\frac{2}{x}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>3.</strong> Simplify:
+\[
+\frac{\frac{x^2-1}{x}}{\frac{x-1}{x}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Medium</h3>
+
+<p><strong>4.</strong> Simplify:
+\[
+\frac{\frac{x}{x+1}}{\frac{2}{x+1}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>5.</strong> Simplify:
+\[
+\frac{\frac{1}{x} + \frac{1}{x+1}}{\frac{1}{x}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>6.</strong> Simplify:
+\[
+\frac{\frac{3}{x} - \frac{1}{x}}{\frac{2}{x}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Hard</h3>
+
+<p><strong>7.</strong> Simplify:
+\[
+\frac{\frac{x^2-4}{x}}{\frac{x-2}{x}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>8.</strong> Simplify:
+\[
+\frac{\frac{x^2-9}{x}}{\frac{x-3}{x}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>9.</strong> Simplify:
+\[
+\frac{\frac{1}{x-2} + \frac{1}{x+2}}{\frac{2}{x^2-4}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>10.</strong> Simplify:
+\[
+\frac{\frac{x}{x-1} - \frac{1}{x-1}}{\frac{2}{x-1}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>11.</strong> Simplify:
+\[
+\frac{\frac{x^2-4}{x-2}}{\frac{x-2}{x+2}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>12.</strong> Simplify:
+\[
+\frac{\frac{x^2-9}{x-3}}{\frac{x-3}{x+3}}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Challenge</h3>
+
+<p><strong>13.</strong> Create a complex fraction that simplifies to:
+\[
+x + 1
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>14.</strong> Create a complex fraction that simplifies to:
+\[
+2x
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>15.</strong> Construct a complex fraction that has two restrictions in its domain.</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Justify</h3>
+
+<p><strong>16.</strong> Explain why the reciprocal method works when simplifying complex fractions.</p>
+
+<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>17.</strong> Justify why multiplying by the least common denominator eliminates smaller fractions.</p>
+
+<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>18.</strong> Explain why factoring is essential when simplifying complex fractions.</p>
+
+<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+<h2>Solutions</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1.</strong>
+\[
+\frac{\frac{x+1}{x}}{\frac{1}{x}}
+= \frac{x+1}{x} \cdot \frac{x}{1}
+= x + 1
+\quad (x \ne 0)
+\]
+</p>
+
+<p><strong>2.</strong>
+\[
+\frac{\frac{x+2}{x}}{\frac{2}{x}}
+= \frac{x+2}{x} \cdot \frac{x}{2}
+= \frac{x+2}{2}
+\quad (x \ne 0)
+\]
+</p>
+
+<p><strong>3.</strong>
+\[
+\frac{\frac{x^2-1}{x}}{\frac{x-1}{x}}
+= \frac{(x-1)(x+1)}{x} \cdot \frac{x}{x-1}
+= x+1
+\quad (x \ne 0,\, x \ne 1)
+\]
+</p>
+
+<hr>
+
+<h3>Medium</h3>
+
+<p><strong>4.</strong>
+\[
+\frac{\frac{x}{x+1}}{\frac{2}{x+1}}
+= \frac{x}{x+1} \cdot \frac{x+1}{2}
+= \frac{x}{2}
+\quad (x \ne -1)
+\]
+</p>
+
+<p><strong>5.</strong>
+\[
+\frac{\frac{1}{x} + \frac{1}{x+1}}{\frac{1}{x}}
+= \frac{\frac{x+1 + x}{x(x+1)}}{\frac{1}{x}}
+= \frac{2x+1}{x(x+1)} \cdot x
+= \frac{2x+1}{x+1}
+\quad (x \ne 0,\, x \ne -1)
+\]
+</p>
+
+<p><strong>6.</strong>
+\[
+\frac{\frac{3}{x} - \frac{1}{x}}{\frac{2}{x}}
+= \frac{\frac{2}{x}}{\frac{2}{x}}
+= 1
+\quad (x \ne 0)
+\]
+</p>
+
+<hr>
+
+<h3>Hard</h3>
+
+<p><strong>7.</strong>
+\[
+\frac{\frac{x^2-4}{x}}{\frac{x-2}{x}}
+= \frac{(x-2)(x+2)}{x} \cdot \frac{x}{x-2}
+= x+2
+\quad (x \ne 0,\, x \ne 2)
+\]
+</p>
+
+<p><strong>8.</strong>
+\[
+\frac{\frac{x^2-9}{x}}{\frac{x-3}{x}}
+= \frac{(x-3)(x+3)}{x} \cdot \frac{x}{x-3}
+= x+3
+\quad (x \ne 0,\, x \ne 3)
+\]
+</p>
+
+<p><strong>9.</strong>
+\[
+\frac{\frac{1}{x-2} + \frac{1}{x+2}}{\frac{2}{x^2-4}}
+= \frac{\frac{(x+2)+(x-2)}{(x-2)(x+2)}}{\frac{2}{(x-2)(x+2)}}
+= \frac{\frac{2x}{x^2-4}}{\frac{2}{x^2-4}}
+= x
+\quad (x \ne \pm 2)
+\]
+</p>
+
+<p><strong>10.</strong>
+\[
+\frac{\frac{x}{x-1} - \frac{1}{x-1}}{\frac{2}{x-1}}
+= \frac{\frac{x-1}{x-1}}{\frac{2}{x-1}}
+= \frac{1}{2/(x-1)}
+= \frac{x-1}{2}
+\quad (x \ne 1)
+\]
+</p>
+
+<p><strong>11.</strong>
+\[
+\frac{\frac{x^2-4}{x-2}}{\frac{x-2}{x+2}}
+= \frac{(x-2)(x+2)}{x-2} \cdot \frac{x+2}{x-2}
+= \frac{(x+2)^2}{x-2}
+\quad (x \ne 2,\, x \ne -2)
+\]
+</p>
+
+<p><strong>12.</strong>
+\[
+\frac{\frac{x^2-9}{x-3}}{\frac{x-3}{x+3}}
+= \frac{(x-3)(x+3)}{x-3} \cdot \frac{x+3}{x-3}
+= \frac{(x+3)^2}{x-3}
+\quad (x \ne 3,\, x \ne -3)
+\]
+</p>
+
+<hr>
+
+<h3>Challenge</h3>
+
+<p><strong>13.</strong>
+Example:
+\[
+\frac{\frac{x+1}{1}}{\frac{1}{1}} = x+1
+\]
+</p>
+
+<p><strong>14.</strong>
+Example:
+\[
+\frac{\frac{2x}{1}}{\frac{1}{1}} = 2x
+\]
+</p>
+
+<p><strong>15.</strong>
+Example:
+\[
+\frac{\frac{x}{x-2}}{\frac{1}{x+3}}
+\quad (x \ne 2,\, x \ne -3)
+\]
+</p>
+
+<hr>
+
+<h3>Justify</h3>
+
+<p><strong>16.</strong>
+The reciprocal method works because dividing by a fraction is equivalent to multiplying by its reciprocal. This preserves equality while eliminating the layered fraction structure.
+</p>
+
+<p><strong>17.</strong>
+Multiplying by the least common denominator clears smaller denominators by distributing across the numerator and denominator simultaneously, preserving equivalence.
+</p>
+
+<p><strong>18.</strong>
+Factoring exposes cancelable factors. Without factoring, simplification may incorrectly cancel terms instead of factors.
+</p>
+
+</body>
+</html>
