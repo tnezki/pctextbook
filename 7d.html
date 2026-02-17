@@ -11,6 +11,39 @@ window.MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']] }, svg: { fontC
 body{margin:0.5in;font-family:Arial;line-height:1.6;}
 .workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
 .question{font-size:1.2em;margin-top:28px;}
+  /* ============================= */
+/* PRINT STRUCTURE CONTROL       */
+/* ============================= */
+
+@media print {
+
+  /* Remove flex for clean page splitting */
+  .workspace {
+    display: block !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep question attached to workspace */
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Keep headers attached to content below */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Avoid awkward paragraph splits */
+  p, ul {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -46,7 +79,7 @@ body{margin:0.5in;font-family:Arial;line-height:1.6;}
 <p>$20+18\sin\left(\frac{\pi}{6}t\right)=29$</p>
 
 <p>This requires isolating the trig function and solving the equation within a time interval.</p>
-
+<div style="page-break-before: always;"></div>
 <h2>Introduction</h2>
 
 <p>In previous sections, we evaluated and rewrote trigonometric expressions.</p>
@@ -78,7 +111,7 @@ body{margin:0.5in;font-family:Arial;line-height:1.6;}
 <li>Step 3: Determine all solutions in the interval.</li>
 <li>Step 4: Write the general solution if required.</li>
 </ul>
-
+<div style="page-break-before: always;"></div>
 <h2>Examples</h2>
 
 <div class="question">Example 1: Solve $\sin\theta=\frac{1}{2}$ for $0\le\theta<2\pi$.</div>
