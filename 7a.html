@@ -12,6 +12,20 @@ window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fon
 body{margin:0.5in;font-family:Arial;line-height:1.6;}
 .workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
 .question{font-size:1.2em;margin-top:28px;}
+@media print {
+  .workspace {
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+}
+
+    
 </style> 
 </head>
 <body>
