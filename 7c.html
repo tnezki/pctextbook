@@ -11,6 +11,40 @@ window.MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']] }, svg: { fontC
 body{margin:0.5in;font-family:Arial;line-height:1.6;}
 .workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
 .question{font-size:1.2em;margin-top:28px;}
+/* ============================= */
+/* PRINT STRUCTURE CONTROL       */
+/* ============================= */
+
+@media print {
+
+  /* Remove flex for clean page splitting */
+  .workspace {
+    display: block !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep question attached to workspace */
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Keep headers attached to content below */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Avoid awkward paragraph splits */
+  p, ul {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
+
+  
 </style>
 </head>
 <body>
@@ -35,7 +69,7 @@ body{margin:0.5in;font-family:Arial;line-height:1.6;}
 <li>Rewrite unfamiliar angles using known unit circle values</li>
 </ul>
 <p>Structure matters.</p>
-
+<div style="page-break-before: always;"></div>
 <h2>Key Vocabulary</h2>
 <p><strong>Half-Angle Formula:</strong> An identity that expresses a trig function of $\frac{\theta}{2}$ in terms of $\theta$.</p>
 <p><strong>Sum Identity:</strong> A formula that expresses a trig function of $A + B$.</p>
@@ -61,7 +95,7 @@ body{margin:0.5in;font-family:Arial;line-height:1.6;}
 <li>Cosine switches signs between sum and difference forms.</li>
 <li>Precision in signs is critical.</li>
 </ul>
-
+<div style="page-break-before: always;"></div>
 <h2>Examples</h2>
 
 <div class="question">Example 1: Evaluate $\sin\left(\frac{\pi}{8}\right)$.</div>
