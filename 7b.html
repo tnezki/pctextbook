@@ -11,6 +11,40 @@ window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fon
 body{margin:0.5in;font-family:Arial;line-height:1.6;}
 .workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
 .question{font-size:1.2em;margin-top:28px;}
+
+  /* ============================= */
+/* PRINT STRUCTURE CONTROL       */
+/* ============================= */
+
+@media print {
+
+  /* Remove flex during print */
+  .workspace {
+    display: block !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep question attached to workspace */
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Keep headers attached to what follows */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Prevent big blank splits */
+  ul, p {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -54,7 +88,7 @@ body{margin:0.5in;font-family:Arial;line-height:1.6;}
 </ul>
 
 <p><strong>Structure matters.</strong></p>
-
+<div style="page-break-before: always;"></div>
 
 <h2>Key Vocabulary</h2>
 
