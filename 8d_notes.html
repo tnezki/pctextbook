@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Section 8.D</title>
+
+<script>
+window.MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+body {
+    margin: 0.5in;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Workspace system */
+.workspace {
+    width: 100%;
+}
+
+.workspace.regular {
+    height: 550px;
+}
+
+.workspace.large {
+    height: 650px;
+}
+
+.workspace.extra-large {
+    height: 800px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Global Grid Definition -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="grid"
+             width="20"
+             height="20"
+             patternUnits="userSpaceOnUse">
+      <path d="M20 0 L0 0 0 20"
+            fill="none"
+            stroke="#555"
+            stroke-width="1.2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<h1>SECTION 8.D<br>Divide Polynomials</h1>
+
+<p>
+Polynomial division extends the structure of numerical long division into algebra. Just as numbers can be divided to produce a quotient and remainder, polynomials can also be divided systematically. In this section, you will learn multiple methods for dividing polynomials and interpreting the remainder.
+</p>
+
+<hr>
+
+<h2>Learning Objectives</h2>
+
+<ul>
+<li>I can divide polynomials using long division, connecting the process to numerical long division and interpreting remainders.</li>
+<li>I can apply synthetic division as an efficient algorithm for dividing by linear binomials.</li>
+<li>I can use the polynomial division box method to organize and confirm division results.</li>
+</ul>
+
+<hr>
+
+<h2>Introduction: Extending Division to Algebra</h2>
+
+<p>
+Polynomial division follows the same structural principles as arithmetic division. You determine how many times the divisor fits into the leading term of the dividend, multiply, subtract, and repeat.
+</p>
+
+<p>
+Division may result in:
+</p>
+
+<ul>
+<li>An exact quotient (no remainder)</li>
+<li>A remainder polynomial</li>
+</ul>
+
+<p>
+When a remainder exists, it can be written as:
+</p>
+
+\[
+\frac{P(x)}{D(x)} = Q(x) + \frac{R(x)}{D(x)}
+\]
+
+<hr>
+
+<h2>Real-World Connection</h2>
+
+<p>
+Engineers use polynomial division when modeling systems involving ratios of polynomials, especially in control systems and signal processing. Division reveals hidden structure and simplifies models for analysis.
+</p>
+
+<hr>
+
+<h2>Historical Note</h2>
+
+<p>
+Polynomial division techniques were formalized in the 17th century as algebra matured into symbolic form. Synthetic division later emerged as a streamlined algorithm for linear divisors, reducing repetitive computation.
+</p>
+
+<hr>
+
+<h2>Key Vocabulary and Concepts</h2>
+
+<p><strong>Dividend:</strong> The polynomial being divided.</p>
+
+<p><strong>Divisor:</strong> The polynomial you divide by.</p>
+
+<p><strong>Quotient:</strong> The result of division.</p>
+
+<p><strong>Remainder:</strong> The polynomial left after division.</p>
+
+<p><strong>Synthetic Division:</strong> A shortcut method for dividing by linear binomials of the form \(x - c\).</p>
+
+<p><strong>Division Algorithm:</strong></p>
+
+\[
+P(x) = D(x)Q(x) + R(x)
+\]
+
+<hr>
+<h2>Core Methods</h2>
+
+<p>
+There are three primary methods for dividing polynomials:
+</p>
+
+<ol>
+<li>Long Division</li>
+<li>Box Method</li>
+<li>Synthetic Division</li>
+</ol>
+
+<hr>
+
+<h3>Example 1 — Long Division</h3>
+
+<p><strong>Divide:</strong></p>
+
+\[
+\frac{x^3 - 2x^2 + 4x - 8}{x - 2}
+\]
+
+<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 2 — Box Method</h3>
+
+<p><strong>Divide:</strong></p>
+
+\[
+\frac{2x^3 + 3x^2 - 5x + 6}{x + 2}
+\]
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Example 3 — Synthetic Division</h3>
+
+<p><strong>Divide:</strong></p>
+
+\[
+\frac{x^4 - 3x^3 + 2x^2 - x + 5}{x - 1}
+\]
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+<h2>Summary of Key Concepts</h2>
+
+<ul>
+<li>Polynomial division follows the same structural steps as numerical long division.</li>
+<li>The division algorithm states: \(P(x) = D(x)Q(x) + R(x)\).</li>
+<li>Synthetic division applies only when dividing by linear binomials of the form \(x - c\).</li>
+<li>The box method provides visual structure and organization.</li>
+<li>A remainder can be written as a fractional term over the original divisor.</li>
+</ul>
+
+<hr>
+
+<h2>Division Strategy Checklist</h2>
+
+<ol>
+<li>Rewrite the dividend in descending powers.</li>
+<li>Include zero placeholders for missing terms.</li>
+<li>Divide the leading terms.</li>
+<li>Multiply the divisor by the new term.</li>
+<li>Subtract and repeat.</li>
+<li>Write the remainder properly.</li>
+</ol>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<h3>Forgetting Missing Terms</h3>
+
+<p>
+When a polynomial skips a power (for example, no \(x^2\) term), a zero placeholder must be included before division.
+</p>
+
+<h3>Sign Errors During Subtraction</h3>
+
+<p>
+Subtraction errors are common when distributing negative signs across polynomials.
+</p>
+
+<h3>Using Synthetic Division Incorrectly</h3>
+
+<p>
+Synthetic division only works for divisors of the form \(x - c\). It does not apply to quadratic or higher-degree divisors.
+</p>
+
+<h3>Dropping the Remainder</h3>
+
+<p>
+If division is not exact, the remainder must be written as a fraction over the divisor.
+</p>
+
+<hr>
+<h2>Practice Problems</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1.</strong> Divide:
+\[
+\frac{x^2 + 5x + 6}{x + 2}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>2.</strong> Divide:
+\[
+\frac{x^3 - 4x}{x}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>3.</strong> Divide:
+\[
+\frac{x^3 + 3x^2 - 4}{x - 1}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Medium</h3>
+
+<p><strong>4.</strong> Divide:
+\[
+\frac{2x^3 + 7x^2 - x - 6}{x + 3}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>5.</strong> Divide:
+\[
+\frac{x^4 - 5x^2 + 4}{x^2 - 1}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>6.</strong> Use synthetic division:
+\[
+\frac{x^4 - 3x^3 + 2x - 5}{x - 2}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Hard</h3>
+
+<p><strong>7.</strong> Divide:
+\[
+\frac{3x^4 - 5x^3 + x^2 - 4x + 6}{x - 1}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>8.</strong> Divide:
+\[
+\frac{2x^3 - x^2 + 4x - 3}{x + 2}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>9.</strong> Divide:
+\[
+\frac{x^5 - x^3 + 2x - 1}{x - 1}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Challenge</h3>
+
+<p><strong>10.</strong> Use the box method to divide:
+\[
+\frac{x^3 + 4x^2 - 5x - 20}{x + 4}
+\]
+</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>11.</strong> Create a polynomial that leaves a remainder of 3 when divided by \(x - 2\).</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>12.</strong> Explain how the Remainder Theorem relates to synthetic division.</p>
+
+<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+
+<h3>Justify</h3>
+
+<p><strong>13.</strong> Justify why synthetic division works only for linear divisors.</p>
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>14.</strong> Explain why including zero placeholders is necessary during polynomial division.</p>
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>15.</strong> Justify why the remainder must be written over the original divisor.</p>
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>16.</strong> Explain how polynomial division connects to rational functions.</p>
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>17.</strong> Explain how the Division Algorithm applies to higher-degree polynomials.</p>
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<p><strong>18.</strong> Justify why polynomial division preserves equality in rational expressions.</p>
+
+<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+
+<hr>
+<h2>Solutions</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1.</strong>
+\[
+\frac{x^2 + 5x + 6}{x + 2}
+= \frac{(x+2)(x+3)}{x+2}
+= x + 3
+\quad (x \ne -2)
+\]
+</p>
+
+<p><strong>2.</strong>
+\[
+\frac{x^3 - 4x}{x}
+= \frac{x(x^2 - 4)}{x}
+= x^2 - 4
+\quad (x \ne 0)
+\]
+</p>
+
+<p><strong>3.</strong>
+Synthetic division yields:
+\[
+x^2 + 4x + 4
+\]
+</p>
+
+<hr>
+
+<h3>Medium</h3>
+
+<p><strong>4.</strong>
+Long division gives:
+\[
+2x^2 + x - 4
+\]
+</p>
+
+<p><strong>5.</strong>
+\[
+\frac{x^4 - 5x^2 + 4}{x^2 - 1}
+= \frac{(x^2 - 4)(x^2 - 1)}{x^2 - 1}
+= x^2 - 4
+\quad (x \ne \pm 1)
+\]
+</p>
+
+<p><strong>6.</strong>
+Synthetic division yields:
+\[
+x^3 - x^2 - 2x - 2
+\]
+with remainder:
+\[
+-9
+\]
+</p>
+
+<hr>
+
+<h3>Hard</h3>
+
+<p><strong>7.</strong>
+Long division yields:
+\[
+3x^3 - 2x^2 - x - 5
+\]
+with remainder:
+\[
+1
+\]
+</p>
+
+<p><strong>8.</strong>
+Box method yields:
+\[
+2x^2 - 5x + 14
+\]
+with remainder:
+\[
+-31
+\]
+</p>
+
+<p><strong>9.</strong>
+Synthetic division yields:
+\[
+x^4 + x^3 + 0x^2 + 2
+\]
+with remainder:
+\[
+1
+\]
+</p>
+
+<hr>
+
+<h3>Challenge</h3>
+
+<p><strong>10.</strong>
+Box method yields:
+\[
+x^2 - x - 5
+\]
+</p>
+
+<p><strong>11.</strong>
+Example:
+\[
+(x - 2)(x^2 + 1) + 3
+\]
+</p>
+
+<p><strong>12.</strong>
+The Remainder Theorem states that evaluating \(P(c)\) gives the remainder when dividing by \(x - c\). Synthetic division performs this efficiently.
+</p>
+
+<hr>
+
+<h3>Justify</h3>
+
+<p><strong>13.</strong>
+Synthetic division relies on the divisor being linear in the form \(x - c\). Higher-degree divisors require long division or box method.
+</p>
+
+<p><strong>14.</strong>
+Zero placeholders maintain correct term alignment during subtraction in the division process.
+</p>
+
+<p><strong>15.</strong>
+Writing the remainder over the original divisor preserves equality according to the Division Algorithm.
+</p>
+
+<p><strong>16.</strong>
+Polynomial division allows rational functions to be rewritten as a polynomial plus a proper rational remainder.
+</p>
+
+<p><strong>17.</strong>
+The Division Algorithm applies to all polynomial degrees because it is based on distributive structure.
+</p>
+
+<p><strong>18.</strong>
+Division preserves equality because each subtraction step maintains equivalent expressions.
+</p>
+
+</body>
+</html>
