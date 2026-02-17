@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Section 7.C</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']] }, svg: { fontCache: 'global' } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body{margin:0.5in;font-family:Arial;line-height:1.6;}
+.workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
+.question{font-size:1.2em;margin-top:28px;}
+</style>
+</head>
+<body>
+
+<h1>SECTION 7.C<br>Half-Angle, Sum, and Difference Identities</h1>
+
+<h2>Learning Objectives</h2>
+<ul>
+<li>I can apply half-angle formulas for sine and cosine to evaluate exact expressions.</li>
+<li>I can apply half-angle formulas for tangent and determine appropriate signs.</li>
+<li>I can apply angle sum and difference identities to rewrite and evaluate trigonometric expressions.</li>
+<li>I can justify multi-step reasoning using algebraic structure.</li>
+</ul>
+
+<h2>Introduction</h2>
+<p>In Section 7.B, we rewrote trigonometric expressions involving <strong>double angles</strong>.</p>
+<p>Now we extend that structure.</p>
+<p>Instead of working with $2\theta$, we will:</p>
+<ul>
+<li>Break angles apart</li>
+<li>Combine angles strategically</li>
+<li>Rewrite unfamiliar angles using known unit circle values</li>
+</ul>
+<p>Structure matters.</p>
+
+<h2>Key Vocabulary</h2>
+<p><strong>Half-Angle Formula:</strong> An identity that expresses a trig function of $\frac{\theta}{2}$ in terms of $\theta$.</p>
+<p><strong>Sum Identity:</strong> A formula that expresses a trig function of $A + B$.</p>
+<p><strong>Difference Identity:</strong> A formula that expresses a trig function of $A - B$.</p>
+<p><strong>Sign Determination:</strong> Deciding whether a half-angle expression is positive or negative based on quadrant.</p>
+
+<h2>Core Identities</h2>
+<p><strong>Half-Angle</strong></p>
+<p>$\sin\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1-\cos\theta}{2}}$</p>
+<p>$\cos\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1+\cos\theta}{2}}$</p>
+<p>$\tan\left(\frac{\theta}{2}\right)=\frac{\sin\theta}{1+\cos\theta}$</p>
+
+<p><strong>Sum and Difference</strong></p>
+<p>$\sin(A+B)=\sin A\cos B+\cos A\sin B$</p>
+<p>$\sin(A-B)=\sin A\cos B-\cos A\sin B$</p>
+<p>$\cos(A+B)=\cos A\cos B-\sin A\sin B$</p>
+<p>$\cos(A-B)=\cos A\cos B+\sin A\sin B$</p>
+
+<h2>Structure Insight</h2>
+<ul>
+<li>Half-angle formulas contain square roots, introducing $\pm$.</li>
+<li>The sign depends on the quadrant of $\frac{\theta}{2}$.</li>
+<li>Cosine switches signs between sum and difference forms.</li>
+<li>Precision in signs is critical.</li>
+</ul>
+
+<h2>Examples</h2>
+
+<div class="question">Example 1: Evaluate $\sin\left(\frac{\pi}{8}\right)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">Example 2: Evaluate $\cos(75^\circ)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">Example 3: Rewrite $\sin(45^\circ+30^\circ)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">Example 4: Simplify $\cos(A-B)+\cos(A+B)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h2>Summary</h2>
+<ul>
+<li>Half-angle identities introduce square roots and $\pm$ signs.</li>
+<li>Signs depend on quadrant location.</li>
+<li>Sum and difference identities rewrite unfamiliar angles.</li>
+<li>Structure and precision are essential.</li>
+</ul>
+
+<h2>Common Mistakes</h2>
+<ul>
+<li>Forgetting the $\pm$ in half-angle formulas.</li>
+<li>Using the wrong quadrant for sign.</li>
+<li>Mixing up cosine sign patterns.</li>
+<li>Not fully simplifying radicals.</li>
+</ul>
+
+<h2>Practice Problems</h2>
+
+<h3>Easy</h3>
+<div class="question">1. $\sin\left(\frac{\pi}{6}\right)$</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">2. $\cos\left(\frac{\pi}{6}\right)$</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">3. Rewrite $\sin(45^\circ+30^\circ)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">4. Rewrite $\cos(45^\circ-30^\circ)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Medium</h3>
+<div class="question">5. Evaluate $\sin(75^\circ)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">6. Evaluate $\cos(15^\circ)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">7. Simplify $\tan\left(\frac{\theta}{2}\right)$ if $\cos\theta=\frac{1}{3}$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">8. Expand $\sin(A-B)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Harder</h3>
+<div class="question">9. Evaluate $\sin\left(\frac{\pi}{12}\right)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">10. Evaluate $\cos\left(\frac{\pi}{12}\right)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">11. Verify $\sin(2A)=2\sin A\cos A$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">12. Simplify $\cos(A+B)+\cos(A-B)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Challenge</h3>
+<div class="question">13. Express $\tan\left(\frac{\theta}{2}\right)$ in terms of cosine only.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">14. Evaluate $\sin\left(\frac{\pi}{24}\right)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">15. Simplify $\cos(75^\circ)+\sin(15^\circ)$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+<div class="question">16. Rewrite $\cos(2A)$ using a sum identity only.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Justify</h3>
+<div class="question">17. Explain why half-angle identities require $\pm$.</div>
+<div style="min-height:420px;"></div>
+<div class="question">18. Justify how sum identities extend unit circle reasoning.</div>
+<div style="min-height:420px;"></div>
+
+
+
+<h2>Solutions</h2>
+
+<h3>Easy</h3>
+<p><strong>1.</strong> $\frac{1}{2}$</p>
+<p><strong>2.</strong> $\frac{\sqrt3}{2}$</p>
+<p><strong>3.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
+<p><strong>4.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
+
+<h3>Medium</h3>
+<p><strong>5.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
+<p><strong>6.</strong> $\frac{\sqrt6-\sqrt2}{4}$</p>
+<p><strong>7.</strong> Simplified algebraic expression</p>
+<p><strong>8.</strong> $\sin A\cos B-\cos A\sin B$</p>
+
+<h3>Harder</h3>
+<p><strong>9.</strong> $\frac{\sqrt6-\sqrt2}{4}$</p>
+<p><strong>10.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
+<p><strong>11.</strong> Identity verified</p>
+<p><strong>12.</strong> $2\cos A\cos B$</p>
+
+<h3>Challenge</h3>
+<p><strong>13.</strong> Algebraic form</p>
+<p><strong>14.</strong> Exact radical form</p>
+<p><strong>15.</strong> Simplified radical expression</p>
+<p><strong>16.</strong> $\cos^2A-\sin^2A$</p>
+
+<h3>Justify</h3>
+<p><strong>17.</strong> Square roots produce both positive and negative results; quadrant determines sign.</p>
+<p><strong>18.</strong> They break complex angles into familiar unit circle angles.</p>
+
+</body>
+</html>
