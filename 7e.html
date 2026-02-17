@@ -11,6 +11,39 @@ window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fon
 body{margin:0.5in;font-family:Arial;line-height:1.6;}
 .workspace{min-height:260px;margin-top:15px;}
 .question{margin-top:25px;font-size:1.1em;}
+  /* ============================= */
+/* PRINT STRUCTURE CONTROL       */
+/* ============================= */
+
+@media print {
+
+  /* Remove flex for clean page splitting */
+  .workspace {
+    display: block !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep question attached to workspace */
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Keep headers attached to content below */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Avoid awkward paragraph splits */
+  p, ul {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -37,7 +70,7 @@ body{margin:0.5in;font-family:Arial;line-height:1.6;}
 <p>Instead, we approximate the area under the velocity curve.</p>
 <p>The area under a velocity–time graph represents <strong>distance traveled</strong>.</p>
 <p>This is the foundation of calculus.</p>
-
+<div style="page-break-before: always;"></div>
 <h2>Key Vocabulary</h2>
 <p><strong>Riemann Sum:</strong> Approximation of area using rectangles.</p>
 <p><strong>Left Riemann Sum:</strong> Uses left endpoints.</p>
@@ -56,7 +89,7 @@ body{margin:0.5in;font-family:Arial;line-height:1.6;}
 <li>More subintervals improve accuracy.</li>
 <li>We justify reasoning, not just compute.</li>
 </ul>
-
+<div style="page-break-before: always;"></div>
 <hr>
 
 <h2>Examples</h2>
