@@ -1,875 +1,656 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Section 7A</title>
-<script>
-window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<style>
-body{margin:0.5in;font-family:Arial;line-height:1.6;}
-.workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
-.question{font-size:1.2em;margin-top:28px;}
-@media print {
-  .workspace {
-    display: block;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .question {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-}
-
-@media print {
-
-  h2, h3 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  .question {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  .workspace {
-    display: block;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-}
-
-  
-</style> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.A: Exact Trigonometric Values</title>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            border-bottom: 3px solid #00003d;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .section-number { color: #00003d; font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+        h1 { color: #00003d; font-size: 2.5em; margin-bottom: 20px; margin-top: 0; }
+        .intro-text {
+            font-size: 1.05em; color: #555; max-width: 800px;
+            margin: 0 auto 15px auto; font-style: italic;
+        }
+        .inspirational {
+            font-size: 1.15em; color: #004d99; font-style: italic;
+            text-align: center; margin: 18px auto 0 auto;
+            max-width: 700px; padding: 10px 0 0 0;
+        }
+        h2 {
+            color: #00003d; font-size: 1.8em;
+            margin-top: 40px; margin-bottom: 20px;
+            border-left: 5px solid #00003d; padding-left: 15px;
+        }
+        h3 { color: #004d99; font-size: 1.3em; margin-top: 25px; margin-bottom: 15px; }
+        .objectives {
+            background-color: #f0f4f8; padding: 20px;
+            border-radius: 6px; margin-bottom: 30px;
+        }
+        .objectives ul { list-style-position: inside; margin-left: 20px; }
+        .objectives li { margin-bottom: 10px; color: #333; }
+        .section-content { margin-bottom: 40px; line-height: 1.8; }
+        .definition {
+            background-color: #fffacd; border-left: 4px solid #ffd700;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .definition strong { color: #00003d; }
+        .example {
+            background-color: #f9f9f9; border: 2px solid #00003d;
+            padding: 20px; margin: 20px 0; border-radius: 6px;
+        }
+        .example h4 { color: #00003d; margin-bottom: 10px; font-size: 1.1em; }
+        .solution {
+            background-color: #f0f0f0; padding: 15px;
+            margin-top: 15px; border-radius: 4px;
+            font-size: 0.95em; line-height: 1.6;
+        }
+        table {
+            width: 100%; border-collapse: collapse;
+            margin: 20px 0; background-color: white;
+        }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #00003d; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .summary {
+            background-color: #f0f4f8; border-left: 5px solid #00003d;
+            padding: 20px; margin: 30px 0; border-radius: 6px;
+        }
+        .summary h3 { margin-top: 0; }
+        .summary ul { list-style-position: inside; }
+        .summary li { margin-bottom: 8px; }
+        .practice-problems {
+            background-color: #f0f4f8; padding: 20px;
+            border-radius: 6px; margin: 30px 0;
+        }
+        .practice-problems h3 { margin-top: 0; }
+        .problem {
+            background-color: white; padding: 15px; margin: 10px 0;
+            border-radius: 4px; border-left: 4px solid #004d99;
+        }
+        .answer-key {
+            background-color: #f5f5f5; padding: 20px;
+            border-radius: 6px; margin-top: 40px;
+        }
+        .answer-key h3 { margin-top: 0; }
+        .answer {
+            background-color: white; padding: 15px; margin: 10px 0;
+            border-radius: 4px; border-left: 4px solid #28a745;
+        }
+        .historical-note {
+            background-color: #ffe6e6; border-left: 4px solid #ff6666;
+            padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95em;
+        }
+        .historical-note strong { color: #cc0000; }
+        .key-point {
+            background-color: #e8f5e9; border-left: 4px solid #4caf50;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .key-point strong { color: #2e7d32; }
+        .common-mistakes {
+            background-color: #fff3e0; border-left: 4px solid #ff9800;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .common-mistakes strong { color: #e65100; }
+        .common-mistakes h4 { color: #e65100; margin-bottom: 10px; }
+        .connections {
+            background-color: #f3e5f5; border-left: 4px solid #9c27b0;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .connections strong { color: #6a1b9a; }
+        .figure-box {
+            text-align: center; margin: 25px 0;
+            padding: 15px; background: #f9f9f9;
+            border: 1px solid #ddd; border-radius: 6px;
+        }
+        .figure-caption {
+            font-size: 0.9em; color: #555; margin-top: 10px; font-style: italic;
+        }
+        .key-equation {
+            background-color: #e6f2ff; border: 2px solid #004d99;
+            padding: 20px; margin: 20px 0; border-radius: 6px; text-align: center;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
 
-<h1>SECTION 7.A<br>Determine Exact Trigonometric Values (Unit Circle)</h1>
-
-<h2>Learning Objectives</h2>
-<ul>
-<li>I can determine exact values of sine, cosine, and tangent for special angles.</li>
-<li>I can determine the sign of trig functions using quadrant patterns.</li>
-<li>I can evaluate trig functions for negative angles.</li>
-<li>I can evaluate trig functions for angles greater than $2\pi$ using coterminal angles.</li>
-</ul>
-
-<h2>Introduction</h2>
-<p>The unit circle allows us to determine exact values of sine, cosine, and tangent without a calculator. Instead of memorizing disconnected numbers, we use structure and patterns.</p>
-<p>This skill is foundational.</p>
-<p>Just like factoring reveals x-intercepts in algebra, knowing exact trig values allows us to:</p>
-<ul>
-<li>Solve equations like $\sin\theta = \frac{1}{2}$</li>
-<li>Identify where trig graphs cross axes</li>
-<li>Graph sine and cosine functions accurately</li>
-<li>Model periodic motion and circular systems</li>
-</ul>
-<p>Everything we do later with trigonometry depends on understanding these exact values.</p>
-
-    <div style="page-break-before: always;"></div>
-
-<h2>Key Vocabulary</h2>
-<p><strong>Unit Circle:</strong> A circle centered at the origin with radius 1.</p>
-<p><strong>Cosine:</strong> The x-coordinate of a point on the unit circle.</p>
-<p><strong>Sine:</strong> The y-coordinate of a point on the unit circle.</p>
-<p><strong>Tangent:</strong> $\tan\theta = \frac{\sin\theta}{\cos\theta}$.</p>
-<p><strong>Reference Angle:</strong> The acute angle formed between the terminal side and the x-axis.</p>
-<p><strong>Coterminal Angles:</strong> Angles that differ by multiples of $2\pi$.</p>
-
-
-    <div style="page-break-before: always;"></div>
-
-
-<h2>Blank Unit Circle (Practice 1)</h2>
-
-    <div style="text-align:center; margin:40px 0;">
-    <svg viewBox="-350 -350 700 700" width="700" height="700">
-      <circle cx="0" cy="0" r="250" stroke="black" fill="none"/>
-      <line x1="-350" y1="0" x2="350" y2="0" stroke="black"/>
-      <line x1="0" y1="-350" x2="0" y2="350" stroke="black"/>
-      <g stroke="black">
-        <line x1="0" y1="0" x2="250" y2="0"/>
-        <line x1="0" y1="0" x2="217" y2="-125"/>
-        <line x1="0" y1="0" x2="177" y2="-177"/>
-        <line x1="0" y1="0" x2="125" y2="-217"/>
-        <line x1="0" y1="0" x2="-125" y2="-217"/>
-        <line x1="0" y1="0" x2="-177" y2="-177"/>
-        <line x1="0" y1="0" x2="-217" y2="-125"/>
-        <line x1="0" y1="0" x2="-250" y2="0"/>
-        <line x1="0" y1="0" x2="-217" y2="125"/>
-        <line x1="0" y1="0" x2="-177" y2="177"/>
-        <line x1="0" y1="0" x2="-125" y2="217"/>
-        <line x1="0" y1="0" x2="125" y2="217"/>
-        <line x1="0" y1="0" x2="177" y2="177"/>
-        <line x1="0" y1="0" x2="217" y2="125"/>
-      </g>
-    </svg>
+    <!-- TITLE PAGE -->
+    <div class="title-page">
+        <div class="section-number">SECTION 7.A</div>
+        <h1>Exact Trigonometric Values</h1>
+        <div class="intro-text">
+            The unit circle is one of the most powerful tools in all of mathematics — a simple circle
+            with radius one that encodes the exact values of sine, cosine, and tangent for every special
+            angle you will ever need. Rather than reaching for a calculator, you will learn to read the
+            circle like a map, using patterns and symmetry to find answers with perfect precision.
+            This section builds the foundation upon which all future trigonometry depends.
+        </div>
+        <div class="inspirational">
+            &#8220; The circle has no beginning and no end &mdash; and neither does the knowledge you gain from understanding it. &#8221;
+        </div>
     </div>
-    
 
-    <div style="page-break-before: always;"></div>
+    <!-- LEARNING OBJECTIVES -->
+    <section class="objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>I can determine exact values of sine, cosine, and tangent for special angles on the unit circle.</li>
+            <li>I can determine exact values of all six trigonometric functions in Quadrants II&ndash;IV using reference angles.</li>
+            <li>I can interpret exact trigonometric values graphically in radians, including multiples of $\pi$.</li>
+            <li>I can evaluate trig functions for negative angles and angles greater than $2\pi$ using coterminal reasoning.</li>
+        </ul>
+    </section>
 
+    <!-- INTRODUCTION -->
+    <section class="section-content">
+        <h2>Introduction: The Language of Circles</h2>
+        <p>
+            Long before calculators existed, mathematicians needed exact answers — not approximations.
+            An engineer designing a bridge or an astronomer predicting a planet's position could not
+            afford rounding errors that compound over time. They needed to know, without any doubt,
+            that the sine of 30° is exactly $\frac{1}{2}$ — not 0.4999 or 0.5001, but $\frac{1}{2}$.
+            The unit circle makes this possible.
+        </p>
+        <p>
+            The <strong>unit circle</strong> is a circle centered at the origin with radius 1.
+            Every point on this circle has coordinates $(\cos\theta, \sin\theta)$, where $\theta$ is
+            the angle measured counterclockwise from the positive x-axis. This elegant connection
+            between a circle and trigonometry means that finding a trig value is as simple as
+            identifying a coordinate on the circle.
+        </p>
+        <p>
+            What makes this especially powerful is that you do <em>not</em> need to memorize all
+            16 special angles around the circle. You only need three coordinate pairs from Quadrant I.
+            From there, the symmetry of the circle does the rest — the same values repeat in every
+            quadrant, with only their signs changing based on where you are.
+        </p>
+        <p>
+            This section also extends your reach. What if the angle is negative, or greater than
+            $2\pi$? The concept of <strong>coterminal angles</strong> — angles that land on the same
+            point on the circle — lets you reduce any angle, no matter how large or strange, down
+            to a familiar reference.
+        </p>
 
-<h2>Blank Unit Circle (Practice 2)</h2>
+        <div class="historical-note">
+            <strong>&#128218; Historical Note:</strong> The systematic study of the relationship between
+            angles and coordinates dates back to <strong>Hipparchus of Nicaea</strong> (c. 190&ndash;120 BC),
+            who is often called the father of trigonometry. He created the first known trigonometric table
+            to help predict astronomical events. Indian mathematicians of the 5th century AD, particularly
+            <strong>Aryabhata</strong>, refined these ideas into the sine function we use today.
+            The unit circle formulation we use in modern classrooms was fully developed by
+            <strong>Leonhard Euler</strong> in the 18th century.
+        </div>
 
-    <div style="text-align:center; margin:40px 0;">
-    <svg viewBox="-350 -350 700 700" width="700" height="700">
-      <circle cx="0" cy="0" r="250" stroke="black" fill="none"/>
-      <line x1="-350" y1="0" x2="350" y2="0" stroke="black"/>
-      <line x1="0" y1="-350" x2="0" y2="350" stroke="black"/>
-      <g stroke="black">
-        <line x1="0" y1="0" x2="250" y2="0"/>
-        <line x1="0" y1="0" x2="217" y2="-125"/>
-        <line x1="0" y1="0" x2="177" y2="-177"/>
-        <line x1="0" y1="0" x2="125" y2="-217"/>
-        <line x1="0" y1="0" x2="-125" y2="-217"/>
-        <line x1="0" y1="0" x2="-177" y2="-177"/>
-        <line x1="0" y1="0" x2="-217" y2="-125"/>
-        <line x1="0" y1="0" x2="-250" y2="0"/>
-        <line x1="0" y1="0" x2="-217" y2="125"/>
-        <line x1="0" y1="0" x2="-177" y2="177"/>
-        <line x1="0" y1="0" x2="-125" y2="217"/>
-        <line x1="0" y1="0" x2="125" y2="217"/>
-        <line x1="0" y1="0" x2="177" y2="177"/>
-        <line x1="0" y1="0" x2="217" y2="125"/>
-      </g>
-    </svg>
+        <div class="connections">
+            <strong>&#128279; Connections to Other Subjects and Real Life:</strong><br><br>
+            <strong>Physics:</strong> Simple harmonic motion — the back-and-forth swing of a pendulum
+            or the oscillation of a spring — is described entirely using sine and cosine. Exact values
+            let physicists write clean equations without decimal clutter.<br><br>
+            <strong>Engineering &amp; Architecture:</strong> Roof pitch angles, structural load
+            calculations, and signal processing all rely on exact trig values. A civil engineer
+            computing the forces on a bridge cable at exactly 30° to the horizontal uses $\frac{1}{2}$,
+            not a rounded decimal.<br><br>
+            <strong>Music and Sound:</strong> Sound waves are sine waves. The frequencies of musical
+            notes correspond to exact mathematical ratios. Audio engineers use trig to design
+            speaker systems and equalizers.<br><br>
+            <strong>Computer Graphics:</strong> Every time a character rotates in a video game,
+            the game engine is computing sine and cosine values to move vertices around a circle.
+            Exact values for common angles make these computations faster and more reliable.
+        </div>
+    </section>
+
+    <!-- KEY VOCABULARY -->
+    <section class="section-content">
+        <h2>Key Vocabulary and Concepts</h2>
+
+        <div class="definition">
+            <strong>Unit Circle:</strong> A circle centered at the origin $(0,0)$ with radius $r = 1$.
+            Every point on the circle has coordinates $(\cos\theta, \sin\theta)$, where $\theta$ is
+            the angle formed with the positive x-axis. Because the radius is 1, the x-coordinate
+            <em>is</em> the cosine and the y-coordinate <em>is</em> the sine — no extra computation needed.
+        </div>
+
+        <div class="definition">
+            <strong>Reference Angle ($\theta'$):</strong> The <em>positive acute angle</em> between the
+            terminal side of $\theta$ and the nearest part of the x-axis. Reference angles are always
+            between $0$ and $\frac{\pi}{2}$. The trig values of $\theta$ have the same <em>absolute value</em>
+            as the trig values of $\theta'$ — only the sign may change depending on the quadrant.
+        </div>
+
+        <div class="definition">
+            <strong>Coterminal Angles:</strong> Two angles are coterminal if their terminal sides land
+            on the same point on the unit circle. You can find a coterminal angle by adding or subtracting
+            any multiple of $2\pi$ (one full revolution):
+            $$\theta_{\text{coterminal}} = \theta \pm 2\pi k, \quad k \in \mathbb{Z}$$
+        </div>
+
+        <div class="definition">
+            <strong>Special Angles:</strong> The angles $0,\ \frac{\pi}{6},\ \frac{\pi}{4},\ \frac{\pi}{3},\ \frac{\pi}{2}$
+            (and their multiples) are called special angles because their exact trig values can be
+            written using simple fractions and radicals. All other angles require a calculator.
+        </div>
+
+        <div class="definition">
+            <strong>Reciprocal Trig Functions:</strong> The three primary functions — sine, cosine,
+            and tangent — each have a reciprocal:
+            $$\csc\theta = \frac{1}{\sin\theta}, \quad \sec\theta = \frac{1}{\cos\theta}, \quad \cot\theta = \frac{1}{\tan\theta}$$
+        </div>
+
+        <h3>The Three Quadrant-I Coordinate Pairs to Memorize</h3>
+        <p>
+            In Quadrant I, as the angle increases from $0$ to $\frac{\pi}{2}$, cosine decreases
+            and sine increases. Memorize these three pairs; everything else follows from symmetry:
+        </p>
+
+        <div class="key-equation">
+            $$\left(\frac{\sqrt{3}}{2},\ \frac{1}{2}\right) \text{ at } \frac{\pi}{6} \qquad
+            \left(\frac{\sqrt{2}}{2},\ \frac{\sqrt{2}}{2}\right) \text{ at } \frac{\pi}{4} \qquad
+            \left(\frac{1}{2},\ \frac{\sqrt{3}}{2}\right) \text{ at } \frac{\pi}{3}$$
+        </div>
+
+        <p>
+            <strong>Memory trick:</strong> The numerators for sine at these three angles are
+            $\sqrt{1},\ \sqrt{2},\ \sqrt{3}$ — all divided by 2. Cosine runs in the reverse order.
+        </p>
+
+        <h3>Special Angle Reference Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Angle (radians)</th>
+                    <th>Angle (degrees)</th>
+                    <th>$\sin\theta$</th>
+                    <th>$\cos\theta$</th>
+                    <th>$\tan\theta$</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>$0$</td><td>$0°$</td><td>$0$</td><td>$1$</td><td>$0$</td></tr>
+                <tr><td>$\dfrac{\pi}{6}$</td><td>$30°$</td><td>$\dfrac{1}{2}$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{\sqrt{3}}{3}$</td></tr>
+                <tr><td>$\dfrac{\pi}{4}$</td><td>$45°$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$\dfrac{\sqrt{2}}{2}$</td><td>$1$</td></tr>
+                <tr><td>$\dfrac{\pi}{3}$</td><td>$60°$</td><td>$\dfrac{\sqrt{3}}{2}$</td><td>$\dfrac{1}{2}$</td><td>$\sqrt{3}$</td></tr>
+                <tr><td>$\dfrac{\pi}{2}$</td><td>$90°$</td><td>$1$</td><td>$0$</td><td>undefined</td></tr>
+                <tr><td>$\pi$</td><td>$180°$</td><td>$0$</td><td>$-1$</td><td>$0$</td></tr>
+                <tr><td>$\dfrac{3\pi}{2}$</td><td>$270°$</td><td>$-1$</td><td>$0$</td><td>undefined</td></tr>
+                <tr><td>$2\pi$</td><td>$360°$</td><td>$0$</td><td>$1$</td><td>$0$</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Quadrant Sign Chart (ASTC Rule)</h3>
+        <p>
+            The acronym <strong>ASTC</strong> — "All Students Take Calculus" — tells you which
+            primary trig functions are <em>positive</em> in each quadrant:
+        </p>
+        <table>
+            <thead>
+                <tr><th>Quadrant</th><th>$\sin\theta$</th><th>$\cos\theta$</th><th>$\tan\theta$</th><th>Memory</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>I</strong> $(0 \text{ to } \frac{\pi}{2})$</td><td>$+$</td><td>$+$</td><td>$+$</td><td><strong>A</strong>ll</td></tr>
+                <tr><td><strong>II</strong> $(\frac{\pi}{2} \text{ to } \pi)$</td><td>$+$</td><td>$-$</td><td>$-$</td><td><strong>S</strong>tudents</td></tr>
+                <tr><td><strong>III</strong> $(\pi \text{ to } \frac{3\pi}{2})$</td><td>$-$</td><td>$-$</td><td>$+$</td><td><strong>T</strong>ake</td></tr>
+                <tr><td><strong>IV</strong> $(\frac{3\pi}{2} \text{ to } 2\pi)$</td><td>$-$</td><td>$+$</td><td>$-$</td><td><strong>C</strong>alculus</td></tr>
+            </tbody>
+        </table>
+
+        <h3>The Labeled Unit Circle</h3>
+        <div class="figure-box">
+            <svg viewBox="-280 -280 560 560" width="540" height="540">
+              <!-- Circle -->
+              <circle cx="0" cy="0" r="200" stroke="#00003d" stroke-width="2" fill="none"/>
+              <!-- Axes -->
+              <line x1="-260" y1="0" x2="260" y2="0" stroke="#333" stroke-width="1.5"/>
+              <line x1="0" y1="-260" x2="0" y2="260" stroke="#333" stroke-width="1.5"/>
+              <!-- Axis labels -->
+              <text x="265" y="5" font-size="14" fill="#333" font-family="serif">x</text>
+              <text x="5" y="-265" font-size="14" fill="#333" font-family="serif">y</text>
+
+              <!-- QI angles - radii -->
+              <line x1="0" y1="0" x2="173" y2="-100" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="141" y2="-141" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="100" y2="-173" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <!-- QII -->
+              <line x1="0" y1="0" x2="-100" y2="-173" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="-141" y2="-141" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="-173" y2="-100" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <!-- QIII -->
+              <line x1="0" y1="0" x2="-173" y2="100" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="-141" y2="141" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="-100" y2="173" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <!-- QIV -->
+              <line x1="0" y1="0" x2="100" y2="173" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="141" y2="141" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="0" y1="0" x2="173" y2="100" stroke="#004d99" stroke-width="1" stroke-dasharray="4,3"/>
+
+              <!-- Dots at key points -->
+              <circle cx="200" cy="0" r="4" fill="#00003d"/>
+              <circle cx="173" cy="-100" r="4" fill="#00003d"/>
+              <circle cx="141" cy="-141" r="4" fill="#00003d"/>
+              <circle cx="100" cy="-173" r="4" fill="#00003d"/>
+              <circle cx="0" cy="-200" r="4" fill="#00003d"/>
+              <circle cx="-100" cy="-173" r="4" fill="#00003d"/>
+              <circle cx="-141" cy="-141" r="4" fill="#00003d"/>
+              <circle cx="-173" cy="-100" r="4" fill="#00003d"/>
+              <circle cx="-200" cy="0" r="4" fill="#00003d"/>
+              <circle cx="-173" cy="100" r="4" fill="#00003d"/>
+              <circle cx="-141" cy="141" r="4" fill="#00003d"/>
+              <circle cx="-100" cy="173" r="4" fill="#00003d"/>
+              <circle cx="0" cy="200" r="4" fill="#00003d"/>
+              <circle cx="100" cy="173" r="4" fill="#00003d"/>
+              <circle cx="141" cy="141" r="4" fill="#00003d"/>
+              <circle cx="173" cy="100" r="4" fill="#00003d"/>
+
+              <!-- Angle labels - outside the circle -->
+              <text x="210" y="8" font-size="11" fill="#00003d" font-family="serif">0</text>
+              <text x="183" y="-107" font-size="11" fill="#00003d" font-family="serif">π/6</text>
+              <text x="147" y="-149" font-size="11" fill="#00003d" font-family="serif">π/4</text>
+              <text x="100" y="-182" font-size="11" fill="#00003d" font-family="serif">π/3</text>
+              <text x="-8" y="-210" font-size="11" fill="#00003d" font-family="serif">π/2</text>
+              <text x="-120" y="-182" font-size="11" fill="#00003d" font-family="serif">2π/3</text>
+              <text x="-162" y="-149" font-size="11" fill="#00003d" font-family="serif">3π/4</text>
+              <text x="-210" y="-107" font-size="11" fill="#00003d" font-family="serif">5π/6</text>
+              <text x="-230" y="8" font-size="11" fill="#00003d" font-family="serif">π</text>
+              <text x="-215" y="115" font-size="11" fill="#00003d" font-family="serif">7π/6</text>
+              <text x="-175" y="157" font-size="11" fill="#00003d" font-family="serif">5π/4</text>
+              <text x="-128" y="190" font-size="11" fill="#00003d" font-family="serif">4π/3</text>
+              <text x="-14" y="220" font-size="11" fill="#00003d" font-family="serif">3π/2</text>
+              <text x="100" y="192" font-size="11" fill="#00003d" font-family="serif">5π/3</text>
+              <text x="147" y="158" font-size="11" fill="#00003d" font-family="serif">7π/4</text>
+              <text x="178" y="115" font-size="11" fill="#00003d" font-family="serif">11π/6</text>
+
+              <!-- Coordinate labels - inside circle near points -->
+              <text x="205" y="-12" font-size="9.5" fill="#555" font-family="serif">(1, 0)</text>
+              <text x="162" y="-93" font-size="9" fill="#555" font-family="serif">(√3/2, 1/2)</text>
+              <text x="122" y="-133" font-size="9" fill="#555" font-family="serif">(√2/2, √2/2)</text>
+              <text x="60" y="-163" font-size="9" fill="#555" font-family="serif">(1/2, √3/2)</text>
+              <text x="-95" y="-163" font-size="9" fill="#555" font-family="serif">(-1/2, √3/2)</text>
+              <text x="-165" y="-133" font-size="9" fill="#555" font-family="serif">(-√2/2, √2/2)</text>
+              <text x="-220" y="-93" font-size="9" fill="#555" font-family="serif">(-√3/2, 1/2)</text>
+              <text x="-255" y="-10" font-size="9.5" fill="#555" font-family="serif">(-1,0)</text>
+              <text x="-235" y="115" font-size="9" fill="#555" font-family="serif">(-√3/2,-1/2)</text>
+              <text x="-195" y="148" font-size="9" fill="#555" font-family="serif">(-√2/2,-√2/2)</text>
+              <text x="-125" y="178" font-size="9" fill="#555" font-family="serif">(-1/2,-√3/2)</text>
+              <text x="55" y="178" font-size="9" fill="#555" font-family="serif">(1/2,-√3/2)</text>
+              <text x="120" y="148" font-size="9" fill="#555" font-family="serif">(√2/2,-√2/2)</text>
+              <text x="158" y="115" font-size="9" fill="#555" font-family="serif">(√3/2,-1/2)</text>
+
+              <!-- Quadrant labels -->
+              <text x="60" y="-50" font-size="16" fill="#004d99" font-weight="bold" font-family="sans-serif">I</text>
+              <text x="-85" y="-50" font-size="16" fill="#004d99" font-weight="bold" font-family="sans-serif">II</text>
+              <text x="-85" y="65" font-size="16" fill="#004d99" font-weight="bold" font-family="sans-serif">III</text>
+              <text x="60" y="65" font-size="16" fill="#004d99" font-weight="bold" font-family="sans-serif">IV</text>
+            </svg>
+            <div class="figure-caption">Figure 7.A.1 — The Unit Circle with coordinates $(\cos\theta, \sin\theta)$ at each special angle.</div>
+        </div>
+
+        <h3>How to Find a Reference Angle</h3>
+        <table>
+            <thead>
+                <tr><th>Quadrant</th><th>Reference Angle Formula</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>I</td><td>$\theta' = \theta$</td><td>$\theta = \frac{\pi}{3} \Rightarrow \theta' = \frac{\pi}{3}$</td></tr>
+                <tr><td>II</td><td>$\theta' = \pi - \theta$</td><td>$\theta = \frac{2\pi}{3} \Rightarrow \theta' = \pi - \frac{2\pi}{3} = \frac{\pi}{3}$</td></tr>
+                <tr><td>III</td><td>$\theta' = \theta - \pi$</td><td>$\theta = \frac{4\pi}{3} \Rightarrow \theta' = \frac{4\pi}{3} - \pi = \frac{\pi}{3}$</td></tr>
+                <tr><td>IV</td><td>$\theta' = 2\pi - \theta$</td><td>$\theta = \frac{5\pi}{3} \Rightarrow \theta' = 2\pi - \frac{5\pi}{3} = \frac{\pi}{3}$</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- COMMON MISTAKES -->
+    <section class="section-content">
+        <div class="common-mistakes">
+            <h4>&#9888; Common Mistakes to Avoid</h4>
+            <p><strong>Mistake 1 — Swapping sine and cosine:</strong> Remember, cosine is the x-coordinate and sine is the y-coordinate. Students often reverse these, especially under pressure. The phrase "x comes before y, cosine comes before sine" can help.</p>
+            <br>
+            <p><strong>Mistake 2 — Forgetting the sign from the quadrant:</strong> The reference angle gives you the magnitude, but you must still apply the correct sign from the ASTC rule. Example: the reference angle for $\frac{5\pi}{6}$ is $\frac{\pi}{6}$, so $|\sin\left(\frac{5\pi}{6}\right)| = \frac{1}{2}$, but since $\frac{5\pi}{6}$ is in Quadrant II where sine is positive, the answer is $+\frac{1}{2}$.</p>
+            <br>
+            <p><strong>Mistake 3 — Incorrect coterminal reduction:</strong> When subtracting $2\pi$ from an angle, make sure to use a common denominator. For example, $\frac{9\pi}{4} - 2\pi = \frac{9\pi}{4} - \frac{8\pi}{4} = \frac{\pi}{4}$, not $\frac{9\pi}{4} - 2 = $ (a meaningless mix of $\pi$ and integers).</p>
+            <br>
+            <p><strong>Mistake 4 — Negative angles:</strong> A negative angle just means you rotate clockwise instead of counterclockwise. $-\frac{\pi}{6}$ lands in Quadrant IV, at the same point as $\frac{11\pi}{6}$. These are coterminal.</p>
+            <br>
+            <p><strong>Mistake 5 — Simplifying $\frac{\sqrt{2}}{2}$ incorrectly:</strong> Some students write $\frac{\sqrt{2}}{2} = \frac{1}{\sqrt{2}}$. Both are correct, but the rationalized form $\frac{\sqrt{2}}{2}$ is standard on most assessments.</p>
+        </div>
+    </section>
+
+    <!-- EXAMPLES -->
+    <section class="section-content">
+        <h2>Worked Examples</h2>
+
+        <div class="example">
+            <h4>Example 1: Basic Special Angle — $\sin\left(\dfrac{3\pi}{4}\right)$</h4>
+            <p>Find the exact value of $\sin\left(\dfrac{3\pi}{4}\right)$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Identify the quadrant.</strong><br>
+                $\frac{3\pi}{4}$ is between $\frac{\pi}{2}$ and $\pi$, so it is in <strong>Quadrant II</strong>.</p>
+                <p><strong>Step 2: Find the reference angle.</strong><br>
+                $\theta' = \pi - \frac{3\pi}{4} = \frac{4\pi}{4} - \frac{3\pi}{4} = \frac{\pi}{4}$</p>
+                <p><strong>Step 3: Find the base value.</strong><br>
+                $\sin\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}$</p>
+                <p><strong>Step 4: Apply the quadrant sign.</strong><br>
+                In Quadrant II, sine is <strong>positive</strong>.</p>
+                <p><strong>Final Answer: $\sin\left(\dfrac{3\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$</strong></p>
+                <div class="figure-box" style="display:inline-block; padding:10px; margin-top:10px;">
+                    <svg viewBox="-130 -130 260 260" width="180" height="180">
+                        <circle cx="0" cy="0" r="100" stroke="#00003d" stroke-width="2" fill="none"/>
+                        <line x1="-130" y1="0" x2="130" y2="0" stroke="#333" stroke-width="1.2"/>
+                        <line x1="0" y1="-130" x2="0" y2="130" stroke="#333" stroke-width="1.2"/>
+                        <line x1="0" y1="0" x2="-71" y2="-71" stroke="#cc0000" stroke-width="2"/>
+                        <circle cx="-71" cy="-71" r="5" fill="#cc0000"/>
+                        <text x="-75" y="-78" font-size="10" fill="#cc0000" font-family="serif">3π/4</text>
+                        <text x="-112" y="-62" font-size="9" fill="#555" font-family="serif">(-√2/2, √2/2)</text>
+                        <text x="35" y="-20" font-size="9" fill="#004d99" font-family="sans-serif">QII</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 2: Negative Angle — $\cos\left(-\dfrac{5\pi}{6}\right)$</h4>
+            <p>Find the exact value of $\cos\left(-\dfrac{5\pi}{6}\right)$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Find a positive coterminal angle.</strong><br>
+                $-\frac{5\pi}{6} + 2\pi = -\frac{5\pi}{6} + \frac{12\pi}{6} = \frac{7\pi}{6}$</p>
+                <p><strong>Step 2: Identify the quadrant.</strong><br>
+                $\frac{7\pi}{6}$ is between $\pi$ and $\frac{3\pi}{2}$, so it lies in <strong>Quadrant III</strong>.</p>
+                <p><strong>Step 3: Find the reference angle.</strong><br>
+                $\theta' = \frac{7\pi}{6} - \pi = \frac{7\pi}{6} - \frac{6\pi}{6} = \frac{\pi}{6}$</p>
+                <p><strong>Step 4: Find the base value.</strong><br>
+                $\cos\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}$</p>
+                <p><strong>Step 5: Apply the quadrant sign.</strong><br>
+                In Quadrant III, cosine is <strong>negative</strong>.</p>
+                <p><strong>Final Answer: $\cos\left(-\dfrac{5\pi}{6}\right) = -\dfrac{\sqrt{3}}{2}$</strong></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 3: Coterminal Angle Reduction — $\tan\left(\dfrac{17\pi}{6}\right)$</h4>
+            <p>Find the exact value of $\tan\left(\dfrac{17\pi}{6}\right)$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Reduce using coterminal reasoning.</strong><br>
+                $\frac{17\pi}{6} - 2\pi = \frac{17\pi}{6} - \frac{12\pi}{6} = \frac{5\pi}{6}$<br>
+                So $\frac{17\pi}{6}$ is coterminal with $\frac{5\pi}{6}$.</p>
+                <p><strong>Step 2: Identify the quadrant.</strong><br>
+                $\frac{5\pi}{6}$ is between $\frac{\pi}{2}$ and $\pi$ — <strong>Quadrant II</strong>.</p>
+                <p><strong>Step 3: Find the reference angle.</strong><br>
+                $\theta' = \pi - \frac{5\pi}{6} = \frac{\pi}{6}$</p>
+                <p><strong>Step 4: Find the base value.</strong><br>
+                $\tan\left(\frac{\pi}{6}\right) = \frac{\sin(\pi/6)}{\cos(\pi/6)} = \frac{1/2}{\sqrt{3}/2} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$</p>
+                <p><strong>Step 5: Apply the quadrant sign.</strong><br>
+                In Quadrant II, tangent is <strong>negative</strong>.</p>
+                <p><strong>Final Answer: $\tan\left(\dfrac{17\pi}{6}\right) = -\dfrac{\sqrt{3}}{3}$</strong></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 4: All Six Functions — $\theta = \dfrac{5\pi}{3}$</h4>
+            <p>Evaluate all six trigonometric functions for $\theta = \dfrac{5\pi}{3}$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Identify the quadrant and reference angle.</strong><br>
+                $\frac{5\pi}{3}$ is between $\frac{3\pi}{2}$ and $2\pi$ — <strong>Quadrant IV</strong>.<br>
+                Reference angle: $\theta' = 2\pi - \frac{5\pi}{3} = \frac{6\pi}{3} - \frac{5\pi}{3} = \frac{\pi}{3}$</p>
+                <p><strong>Step 2: Read the base coordinate.</strong><br>
+                At $\frac{\pi}{3}$: $\cos = \frac{1}{2}$, $\sin = \frac{\sqrt{3}}{2}$</p>
+                <p><strong>Step 3: Apply Quadrant IV signs</strong> (cosine $+$, sine $-$):<br>
+                $\cos\left(\frac{5\pi}{3}\right) = \dfrac{1}{2}$, $\quad \sin\left(\frac{5\pi}{3}\right) = -\dfrac{\sqrt{3}}{2}$</p>
+                <p><strong>Step 4: Compute tangent and reciprocals.</strong></p>
+                $$\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{-\sqrt{3}/2}{1/2} = -\sqrt{3}$$
+                $$\csc\theta = \frac{1}{\sin\theta} = \frac{1}{-\sqrt{3}/2} = -\frac{2}{\sqrt{3}} = -\frac{2\sqrt{3}}{3}$$
+                $$\sec\theta = \frac{1}{\cos\theta} = \frac{1}{1/2} = 2$$
+                $$\cot\theta = \frac{1}{\tan\theta} = \frac{1}{-\sqrt{3}} = -\frac{\sqrt{3}}{3}$$
+                <p><strong>Final Answers:</strong><br>
+                $\sin = -\dfrac{\sqrt{3}}{2}$, $\cos = \dfrac{1}{2}$, $\tan = -\sqrt{3}$,
+                $\csc = -\dfrac{2\sqrt{3}}{3}$, $\sec = 2$, $\cot = -\dfrac{\sqrt{3}}{3}$</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 5 (Extended): Large Negative Angle — $\sin\left(-\dfrac{23\pi}{4}\right)$</h4>
+            <p>Find the exact value of $\sin\left(-\dfrac{23\pi}{4}\right)$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Add multiples of $2\pi$ until the angle is in $[0, 2\pi)$.</strong><br>
+                $-\frac{23\pi}{4} + 2\pi = -\frac{23\pi}{4} + \frac{8\pi}{4} = -\frac{15\pi}{4}$<br>
+                $-\frac{15\pi}{4} + 2\pi = -\frac{15\pi}{4} + \frac{8\pi}{4} = -\frac{7\pi}{4}$<br>
+                $-\frac{7\pi}{4} + 2\pi = -\frac{7\pi}{4} + \frac{8\pi}{4} = \frac{\pi}{4}$</p>
+                <p>So $-\frac{23\pi}{4}$ is coterminal with $\frac{\pi}{4}$.</p>
+                <p><strong>Step 2: Quadrant and sign.</strong><br>
+                $\frac{\pi}{4}$ is in <strong>Quadrant I</strong> — sine is positive.</p>
+                <p><strong>Step 3: Read the value.</strong><br>
+                $\sin\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}$</p>
+                <p><strong>Final Answer: $\sin\left(-\dfrac{23\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$</strong></p>
+                <p><em>Key insight: Adding $2\pi$ three times ($\frac{24\pi}{4} = 6\pi$) in one step works too:
+                $-\frac{23\pi}{4} + \frac{24\pi}{4} = \frac{\pi}{4}$. Always look for the fastest path!</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+        <h3>Summary of Key Concepts</h3>
+        <ul>
+            <li>The <strong>unit circle</strong> has radius 1, centered at the origin. Every point is $(\cos\theta, \sin\theta)$.</li>
+            <li><strong>Cosine is the x-coordinate; sine is the y-coordinate.</strong> Never reverse these.</li>
+            <li>You only need to memorize <strong>three Quadrant I pairs</strong>: at $\frac{\pi}{6}$, $\frac{\pi}{4}$, and $\frac{\pi}{3}$. Symmetry fills in the rest.</li>
+            <li>The <strong>ASTC rule</strong> tells you which functions are positive in each quadrant (All Students Take Calculus).</li>
+            <li>The <strong>reference angle</strong> is the acute angle to the nearest x-axis. It gives you the magnitude; the quadrant gives you the sign.</li>
+            <li><strong>Coterminal angles</strong> land at the same point. Subtract $2\pi$ (as a fraction with matching denominator) to reduce large angles.</li>
+            <li><strong>Negative angles</strong> rotate clockwise. Add $2\pi$ to convert to a positive coterminal angle.</li>
+            <li>The <strong>reciprocal functions</strong> (csc, sec, cot) are just $\frac{1}{\sin}$, $\frac{1}{\cos}$, $\frac{1}{\tan}$ — compute the primary function first, then flip.</li>
+            <li>$\tan\theta$ is <strong>undefined</strong> when $\cos\theta = 0$ (at $\frac{\pi}{2}$ and $\frac{3\pi}{2}$).</li>
+        </ul>
     </div>
-    
 
-
-    <div style="page-break-before: always;"></div>
-
-
-<h2>Common Pattern</h2>
-<p>Memorize only these three patterns in Quadrant I:</p>
-<p>$\left(\frac{\sqrt3}{2}, \frac12\right)$</p>
-<p>$\left(\frac{\sqrt2}{2}, \frac{\sqrt2}{2}\right)$</p>
-<p>$\left(\frac12, \frac{\sqrt3}{2}\right)$</p>
-<p>Cosine decreases as the angle increases. Sine increases as the angle increases.</p>
-<p>Values repeat across quadrants. Only the signs change.</p>
-
-
-    <div style="page-break-before: always;"></div>
-
-
-<h2>Examples</h2>
-
-<div class="question">Example 1: Find $\sin\left(\frac{3\pi}{4}\right)$.</div>
-<div class="workspace">
-    <svg viewBox="-150 -150 300 300" width="230" height="230">
-      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-      <g stroke="black">
-        <line x1="0" y1="0" x2="100" y2="0"/>
-        <line x1="0" y1="0" x2="87" y2="-50"/>
-        <line x1="0" y1="0" x2="71" y2="-71"/>
-        <line x1="0" y1="0" x2="50" y2="-87"/>
-        <line x1="0" y1="0" x2="-50" y2="-87"/>
-        <line x1="0" y1="0" x2="-71" y2="-71"/>
-        <line x1="0" y1="0" x2="-87" y2="-50"/>
-        <line x1="0" y1="0" x2="-100" y2="0"/>
-        <line x1="0" y1="0" x2="-87" y2="50"/>
-        <line x1="0" y1="0" x2="-71" y2="71"/>
-        <line x1="0" y1="0" x2="-50" y2="87"/>
-        <line x1="0" y1="0" x2="50" y2="87"/>
-        <line x1="0" y1="0" x2="71" y2="71"/>
-        <line x1="0" y1="0" x2="87" y2="50"/>
-      </g>
-    </svg>
-    <div style="flex:1;"></div></div>
-
-
-    <div style="page-break-before: always;"></div>
-
-
-<div class="question">Example 2: Find $\cos\left(-\frac{\pi}{6}\right)$.</div>
-<div class="workspace">
-    <svg viewBox="-150 -150 300 300" width="230" height="230">
-      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-      <g stroke="black">
-        <line x1="0" y1="0" x2="100" y2="0"/>
-        <line x1="0" y1="0" x2="87" y2="-50"/>
-        <line x1="0" y1="0" x2="71" y2="-71"/>
-        <line x1="0" y1="0" x2="50" y2="-87"/>
-        <line x1="0" y1="0" x2="-50" y2="-87"/>
-        <line x1="0" y1="0" x2="-71" y2="-71"/>
-        <line x1="0" y1="0" x2="-87" y2="-50"/>
-        <line x1="0" y1="0" x2="-100" y2="0"/>
-        <line x1="0" y1="0" x2="-87" y2="50"/>
-        <line x1="0" y1="0" x2="-71" y2="71"/>
-        <line x1="0" y1="0" x2="-50" y2="87"/>
-        <line x1="0" y1="0" x2="50" y2="87"/>
-        <line x1="0" y1="0" x2="71" y2="71"/>
-        <line x1="0" y1="0" x2="87" y2="50"/>
-      </g>
-    </svg>
-    <div style="flex:1;"></div></div>
-
-
-    <div style="page-break-before: always;"></div>
-
-
-<div class="question">Example 3: Find $\tan\left(\frac{5\pi}{3}\right)$.</div>
-<div class="workspace">
-    <svg viewBox="-150 -150 300 300" width="230" height="230">
-      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-      <g stroke="black">
-        <line x1="0" y1="0" x2="100" y2="0"/>
-        <line x1="0" y1="0" x2="87" y2="-50"/>
-        <line x1="0" y1="0" x2="71" y2="-71"/>
-        <line x1="0" y1="0" x2="50" y2="-87"/>
-        <line x1="0" y1="0" x2="-50" y2="-87"/>
-        <line x1="0" y1="0" x2="-71" y2="-71"/>
-        <line x1="0" y1="0" x2="-87" y2="-50"/>
-        <line x1="0" y1="0" x2="-100" y2="0"/>
-        <line x1="0" y1="0" x2="-87" y2="50"/>
-        <line x1="0" y1="0" x2="-71" y2="71"/>
-        <line x1="0" y1="0" x2="-50" y2="87"/>
-        <line x1="0" y1="0" x2="50" y2="87"/>
-        <line x1="0" y1="0" x2="71" y2="71"/>
-        <line x1="0" y1="0" x2="87" y2="50"/>
-      </g>
-    </svg>
-    <div style="flex:1;"></div></div>
-
-
-    <div style="page-break-before: always;"></div>
-
-
-<div class="question">Example 4: Find $\sin\left(\frac{19\pi}{6}\right)$.</div>
-<div class="workspace">
-    <svg viewBox="-150 -150 300 300" width="230" height="230">
-      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-      <g stroke="black">
-        <line x1="0" y1="0" x2="100" y2="0"/>
-        <line x1="0" y1="0" x2="87" y2="-50"/>
-        <line x1="0" y1="0" x2="71" y2="-71"/>
-        <line x1="0" y1="0" x2="50" y2="-87"/>
-        <line x1="0" y1="0" x2="-50" y2="-87"/>
-        <line x1="0" y1="0" x2="-71" y2="-71"/>
-        <line x1="0" y1="0" x2="-87" y2="-50"/>
-        <line x1="0" y1="0" x2="-100" y2="0"/>
-        <line x1="0" y1="0" x2="-87" y2="50"/>
-        <line x1="0" y1="0" x2="-71" y2="71"/>
-        <line x1="0" y1="0" x2="-50" y2="87"/>
-        <line x1="0" y1="0" x2="50" y2="87"/>
-        <line x1="0" y1="0" x2="71" y2="71"/>
-        <line x1="0" y1="0" x2="87" y2="50"/>
-      </g>
-    </svg>
-    <div style="flex:1;"></div></div>
-
-
-    <div style="page-break-before: always;"></div>
-
-
-<h2>Summary</h2>
-<ul>
-<li>Cosine is the x-coordinate.</li>
-<li>Sine is the y-coordinate.</li>
-<li>Tangent is $\frac{\sin\theta}{\cos\theta}$.</li>
-<li>Only three special coordinate patterns must be memorized.</li>
-<li>Coordinates repeat across quadrants.</li>
-<li>Signs depend on quadrant.</li>
-<li>Negative angles rotate clockwise.</li>
-<li>Angles greater than $2\pi$ can be reduced using coterminal angles.</li>
-</ul>
-
-<h2>Common Mistakes to Avoid</h2>
-<ul>
-<li>Using the reference angle value but forgetting to change the sign.</li>
-<li>Forgetting to reduce angles greater than $2\pi$.</li>
-<li>Rotating counterclockwise instead of clockwise for negative angles.</li>
-<li>Leaving tangent as a complex fraction instead of simplifying.</li>
-<li>Confusing sine and cosine coordinates.</li>
-</ul>
-
-
-
-    <div style="page-break-before: always;"></div>
-
-
-<h2>Practice Problems</h2>
-
-<h3>Easy</h3>
-<div class="question">$\sin(\pi/4)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-
-<div style="flex:1;"></div></div><div class="question">$\cos(\pi/3)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-    
-
-
-
-    <div style="page-break-before: always;"></div>
-
-
-
-
-<div style="flex:1;"></div></div><div class="question">$\tan(\pi/6)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\sin(\pi/3)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-    
-
- 
-
-
-<div style="flex:1;"></div></div><h3>Medium</h3><div class="question">$\cos(5\pi/3)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-    
-
-
-
-
-<div style="flex:1;"></div></div><div class="question">$\sin(4\pi/3)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\tan(3\pi/4)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-
-
-
-<div style="flex:1;"></div></div><div class="question">$\cos(7\pi/6)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\sin(-\pi/6)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-    
-<div style="flex:1;"></div></div><div class="question">$\tan(5\pi/6)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><h3>Harder</h3><div class="question">$\sin(11\pi/4)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\cos(13\pi/6)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\tan(-4\pi/3)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\sin(9\pi/4)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><h3>Challenge</h3><div class="question">$\cos(-23\pi/6)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\sin(19\pi/4)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\tan(25\pi/6)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div><div class="question">$\sin(-17\pi/3)$</div><div class="workspace">
-<svg viewBox="-150 -150 300 300" width="230" height="230">
-  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
-  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
-  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
-  <g stroke="black">
-    <line x1="0" y1="0" x2="100" y2="0"/>
-    <line x1="0" y1="0" x2="87" y2="-50"/>
-    <line x1="0" y1="0" x2="71" y2="-71"/>
-    <line x1="0" y1="0" x2="50" y2="-87"/>
-    <line x1="0" y1="0" x2="-50" y2="-87"/>
-    <line x1="0" y1="0" x2="-71" y2="-71"/>
-    <line x1="0" y1="0" x2="-87" y2="-50"/>
-    <line x1="0" y1="0" x2="-100" y2="0"/>
-    <line x1="0" y1="0" x2="-87" y2="50"/>
-    <line x1="0" y1="0" x2="-71" y2="71"/>
-    <line x1="0" y1="0" x2="-50" y2="87"/>
-    <line x1="0" y1="0" x2="50" y2="87"/>
-    <line x1="0" y1="0" x2="71" y2="71"/>
-    <line x1="0" y1="0" x2="87" y2="50"/>
-  </g>
-</svg>
-<div style="flex:1;"></div></div>
-<h3>Justify</h3>
-
-<div class="question">19. Justify why $\sin(2\pi/3)$ is positive but $\cos(2\pi/3)$ is negative.</div>
-<div style="min-height:420px;"></div>
-
-<div class="question">20. Justify how you would determine $\sin(19\pi/4)$ without using a diagram. Include coterminal angle reasoning, reference angle, and quadrant.</div>
-<div style="min-height:420px;"></div>
-
-
-
-
-<h2>Solutions</h2>
-
-<h3>Easy</h3>
-
-<p><strong>1. $\sin\left(\frac{\pi}{4}\right)$</strong><br>
-Step 1: $\frac{\pi}{4}$ is in Quadrant I.<br>
-Step 2: Reference angle = $\frac{\pi}{4}$.<br>
-Step 3: Sine is positive in Quadrant I.<br>
-Final Answer: $\frac{\sqrt{2}}{2}$.
-</p>
-
-<p><strong>2. $\cos\left(\frac{\pi}{3}\right)$</strong><br>
-Quadrant I → cosine is positive.<br>
-Reference value for $\frac{\pi}{3}$ is $\frac{1}{2}$.<br>
-Final Answer: $\frac{1}{2}$.
-</p>
-
-<p><strong>3. $\tan\left(\frac{\pi}{6}\right)$</strong><br>
-$\tan\theta = \frac{\sin\theta}{\cos\theta}$.<br>
-$= \frac{\frac{1}{2}}{\frac{\sqrt{3}}{2}} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$.<br>
-Final Answer: $\frac{\sqrt{3}}{3}$.
-</p>
-
-<p><strong>4. $\sin\left(\frac{\pi}{3}\right)$</strong><br>
-Quadrant I → sine positive.<br>
-Final Answer: $\frac{\sqrt{3}}{2}$.
-</p>
-
-<h3>Medium</h3>
-
-<p><strong>5. $\cos\left(\frac{5\pi}{3}\right)$</strong><br>
-Quadrant IV → cosine positive.<br>
-Reference angle = $\frac{\pi}{3}$.<br>
-Final Answer: $\frac{1}{2}$.
-</p>
-
-<p><strong>6. $\sin\left(\frac{4\pi}{3}\right)$</strong><br>
-Quadrant III → sine negative.<br>
-Reference angle = $\frac{\pi}{3}$.<br>
-Final Answer: $-\frac{\sqrt{3}}{2}$.
-</p>
-
-<p><strong>7. $\tan\left(\frac{3\pi}{4}\right)$</strong><br>
-Quadrant II → tangent negative.<br>
-Reference angle = $\frac{\pi}{4}$.<br>
-Final Answer: $-1$.
-</p>
-
-<p><strong>8. $\cos\left(\frac{7\pi}{6}\right)$</strong><br>
-Quadrant III → cosine negative.<br>
-Reference angle = $\frac{\pi}{6}$.<br>
-Final Answer: $-\frac{\sqrt{3}}{2}$.
-</p>
-
-<p><strong>9. $\sin\left(-\frac{\pi}{6}\right)$</strong><br>
-Negative angle → rotate clockwise to Quadrant IV.<br>
-Sine negative in Quadrant IV.<br>
-Final Answer: $-\frac{1}{2}$.
-</p>
-
-<p><strong>10. $\tan\left(\frac{5\pi}{6}\right)$</strong><br>
-Quadrant II → tangent negative.<br>
-Reference angle = $\frac{\pi}{6}$.<br>
-Final Answer: $-\frac{\sqrt{3}}{3}$.
-</p>
-
-<h3>Harder</h3>
-
-<p><strong>11. $\sin\left(\frac{11\pi}{4}\right)$</strong><br>
-$\frac{11\pi}{4} - 2\pi = \frac{3\pi}{4}$.<br>
-Quadrant II → sine positive.<br>
-Final Answer: $\frac{\sqrt{2}}{2}$.
-</p>
-
-<p><strong>12. $\cos\left(\frac{13\pi}{6}\right)$</strong><br>
-$\frac{13\pi}{6} - 2\pi = \frac{\pi}{6}$.<br>
-Quadrant I → cosine positive.<br>
-Final Answer: $\frac{\sqrt{3}}{2}$.
-</p>
-
-<p><strong>13. $\tan\left(-\frac{4\pi}{3}\right)$</strong><br>
-Add $2\pi$: $-\frac{4\pi}{3} + 2\pi = \frac{2\pi}{3}$.<br>
-Quadrant II → tangent negative.<br>
-Reference angle = $\frac{\pi}{3}$.<br>
-Final Answer: $-\sqrt{3}$.
-</p>
-
-<p><strong>14. $\sin\left(\frac{9\pi}{4}\right)$</strong><br>
-$\frac{9\pi}{4} - 2\pi = \frac{\pi}{4}$.<br>
-Quadrant I → sine positive.<br>
-Final Answer: $\frac{\sqrt{2}}{2}$.
-</p>
-
-<h3>Challenge</h3>
-
-<p><strong>15. $\cos\left(-\frac{23\pi}{6}\right)$</strong><br>
-Add $4\pi$: $-\frac{23\pi}{6} + \frac{24\pi}{6} = \frac{\pi}{6}$.<br>
-Quadrant I → cosine positive.<br>
-Final Answer: $\frac{\sqrt{3}}{2}$.
-</p>
-
-<p><strong>16. $\sin\left(\frac{19\pi}{4}\right)$</strong><br>
-$\frac{19\pi}{4} - 4\pi = \frac{3\pi}{4}$.<br>
-Quadrant II → sine positive.<br>
-Final Answer: $\frac{\sqrt{2}}{2}$.
-</p>
-
-<p><strong>17. $\tan\left(\frac{25\pi}{6}\right)$</strong><br>
-$\frac{25\pi}{6} - 4\pi = \frac{\pi}{6}$.<br>
-Quadrant I → tangent positive.<br>
-Final Answer: $\frac{\sqrt{3}}{3}$.
-</p>
-
-<p><strong>18. $\sin\left(-\frac{17\pi}{3}\right)$</strong><br>
-Add $6\pi$: $-\frac{17\pi}{3} + \frac{18\pi}{3} = \frac{\pi}{3}$.<br>
-Quadrant I → sine positive.<br>
-Final Answer: $\frac{\sqrt{3}}{2}$.
-</p>
-
-<h3>Justify</h3>
-
-<p><strong>19.</strong><br>
-$\frac{2\pi}{3}$ lies in Quadrant II.  
-In Quadrant II, sine (the y-coordinate) is positive and cosine (the x-coordinate) is negative.  
-Therefore $\sin\left(\frac{2\pi}{3}\right) > 0$ and $\cos\left(\frac{2\pi}{3}\right) < 0$.
-</p>
-
-<p><strong>20.</strong><br>
-Reduce the angle: $\frac{19\pi}{4} - 4\pi = \frac{3\pi}{4}$.  
-$\frac{3\pi}{4}$ lies in Quadrant II with reference angle $\frac{\pi}{4}$.  
-Sine is positive in Quadrant II.  
-Therefore $\sin\left(\frac{19\pi}{4}\right) = \frac{\sqrt{2}}{2}$.
-</p>
-
-</body></html>
+    <!-- KEY EQUATIONS TABLE -->
+    <h2>Key Equations</h2>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Equation</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Unit Circle Identity</td><td>$$x^2 + y^2 = 1$$</td><td>Defines the unit circle; connects to $\sin^2\theta + \cos^2\theta = 1$</td></tr>
+            <tr><td>Cosine Definition</td><td>$$\cos\theta = x$$</td><td>x-coordinate of the point on the unit circle at angle $\theta$</td></tr>
+            <tr><td>Sine Definition</td><td>$$\sin\theta = y$$</td><td>y-coordinate of the point on the unit circle at angle $\theta$</td></tr>
+            <tr><td>Tangent Definition</td><td>$$\tan\theta = \frac{\sin\theta}{\cos\theta}$$</td><td>Ratio of y to x; undefined when $\cos\theta = 0$</td></tr>
+            <tr><td>Coterminal Angles</td><td>$$\theta' = \theta \pm 2\pi k,\; k \in \mathbb{Z}$$</td><td>Reduce or extend any angle to a coterminal equivalent</td></tr>
+            <tr><td>Reference Angle (QII)</td><td>$$\theta' = \pi - \theta$$</td><td>For $\theta$ in Quadrant II</td></tr>
+            <tr><td>Reference Angle (QIII)</td><td>$$\theta' = \theta - \pi$$</td><td>For $\theta$ in Quadrant III</td></tr>
+            <tr><td>Reference Angle (QIV)</td><td>$$\theta' = 2\pi - \theta$$</td><td>For $\theta$ in Quadrant IV</td></tr>
+        </tbody>
+    </table>
+
+    <!-- PRACTICE PROBLEMS -->
+    <div class="practice-problems">
+        <h3>Practice Problems</h3>
+        <p>Use the unit circle and reference angle strategy. Do not use a calculator.</p>
+
+        <p><strong>Easy</strong></p>
+        <div class="problem"><strong>1 (Easy):</strong> Find $\sin\left(\dfrac{\pi}{4}\right)$.</div>
+        <div class="problem"><strong>2 (Easy):</strong> Find $\cos\left(\dfrac{\pi}{6}\right)$.</div>
+        <div class="problem"><strong>3 (Easy):</strong> Find $\tan\left(\dfrac{\pi}{3}\right)$.</div>
+        <div class="problem"><strong>4 (Easy):</strong> Find $\sin\left(\dfrac{\pi}{2}\right)$ and $\cos\left(\dfrac{\pi}{2}\right)$.</div>
+
+        <p><strong>Medium</strong></p>
+        <div class="problem"><strong>5 (Medium):</strong> Find $\cos\left(\dfrac{5\pi}{6}\right)$.</div>
+        <div class="problem"><strong>6 (Medium):</strong> Find $\sin\left(\dfrac{4\pi}{3}\right)$.</div>
+        <div class="problem"><strong>7 (Medium):</strong> Find $\tan\left(-\dfrac{\pi}{4}\right)$.</div>
+        <div class="problem"><strong>8 (Medium):</strong> Find $\cos\left(\dfrac{7\pi}{4}\right)$.</div>
+
+        <p><strong>Hard</strong></p>
+        <div class="problem"><strong>9 (Hard):</strong> Find $\sin\left(\dfrac{13\pi}{6}\right)$. (Requires coterminal reduction.)</div>
+        <div class="problem"><strong>10 (Hard):</strong> Find all six trig functions for $\theta = \dfrac{2\pi}{3}$.</div>
+        <div class="problem"><strong>11 (Hard):</strong> Find $\tan\left(-\dfrac{11\pi}{4}\right)$. Show your coterminal reasoning.</div>
+        <div class="problem"><strong>12 (Hard):</strong> Find $\cos\left(\dfrac{19\pi}{6}\right)$. Show all steps.</div>
+
+        <p><strong>Challenging</strong></p>
+        <div class="problem"><strong>13 (Challenging):</strong> Find $\sin\left(-\dfrac{17\pi}{3}\right)$. This angle requires adding a multiple of $2\pi$ greater than $2\pi$. Show your full coterminal reduction process.</div>
+        <div class="problem"><strong>14 (Challenging):</strong> Find $\csc\left(\dfrac{7\pi}{6}\right)$ and $\sec\left(\dfrac{7\pi}{6}\right)$. Explain each step including why csc is negative.</div>
+
+        <p><strong>Justify</strong></p>
+        <div class="problem"><strong>15 (Justify):</strong> Explain in complete sentences why $\sin\left(\dfrac{5\pi}{6}\right) = \sin\left(\dfrac{\pi}{6}\right)$ using the concept of reference angles and quadrant symmetry. Include a diagram or description of the unit circle to support your reasoning.</div>
+        <div class="problem"><strong>16 (Justify):</strong> A student claims that $\cos(-\theta) = -\cos(\theta)$ because "the negative makes it negative." Use a specific example and the unit circle to explain whether the student is correct or incorrect, and why.</div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key">
+        <h3>Answer Key</h3>
+
+        <div class="answer"><strong>1.</strong> $\sin\left(\frac{\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$. Quadrant I; the point is $\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$; sine = y-coordinate.</div>
+        <div class="answer"><strong>2.</strong> $\cos\left(\frac{\pi}{6}\right) = \dfrac{\sqrt{3}}{2}$. Quadrant I; the point is $\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)$; cosine = x-coordinate.</div>
+        <div class="answer"><strong>3.</strong> $\tan\left(\frac{\pi}{3}\right) = \sqrt{3}$. $\frac{\sin(\pi/3)}{\cos(\pi/3)} = \frac{\sqrt{3}/2}{1/2} = \sqrt{3}$.</div>
+        <div class="answer"><strong>4.</strong> $\sin\left(\frac{\pi}{2}\right) = 1$; $\cos\left(\frac{\pi}{2}\right) = 0$. The point at $\frac{\pi}{2}$ is $(0, 1)$.</div>
+        <div class="answer"><strong>5.</strong> $\cos\left(\frac{5\pi}{6}\right) = -\dfrac{\sqrt{3}}{2}$. Quadrant II; reference angle $= \frac{\pi}{6}$; cosine is negative in QII.</div>
+        <div class="answer"><strong>6.</strong> $\sin\left(\frac{4\pi}{3}\right) = -\dfrac{\sqrt{3}}{2}$. Quadrant III; reference angle $= \frac{\pi}{3}$; sine is negative in QIII.</div>
+        <div class="answer"><strong>7.</strong> $\tan\left(-\frac{\pi}{4}\right) = -1$. Coterminal with $\frac{7\pi}{4}$ (Quadrant IV). Reference angle $= \frac{\pi}{4}$; tangent is negative in QIV; $|\tan(\pi/4)| = 1$.</div>
+        <div class="answer"><strong>8.</strong> $\cos\left(\frac{7\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$. Quadrant IV; reference angle $= \frac{\pi}{4}$; cosine is positive in QIV.</div>
+        <div class="answer"><strong>9.</strong> $\sin\left(\frac{13\pi}{6}\right) = \dfrac{1}{2}$. Subtract $2\pi$: $\frac{13\pi}{6} - \frac{12\pi}{6} = \frac{\pi}{6}$. Quadrant I, sine positive: $\sin(\pi/6) = \frac{1}{2}$.</div>
+        <div class="answer"><strong>10.</strong> $\theta = \frac{2\pi}{3}$ is in Quadrant II; reference angle $= \frac{\pi}{3}$. Point: $\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)$.<br>
+        $\sin = \frac{\sqrt{3}}{2}$, $\cos = -\frac{1}{2}$, $\tan = -\sqrt{3}$, $\csc = \frac{2\sqrt{3}}{3}$, $\sec = -2$, $\cot = -\frac{\sqrt{3}}{3}$.</div>
+        <div class="answer"><strong>11.</strong> $\tan\left(-\frac{11\pi}{4}\right)$: Add $2\pi$ twice: $-\frac{11\pi}{4} + \frac{8\pi}{4} = -\frac{3\pi}{4}$. Add $2\pi$ again: $-\frac{3\pi}{4} + \frac{8\pi}{4} = \frac{5\pi}{4}$. Quadrant III; reference angle $= \frac{\pi}{4}$; tangent is positive in QIII. $\tan\left(-\frac{11\pi}{4}\right) = 1$.</div>
+        <div class="answer"><strong>12.</strong> $\cos\left(\frac{19\pi}{6}\right)$: Subtract $2\pi$: $\frac{19\pi}{6} - \frac{12\pi}{6} = \frac{7\pi}{6}$. Quadrant III; reference angle $= \frac{\pi}{6}$; cosine is negative in QIII. $\cos = -\dfrac{\sqrt{3}}{2}$.</div>
+        <div class="answer"><strong>13.</strong> $\sin\left(-\frac{17\pi}{3}\right)$: Add $6\pi = \frac{18\pi}{3}$: $-\frac{17\pi}{3} + \frac{18\pi}{3} = \frac{\pi}{3}$. Quadrant I; sine is positive. $\sin\left(-\frac{17\pi}{3}\right) = \dfrac{\sqrt{3}}{2}$.</div>
+        <div class="answer"><strong>14.</strong> $\theta = \frac{7\pi}{6}$, Quadrant III; reference angle $= \frac{\pi}{6}$. Point: $\left(-\frac{\sqrt{3}}{2}, -\frac{1}{2}\right)$.<br>
+        $\sin = -\frac{1}{2}$ → $\csc = \frac{1}{-1/2} = -2$.<br>
+        $\cos = -\frac{\sqrt{3}}{2}$ → $\sec = \frac{1}{-\sqrt{3}/2} = -\frac{2\sqrt{3}}{3}$.<br>
+        $\csc$ is negative because sine is negative in Quadrant III; its reciprocal inherits that negative sign.</div>
+        <div class="answer"><strong>15.</strong> Both $\frac{5\pi}{6}$ and $\frac{\pi}{6}$ have the same reference angle of $\frac{\pi}{6}$. The angle $\frac{\pi}{6}$ is in Quadrant I and $\frac{5\pi}{6}$ is in Quadrant II. In both quadrants, sine is positive. Since the reference angle is the same and sine is positive in both, $\sin\left(\frac{5\pi}{6}\right) = \sin\left(\frac{\pi}{6}\right) = \frac{1}{2}$. On the unit circle, these two points are reflections of each other across the y-axis, so they share the same y-coordinate (sine value).</div>
+        <div class="answer"><strong>16.</strong> The student is <strong>incorrect</strong>. Example: Let $\theta = \frac{\pi}{3}$. Then $\cos\left(\frac{\pi}{3}\right) = \frac{1}{2}$, and $\cos\left(-\frac{\pi}{3}\right) = \frac{1}{2}$ also (cosine is an even function). On the unit circle, $-\frac{\pi}{3}$ is a clockwise rotation landing in Quadrant IV at $\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)$. The x-coordinate (cosine) is still $+\frac{1}{2}$, unchanged. The correct rule is $\cos(-\theta) = \cos(\theta)$. It is sine that changes sign: $\sin(-\theta) = -\sin(\theta)$.</div>
+    </div>
+
+</div>
+</body>
+</html>

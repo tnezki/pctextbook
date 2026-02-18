@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Section 7.D</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']] }, svg: { fontCache: 'global' } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body{margin:0.5in;font-family:Arial;line-height:1.6;}
+.workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
+.question{font-size:1.2em;margin-top:28px;}
+  /* ============================= */
+/* PRINT STRUCTURE CONTROL       */
+/* ============================= */
+
+@media print {
+
+  /* Remove flex for clean page splitting */
+  .workspace {
+    display: block !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep question attached to workspace */
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Keep headers attached to content below */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Avoid awkward paragraph splits */
+  p, ul {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<h1>SECTION 7.D<br>Solving Advanced Trigonometric Equations</h1>
+
+<h2>Learning Objectives</h2>
+<ul>
+<li>I can solve basic trigonometric equations visually for all six trig functions.</li>
+<li>I can solve linear trigonometric equations in radians involving secant, cosecant, and cotangent.</li>
+<li>I can solve advanced trigonometric equations in radians and verify solutions.</li>
+<li>I can attend to precision when writing general solutions.</li>
+</ul>
+
+<h2>Real-World Application</h2>
+
+<p>Trigonometric equations are used whenever motion repeats in cycles.</p>
+
+<p>Examples include:</p>
+<ul>
+<li>The position of a Ferris wheel rider</li>
+<li>Tidal height changes</li>
+<li>Alternating current in electrical circuits</li>
+<li>Seasonal temperature models</li>
+</ul>
+
+<p>Suppose the height (in feet) of a rider on a Ferris wheel is modeled by:</p>
+
+<p>$h(t)=20+18\sin\left(\frac{\pi}{6}t\right)$</p>
+
+<p>If we want to know when the rider is exactly 29 feet above the ground, we solve:</p>
+
+<p>$20+18\sin\left(\frac{\pi}{6}t\right)=29$</p>
+
+<p>This requires isolating the trig function and solving the equation within a time interval.</p>
+<div style="page-break-before: always;"></div>
+<h2>Introduction</h2>
+
+<p>In previous sections, we evaluated and rewrote trigonometric expressions.</p>
+
+<p>Now we solve equations.</p>
+
+<p>Solving trig equations requires:</p>
+
+<ul>
+<li>Isolating the trig function</li>
+<li>Finding reference angles</li>
+<li>Determining all solutions in an interval</li>
+<li>Writing general solutions when required</li>
+</ul>
+
+<p>Precision matters.</p>
+
+<h2>Key Vocabulary</h2>
+
+<p><strong>Principal Solution:</strong> Solutions within one cycle, typically $0 \le \theta < 2\pi$.</p>
+<p><strong>General Solution:</strong> All solutions written using appropriate period notation.</p>
+<p><strong>Period:</strong> Length of one complete cycle.</p>
+
+<h2>Core Strategy</h2>
+
+<ul>
+<li>Step 1: Isolate the trig function.</li>
+<li>Step 2: Identify the reference angle.</li>
+<li>Step 3: Determine all solutions in the interval.</li>
+<li>Step 4: Write the general solution if required.</li>
+</ul>
+<div style="page-break-before: always;"></div>
+<h2>Examples</h2>
+
+<div class="question">Example 1: Solve $\sin\theta=\frac{1}{2}$ for $0\le\theta<2\pi$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">Example 2: Solve $2\cos\theta-1=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">Example 3: Solve $\sec\theta=2$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">Example 4: Solve $2\sin^2\theta-1=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h2>Summary</h2>
+<ul>
+<li>Solve algebra first.</li>
+<li>Use the unit circle for reference angles.</li>
+<li>Include all solutions in the interval.</li>
+<li>Use correct period when writing general solutions.</li>
+</ul>
+
+<h2>Common Mistakes</h2>
+<ul>
+<li>Forgetting multiple quadrant solutions.</li>
+<li>Using the wrong period.</li>
+<li>Leaving answers in degrees.</li>
+<li>Stopping after one solution.</li>
+</ul>
+
+<h2>Practice Problems</h2>
+
+<h3>Easy</h3>
+
+<div class="question">1. Solve $\cos\theta=\frac{1}{2}$ for $0\le\theta<2\pi$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">2. Solve $\sin\theta=-\frac{\sqrt2}{2}$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">3. Solve $\tan\theta=1$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">4. Solve $\csc\theta=2$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Medium</h3>
+
+<div class="question">5. Solve $2\sin\theta-\sqrt3=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">6. Solve $\cos(2\theta)=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">7. Solve $\cot\theta=-1$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">8. Solve $\sec\theta=-2$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Harder</h3>
+
+<div class="question">9. Solve $2\cos^2\theta-1=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">10. Solve $\sin(2\theta)=\frac{\sqrt3}{2}$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">11. Solve $\tan^2\theta=1$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">12. Solve $\cos\theta(2\sin\theta-1)=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Challenge</h3>
+
+<div class="question">13. Solve $2\sin^2\theta+3\sin\theta-2=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">14. Solve $\sec^2\theta-4=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">15. Solve $\sin\theta+\cos\theta=0$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<div class="question">16. Solve $\tan(2\theta)=\sqrt3$.</div>
+<div class="workspace"><div style="flex:1;"></div></div>
+
+<h3>Justify</h3>
+
+<div class="question">17. Explain why tangent solutions use $\pi$ instead of $2\pi$.</div>
+<div style="min-height:420px;"></div>
+
+<div class="question">18. Justify why solving $\sec\theta=2$ requires rewriting in terms of cosine.</div>
+<div style="min-height:420px;"></div>
+
+
+
+<h2>Solutions</h2>
+
+<h3>Easy</h3>
+<p><strong>1.</strong> $\frac{\pi}{3},\frac{5\pi}{3}$</p>
+<p><strong>2.</strong> $\frac{5\pi}{4},\frac{7\pi}{4}$</p>
+<p><strong>3.</strong> $\frac{\pi}{4},\frac{5\pi}{4}$</p>
+<p><strong>4.</strong> $\frac{\pi}{6},\frac{5\pi}{6}$</p>
+
+<h3>Medium</h3>
+<p><strong>5.</strong> $\frac{\pi}{3},\frac{2\pi}{3}$</p>
+<p><strong>6.</strong> $\frac{\pi}{4},\frac{3\pi}{4},\frac{5\pi}{4},\frac{7\pi}{4}$</p>
+<p><strong>7.</strong> $\frac{3\pi}{4},\frac{7\pi}{4}$</p>
+<p><strong>8.</strong> $\frac{2\pi}{3},\frac{4\pi}{3}$</p>
+
+<h3>Harder</h3>
+<p><strong>9.</strong> $\frac{\pi}{4},\frac{3\pi}{4},\frac{5\pi}{4},\frac{7\pi}{4}$</p>
+<p><strong>10.</strong> Multiple solutions within interval</p>
+<p><strong>11.</strong> $\frac{\pi}{4},\frac{3\pi}{4},\frac{5\pi}{4},\frac{7\pi}{4}$</p>
+<p><strong>12.</strong> Combine solutions from each factor</p>
+
+<h3>Challenge</h3>
+<p><strong>13.</strong> Solve quadratic in sine</p>
+<p><strong>14.</strong> $\frac{\pi}{3},\frac{5\pi}{3}$</p>
+<p><strong>15.</strong> $\frac{3\pi}{4},\frac{7\pi}{4}$</p>
+<p><strong>16.</strong> Solve for $2\theta$, then divide by 2</p>
+
+<h3>Justify</h3>
+<p><strong>17.</strong> Tangent has period $\pi$.</p>
+<p><strong>18.</strong> Secant is reciprocal of cosine.</p>
+
+</body>
+</html>

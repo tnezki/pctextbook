@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Section 7A</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+body{margin:0.5in;font-family:Arial;line-height:1.6;}
+.workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
+.question{font-size:1.2em;margin-top:28px;}
+@media print {
+  .workspace {
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+}
+
+@media print {
+
+  h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .question {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .workspace {
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+}
+
+  
+</style> 
+</head>
+<body>
+
+<h1>SECTION 7.A<br>Determine Exact Trigonometric Values (Unit Circle)</h1>
+
+<h2>Learning Objectives</h2>
+<ul>
+<li>I can determine exact values of sine, cosine, and tangent for special angles.</li>
+<li>I can determine the sign of trig functions using quadrant patterns.</li>
+<li>I can evaluate trig functions for negative angles.</li>
+<li>I can evaluate trig functions for angles greater than $2\pi$ using coterminal angles.</li>
+</ul>
+
+<h2>Introduction</h2>
+<p>The unit circle allows us to determine exact values of sine, cosine, and tangent without a calculator. Instead of memorizing disconnected numbers, we use structure and patterns.</p>
+<p>This skill is foundational.</p>
+<p>Just like factoring reveals x-intercepts in algebra, knowing exact trig values allows us to:</p>
+<ul>
+<li>Solve equations like $\sin\theta = \frac{1}{2}$</li>
+<li>Identify where trig graphs cross axes</li>
+<li>Graph sine and cosine functions accurately</li>
+<li>Model periodic motion and circular systems</li>
+</ul>
+<p>Everything we do later with trigonometry depends on understanding these exact values.</p>
+
+    <div style="page-break-before: always;"></div>
+
+<h2>Key Vocabulary</h2>
+<p><strong>Unit Circle:</strong> A circle centered at the origin with radius 1.</p>
+<p><strong>Cosine:</strong> The x-coordinate of a point on the unit circle.</p>
+<p><strong>Sine:</strong> The y-coordinate of a point on the unit circle.</p>
+<p><strong>Tangent:</strong> $\tan\theta = \frac{\sin\theta}{\cos\theta}$.</p>
+<p><strong>Reference Angle:</strong> The acute angle formed between the terminal side and the x-axis.</p>
+<p><strong>Coterminal Angles:</strong> Angles that differ by multiples of $2\pi$.</p>
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<h2>Blank Unit Circle (Practice 1)</h2>
+
+    <div style="text-align:center; margin:40px 0;">
+    <svg viewBox="-350 -350 700 700" width="700" height="700">
+      <circle cx="0" cy="0" r="250" stroke="black" fill="none"/>
+      <line x1="-350" y1="0" x2="350" y2="0" stroke="black"/>
+      <line x1="0" y1="-350" x2="0" y2="350" stroke="black"/>
+      <g stroke="black">
+        <line x1="0" y1="0" x2="250" y2="0"/>
+        <line x1="0" y1="0" x2="217" y2="-125"/>
+        <line x1="0" y1="0" x2="177" y2="-177"/>
+        <line x1="0" y1="0" x2="125" y2="-217"/>
+        <line x1="0" y1="0" x2="-125" y2="-217"/>
+        <line x1="0" y1="0" x2="-177" y2="-177"/>
+        <line x1="0" y1="0" x2="-217" y2="-125"/>
+        <line x1="0" y1="0" x2="-250" y2="0"/>
+        <line x1="0" y1="0" x2="-217" y2="125"/>
+        <line x1="0" y1="0" x2="-177" y2="177"/>
+        <line x1="0" y1="0" x2="-125" y2="217"/>
+        <line x1="0" y1="0" x2="125" y2="217"/>
+        <line x1="0" y1="0" x2="177" y2="177"/>
+        <line x1="0" y1="0" x2="217" y2="125"/>
+      </g>
+    </svg>
+    </div>
+    
+
+    <div style="page-break-before: always;"></div>
+
+
+<h2>Blank Unit Circle (Practice 2)</h2>
+
+    <div style="text-align:center; margin:40px 0;">
+    <svg viewBox="-350 -350 700 700" width="700" height="700">
+      <circle cx="0" cy="0" r="250" stroke="black" fill="none"/>
+      <line x1="-350" y1="0" x2="350" y2="0" stroke="black"/>
+      <line x1="0" y1="-350" x2="0" y2="350" stroke="black"/>
+      <g stroke="black">
+        <line x1="0" y1="0" x2="250" y2="0"/>
+        <line x1="0" y1="0" x2="217" y2="-125"/>
+        <line x1="0" y1="0" x2="177" y2="-177"/>
+        <line x1="0" y1="0" x2="125" y2="-217"/>
+        <line x1="0" y1="0" x2="-125" y2="-217"/>
+        <line x1="0" y1="0" x2="-177" y2="-177"/>
+        <line x1="0" y1="0" x2="-217" y2="-125"/>
+        <line x1="0" y1="0" x2="-250" y2="0"/>
+        <line x1="0" y1="0" x2="-217" y2="125"/>
+        <line x1="0" y1="0" x2="-177" y2="177"/>
+        <line x1="0" y1="0" x2="-125" y2="217"/>
+        <line x1="0" y1="0" x2="125" y2="217"/>
+        <line x1="0" y1="0" x2="177" y2="177"/>
+        <line x1="0" y1="0" x2="217" y2="125"/>
+      </g>
+    </svg>
+    </div>
+    
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<h2>Common Pattern</h2>
+<p>Memorize only these three patterns in Quadrant I:</p>
+<p>$\left(\frac{\sqrt3}{2}, \frac12\right)$</p>
+<p>$\left(\frac{\sqrt2}{2}, \frac{\sqrt2}{2}\right)$</p>
+<p>$\left(\frac12, \frac{\sqrt3}{2}\right)$</p>
+<p>Cosine decreases as the angle increases. Sine increases as the angle increases.</p>
+<p>Values repeat across quadrants. Only the signs change.</p>
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<h2>Examples</h2>
+
+<div class="question">Example 1: Find $\sin\left(\frac{3\pi}{4}\right)$.</div>
+<div class="workspace">
+    <svg viewBox="-150 -150 300 300" width="230" height="230">
+      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+      <g stroke="black">
+        <line x1="0" y1="0" x2="100" y2="0"/>
+        <line x1="0" y1="0" x2="87" y2="-50"/>
+        <line x1="0" y1="0" x2="71" y2="-71"/>
+        <line x1="0" y1="0" x2="50" y2="-87"/>
+        <line x1="0" y1="0" x2="-50" y2="-87"/>
+        <line x1="0" y1="0" x2="-71" y2="-71"/>
+        <line x1="0" y1="0" x2="-87" y2="-50"/>
+        <line x1="0" y1="0" x2="-100" y2="0"/>
+        <line x1="0" y1="0" x2="-87" y2="50"/>
+        <line x1="0" y1="0" x2="-71" y2="71"/>
+        <line x1="0" y1="0" x2="-50" y2="87"/>
+        <line x1="0" y1="0" x2="50" y2="87"/>
+        <line x1="0" y1="0" x2="71" y2="71"/>
+        <line x1="0" y1="0" x2="87" y2="50"/>
+      </g>
+    </svg>
+    <div style="flex:1;"></div></div>
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<div class="question">Example 2: Find $\cos\left(-\frac{\pi}{6}\right)$.</div>
+<div class="workspace">
+    <svg viewBox="-150 -150 300 300" width="230" height="230">
+      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+      <g stroke="black">
+        <line x1="0" y1="0" x2="100" y2="0"/>
+        <line x1="0" y1="0" x2="87" y2="-50"/>
+        <line x1="0" y1="0" x2="71" y2="-71"/>
+        <line x1="0" y1="0" x2="50" y2="-87"/>
+        <line x1="0" y1="0" x2="-50" y2="-87"/>
+        <line x1="0" y1="0" x2="-71" y2="-71"/>
+        <line x1="0" y1="0" x2="-87" y2="-50"/>
+        <line x1="0" y1="0" x2="-100" y2="0"/>
+        <line x1="0" y1="0" x2="-87" y2="50"/>
+        <line x1="0" y1="0" x2="-71" y2="71"/>
+        <line x1="0" y1="0" x2="-50" y2="87"/>
+        <line x1="0" y1="0" x2="50" y2="87"/>
+        <line x1="0" y1="0" x2="71" y2="71"/>
+        <line x1="0" y1="0" x2="87" y2="50"/>
+      </g>
+    </svg>
+    <div style="flex:1;"></div></div>
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<div class="question">Example 3: Find $\tan\left(\frac{5\pi}{3}\right)$.</div>
+<div class="workspace">
+    <svg viewBox="-150 -150 300 300" width="230" height="230">
+      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+      <g stroke="black">
+        <line x1="0" y1="0" x2="100" y2="0"/>
+        <line x1="0" y1="0" x2="87" y2="-50"/>
+        <line x1="0" y1="0" x2="71" y2="-71"/>
+        <line x1="0" y1="0" x2="50" y2="-87"/>
+        <line x1="0" y1="0" x2="-50" y2="-87"/>
+        <line x1="0" y1="0" x2="-71" y2="-71"/>
+        <line x1="0" y1="0" x2="-87" y2="-50"/>
+        <line x1="0" y1="0" x2="-100" y2="0"/>
+        <line x1="0" y1="0" x2="-87" y2="50"/>
+        <line x1="0" y1="0" x2="-71" y2="71"/>
+        <line x1="0" y1="0" x2="-50" y2="87"/>
+        <line x1="0" y1="0" x2="50" y2="87"/>
+        <line x1="0" y1="0" x2="71" y2="71"/>
+        <line x1="0" y1="0" x2="87" y2="50"/>
+      </g>
+    </svg>
+    <div style="flex:1;"></div></div>
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<div class="question">Example 4: Find $\sin\left(\frac{19\pi}{6}\right)$.</div>
+<div class="workspace">
+    <svg viewBox="-150 -150 300 300" width="230" height="230">
+      <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+      <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+      <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+      <g stroke="black">
+        <line x1="0" y1="0" x2="100" y2="0"/>
+        <line x1="0" y1="0" x2="87" y2="-50"/>
+        <line x1="0" y1="0" x2="71" y2="-71"/>
+        <line x1="0" y1="0" x2="50" y2="-87"/>
+        <line x1="0" y1="0" x2="-50" y2="-87"/>
+        <line x1="0" y1="0" x2="-71" y2="-71"/>
+        <line x1="0" y1="0" x2="-87" y2="-50"/>
+        <line x1="0" y1="0" x2="-100" y2="0"/>
+        <line x1="0" y1="0" x2="-87" y2="50"/>
+        <line x1="0" y1="0" x2="-71" y2="71"/>
+        <line x1="0" y1="0" x2="-50" y2="87"/>
+        <line x1="0" y1="0" x2="50" y2="87"/>
+        <line x1="0" y1="0" x2="71" y2="71"/>
+        <line x1="0" y1="0" x2="87" y2="50"/>
+      </g>
+    </svg>
+    <div style="flex:1;"></div></div>
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<h2>Summary</h2>
+<ul>
+<li>Cosine is the x-coordinate.</li>
+<li>Sine is the y-coordinate.</li>
+<li>Tangent is $\frac{\sin\theta}{\cos\theta}$.</li>
+<li>Only three special coordinate patterns must be memorized.</li>
+<li>Coordinates repeat across quadrants.</li>
+<li>Signs depend on quadrant.</li>
+<li>Negative angles rotate clockwise.</li>
+<li>Angles greater than $2\pi$ can be reduced using coterminal angles.</li>
+</ul>
+
+<h2>Common Mistakes to Avoid</h2>
+<ul>
+<li>Using the reference angle value but forgetting to change the sign.</li>
+<li>Forgetting to reduce angles greater than $2\pi$.</li>
+<li>Rotating counterclockwise instead of clockwise for negative angles.</li>
+<li>Leaving tangent as a complex fraction instead of simplifying.</li>
+<li>Confusing sine and cosine coordinates.</li>
+</ul>
+
+
+
+    <div style="page-break-before: always;"></div>
+
+
+<h2>Practice Problems</h2>
+
+<h3>Easy</h3>
+<div class="question">$\sin(\pi/4)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+
+<div style="flex:1;"></div></div><div class="question">$\cos(\pi/3)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+    
+
+
+
+    <div style="page-break-before: always;"></div>
+
+
+
+
+<div style="flex:1;"></div></div><div class="question">$\tan(\pi/6)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\sin(\pi/3)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+    
+
+ 
+
+
+<div style="flex:1;"></div></div><h3>Medium</h3><div class="question">$\cos(5\pi/3)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+    
+
+
+
+
+<div style="flex:1;"></div></div><div class="question">$\sin(4\pi/3)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\tan(3\pi/4)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+
+
+
+<div style="flex:1;"></div></div><div class="question">$\cos(7\pi/6)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\sin(-\pi/6)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+    
+<div style="flex:1;"></div></div><div class="question">$\tan(5\pi/6)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><h3>Harder</h3><div class="question">$\sin(11\pi/4)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\cos(13\pi/6)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\tan(-4\pi/3)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\sin(9\pi/4)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><h3>Challenge</h3><div class="question">$\cos(-23\pi/6)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\sin(19\pi/4)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\tan(25\pi/6)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div><div class="question">$\sin(-17\pi/3)$</div><div class="workspace">
+<svg viewBox="-150 -150 300 300" width="230" height="230">
+  <circle cx="0" cy="0" r="100" stroke="black" fill="none"/>
+  <line x1="-150" y1="0" x2="150" y2="0" stroke="black"/>
+  <line x1="0" y1="-150" x2="0" y2="150" stroke="black"/>
+  <g stroke="black">
+    <line x1="0" y1="0" x2="100" y2="0"/>
+    <line x1="0" y1="0" x2="87" y2="-50"/>
+    <line x1="0" y1="0" x2="71" y2="-71"/>
+    <line x1="0" y1="0" x2="50" y2="-87"/>
+    <line x1="0" y1="0" x2="-50" y2="-87"/>
+    <line x1="0" y1="0" x2="-71" y2="-71"/>
+    <line x1="0" y1="0" x2="-87" y2="-50"/>
+    <line x1="0" y1="0" x2="-100" y2="0"/>
+    <line x1="0" y1="0" x2="-87" y2="50"/>
+    <line x1="0" y1="0" x2="-71" y2="71"/>
+    <line x1="0" y1="0" x2="-50" y2="87"/>
+    <line x1="0" y1="0" x2="50" y2="87"/>
+    <line x1="0" y1="0" x2="71" y2="71"/>
+    <line x1="0" y1="0" x2="87" y2="50"/>
+  </g>
+</svg>
+<div style="flex:1;"></div></div>
+<h3>Justify</h3>
+
+<div class="question">19. Justify why $\sin(2\pi/3)$ is positive but $\cos(2\pi/3)$ is negative.</div>
+<div style="min-height:420px;"></div>
+
+<div class="question">20. Justify how you would determine $\sin(19\pi/4)$ without using a diagram. Include coterminal angle reasoning, reference angle, and quadrant.</div>
+<div style="min-height:420px;"></div>
+
+
+
+
+<h2>Solutions</h2>
+
+<h3>Easy</h3>
+
+<p><strong>1. $\sin\left(\frac{\pi}{4}\right)$</strong><br>
+Step 1: $\frac{\pi}{4}$ is in Quadrant I.<br>
+Step 2: Reference angle = $\frac{\pi}{4}$.<br>
+Step 3: Sine is positive in Quadrant I.<br>
+Final Answer: $\frac{\sqrt{2}}{2}$.
+</p>
+
+<p><strong>2. $\cos\left(\frac{\pi}{3}\right)$</strong><br>
+Quadrant I → cosine is positive.<br>
+Reference value for $\frac{\pi}{3}$ is $\frac{1}{2}$.<br>
+Final Answer: $\frac{1}{2}$.
+</p>
+
+<p><strong>3. $\tan\left(\frac{\pi}{6}\right)$</strong><br>
+$\tan\theta = \frac{\sin\theta}{\cos\theta}$.<br>
+$= \frac{\frac{1}{2}}{\frac{\sqrt{3}}{2}} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$.<br>
+Final Answer: $\frac{\sqrt{3}}{3}$.
+</p>
+
+<p><strong>4. $\sin\left(\frac{\pi}{3}\right)$</strong><br>
+Quadrant I → sine positive.<br>
+Final Answer: $\frac{\sqrt{3}}{2}$.
+</p>
+
+<h3>Medium</h3>
+
+<p><strong>5. $\cos\left(\frac{5\pi}{3}\right)$</strong><br>
+Quadrant IV → cosine positive.<br>
+Reference angle = $\frac{\pi}{3}$.<br>
+Final Answer: $\frac{1}{2}$.
+</p>
+
+<p><strong>6. $\sin\left(\frac{4\pi}{3}\right)$</strong><br>
+Quadrant III → sine negative.<br>
+Reference angle = $\frac{\pi}{3}$.<br>
+Final Answer: $-\frac{\sqrt{3}}{2}$.
+</p>
+
+<p><strong>7. $\tan\left(\frac{3\pi}{4}\right)$</strong><br>
+Quadrant II → tangent negative.<br>
+Reference angle = $\frac{\pi}{4}$.<br>
+Final Answer: $-1$.
+</p>
+
+<p><strong>8. $\cos\left(\frac{7\pi}{6}\right)$</strong><br>
+Quadrant III → cosine negative.<br>
+Reference angle = $\frac{\pi}{6}$.<br>
+Final Answer: $-\frac{\sqrt{3}}{2}$.
+</p>
+
+<p><strong>9. $\sin\left(-\frac{\pi}{6}\right)$</strong><br>
+Negative angle → rotate clockwise to Quadrant IV.<br>
+Sine negative in Quadrant IV.<br>
+Final Answer: $-\frac{1}{2}$.
+</p>
+
+<p><strong>10. $\tan\left(\frac{5\pi}{6}\right)$</strong><br>
+Quadrant II → tangent negative.<br>
+Reference angle = $\frac{\pi}{6}$.<br>
+Final Answer: $-\frac{\sqrt{3}}{3}$.
+</p>
+
+<h3>Harder</h3>
+
+<p><strong>11. $\sin\left(\frac{11\pi}{4}\right)$</strong><br>
+$\frac{11\pi}{4} - 2\pi = \frac{3\pi}{4}$.<br>
+Quadrant II → sine positive.<br>
+Final Answer: $\frac{\sqrt{2}}{2}$.
+</p>
+
+<p><strong>12. $\cos\left(\frac{13\pi}{6}\right)$</strong><br>
+$\frac{13\pi}{6} - 2\pi = \frac{\pi}{6}$.<br>
+Quadrant I → cosine positive.<br>
+Final Answer: $\frac{\sqrt{3}}{2}$.
+</p>
+
+<p><strong>13. $\tan\left(-\frac{4\pi}{3}\right)$</strong><br>
+Add $2\pi$: $-\frac{4\pi}{3} + 2\pi = \frac{2\pi}{3}$.<br>
+Quadrant II → tangent negative.<br>
+Reference angle = $\frac{\pi}{3}$.<br>
+Final Answer: $-\sqrt{3}$.
+</p>
+
+<p><strong>14. $\sin\left(\frac{9\pi}{4}\right)$</strong><br>
+$\frac{9\pi}{4} - 2\pi = \frac{\pi}{4}$.<br>
+Quadrant I → sine positive.<br>
+Final Answer: $\frac{\sqrt{2}}{2}$.
+</p>
+
+<h3>Challenge</h3>
+
+<p><strong>15. $\cos\left(-\frac{23\pi}{6}\right)$</strong><br>
+Add $4\pi$: $-\frac{23\pi}{6} + \frac{24\pi}{6} = \frac{\pi}{6}$.<br>
+Quadrant I → cosine positive.<br>
+Final Answer: $\frac{\sqrt{3}}{2}$.
+</p>
+
+<p><strong>16. $\sin\left(\frac{19\pi}{4}\right)$</strong><br>
+$\frac{19\pi}{4} - 4\pi = \frac{3\pi}{4}$.<br>
+Quadrant II → sine positive.<br>
+Final Answer: $\frac{\sqrt{2}}{2}$.
+</p>
+
+<p><strong>17. $\tan\left(\frac{25\pi}{6}\right)$</strong><br>
+$\frac{25\pi}{6} - 4\pi = \frac{\pi}{6}$.<br>
+Quadrant I → tangent positive.<br>
+Final Answer: $\frac{\sqrt{3}}{3}$.
+</p>
+
+<p><strong>18. $\sin\left(-\frac{17\pi}{3}\right)$</strong><br>
+Add $6\pi$: $-\frac{17\pi}{3} + \frac{18\pi}{3} = \frac{\pi}{3}$.<br>
+Quadrant I → sine positive.<br>
+Final Answer: $\frac{\sqrt{3}}{2}$.
+</p>
+
+<h3>Justify</h3>
+
+<p><strong>19.</strong><br>
+$\frac{2\pi}{3}$ lies in Quadrant II.  
+In Quadrant II, sine (the y-coordinate) is positive and cosine (the x-coordinate) is negative.  
+Therefore $\sin\left(\frac{2\pi}{3}\right) > 0$ and $\cos\left(\frac{2\pi}{3}\right) < 0$.
+</p>
+
+<p><strong>20.</strong><br>
+Reduce the angle: $\frac{19\pi}{4} - 4\pi = \frac{3\pi}{4}$.  
+$\frac{3\pi}{4}$ lies in Quadrant II with reference angle $\frac{\pi}{4}$.  
+Sine is positive in Quadrant II.  
+Therefore $\sin\left(\frac{19\pi}{4}\right) = \frac{\sqrt{2}}{2}$.
+</p>
+
+</body></html>
