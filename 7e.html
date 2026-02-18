@@ -1,2867 +1,662 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Section 7.E</title>
-<script>
-window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<style>
-body{margin:0.5in;font-family:Arial;line-height:1.6;}
-.workspace{min-height:260px;margin-top:15px;}
-.question{margin-top:25px;font-size:1.1em;}
-
-
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.E: Riemann Sums and Trapezoidal Approximation</title>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7; color: #333; background-color: #f5f5f5; padding: 20px;
+        }
+        .container {
+            max-width: 900px; margin: 0 auto; background-color: white;
+            padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center; border-bottom: 3px solid #00003d;
+            padding-bottom: 30px; margin-bottom: 30px;
+        }
+        .section-number { color: #00003d; font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+        h1 { color: #00003d; font-size: 2.5em; margin-bottom: 20px; margin-top: 0; }
+        .intro-text { font-size: 1.05em; color: #555; max-width: 800px; margin: 0 auto 15px auto; font-style: italic; }
+        .inspirational { font-size: 1.15em; color: #004d99; font-style: italic; text-align: center; margin: 18px auto 0 auto; max-width: 700px; padding: 10px 0 0 0; }
+        .above-beyond-banner {
+            background: linear-gradient(135deg, #00003d 0%, #004d99 100%);
+            color: white; text-align: center; padding: 10px 20px;
+            border-radius: 6px; margin-bottom: 20px;
+            font-size: 1em; font-weight: bold; letter-spacing: 1px;
+        }
+        h2 { color: #00003d; font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; border-left: 5px solid #00003d; padding-left: 15px; }
+        h3 { color: #004d99; font-size: 1.3em; margin-top: 25px; margin-bottom: 15px; }
+        .objectives { background-color: #f0f4f8; padding: 20px; border-radius: 6px; margin-bottom: 30px; }
+        .objectives ul { list-style-position: inside; margin-left: 20px; }
+        .objectives li { margin-bottom: 10px; }
+        .section-content { margin-bottom: 40px; line-height: 1.8; }
+        p { margin-bottom: 12px; }
+        ul { margin-left: 30px; margin-bottom: 12px; }
+        ul li { margin-bottom: 6px; }
+        ol { margin-left: 30px; margin-bottom: 12px; }
+        ol li { margin-bottom: 8px; }
+        .definition { background-color: #fffacd; border-left: 4px solid #ffd700; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .definition strong { color: #00003d; }
+        .example { background-color: #f9f9f9; border: 2px solid #00003d; padding: 20px; margin: 20px 0; border-radius: 6px; }
+        .example h4 { color: #00003d; margin-bottom: 10px; font-size: 1.1em; }
+        .solution { background-color: #f0f0f0; padding: 15px; margin-top: 15px; border-radius: 4px; font-size: 0.95em; line-height: 1.6; }
+        .solution p { margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #00003d; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        td.center, th.center { text-align: center; }
+        .summary { background-color: #f0f4f8; border-left: 5px solid #00003d; padding: 20px; margin: 30px 0; border-radius: 6px; }
+        .summary h3 { margin-top: 0; }
+        .summary ul { list-style-position: inside; }
+        .summary li { margin-bottom: 8px; }
+        .practice-problems { background-color: #f0f4f8; padding: 20px; border-radius: 6px; margin: 30px 0; }
+        .practice-problems h3 { margin-top: 0; }
+        .problem { background-color: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #004d99; }
+        .answer-key { background-color: #f5f5f5; padding: 20px; border-radius: 6px; margin-top: 40px; }
+        .answer-key h3 { margin-top: 0; }
+        .answer { background-color: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #28a745; }
+        .answer p { margin-bottom: 8px; }
+        .historical-note { background-color: #ffe6e6; border-left: 4px solid #ff6666; padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95em; }
+        .historical-note strong { color: #cc0000; }
+        .key-point { background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .key-point strong { color: #2e7d32; }
+        .common-mistakes { background-color: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .common-mistakes h4 { color: #e65100; margin-bottom: 10px; font-size: 1.1em; }
+        .connections { background-color: #f3e5f5; border-left: 4px solid #9c27b0; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .connections strong { color: #6a1b9a; }
+        .key-equation { background-color: #e6f2ff; border: 2px solid #004d99; padding: 20px; margin: 20px 0; border-radius: 6px; text-align: center; }
+        .figure-box { text-align: center; margin: 25px 0; padding: 15px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px; }
+        .figure-caption { font-size: 0.9em; color: #555; margin-top: 10px; font-style: italic; }
+        .realworld { background-color: #e3f2fd; border-left: 4px solid #1976d2; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .realworld strong { color: #0d47a1; }
+        .comp-table td { text-align: center; font-size: 0.95em; }
+    </style>
 </head>
 <body>
+<div class="container">
 
-<h1>SECTION 7.E<br>Above & Beyond: Riemann Sums and Trapezoidal Approximation</h1>
+    <!-- TITLE PAGE -->
+    <div class="title-page">
+        <div class="above-beyond-banner">&#11088; ABOVE &amp; BEYOND — EXTENDED LEARNING &#11088;</div>
+        <div class="section-number">SECTION 7.E</div>
+        <h1>Riemann Sums and Trapezoidal Approximation</h1>
+        <div class="intro-text">
+            What is the area of a region bounded by a curve — not a straight line, but a curve that
+            bends and changes? This question puzzled mathematicians for over two thousand years.
+            The answer came from a surprisingly simple idea: fill the region with rectangles, add
+            up their areas, and then use more and more rectangles until the approximation becomes
+            as accurate as you need. This section introduces that idea — the foundation upon which
+            all of integral calculus is built.
+        </div>
+        <div class="inspirational">
+            &#8220; The infinite is reached not in one great leap, but in the accumulation of many small, careful steps. &#8221;
+        </div>
+    </div>
 
-<h2>Learning Objectives</h2>
-<p>I can approximate the area under a curve using left and right Riemann sums from graphs and tables.</p>
-<p>I can apply trapezoidal sums to approximate area.</p>
-<p>I can compare approximation methods and justify which provides a better estimate.</p>
-<p>I can model real-world situations involving accumulation.</p>
+    <!-- LEARNING OBJECTIVES -->
+    <section class="objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>I can approximate the area under a curve using left and right Riemann sums from graphs and tables.</li>
+            <li>I can apply the trapezoidal rule to approximate area under a curve.</li>
+            <li>I can compare approximation methods and justify which provides a better estimate based on the behavior of the function.</li>
+            <li>I can model real-world situations involving accumulation and interpret units correctly.</li>
+        </ul>
+    </section>
 
-<h2>Real-World Application</h2>
-<p>Many real-world quantities cannot be measured exactly.</p>
-<ul>
-<li>Total rainfall during a storm.</li>
-<li>Distance traveled when speed changes continuously.</li>
-<li>Total energy used over time.</li>
-<li>Accumulated medication levels in the bloodstream.</li>
-</ul>
-<p>Suppose a car’s velocity (in miles per hour) is recorded every 2 seconds.</p>
-<p>We want to estimate the total distance traveled over 10 seconds.</p>
-<p>Because velocity is changing, we cannot multiply by a single constant speed.</p>
-<p>Instead, we approximate the area under the velocity curve.</p>
-<p>The area under a velocity–time graph represents <strong>distance traveled</strong>.</p>
-<p>This is the foundation of calculus.</p>
-<div style="page-break-before: always;"></div>
-<h2>Key Vocabulary</h2>
-<p><strong>Riemann Sum:</strong> Approximation of area using rectangles.</p>
-<p><strong>Left Riemann Sum:</strong> Uses left endpoints.</p>
-<p><strong>Right Riemann Sum:</strong> Uses right endpoints.</p>
-<p><strong>Trapezoidal Rule:</strong> Uses trapezoids to approximate area.</p>
+    <!-- INTRODUCTION -->
+    <section class="section-content">
+        <h2>Introduction: Measuring What Cannot Be Measured Exactly</h2>
+        <p>
+            Consider a simple question: how far does a car travel in 10 seconds if it is constantly
+            accelerating? You cannot just multiply speed times time, because the speed is always
+            changing. What you need is the <em>area under the velocity curve</em> — and that area
+            represents total distance traveled.
+        </p>
+        <p>
+            This is the central idea of this section. When a quantity changes continuously — velocity,
+            rainfall, electrical power, medication concentration — the total accumulated amount is
+            represented by the area under a graph. For straight-line graphs, this area is easy to
+            compute with geometry. For curves, we need a different approach.
+        </p>
+        <p>
+            The strategy is elegantly simple: divide the interval into small pieces, approximate
+            the area of each piece using a rectangle or trapezoid, and add them all up. The
+            approximation improves as the pieces get smaller. This process is called a
+            <strong>Riemann sum</strong>, named after the 19th-century mathematician Bernhard Riemann
+            who formalized it — though the underlying idea was used by Archimedes nearly 2,000
+            years earlier.
+        </p>
+        <p>
+            There are three variations you will learn: the <strong>left Riemann sum</strong>
+            (rectangle heights from the left edge), the <strong>right Riemann sum</strong>
+            (rectangle heights from the right edge), and the <strong>trapezoidal rule</strong>
+            (trapezoids that connect both edges). Each has predictable over- and underestimation
+            behavior based on whether the function is increasing or decreasing — understanding
+            that behavior is just as important as computing the sums.
+        </p>
 
-<h2>Core Concepts</h2>
-<p>Increasing → Left underestimates, Right overestimates.</p>
-<p>Decreasing → Left overestimates, Right underestimates.</p>
-<p>Trapezoidal averages endpoint behavior.</p>
+        <div class="realworld">
+            <strong>&#127758; Real-World Application — Distance from Velocity:</strong><br><br>
+            A car's velocity (in mph) is recorded every 2 seconds during a 10-second trip:
+            <br><br>
+            <table style="width: auto; margin: 0 auto;">
+                <thead><tr><th>Time $t$ (sec)</th><th>0</th><th>2</th><th>4</th><th>6</th><th>8</th><th>10</th></tr></thead>
+                <tbody><tr><td>Velocity $v$ (mph)</td><td>20</td><td>28</td><td>34</td><td>39</td><td>43</td><td>46</td></tr></tbody>
+            </table>
+            <br>
+            The area under this velocity–time graph gives the total distance traveled.
+            Because velocity is always changing, we cannot just multiply — we must approximate
+            using rectangles or trapezoids. This is exactly the setup for a Riemann sum.
+        </div>
 
-<h2>Structure Insight</h2>
-<ul>
-<li>We estimate area numerically.</li>
-<li>Units matter.</li>
-<li>More subintervals improve accuracy.</li>
-<li>We justify reasoning, not just compute.</li>
-</ul>
+        <div class="historical-note">
+            <strong>&#128218; Historical Note:</strong> <strong>Archimedes of Syracuse</strong>
+            (c. 287–212 BC) used a method called "exhaustion" to approximate the area of a circle
+            and a parabolic region by inscribing polygons with more and more sides — the same
+            core idea as Riemann sums. <strong>Bernhard Riemann</strong> (1826–1866) formalized
+            the definition of the definite integral using these sums in the 1850s, giving calculus
+            the rigorous foundation it needed. <strong>Isaac Newton</strong> and <strong>Gottfried
+            Leibniz</strong> had independently invented calculus roughly 200 years earlier, but
+            it was Riemann who made it mathematically airtight.
+        </div>
 
-<div style="page-break-before: always;"></div>
-<h2>Examples</h2>
+        <div class="connections">
+            <strong>&#128279; Connections to Other Subjects and Real Life:</strong><br><br>
+            <strong>Physics — Kinematics:</strong> The area under a velocity–time graph is
+            displacement. The area under an acceleration–time graph is the change in velocity.
+            These relationships are foundational to all of classical mechanics.<br><br>
+            <strong>Medicine — Pharmacokinetics:</strong> The area under a drug concentration–time
+            curve (called AUC) tells doctors how much of a drug the body absorbs. Riemann sums
+            are used to estimate AUC from discrete blood sample measurements.<br><br>
+            <strong>Environmental Science:</strong> Total rainfall during a storm, total carbon
+            emitted over a year, or total heat absorbed by the ocean — all are computed as areas
+            under curves approximated by Riemann sums from sensor data.<br><br>
+            <strong>Calculus — The Definite Integral:</strong> The definite integral
+            $\int_a^b f(x)\,dx$ is defined as the limit of Riemann sums as the number of
+            subintervals approaches infinity. This entire section is a preview of that concept.
+        </div>
+    </section>
 
-<h3>Example 1</h3>
-<p>Use a left Riemann sum with 4 subintervals to approximate area under $f(x)=x^2+1$ on $[0,4]$.</p>
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="383.624375pt" height="393.500625pt" viewBox="0 0 383.624375 393.500625" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <metadata>
-  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-   <cc:Work>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-02-14T03:42:30.579789</dc:date>
-    <dc:format>image/svg+xml</dc:format>
-    <dc:creator>
-     <cc:Agent>
-      <dc:title>Matplotlib v3.7.5, https://matplotlib.org/</dc:title>
-     </cc:Agent>
-    </dc:creator>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs>
-  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
- </defs>
- <g id="figure_1">
-  <g id="patch_1">
-   <path d="M 0 393.500625 
-L 383.624375 393.500625 
-L 383.624375 0 
-L 0 0 
-z
-" style="fill: #ffffff"/>
-  </g>
-  <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-L 373.243125 23.304375 
-L 40.603125 23.304375 
-z
-" style="fill: #ffffff"/>
-   </g>
-   <g id="matplotlib.axis_1">
-    <g id="xtick_1">
-     <g id="line2d_1">
-      <path d="M 40.603125 355.944375 
-L 40.603125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_2">
-      <defs>
-       <path id="m2470c2205b" d="M 0 0 
-L 0 3.5 
-" style="stroke: #000000; stroke-width: 0.8"/>
-      </defs>
-      <g>
-       <use xlink:href="#m2470c2205b" x="40.603125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_1">
-      <!-- 0 -->
-      <g transform="translate(37.421875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-30" d="M 2034 4250 
-Q 1547 4250 1301 3770 
-Q 1056 3291 1056 2328 
-Q 1056 1369 1301 889 
-Q 1547 409 2034 409 
-Q 2525 409 2770 889 
-Q 3016 1369 3016 2328 
-Q 3016 3291 2770 3770 
-Q 2525 4250 2034 4250 
-z
-M 2034 4750 
-Q 2819 4750 3233 4129 
-Q 3647 3509 3647 2328 
-Q 3647 1150 3233 529 
-Q 2819 -91 2034 -91 
-Q 1250 -91 836 529 
-Q 422 1150 422 2328 
-Q 422 3509 836 4129 
-Q 1250 4750 2034 4750 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-30"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_2">
-     <g id="line2d_3">
-      <path d="M 123.763125 355.944375 
-L 123.763125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_4">
-      <g>
-       <use xlink:href="#m2470c2205b" x="123.763125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_2">
-      <!-- 1 -->
-      <g transform="translate(120.581875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-31" d="M 794 531 
-L 1825 531 
-L 1825 4091 
-L 703 3866 
-L 703 4441 
-L 1819 4666 
-L 2450 4666 
-L 2450 531 
-L 3481 531 
-L 3481 0 
-L 794 0 
-L 794 531 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-31"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_3">
-     <g id="line2d_5">
-      <path d="M 206.923125 355.944375 
-L 206.923125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_6">
-      <g>
-       <use xlink:href="#m2470c2205b" x="206.923125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_3">
-      <!-- 2 -->
-      <g transform="translate(203.741875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-32" d="M 1228 531 
-L 3431 531 
-L 3431 0 
-L 469 0 
-L 469 531 
-Q 828 903 1448 1529 
-Q 2069 2156 2228 2338 
-Q 2531 2678 2651 2914 
-Q 2772 3150 2772 3378 
-Q 2772 3750 2511 3984 
-Q 2250 4219 1831 4219 
-Q 1534 4219 1204 4116 
-Q 875 4013 500 3803 
-L 500 4441 
-Q 881 4594 1212 4672 
-Q 1544 4750 1819 4750 
-Q 2544 4750 2975 4387 
-Q 3406 4025 3406 3419 
-Q 3406 3131 3298 2873 
-Q 3191 2616 2906 2266 
-Q 2828 2175 2409 1742 
-Q 1991 1309 1228 531 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-32"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_4">
-     <g id="line2d_7">
-      <path d="M 290.083125 355.944375 
-L 290.083125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_8">
-      <g>
-       <use xlink:href="#m2470c2205b" x="290.083125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_4">
-      <!-- 3 -->
-      <g transform="translate(286.901875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-33" d="M 2597 2516 
-Q 3050 2419 3304 2112 
-Q 3559 1806 3559 1356 
-Q 3559 666 3084 287 
-Q 2609 -91 1734 -91 
-Q 1441 -91 1130 -33 
-Q 819 25 488 141 
-L 488 750 
-Q 750 597 1062 519 
-Q 1375 441 1716 441 
-Q 2309 441 2620 675 
-Q 2931 909 2931 1356 
-Q 2931 1769 2642 2001 
-Q 2353 2234 1838 2234 
-L 1294 2234 
-L 1294 2753 
-L 1863 2753 
-Q 2328 2753 2575 2939 
-Q 2822 3125 2822 3475 
-Q 2822 3834 2567 4026 
-Q 2313 4219 1838 4219 
-Q 1578 4219 1281 4162 
-Q 984 4106 628 3988 
-L 628 4550 
-Q 988 4650 1302 4700 
-Q 1616 4750 1894 4750 
-Q 2613 4750 3031 4423 
-Q 3450 4097 3450 3541 
-Q 3450 3153 3228 2886 
-Q 3006 2619 2597 2516 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-33"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_5">
-     <g id="line2d_9">
-      <path d="M 373.243125 355.944375 
-L 373.243125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_10">
-      <g>
-       <use xlink:href="#m2470c2205b" x="373.243125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_5">
-      <!-- 4 -->
-      <g transform="translate(370.061875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-34" d="M 2419 4116 
-L 825 1625 
-L 2419 1625 
-L 2419 4116 
-z
-M 2253 4666 
-L 3047 4666 
-L 3047 1625 
-L 3713 1625 
-L 3713 1100 
-L 3047 1100 
-L 3047 0 
-L 2419 0 
-L 2419 1100 
-L 313 1100 
-L 313 1709 
-L 2253 4666 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-34"/>
-      </g>
-     </g>
-    </g>
-    <g id="text_6">
-     <!-- x -->
-     <g transform="translate(203.96375 384.220937) scale(0.1 -0.1)">
-      <defs>
-       <path id="DejaVuSans-78" d="M 3513 3500 
-L 2247 1797 
-L 3578 0 
-L 2900 0 
-L 1881 1375 
-L 863 0 
-L 184 0 
-L 1544 1831 
-L 300 3500 
-L 978 3500 
-L 1906 2253 
-L 2834 3500 
-L 3513 3500 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#DejaVuSans-78"/>
-     </g>
-    </g>
-   </g>
-   <g id="matplotlib.axis_2">
-    <g id="ytick_1">
-     <g id="line2d_11">
-      <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_12">
-      <defs>
-       <path id="m37044ea604" d="M 0 0 
-L -3.5 0 
-" style="stroke: #000000; stroke-width: 0.8"/>
-      </defs>
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_7">
-      <!-- 0 -->
-      <g transform="translate(27.240625 359.743594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-30"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_2">
-     <g id="line2d_13">
-      <path d="M 40.603125 318.984375 
-L 373.243125 318.984375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_14">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="318.984375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_8">
-      <!-- 2 -->
-      <g transform="translate(27.240625 322.783594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-32"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_3">
-     <g id="line2d_15">
-      <path d="M 40.603125 282.024375 
-L 373.243125 282.024375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_16">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="282.024375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_9">
-      <!-- 4 -->
-      <g transform="translate(27.240625 285.823594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-34"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_4">
-     <g id="line2d_17">
-      <path d="M 40.603125 245.064375 
-L 373.243125 245.064375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_18">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="245.064375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_10">
-      <!-- 6 -->
-      <g transform="translate(27.240625 248.863594) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-36" d="M 2113 2584 
-Q 1688 2584 1439 2293 
-Q 1191 2003 1191 1497 
-Q 1191 994 1439 701 
-Q 1688 409 2113 409 
-Q 2538 409 2786 701 
-Q 3034 994 3034 1497 
-Q 3034 2003 2786 2293 
-Q 2538 2584 2113 2584 
-z
-M 3366 4563 
-L 3366 3988 
-Q 3128 4100 2886 4159 
-Q 2644 4219 2406 4219 
-Q 1781 4219 1451 3797 
-Q 1122 3375 1075 2522 
-Q 1259 2794 1537 2939 
-Q 1816 3084 2150 3084 
-Q 2853 3084 3261 2657 
-Q 3669 2231 3669 1497 
-Q 3669 778 3244 343 
-Q 2819 -91 2113 -91 
-Q 1303 -91 875 529 
-Q 447 1150 447 2328 
-Q 447 3434 972 4092 
-Q 1497 4750 2381 4750 
-Q 2619 4750 2861 4703 
-Q 3103 4656 3366 4563 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-36"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_5">
-     <g id="line2d_19">
-      <path d="M 40.603125 208.104375 
-L 373.243125 208.104375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_20">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="208.104375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_11">
-      <!-- 8 -->
-      <g transform="translate(27.240625 211.903594) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-38" d="M 2034 2216 
-Q 1584 2216 1326 1975 
-Q 1069 1734 1069 1313 
-Q 1069 891 1326 650 
-Q 1584 409 2034 409 
-Q 2484 409 2743 651 
-Q 3003 894 3003 1313 
-Q 3003 1734 2745 1975 
-Q 2488 2216 2034 2216 
-z
-M 1403 2484 
-Q 997 2584 770 2862 
-Q 544 3141 544 3541 
-Q 544 4100 942 4425 
-Q 1341 4750 2034 4750 
-Q 2731 4750 3128 4425 
-Q 3525 4100 3525 3541 
-Q 3525 3141 3298 2862 
-Q 3072 2584 2669 2484 
-Q 3125 2378 3379 2068 
-Q 3634 1759 3634 1313 
-Q 3634 634 3220 271 
-Q 2806 -91 2034 -91 
-Q 1263 -91 848 271 
-Q 434 634 434 1313 
-Q 434 1759 690 2068 
-Q 947 2378 1403 2484 
-z
-M 1172 3481 
-Q 1172 3119 1398 2916 
-Q 1625 2713 2034 2713 
-Q 2441 2713 2670 2916 
-Q 2900 3119 2900 3481 
-Q 2900 3844 2670 4047 
-Q 2441 4250 2034 4250 
-Q 1625 4250 1398 4047 
-Q 1172 3844 1172 3481 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-38"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_6">
-     <g id="line2d_21">
-      <path d="M 40.603125 171.144375 
-L 373.243125 171.144375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_22">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="171.144375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_12">
-      <!-- 10 -->
-      <g transform="translate(20.878125 174.943594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-30" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_7">
-     <g id="line2d_23">
-      <path d="M 40.603125 134.184375 
-L 373.243125 134.184375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_24">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="134.184375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_13">
-      <!-- 12 -->
-      <g transform="translate(20.878125 137.983594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-32" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_8">
-     <g id="line2d_25">
-      <path d="M 40.603125 97.224375 
-L 373.243125 97.224375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_26">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="97.224375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_14">
-      <!-- 14 -->
-      <g transform="translate(20.878125 101.023594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-34" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_9">
-     <g id="line2d_27">
-      <path d="M 40.603125 60.264375 
-L 373.243125 60.264375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_28">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="60.264375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_15">
-      <!-- 16 -->
-      <g transform="translate(20.878125 64.063594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-36" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_10">
-     <g id="line2d_29">
-      <path d="M 40.603125 23.304375 
-L 373.243125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_30">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="23.304375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_16">
-      <!-- 18 -->
-      <g transform="translate(20.878125 27.103594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-38" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="text_17">
-     <!-- y -->
-     <g transform="translate(14.798438 192.58375) rotate(-90) scale(0.1 -0.1)">
-      <defs>
-       <path id="DejaVuSans-79" d="M 2059 -325 
-Q 1816 -950 1584 -1140 
-Q 1353 -1331 966 -1331 
-L 506 -1331 
-L 506 -850 
-L 844 -850 
-Q 1081 -850 1212 -737 
-Q 1344 -625 1503 -206 
-L 1606 56 
-L 191 3500 
-L 800 3500 
-L 1894 763 
-L 2988 3500 
-L 3597 3500 
-L 2059 -325 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#DejaVuSans-79"/>
-     </g>
-    </g>
-   </g>
-   <g id="line2d_31">
-    <path d="M 40.603125 337.464375 
-L 47.272599 337.345509 
-L 53.942072 336.988913 
-L 60.611546 336.394585 
-L 67.28102 335.562526 
-L 73.950493 334.492735 
-L 80.619967 333.185214 
-L 87.289441 331.639961 
-L 93.958914 329.856978 
-L 100.628388 327.836263 
-L 107.297862 325.577816 
-L 113.967336 323.081639 
-L 120.636809 320.347731 
-L 127.306283 317.376091 
-L 133.975757 314.16672 
-L 140.64523 310.719618 
-L 147.314704 307.034785 
-L 153.984178 303.112221 
-L 160.653651 298.951925 
-L 167.323125 294.553899 
-L 174.826283 289.321956 
-L 182.329441 283.789134 
-L 189.832599 277.955434 
-L 197.335757 271.820856 
-L 204.838914 265.385399 
-L 212.342072 258.649063 
-L 219.84523 251.611849 
-L 227.348388 244.273756 
-L 234.851546 236.634785 
-L 242.354704 228.694936 
-L 249.857862 220.454207 
-L 257.36102 211.912601 
-L 265.697862 202.069045 
-L 274.034704 191.854033 
-L 282.371546 181.267567 
-L 290.708388 170.309646 
-L 299.04523 158.98027 
-L 307.382072 147.279439 
-L 315.718914 135.207153 
-L 324.055757 122.763412 
-L 332.392599 109.948216 
-L 341.563125 95.42247 
-L 350.733651 80.447264 
-L 359.904178 65.022597 
-L 369.074704 49.148469 
-L 373.243125 41.784375 
-L 373.243125 41.784375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #1f77b4; stroke-width: 2; stroke-linecap: square"/>
-   </g>
-   <g id="patch_3">
-    <path d="M 40.603125 355.944375 
-L 40.603125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 373.243125 355.944375 
-L 373.243125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_5">
-    <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 40.603125 23.304375 
-L 373.243125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="text_18">
-    <!-- $f(x)=x^2+1$ on $[0,4]$ -->
-    <g transform="translate(144.643125 17.304375) scale(0.12 -0.12)">
-     <defs>
-      <path id="DejaVuSans-Oblique-66" d="M 3059 4863 
-L 2969 4384 
-L 2419 4384 
-Q 2106 4384 1964 4261 
-Q 1822 4138 1753 3809 
-L 1691 3500 
-L 2638 3500 
-L 2553 3053 
-L 1606 3053 
-L 1013 0 
-L 434 0 
-L 1031 3053 
-L 481 3053 
-L 563 3500 
-L 1113 3500 
-L 1159 3744 
-Q 1278 4363 1576 4613 
-Q 1875 4863 2516 4863 
-L 3059 4863 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-28" d="M 1984 4856 
-Q 1566 4138 1362 3434 
-Q 1159 2731 1159 2009 
-Q 1159 1288 1364 580 
-Q 1569 -128 1984 -844 
-L 1484 -844 
-Q 1016 -109 783 600 
-Q 550 1309 550 2009 
-Q 550 2706 781 3412 
-Q 1013 4119 1484 4856 
-L 1984 4856 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-Oblique-78" d="M 3841 3500 
-L 2234 1784 
-L 3219 0 
-L 2559 0 
-L 1819 1388 
-L 531 0 
-L -166 0 
-L 1556 1844 
-L 641 3500 
-L 1300 3500 
-L 1972 2234 
-L 3144 3500 
-L 3841 3500 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-29" d="M 513 4856 
-L 1013 4856 
-Q 1481 4119 1714 3412 
-Q 1947 2706 1947 2009 
-Q 1947 1309 1714 600 
-Q 1481 -109 1013 -844 
-L 513 -844 
-Q 928 -128 1133 580 
-Q 1338 1288 1338 2009 
-Q 1338 2731 1133 3434 
-Q 928 4138 513 4856 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-3d" d="M 678 2906 
-L 4684 2906 
-L 4684 2381 
-L 678 2381 
-L 678 2906 
-z
-M 678 1631 
-L 4684 1631 
-L 4684 1100 
-L 678 1100 
-L 678 1631 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-2b" d="M 2944 4013 
-L 2944 2272 
-L 4684 2272 
-L 4684 1741 
-L 2944 1741 
-L 2944 0 
-L 2419 0 
-L 2419 1741 
-L 678 1741 
-L 678 2272 
-L 2419 2272 
-L 2419 4013 
-L 2944 4013 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-20" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-6f" d="M 1959 3097 
-Q 1497 3097 1228 2736 
-Q 959 2375 959 1747 
-Q 959 1119 1226 758 
-Q 1494 397 1959 397 
-Q 2419 397 2687 759 
-Q 2956 1122 2956 1747 
-Q 2956 2369 2687 2733 
-Q 2419 3097 1959 3097 
-z
-M 1959 3584 
-Q 2709 3584 3137 3096 
-Q 3566 2609 3566 1747 
-Q 3566 888 3137 398 
-Q 2709 -91 1959 -91 
-Q 1206 -91 779 398 
-Q 353 888 353 1747 
-Q 353 2609 779 3096 
-Q 1206 3584 1959 3584 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-6e" d="M 3513 2113 
-L 3513 0 
-L 2938 0 
-L 2938 2094 
-Q 2938 2591 2744 2837 
-Q 2550 3084 2163 3084 
-Q 1697 3084 1428 2787 
-Q 1159 2491 1159 1978 
-L 1159 0 
-L 581 0 
-L 581 3500 
-L 1159 3500 
-L 1159 2956 
-Q 1366 3272 1645 3428 
-Q 1925 3584 2291 3584 
-Q 2894 3584 3203 3211 
-Q 3513 2838 3513 2113 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-5b" d="M 550 4863 
-L 1875 4863 
-L 1875 4416 
-L 1125 4416 
-L 1125 -397 
-L 1875 -397 
-L 1875 -844 
-L 550 -844 
-L 550 4863 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-2c" d="M 750 794 
-L 1409 794 
-L 1409 256 
-L 897 -744 
-L 494 -744 
-L 750 256 
-L 750 794 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-5d" d="M 1947 4863 
-L 1947 -844 
-L 622 -844 
-L 622 -397 
-L 1369 -397 
-L 1369 4416 
-L 622 4416 
-L 622 4863 
-L 1947 4863 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#DejaVuSans-Oblique-66" transform="translate(0 0.765625)"/>
-     <use xlink:href="#DejaVuSans-28" transform="translate(35.205078 0.765625)"/>
-     <use xlink:href="#DejaVuSans-Oblique-78" transform="translate(74.21875 0.765625)"/>
-     <use xlink:href="#DejaVuSans-29" transform="translate(133.398438 0.765625)"/>
-     <use xlink:href="#DejaVuSans-3d" transform="translate(191.894531 0.765625)"/>
-     <use xlink:href="#DejaVuSans-Oblique-78" transform="translate(295.166016 0.765625)"/>
-     <use xlink:href="#DejaVuSans-32" transform="translate(358.811849 39.046875) scale(0.7)"/>
-     <use xlink:href="#DejaVuSans-2b" transform="translate(425.564779 0.765625)"/>
-     <use xlink:href="#DejaVuSans-31" transform="translate(528.836263 0.765625)"/>
-     <use xlink:href="#DejaVuSans-20" transform="translate(592.45931 0.765625)"/>
-     <use xlink:href="#DejaVuSans-6f" transform="translate(624.246419 0.765625)"/>
-     <use xlink:href="#DejaVuSans-6e" transform="translate(685.42806 0.765625)"/>
-     <use xlink:href="#DejaVuSans-20" transform="translate(748.806966 0.765625)"/>
-     <use xlink:href="#DejaVuSans-5b" transform="translate(780.594076 0.765625)"/>
-     <use xlink:href="#DejaVuSans-30" transform="translate(819.607747 0.765625)"/>
-     <use xlink:href="#DejaVuSans-2c" transform="translate(883.230794 0.765625)"/>
-     <use xlink:href="#DejaVuSans-34" transform="translate(934.500326 0.765625)"/>
-     <use xlink:href="#DejaVuSans-5d" transform="translate(998.123372 0.765625)"/>
-    </g>
-   </g>
-  </g>
- </g>
- <defs>
-  <clipPath id="p0cfc325d8d">
-   <rect x="40.603125" y="23.304375" width="332.64" height="332.64"/>
-  </clipPath>
- </defs>
-</svg>
+    <!-- KEY VOCABULARY -->
+    <section class="section-content">
+        <h2>Key Vocabulary and Concepts</h2>
 
-<div class="workspace"></div>
+        <div class="definition">
+            <strong>Riemann Sum:</strong> An approximation of the area under a curve on an
+            interval $[a, b]$ computed by dividing the interval into $n$ equal subintervals
+            of width $\Delta x = \frac{b-a}{n}$, constructing a rectangle on each subinterval,
+            and summing the rectangle areas. The height of each rectangle is determined by the
+            function value at a chosen point in the subinterval.
+        </div>
 
-<h3>Example 2</h3>
-<p>Use a right Riemann sum with 4 subintervals for the same function.</p>
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="383.624375pt" height="393.500625pt" viewBox="0 0 383.624375 393.500625" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <metadata>
-  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-   <cc:Work>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-02-14T03:42:30.579789</dc:date>
-    <dc:format>image/svg+xml</dc:format>
-    <dc:creator>
-     <cc:Agent>
-      <dc:title>Matplotlib v3.7.5, https://matplotlib.org/</dc:title>
-     </cc:Agent>
-    </dc:creator>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs>
-  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
- </defs>
- <g id="figure_1">
-  <g id="patch_1">
-   <path d="M 0 393.500625 
-L 383.624375 393.500625 
-L 383.624375 0 
-L 0 0 
-z
-" style="fill: #ffffff"/>
-  </g>
-  <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-L 373.243125 23.304375 
-L 40.603125 23.304375 
-z
-" style="fill: #ffffff"/>
-   </g>
-   <g id="matplotlib.axis_1">
-    <g id="xtick_1">
-     <g id="line2d_1">
-      <path d="M 40.603125 355.944375 
-L 40.603125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_2">
-      <defs>
-       <path id="m2470c2205b" d="M 0 0 
-L 0 3.5 
-" style="stroke: #000000; stroke-width: 0.8"/>
-      </defs>
-      <g>
-       <use xlink:href="#m2470c2205b" x="40.603125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_1">
-      <!-- 0 -->
-      <g transform="translate(37.421875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-30" d="M 2034 4250 
-Q 1547 4250 1301 3770 
-Q 1056 3291 1056 2328 
-Q 1056 1369 1301 889 
-Q 1547 409 2034 409 
-Q 2525 409 2770 889 
-Q 3016 1369 3016 2328 
-Q 3016 3291 2770 3770 
-Q 2525 4250 2034 4250 
-z
-M 2034 4750 
-Q 2819 4750 3233 4129 
-Q 3647 3509 3647 2328 
-Q 3647 1150 3233 529 
-Q 2819 -91 2034 -91 
-Q 1250 -91 836 529 
-Q 422 1150 422 2328 
-Q 422 3509 836 4129 
-Q 1250 4750 2034 4750 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-30"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_2">
-     <g id="line2d_3">
-      <path d="M 123.763125 355.944375 
-L 123.763125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_4">
-      <g>
-       <use xlink:href="#m2470c2205b" x="123.763125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_2">
-      <!-- 1 -->
-      <g transform="translate(120.581875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-31" d="M 794 531 
-L 1825 531 
-L 1825 4091 
-L 703 3866 
-L 703 4441 
-L 1819 4666 
-L 2450 4666 
-L 2450 531 
-L 3481 531 
-L 3481 0 
-L 794 0 
-L 794 531 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-31"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_3">
-     <g id="line2d_5">
-      <path d="M 206.923125 355.944375 
-L 206.923125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_6">
-      <g>
-       <use xlink:href="#m2470c2205b" x="206.923125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_3">
-      <!-- 2 -->
-      <g transform="translate(203.741875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-32" d="M 1228 531 
-L 3431 531 
-L 3431 0 
-L 469 0 
-L 469 531 
-Q 828 903 1448 1529 
-Q 2069 2156 2228 2338 
-Q 2531 2678 2651 2914 
-Q 2772 3150 2772 3378 
-Q 2772 3750 2511 3984 
-Q 2250 4219 1831 4219 
-Q 1534 4219 1204 4116 
-Q 875 4013 500 3803 
-L 500 4441 
-Q 881 4594 1212 4672 
-Q 1544 4750 1819 4750 
-Q 2544 4750 2975 4387 
-Q 3406 4025 3406 3419 
-Q 3406 3131 3298 2873 
-Q 3191 2616 2906 2266 
-Q 2828 2175 2409 1742 
-Q 1991 1309 1228 531 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-32"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_4">
-     <g id="line2d_7">
-      <path d="M 290.083125 355.944375 
-L 290.083125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_8">
-      <g>
-       <use xlink:href="#m2470c2205b" x="290.083125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_4">
-      <!-- 3 -->
-      <g transform="translate(286.901875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-33" d="M 2597 2516 
-Q 3050 2419 3304 2112 
-Q 3559 1806 3559 1356 
-Q 3559 666 3084 287 
-Q 2609 -91 1734 -91 
-Q 1441 -91 1130 -33 
-Q 819 25 488 141 
-L 488 750 
-Q 750 597 1062 519 
-Q 1375 441 1716 441 
-Q 2309 441 2620 675 
-Q 2931 909 2931 1356 
-Q 2931 1769 2642 2001 
-Q 2353 2234 1838 2234 
-L 1294 2234 
-L 1294 2753 
-L 1863 2753 
-Q 2328 2753 2575 2939 
-Q 2822 3125 2822 3475 
-Q 2822 3834 2567 4026 
-Q 2313 4219 1838 4219 
-Q 1578 4219 1281 4162 
-Q 984 4106 628 3988 
-L 628 4550 
-Q 988 4650 1302 4700 
-Q 1616 4750 1894 4750 
-Q 2613 4750 3031 4423 
-Q 3450 4097 3450 3541 
-Q 3450 3153 3228 2886 
-Q 3006 2619 2597 2516 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-33"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_5">
-     <g id="line2d_9">
-      <path d="M 373.243125 355.944375 
-L 373.243125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_10">
-      <g>
-       <use xlink:href="#m2470c2205b" x="373.243125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_5">
-      <!-- 4 -->
-      <g transform="translate(370.061875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-34" d="M 2419 4116 
-L 825 1625 
-L 2419 1625 
-L 2419 4116 
-z
-M 2253 4666 
-L 3047 4666 
-L 3047 1625 
-L 3713 1625 
-L 3713 1100 
-L 3047 1100 
-L 3047 0 
-L 2419 0 
-L 2419 1100 
-L 313 1100 
-L 313 1709 
-L 2253 4666 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-34"/>
-      </g>
-     </g>
-    </g>
-    <g id="text_6">
-     <!-- x -->
-     <g transform="translate(203.96375 384.220937) scale(0.1 -0.1)">
-      <defs>
-       <path id="DejaVuSans-78" d="M 3513 3500 
-L 2247 1797 
-L 3578 0 
-L 2900 0 
-L 1881 1375 
-L 863 0 
-L 184 0 
-L 1544 1831 
-L 300 3500 
-L 978 3500 
-L 1906 2253 
-L 2834 3500 
-L 3513 3500 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#DejaVuSans-78"/>
-     </g>
-    </g>
-   </g>
-   <g id="matplotlib.axis_2">
-    <g id="ytick_1">
-     <g id="line2d_11">
-      <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_12">
-      <defs>
-       <path id="m37044ea604" d="M 0 0 
-L -3.5 0 
-" style="stroke: #000000; stroke-width: 0.8"/>
-      </defs>
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_7">
-      <!-- 0 -->
-      <g transform="translate(27.240625 359.743594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-30"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_2">
-     <g id="line2d_13">
-      <path d="M 40.603125 318.984375 
-L 373.243125 318.984375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_14">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="318.984375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_8">
-      <!-- 2 -->
-      <g transform="translate(27.240625 322.783594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-32"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_3">
-     <g id="line2d_15">
-      <path d="M 40.603125 282.024375 
-L 373.243125 282.024375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_16">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="282.024375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_9">
-      <!-- 4 -->
-      <g transform="translate(27.240625 285.823594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-34"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_4">
-     <g id="line2d_17">
-      <path d="M 40.603125 245.064375 
-L 373.243125 245.064375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_18">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="245.064375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_10">
-      <!-- 6 -->
-      <g transform="translate(27.240625 248.863594) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-36" d="M 2113 2584 
-Q 1688 2584 1439 2293 
-Q 1191 2003 1191 1497 
-Q 1191 994 1439 701 
-Q 1688 409 2113 409 
-Q 2538 409 2786 701 
-Q 3034 994 3034 1497 
-Q 3034 2003 2786 2293 
-Q 2538 2584 2113 2584 
-z
-M 3366 4563 
-L 3366 3988 
-Q 3128 4100 2886 4159 
-Q 2644 4219 2406 4219 
-Q 1781 4219 1451 3797 
-Q 1122 3375 1075 2522 
-Q 1259 2794 1537 2939 
-Q 1816 3084 2150 3084 
-Q 2853 3084 3261 2657 
-Q 3669 2231 3669 1497 
-Q 3669 778 3244 343 
-Q 2819 -91 2113 -91 
-Q 1303 -91 875 529 
-Q 447 1150 447 2328 
-Q 447 3434 972 4092 
-Q 1497 4750 2381 4750 
-Q 2619 4750 2861 4703 
-Q 3103 4656 3366 4563 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-36"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_5">
-     <g id="line2d_19">
-      <path d="M 40.603125 208.104375 
-L 373.243125 208.104375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_20">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="208.104375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_11">
-      <!-- 8 -->
-      <g transform="translate(27.240625 211.903594) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-38" d="M 2034 2216 
-Q 1584 2216 1326 1975 
-Q 1069 1734 1069 1313 
-Q 1069 891 1326 650 
-Q 1584 409 2034 409 
-Q 2484 409 2743 651 
-Q 3003 894 3003 1313 
-Q 3003 1734 2745 1975 
-Q 2488 2216 2034 2216 
-z
-M 1403 2484 
-Q 997 2584 770 2862 
-Q 544 3141 544 3541 
-Q 544 4100 942 4425 
-Q 1341 4750 2034 4750 
-Q 2731 4750 3128 4425 
-Q 3525 4100 3525 3541 
-Q 3525 3141 3298 2862 
-Q 3072 2584 2669 2484 
-Q 3125 2378 3379 2068 
-Q 3634 1759 3634 1313 
-Q 3634 634 3220 271 
-Q 2806 -91 2034 -91 
-Q 1263 -91 848 271 
-Q 434 634 434 1313 
-Q 434 1759 690 2068 
-Q 947 2378 1403 2484 
-z
-M 1172 3481 
-Q 1172 3119 1398 2916 
-Q 1625 2713 2034 2713 
-Q 2441 2713 2670 2916 
-Q 2900 3119 2900 3481 
-Q 2900 3844 2670 4047 
-Q 2441 4250 2034 4250 
-Q 1625 4250 1398 4047 
-Q 1172 3844 1172 3481 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-38"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_6">
-     <g id="line2d_21">
-      <path d="M 40.603125 171.144375 
-L 373.243125 171.144375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_22">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="171.144375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_12">
-      <!-- 10 -->
-      <g transform="translate(20.878125 174.943594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-30" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_7">
-     <g id="line2d_23">
-      <path d="M 40.603125 134.184375 
-L 373.243125 134.184375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_24">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="134.184375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_13">
-      <!-- 12 -->
-      <g transform="translate(20.878125 137.983594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-32" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_8">
-     <g id="line2d_25">
-      <path d="M 40.603125 97.224375 
-L 373.243125 97.224375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_26">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="97.224375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_14">
-      <!-- 14 -->
-      <g transform="translate(20.878125 101.023594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-34" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_9">
-     <g id="line2d_27">
-      <path d="M 40.603125 60.264375 
-L 373.243125 60.264375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_28">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="60.264375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_15">
-      <!-- 16 -->
-      <g transform="translate(20.878125 64.063594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-36" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_10">
-     <g id="line2d_29">
-      <path d="M 40.603125 23.304375 
-L 373.243125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_30">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="23.304375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_16">
-      <!-- 18 -->
-      <g transform="translate(20.878125 27.103594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-38" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="text_17">
-     <!-- y -->
-     <g transform="translate(14.798438 192.58375) rotate(-90) scale(0.1 -0.1)">
-      <defs>
-       <path id="DejaVuSans-79" d="M 2059 -325 
-Q 1816 -950 1584 -1140 
-Q 1353 -1331 966 -1331 
-L 506 -1331 
-L 506 -850 
-L 844 -850 
-Q 1081 -850 1212 -737 
-Q 1344 -625 1503 -206 
-L 1606 56 
-L 191 3500 
-L 800 3500 
-L 1894 763 
-L 2988 3500 
-L 3597 3500 
-L 2059 -325 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#DejaVuSans-79"/>
-     </g>
-    </g>
-   </g>
-   <g id="line2d_31">
-    <path d="M 40.603125 337.464375 
-L 47.272599 337.345509 
-L 53.942072 336.988913 
-L 60.611546 336.394585 
-L 67.28102 335.562526 
-L 73.950493 334.492735 
-L 80.619967 333.185214 
-L 87.289441 331.639961 
-L 93.958914 329.856978 
-L 100.628388 327.836263 
-L 107.297862 325.577816 
-L 113.967336 323.081639 
-L 120.636809 320.347731 
-L 127.306283 317.376091 
-L 133.975757 314.16672 
-L 140.64523 310.719618 
-L 147.314704 307.034785 
-L 153.984178 303.112221 
-L 160.653651 298.951925 
-L 167.323125 294.553899 
-L 174.826283 289.321956 
-L 182.329441 283.789134 
-L 189.832599 277.955434 
-L 197.335757 271.820856 
-L 204.838914 265.385399 
-L 212.342072 258.649063 
-L 219.84523 251.611849 
-L 227.348388 244.273756 
-L 234.851546 236.634785 
-L 242.354704 228.694936 
-L 249.857862 220.454207 
-L 257.36102 211.912601 
-L 265.697862 202.069045 
-L 274.034704 191.854033 
-L 282.371546 181.267567 
-L 290.708388 170.309646 
-L 299.04523 158.98027 
-L 307.382072 147.279439 
-L 315.718914 135.207153 
-L 324.055757 122.763412 
-L 332.392599 109.948216 
-L 341.563125 95.42247 
-L 350.733651 80.447264 
-L 359.904178 65.022597 
-L 369.074704 49.148469 
-L 373.243125 41.784375 
-L 373.243125 41.784375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #1f77b4; stroke-width: 2; stroke-linecap: square"/>
-   </g>
-   <g id="patch_3">
-    <path d="M 40.603125 355.944375 
-L 40.603125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 373.243125 355.944375 
-L 373.243125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_5">
-    <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 40.603125 23.304375 
-L 373.243125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="text_18">
-    <!-- $f(x)=x^2+1$ on $[0,4]$ -->
-    <g transform="translate(144.643125 17.304375) scale(0.12 -0.12)">
-     <defs>
-      <path id="DejaVuSans-Oblique-66" d="M 3059 4863 
-L 2969 4384 
-L 2419 4384 
-Q 2106 4384 1964 4261 
-Q 1822 4138 1753 3809 
-L 1691 3500 
-L 2638 3500 
-L 2553 3053 
-L 1606 3053 
-L 1013 0 
-L 434 0 
-L 1031 3053 
-L 481 3053 
-L 563 3500 
-L 1113 3500 
-L 1159 3744 
-Q 1278 4363 1576 4613 
-Q 1875 4863 2516 4863 
-L 3059 4863 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-28" d="M 1984 4856 
-Q 1566 4138 1362 3434 
-Q 1159 2731 1159 2009 
-Q 1159 1288 1364 580 
-Q 1569 -128 1984 -844 
-L 1484 -844 
-Q 1016 -109 783 600 
-Q 550 1309 550 2009 
-Q 550 2706 781 3412 
-Q 1013 4119 1484 4856 
-L 1984 4856 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-Oblique-78" d="M 3841 3500 
-L 2234 1784 
-L 3219 0 
-L 2559 0 
-L 1819 1388 
-L 531 0 
-L -166 0 
-L 1556 1844 
-L 641 3500 
-L 1300 3500 
-L 1972 2234 
-L 3144 3500 
-L 3841 3500 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-29" d="M 513 4856 
-L 1013 4856 
-Q 1481 4119 1714 3412 
-Q 1947 2706 1947 2009 
-Q 1947 1309 1714 600 
-Q 1481 -109 1013 -844 
-L 513 -844 
-Q 928 -128 1133 580 
-Q 1338 1288 1338 2009 
-Q 1338 2731 1133 3434 
-Q 928 4138 513 4856 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-3d" d="M 678 2906 
-L 4684 2906 
-L 4684 2381 
-L 678 2381 
-L 678 2906 
-z
-M 678 1631 
-L 4684 1631 
-L 4684 1100 
-L 678 1100 
-L 678 1631 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-2b" d="M 2944 4013 
-L 2944 2272 
-L 4684 2272 
-L 4684 1741 
-L 2944 1741 
-L 2944 0 
-L 2419 0 
-L 2419 1741 
-L 678 1741 
-L 678 2272 
-L 2419 2272 
-L 2419 4013 
-L 2944 4013 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-20" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-6f" d="M 1959 3097 
-Q 1497 3097 1228 2736 
-Q 959 2375 959 1747 
-Q 959 1119 1226 758 
-Q 1494 397 1959 397 
-Q 2419 397 2687 759 
-Q 2956 1122 2956 1747 
-Q 2956 2369 2687 2733 
-Q 2419 3097 1959 3097 
-z
-M 1959 3584 
-Q 2709 3584 3137 3096 
-Q 3566 2609 3566 1747 
-Q 3566 888 3137 398 
-Q 2709 -91 1959 -91 
-Q 1206 -91 779 398 
-Q 353 888 353 1747 
-Q 353 2609 779 3096 
-Q 1206 3584 1959 3584 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-6e" d="M 3513 2113 
-L 3513 0 
-L 2938 0 
-L 2938 2094 
-Q 2938 2591 2744 2837 
-Q 2550 3084 2163 3084 
-Q 1697 3084 1428 2787 
-Q 1159 2491 1159 1978 
-L 1159 0 
-L 581 0 
-L 581 3500 
-L 1159 3500 
-L 1159 2956 
-Q 1366 3272 1645 3428 
-Q 1925 3584 2291 3584 
-Q 2894 3584 3203 3211 
-Q 3513 2838 3513 2113 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-5b" d="M 550 4863 
-L 1875 4863 
-L 1875 4416 
-L 1125 4416 
-L 1125 -397 
-L 1875 -397 
-L 1875 -844 
-L 550 -844 
-L 550 4863 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-2c" d="M 750 794 
-L 1409 794 
-L 1409 256 
-L 897 -744 
-L 494 -744 
-L 750 256 
-L 750 794 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-5d" d="M 1947 4863 
-L 1947 -844 
-L 622 -844 
-L 622 -397 
-L 1369 -397 
-L 1369 4416 
-L 622 4416 
-L 622 4863 
-L 1947 4863 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#DejaVuSans-Oblique-66" transform="translate(0 0.765625)"/>
-     <use xlink:href="#DejaVuSans-28" transform="translate(35.205078 0.765625)"/>
-     <use xlink:href="#DejaVuSans-Oblique-78" transform="translate(74.21875 0.765625)"/>
-     <use xlink:href="#DejaVuSans-29" transform="translate(133.398438 0.765625)"/>
-     <use xlink:href="#DejaVuSans-3d" transform="translate(191.894531 0.765625)"/>
-     <use xlink:href="#DejaVuSans-Oblique-78" transform="translate(295.166016 0.765625)"/>
-     <use xlink:href="#DejaVuSans-32" transform="translate(358.811849 39.046875) scale(0.7)"/>
-     <use xlink:href="#DejaVuSans-2b" transform="translate(425.564779 0.765625)"/>
-     <use xlink:href="#DejaVuSans-31" transform="translate(528.836263 0.765625)"/>
-     <use xlink:href="#DejaVuSans-20" transform="translate(592.45931 0.765625)"/>
-     <use xlink:href="#DejaVuSans-6f" transform="translate(624.246419 0.765625)"/>
-     <use xlink:href="#DejaVuSans-6e" transform="translate(685.42806 0.765625)"/>
-     <use xlink:href="#DejaVuSans-20" transform="translate(748.806966 0.765625)"/>
-     <use xlink:href="#DejaVuSans-5b" transform="translate(780.594076 0.765625)"/>
-     <use xlink:href="#DejaVuSans-30" transform="translate(819.607747 0.765625)"/>
-     <use xlink:href="#DejaVuSans-2c" transform="translate(883.230794 0.765625)"/>
-     <use xlink:href="#DejaVuSans-34" transform="translate(934.500326 0.765625)"/>
-     <use xlink:href="#DejaVuSans-5d" transform="translate(998.123372 0.765625)"/>
-    </g>
-   </g>
-  </g>
- </g>
- <defs>
-  <clipPath id="p0cfc325d8d">
-   <rect x="40.603125" y="23.304375" width="332.64" height="332.64"/>
-  </clipPath>
- </defs>
-</svg>
-<div class="workspace"></div>
-<div style="page-break-before: always;"></div>
-<h3>Example 3</h3>
-<p>Use the trapezoidal rule with 4 subintervals.</p>
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="383.624375pt" height="393.500625pt" viewBox="0 0 383.624375 393.500625" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <metadata>
-  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-   <cc:Work>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-02-14T03:42:30.579789</dc:date>
-    <dc:format>image/svg+xml</dc:format>
-    <dc:creator>
-     <cc:Agent>
-      <dc:title>Matplotlib v3.7.5, https://matplotlib.org/</dc:title>
-     </cc:Agent>
-    </dc:creator>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs>
-  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
- </defs>
- <g id="figure_1">
-  <g id="patch_1">
-   <path d="M 0 393.500625 
-L 383.624375 393.500625 
-L 383.624375 0 
-L 0 0 
-z
-" style="fill: #ffffff"/>
-  </g>
-  <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-L 373.243125 23.304375 
-L 40.603125 23.304375 
-z
-" style="fill: #ffffff"/>
-   </g>
-   <g id="matplotlib.axis_1">
-    <g id="xtick_1">
-     <g id="line2d_1">
-      <path d="M 40.603125 355.944375 
-L 40.603125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_2">
-      <defs>
-       <path id="m2470c2205b" d="M 0 0 
-L 0 3.5 
-" style="stroke: #000000; stroke-width: 0.8"/>
-      </defs>
-      <g>
-       <use xlink:href="#m2470c2205b" x="40.603125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_1">
-      <!-- 0 -->
-      <g transform="translate(37.421875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-30" d="M 2034 4250 
-Q 1547 4250 1301 3770 
-Q 1056 3291 1056 2328 
-Q 1056 1369 1301 889 
-Q 1547 409 2034 409 
-Q 2525 409 2770 889 
-Q 3016 1369 3016 2328 
-Q 3016 3291 2770 3770 
-Q 2525 4250 2034 4250 
-z
-M 2034 4750 
-Q 2819 4750 3233 4129 
-Q 3647 3509 3647 2328 
-Q 3647 1150 3233 529 
-Q 2819 -91 2034 -91 
-Q 1250 -91 836 529 
-Q 422 1150 422 2328 
-Q 422 3509 836 4129 
-Q 1250 4750 2034 4750 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-30"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_2">
-     <g id="line2d_3">
-      <path d="M 123.763125 355.944375 
-L 123.763125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_4">
-      <g>
-       <use xlink:href="#m2470c2205b" x="123.763125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_2">
-      <!-- 1 -->
-      <g transform="translate(120.581875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-31" d="M 794 531 
-L 1825 531 
-L 1825 4091 
-L 703 3866 
-L 703 4441 
-L 1819 4666 
-L 2450 4666 
-L 2450 531 
-L 3481 531 
-L 3481 0 
-L 794 0 
-L 794 531 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-31"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_3">
-     <g id="line2d_5">
-      <path d="M 206.923125 355.944375 
-L 206.923125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_6">
-      <g>
-       <use xlink:href="#m2470c2205b" x="206.923125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_3">
-      <!-- 2 -->
-      <g transform="translate(203.741875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-32" d="M 1228 531 
-L 3431 531 
-L 3431 0 
-L 469 0 
-L 469 531 
-Q 828 903 1448 1529 
-Q 2069 2156 2228 2338 
-Q 2531 2678 2651 2914 
-Q 2772 3150 2772 3378 
-Q 2772 3750 2511 3984 
-Q 2250 4219 1831 4219 
-Q 1534 4219 1204 4116 
-Q 875 4013 500 3803 
-L 500 4441 
-Q 881 4594 1212 4672 
-Q 1544 4750 1819 4750 
-Q 2544 4750 2975 4387 
-Q 3406 4025 3406 3419 
-Q 3406 3131 3298 2873 
-Q 3191 2616 2906 2266 
-Q 2828 2175 2409 1742 
-Q 1991 1309 1228 531 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-32"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_4">
-     <g id="line2d_7">
-      <path d="M 290.083125 355.944375 
-L 290.083125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_8">
-      <g>
-       <use xlink:href="#m2470c2205b" x="290.083125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_4">
-      <!-- 3 -->
-      <g transform="translate(286.901875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-33" d="M 2597 2516 
-Q 3050 2419 3304 2112 
-Q 3559 1806 3559 1356 
-Q 3559 666 3084 287 
-Q 2609 -91 1734 -91 
-Q 1441 -91 1130 -33 
-Q 819 25 488 141 
-L 488 750 
-Q 750 597 1062 519 
-Q 1375 441 1716 441 
-Q 2309 441 2620 675 
-Q 2931 909 2931 1356 
-Q 2931 1769 2642 2001 
-Q 2353 2234 1838 2234 
-L 1294 2234 
-L 1294 2753 
-L 1863 2753 
-Q 2328 2753 2575 2939 
-Q 2822 3125 2822 3475 
-Q 2822 3834 2567 4026 
-Q 2313 4219 1838 4219 
-Q 1578 4219 1281 4162 
-Q 984 4106 628 3988 
-L 628 4550 
-Q 988 4650 1302 4700 
-Q 1616 4750 1894 4750 
-Q 2613 4750 3031 4423 
-Q 3450 4097 3450 3541 
-Q 3450 3153 3228 2886 
-Q 3006 2619 2597 2516 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-33"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_5">
-     <g id="line2d_9">
-      <path d="M 373.243125 355.944375 
-L 373.243125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_10">
-      <g>
-       <use xlink:href="#m2470c2205b" x="373.243125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_5">
-      <!-- 4 -->
-      <g transform="translate(370.061875 370.542812) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-34" d="M 2419 4116 
-L 825 1625 
-L 2419 1625 
-L 2419 4116 
-z
-M 2253 4666 
-L 3047 4666 
-L 3047 1625 
-L 3713 1625 
-L 3713 1100 
-L 3047 1100 
-L 3047 0 
-L 2419 0 
-L 2419 1100 
-L 313 1100 
-L 313 1709 
-L 2253 4666 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-34"/>
-      </g>
-     </g>
-    </g>
-    <g id="text_6">
-     <!-- x -->
-     <g transform="translate(203.96375 384.220937) scale(0.1 -0.1)">
-      <defs>
-       <path id="DejaVuSans-78" d="M 3513 3500 
-L 2247 1797 
-L 3578 0 
-L 2900 0 
-L 1881 1375 
-L 863 0 
-L 184 0 
-L 1544 1831 
-L 300 3500 
-L 978 3500 
-L 1906 2253 
-L 2834 3500 
-L 3513 3500 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#DejaVuSans-78"/>
-     </g>
-    </g>
-   </g>
-   <g id="matplotlib.axis_2">
-    <g id="ytick_1">
-     <g id="line2d_11">
-      <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_12">
-      <defs>
-       <path id="m37044ea604" d="M 0 0 
-L -3.5 0 
-" style="stroke: #000000; stroke-width: 0.8"/>
-      </defs>
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="355.944375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_7">
-      <!-- 0 -->
-      <g transform="translate(27.240625 359.743594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-30"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_2">
-     <g id="line2d_13">
-      <path d="M 40.603125 318.984375 
-L 373.243125 318.984375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_14">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="318.984375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_8">
-      <!-- 2 -->
-      <g transform="translate(27.240625 322.783594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-32"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_3">
-     <g id="line2d_15">
-      <path d="M 40.603125 282.024375 
-L 373.243125 282.024375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_16">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="282.024375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_9">
-      <!-- 4 -->
-      <g transform="translate(27.240625 285.823594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-34"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_4">
-     <g id="line2d_17">
-      <path d="M 40.603125 245.064375 
-L 373.243125 245.064375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_18">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="245.064375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_10">
-      <!-- 6 -->
-      <g transform="translate(27.240625 248.863594) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-36" d="M 2113 2584 
-Q 1688 2584 1439 2293 
-Q 1191 2003 1191 1497 
-Q 1191 994 1439 701 
-Q 1688 409 2113 409 
-Q 2538 409 2786 701 
-Q 3034 994 3034 1497 
-Q 3034 2003 2786 2293 
-Q 2538 2584 2113 2584 
-z
-M 3366 4563 
-L 3366 3988 
-Q 3128 4100 2886 4159 
-Q 2644 4219 2406 4219 
-Q 1781 4219 1451 3797 
-Q 1122 3375 1075 2522 
-Q 1259 2794 1537 2939 
-Q 1816 3084 2150 3084 
-Q 2853 3084 3261 2657 
-Q 3669 2231 3669 1497 
-Q 3669 778 3244 343 
-Q 2819 -91 2113 -91 
-Q 1303 -91 875 529 
-Q 447 1150 447 2328 
-Q 447 3434 972 4092 
-Q 1497 4750 2381 4750 
-Q 2619 4750 2861 4703 
-Q 3103 4656 3366 4563 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-36"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_5">
-     <g id="line2d_19">
-      <path d="M 40.603125 208.104375 
-L 373.243125 208.104375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_20">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="208.104375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_11">
-      <!-- 8 -->
-      <g transform="translate(27.240625 211.903594) scale(0.1 -0.1)">
-       <defs>
-        <path id="DejaVuSans-38" d="M 2034 2216 
-Q 1584 2216 1326 1975 
-Q 1069 1734 1069 1313 
-Q 1069 891 1326 650 
-Q 1584 409 2034 409 
-Q 2484 409 2743 651 
-Q 3003 894 3003 1313 
-Q 3003 1734 2745 1975 
-Q 2488 2216 2034 2216 
-z
-M 1403 2484 
-Q 997 2584 770 2862 
-Q 544 3141 544 3541 
-Q 544 4100 942 4425 
-Q 1341 4750 2034 4750 
-Q 2731 4750 3128 4425 
-Q 3525 4100 3525 3541 
-Q 3525 3141 3298 2862 
-Q 3072 2584 2669 2484 
-Q 3125 2378 3379 2068 
-Q 3634 1759 3634 1313 
-Q 3634 634 3220 271 
-Q 2806 -91 2034 -91 
-Q 1263 -91 848 271 
-Q 434 634 434 1313 
-Q 434 1759 690 2068 
-Q 947 2378 1403 2484 
-z
-M 1172 3481 
-Q 1172 3119 1398 2916 
-Q 1625 2713 2034 2713 
-Q 2441 2713 2670 2916 
-Q 2900 3119 2900 3481 
-Q 2900 3844 2670 4047 
-Q 2441 4250 2034 4250 
-Q 1625 4250 1398 4047 
-Q 1172 3844 1172 3481 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-38"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_6">
-     <g id="line2d_21">
-      <path d="M 40.603125 171.144375 
-L 373.243125 171.144375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_22">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="171.144375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_12">
-      <!-- 10 -->
-      <g transform="translate(20.878125 174.943594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-30" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_7">
-     <g id="line2d_23">
-      <path d="M 40.603125 134.184375 
-L 373.243125 134.184375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_24">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="134.184375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_13">
-      <!-- 12 -->
-      <g transform="translate(20.878125 137.983594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-32" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_8">
-     <g id="line2d_25">
-      <path d="M 40.603125 97.224375 
-L 373.243125 97.224375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_26">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="97.224375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_14">
-      <!-- 14 -->
-      <g transform="translate(20.878125 101.023594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-34" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_9">
-     <g id="line2d_27">
-      <path d="M 40.603125 60.264375 
-L 373.243125 60.264375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_28">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="60.264375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_15">
-      <!-- 16 -->
-      <g transform="translate(20.878125 64.063594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-36" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_10">
-     <g id="line2d_29">
-      <path d="M 40.603125 23.304375 
-L 373.243125 23.304375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #b0b0b0; stroke-width: 0.8; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_30">
-      <g>
-       <use xlink:href="#m37044ea604" x="40.603125" y="23.304375" style="stroke: #000000; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_16">
-      <!-- 18 -->
-      <g transform="translate(20.878125 27.103594) scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-31"/>
-       <use xlink:href="#DejaVuSans-38" x="63.623047"/>
-      </g>
-     </g>
-    </g>
-    <g id="text_17">
-     <!-- y -->
-     <g transform="translate(14.798438 192.58375) rotate(-90) scale(0.1 -0.1)">
-      <defs>
-       <path id="DejaVuSans-79" d="M 2059 -325 
-Q 1816 -950 1584 -1140 
-Q 1353 -1331 966 -1331 
-L 506 -1331 
-L 506 -850 
-L 844 -850 
-Q 1081 -850 1212 -737 
-Q 1344 -625 1503 -206 
-L 1606 56 
-L 191 3500 
-L 800 3500 
-L 1894 763 
-L 2988 3500 
-L 3597 3500 
-L 2059 -325 
-z
-" transform="scale(0.015625)"/>
-      </defs>
-      <use xlink:href="#DejaVuSans-79"/>
-     </g>
-    </g>
-   </g>
-   <g id="line2d_31">
-    <path d="M 40.603125 337.464375 
-L 47.272599 337.345509 
-L 53.942072 336.988913 
-L 60.611546 336.394585 
-L 67.28102 335.562526 
-L 73.950493 334.492735 
-L 80.619967 333.185214 
-L 87.289441 331.639961 
-L 93.958914 329.856978 
-L 100.628388 327.836263 
-L 107.297862 325.577816 
-L 113.967336 323.081639 
-L 120.636809 320.347731 
-L 127.306283 317.376091 
-L 133.975757 314.16672 
-L 140.64523 310.719618 
-L 147.314704 307.034785 
-L 153.984178 303.112221 
-L 160.653651 298.951925 
-L 167.323125 294.553899 
-L 174.826283 289.321956 
-L 182.329441 283.789134 
-L 189.832599 277.955434 
-L 197.335757 271.820856 
-L 204.838914 265.385399 
-L 212.342072 258.649063 
-L 219.84523 251.611849 
-L 227.348388 244.273756 
-L 234.851546 236.634785 
-L 242.354704 228.694936 
-L 249.857862 220.454207 
-L 257.36102 211.912601 
-L 265.697862 202.069045 
-L 274.034704 191.854033 
-L 282.371546 181.267567 
-L 290.708388 170.309646 
-L 299.04523 158.98027 
-L 307.382072 147.279439 
-L 315.718914 135.207153 
-L 324.055757 122.763412 
-L 332.392599 109.948216 
-L 341.563125 95.42247 
-L 350.733651 80.447264 
-L 359.904178 65.022597 
-L 369.074704 49.148469 
-L 373.243125 41.784375 
-L 373.243125 41.784375 
-" clip-path="url(#p0cfc325d8d)" style="fill: none; stroke: #1f77b4; stroke-width: 2; stroke-linecap: square"/>
-   </g>
-   <g id="patch_3">
-    <path d="M 40.603125 355.944375 
-L 40.603125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 373.243125 355.944375 
-L 373.243125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_5">
-    <path d="M 40.603125 355.944375 
-L 373.243125 355.944375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 40.603125 23.304375 
-L 373.243125 23.304375 
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="text_18">
-    <!-- $f(x)=x^2+1$ on $[0,4]$ -->
-    <g transform="translate(144.643125 17.304375) scale(0.12 -0.12)">
-     <defs>
-      <path id="DejaVuSans-Oblique-66" d="M 3059 4863 
-L 2969 4384 
-L 2419 4384 
-Q 2106 4384 1964 4261 
-Q 1822 4138 1753 3809 
-L 1691 3500 
-L 2638 3500 
-L 2553 3053 
-L 1606 3053 
-L 1013 0 
-L 434 0 
-L 1031 3053 
-L 481 3053 
-L 563 3500 
-L 1113 3500 
-L 1159 3744 
-Q 1278 4363 1576 4613 
-Q 1875 4863 2516 4863 
-L 3059 4863 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-28" d="M 1984 4856 
-Q 1566 4138 1362 3434 
-Q 1159 2731 1159 2009 
-Q 1159 1288 1364 580 
-Q 1569 -128 1984 -844 
-L 1484 -844 
-Q 1016 -109 783 600 
-Q 550 1309 550 2009 
-Q 550 2706 781 3412 
-Q 1013 4119 1484 4856 
-L 1984 4856 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-Oblique-78" d="M 3841 3500 
-L 2234 1784 
-L 3219 0 
-L 2559 0 
-L 1819 1388 
-L 531 0 
-L -166 0 
-L 1556 1844 
-L 641 3500 
-L 1300 3500 
-L 1972 2234 
-L 3144 3500 
-L 3841 3500 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-29" d="M 513 4856 
-L 1013 4856 
-Q 1481 4119 1714 3412 
-Q 1947 2706 1947 2009 
-Q 1947 1309 1714 600 
-Q 1481 -109 1013 -844 
-L 513 -844 
-Q 928 -128 1133 580 
-Q 1338 1288 1338 2009 
-Q 1338 2731 1133 3434 
-Q 928 4138 513 4856 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-3d" d="M 678 2906 
-L 4684 2906 
-L 4684 2381 
-L 678 2381 
-L 678 2906 
-z
-M 678 1631 
-L 4684 1631 
-L 4684 1100 
-L 678 1100 
-L 678 1631 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-2b" d="M 2944 4013 
-L 2944 2272 
-L 4684 2272 
-L 4684 1741 
-L 2944 1741 
-L 2944 0 
-L 2419 0 
-L 2419 1741 
-L 678 1741 
-L 678 2272 
-L 2419 2272 
-L 2419 4013 
-L 2944 4013 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-20" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-6f" d="M 1959 3097 
-Q 1497 3097 1228 2736 
-Q 959 2375 959 1747 
-Q 959 1119 1226 758 
-Q 1494 397 1959 397 
-Q 2419 397 2687 759 
-Q 2956 1122 2956 1747 
-Q 2956 2369 2687 2733 
-Q 2419 3097 1959 3097 
-z
-M 1959 3584 
-Q 2709 3584 3137 3096 
-Q 3566 2609 3566 1747 
-Q 3566 888 3137 398 
-Q 2709 -91 1959 -91 
-Q 1206 -91 779 398 
-Q 353 888 353 1747 
-Q 353 2609 779 3096 
-Q 1206 3584 1959 3584 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-6e" d="M 3513 2113 
-L 3513 0 
-L 2938 0 
-L 2938 2094 
-Q 2938 2591 2744 2837 
-Q 2550 3084 2163 3084 
-Q 1697 3084 1428 2787 
-Q 1159 2491 1159 1978 
-L 1159 0 
-L 581 0 
-L 581 3500 
-L 1159 3500 
-L 1159 2956 
-Q 1366 3272 1645 3428 
-Q 1925 3584 2291 3584 
-Q 2894 3584 3203 3211 
-Q 3513 2838 3513 2113 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-5b" d="M 550 4863 
-L 1875 4863 
-L 1875 4416 
-L 1125 4416 
-L 1125 -397 
-L 1875 -397 
-L 1875 -844 
-L 550 -844 
-L 550 4863 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-2c" d="M 750 794 
-L 1409 794 
-L 1409 256 
-L 897 -744 
-L 494 -744 
-L 750 256 
-L 750 794 
-z
-" transform="scale(0.015625)"/>
-      <path id="DejaVuSans-5d" d="M 1947 4863 
-L 1947 -844 
-L 622 -844 
-L 622 -397 
-L 1369 -397 
-L 1369 4416 
-L 622 4416 
-L 622 4863 
-L 1947 4863 
-z
-" transform="scale(0.015625)"/>
-     </defs>
-     <use xlink:href="#DejaVuSans-Oblique-66" transform="translate(0 0.765625)"/>
-     <use xlink:href="#DejaVuSans-28" transform="translate(35.205078 0.765625)"/>
-     <use xlink:href="#DejaVuSans-Oblique-78" transform="translate(74.21875 0.765625)"/>
-     <use xlink:href="#DejaVuSans-29" transform="translate(133.398438 0.765625)"/>
-     <use xlink:href="#DejaVuSans-3d" transform="translate(191.894531 0.765625)"/>
-     <use xlink:href="#DejaVuSans-Oblique-78" transform="translate(295.166016 0.765625)"/>
-     <use xlink:href="#DejaVuSans-32" transform="translate(358.811849 39.046875) scale(0.7)"/>
-     <use xlink:href="#DejaVuSans-2b" transform="translate(425.564779 0.765625)"/>
-     <use xlink:href="#DejaVuSans-31" transform="translate(528.836263 0.765625)"/>
-     <use xlink:href="#DejaVuSans-20" transform="translate(592.45931 0.765625)"/>
-     <use xlink:href="#DejaVuSans-6f" transform="translate(624.246419 0.765625)"/>
-     <use xlink:href="#DejaVuSans-6e" transform="translate(685.42806 0.765625)"/>
-     <use xlink:href="#DejaVuSans-20" transform="translate(748.806966 0.765625)"/>
-     <use xlink:href="#DejaVuSans-5b" transform="translate(780.594076 0.765625)"/>
-     <use xlink:href="#DejaVuSans-30" transform="translate(819.607747 0.765625)"/>
-     <use xlink:href="#DejaVuSans-2c" transform="translate(883.230794 0.765625)"/>
-     <use xlink:href="#DejaVuSans-34" transform="translate(934.500326 0.765625)"/>
-     <use xlink:href="#DejaVuSans-5d" transform="translate(998.123372 0.765625)"/>
-    </g>
-   </g>
-  </g>
- </g>
- <defs>
-  <clipPath id="p0cfc325d8d">
-   <rect x="40.603125" y="23.304375" width="332.64" height="332.64"/>
-  </clipPath>
- </defs>
-</svg>
+        <div class="definition">
+            <strong>Left Riemann Sum ($L_n$):</strong> Each rectangle's height is the function
+            value at the <em>left endpoint</em> of its subinterval. If the function is increasing,
+            the left sum <strong>underestimates</strong> the true area. If the function is
+            decreasing, it <strong>overestimates</strong>.
+            $$L_n = \Delta x \left[f(x_0) + f(x_1) + f(x_2) + \cdots + f(x_{n-1})\right]$$
+        </div>
 
-<div class="workspace"></div>
-<div style="page-break-before: always;"></div>
-<h3>Example 4</h3>
-<p>Velocity values recorded every 2 seconds.</p>
-<table border="1" cellpadding="6">
-<tr><th>Time</th><th>Velocity</th></tr>
-<tr><td>0</td><td>4</td></tr>
-<tr><td>2</td><td>6</td></tr>
-<tr><td>4</td><td>9</td></tr>
-<tr><td>6</td><td>13</td></tr>
-<tr><td>8</td><td>18</td></tr>
-</table>
-<div class="workspace"></div>
-<div style="page-break-before: always;"></div>
-<h2>Summary</h2>
-<ul>
-<li>Riemann sums approximate area.</li>
-<li>Left and right behave differently.</li>
-<li>Trapezoidal improves accuracy.</li>
-<li>Increasing subintervals improves precision.</li>
-</ul>
+        <div class="definition">
+            <strong>Right Riemann Sum ($R_n$):</strong> Each rectangle's height is the function
+            value at the <em>right endpoint</em> of its subinterval. If the function is increasing,
+            the right sum <strong>overestimates</strong>. If decreasing, it <strong>underestimates</strong>.
+            $$R_n = \Delta x \left[f(x_1) + f(x_2) + f(x_3) + \cdots + f(x_n)\right]$$
+        </div>
 
-<h2>Common Mistakes</h2>
-<ul>
-<li>Forgetting to multiply by $\Delta x$.</li>
-<li>Mixing left and right endpoints.</li>
-<li>Ignoring units.</li>
-<li>Failing to interpret over/under estimates.</li>
-</ul>
-<div style="page-break-before: always;"></div>
-<h2>Practice Problems</h2>
+        <div class="definition">
+            <strong>Trapezoidal Rule ($T_n$):</strong> Instead of rectangles, each subinterval
+            uses a trapezoid whose parallel sides are the function values at the left and right
+            endpoints. This averages the left and right sums and is generally more accurate than
+            either alone.
+            $$T_n = \frac{\Delta x}{2}\left[f(x_0) + 2f(x_1) + 2f(x_2) + \cdots + 2f(x_{n-1}) + f(x_n)\right]$$
+            Equivalently: $T_n = \dfrac{L_n + R_n}{2}$
+        </div>
 
-<h3>Easy</h3>
+        <div class="definition">
+            <strong>Subinterval Width ($\Delta x$):</strong> The width of each equal subdivision
+            of $[a, b]$:
+            $$\Delta x = \frac{b - a}{n}$$
+            where $n$ is the number of subintervals. This is the width of every rectangle or trapezoid.
+        </div>
 
-<div class="question">
-1. Use 6 subintervals to approximate the area under 
-$f(x)=5-x^2$ on $[-3,3]$ using a left Riemann sum.
+        <h3>The Partition Points</h3>
+        <p>
+            When you divide $[a, b]$ into $n$ subintervals, you create $n + 1$ partition points:
+        </p>
+        <div class="key-equation">
+            $$x_0 = a, \quad x_1 = a + \Delta x, \quad x_2 = a + 2\Delta x, \quad \ldots, \quad x_n = b$$
+        </div>
+        <ul>
+            <li><strong>Left sum</strong> uses: $x_0, x_1, \ldots, x_{n-1}$ (all but the last)</li>
+            <li><strong>Right sum</strong> uses: $x_1, x_2, \ldots, x_n$ (all but the first)</li>
+            <li><strong>Trapezoidal</strong> uses: all $n+1$ points, with interior points doubled</li>
+        </ul>
+
+        <h3>Over- and Underestimation Behavior</h3>
+        <table>
+            <thead>
+                <tr><th>Function Behavior</th><th>Left Sum</th><th>Right Sum</th><th>Trapezoidal</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Increasing on $[a,b]$</td><td>Underestimate</td><td>Overestimate</td><td>Between L and R; overestimates if concave up</td></tr>
+                <tr><td>Decreasing on $[a,b]$</td><td>Overestimate</td><td>Underestimate</td><td>Between L and R; underestimates if concave down</td></tr>
+                <tr><td>Concave up</td><td>Underestimate</td><td>Overestimate</td><td>Overestimate (chords lie above curve)</td></tr>
+                <tr><td>Concave down</td><td>Depends on monotonicity</td><td>Depends</td><td>Underestimate (chords lie below curve)</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Visual Comparison of the Three Methods</h3>
+        <div class="figure-box">
+            <svg viewBox="0 0 760 200" width="740" height="200">
+                <!-- LEFT SUM diagram -->
+                <g transform="translate(10, 10)">
+                    <text x="110" y="14" text-anchor="middle" font-size="12" fill="#00003d" font-weight="bold" font-family="sans-serif">Left Riemann Sum</text>
+                    <!-- Axes -->
+                    <line x1="20" y1="170" x2="210" y2="170" stroke="#333" stroke-width="1.5"/>
+                    <line x1="20" y1="170" x2="20" y2="10" stroke="#333" stroke-width="1.5"/>
+                    <!-- Curve f(x) = roughly x^2 shape, increasing -->
+                    <path d="M 20,160 Q 80,130 115,90 Q 150,50 200,20" fill="none" stroke="#004d99" stroke-width="2"/>
+                    <!-- 4 left rectangles (underestimate since increasing) -->
+                    <rect x="20" y="160" width="45" height="10" fill="#004d9944" stroke="#004d99" stroke-width="1"/>
+                    <rect x="65" y="130" width="45" height="40" fill="#004d9944" stroke="#004d99" stroke-width="1"/>
+                    <rect x="110" y="90" width="45" height="80" fill="#004d9944" stroke="#004d99" stroke-width="1"/>
+                    <rect x="155" y="50" width="45" height="120" fill="#004d9944" stroke="#004d99" stroke-width="1"/>
+                    <!-- x labels -->
+                    <text x="20" y="184" font-size="9" fill="#555" text-anchor="middle" font-family="sans-serif">a</text>
+                    <text x="200" y="184" font-size="9" fill="#555" text-anchor="middle" font-family="sans-serif">b</text>
+                    <text x="110" y="195" font-size="9" fill="#cc0000" text-anchor="middle" font-family="sans-serif">Underestimates (increasing f)</text>
+                </g>
+
+                <!-- RIGHT SUM diagram -->
+                <g transform="translate(260, 10)">
+                    <text x="110" y="14" text-anchor="middle" font-size="12" fill="#00003d" font-weight="bold" font-family="sans-serif">Right Riemann Sum</text>
+                    <line x1="20" y1="170" x2="210" y2="170" stroke="#333" stroke-width="1.5"/>
+                    <line x1="20" y1="170" x2="20" y2="10" stroke="#333" stroke-width="1.5"/>
+                    <path d="M 20,160 Q 80,130 115,90 Q 150,50 200,20" fill="none" stroke="#004d99" stroke-width="2"/>
+                    <!-- 4 right rectangles (overestimate since increasing) -->
+                    <rect x="20" y="130" width="45" height="40" fill="#2e7d3244" stroke="#2e7d32" stroke-width="1"/>
+                    <rect x="65" y="90" width="45" height="80" fill="#2e7d3244" stroke="#2e7d32" stroke-width="1"/>
+                    <rect x="110" y="50" width="45" height="120" fill="#2e7d3244" stroke="#2e7d32" stroke-width="1"/>
+                    <rect x="155" y="20" width="45" height="150" fill="#2e7d3244" stroke="#2e7d32" stroke-width="1"/>
+                    <text x="20" y="184" font-size="9" fill="#555" text-anchor="middle" font-family="sans-serif">a</text>
+                    <text x="200" y="184" font-size="9" fill="#555" text-anchor="middle" font-family="sans-serif">b</text>
+                    <text x="110" y="195" font-size="9" fill="#2e7d32" text-anchor="middle" font-family="sans-serif">Overestimates (increasing f)</text>
+                </g>
+
+                <!-- TRAPEZOIDAL diagram -->
+                <g transform="translate(510, 10)">
+                    <text x="110" y="14" text-anchor="middle" font-size="12" fill="#00003d" font-weight="bold" font-family="sans-serif">Trapezoidal Rule</text>
+                    <line x1="20" y1="170" x2="210" y2="170" stroke="#333" stroke-width="1.5"/>
+                    <line x1="20" y1="170" x2="20" y2="10" stroke="#333" stroke-width="1.5"/>
+                    <path d="M 20,160 Q 80,130 115,90 Q 150,50 200,20" fill="none" stroke="#004d99" stroke-width="2"/>
+                    <!-- 4 trapezoids -->
+                    <polygon points="20,170 65,170 65,130 20,160" fill="#ff980044" stroke="#ff9800" stroke-width="1"/>
+                    <polygon points="65,170 110,170 110,90 65,130" fill="#ff980044" stroke="#ff9800" stroke-width="1"/>
+                    <polygon points="110,170 155,170 155,50 110,90" fill="#ff980044" stroke="#ff9800" stroke-width="1"/>
+                    <polygon points="155,170 200,170 200,20 155,50" fill="#ff980044" stroke="#ff9800" stroke-width="1"/>
+                    <text x="20" y="184" font-size="9" fill="#555" text-anchor="middle" font-family="sans-serif">a</text>
+                    <text x="200" y="184" font-size="9" fill="#555" text-anchor="middle" font-family="sans-serif">b</text>
+                    <text x="110" y="195" font-size="9" fill="#e65100" text-anchor="middle" font-family="sans-serif">Average of L and R; most accurate</text>
+                </g>
+            </svg>
+            <div class="figure-caption">Figure 7.E.1 — All three methods applied to an increasing function. The left sum (blue) misses area above the rectangles; the right sum (green) adds extra area; the trapezoidal rule (orange) splits the difference.</div>
+        </div>
+    </section>
+
+    <!-- COMMON MISTAKES -->
+    <section class="section-content">
+        <div class="common-mistakes">
+            <h4>&#9888; Common Mistakes to Avoid</h4>
+            <p><strong>Mistake 1 — Forgetting to multiply by $\Delta x$:</strong>
+            The function values $f(x_i)$ are the <em>heights</em> of the rectangles. Area = height × width.
+            You must multiply the sum of heights by $\Delta x$. Forgetting this gives an answer that is
+            off by a factor of $\Delta x$.</p>
+            <br>
+            <p><strong>Mistake 2 — Using the wrong endpoints:</strong>
+            Left sum uses $x_0$ through $x_{n-1}$ (skip the last point).
+            Right sum uses $x_1$ through $x_n$ (skip the first point).
+            Students commonly use all $n+1$ points for both, which is incorrect.</p>
+            <br>
+            <p><strong>Mistake 3 — Ignoring units:</strong>
+            The units of the area are (units of $f$) × (units of $x$). For a velocity–time graph,
+            area has units of (miles/hour) × (hours) = miles. Always label your final answer with
+            correct units and interpret what it represents in context.</p>
+            <br>
+            <p><strong>Mistake 4 — Wrong over/under estimate conclusion:</strong>
+            The over/underestimate behavior depends on whether the function is <em>increasing or
+            decreasing</em> on the interval — not on whether individual values are large or small.
+            For an increasing function, left always underestimates and right always overestimates,
+            regardless of the specific values.</p>
+            <br>
+            <p><strong>Mistake 5 — Trapezoidal formula errors:</strong>
+            In the trapezoidal formula, the interior points ($x_1$ through $x_{n-1}$) are each
+            multiplied by 2, but the endpoints $x_0$ and $x_n$ are used only once. Students
+            often forget to double the interior values or accidentally double the endpoints as well.</p>
+        </div>
+    </section>
+
+    <!-- EXAMPLES -->
+    <section class="section-content">
+        <h2>Worked Examples</h2>
+
+        <div class="example">
+            <h4>Example 1: Left Riemann Sum — $f(x) = x^2 + 1$ on $[0, 4]$, $n = 4$</h4>
+            <p>Approximate the area under $f(x) = x^2 + 1$ on $[0, 4]$ using a left Riemann sum with 4 subintervals.</p>
+            <div class="solution">
+                <p><strong>Step 1: Compute $\Delta x$.</strong></p>
+                $$\Delta x = \frac{b - a}{n} = \frac{4 - 0}{4} = 1$$
+                <p><strong>Step 2: Identify the left endpoints.</strong><br>
+                $x_0 = 0,\; x_1 = 1,\; x_2 = 2,\; x_3 = 3$ &nbsp; (use all but the last point)</p>
+                <p><strong>Step 3: Evaluate $f$ at each left endpoint.</strong></p>
+                <table>
+                    <thead><tr><th>$x$</th><th>$f(x) = x^2 + 1$</th></tr></thead>
+                    <tbody>
+                        <tr><td>$0$</td><td>$0^2 + 1 = 1$</td></tr>
+                        <tr><td>$1$</td><td>$1^2 + 1 = 2$</td></tr>
+                        <tr><td>$2$</td><td>$2^2 + 1 = 5$</td></tr>
+                        <tr><td>$3$</td><td>$3^2 + 1 = 10$</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Step 4: Multiply by $\Delta x$ and sum.</strong></p>
+                $$L_4 = \Delta x \cdot [f(0) + f(1) + f(2) + f(3)] = 1 \cdot [1 + 2 + 5 + 10] = 18$$
+                <p><strong>Final Answer: $L_4 = 18$</strong></p>
+                <p><em>Note: Since $f(x) = x^2 + 1$ is increasing on $[0, 4]$, the left sum underestimates the true area. The exact area is $\frac{76}{3} \approx 25.33$, confirming this.</em></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 2: Right Riemann Sum — $f(x) = x^2 + 1$ on $[0, 4]$, $n = 4$</h4>
+            <p>Approximate the same area using a right Riemann sum with 4 subintervals.</p>
+            <div class="solution">
+                <p><strong>Step 1: $\Delta x = 1$ (same as before).</strong></p>
+                <p><strong>Step 2: Right endpoints are $x_1, x_2, x_3, x_4$:</strong><br>
+                $x_1 = 1,\; x_2 = 2,\; x_3 = 3,\; x_4 = 4$</p>
+                <p><strong>Step 3: Evaluate $f$ at each right endpoint.</strong></p>
+                <table>
+                    <thead><tr><th>$x$</th><th>$f(x) = x^2 + 1$</th></tr></thead>
+                    <tbody>
+                        <tr><td>$1$</td><td>$2$</td></tr>
+                        <tr><td>$2$</td><td>$5$</td></tr>
+                        <tr><td>$3$</td><td>$10$</td></tr>
+                        <tr><td>$4$</td><td>$17$</td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Step 4: Apply the formula.</strong></p>
+                $$R_4 = 1 \cdot [2 + 5 + 10 + 17] = 34$$
+                <p><strong>Final Answer: $R_4 = 34$</strong></p>
+                <p><em>Since $f$ is increasing, $R_4 > $ true area. We have $L_4 = 18 <$ true area $\approx 25.33 <$ $R_4 = 34$. ✓</em></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 3: Trapezoidal Rule — $f(x) = x^2 + 1$ on $[0, 4]$, $n = 4$</h4>
+            <p>Apply the trapezoidal rule to the same function and compare results.</p>
+            <div class="solution">
+                <p><strong>Step 1: Use all 5 partition points: $0, 1, 2, 3, 4$.</strong></p>
+                <p><strong>Step 2: Apply the trapezoidal formula.</strong><br>
+                Interior points ($x_1, x_2, x_3$) are doubled; endpoints ($x_0, x_4$) are not.</p>
+                $$T_4 = \frac{\Delta x}{2}\left[f(0) + 2f(1) + 2f(2) + 2f(3) + f(4)\right]$$
+                $$= \frac{1}{2}\left[1 + 2(2) + 2(5) + 2(10) + 17\right]$$
+                $$= \frac{1}{2}\left[1 + 4 + 10 + 20 + 17\right] = \frac{52}{2} = 26$$
+                <p><strong>Final Answer: $T_4 = 26$</strong></p>
+                <p><em>Verify: $T_4 = \frac{L_4 + R_4}{2} = \frac{18 + 34}{2} = 26$ ✓</em><br>
+                The trapezoidal rule gives $26$, much closer to the true value of $\approx 25.33$ than either $L_4$ or $R_4$ alone.</p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 4: From a Table — Velocity Data</h4>
+            <p>A car's velocity $v(t)$ (in mph) is recorded in the table below. Approximate the total distance traveled on $[0, 10]$ using left and right Riemann sums with 5 subintervals.</p>
+            <table>
+                <thead><tr><th>$t$ (sec)</th><th class="center">0</th><th class="center">2</th><th class="center">4</th><th class="center">6</th><th class="center">8</th><th class="center">10</th></tr></thead>
+                <tbody><tr><td>$v(t)$ (mph)</td><td class="center">20</td><td class="center">28</td><td class="center">34</td><td class="center">39</td><td class="center">43</td><td class="center">46</td></tr></tbody>
+            </table>
+            <div class="solution">
+                <p><strong>Step 1: Identify $\Delta x$.</strong><br>
+                $\Delta x = \frac{10-0}{5} = 2$ seconds per subinterval.</p>
+                <p><strong>Step 2: Left sum (use $t = 0, 2, 4, 6, 8$).</strong></p>
+                $$L_5 = 2[v(0) + v(2) + v(4) + v(6) + v(8)] = 2[20 + 28 + 34 + 39 + 43] = 2(164) = 328$$
+                <p><strong>Step 3: Right sum (use $t = 2, 4, 6, 8, 10$).</strong></p>
+                $$R_5 = 2[v(2) + v(4) + v(6) + v(8) + v(10)] = 2[28 + 34 + 39 + 43 + 46] = 2(190) = 380$$
+                <p><strong>Step 4: Trapezoidal estimate.</strong></p>
+                $$T_5 = \frac{L_5 + R_5}{2} = \frac{328 + 380}{2} = 354$$
+                <p><strong>Final Answers:</strong> $L_5 = 328$ mph·sec, $R_5 = 380$ mph·sec, $T_5 = 354$ mph·sec</p>
+                <p><em>Interpretation: Since velocity is increasing, $L_5$ underestimates and $R_5$ overestimates total distance. The trapezoidal rule gives the best estimate: approximately 354 mph·sec of distance. (Note: converting to miles requires unit adjustment — this illustrates why units matter.)</em></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 5 (Extended): Comparing Methods — $f(x) = 5 - x^2$ on $[-3, 3]$, $n = 6$</h4>
+            <p>Approximate the area using left and right Riemann sums, then determine whether they over- or underestimate.</p>
+            <div class="solution">
+                <p><strong>Step 1: Compute $\Delta x$.</strong></p>
+                $$\Delta x = \frac{3 - (-3)}{6} = 1$$
+                <p><strong>Step 2: Partition points: $-3, -2, -1, 0, 1, 2, 3$.</strong></p>
+                <p><strong>Step 3: Evaluate $f(x) = 5 - x^2$ at all points.</strong></p>
+                <table>
+                    <thead><tr><th>$x$</th><th>$-3$</th><th>$-2$</th><th>$-1$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th></tr></thead>
+                    <tbody><tr><td>$f(x)$</td><td>$-4$</td><td>$1$</td><td>$4$</td><td>$5$</td><td>$4$</td><td>$1$</td><td>$-4$</td></tr></tbody>
+                </table>
+                <p><strong>Step 4: Left sum (omit $x = 3$).</strong></p>
+                $$L_6 = 1 \cdot [-4 + 1 + 4 + 5 + 4 + 1] = 11$$
+                <p><strong>Step 5: Right sum (omit $x = -3$).</strong></p>
+                $$R_6 = 1 \cdot [1 + 4 + 5 + 4 + 1 + (-4)] = 11$$
+                <p><strong>Step 6: Interpret.</strong><br>
+                Both sums equal 11. This is because $f(x) = 5 - x^2$ is symmetric about the y-axis on $[-3, 3]$.
+                The function increases on $[-3, 0]$ and decreases on $[0, 3]$, so the over- and
+                underestimation errors from each half cancel exactly.</p>
+                <p><strong>Final Answer: $L_6 = R_6 = 11$. The trapezoidal rule also gives $T_6 = 11$.</strong></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 6 (Extended): Concavity and Accuracy</h4>
+            <p>For $f(x) = x^2 + 4$ on $[1, 6]$ with $n = 10$, explain without computing which method gives the closest estimate to the true area and why.</p>
+            <div class="solution">
+                <p><strong>Step 1: Determine the behavior of $f$.</strong><br>
+                $f(x) = x^2 + 4$ is <strong>increasing</strong> on $[1, 6]$ (derivative $= 2x > 0$)
+                and <strong>concave up</strong> (second derivative $= 2 > 0$).</p>
+                <p><strong>Step 2: Predict left and right sum errors.</strong><br>
+                Increasing → Left underestimates, Right overestimates.</p>
+                <p><strong>Step 3: Analyze the trapezoidal rule.</strong><br>
+                For a concave-up function, the straight-line chord connecting two points on the curve
+                lies <em>above</em> the curve. The trapezoidal rule uses these chords, so it
+                <strong>overestimates</strong> — but by less than the right sum.</p>
+                <p><strong>Step 4: Rank the estimates.</strong></p>
+                $$L_{10} < \text{true area} < T_{10} < R_{10}$$
+                <p><strong>Conclusion: The trapezoidal rule $T_{10}$ is closest to the true value</strong>
+                because it balances the left and right errors, even though it still overestimates for
+                a concave-up function.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+        <h3>Summary of Key Concepts</h3>
+        <ul>
+            <li><strong>Riemann sums</strong> approximate the area under a curve by summing the areas of rectangles whose heights come from function values.</li>
+            <li>The <strong>subinterval width</strong> is $\Delta x = \frac{b-a}{n}$. Always compute this first.</li>
+            <li><strong>Left sum</strong>: uses $f(x_0)$ through $f(x_{n-1})$ — skips the last point.</li>
+            <li><strong>Right sum</strong>: uses $f(x_1)$ through $f(x_n)$ — skips the first point.</li>
+            <li><strong>Trapezoidal rule</strong>: uses all $n+1$ points, doubling interior values. Equals $\frac{L_n + R_n}{2}$.</li>
+            <li>For an <strong>increasing</strong> function: $L_n$ underestimates, $R_n$ overestimates.</li>
+            <li>For a <strong>decreasing</strong> function: $L_n$ overestimates, $R_n$ underestimates.</li>
+            <li>The <strong>trapezoidal rule is generally more accurate</strong> because it averages the left and right errors.</li>
+            <li>For <strong>concave-up</strong> functions, the trapezoidal rule overestimates. For <strong>concave-down</strong>, it underestimates.</li>
+            <li><strong>More subintervals</strong> = smaller $\Delta x$ = better approximation. As $n \to \infty$, Riemann sums converge to the definite integral.</li>
+            <li><strong>Units matter</strong>: area units = (function units) × (x-variable units).</li>
+            <li>The <strong>area under a velocity–time graph</strong> represents distance. This connection is the heart of calculus.</li>
+        </ul>
+    </div>
+
+    <!-- KEY EQUATIONS -->
+    <h2>Key Equations</h2>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Formula</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Subinterval Width</td>
+                <td>$$\Delta x = \frac{b - a}{n}$$</td>
+                <td>Width of each rectangle or trapezoid</td>
+            </tr>
+            <tr>
+                <td>Left Riemann Sum</td>
+                <td>$$L_n = \Delta x \sum_{i=0}^{n-1} f(x_i)$$</td>
+                <td>Use left endpoints $x_0, x_1, \ldots, x_{n-1}$</td>
+            </tr>
+            <tr>
+                <td>Right Riemann Sum</td>
+                <td>$$R_n = \Delta x \sum_{i=1}^{n} f(x_i)$$</td>
+                <td>Use right endpoints $x_1, x_2, \ldots, x_n$</td>
+            </tr>
+            <tr>
+                <td>Trapezoidal Rule</td>
+                <td>$$T_n = \frac{\Delta x}{2}\left[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)\right]$$</td>
+                <td>Interior points doubled; or $T_n = \frac{L_n + R_n}{2}$</td>
+            </tr>
+            <tr>
+                <td>Definite Integral (limit)</td>
+                <td>$$\int_a^b f(x)\,dx = \lim_{n \to \infty} L_n = \lim_{n \to \infty} R_n$$</td>
+                <td>The calculus connection — Riemann sums become exact as $n \to \infty$</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- PRACTICE PROBLEMS -->
+    <div class="practice-problems">
+        <h3>Practice Problems</h3>
+        <p>Show all work: compute $\Delta x$, list endpoints, evaluate $f$ at each, and multiply by $\Delta x$. Include units where applicable.</p>
+
+        <p><strong>Easy</strong></p>
+        <div class="problem"><strong>1 (Easy):</strong> Approximate the area under $f(x) = 5 - x^2$ on $[-3, 3]$ using a left Riemann sum with 6 subintervals.</div>
+        <div class="problem"><strong>2 (Easy):</strong> Approximate the area under $f(x) = 5 - x^2$ on $[-3, 3]$ using a right Riemann sum with 6 subintervals.</div>
+        <div class="problem"><strong>3 (Easy):</strong> Determine whether the left Riemann sum from Problem 1 is an overestimate or underestimate, and justify using the behavior of $f(x) = 5 - x^2$ on $[-3, 3]$.</div>
+        <div class="problem"><strong>4 (Easy):</strong> Compute $\Delta x$ for 6 subintervals on $[-3, 3]$ and explain geometrically what this value represents in the context of a Riemann sum.</div>
+
+        <p><strong>Medium</strong></p>
+        <div class="problem"><strong>5 (Medium):</strong> Approximate the area under $f(x) = 2^x + 3$ on $[1, 3]$ using a left Riemann sum with 4 subintervals.</div>
+        <div class="problem"><strong>6 (Medium):</strong> Approximate the area under $f(x) = 2^x + 3$ on $[1, 3]$ using a right Riemann sum with 4 subintervals.</div>
+        <div class="problem"><strong>7 (Medium):</strong> Approximate the area under $f(x) = 2^x + 3$ on $[1, 3]$ using the trapezoidal rule with 4 subintervals.</div>
+        <div class="problem"><strong>8 (Medium):</strong> Compare your answers from Problems 5–7. Which method gives the largest estimate? Explain why, using the behavior (increasing/decreasing, concave up/down) of $f(x) = 2^x + 3$.</div>
+
+        <p><strong>Hard</strong></p>
+        <div class="problem"><strong>9 (Hard):</strong> Approximate the area under $f(x) = x^2 + 4$ on $[1, 6]$ using a left Riemann sum with 10 subintervals. Show all 10 function values.</div>
+        <div class="problem"><strong>10 (Hard):</strong> Approximate the area under $f(x) = x^2 + 4$ on $[1, 6]$ using a right Riemann sum with 10 subintervals.</div>
+        <div class="problem"><strong>11 (Hard):</strong> Use the trapezoidal rule with 10 subintervals to approximate the area under $f(x) = x^2 + 4$ on $[1, 6]$. You may use your answers from Problems 9 and 10.</div>
+        <div class="problem"><strong>12 (Hard):</strong> Compare Problems 9–11. Which approximation should be closest to the true area? Use the concepts of concavity and increasing/decreasing behavior to explain — not just the numbers.</div>
+
+        <p><strong>Challenging</strong></p>
+        <div class="problem"><strong>13 (Challenging):</strong> A velocity function $v(t)$ is increasing and concave up on $[0, 8]$. Without computing anything, predict which of the three methods (left, right, trapezoidal) gives the smallest estimate and which gives the largest. Justify each prediction using both the increasing and concave-up properties separately.</div>
+        <div class="problem"><strong>14 (Challenging):</strong> A function is decreasing and concave down on $[2, 10]$. Predict which method gives the largest estimate. Then explain: does the trapezoidal rule overestimate or underestimate for a concave-down function, and why?</div>
+
+        <p><strong>Justify</strong></p>
+        <div class="problem"><strong>15 (Justify):</strong> Explain in complete sentences why increasing the number of subintervals improves the accuracy of a Riemann sum approximation. Use the concept of $\Delta x$ and the gap between the rectangles and the actual curve in your explanation. Include a description of what happens as $n \to \infty$.</div>
+        <div class="problem"><strong>16 (Justify):</strong> Explain why the trapezoidal rule is generally more accurate than either the left or right Riemann sum alone. Then explain a situation where the trapezoidal rule is not the most accurate — that is, when it still produces a noticeable error — and what determines the direction of that error.</div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key">
+        <h3>Answer Key</h3>
+
+        <div class="answer">
+            <p><strong>1.</strong> $\Delta x = 1$. Left endpoints: $-3, -2, -1, 0, 1, 2$.</p>
+            <p>$f$ values: $-4, 1, 4, 5, 4, 1$</p>
+            <p>$L_6 = 1(-4 + 1 + 4 + 5 + 4 + 1) = \mathbf{11}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>2.</strong> Right endpoints: $-2, -1, 0, 1, 2, 3$.</p>
+            <p>$f$ values: $1, 4, 5, 4, 1, -4$</p>
+            <p>$R_6 = 1(1 + 4 + 5 + 4 + 1 - 4) = \mathbf{11}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>3.</strong> $f(x) = 5 - x^2$ is symmetric about the y-axis and is increasing on $[-3, 0]$ and decreasing on $[0, 3]$. On the left half, the left sum underestimates; on the right half, the left sum overestimates. Because the function is symmetric, these errors cancel exactly, making $L_6$ neither a strict overestimate nor underestimate — it happens to equal the same value as $R_6 = 11$, which is the same reason both equal each other.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>4.</strong> $\Delta x = \frac{3 - (-3)}{6} = 1$. Geometrically, $\Delta x$ is the width of each rectangle (or trapezoid). It represents how wide each subinterval is — in other words, how much of the x-axis each rectangle occupies. Smaller $\Delta x$ means thinner rectangles that hug the curve more closely.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>5.</strong> $\Delta x = \frac{3-1}{4} = 0.5$. Left endpoints: $1, 1.5, 2, 2.5$.</p>
+            <p>$f(1) = 5$, $f(1.5) = 2^{1.5}+3 \approx 5.828$, $f(2) = 7$, $f(2.5) = 2^{2.5}+3 \approx 8.657$</p>
+            <p>$L_4 \approx 0.5(5 + 5.828 + 7 + 8.657) = 0.5(26.485) \approx \mathbf{13.24}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>6.</strong> Right endpoints: $1.5, 2, 2.5, 3$. $f(3) = 2^3 + 3 = 11$.</p>
+            <p>$R_4 \approx 0.5(5.828 + 7 + 8.657 + 11) = 0.5(32.485) \approx \mathbf{16.24}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>7.</strong> $T_4 = \frac{L_4 + R_4}{2} \approx \frac{13.24 + 16.24}{2} \approx \mathbf{14.74}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>8.</strong> The right sum gives the largest estimate ($\approx 16.24$). $f(x) = 2^x + 3$ is increasing and concave up on $[1, 3]$. Since it is increasing, right endpoints always land higher than the curve's average on each subinterval — so the right sum overestimates. The left sum underestimates for the same reason. The trapezoidal rule falls between them and is the most accurate, though it slightly overestimates because the function is concave up (the chord lies above the curve).</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>9.</strong> $\Delta x = \frac{6-1}{10} = 0.5$. Left endpoints: $1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5$.</p>
+            <p>$f$ values: $5, 6.25, 8, 10.25, 13, 16.25, 20, 24.25, 29, 34.25$</p>
+            <p>$L_{10} = 0.5(5 + 6.25 + 8 + 10.25 + 13 + 16.25 + 20 + 24.25 + 29 + 34.25) = 0.5(166.25) = \mathbf{83.125}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>10.</strong> Right endpoints: $1.5, 2, 2.5, \ldots, 5.5, 6$. $f(6) = 40$.</p>
+            <p>$R_{10} = 0.5(6.25 + 8 + 10.25 + 13 + 16.25 + 20 + 24.25 + 29 + 34.25 + 40) = 0.5(201.25) = \mathbf{100.625}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>11.</strong> $T_{10} = \frac{L_{10} + R_{10}}{2} = \frac{83.125 + 100.625}{2} = \mathbf{91.875}$</p>
+            <p>(The exact value via calculus is $\frac{275}{3} \approx 91.67$, so $T_{10}$ is remarkably close.)</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>12.</strong> $f(x) = x^2 + 4$ is increasing and concave up on $[1,6]$. Because it is increasing: $L_{10}$ underestimates and $R_{10}$ overestimates. Because it is concave up, the trapezoid chords lie above the curve, so $T_{10}$ also slightly overestimates — but by much less than $R_{10}$. The ranking is $L_{10} < $ true area $< T_{10} < R_{10}$, so the trapezoidal rule is closest to the true area.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>13.</strong> Smallest: Left sum. Since $v(t)$ is increasing, left endpoints always pick values below the true height of the curve on each subinterval — guaranteeing an underestimate. Largest: Right sum. Right endpoints pick the highest value on each increasing subinterval, always overestimating. The trapezoidal rule falls between them. The concave-up property means the trapezoidal rule slightly overestimates (chords above curve), so the order is: Left $<$ true area $<$ Trapezoidal $<$ Right.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>14.</strong> Largest estimate: Left sum. For a decreasing function, the left endpoint of each subinterval has the highest function value, so left rectangles are too tall — they overestimate. For a concave-down function, the chord connecting two points lies below the curve, so the trapezoidal rule underestimates. This means the order is: Right $<$ Trapezoidal $<$ true area $<$ Left.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>15.</strong> As $n$ increases, $\Delta x = \frac{b-a}{n}$ decreases, making each rectangle narrower. On any given narrow subinterval, the function changes very little, so the rectangle height (left or right endpoint value) is very close to the true average height of the function on that piece. The gap between the top of the rectangle and the actual curve — the source of all error — shrinks proportionally to $\Delta x$. When $\Delta x$ is multiplied across $n$ rectangles, the total error decreases. As $n \to \infty$ and $\Delta x \to 0$, the sum of all rectangle areas converges exactly to the definite integral $\int_a^b f(x)\,dx$.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>16.</strong> The trapezoidal rule is more accurate because it uses both the left and right endpoint values for each subinterval, effectively averaging them. The left sum's error (missing area above the left rectangle) and the right sum's error (extra area above the right rectangle) partially cancel when averaged. However, the trapezoidal rule still produces error when the function is curved. For a concave-up function, the chord (top of the trapezoid) lies above the curve, causing overestimation. For a concave-down function, the chord lies below the curve, causing underestimation. The more curved the function, the larger the trapezoidal error, regardless of whether the function is increasing or decreasing.</p>
+        </div>
+    </div>
+
 </div>
-<div style="min-height:300px;"></div>
-<div style="page-break-before: always;"></div>
-<div class="question">
-2. Use 6 subintervals to approximate the area under 
-$f(x)=5-x^2$ on $[-3,3]$ using a right Riemann sum.
-</div>
-<div style="min-height:300px;"></div>
-
-<div class="question">
-3. Determine whether the left Riemann sum in Problem 1 is an overestimate or underestimate. Justify using function behavior.
-</div>
-<div style="min-height:260px;"></div>
-  
-<div style="page-break-before: always;"></div>
-  
-<div class="question">
-4. Compute $\Delta x$ for 6 subintervals on $[-3,3]$. Explain what it represents geometrically.
-</div>
-<div style="min-height:260px;"></div>
-
-
-<h3>Medium</h3>
-
-<div class="question">
-5. Use 4 subintervals to approximate the area under 
-$f(x)=2^x+3$ on $[1,3]$ using a left Riemann sum.
-</div>
-<div style="min-height:300px;"></div>
-  
-<div style="page-break-before: always;"></div>
-  
-<div class="question">
-6. Use 4 subintervals to approximate the area under 
-$f(x)=2^x+3$ on $[1,3]$ using a right Riemann sum.
-</div>
-<div style="min-height:300px;"></div>
-
-<div class="question">
-7. Use 4 subintervals to approximate the area under 
-$f(x)=2^x+3$ on $[1,3]$ using the trapezoidal rule.
-</div>
-<div style="min-height:300px;"></div>
-<div style="page-break-before: always;"></div>
-<div class="question">
-8. Compare your answers from 5–7. Which method gives the largest estimate? Explain why.
-</div>
-<div style="min-height:280px;"></div>
-
-
-<h3>Hard</h3>
-
-<div class="question">
-9. Use 10 subintervals to approximate the area under 
-$f(x)=x^2+4$ on $[1,6]$ using a left Riemann sum.
-</div>
-<div style="min-height:320px;"></div>
-<div style="page-break-before: always;"></div>
-<div class="question">
-10. Use 10 subintervals to approximate the area under 
-$f(x)=x^2+4$ on $[1,6]$ using a right Riemann sum.
-</div>
-<div style="min-height:320px;"></div>
-
-<div class="question">
-11. Use 10 subintervals to approximate the area under 
-$f(x)=x^2+4$ on $[1,6]$ using the trapezoidal rule.
-</div>
-<div style="min-height:320px;"></div>
-<div style="page-break-before: always;"></div>
-<div class="question">
-12. Compare Problems 9–11. Which approximation should be closest to the true value? Explain using concavity.
-</div>
-<div style="min-height:300px;"></div>
-
-<div style="page-break-before: always;"></div>
-<h3>Challenge</h3>
-
-<div class="question">
-13. A velocity function is increasing and concave up on an interval.  
-Predict which method (left, right, trapezoidal) will give the smallest estimate. Justify.
-</div>
-<div style="min-height:300px;"></div>
-
-<div class="question">
-14. A function is decreasing and concave down.  
-Predict which method will give the largest estimate. Explain.
-</div>
-<div style="min-height:300px;"></div>
-<div style="page-break-before: always;"></div>
-<div class="question">
-15. Without calculating exact values, explain how doubling the number of subintervals affects approximation error.
-</div>
-<div style="min-height:300px;"></div>
-
-
-<h3>Justify</h3>
-
-<div class="question">
-16. Explain why increasing the number of subintervals improves approximation accuracy.
-</div>
-<div style="min-height:360px;"></div>
-<div style="page-break-before: always;"></div>
-<div class="question">
-17. Justify why the trapezoidal rule is often more accurate than a left or right Riemann sum.
-</div>
-<div style="min-height:360px;"></div>
-
-<div class="question">
-18. Explain how Riemann sums connect to the definition of a definite integral in calculus.
-</div>
-<div style="min-height:420px;"></div>
-
-<div style="page-break-before: always;"></div>
-<h2>Solutions</h2>
-
-<h3>Easy</h3>
-
-<p><strong>1.</strong>  
-$\Delta x = \frac{3-(-3)}{6} = 1$  
-
-Left endpoints: $-3,-2,-1,0,1,2$  
-
-$f(x)=5-x^2$  
-
-Values:  
-$f(-3)=-4$  
-$f(-2)=1$  
-$f(-1)=4$  
-$f(0)=5$  
-$f(1)=4$  
-$f(2)=1$  
-
-Left sum:  
-$L = 1(-4+1+4+5+4+1)=11$
-</p>
-
-<p><strong>2.</strong>  
-Right endpoints: $-2,-1,0,1,2,3$  
-
-Values:  
-$1,4,5,4,1,-4$  
-
-Right sum:  
-$R = 1(1+4+5+4+1-4)=11$
-</p>
-
-<p><strong>3.</strong>  
-Because $5-x^2$ is symmetric about the y-axis, left and right sums balance.  
-Neither strictly over- nor underestimates over symmetric interval.
-</p>
-
-<p><strong>4.</strong>  
-$\Delta x = 1$  
-
-This represents the width of each rectangle.
-</p>
-
-
-<h3>Medium</h3>
-
-<p><strong>5.</strong>  
-$\Delta x = \frac{3-1}{4}=0.5$  
-
-Left endpoints: 1, 1.5, 2, 2.5  
-
-$f(x)=2^x+3$  
-
-$f(1)=5$  
-$f(1.5)=2^{1.5}+3≈5.828$  
-$f(2)=7$  
-$f(2.5)=2^{2.5}+3≈8.657$  
-
-$L ≈ 0.5(5+5.828+7+8.657)=13.2425$
-</p>
-
-<p><strong>6.</strong>  
-Right endpoints: 1.5, 2, 2.5, 3  
-
-$f(3)=11$  
-
-$R ≈ 0.5(5.828+7+8.657+11)=16.7425$
-</p>
-
-<p><strong>7.</strong>  
-$T = \frac{L+R}{2} ≈ \frac{13.2425+16.7425}{2} = 14.9925$
-</p>
-
-<p><strong>8.</strong>  
-Function increasing and concave up.  
-Left underestimates, right overestimates, trapezoidal slightly overestimates but closest.
-</p>
-
-
-<h3>Hard</h3>
-
-<p><strong>9.</strong>  
-$\Delta x = \frac{6-1}{10}=0.5$  
-
-Left endpoints: 1,1.5,2,…,5.5  
-
-Compute each and multiply by 0.5  
-
-Left sum ≈ 108.125
-</p>
-
-<p><strong>10.</strong>  
-Right endpoints: 1.5,2,…,6  
-
-Right sum ≈ 133.125
-</p>
-
-<p><strong>11.</strong>  
-$T = \frac{108.125+133.125}{2}=120.625$
-</p>
-
-<p><strong>12.</strong>  
-Since $x^2+4$ is increasing and concave up:  
-
-Left underestimates, right overestimates, trapezoidal closest but slightly over.
-</p>
-
-
-<h3>Challenge</h3>
-
-<p><strong>13.</strong>  
-Increasing & concave up → Left gives smallest estimate.
-</p>
-
-<p><strong>14.</strong>  
-Decreasing & concave down → Left gives largest estimate.
-</p>
-
-<p><strong>15.</strong>  
-Doubling subintervals reduces error because rectangles better approximate curvature.
-</p>
-
-
-<h3>Justify</h3>
-
-<p><strong>16.</strong>  
-Smaller $\Delta x$ reduces maximum gap between curve and rectangles.
-</p>
-
-<p><strong>17.</strong>  
-Trapezoidal balances left and right error, canceling part of over/under estimation.
-</p>
-
-<p><strong>18.</strong>  
-As $\Delta x \to 0$, Riemann sums converge to the definite integral.
-</p>
+</body>
+</html>
