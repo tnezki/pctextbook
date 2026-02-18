@@ -1,210 +1,574 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Section 7.C</title>
-<script>
-window.MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']] }, svg: { fontCache: 'global' } };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<style>
-body{margin:0.5in;font-family:Arial;line-height:1.6;}
-.workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
-.question{font-size:1.2em;margin-top:28px;}
-/* ============================= */
-/* PRINT STRUCTURE CONTROL       */
-/* ============================= */
-
-@media print {
-
-  /* Remove flex for clean page splitting */
-  .workspace {
-    display: block !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Keep question attached to workspace */
-  .question {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  /* Keep headers attached to content below */
-  h1, h2, h3 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  /* Avoid awkward paragraph splits */
-  p, ul {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-}
-
-  
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.C: Half-Angle, Sum, and Difference Identities</title>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7; color: #333; background-color: #f5f5f5; padding: 20px;
+        }
+        .container {
+            max-width: 900px; margin: 0 auto; background-color: white;
+            padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center; border-bottom: 3px solid #00003d;
+            padding-bottom: 30px; margin-bottom: 30px;
+        }
+        .section-number { color: #00003d; font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+        h1 { color: #00003d; font-size: 2.5em; margin-bottom: 20px; margin-top: 0; }
+        .intro-text { font-size: 1.05em; color: #555; max-width: 800px; margin: 0 auto 15px auto; font-style: italic; }
+        .inspirational { font-size: 1.15em; color: #004d99; font-style: italic; text-align: center; margin: 18px auto 0 auto; max-width: 700px; padding: 10px 0 0 0; }
+        h2 { color: #00003d; font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; border-left: 5px solid #00003d; padding-left: 15px; }
+        h3 { color: #004d99; font-size: 1.3em; margin-top: 25px; margin-bottom: 15px; }
+        .objectives { background-color: #f0f4f8; padding: 20px; border-radius: 6px; margin-bottom: 30px; }
+        .objectives ul { list-style-position: inside; margin-left: 20px; }
+        .objectives li { margin-bottom: 10px; }
+        .section-content { margin-bottom: 40px; line-height: 1.8; }
+        p { margin-bottom: 12px; }
+        ul { margin-left: 30px; margin-bottom: 12px; }
+        ul li { margin-bottom: 6px; }
+        .definition { background-color: #fffacd; border-left: 4px solid #ffd700; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .definition strong { color: #00003d; }
+        .example { background-color: #f9f9f9; border: 2px solid #00003d; padding: 20px; margin: 20px 0; border-radius: 6px; }
+        .example h4 { color: #00003d; margin-bottom: 10px; font-size: 1.1em; }
+        .solution { background-color: #f0f0f0; padding: 15px; margin-top: 15px; border-radius: 4px; font-size: 0.95em; line-height: 1.6; }
+        .solution p { margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #00003d; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .summary { background-color: #f0f4f8; border-left: 5px solid #00003d; padding: 20px; margin: 30px 0; border-radius: 6px; }
+        .summary h3 { margin-top: 0; }
+        .summary ul { list-style-position: inside; }
+        .summary li { margin-bottom: 8px; }
+        .practice-problems { background-color: #f0f4f8; padding: 20px; border-radius: 6px; margin: 30px 0; }
+        .practice-problems h3 { margin-top: 0; }
+        .problem { background-color: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #004d99; }
+        .answer-key { background-color: #f5f5f5; padding: 20px; border-radius: 6px; margin-top: 40px; }
+        .answer-key h3 { margin-top: 0; }
+        .answer { background-color: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #28a745; }
+        .answer p { margin-bottom: 8px; }
+        .historical-note { background-color: #ffe6e6; border-left: 4px solid #ff6666; padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95em; }
+        .historical-note strong { color: #cc0000; }
+        .key-point { background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .key-point strong { color: #2e7d32; }
+        .common-mistakes { background-color: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .common-mistakes h4 { color: #e65100; margin-bottom: 10px; font-size: 1.1em; }
+        .connections { background-color: #f3e5f5; border-left: 4px solid #9c27b0; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .connections strong { color: #6a1b9a; }
+        .key-equation { background-color: #e6f2ff; border: 2px solid #004d99; padding: 20px; margin: 20px 0; border-radius: 6px; text-align: center; }
+        .figure-box { text-align: center; margin: 25px 0; padding: 15px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px; }
+        .figure-caption { font-size: 0.9em; color: #555; margin-top: 10px; font-style: italic; }
+    </style>
 </head>
 <body>
+<div class="container">
 
-<h1>SECTION 7.C<br>Half-Angle, Sum, and Difference Identities</h1>
+    <!-- TITLE PAGE -->
+    <div class="title-page">
+        <div class="section-number">SECTION 7.C</div>
+        <h1>Half-Angle, Sum, and Difference Identities</h1>
+        <div class="intro-text">
+            The unit circle gives us exact values for a fixed set of special angles — but what about
+            angles that fall between them? The sum, difference, and half-angle identities are the keys
+            that unlock exact values for angles like 15°, 75°, and $\frac{\pi}{12}$ that the unit
+            circle alone cannot provide. By combining or splitting angles we already know, we can
+            reach angles that would otherwise require a calculator — and still get a perfectly
+            exact answer.
+        </div>
+        <div class="inspirational">
+            &#8220; You don't need to know every angle &mdash; you just need to know how to break any angle into ones you do know. &#8221;
+        </div>
+    </div>
 
-<h2>Learning Objectives</h2>
-<ul>
-<li>I can apply half-angle formulas for sine and cosine to evaluate exact expressions.</li>
-<li>I can apply half-angle formulas for tangent and determine appropriate signs.</li>
-<li>I can apply angle sum and difference identities to rewrite and evaluate trigonometric expressions.</li>
-<li>I can justify multi-step reasoning using algebraic structure.</li>
-</ul>
+    <!-- LEARNING OBJECTIVES -->
+    <section class="objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>I can apply half-angle formulas for sine and cosine to evaluate exact expressions.</li>
+            <li>I can apply the half-angle formula for tangent and determine the appropriate sign.</li>
+            <li>I can apply angle sum and difference identities to rewrite and evaluate trigonometric expressions.</li>
+            <li>I can justify multi-step reasoning using algebraic structure.</li>
+        </ul>
+    </section>
 
-<h2>Introduction</h2>
-<p>In Section 7.B, we rewrote trigonometric expressions involving <strong>double angles</strong>.</p>
-<p>Now we extend that structure.</p>
-<p>Instead of working with $2\theta$, we will:</p>
-<ul>
-<li>Break angles apart</li>
-<li>Combine angles strategically</li>
-<li>Rewrite unfamiliar angles using known unit circle values</li>
-</ul>
-<p>Structure matters.</p>
-<div style="page-break-before: always;"></div>
-<h2>Key Vocabulary</h2>
-<p><strong>Half-Angle Formula:</strong> An identity that expresses a trig function of $\frac{\theta}{2}$ in terms of $\theta$.</p>
-<p><strong>Sum Identity:</strong> A formula that expresses a trig function of $A + B$.</p>
-<p><strong>Difference Identity:</strong> A formula that expresses a trig function of $A - B$.</p>
-<p><strong>Sign Determination:</strong> Deciding whether a half-angle expression is positive or negative based on quadrant.</p>
+    <!-- INTRODUCTION -->
+    <section class="section-content">
+        <h2>Introduction: Reaching Beyond the Unit Circle</h2>
+        <p>
+            Think back to the unit circle. You have memorized exact coordinates for angles like
+            $\frac{\pi}{6}$, $\frac{\pi}{4}$, and $\frac{\pi}{3}$. But what if someone asks you
+            for $\cos(75°)$? That angle is not on the standard unit circle. A calculator gives
+            you a decimal approximation — but an exact answer requires a new tool.
+        </p>
+        <p>
+            The key insight is that $75° = 45° + 30°$. Both $45°$ and $30°$ are special angles
+            with known exact values. If we had a formula for $\cos(A + B)$ in terms of $\cos A$,
+            $\cos B$, $\sin A$, and $\sin B$, we could compute $\cos(75°)$ exactly — and we do.
+            That is precisely what the <strong>sum and difference identities</strong> provide.
+        </p>
+        <p>
+            Similarly, the <strong>half-angle identities</strong> let you go the other direction.
+            If you know $\cos(\theta)$, you can find exact values for $\sin\left(\frac{\theta}{2}\right)$
+            and $\cos\left(\frac{\theta}{2}\right)$. For example, since $\frac{\pi}{4}$ is a known
+            angle, we can use the half-angle formula to find $\sin\left(\frac{\pi}{8}\right)$ exactly.
+        </p>
+        <p>
+            One important feature of half-angle formulas is the $\pm$ sign. The formula produces
+            a square root, and a square root always has two possible values — positive and negative.
+            The correct sign is determined by the <strong>quadrant of $\frac{\theta}{2}$</strong>,
+            not the quadrant of $\theta$ itself. This is a critical detail that trips up many students.
+        </p>
 
-<h2>Core Identities</h2>
-<p><strong>Half-Angle</strong></p>
-<p>$\sin\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1-\cos\theta}{2}}$</p>
-<p>$\cos\left(\frac{\theta}{2}\right)=\pm\sqrt{\frac{1+\cos\theta}{2}}$</p>
-<p>$\tan\left(\frac{\theta}{2}\right)=\frac{\sin\theta}{1+\cos\theta}$</p>
+        <div class="historical-note">
+            <strong>&#128218; Historical Note:</strong> The sum and difference formulas for sine and cosine
+            appear in <strong>Ptolemy's Almagest</strong> (c. 150 AD) in a geometric form called
+            Ptolemy's theorem for cyclic quadrilaterals. The algebraic form we use today was
+            developed by <strong>François Viète</strong> (1540–1603), a French mathematician who
+            pioneered the use of letters to represent unknowns — an approach we now take for granted.
+            The half-angle identities follow directly from the double-angle cosine formulas established
+            in Section 7.B.
+        </div>
 
-<p><strong>Sum and Difference</strong></p>
-<p>$\sin(A+B)=\sin A\cos B+\cos A\sin B$</p>
-<p>$\sin(A-B)=\sin A\cos B-\cos A\sin B$</p>
-<p>$\cos(A+B)=\cos A\cos B-\sin A\sin B$</p>
-<p>$\cos(A-B)=\cos A\cos B+\sin A\sin B$</p>
+        <div class="connections">
+            <strong>&#128279; Connections to Other Subjects and Real Life:</strong><br><br>
+            <strong>Navigation and Surveying:</strong> Before GPS, surveyors used exact trig values
+            to compute distances and bearings. A surveyor measuring an angle of 75° between two
+            landmarks could use the sum identity to get an exact result without a calculator.<br><br>
+            <strong>Physics — Wave Interference:</strong> When two sound waves or light waves meet,
+            the resulting amplitude involves $\sin(A + B)$ and $\cos(A + B)$. The sum and difference
+            identities are used to simplify the combined wave equation and predict whether the waves
+            reinforce (constructive interference) or cancel (destructive interference).<br><br>
+            <strong>Music Theory:</strong> Chords are combinations of frequencies. The sum identity
+            $\sin A \cos B = \frac{1}{2}[\sin(A+B) + \sin(A-B)]$ describes how two pure tones
+            combine to produce new frequencies — the mathematical basis of harmony and overtones.<br><br>
+            <strong>Calculus:</strong> The sum-to-product identities derived from sum/difference formulas
+            are essential for evaluating certain integrals and derivatives involving products of
+            sine and cosine functions.
+        </div>
+    </section>
 
-<h2>Structure Insight</h2>
-<ul>
-<li>Half-angle formulas contain square roots, introducing $\pm$.</li>
-<li>The sign depends on the quadrant of $\frac{\theta}{2}$.</li>
-<li>Cosine switches signs between sum and difference forms.</li>
-<li>Precision in signs is critical.</li>
-</ul>
-<div style="page-break-before: always;"></div>
-<h2>Examples</h2>
+    <!-- KEY VOCABULARY -->
+    <section class="section-content">
+        <h2>Key Vocabulary and Concepts</h2>
 
-<div class="question">Example 1: Evaluate $\sin\left(\frac{\pi}{8}\right)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="definition">
+            <strong>Half-Angle Identity:</strong> A formula that expresses the sine, cosine, or tangent
+            of $\frac{\theta}{2}$ in terms of the trig functions of $\theta$ (the full angle).
+            The formulas contain square roots and therefore require a $\pm$ sign whose value depends
+            on which quadrant $\frac{\theta}{2}$ lies in.
+        </div>
 
-<div class="question">Example 2: Evaluate $\cos(75^\circ)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="definition">
+            <strong>Sum Identity:</strong> A formula expressing $\sin(A + B)$ or $\cos(A + B)$
+            in terms of the sines and cosines of $A$ and $B$ separately. These allow you to evaluate
+            trig functions of non-standard angles by writing them as sums of two special angles.
+        </div>
 
-<div class="question">Example 3: Rewrite $\sin(45^\circ+30^\circ)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="definition">
+            <strong>Difference Identity:</strong> A formula expressing $\sin(A - B)$ or $\cos(A - B)$.
+            The structure is identical to the sum identity except that one sign is flipped — but
+            <em>which</em> sign flips is different for sine and cosine, so careful attention is required.
+        </div>
 
-<div class="question">Example 4: Simplify $\cos(A-B)+\cos(A+B)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="definition">
+            <strong>Sign Determination:</strong> When applying a half-angle formula, the $\pm$ sign
+            is determined by the quadrant of $\frac{\theta}{2}$, not the quadrant of $\theta$.
+            Always determine which quadrant $\frac{\theta}{2}$ lies in <em>before</em> choosing the sign.
+        </div>
 
-<h2>Summary</h2>
-<ul>
-<li>Half-angle identities introduce square roots and $\pm$ signs.</li>
-<li>Signs depend on quadrant location.</li>
-<li>Sum and difference identities rewrite unfamiliar angles.</li>
-<li>Structure and precision are essential.</li>
-</ul>
+        <h3>The Complete Identity Reference</h3>
 
-<h2>Common Mistakes</h2>
-<ul>
-<li>Forgetting the $\pm$ in half-angle formulas.</li>
-<li>Using the wrong quadrant for sign.</li>
-<li>Mixing up cosine sign patterns.</li>
-<li>Not fully simplifying radicals.</li>
-</ul>
+        <div class="key-equation">
+            <p style="font-weight: bold; color: #00003d; margin-bottom: 12px;">Sum and Difference Identities</p>
+            $$\sin(A + B) = \sin A \cos B + \cos A \sin B$$
+            $$\sin(A - B) = \sin A \cos B - \cos A \sin B$$
+            $$\cos(A + B) = \cos A \cos B - \sin A \sin B$$
+            $$\cos(A - B) = \cos A \cos B + \sin A \sin B$$
+        </div>
 
-<h2>Practice Problems</h2>
+        <div class="key-equation">
+            <p style="font-weight: bold; color: #00003d; margin-bottom: 12px;">Half-Angle Identities</p>
+            $$\sin\left(\frac{\theta}{2}\right) = \pm\sqrt{\frac{1 - \cos\theta}{2}}$$
+            $$\cos\left(\frac{\theta}{2}\right) = \pm\sqrt{\frac{1 + \cos\theta}{2}}$$
+            $$\tan\left(\frac{\theta}{2}\right) = \frac{\sin\theta}{1 + \cos\theta} = \frac{1 - \cos\theta}{\sin\theta}$$
+        </div>
 
-<h3>Easy</h3>
-<div class="question">1. $\sin\left(\frac{\pi}{6}\right)$</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">2. $\cos\left(\frac{\pi}{6}\right)$</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">3. Rewrite $\sin(45^\circ+30^\circ)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">4. Rewrite $\cos(45^\circ-30^\circ)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <h3>The Sign Pattern for Sine and Cosine Identities</h3>
+        <p>
+            A common point of confusion: in the sum/difference formulas, cosine and sine handle signs differently.
+        </p>
+        <table>
+            <thead>
+                <tr><th>Identity</th><th>Sign Pattern</th><th>Memory Tip</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$\sin(A \pm B)$</td><td>Same sign as $\pm$</td><td>Sine keeps the same sign: $+$ stays $+$, $-$ stays $-$</td></tr>
+                <tr><td>$\cos(A \pm B)$</td><td>Opposite sign of $\pm$</td><td>Cosine flips the sign: $+$ becomes $-$, $-$ becomes $+$</td></tr>
+            </tbody>
+        </table>
 
-<h3>Medium</h3>
-<div class="question">5. Evaluate $\sin(75^\circ)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">6. Evaluate $\cos(15^\circ)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">7. Simplify $\tan\left(\frac{\theta}{2}\right)$ if $\cos\theta=\frac{1}{3}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">8. Expand $\sin(A-B)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <h3>How to Determine the Sign in Half-Angle Formulas</h3>
+        <div class="key-point">
+            <strong>&#10003; Three-Step Sign Determination Process:</strong>
+            <ol style="margin-left: 25px; margin-top: 8px;">
+                <li style="margin-bottom: 6px;">Find the value of $\theta$ from the given information.</li>
+                <li style="margin-bottom: 6px;">Compute $\frac{\theta}{2}$ — this is the actual angle whose trig value you want.</li>
+                <li style="margin-bottom: 6px;">Identify which quadrant $\frac{\theta}{2}$ lies in. Then apply the ASTC rule to determine the sign of sine or cosine in that quadrant.</li>
+            </ol>
+        </div>
 
-<h3>Harder</h3>
-<div class="question">9. Evaluate $\sin\left(\frac{\pi}{12}\right)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">10. Evaluate $\cos\left(\frac{\pi}{12}\right)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">11. Verify $\sin(2A)=2\sin A\cos A$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">12. Simplify $\cos(A+B)+\cos(A-B)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <h3>Angle-Splitting Strategy for Sum/Difference Identities</h3>
+        <p>
+            To evaluate an unfamiliar angle, write it as a sum or difference of two special angles.
+            The most useful combinations are shown below:
+        </p>
+        <table>
+            <thead>
+                <tr><th>Target Angle</th><th>Decomposition</th><th>Identity to Use</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$75°$</td><td>$45° + 30°$</td><td>$\cos(A+B)$ or $\sin(A+B)$</td></tr>
+                <tr><td>$15°$</td><td>$45° - 30°$</td><td>$\cos(A-B)$ or $\sin(A-B)$</td></tr>
+                <tr><td>$105°$</td><td>$60° + 45°$</td><td>$\sin(A+B)$ or $\cos(A+B)$</td></tr>
+                <tr><td>$\frac{\pi}{12}$ (15°)</td><td>$\frac{\pi}{4} - \frac{\pi}{6}$</td><td>Difference identity</td></tr>
+                <tr><td>$\frac{5\pi}{12}$ (75°)</td><td>$\frac{\pi}{4} + \frac{\pi}{6}$</td><td>Sum identity</td></tr>
+                <tr><td>$\frac{\pi}{8}$ (22.5°)</td><td>$\frac{1}{2} \cdot \frac{\pi}{4}$</td><td>Half-angle identity</td></tr>
+            </tbody>
+        </table>
 
-<h3>Challenge</h3>
-<div class="question">13. Express $\tan\left(\frac{\theta}{2}\right)$ in terms of cosine only.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">14. Evaluate $\sin\left(\frac{\pi}{24}\right)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">15. Simplify $\cos(75^\circ)+\sin(15^\circ)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-<div class="question">16. Rewrite $\cos(2A)$ using a sum identity only.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <h3>Visual: How Sum Identities Work Geometrically</h3>
+        <div class="figure-box">
+            <svg viewBox="0 0 580 200" width="560" height="200">
+                <defs>
+                    <marker id="arrC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L8,3 z" fill="#004d99"/>
+                    </marker>
+                </defs>
+                <!-- Number line style angle diagram -->
+                <!-- Angle A arc -->
+                <path d="M 80,150 A 60,60 0 0,0 127,110" fill="none" stroke="#004d99" stroke-width="2"/>
+                <text x="100" y="125" font-size="12" fill="#004d99" font-family="serif" font-style="italic">A</text>
+                <!-- Angle B arc -->
+                <path d="M 80,150 A 90,90 0 0,0 155,74" fill="none" stroke="#cc0000" stroke-width="2"/>
+                <text x="134" y="107" font-size="12" fill="#cc0000" font-family="serif" font-style="italic">B</text>
+                <!-- Angle A+B arc -->
+                <path d="M 80,150 A 115,115 0 0,0 179,46" fill="none" stroke="#2e7d32" stroke-width="2"/>
+                <text x="150" y="68" font-size="12" fill="#2e7d32" font-family="serif" font-style="italic">A+B</text>
+                <!-- Radius lines -->
+                <line x1="80" y1="150" x2="200" y2="150" stroke="#333" stroke-width="1.5"/>
+                <line x1="80" y1="150" x2="130" y2="95" stroke="#004d99" stroke-width="1.5" stroke-dasharray="5,3"/>
+                <line x1="80" y1="150" x2="179" y2="46" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="5,3"/>
+                <!-- Labels -->
+                <text x="240" y="80" font-size="12" fill="#00003d" font-family="sans-serif">Breaking $A+B$ into known parts:</text>
+                <text x="240" y="105" font-size="12" fill="#004d99" font-family="serif">sin(A+B) = sinA cosB + cosA sinB</text>
+                <text x="240" y="130" font-size="12" fill="#cc0000" font-family="serif">cos(A+B) = cosA cosB − sinA sinB</text>
+                <text x="240" y="160" font-size="11" fill="#555" font-family="sans-serif">Note: cosine formula flips the sign!</text>
+            </svg>
+            <div class="figure-caption">Figure 7.C.1 — The angle $A + B$ can be evaluated exactly by decomposing it into two known angles $A$ and $B$.</div>
+        </div>
+    </section>
 
-<h3>Justify</h3>
-<div class="question">17. Explain why half-angle identities require $\pm$.</div>
-<div style="min-height:420px;"></div>
-<div class="question">18. Justify how sum identities extend unit circle reasoning.</div>
-<div style="min-height:420px;"></div>
+    <!-- COMMON MISTAKES -->
+    <section class="section-content">
+        <div class="common-mistakes">
+            <h4>&#9888; Common Mistakes to Avoid</h4>
+            <p><strong>Mistake 1 — Using the quadrant of $\theta$ instead of $\frac{\theta}{2}$ for sign determination:</strong>
+            The $\pm$ in $\sin\left(\frac{\theta}{2}\right) = \pm\sqrt{\frac{1-\cos\theta}{2}}$ depends on
+            the quadrant of $\frac{\theta}{2}$, not $\theta$. For example, if $\theta = \frac{3\pi}{2}$
+            (Quadrant III/IV boundary), then $\frac{\theta}{2} = \frac{3\pi}{4}$ which is in Quadrant II —
+            always find $\frac{\theta}{2}$ first.</p>
+            <br>
+            <p><strong>Mistake 2 — Flipping the wrong sign in cosine sum/difference:</strong>
+            In $\cos(A + B) = \cos A \cos B \mathbf{-} \sin A \sin B$, the sign is <em>minus</em> for a sum.
+            In $\cos(A - B) = \cos A \cos B \mathbf{+} \sin A \sin B$, the sign is <em>plus</em> for a difference.
+            This is the opposite of what most students expect. Use the memory tip: cosine flips the sign.</p>
+            <br>
+            <p><strong>Mistake 3 — Forgetting to fully simplify radicals:</strong>
+            After applying a half-angle formula, the result often contains nested radicals or unsimplified
+            fractions. Always rationalize and simplify. For example,
+            $\sqrt{\frac{2 - \sqrt{3}}{4}} = \frac{\sqrt{2 - \sqrt{3}}}{2}$, not just $\sqrt{\frac{2-\sqrt{3}}{4}}$.</p>
+            <br>
+            <p><strong>Mistake 4 — Using sum identity for a single angle:</strong>
+            If you need $\sin(75°)$, you must split it as $\sin(45° + 30°)$ and apply the full identity.
+            You cannot write $\sin(75°) = \sin(45°) + \sin(30°)$. Trig functions do NOT distribute over addition.</p>
+            <br>
+            <p><strong>Mistake 5 — Mixing up which formula to use:</strong>
+            Half-angle formulas are for going from $\theta$ to $\frac{\theta}{2}$.
+            Sum/difference formulas are for combining two separate angles. Do not apply a half-angle
+            formula when you actually need a sum identity, or vice versa.</p>
+        </div>
+    </section>
 
+    <!-- EXAMPLES -->
+    <section class="section-content">
+        <h2>Worked Examples</h2>
 
+        <div class="example">
+            <h4>Example 1: Half-Angle — Evaluate $\sin\left(\dfrac{\pi}{8}\right)$ Exactly</h4>
+            <p>Find the exact value of $\sin\left(\dfrac{\pi}{8}\right)$ using the half-angle identity.</p>
+            <div class="solution">
+                <p><strong>Step 1: Recognize $\frac{\pi}{8}$ as half of a known angle.</strong><br>
+                $\frac{\pi}{8} = \frac{1}{2} \cdot \frac{\pi}{4}$, so we use $\theta = \frac{\pi}{4}$.</p>
+                <p><strong>Step 2: Determine the sign.</strong><br>
+                $\frac{\theta}{2} = \frac{\pi}{8}$ is between $0$ and $\frac{\pi}{2}$ — Quadrant I — so sine is <strong>positive</strong>.</p>
+                <p><strong>Step 3: Apply the half-angle formula for sine.</strong></p>
+                $$\sin\left(\frac{\pi}{8}\right) = \sqrt{\frac{1 - \cos\left(\frac{\pi}{4}\right)}{2}} = \sqrt{\frac{1 - \frac{\sqrt{2}}{2}}{2}}$$
+                <p><strong>Step 4: Simplify the fraction inside the radical.</strong></p>
+                $$= \sqrt{\frac{\frac{2 - \sqrt{2}}{2}}{2}} = \sqrt{\frac{2 - \sqrt{2}}{4}} = \frac{\sqrt{2 - \sqrt{2}}}{2}$$
+                <p><strong>Final Answer: $\sin\left(\dfrac{\pi}{8}\right) = \dfrac{\sqrt{2 - \sqrt{2}}}{2}$</strong></p>
+            </div>
+        </div>
 
-<h2>Solutions</h2>
+        <div class="example">
+            <h4>Example 2: Sum Identity — Evaluate $\cos(75°)$ Exactly</h4>
+            <p>Find the exact value of $\cos(75°)$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Write $75°$ as a sum of two special angles.</strong><br>
+                $75° = 45° + 30°$</p>
+                <p><strong>Step 2: Apply $\cos(A + B) = \cos A \cos B - \sin A \sin B$.</strong></p>
+                $$\cos(75°) = \cos(45°)\cos(30°) - \sin(45°)\sin(30°)$$
+                <p><strong>Step 3: Substitute exact values from the unit circle.</strong></p>
+                $$= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2} \cdot \frac{1}{2}$$
+                <p><strong>Step 4: Multiply and combine.</strong></p>
+                $$= \frac{\sqrt{6}}{4} - \frac{\sqrt{2}}{4} = \frac{\sqrt{6} - \sqrt{2}}{4}$$
+                <p><strong>Final Answer: $\cos(75°) = \dfrac{\sqrt{6} - \sqrt{2}}{4}$</strong></p>
+            </div>
+        </div>
 
-<h3>Easy</h3>
-<p><strong>1.</strong> $\frac{1}{2}$</p>
-<p><strong>2.</strong> $\frac{\sqrt3}{2}$</p>
-<p><strong>3.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
-<p><strong>4.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
+        <div class="example">
+            <h4>Example 3: Sum Identity — Expand $\sin(45° + 30°)$</h4>
+            <p>Apply the sum identity to rewrite $\sin(45° + 30°)$ and evaluate exactly.</p>
+            <div class="solution">
+                <p><strong>Step 1: Apply $\sin(A + B) = \sin A \cos B + \cos A \sin B$.</strong></p>
+                $$\sin(45° + 30°) = \sin(45°)\cos(30°) + \cos(45°)\sin(30°)$$
+                <p><strong>Step 2: Substitute unit circle values.</strong></p>
+                $$= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2}$$
+                <p><strong>Step 3: Multiply and combine.</strong></p>
+                $$= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4} = \frac{\sqrt{6} + \sqrt{2}}{4}$$
+                <p><strong>Final Answer: $\sin(75°) = \dfrac{\sqrt{6} + \sqrt{2}}{4}$</strong></p>
+                <p><em>Note: We can verify — $75°$ is in Quadrant I, so sine should be positive. ✓</em></p>
+            </div>
+        </div>
 
-<h3>Medium</h3>
-<p><strong>5.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
-<p><strong>6.</strong> $\frac{\sqrt6-\sqrt2}{4}$</p>
-<p><strong>7.</strong> Simplified algebraic expression</p>
-<p><strong>8.</strong> $\sin A\cos B-\cos A\sin B$</p>
+        <div class="example">
+            <h4>Example 4: Simplify $\cos(A - B) + \cos(A + B)$</h4>
+            <p>Expand and simplify $\cos(A - B) + \cos(A + B)$ completely.</p>
+            <div class="solution">
+                <p><strong>Step 1: Expand each term using the sum and difference identities.</strong></p>
+                $$\cos(A - B) = \cos A \cos B + \sin A \sin B$$
+                $$\cos(A + B) = \cos A \cos B - \sin A \sin B$$
+                <p><strong>Step 2: Add the two expressions.</strong></p>
+                $$\cos(A-B) + \cos(A+B) = (\cos A \cos B + \sin A \sin B) + (\cos A \cos B - \sin A \sin B)$$
+                <p><strong>Step 3: Combine like terms.</strong><br>
+                The $\sin A \sin B$ terms cancel:</p>
+                $$= 2\cos A \cos B$$
+                <p><strong>Final Answer: $\cos(A - B) + \cos(A + B) = 2\cos A \cos B$</strong></p>
+                <p><em>This result is called a product-to-sum identity and appears in signal processing and physics.</em></p>
+            </div>
+        </div>
 
-<h3>Harder</h3>
-<p><strong>9.</strong> $\frac{\sqrt6-\sqrt2}{4}$</p>
-<p><strong>10.</strong> $\frac{\sqrt6+\sqrt2}{4}$</p>
-<p><strong>11.</strong> Identity verified</p>
-<p><strong>12.</strong> $2\cos A\cos B$</p>
+        <div class="example">
+            <h4>Example 5 (Extended): Half-Angle with Given Value — Find $\sin\left(\dfrac{\theta}{2}\right)$</h4>
+            <p>Given that $\cos\theta = \dfrac{1}{3}$ and $\theta$ is in Quadrant I, find $\tan\left(\dfrac{\theta}{2}\right)$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Determine the quadrant of $\frac{\theta}{2}$.</strong><br>
+                Since $\theta$ is in Quadrant I, $0 < \theta < \frac{\pi}{2}$, so $0 < \frac{\theta}{2} < \frac{\pi}{4}$.
+                Therefore $\frac{\theta}{2}$ is also in Quadrant I.</p>
+                <p><strong>Step 2: Use the sign-free tangent half-angle formula.</strong><br>
+                The tangent form $\tan\left(\frac{\theta}{2}\right) = \frac{\sin\theta}{1 + \cos\theta}$ requires no $\pm$ sign — it automatically gives the correct sign. We need $\sin\theta$ first.</p>
+                <p><strong>Step 3: Find $\sin\theta$ using the Pythagorean identity.</strong></p>
+                $$\sin^2\theta = 1 - \left(\frac{1}{3}\right)^2 = 1 - \frac{1}{9} = \frac{8}{9}$$
+                $$\sin\theta = \frac{\sqrt{8}}{3} = \frac{2\sqrt{2}}{3} \quad \text{(positive, QI)}$$
+                <p><strong>Step 4: Apply the tangent half-angle formula.</strong></p>
+                $$\tan\left(\frac{\theta}{2}\right) = \frac{\sin\theta}{1 + \cos\theta} = \frac{\frac{2\sqrt{2}}{3}}{1 + \frac{1}{3}} = \frac{\frac{2\sqrt{2}}{3}}{\frac{4}{3}} = \frac{2\sqrt{2}}{3} \cdot \frac{3}{4} = \frac{2\sqrt{2}}{4} = \frac{\sqrt{2}}{2}$$
+                <p><strong>Final Answer: $\tan\left(\dfrac{\theta}{2}\right) = \dfrac{\sqrt{2}}{2}$</strong></p>
+            </div>
+        </div>
 
-<h3>Challenge</h3>
-<p><strong>13.</strong> Algebraic form</p>
-<p><strong>14.</strong> Exact radical form</p>
-<p><strong>15.</strong> Simplified radical expression</p>
-<p><strong>16.</strong> $\cos^2A-\sin^2A$</p>
+        <div class="example">
+            <h4>Example 6 (Extended): Harder Evaluation — $\sin\left(\dfrac{\pi}{12}\right)$</h4>
+            <p>Evaluate $\sin\left(\dfrac{\pi}{12}\right)$ exactly using a difference identity.</p>
+            <div class="solution">
+                <p><strong>Step 1: Write $\frac{\pi}{12}$ as a difference of two known angles.</strong><br>
+                $\frac{\pi}{12} = \frac{\pi}{4} - \frac{\pi}{6}$ &nbsp; (since $\frac{3\pi}{12} - \frac{2\pi}{12} = \frac{\pi}{12}$)</p>
+                <p><strong>Step 2: Apply $\sin(A - B) = \sin A \cos B - \cos A \sin B$.</strong></p>
+                $$\sin\left(\frac{\pi}{12}\right) = \sin\left(\frac{\pi}{4}\right)\cos\left(\frac{\pi}{6}\right) - \cos\left(\frac{\pi}{4}\right)\sin\left(\frac{\pi}{6}\right)$$
+                <p><strong>Step 3: Substitute exact values.</strong></p>
+                $$= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \frac{\sqrt{6}}{4} - \frac{\sqrt{2}}{4}$$
+                <p><strong>Final Answer: $\sin\left(\dfrac{\pi}{12}\right) = \dfrac{\sqrt{6} - \sqrt{2}}{4}$</strong></p>
+                <p><em>Note: $\frac{\pi}{12} = 15°$ is in Quadrant I, so sine must be positive.
+                Since $\sqrt{6} > \sqrt{2}$, the answer is indeed positive. ✓</em></p>
+            </div>
+        </div>
+    </section>
 
-<h3>Justify</h3>
-<p><strong>17.</strong> Square roots produce both positive and negative results; quadrant determines sign.</p>
-<p><strong>18.</strong> They break complex angles into familiar unit circle angles.</p>
+    <!-- SUMMARY -->
+    <div class="summary">
+        <h3>Summary of Key Concepts</h3>
+        <ul>
+            <li><strong>Sum and difference identities</strong> allow you to evaluate trig functions of angles that are not on the standard unit circle by decomposing them into sums or differences of known angles.</li>
+            <li>$\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B$ — the sign in sine <strong>stays the same</strong>.</li>
+            <li>$\cos(A \pm B) = \cos A \cos B \mp \sin A \sin B$ — the sign in cosine <strong>flips</strong>.</li>
+            <li><strong>Trig functions do not distribute:</strong> $\sin(A + B) \neq \sin A + \sin B$. Always use the identity.</li>
+            <li><strong>Half-angle formulas</strong> express $\sin\frac{\theta}{2}$, $\cos\frac{\theta}{2}$, and $\tan\frac{\theta}{2}$ in terms of $\cos\theta$.</li>
+            <li>The $\pm$ in sine and cosine half-angle formulas is determined by the <strong>quadrant of $\frac{\theta}{2}$</strong>, not $\theta$.</li>
+            <li>The <strong>tangent half-angle formula</strong> $\tan\frac{\theta}{2} = \frac{\sin\theta}{1+\cos\theta}$ requires no $\pm$ and is often easier to use.</li>
+            <li>Adding $\cos(A+B) + \cos(A-B)$ produces $2\cos A \cos B$ — the sine terms cancel. This is the product-to-sum identity for cosine.</li>
+            <li>When simplifying after substitution, always rationalize denominators and simplify radicals completely.</li>
+        </ul>
+    </div>
 
+    <!-- KEY EQUATIONS TABLE -->
+    <h2>Key Equations</h2>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Equation</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Sine Sum</td><td>$$\sin(A+B) = \sin A\cos B + \cos A\sin B$$</td><td>Sign stays the same as the $+$</td></tr>
+            <tr><td>Sine Difference</td><td>$$\sin(A-B) = \sin A\cos B - \cos A\sin B$$</td><td>Sign stays the same as the $-$</td></tr>
+            <tr><td>Cosine Sum</td><td>$$\cos(A+B) = \cos A\cos B - \sin A\sin B$$</td><td>Sign flips: $+$ becomes $-$</td></tr>
+            <tr><td>Cosine Difference</td><td>$$\cos(A-B) = \cos A\cos B + \sin A\sin B$$</td><td>Sign flips: $-$ becomes $+$</td></tr>
+            <tr><td>Half-Angle Sine</td><td>$$\sin\!\left(\tfrac{\theta}{2}\right) = \pm\sqrt{\dfrac{1-\cos\theta}{2}}$$</td><td>Sign from quadrant of $\frac{\theta}{2}$</td></tr>
+            <tr><td>Half-Angle Cosine</td><td>$$\cos\!\left(\tfrac{\theta}{2}\right) = \pm\sqrt{\dfrac{1+\cos\theta}{2}}$$</td><td>Sign from quadrant of $\frac{\theta}{2}$</td></tr>
+            <tr><td>Half-Angle Tangent</td><td>$$\tan\!\left(\tfrac{\theta}{2}\right) = \dfrac{\sin\theta}{1+\cos\theta} = \dfrac{1-\cos\theta}{\sin\theta}$$</td><td>No $\pm$ needed — sign is automatic</td></tr>
+        </tbody>
+    </table>
+
+    <!-- PRACTICE PROBLEMS -->
+    <div class="practice-problems">
+        <h3>Practice Problems</h3>
+        <p>Find exact values. Do not use a calculator. Show all identity substitutions and sign determinations.</p>
+
+        <p><strong>Easy</strong></p>
+        <div class="problem"><strong>1 (Easy):</strong> Rewrite $\sin(45° + 30°)$ using the sum identity. Do not evaluate yet — just expand the formula.</div>
+        <div class="problem"><strong>2 (Easy):</strong> Rewrite $\cos(45° - 30°)$ using the difference identity. Do not evaluate yet — just expand the formula.</div>
+        <div class="problem"><strong>3 (Easy):</strong> Expand $\sin(A - B)$ using the difference identity.</div>
+        <div class="problem"><strong>4 (Easy):</strong> State both forms of the tangent half-angle formula. Which form does not require a $\pm$ sign?</div>
+
+        <p><strong>Medium</strong></p>
+        <div class="problem"><strong>5 (Medium):</strong> Evaluate $\sin(75°)$ exactly using the sum identity $\sin(45° + 30°)$.</div>
+        <div class="problem"><strong>6 (Medium):</strong> Evaluate $\cos(15°)$ exactly using the difference identity $\cos(45° - 30°)$.</div>
+        <div class="problem"><strong>7 (Medium):</strong> Evaluate $\sin\left(\dfrac{\pi}{8}\right)$ exactly using the half-angle formula for sine.</div>
+        <div class="problem"><strong>8 (Medium):</strong> Simplify $\sin(A + B) - \sin(A - B)$ completely.</div>
+
+        <p><strong>Hard</strong></p>
+        <div class="problem"><strong>9 (Hard):</strong> Evaluate $\sin\left(\dfrac{\pi}{12}\right)$ exactly. Write $\dfrac{\pi}{12}$ as a difference of two special angles, then apply the identity.</div>
+        <div class="problem"><strong>10 (Hard):</strong> If $\cos\theta = -\dfrac{1}{3}$ and $\theta$ is in Quadrant II, find $\cos\left(\dfrac{\theta}{2}\right)$. Be sure to determine the correct sign.</div>
+        <div class="problem"><strong>11 (Hard):</strong> Verify that $\sin(2A) = 2\sin A \cos A$ using the sum identity $\sin(A + A)$. Show every algebraic step.</div>
+        <div class="problem"><strong>12 (Hard):</strong> Simplify $\cos(A + B) + \cos(A - B)$ completely.</div>
+
+        <p><strong>Challenging</strong></p>
+        <div class="problem"><strong>13 (Challenging):</strong> If $\sin\theta = -\dfrac{4}{5}$ and $\theta$ is in Quadrant III, find $\sin\left(\dfrac{\theta}{2}\right)$. Show your determination of the quadrant of $\dfrac{\theta}{2}$ and explain why the sign is what it is.</div>
+        <div class="problem"><strong>14 (Challenging):</strong> Express $\cos(2A)$ by writing it as $\cos(A + A)$ and applying the cosine sum identity. Then show that your result matches the double-angle identity from Section 7.B.</div>
+
+        <p><strong>Justify</strong></p>
+        <div class="problem"><strong>15 (Justify):</strong> Explain in complete sentences why the half-angle identities for sine and cosine require a $\pm$ sign, while the tangent half-angle formula does not. Include in your explanation how you determine which sign to choose for sine and cosine, and give a specific numerical example showing both the correct and incorrect sign applied.</div>
+        <div class="problem"><strong>16 (Justify):</strong> Explain why $\sin(A + B) \neq \sin A + \sin B$ using a specific numerical counterexample. Then explain what the correct formula is and why the sum identity has the form it does — where do the extra terms come from?</div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key">
+        <h3>Answer Key</h3>
+
+        <div class="answer">
+            <strong>1.</strong> $\sin(45° + 30°) = \sin(45°)\cos(30°) + \cos(45°)\sin(30°)$
+        </div>
+
+        <div class="answer">
+            <strong>2.</strong> $\cos(45° - 30°) = \cos(45°)\cos(30°) + \sin(45°)\sin(30°)$<br>
+            (Note: cosine difference flips the sign to $+$.)
+        </div>
+
+        <div class="answer">
+            <strong>3.</strong> $\sin(A - B) = \sin A \cos B - \cos A \sin B$
+        </div>
+
+        <div class="answer">
+            <strong>4.</strong> $\tan\left(\frac{\theta}{2}\right) = \dfrac{\sin\theta}{1+\cos\theta}$ and $\tan\left(\frac{\theta}{2}\right) = \dfrac{1-\cos\theta}{\sin\theta}$. Neither form requires a $\pm$ sign — the ratio naturally carries the correct sign.
+        </div>
+
+        <div class="answer">
+            <p><strong>5.</strong> $\sin(75°) = \sin(45°)\cos(30°) + \cos(45°)\sin(30°)$</p>
+            <p>$= \dfrac{\sqrt{2}}{2} \cdot \dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2} \cdot \dfrac{1}{2} = \dfrac{\sqrt{6}}{4} + \dfrac{\sqrt{2}}{4} = \dfrac{\sqrt{6}+\sqrt{2}}{4}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>6.</strong> $\cos(15°) = \cos(45°)\cos(30°) + \sin(45°)\sin(30°)$</p>
+            <p>$= \dfrac{\sqrt{2}}{2} \cdot \dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2} \cdot \dfrac{1}{2} = \dfrac{\sqrt{6}}{4} + \dfrac{\sqrt{2}}{4} = \dfrac{\sqrt{6}+\sqrt{2}}{4}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>7.</strong> $\frac{\pi}{8} = \frac{1}{2} \cdot \frac{\pi}{4}$, so use $\theta = \frac{\pi}{4}$, $\cos\frac{\pi}{4} = \frac{\sqrt{2}}{2}$.</p>
+            <p>$\frac{\pi}{8}$ is in Quadrant I → sine is positive.</p>
+            <p>$\sin\left(\frac{\pi}{8}\right) = \sqrt{\dfrac{1 - \frac{\sqrt{2}}{2}}{2}} = \sqrt{\dfrac{2-\sqrt{2}}{4}} = \dfrac{\sqrt{2-\sqrt{2}}}{2}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>8.</strong> Expand both terms:</p>
+            <p>$\sin(A+B) = \sin A\cos B + \cos A\sin B$</p>
+            <p>$\sin(A-B) = \sin A\cos B - \cos A\sin B$</p>
+            <p>Subtract: $\sin(A+B) - \sin(A-B) = 2\cos A\sin B$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>9.</strong> $\frac{\pi}{12} = \frac{\pi}{4} - \frac{\pi}{6}$</p>
+            <p>$\sin\left(\frac{\pi}{12}\right) = \sin\frac{\pi}{4}\cos\frac{\pi}{6} - \cos\frac{\pi}{4}\sin\frac{\pi}{6} = \frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2}\cdot\frac{1}{2} = \dfrac{\sqrt{6}-\sqrt{2}}{4}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>10.</strong> $\theta$ is in Quadrant II, so $\frac{\pi}{2} < \theta < \pi$, meaning $\frac{\pi}{4} < \frac{\theta}{2} < \frac{\pi}{2}$ — Quadrant I. Cosine is positive in QI.</p>
+            <p>$\cos\left(\frac{\theta}{2}\right) = +\sqrt{\dfrac{1 + \cos\theta}{2}} = \sqrt{\dfrac{1 + (-\frac{1}{3})}{2}} = \sqrt{\dfrac{\frac{2}{3}}{2}} = \sqrt{\dfrac{1}{3}} = \dfrac{\sqrt{3}}{3}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>11.</strong> Using $\sin(A + A) = \sin A\cos A + \cos A\sin A$. The two terms are identical, so:</p>
+            <p>$\sin(2A) = \sin A\cos A + \cos A\sin A = 2\sin A\cos A$ ✓</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>12.</strong> $\cos(A+B) = \cos A\cos B - \sin A\sin B$; $\cos(A-B) = \cos A\cos B + \sin A\sin B$</p>
+            <p>Adding: $\cos(A+B) + \cos(A-B) = 2\cos A\cos B$ (the sine terms cancel).</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>13.</strong> $\theta$ is in Quadrant III, so $\pi < \theta < \frac{3\pi}{2}$. Then $\frac{\pi}{2} < \frac{\theta}{2} < \frac{3\pi}{4}$ — Quadrant II. Sine is positive in QII.</p>
+            <p>Find $\cos\theta$: $\sin\theta = -\frac{4}{5}$ in QIII → $\cos\theta = -\frac{3}{5}$.</p>
+            <p>$\sin\left(\frac{\theta}{2}\right) = +\sqrt{\dfrac{1-(-\frac{3}{5})}{2}} = \sqrt{\dfrac{1+\frac{3}{5}}{2}} = \sqrt{\dfrac{\frac{8}{5}}{2}} = \sqrt{\dfrac{4}{5}} = \dfrac{2}{\sqrt{5}} = \dfrac{2\sqrt{5}}{5}$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>14.</strong> $\cos(2A) = \cos(A+A) = \cos A\cos A - \sin A\sin A = \cos^2 A - \sin^2 A$ ✓</p>
+            <p>This matches the first form of the double-angle cosine identity from Section 7.B, confirming the sum identity is consistent with the double-angle formulas.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>15.</strong> Half-angle formulas contain a square root: $\sin\frac{\theta}{2} = \pm\sqrt{\frac{1-\cos\theta}{2}}$. A square root always produces a non-negative number, but $\sin\frac{\theta}{2}$ could be positive or negative depending on which quadrant $\frac{\theta}{2}$ is in. So the $\pm$ is needed to select the correct sign. For tangent, the formula $\frac{\sin\theta}{1+\cos\theta}$ is a ratio of functions that already carry their own signs, so the correct sign emerges automatically. Example: if $\frac{\theta}{2}$ is in QII, sine is positive, so use $+\sqrt{\cdot}$. If $\frac{\theta}{2}$ is in QIII, sine is negative, so use $-\sqrt{\cdot}$.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>16.</strong> Counterexample: $A = 30°$, $B = 60°$. $\sin(30°+60°) = \sin(90°) = 1$. But $\sin(30°) + \sin(60°) = \frac{1}{2} + \frac{\sqrt{3}}{2} \approx 1.366 \neq 1$. The correct identity is $\sin(A+B) = \sin A\cos B + \cos A\sin B$. The extra terms arise because of the geometry of rotation — combining two rotations is not the same as adding their $y$-coordinates. The sine of a combined angle depends on how both sine and cosine of each individual angle interact, not just their sines alone.</p>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
