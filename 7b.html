@@ -1,274 +1,671 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Section 7.B</title>
-<script>
-window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<style>
-body{margin:0.5in;font-family:Arial;line-height:1.6;}
-.workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
-.question{font-size:1.2em;margin-top:28px;}
-
-  /* ============================= */
-/* PRINT STRUCTURE CONTROL       */
-/* ============================= */
-
-@media print {
-
-  /* Remove flex during print */
-  .workspace {
-    display: block !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Keep question attached to workspace */
-  .question {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  /* Keep headers attached to what follows */
-  h1, h2, h3 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  /* Prevent big blank splits */
-  ul, p {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.B: Double-Angle and Pythagorean Identities</title>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            border-bottom: 3px solid #00003d;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .section-number { color: #00003d; font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+        h1 { color: #00003d; font-size: 2.5em; margin-bottom: 20px; margin-top: 0; }
+        .intro-text {
+            font-size: 1.05em; color: #555;
+            max-width: 800px; margin: 0 auto 15px auto; font-style: italic;
+        }
+        .inspirational {
+            font-size: 1.15em; color: #004d99; font-style: italic;
+            text-align: center; margin: 18px auto 0 auto;
+            max-width: 700px; padding: 10px 0 0 0;
+        }
+        h2 {
+            color: #00003d; font-size: 1.8em;
+            margin-top: 40px; margin-bottom: 20px;
+            border-left: 5px solid #00003d; padding-left: 15px;
+        }
+        h3 { color: #004d99; font-size: 1.3em; margin-top: 25px; margin-bottom: 15px; }
+        .objectives {
+            background-color: #f0f4f8; padding: 20px;
+            border-radius: 6px; margin-bottom: 30px;
+        }
+        .objectives ul { list-style-position: inside; margin-left: 20px; }
+        .objectives li { margin-bottom: 10px; }
+        .section-content { margin-bottom: 40px; line-height: 1.8; }
+        p { margin-bottom: 12px; }
+        .definition {
+            background-color: #fffacd; border-left: 4px solid #ffd700;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .definition strong { color: #00003d; }
+        .example {
+            background-color: #f9f9f9; border: 2px solid #00003d;
+            padding: 20px; margin: 20px 0; border-radius: 6px;
+        }
+        .example h4 { color: #00003d; margin-bottom: 10px; font-size: 1.1em; }
+        .solution {
+            background-color: #f0f0f0; padding: 15px;
+            margin-top: 15px; border-radius: 4px;
+            font-size: 0.95em; line-height: 1.6;
+        }
+        .solution p { margin-bottom: 10px; }
+        table {
+            width: 100%; border-collapse: collapse;
+            margin: 20px 0; background-color: white;
+        }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #00003d; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .summary {
+            background-color: #f0f4f8; border-left: 5px solid #00003d;
+            padding: 20px; margin: 30px 0; border-radius: 6px;
+        }
+        .summary h3 { margin-top: 0; }
+        .summary ul { list-style-position: inside; }
+        .summary li { margin-bottom: 8px; }
+        .practice-problems {
+            background-color: #f0f4f8; padding: 20px;
+            border-radius: 6px; margin: 30px 0;
+        }
+        .practice-problems h3 { margin-top: 0; }
+        .problem {
+            background-color: white; padding: 15px; margin: 10px 0;
+            border-radius: 4px; border-left: 4px solid #004d99;
+        }
+        .answer-key {
+            background-color: #f5f5f5; padding: 20px;
+            border-radius: 6px; margin-top: 40px;
+        }
+        .answer-key h3 { margin-top: 0; }
+        .answer {
+            background-color: white; padding: 15px; margin: 10px 0;
+            border-radius: 4px; border-left: 4px solid #28a745;
+        }
+        .answer p { margin-bottom: 8px; }
+        .historical-note {
+            background-color: #ffe6e6; border-left: 4px solid #ff6666;
+            padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95em;
+        }
+        .historical-note strong { color: #cc0000; }
+        .key-point {
+            background-color: #e8f5e9; border-left: 4px solid #4caf50;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .key-point strong { color: #2e7d32; }
+        .common-mistakes {
+            background-color: #fff3e0; border-left: 4px solid #ff9800;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .common-mistakes h4 { color: #e65100; margin-bottom: 10px; font-size: 1.1em; }
+        .connections {
+            background-color: #f3e5f5; border-left: 4px solid #9c27b0;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .connections strong { color: #6a1b9a; }
+        .key-equation {
+            background-color: #e6f2ff; border: 2px solid #004d99;
+            padding: 20px; margin: 20px 0; border-radius: 6px; text-align: center;
+        }
+        .figure-box {
+            text-align: center; margin: 25px 0; padding: 15px;
+            background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px;
+        }
+        .figure-caption { font-size: 0.9em; color: #555; margin-top: 10px; font-style: italic; }
+        ul { margin-left: 30px; margin-bottom: 12px; }
+        ul li { margin-bottom: 6px; }
+    </style>
 </head>
 <body>
-
-<h1>SECTION 7.B<br>Double-Angle and Pythagorean Identities</h1>
-
-<h2>Learning Objectives</h2>
-<ul>
-<li>I can apply double-angle identities for sine and cosine.</li>
-<li>I can rewrite double-angle identities in alternate equivalent forms.</li>
-<li>I can simplify trigonometric expressions using Pythagorean identities.</li>
-<li>I can justify each algebraic step when simplifying expressions.</li>
-<li>I can attend to precision when working in radians.</li>
-</ul>
-
-<p><em>(Aligned to Learning Ladder Rung 3 — Module_07_Learning_Ladder)</em></p>
-
-<h2>Introduction</h2>
-
-<p>In Section 7A, we used structure in the unit circle to determine exact trig values.</p>
-
-<p>Now we extend that structure.</p>
-
-<p>Instead of evaluating trig functions directly from the unit circle, we will:</p>
-
-<ul>
-<li>Rewrite expressions</li>
-<li>Simplify complex trig forms</li>
-<li>Use identities to reveal hidden structure</li>
-</ul>
-
-<p>Identities are equations that are always true for all values in their domain.</p>
-
-<p>They allow us to:</p>
-
-<ul>
-<li>Simplify expressions</li>
-<li>Rewrite complicated forms</li>
-<li>Prepare expressions for solving equations</li>
-<li>Build proofs in later sections</li>
-</ul>
-
-<p><strong>Structure matters.</strong></p>
-<div style="page-break-before: always;"></div>
-
-<h2>Key Vocabulary</h2>
-
-<p><strong>Identity:</strong> An equation that is true for all values in its domain.</p>
-
-<p><strong>Double-Angle Identity:</strong> A formula that expresses a trigonometric function of $2\theta$ in terms of $\theta$.</p>
-
-<p><strong>Pythagorean Identities:</strong></p>
-
-<p>$\sin^2\theta + \cos^2\theta = 1$</p>
-
-<p>$1 + \tan^2\theta = \sec^2\theta$</p>
-
-<p>$1 + \cot^2\theta = \csc^2\theta$</p>
-
-<p><strong>Equivalent Forms:</strong> Different algebraic representations of the same trigonometric expression.</p>
-
-
-<h2>Core Identities</h2>
-
-<p>$\sin(2\theta) = 2\sin\theta\cos\theta$</p>
-
-<p>$\cos(2\theta) = \cos^2\theta - \sin^2\theta$</p>
-
-<p>$\cos(2\theta) = 2\cos^2\theta - 1$</p>
-
-<p>$\cos(2\theta) = 1 - 2\sin^2\theta$</p>
-
-
-
-<h2>Structure Insight</h2>
-
-<p>Notice:</p>
-
-<ul>
-<li>The sine double-angle formula contains both sine and cosine.</li>
-<li>The cosine formula can be written three different ways.</li>
-<li>The alternate cosine forms come from substituting the Pythagorean identity.</li>
-<li>Recognizing which form to use is strategic.</li>
-</ul>
-
-
-
-
-<h2>Examples</h2>
-
-<div class="question">Example 1: Evaluate $\sin(2\theta)$ if $\sin\theta = \frac{3}{5}$ and $\theta$ is in Quadrant I.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">Example 2: Rewrite $\cos(2\theta)$ in terms of sine only.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">Example 3: Simplify $\frac{1 - \cos(2\theta)}{2}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">Example 4: Simplify $\frac{\sin^2\theta}{1 - \cos^2\theta}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-
-
-<h2>Summary</h2>
-<ul>
-<li>Identities are always true.</li>
-<li>Double-angle identities rewrite trig expressions involving $2\theta$.</li>
-<li>Cosine has three equivalent forms.</li>
-<li>Pythagorean identities allow substitution between sine and cosine.</li>
-<li>Justify each algebraic step.</li>
-</ul>
-
-<h2>Common Mistakes to Avoid</h2>
-<ul>
-<li>Using the wrong double-angle identity.</li>
-<li>Forgetting to square sine or cosine.</li>
-<li>Stopping before fully simplifying.</li>
-<li>Treating identities as equations to solve instead of rewrite.</li>
-</ul>
-
-
-
-
-
-
-
-<h2>Practice Problems</h2>
-
-<h3>Easy</h3>
-
-<div class="question">1. $\sin(2\theta)$ if $\sin\theta = \frac{1}{2}$ and $\theta$ is in Quadrant I.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">2. $\cos(2\theta)$ if $\cos\theta = \frac{4}{5}$ and $\theta$ is in Quadrant I.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">3. Rewrite $\cos(2\theta)$ in terms of cosine only.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">4. Simplify $\sin^2\theta + \cos^2\theta$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<h3>Medium</h3>
-
-<div class="question">5. Simplify $\frac{1 - \cos(2\theta)}{2}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">6. Rewrite $\cos(2\theta)$ in terms of sine only.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">7. Simplify $\frac{\sin^2\theta}{1 - \cos^2\theta}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">8. Simplify $\frac{1 + \tan^2\theta}{\sec^2\theta}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<h3>Harder</h3>
-
-<div class="question">9. Simplify $\frac{\sin(2\theta)}{\cos\theta}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">10. If $\sin\theta = -\frac{3}{5}$ and $\theta$ is in Quadrant III, find $\cos(2\theta)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">11. Prove $\frac{1 - \tan^2\theta}{1 + \tan^2\theta} = \cos(2\theta)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">12. Simplify $\frac{\sin^2\theta - \cos^2\theta}{\cos(2\theta)}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<h3>Challenge</h3>
-
-<div class="question">13. Express $\cos(2\theta)$ entirely in terms of $\tan\theta$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">14. Simplify $\frac{2\sin\theta\cos\theta}{1 - 2\sin^2\theta}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">15. If $\cos\theta = -\frac{8}{17}$ and $\theta$ is in Quadrant II, find $\sin(2\theta)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<div class="question">16. Verify $1 - 2\sin^2\theta = \cos(2\theta)$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
-
-<h3>Justify</h3>
-
-<div class="question">17. Explain why the three forms of $\cos(2\theta)$ are equivalent.</div>
-<div style="min-height:420px;"></div>
-
-<div class="question">18. Justify why identities are always true and how that changes the way we simplify expressions.</div>
-<div style="min-height:420px;"></div>
-
-
-
-<h2>Solutions</h2>
-
-<h3>Easy</h3>
-<p><strong>1.</strong> $\frac{\sqrt3}{2}$</p>
-<p><strong>2.</strong> $\frac{7}{25}$</p>
-<p><strong>3.</strong> $2\cos^2\theta-1$</p>
-<p><strong>4.</strong> $1$</p>
-
-<h3>Medium</h3>
-<p><strong>5.</strong> $\sin^2\theta$</p>
-<p><strong>6.</strong> $1-2\sin^2\theta$</p>
-<p><strong>7.</strong> $1$</p>
-<p><strong>8.</strong> $1$</p>
-
-<h3>Harder</h3>
-<p><strong>9.</strong> $2\sin\theta$</p>
-<p><strong>10.</strong> $\frac{7}{25}$</p>
-<p><strong>11.</strong> Identity verified.</p>
-<p><strong>12.</strong> $-1$</p>
-
-<h3>Challenge</h3>
-<p><strong>13.</strong> $\frac{1-\tan^2\theta}{1+\tan^2\theta}$</p>
-<p><strong>14.</strong> $\tan(2\theta)$</p>
-<p><strong>15.</strong> $-\frac{240}{289}$</p>
-<p><strong>16.</strong> Identity verified.</p>
-
-<h3>Justify</h3>
-<p><strong>17.</strong> Substitute Pythagorean identities into $\cos^2\theta-\sin^2\theta$.</p>
-<p><strong>18.</strong> Identities are true for all allowable values; we rewrite expressions rather than solve.</p>
-
+<div class="container">
+
+    <!-- TITLE PAGE -->
+    <div class="title-page">
+        <div class="section-number">SECTION 7.B</div>
+        <h1>Double-Angle and Pythagorean Identities</h1>
+        <div class="intro-text">
+            Trigonometric identities are the laws of the trig world — equations that are
+            permanently, always, unconditionally true. Just as $a(b + c) = ab + ac$ works for every
+            number you can imagine, an identity like $\sin^2\theta + \cos^2\theta = 1$ holds for every
+            angle in the universe. Learning to use these identities is less like memorizing facts and
+            more like learning a new vocabulary — once you know the words, whole sentences of
+            complicated math start to simplify themselves right before your eyes.
+        </div>
+        <div class="inspirational">
+            &#8220; An identity is not a coincidence &mdash; it is a truth that holds for every single angle in existence. &#8221;
+        </div>
+    </div>
+
+    <!-- LEARNING OBJECTIVES -->
+    <section class="objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>I can apply double-angle identities for sine and cosine to evaluate and simplify expressions.</li>
+            <li>I can simplify trigonometric expressions using Pythagorean identities, including rational expressions.</li>
+            <li>I can recognize equivalent forms of identities, including negatives and multiples, and justify my reasoning.</li>
+        </ul>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="section-content">
+        <h2>Introduction: The Algebra of Trigonometry</h2>
+        <p>
+            In Section 7.A, we used the structure of the unit circle to read off exact values of sine,
+            cosine, and tangent. That was like learning to read individual words. In this section, we
+            learn to write sentences — we take trig expressions and rewrite them in different, simpler,
+            or more useful forms using identities.
+        </p>
+        <p>
+            An <strong>identity</strong> is an equation that is true for every value of the variable
+            (where the functions are defined). It is not an equation you solve — it is a tool you use
+            to <em>substitute</em>. When you see $\sin^2\theta + \cos^2\theta$ buried inside a complex
+            expression, you do not solve for $\theta$. You simply replace the entire thing with $1$
+            and keep moving.
+        </p>
+        <p>
+            The <strong>Pythagorean identity</strong> $\sin^2\theta + \cos^2\theta = 1$ is the most
+            fundamental identity in all of trigonometry. It comes directly from the unit circle equation
+            $x^2 + y^2 = 1$ — substituting $x = \cos\theta$ and $y = \sin\theta$ gives it to us
+            immediately. Two more Pythagorean identities follow by dividing both sides by
+            $\cos^2\theta$ or $\sin^2\theta$.
+        </p>
+        <p>
+            The <strong>double-angle identities</strong> answer a question that seems simple but
+            is actually tricky: what is $\sin(2\theta)$? Your first instinct might be
+            $2\sin\theta$ — but that is wrong. Doubling the angle is not the same as doubling
+            the function value. The correct answer, $2\sin\theta\cos\theta$, is one of the most
+            important formulas you will use in precalculus and beyond.
+        </p>
+        <p>
+            Perhaps the most interesting feature of this section is that $\cos(2\theta)$ can be
+            written in <em>three</em> different but equally correct ways. This is not confusing —
+            it is actually very convenient. Depending on what information you are given, one form
+            will make your work much easier than the others.
+        </p>
+
+        <div class="historical-note">
+            <strong>&#128218; Historical Note:</strong> The Pythagorean identity $\sin^2\theta + \cos^2\theta = 1$
+            takes its name from the <strong>Pythagorean theorem</strong> ($a^2 + b^2 = c^2$), proven by Greek
+            mathematicians around 500 BC and attributed to the school of <strong>Pythagoras</strong>. When
+            applied to a right triangle inscribed in the unit circle (hypotenuse $= 1$), the theorem gives
+            the identity directly. The double-angle formulas appear in geometric form in
+            <strong>Ptolemy's Almagest</strong> (c. 150 AD) and were written in modern algebraic notation
+            by <strong>François Viète</strong> in the 1590s. <strong>Leonhard Euler</strong> (1707–1783)
+            unified them into the notation we use today.
+        </div>
+
+        <div class="connections">
+            <strong>&#128279; Connections to Other Subjects and Real Life:</strong><br><br>
+            <strong>Physics — Projectile Motion:</strong> The horizontal range formula for a projectile
+            is $R = \frac{v^2 \sin(2\theta)}{g}$, where $\theta$ is the launch angle. The double-angle
+            identity immediately reveals why the maximum range occurs at $\theta = 45°$: because
+            $\sin(2 \cdot 45°) = \sin(90°) = 1$, its maximum possible value.<br><br>
+            <strong>Electrical Engineering:</strong> In AC circuits, power calculations involve
+            $\sin^2\theta$ and $\cos^2\theta$. The Pythagorean identity and power-reducing forms let
+            engineers simplify these expressions without complicated integration.<br><br>
+            <strong>Calculus:</strong> The identities $\sin^2\theta = \frac{1 - \cos(2\theta)}{2}$ and
+            $\cos^2\theta = \frac{1 + \cos(2\theta)}{2}$ are essential for evaluating integrals.
+            Without them, integrating $\sin^2\theta$ is impossible at the precalculus level — with them,
+            it becomes straightforward.<br><br>
+            <strong>Computer Graphics:</strong> Rotation matrices for spinning 3D objects contain
+            $\sin\theta$ and $\cos\theta$. The double-angle formulas let graphics engines compute
+            double-rotation transformations efficiently without calling the trig library twice.
+        </div>
+    </section>
+
+    <!-- KEY VOCABULARY -->
+    <section class="section-content">
+        <h2>Key Vocabulary and Concepts</h2>
+
+        <div class="definition">
+            <strong>Trigonometric Identity:</strong> An equation involving trig functions that is true
+            for <em>all</em> values of the variable where the functions are defined. You do not solve
+            an identity — you use it to substitute or rewrite part of a larger expression.
+        </div>
+
+        <div class="definition">
+            <strong>Pythagorean Identities:</strong> Three identities derived from the unit circle
+            equation $x^2 + y^2 = 1$. The first is the foundation; the other two come from dividing
+            the first by $\cos^2\theta$ or $\sin^2\theta$:
+            $$\sin^2\theta + \cos^2\theta = 1$$
+            $$1 + \tan^2\theta = \sec^2\theta$$
+            $$1 + \cot^2\theta = \csc^2\theta$$
+        </div>
+
+        <div class="definition">
+            <strong>Double-Angle Identities:</strong> Formulas that express a trig function of $2\theta$
+            in terms of functions of $\theta$. There is one form for sine and three equivalent forms for cosine:
+            $$\sin(2\theta) = 2\sin\theta\cos\theta$$
+            $$\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta - 1 = 1 - 2\sin^2\theta$$
+        </div>
+
+        <div class="definition">
+            <strong>Power-Reducing Identities:</strong> Rearrangements of the cosine double-angle
+            formulas that express $\sin^2\theta$ and $\cos^2\theta$ in terms of $\cos(2\theta)$:
+            $$\sin^2\theta = \frac{1 - \cos(2\theta)}{2} \qquad \cos^2\theta = \frac{1 + \cos(2\theta)}{2}$$
+            These are critical tools in calculus for integrating squared trig functions.
+        </div>
+
+        <h3>Where the Three Forms of $\cos(2\theta)$ Come From</h3>
+        <p>
+            Start with the first form: $\cos(2\theta) = \cos^2\theta - \sin^2\theta$.
+            Then substitute the Pythagorean identity in two different ways:
+        </p>
+        <ul>
+            <li>Replace $\sin^2\theta$ with $1 - \cos^2\theta$:
+            $\cos^2\theta - (1 - \cos^2\theta) = 2\cos^2\theta - 1$ &nbsp; ← use when you know $\cos\theta$</li>
+            <li>Replace $\cos^2\theta$ with $1 - \sin^2\theta$:
+            $(1 - \sin^2\theta) - \sin^2\theta = 1 - 2\sin^2\theta$ &nbsp; ← use when you know $\sin\theta$</li>
+        </ul>
+
+        <div class="figure-box">
+            <svg viewBox="0 0 680 220" width="640" height="220">
+                <defs>
+                    <marker id="arrowB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L8,3 z" fill="#004d99"/>
+                    </marker>
+                </defs>
+                <!-- Center box -->
+                <rect x="230" y="75" width="220" height="70" rx="6" fill="#e6f2ff" stroke="#004d99" stroke-width="2"/>
+                <text x="340" y="103" text-anchor="middle" font-size="13" fill="#00003d" font-family="serif" font-weight="bold">cos(2θ) = cos²θ − sin²θ</text>
+                <text x="340" y="125" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">Starting form (from sum identity)</text>
+
+                <!-- Left box -->
+                <rect x="20" y="75" width="185" height="70" rx="6" fill="#fffacd" stroke="#ffd700" stroke-width="2"/>
+                <text x="112" y="103" text-anchor="middle" font-size="12.5" fill="#00003d" font-family="serif" font-weight="bold">1 − 2sin²θ</text>
+                <text x="112" y="123" text-anchor="middle" font-size="9.5" fill="#555" font-family="sans-serif">Replace cos²θ = 1 − sin²θ</text>
+                <text x="112" y="137" text-anchor="middle" font-size="9.5" fill="#555" font-family="sans-serif">Use when you know sinθ</text>
+
+                <!-- Right box -->
+                <rect x="475" y="75" width="185" height="70" rx="6" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+                <text x="567" y="103" text-anchor="middle" font-size="12.5" fill="#00003d" font-family="serif" font-weight="bold">2cos²θ − 1</text>
+                <text x="567" y="123" text-anchor="middle" font-size="9.5" fill="#555" font-family="sans-serif">Replace sin²θ = 1 − cos²θ</text>
+                <text x="567" y="137" text-anchor="middle" font-size="9.5" fill="#555" font-family="sans-serif">Use when you know cosθ</text>
+
+                <!-- Left arrow -->
+                <line x1="230" y1="110" x2="210" y2="110" stroke="#004d99" stroke-width="1.8" marker-end="url(#arrowB)"/>
+                <!-- Right arrow -->
+                <line x1="450" y1="110" x2="470" y2="110" stroke="#004d99" stroke-width="1.8" marker-end="url(#arrowB)"/>
+
+                <!-- Labels on arrows -->
+                <text x="218" y="103" text-anchor="middle" font-size="9" fill="#004d99" font-family="sans-serif">sub</text>
+                <text x="460" y="103" text-anchor="middle" font-size="9" fill="#004d99" font-family="sans-serif">sub</text>
+
+                <!-- All three equal label -->
+                <text x="340" y="185" text-anchor="middle" font-size="12" fill="#00003d" font-family="sans-serif" font-weight="bold">All three forms are equal — choose the most useful one.</text>
+            </svg>
+            <div class="figure-caption">Figure 7.B.1 — The three equivalent forms of $\cos(2\theta)$ and when to use each one.</div>
+        </div>
+
+        <h3>Deriving the Pythagorean Identities</h3>
+        <table>
+            <thead>
+                <tr><th>Start With</th><th>Divide Both Sides By</th><th>Result</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$\sin^2\theta + \cos^2\theta = 1$</td><td>— (no change)</td><td>$\sin^2\theta + \cos^2\theta = 1$</td></tr>
+                <tr><td>$\sin^2\theta + \cos^2\theta = 1$</td><td>$\cos^2\theta$</td><td>$\tan^2\theta + 1 = \sec^2\theta$</td></tr>
+                <tr><td>$\sin^2\theta + \cos^2\theta = 1$</td><td>$\sin^2\theta$</td><td>$1 + \cot^2\theta = \csc^2\theta$</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Strategy for Simplifying Trig Expressions</h3>
+        <div class="key-point">
+            <strong>&#10003; Four-Step Simplification Strategy:</strong>
+            <ol style="margin-left: 25px; margin-top: 8px;">
+                <li style="margin-bottom: 6px;"><strong>Look for a Pythagorean identity</strong> in the numerator or denominator. Replace it immediately.</li>
+                <li style="margin-bottom: 6px;"><strong>Expand double-angle expressions</strong> using the form that best matches what you have.</li>
+                <li style="margin-bottom: 6px;"><strong>Convert everything to sine and cosine</strong> if other approaches are not working.</li>
+                <li style="margin-bottom: 6px;"><strong>Factor and cancel</strong> only after fully substituting. Do not cancel individual terms — only cancel common factors.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- COMMON MISTAKES -->
+    <section class="section-content">
+        <div class="common-mistakes">
+            <h4>&#9888; Common Mistakes to Avoid</h4>
+            <p><strong>Mistake 1 — $\sin(2\theta) \neq 2\sin\theta$:</strong>
+            This is the single most common error in this section. Doubling the angle is completely
+            different from doubling the function. The correct formula requires <em>both</em> sine
+            and cosine: $\sin(2\theta) = 2\sin\theta\cos\theta$. Check: $\sin(60°) = \frac{\sqrt{3}}{2}$,
+            but $2\sin(30°) = 2 \cdot \frac{1}{2} = 1$. They are not equal.</p>
+            <br>
+            <p><strong>Mistake 2 — Misreading $\cos^2\theta$:</strong>
+            The notation $\cos^2\theta$ means $(\cos\theta)^2$ — evaluate the function first, then
+            square the result. It does NOT mean $\cos(\theta^2)$. These are completely different values.</p>
+            <br>
+            <p><strong>Mistake 3 — Using the wrong form of $\cos(2\theta)$:</strong>
+            All three forms are correct, but using the wrong one can make a problem much harder.
+            If you know $\sin\theta$, use $1 - 2\sin^2\theta$. If you know $\cos\theta$,
+            use $2\cos^2\theta - 1$. If you have both, use $\cos^2\theta - \sin^2\theta$.</p>
+            <br>
+            <p><strong>Mistake 4 — Treating identities like equations to solve:</strong>
+            When you see $\sin^2\theta + \cos^2\theta$, do not try to solve for $\theta$.
+            Simply replace the expression with 1 and continue simplifying the larger problem.</p>
+            <br>
+            <p><strong>Mistake 5 — Canceling terms instead of factors:</strong>
+            In a fraction like $\frac{2\sin^2\theta + \cos^2\theta}{\cos^2\theta}$, you cannot
+            cancel $\cos^2\theta$ from the numerator and denominator because $\cos^2\theta$ is
+            a <em>term</em> in the numerator, not a <em>factor</em>. You can only cancel something
+            that multiplies the entire numerator.</p>
+        </div>
+    </section>
+
+    <!-- EXAMPLES -->
+    <section class="section-content">
+        <h2>Worked Examples</h2>
+
+        <div class="example">
+            <h4>Example 1: Given Value — Find $\sin(2\theta)$</h4>
+            <p>Evaluate $\sin(2\theta)$ given that $\sin\theta = \dfrac{3}{5}$ and $\theta$ is in Quadrant I.</p>
+            <div class="solution">
+                <p><strong>Step 1: Identify what you need.</strong><br>
+                The formula $\sin(2\theta) = 2\sin\theta\cos\theta$ requires both $\sin\theta$ and $\cos\theta$.
+                We have $\sin\theta$, so we need to find $\cos\theta$.</p>
+                <p><strong>Step 2: Use the Pythagorean identity to find $\cos\theta$.</strong></p>
+                $$\cos^2\theta = 1 - \sin^2\theta = 1 - \left(\frac{3}{5}\right)^2 = 1 - \frac{9}{25} = \frac{16}{25}$$
+                $$\cos\theta = \frac{4}{5} \quad \text{(positive in Quadrant I)}$$
+                <p><strong>Step 3: Apply the double-angle identity.</strong></p>
+                $$\sin(2\theta) = 2\sin\theta\cos\theta = 2 \cdot \frac{3}{5} \cdot \frac{4}{5} = \frac{24}{25}$$
+                <p><strong>Final Answer: $\sin(2\theta) = \dfrac{24}{25}$</strong></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 2: Choosing the Right Form — Rewrite $\cos(2\theta)$ in Terms of Sine Only</h4>
+            <p>Rewrite $\cos(2\theta)$ in terms of sine only, then evaluate if $\sin\theta = \dfrac{\sqrt{3}}{2}$.</p>
+            <div class="solution">
+                <p><strong>Step 1: Select the sine-only form.</strong></p>
+                $$\cos(2\theta) = 1 - 2\sin^2\theta$$
+                <p><strong>Step 2: Substitute $\sin\theta = \dfrac{\sqrt{3}}{2}$.</strong></p>
+                $$\cos(2\theta) = 1 - 2\left(\frac{\sqrt{3}}{2}\right)^2 = 1 - 2 \cdot \frac{3}{4} = 1 - \frac{3}{2} = -\frac{1}{2}$$
+                <p><strong>Final Answer: $\cos(2\theta) = 1 - 2\sin^2\theta$; evaluated: $-\dfrac{1}{2}$</strong></p>
+                <p><em>Note: We can verify — if $\sin\theta = \frac{\sqrt{3}}{2}$, then $\theta = \frac{\pi}{3}$,
+                so $2\theta = \frac{2\pi}{3}$, and $\cos\left(\frac{2\pi}{3}\right) = -\frac{1}{2}$. ✓</em></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 3: Power-Reducing — Simplify $\dfrac{1 - \cos(2\theta)}{2}$</h4>
+            <p>Simplify $\dfrac{1 - \cos(2\theta)}{2}$ completely.</p>
+            <div class="solution">
+                <p><strong>Step 1: Recognize the power-reducing identity.</strong><br>
+                The expression $\dfrac{1 - \cos(2\theta)}{2}$ is the power-reducing identity for sine.
+                We can verify this by working backwards from $\cos(2\theta) = 1 - 2\sin^2\theta$:</p>
+                $$1 - \cos(2\theta) = 1 - (1 - 2\sin^2\theta) = 2\sin^2\theta$$
+                <p><strong>Step 2: Divide both sides by 2.</strong></p>
+                $$\frac{1 - \cos(2\theta)}{2} = \frac{2\sin^2\theta}{2} = \sin^2\theta$$
+                <p><strong>Final Answer: $\sin^2\theta$</strong></p>
+                <p><em>This identity is used in calculus to integrate $\sin^2\theta$ — it converts a squared
+                function into a form with no squares.</em></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 4: Rational Expression — Simplify $\dfrac{\sin^2\theta}{1 - \cos^2\theta}$</h4>
+            <p>Simplify $\dfrac{\sin^2\theta}{1 - \cos^2\theta}$ completely.</p>
+            <div class="solution">
+                <p><strong>Step 1: Identify the Pythagorean identity in the denominator.</strong><br>
+                From $\sin^2\theta + \cos^2\theta = 1$, rearrange: $1 - \cos^2\theta = \sin^2\theta$</p>
+                <p><strong>Step 2: Substitute into the denominator.</strong></p>
+                $$\frac{\sin^2\theta}{1 - \cos^2\theta} = \frac{\sin^2\theta}{\sin^2\theta}$$
+                <p><strong>Step 3: Cancel.</strong></p>
+                $$= 1 \quad (\text{for all } \theta \text{ where } \sin\theta \neq 0)$$
+                <p><strong>Final Answer: 1</strong></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 5 (Extended): Multi-Step — Simplify $\dfrac{\sin(2\theta)}{\cos\theta}$</h4>
+            <p>Simplify $\dfrac{\sin(2\theta)}{\cos\theta}$ completely.</p>
+            <div class="solution">
+                <p><strong>Step 1: Expand the numerator using the double-angle identity.</strong></p>
+                $$\sin(2\theta) = 2\sin\theta\cos\theta$$
+                <p><strong>Step 2: Substitute.</strong></p>
+                $$\frac{\sin(2\theta)}{\cos\theta} = \frac{2\sin\theta\cos\theta}{\cos\theta}$$
+                <p><strong>Step 3: Cancel the common factor of $\cos\theta$.</strong><br>
+                (Valid when $\cos\theta \neq 0$, i.e., when $\theta \neq \frac{\pi}{2} + \pi k$)</p>
+                $$= 2\sin\theta$$
+                <p><strong>Final Answer: $2\sin\theta$</strong></p>
+                <p><em>Key insight: Always expand double-angle expressions in the numerator first —
+                this reveals factors that can cancel with the denominator.</em></p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h4>Example 6 (Extended): Harder — Prove $\dfrac{1 - \tan^2\theta}{1 + \tan^2\theta} = \cos(2\theta)$</h4>
+            <p>Verify this identity by simplifying the left side until it matches the right side.</p>
+            <div class="solution">
+                <p><strong>Step 1: Replace $\tan\theta$ with $\dfrac{\sin\theta}{\cos\theta}$ throughout.</strong></p>
+                $$\frac{1 - \dfrac{\sin^2\theta}{\cos^2\theta}}{1 + \dfrac{\sin^2\theta}{\cos^2\theta}}$$
+                <p><strong>Step 2: Multiply numerator and denominator by $\cos^2\theta$ to clear fractions.</strong></p>
+                $$= \frac{\cos^2\theta - \sin^2\theta}{\cos^2\theta + \sin^2\theta}$$
+                <p><strong>Step 3: Apply identities.</strong><br>
+                Numerator: $\cos^2\theta - \sin^2\theta = \cos(2\theta)$<br>
+                Denominator: $\cos^2\theta + \sin^2\theta = 1$</p>
+                $$= \frac{\cos(2\theta)}{1} = \cos(2\theta) \quad \checkmark$$
+                <p><strong>Identity verified.</strong></p>
+                <p><em>Strategy: When you see $1 + \tan^2\theta$ in a denominator, recognize it as $\sec^2\theta$,
+                or convert to sines and cosines and multiply through. Both paths work.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+        <h3>Summary of Key Concepts</h3>
+        <ul>
+            <li>A <strong>trigonometric identity</strong> is always true. Use it to substitute, not to solve.</li>
+            <li>The <strong>fundamental Pythagorean identity</strong> is $\sin^2\theta + \cos^2\theta = 1$, derived directly from the unit circle.</li>
+            <li>Two more Pythagorean identities follow by dividing by $\cos^2\theta$ ($\Rightarrow 1 + \tan^2\theta = \sec^2\theta$) or $\sin^2\theta$ ($\Rightarrow 1 + \cot^2\theta = \csc^2\theta$).</li>
+            <li>$\sin(2\theta) = 2\sin\theta\cos\theta$ — never $2\sin\theta$. You need both functions.</li>
+            <li>$\cos(2\theta)$ has <strong>three equivalent forms</strong>. Choose the one that matches your given information to save work.</li>
+            <li>The <strong>power-reducing identities</strong> — $\sin^2\theta = \frac{1-\cos(2\theta)}{2}$ and $\cos^2\theta = \frac{1+\cos(2\theta)}{2}$ — are rearrangements of the double-angle cosine formulas.</li>
+            <li>When given $\sin\theta$ or $\cos\theta$ in a specific quadrant, find the missing function with the Pythagorean identity before applying double-angle formulas.</li>
+            <li>When simplifying rational expressions, <strong>look for Pythagorean identities first</strong>, then expand, then factor and cancel.</li>
+            <li>To verify an identity: simplify one side until it matches the other. Do not move terms across the equals sign.</li>
+        </ul>
+    </div>
+
+    <!-- KEY EQUATIONS TABLE -->
+    <h2>Key Equations</h2>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Equation</th><th>Notes / When to Use</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pythagorean Identity 1</td>
+                <td>$$\sin^2\theta + \cos^2\theta = 1$$</td>
+                <td>Foundation identity; rearrange to isolate $\sin^2\theta$ or $\cos^2\theta$</td>
+            </tr>
+            <tr>
+                <td>Pythagorean Identity 2</td>
+                <td>$$1 + \tan^2\theta = \sec^2\theta$$</td>
+                <td>Use when tan or sec appear</td>
+            </tr>
+            <tr>
+                <td>Pythagorean Identity 3</td>
+                <td>$$1 + \cot^2\theta = \csc^2\theta$$</td>
+                <td>Use when cot or csc appear</td>
+            </tr>
+            <tr>
+                <td>Double-Angle Sine</td>
+                <td>$$\sin(2\theta) = 2\sin\theta\cos\theta$$</td>
+                <td>Only one form; requires both sin and cos</td>
+            </tr>
+            <tr>
+                <td>Double-Angle Cosine (Form 1)</td>
+                <td>$$\cos(2\theta) = \cos^2\theta - \sin^2\theta$$</td>
+                <td>Use when you have both functions</td>
+            </tr>
+            <tr>
+                <td>Double-Angle Cosine (Form 2)</td>
+                <td>$$\cos(2\theta) = 2\cos^2\theta - 1$$</td>
+                <td>Use when you know $\cos\theta$</td>
+            </tr>
+            <tr>
+                <td>Double-Angle Cosine (Form 3)</td>
+                <td>$$\cos(2\theta) = 1 - 2\sin^2\theta$$</td>
+                <td>Use when you know $\sin\theta$</td>
+            </tr>
+            <tr>
+                <td>Power-Reducing (sine)</td>
+                <td>$$\sin^2\theta = \frac{1 - \cos(2\theta)}{2}$$</td>
+                <td>Eliminates squared sine; critical in calculus</td>
+            </tr>
+            <tr>
+                <td>Power-Reducing (cosine)</td>
+                <td>$$\cos^2\theta = \frac{1 + \cos(2\theta)}{2}$$</td>
+                <td>Eliminates squared cosine; critical in calculus</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- PRACTICE PROBLEMS -->
+    <div class="practice-problems">
+        <h3>Practice Problems</h3>
+        <p>Simplify completely. Do not use a calculator. Show all identity substitutions and justify each step.</p>
+
+        <p><strong>Easy</strong></p>
+        <div class="problem"><strong>1 (Easy):</strong> Simplify $\sin^2\theta + \cos^2\theta$.</div>
+        <div class="problem"><strong>2 (Easy):</strong> Rewrite $\cos(2\theta)$ in terms of cosine only.</div>
+        <div class="problem"><strong>3 (Easy):</strong> Rewrite $\cos(2\theta)$ in terms of sine only.</div>
+        <div class="problem"><strong>4 (Easy):</strong> Simplify $\dfrac{1 + \cos(2\theta)}{2}$.</div>
+
+        <p><strong>Medium</strong></p>
+        <div class="problem"><strong>5 (Medium):</strong> Evaluate $\sin(2\theta)$ if $\cos\theta = \dfrac{4}{5}$ and $\theta$ is in Quadrant I.</div>
+        <div class="problem"><strong>6 (Medium):</strong> Simplify $\dfrac{\sin^2\theta}{1 - \cos^2\theta}$.</div>
+        <div class="problem"><strong>7 (Medium):</strong> Simplify $\dfrac{1 + \tan^2\theta}{\sec^2\theta}$.</div>
+        <div class="problem"><strong>8 (Medium):</strong> If $\sin\theta = -\dfrac{3}{5}$ and $\theta$ is in Quadrant III, find $\cos(2\theta)$.</div>
+
+        <p><strong>Hard</strong></p>
+        <div class="problem"><strong>9 (Hard):</strong> Simplify $\dfrac{\sin(2\theta)}{\cos\theta}$ completely.</div>
+        <div class="problem"><strong>10 (Hard):</strong> Simplify $\dfrac{\sin^2\theta - \cos^2\theta}{\cos(2\theta)}$ completely.</div>
+        <div class="problem"><strong>11 (Hard):</strong> Simplify $\cos^4\theta - \sin^4\theta$. (Hint: factor as a difference of squares first.)</div>
+        <div class="problem"><strong>12 (Hard):</strong> Simplify $\dfrac{2\sin\theta\cos\theta}{1 - 2\sin^2\theta}$ completely using double-angle identities.</div>
+
+        <p><strong>Challenging</strong></p>
+        <div class="problem"><strong>13 (Challenging):</strong> If $\cos\theta = -\dfrac{8}{17}$ and $\theta$ is in Quadrant II, find $\sin(2\theta)$. Show all steps including how you determine the sign of $\sin\theta$.</div>
+        <div class="problem"><strong>14 (Challenging):</strong> Express $\cos(2\theta)$ entirely in terms of $\tan\theta$ only. Start by writing $\cos^2\theta$ and $\sin^2\theta$ in terms of $\sec^2\theta$ and show your algebra clearly.</div>
+
+        <p><strong>Justify</strong></p>
+        <div class="problem"><strong>15 (Justify):</strong> Explain in complete sentences why $\cos(2\theta)$ has three different equivalent forms. Starting from $\cos(2\theta) = \cos^2\theta - \sin^2\theta$, show algebraically how each of the other two forms is derived. Then explain when you would prefer each form and why.</div>
+        <div class="problem"><strong>16 (Justify):</strong> A student evaluates $\sin(60°)$ and gets $\frac{\sqrt{3}}{2}$. She then writes $\sin(2 \cdot 30°) = 2\sin(30°) = 2 \cdot \frac{1}{2} = 1$. Identify the error, compute the correct value of $\sin(60°)$ using the double-angle identity, and explain why $\sin(2\theta) \neq 2\sin\theta$ in general.</div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key">
+        <h3>Answer Key</h3>
+
+        <div class="answer">
+            <strong>1.</strong> $\sin^2\theta + \cos^2\theta = 1$. This is the fundamental Pythagorean identity. It equals 1 for every value of $\theta$.
+        </div>
+
+        <div class="answer">
+            <strong>2.</strong> $\cos(2\theta) = 2\cos^2\theta - 1$. Derived by substituting $\sin^2\theta = 1 - \cos^2\theta$ into $\cos^2\theta - \sin^2\theta$: $\cos^2\theta - (1 - \cos^2\theta) = 2\cos^2\theta - 1$.
+        </div>
+
+        <div class="answer">
+            <strong>3.</strong> $\cos(2\theta) = 1 - 2\sin^2\theta$. Derived by substituting $\cos^2\theta = 1 - \sin^2\theta$ into $\cos^2\theta - \sin^2\theta$: $(1 - \sin^2\theta) - \sin^2\theta = 1 - 2\sin^2\theta$.
+        </div>
+
+        <div class="answer">
+            <strong>4.</strong> $\dfrac{1 + \cos(2\theta)}{2} = \cos^2\theta$. This is the power-reducing identity, rearranged from $\cos(2\theta) = 2\cos^2\theta - 1 \Rightarrow \cos^2\theta = \dfrac{1 + \cos(2\theta)}{2}$.
+        </div>
+
+        <div class="answer">
+            <p><strong>5.</strong> Find $\sin\theta$ first: $\sin^2\theta = 1 - \left(\frac{4}{5}\right)^2 = 1 - \frac{16}{25} = \frac{9}{25}$, so $\sin\theta = \frac{3}{5}$ (positive, QI).</p>
+            <p>$\sin(2\theta) = 2 \cdot \frac{3}{5} \cdot \frac{4}{5} = \dfrac{24}{25}$</p>
+        </div>
+
+        <div class="answer">
+            <strong>6.</strong> $\dfrac{\sin^2\theta}{1 - \cos^2\theta}$: The denominator $1 - \cos^2\theta = \sin^2\theta$ by the Pythagorean identity. So $\dfrac{\sin^2\theta}{\sin^2\theta} = 1$.
+        </div>
+
+        <div class="answer">
+            <strong>7.</strong> $\dfrac{1 + \tan^2\theta}{\sec^2\theta}$: The numerator $1 + \tan^2\theta = \sec^2\theta$ by the second Pythagorean identity. So $\dfrac{\sec^2\theta}{\sec^2\theta} = 1$.
+        </div>
+
+        <div class="answer">
+            <p><strong>8.</strong> Use the sine-only form: $\cos(2\theta) = 1 - 2\sin^2\theta$.</p>
+            <p>$\cos(2\theta) = 1 - 2\left(-\frac{3}{5}\right)^2 = 1 - 2 \cdot \frac{9}{25} = 1 - \frac{18}{25} = \dfrac{7}{25}$</p>
+            <p>Note: The quadrant does not affect this calculation because $\sin^2\theta$ is always positive.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>9.</strong> $\dfrac{\sin(2\theta)}{\cos\theta}$: Expand the numerator: $\sin(2\theta) = 2\sin\theta\cos\theta$.</p>
+            <p>$\dfrac{2\sin\theta\cos\theta}{\cos\theta} = 2\sin\theta$ &nbsp; (valid when $\cos\theta \neq 0$)</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>10.</strong> $\dfrac{\sin^2\theta - \cos^2\theta}{\cos(2\theta)}$: The numerator $\sin^2\theta - \cos^2\theta = -(\cos^2\theta - \sin^2\theta) = -\cos(2\theta)$.</p>
+            <p>$\dfrac{-\cos(2\theta)}{\cos(2\theta)} = -1$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>11.</strong> Factor as difference of squares: $\cos^4\theta - \sin^4\theta = (\cos^2\theta - \sin^2\theta)(\cos^2\theta + \sin^2\theta)$</p>
+            <p>$= (\cos^2\theta - \sin^2\theta)(1) = \cos(2\theta)$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>12.</strong> $\dfrac{2\sin\theta\cos\theta}{1 - 2\sin^2\theta}$: Numerator $= \sin(2\theta)$; Denominator $= \cos(2\theta)$.</p>
+            <p>$\dfrac{\sin(2\theta)}{\cos(2\theta)} = \tan(2\theta)$</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>13.</strong> $\cos\theta = -\frac{8}{17}$, Quadrant II.</p>
+            <p>Find $\sin\theta$: $\sin^2\theta = 1 - \frac{64}{289} = \frac{225}{289}$, so $\sin\theta = \frac{15}{17}$ (positive in QII).</p>
+            <p>$\sin(2\theta) = 2 \cdot \frac{15}{17} \cdot \left(-\frac{8}{17}\right) = -\dfrac{240}{289}$</p>
+            <p>The answer is negative because $2\theta$ lands in Quadrant III or IV when $\theta$ is in QII, and we can verify the sign matches.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>14.</strong> Start from $\cos(2\theta) = \cos^2\theta - \sin^2\theta$. Divide numerator and denominator by $\cos^2\theta$:</p>
+            $$\cos(2\theta) = \frac{\cos^2\theta - \sin^2\theta}{\cos^2\theta + \sin^2\theta} \cdot \frac{1/\cos^2\theta}{1/\cos^2\theta} = \frac{1 - \tan^2\theta}{\sec^2\theta} = \frac{1 - \tan^2\theta}{1 + \tan^2\theta}$$
+        </div>
+
+        <div class="answer">
+            <p><strong>15.</strong> All three forms start from $\cos(2\theta) = \cos^2\theta - \sin^2\theta$. To get the cosine-only form, substitute $\sin^2\theta = 1 - \cos^2\theta$: $\cos^2\theta - (1 - \cos^2\theta) = 2\cos^2\theta - 1$. To get the sine-only form, substitute $\cos^2\theta = 1 - \sin^2\theta$: $(1 - \sin^2\theta) - \sin^2\theta = 1 - 2\sin^2\theta$. Use the mixed form when you have both functions. Use the cosine-only form when only $\cos\theta$ is given. Use the sine-only form when only $\sin\theta$ is given — it avoids the extra step of finding $\cos\theta$.</p>
+        </div>
+
+        <div class="answer">
+            <p><strong>16.</strong> The student's error is writing $\sin(2 \cdot 30°) = 2\sin(30°)$. This incorrectly assumes $\sin(2\theta) = 2\sin\theta$, which is false. The correct formula is $\sin(2\theta) = 2\sin\theta\cos\theta$. Applied to $\theta = 30°$: $\sin(60°) = 2\sin(30°)\cos(30°) = 2 \cdot \frac{1}{2} \cdot \frac{\sqrt{3}}{2} = \frac{\sqrt{3}}{2}$. The student's answer of 1 is incorrect; the true value $\frac{\sqrt{3}}{2} \approx 0.866$. The general rule $\sin(2\theta) = 2\sin\theta$ fails because trig functions do not distribute over angle multiplication — you must use the identity.</p>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
