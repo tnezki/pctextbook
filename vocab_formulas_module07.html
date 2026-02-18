@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7 Summary: Trigonometry & Area Approximation</title>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center;
+            border-bottom: 3px solid #00003d;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .chapter-label { color: #00003d; font-size: 1.1em; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+        h1 { color: #00003d; font-size: 2.6em; margin-bottom: 12px; margin-top: 0; }
+        .subtitle { font-size: 1.1em; color: #555; font-style: italic; margin-bottom: 18px; }
+        .intro-text {
+            font-size: 1.05em; color: #555; max-width: 820px;
+            margin: 0 auto 15px auto; font-style: italic;
+        }
+        .inspirational {
+            font-size: 1.15em; color: #004d99; font-style: italic;
+            text-align: center; margin: 18px auto 0 auto;
+            max-width: 700px; padding: 10px 0 0 0;
+        }
+        h2 {
+            color: #00003d; font-size: 1.8em;
+            margin-top: 45px; margin-bottom: 20px;
+            border-left: 5px solid #00003d; padding-left: 15px;
+        }
+        h3 { color: #004d99; font-size: 1.3em; margin-top: 28px; margin-bottom: 15px; }
+        h4 { color: #00003d; font-size: 1.1em; margin-top: 20px; margin-bottom: 10px; }
+        p { margin-bottom: 12px; }
+        ul { margin-left: 30px; margin-bottom: 12px; }
+        ul li { margin-bottom: 7px; }
+        ol { margin-left: 30px; margin-bottom: 12px; }
+        ol li { margin-bottom: 7px; }
+
+        /* Objectives */
+        .objectives {
+            background-color: #f0f4f8; padding: 22px;
+            border-radius: 6px; margin-bottom: 30px;
+        }
+        .objectives h2 { margin-top: 0; }
+        .objectives ul { list-style: disc; }
+        .section-obj {
+            margin-bottom: 18px;
+        }
+        .section-obj-title {
+            font-weight: bold; color: #00003d; font-size: 1em; margin-bottom: 6px;
+        }
+
+        /* Essential Standards */
+        .standards {
+            background-color: #fff8e1; border-left: 5px solid #ffc107;
+            padding: 20px; margin: 25px 0; border-radius: 6px;
+        }
+        .standards h3 { margin-top: 0; color: #795548; }
+
+        /* Vocab */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 20px 0;
+        }
+        .definition {
+            background-color: #fffacd; border-left: 4px solid #ffd700;
+            padding: 14px; border-radius: 4px;
+        }
+        .definition strong { color: #00003d; display: block; margin-bottom: 4px; }
+
+        /* Formulas */
+        .formula-section {
+            background-color: #e6f2ff; border: 2px solid #004d99;
+            padding: 22px; margin: 20px 0; border-radius: 6px;
+        }
+        .formula-group { margin-bottom: 20px; }
+        .formula-group:last-child { margin-bottom: 0; }
+        .formula-group-title {
+            font-weight: bold; color: #00003d; font-size: 1em;
+            border-bottom: 1px solid #aac8e8; padding-bottom: 6px; margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%; border-collapse: collapse;
+            margin: 20px 0; background-color: white;
+        }
+        th, td { border: 1px solid #ddd; padding: 11px; text-align: left; }
+        th { background-color: #00003d; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* Summary */
+        .summary-block {
+            background-color: #f0f4f8; border-left: 5px solid #00003d;
+            padding: 22px; margin: 25px 0; border-radius: 6px;
+        }
+        .summary-block h3 { margin-top: 0; }
+
+        /* Section divider */
+        .section-divider {
+            border: none; border-top: 2px solid #e0e0e0; margin: 40px 0;
+        }
+
+        /* Practice problems */
+        .practice-section {
+            margin: 30px 0;
+        }
+        .practice-header {
+            background-color: #00003d; color: white;
+            padding: 14px 20px; border-radius: 6px 6px 0 0;
+            font-size: 1.1em; font-weight: bold;
+        }
+        .practice-body {
+            background-color: #f0f4f8; padding: 20px;
+            border-radius: 0 0 6px 6px;
+        }
+        .problem {
+            background-color: white; padding: 13px 16px; margin: 10px 0;
+            border-radius: 4px; border-left: 4px solid #004d99;
+        }
+
+        /* Answer key */
+        .answer-key {
+            background-color: #f5f5f5; padding: 25px;
+            border-radius: 6px; margin-top: 40px;
+        }
+        .answer-key h2 { margin-top: 0; }
+        .answer {
+            background-color: white; padding: 13px 16px; margin: 10px 0;
+            border-radius: 4px; border-left: 4px solid #28a745;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            background-color: #f3e5f5; border-left: 5px solid #9c27b0;
+            padding: 22px; margin: 30px 0; border-radius: 6px;
+        }
+        .conclusion h2 { border-left: none; padding-left: 0; margin-top: 0; color: #6a1b9a; }
+
+        /* Key point */
+        .key-point {
+            background-color: #e8f5e9; border-left: 4px solid #4caf50;
+            padding: 15px; margin: 20px 0; border-radius: 4px;
+        }
+        .key-point strong { color: #2e7d32; }
+
+        @media (max-width: 640px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2em; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- TITLE PAGE -->
+    <div class="title-page">
+        <div class="chapter-label">Chapter 7 — Complete Section Summary</div>
+        <h1>Trigonometry &amp; Area Approximation</h1>
+        <div class="subtitle">Sections 7.A through 7.E</div>
+        <div class="intro-text">
+            Chapter 7 is a journey through the language of angles, identities, equations, and
+            mathematical approximation. It begins with the most fundamental tool in trigonometry —
+            the unit circle — and builds, section by section, toward solving complex equations
+            and estimating areas under curves. Every skill learned here connects to the next,
+            forming a complete and powerful mathematical toolkit that reaches into physics,
+            engineering, and calculus.
+        </div>
+        <div class="inspirational">
+            &#8220; Trigonometry is not a collection of formulas to memorize — it is a way of seeing the structure hidden inside every angle, every wave, and every curve. &#8221;
+        </div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <section>
+        <h2>Chapter Introduction: Why This Chapter Matters</h2>
+        <p>
+            Trigonometry sits at the intersection of geometry, algebra, and calculus. In earlier
+            courses, you learned about right-triangle trigonometry and basic angle measurement.
+            Chapter 7 takes that foundation and extends it dramatically — from reading exact values
+            off the unit circle to manipulating and proving identities, solving multi-step equations,
+            and even laying the groundwork for integral calculus through area approximation.
+        </p>
+        <p>
+            The progression is intentional. Section 7.A builds the core language: exact values,
+            reference angles, and the ASTC rule. Section 7.B introduces identities — algebraic
+            laws of the trig world. Section 7.C expands your toolkit with sum, difference, and
+            half-angle identities to reach angles the unit circle alone cannot provide. Section 7.D
+            flips the script: now the angle is the unknown, and you must solve for it systematically.
+            Finally, Section 7.E (Above &amp; Beyond) introduces Riemann sums and the trapezoidal
+            rule — the conceptual bridge to the definite integral.
+        </p>
+        <p>
+            Every section of this chapter is connected. Mastery of exact values (7.A) powers
+            everything that follows. Identities (7.B, 7.C) give you the tools to simplify before
+            solving. Equation-solving (7.D) is the culmination of trig skill in action.
+            Area approximation (7.E) previews the single most important idea in all of calculus.
+        </p>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- LEARNING OBJECTIVES -->
+    <section class="objectives">
+        <h2>Learning Objectives by Section</h2>
+
+        <div class="section-obj">
+            <div class="section-obj-title">Section 7.A — Exact Trigonometric Values</div>
+            <ul>
+                <li>I can evaluate all six trigonometric functions at special angles using the unit circle.</li>
+                <li>I can apply reference angles and the ASTC rule to determine signs in all four quadrants.</li>
+                <li>I can reduce coterminal and negative angles to find equivalent expressions.</li>
+                <li>I can evaluate reciprocal functions (csc, sec, cot) by computing primary functions first.</li>
+            </ul>
+        </div>
+
+        <div class="section-obj">
+            <div class="section-obj-title">Section 7.B — Double-Angle and Pythagorean Identities</div>
+            <ul>
+                <li>I can apply double-angle identities for sine and cosine to evaluate and simplify expressions.</li>
+                <li>I can simplify trigonometric expressions using Pythagorean identities, including rational forms.</li>
+                <li>I can recognize equivalent forms of identities and justify my reasoning.</li>
+            </ul>
+        </div>
+
+        <div class="section-obj">
+            <div class="section-obj-title">Section 7.C — Half-Angle, Sum, and Difference Identities</div>
+            <ul>
+                <li>I can apply half-angle formulas for sine, cosine, and tangent with correct sign determination.</li>
+                <li>I can apply angle sum and difference identities to rewrite and evaluate trig expressions.</li>
+                <li>I can justify multi-step reasoning using algebraic structure.</li>
+            </ul>
+        </div>
+
+        <div class="section-obj">
+            <div class="section-obj-title">Section 7.D — Solving Advanced Trigonometric Equations</div>
+            <ul>
+                <li>I can solve basic and advanced trig equations in $[0, 2\pi)$ for all six functions.</li>
+                <li>I can solve quadratic-type and double-angle trig equations and verify solutions.</li>
+                <li>I can write general solutions using correct period notation ($+\,2\pi n$ or $+\,\pi n$).</li>
+            </ul>
+        </div>
+
+        <div class="section-obj">
+            <div class="section-obj-title">Section 7.E — Riemann Sums and Trapezoidal Approximation (Above &amp; Beyond)</div>
+            <ul>
+                <li>I can approximate area under a curve using left and right Riemann sums from graphs and tables.</li>
+                <li>I can apply the trapezoidal rule to approximate area.</li>
+                <li>I can compare methods and justify which provides a better estimate based on function behavior.</li>
+                <li>I can model real-world accumulation situations and interpret units correctly.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ESSENTIAL STANDARDS -->
+    <div class="standards">
+        <h3>&#9733; Essential Standards Addressed</h3>
+        <ul>
+            <li><strong>HSF-TF.A.3</strong> — Use special triangles to determine geometrically the values of sine, cosine, and tangent for $\frac{\pi}{3}$, $\frac{\pi}{4}$, and $\frac{\pi}{6}$, and use the unit circle to express the values of sine, cosine, and tangent for $x$, $\pi + x$, and $2\pi - x$ in terms of their values for $x$.</li>
+            <li><strong>HSF-TF.B.5</strong> — Choose trigonometric functions to model periodic phenomena with specified amplitude, frequency, and midline.</li>
+            <li><strong>HSF-TF.C.8</strong> — Prove the Pythagorean identity $\sin^2(\theta) + \cos^2(\theta) = 1$ and use it to find $\sin(\theta)$, $\cos(\theta)$, or $\tan(\theta)$ given one of these and the quadrant.</li>
+            <li><strong>HSF-TF.C.9</strong> — Prove the addition and subtraction formulas for sine, cosine, and tangent and use them to solve problems.</li>
+            <li><strong>HSF-TF.B.7</strong> — Use inverse functions to solve trigonometric equations that arise in modeling contexts; evaluate the solutions using technology and interpret them in terms of context.</li>
+            <li><strong>Precalculus / AP Calculus Bridge</strong> — Approximate areas under curves using Riemann sums and the trapezoidal rule as a foundation for the definite integral concept.</li>
+        </ul>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- VOCABULARY -->
+    <h2>Key Vocabulary</h2>
+    <div class="vocab-grid">
+        <div class="definition">
+            <strong>Unit Circle</strong>
+            A circle of radius 1 centered at the origin. Every point on it is $(\cos\theta, \sin\theta)$, directly defining sine and cosine for any angle $\theta$.
+        </div>
+        <div class="definition">
+            <strong>Reference Angle</strong>
+            The acute angle between the terminal side of $\theta$ and the nearest x-axis. It gives the <em>magnitude</em> of any trig function; the quadrant determines the sign.
+        </div>
+        <div class="definition">
+            <strong>Coterminal Angles</strong>
+            Angles that share the same terminal side on the unit circle. Found by adding or subtracting multiples of $2\pi$: $\theta \pm 2\pi k$.
+        </div>
+        <div class="definition">
+            <strong>ASTC Rule (All Students Take Calculus)</strong>
+            A memory device for which trig functions are positive in each quadrant: All (QI), Sine (QII), Tangent (QIII), Cosine (QIV).
+        </div>
+        <div class="definition">
+            <strong>Trigonometric Identity</strong>
+            An equation true for every value of the variable (where defined). Used as a substitution tool — not solved, but applied.
+        </div>
+        <div class="definition">
+            <strong>Pythagorean Identities</strong>
+            Fundamental identities derived from $x^2 + y^2 = 1$: $\sin^2\theta + \cos^2\theta = 1$, along with the tan/sec and cot/csc variations.
+        </div>
+        <div class="definition">
+            <strong>Double-Angle Identities</strong>
+            Formulas expressing trig functions of $2\theta$ in terms of $\theta$: e.g., $\sin(2\theta) = 2\sin\theta\cos\theta$.
+        </div>
+        <div class="definition">
+            <strong>Half-Angle Identities</strong>
+            Formulas expressing trig functions of $\frac{\theta}{2}$ using trig functions of $\theta$. Contain a $\pm$ sign determined by the quadrant of $\frac{\theta}{2}$, not $\theta$.
+        </div>
+        <div class="definition">
+            <strong>Sum Identity</strong>
+            Formulas for $\sin(A+B)$ or $\cos(A+B)$ in terms of the sines and cosines of $A$ and $B$ separately.
+        </div>
+        <div class="definition">
+            <strong>Difference Identity</strong>
+            Formulas for $\sin(A-B)$ or $\cos(A-B)$. Identical in structure to sum identities except one sign changes — and it changes differently for sine vs. cosine.
+        </div>
+        <div class="definition">
+            <strong>Principal Solutions</strong>
+            Solutions to a trig equation that fall within one full period, typically $[0, 2\pi)$. The base from which all others are generated.
+        </div>
+        <div class="definition">
+            <strong>General Solution</strong>
+            The complete infinite set of solutions expressed with $+\,2\pi n$ (sine/cosine) or $+\,\pi n$ (tangent), where $n$ is any integer.
+        </div>
+        <div class="definition">
+            <strong>Quadratic-Type Trig Equation</strong>
+            A trig equation with a squared function, like $2\sin^2\theta - 1 = 0$. Solved by factoring or square roots, treating the trig function as the variable.
+        </div>
+        <div class="definition">
+            <strong>Riemann Sum</strong>
+            An approximation of the area under a curve by summing the areas of rectangles whose heights are function values at left endpoints (left sum), right endpoints (right sum), or midpoints.
+        </div>
+        <div class="definition">
+            <strong>Left/Right Riemann Sum</strong>
+            Left sum uses the function value at the left edge of each subinterval; right sum uses the right edge. For increasing functions, left underestimates and right overestimates.
+        </div>
+        <div class="definition">
+            <strong>Trapezoidal Rule</strong>
+            An approximation method using trapezoids instead of rectangles, averaging the left and right function values: $T = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)]$.
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- FORMULA SECTION -->
+    <h2>Formula Reference Sheet</h2>
+    <div class="formula-section">
+
+        <div class="formula-group">
+            <div class="formula-group-title">7.A — Unit Circle and Reciprocal Functions</div>
+            $$\cos\theta = x \qquad \sin\theta = y \qquad \tan\theta = \frac{\sin\theta}{\cos\theta}$$
+            $$\csc\theta = \frac{1}{\sin\theta} \qquad \sec\theta = \frac{1}{\cos\theta} \qquad \cot\theta = \frac{1}{\tan\theta} = \frac{\cos\theta}{\sin\theta}$$
+            <p style="margin-top:10px; font-size:0.93em; color:#444;">Reference angles by quadrant: &nbsp; QII: $\pi - \theta$ &nbsp;|&nbsp; QIII: $\theta - \pi$ &nbsp;|&nbsp; QIV: $2\pi - \theta$</p>
+        </div>
+
+        <div class="formula-group">
+            <div class="formula-group-title">7.B — Pythagorean and Double-Angle Identities</div>
+            $$\sin^2\theta + \cos^2\theta = 1 \qquad 1 + \tan^2\theta = \sec^2\theta \qquad 1 + \cot^2\theta = \csc^2\theta$$
+            $$\sin(2\theta) = 2\sin\theta\cos\theta$$
+            $$\cos(2\theta) = \cos^2\theta - \sin^2\theta = 1 - 2\sin^2\theta = 2\cos^2\theta - 1$$
+            $$\tan(2\theta) = \frac{2\tan\theta}{1 - \tan^2\theta}$$
+        </div>
+
+        <div class="formula-group">
+            <div class="formula-group-title">7.C — Sum, Difference, and Half-Angle Identities</div>
+            $$\sin(A \pm B) = \sin A\cos B \pm \cos A\sin B$$
+            $$\cos(A + B) = \cos A\cos B - \sin A\sin B \qquad \cos(A - B) = \cos A\cos B + \sin A\sin B$$
+            $$\sin\!\left(\frac{\theta}{2}\right) = \pm\sqrt{\frac{1-\cos\theta}{2}} \qquad \cos\!\left(\frac{\theta}{2}\right) = \pm\sqrt{\frac{1+\cos\theta}{2}}$$
+            $$\tan\!\left(\frac{\theta}{2}\right) = \frac{\sin\theta}{1+\cos\theta} = \frac{1-\cos\theta}{\sin\theta}$$
+            <p style="margin-top:8px; font-size:0.93em; color:#444;">The $\pm$ in half-angle formulas is determined by the quadrant of $\frac{\theta}{2}$, not $\theta$.</p>
+        </div>
+
+        <div class="formula-group">
+            <div class="formula-group-title">7.D — General Solution Forms</div>
+            <table style="margin:8px 0; font-size:0.95em;">
+                <thead><tr><th>Function</th><th>Period</th><th>General Solution Form</th></tr></thead>
+                <tbody>
+                    <tr><td>$\sin\theta = k$</td><td>$2\pi$</td><td>$\theta = \alpha + 2\pi n$ and $\theta = (\pi - \alpha) + 2\pi n$</td></tr>
+                    <tr><td>$\cos\theta = k$</td><td>$2\pi$</td><td>$\theta = \alpha + 2\pi n$ and $\theta = -\alpha + 2\pi n$</td></tr>
+                    <tr><td>$\tan\theta = k$</td><td>$\pi$</td><td>$\theta = \alpha + \pi n$</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="formula-group">
+            <div class="formula-group-title">7.E — Riemann Sums and Trapezoidal Rule</div>
+            $$L_n = \Delta x \left[f(x_0) + f(x_1) + \cdots + f(x_{n-1})\right] \quad \text{(Left Riemann Sum)}$$
+            $$R_n = \Delta x \left[f(x_1) + f(x_2) + \cdots + f(x_n)\right] \quad \text{(Right Riemann Sum)}$$
+            $$T_n = \frac{\Delta x}{2}\left[f(x_0) + 2f(x_1) + 2f(x_2) + \cdots + 2f(x_{n-1}) + f(x_n)\right] \quad \text{(Trapezoidal Rule)}$$
+            <p style="margin-top:8px; font-size:0.93em; color:#444;">$\Delta x = \dfrac{b-a}{n}$ where $[a,b]$ is the interval and $n$ is the number of subintervals.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CHAPTER SUMMARY LIST -->
+    <h2>Chapter Summary</h2>
+    <div class="summary-block">
+        <h3>Section 7.A — Exact Trigonometric Values</h3>
+        <ul>
+            <li>The unit circle has radius 1 centered at the origin; every point is $(\cos\theta, \sin\theta)$. Cosine = x-coordinate; sine = y-coordinate — never reversed.</li>
+            <li>Memorize three Quadrant I pairs at $\frac{\pi}{6}, \frac{\pi}{4}, \frac{\pi}{3}$. Symmetry and the ASTC rule extend these to all four quadrants.</li>
+            <li>Reference angles give magnitude; the quadrant gives the sign. Subtract $2\pi$ to reduce large angles; add $2\pi$ to handle negative angles.</li>
+            <li>Reciprocal functions (csc, sec, cot) are computed by finding the primary function first, then taking its reciprocal.</li>
+            <li>$\tan\theta$ is undefined when $\cos\theta = 0$ (at $\frac{\pi}{2}$ and $\frac{3\pi}{2}$).</li>
+        </ul>
+    </div>
+    <div class="summary-block">
+        <h3>Section 7.B — Double-Angle and Pythagorean Identities</h3>
+        <ul>
+            <li>An identity is always true — use it as a substitution tool, not an equation to solve. The moment you see $\sin^2\theta + \cos^2\theta$, replace it with 1.</li>
+            <li>The three Pythagorean identities all derive from $x^2 + y^2 = 1$ on the unit circle.</li>
+            <li>$\cos(2\theta)$ has three equivalent forms; choose the one that matches the given expression to avoid introducing new variables.</li>
+            <li>To simplify complex rational trig expressions, rewrite in terms of sine and cosine, then factor and cancel.</li>
+        </ul>
+    </div>
+    <div class="summary-block">
+        <h3>Section 7.C — Half-Angle, Sum, and Difference Identities</h3>
+        <ul>
+            <li>Sum/difference identities unlock exact values for non-standard angles (75°, 15°, 105°) by splitting them into two known special angles.</li>
+            <li>In sine sum/difference, the sign in the formula <em>matches</em> the $\pm$; in cosine, the sign <em>flips</em>.</li>
+            <li>Half-angle formulas contain a $\pm$ whose value is determined by the quadrant of $\frac{\theta}{2}$ — not $\theta$ itself. Always find $\frac{\theta}{2}$ first.</li>
+            <li>The half-angle tangent formulas ($\frac{\sin\theta}{1+\cos\theta}$ and $\frac{1-\cos\theta}{\sin\theta}$) require no $\pm$ sign — they are always exact.</li>
+        </ul>
+    </div>
+    <div class="summary-block">
+        <h3>Section 7.D — Solving Advanced Trigonometric Equations</h3>
+        <ul>
+            <li>The four-step strategy always applies: isolate the trig function → find the reference angle → identify quadrants using ASTC → list all solutions.</li>
+            <li>Trig equations typically have two solutions per period for sine and cosine, and one per period for tangent. The general solution captures all of them.</li>
+            <li>For quadratic-type equations, treat the trig function as the variable, factor or use the square root method, then solve each resulting equation.</li>
+            <li>For reciprocal function equations (sec, csc, cot), convert to sine or cosine first, then proceed with the standard strategy.</li>
+            <li>Always check solutions — squaring both sides or applying certain identities can introduce extraneous solutions.</li>
+        </ul>
+    </div>
+    <div class="summary-block">
+        <h3>Section 7.E — Riemann Sums and Trapezoidal Approximation</h3>
+        <ul>
+            <li>The area under a curve represents accumulated quantities: distance from velocity, total drug absorbed, total rainfall, etc.</li>
+            <li>Left Riemann sums underestimate when the function is increasing; right sums overestimate. These roles reverse for decreasing functions.</li>
+            <li>The trapezoidal rule averages the left and right sums and generally provides a better approximation than either alone.</li>
+            <li>More subintervals always improves accuracy. In the limit as $n \to \infty$, the Riemann sum becomes the definite integral $\int_a^b f(x)\,dx$.</li>
+            <li>Always track units: if $f(x)$ is in mph and $x$ is in hours, the area has units of miles.</li>
+        </ul>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+        <h2>Chapter Conclusion: What You Now Know and Why It Matters</h2>
+        <p>
+            Chapter 7 represents one of the most mathematically dense and conceptually rich units
+            in Precalculus. You began by grounding yourself in the unit circle — the single most
+            important picture in all of trigonometry — and built upward from there. By the end,
+            you are not just reading values from a memorized table; you are manipulating identities,
+            solving equations with infinitely many solutions, and approximating quantities that can
+            only be measured exactly in the limit.
+        </p>
+        <p>
+            Why does this matter? Every oscillating system in physics — a pendulum, a spring, a
+            sound wave, an electrical circuit — is described by trigonometric functions. Every time
+            an engineer designs a bridge, an architect accounts for vibration, or a musician
+            understands harmonics, this mathematics is at work. The identities you practiced allow
+            computers to simplify and evaluate trig expressions efficiently. The equation-solving
+            skills you developed are exactly what calculus requires when optimizing functions or
+            finding critical points.
+        </p>
+        <p>
+            Section 7.E pointed toward the future: the area under a curve, approximated first
+            by rectangles, becomes the definite integral — the single most powerful tool in all of
+            calculus. Every Riemann sum you computed in 7.E is a step toward that idea.
+        </p>
+        <p>
+            You have earned a complete and coherent understanding of trigonometry. These are not
+            isolated facts — they are a connected system. Use them accordingly.
+        </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- REVIEW PROBLEMS -->
+    <h2>Chapter 7 Review Problems</h2>
+    <p>Answer without a calculator unless otherwise stated. Show your reasoning where applicable.</p>
+
+    <!-- 7.A -->
+    <div class="practice-section">
+        <div class="practice-header">Section 7.A — Exact Trigonometric Values (6 Questions)</div>
+        <div class="practice-body">
+            <div class="problem"><strong>1.</strong> Find the exact value of $\sin\!\left(\dfrac{5\pi}{6}\right)$.</div>
+            <div class="problem"><strong>2.</strong> Find the exact value of $\cos\!\left(\dfrac{7\pi}{4}\right)$.</div>
+            <div class="problem"><strong>3.</strong> Find the exact value of $\tan\!\left(\dfrac{4\pi}{3}\right)$.</div>
+            <div class="problem"><strong>4.</strong> Find the exact value of $\csc\!\left(\dfrac{2\pi}{3}\right)$.</div>
+            <div class="problem"><strong>5.</strong> Reduce the angle $\dfrac{17\pi}{6}$ to a coterminal angle in $[0, 2\pi)$ and then find $\cos\!\left(\dfrac{17\pi}{6}\right)$.</div>
+            <div class="problem"><strong>6.</strong> Find all six trigonometric functions for $\theta = \dfrac{5\pi}{4}$.</div>
+        </div>
+    </div>
+
+    <!-- 7.B -->
+    <div class="practice-section">
+        <div class="practice-header">Section 7.B — Double-Angle and Pythagorean Identities (6 Questions)</div>
+        <div class="practice-body">
+            <div class="problem"><strong>7.</strong> Given $\sin\theta = \dfrac{3}{5}$ and $\theta$ is in Quadrant I, find $\sin(2\theta)$.</div>
+            <div class="problem"><strong>8.</strong> Given $\cos\theta = -\dfrac{1}{2}$ and $\theta$ is in Quadrant II, find $\cos(2\theta)$.</div>
+            <div class="problem"><strong>9.</strong> Simplify: $\dfrac{\sin^2\theta + \cos^2\theta}{\cos\theta}$.</div>
+            <div class="problem"><strong>10.</strong> Use a Pythagorean identity to simplify: $1 - \sin^2\theta$.</div>
+            <div class="problem"><strong>11.</strong> Use the identity $\cos(2\theta) = 1 - 2\sin^2\theta$ to find $\cos\!\left(\dfrac{\pi}{2}\right)$ starting from $\theta = \dfrac{\pi}{4}$.</div>
+            <div class="problem"><strong>12.</strong> Simplify: $\dfrac{\tan\theta}{\sec\theta}$. Write your answer in terms of a single trig function.</div>
+        </div>
+    </div>
+
+    <!-- 7.C -->
+    <div class="practice-section">
+        <div class="practice-header">Section 7.C — Half-Angle, Sum, and Difference Identities (6 Questions)</div>
+        <div class="practice-body">
+            <div class="problem"><strong>13.</strong> Use a sum identity to find the exact value of $\sin(75°)$. Write $75° = 45° + 30°$.</div>
+            <div class="problem"><strong>14.</strong> Use a difference identity to find the exact value of $\cos(15°)$. Write $15° = 45° - 30°$.</div>
+            <div class="problem"><strong>15.</strong> Use the half-angle formula to find $\sin\!\left(\dfrac{\pi}{8}\right)$. Determine the sign from the quadrant of $\dfrac{\pi}{8}$.</div>
+            <div class="problem"><strong>16.</strong> Use the half-angle formula to find $\cos\!\left(\dfrac{3\pi}{8}\right)$. Show the quadrant determination.</div>
+            <div class="problem"><strong>17.</strong> Given $\sin A = \dfrac{4}{5}$ ($A$ in QI) and $\sin B = \dfrac{5}{13}$ ($B$ in QI), find $\sin(A + B)$.</div>
+            <div class="problem"><strong>18.</strong> Use the identity $\tan\!\left(\dfrac{\theta}{2}\right) = \dfrac{\sin\theta}{1+\cos\theta}$ to find $\tan\!\left(\dfrac{\pi}{12}\right)$ using $\theta = \dfrac{\pi}{6}$.</div>
+        </div>
+    </div>
+
+    <!-- 7.D -->
+    <div class="practice-section">
+        <div class="practice-header">Section 7.D — Solving Advanced Trigonometric Equations (6 Questions)</div>
+        <div class="practice-body">
+            <div class="problem"><strong>19.</strong> Solve for all $\theta \in [0, 2\pi)$: $\sin\theta = -\dfrac{\sqrt{3}}{2}$.</div>
+            <div class="problem"><strong>20.</strong> Solve for all $\theta \in [0, 2\pi)$: $\cos\theta = \dfrac{1}{2}$.</div>
+            <div class="problem"><strong>21.</strong> Solve for all $\theta \in [0, 2\pi)$: $2\sin^2\theta - 1 = 0$.</div>
+            <div class="problem"><strong>22.</strong> Solve for all $\theta \in [0, 2\pi)$: $\tan\theta + 1 = 0$.</div>
+            <div class="problem"><strong>23.</strong> Solve for all $\theta \in [0, 2\pi)$: $2\sin\theta\cos\theta = 1$. <em>Hint: recognize the left side as a double-angle expression.</em></div>
+            <div class="problem"><strong>24.</strong> Write the general solution for $\sin\theta = \dfrac{\sqrt{2}}{2}$.</div>
+        </div>
+    </div>
+
+    <!-- 7.E -->
+    <div class="practice-section">
+        <div class="practice-header">Section 7.E — Riemann Sums and Trapezoidal Approximation (6 Questions)</div>
+        <div class="practice-body">
+            <div class="problem"><strong>25.</strong> A function $f(x)$ is given by the table below. Approximate $\int_0^4 f(x)\,dx$ using a <strong>left Riemann sum</strong> with 4 equal subintervals ($\Delta x = 1$).
+                <table style="margin-top:10px; width:auto;">
+                    <thead><tr><th>$x$</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+                    <tbody><tr><td>$f(x)$</td><td>3</td><td>5</td><td>6</td><td>4</td><td>2</td></tr></tbody>
+                </table>
+            </div>
+            <div class="problem"><strong>26.</strong> Using the same table from Problem 25, approximate $\int_0^4 f(x)\,dx$ using a <strong>right Riemann sum</strong> with 4 equal subintervals.</div>
+            <div class="problem"><strong>27.</strong> Using the same table from Problem 25, approximate $\int_0^4 f(x)\,dx$ using the <strong>trapezoidal rule</strong>.</div>
+            <div class="problem"><strong>28.</strong> A car's velocity (in ft/sec) is recorded every 2 seconds. Use a <strong>left Riemann sum</strong> to approximate the total distance traveled from $t = 0$ to $t = 6$ seconds.
+                <table style="margin-top:10px; width:auto;">
+                    <thead><tr><th>$t$ (sec)</th><th>0</th><th>2</th><th>4</th><th>6</th></tr></thead>
+                    <tbody><tr><td>$v(t)$ (ft/sec)</td><td>10</td><td>18</td><td>24</td><td>28</td></tr></tbody>
+                </table>
+            </div>
+            <div class="problem"><strong>29.</strong> For a function that is <strong>increasing and concave up</strong>, which Riemann sum method gives an overestimate, and which gives an underestimate? Explain why.</div>
+            <div class="problem"><strong>30.</strong> Suppose $f(x) = x^2$ on $[0, 2]$ with $n = 4$ subintervals. Calculate $\Delta x$ and use the <strong>trapezoidal rule</strong> to approximate $\int_0^2 x^2\,dx$.</div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ANSWER KEY -->
+    <div class="answer-key">
+        <h2>Answer Key</h2>
+
+        <h3>Section 7.A</h3>
+        <div class="answer"><strong>1.</strong> $\sin\!\left(\dfrac{5\pi}{6}\right) = \dfrac{1}{2}$. &nbsp; Reference angle $= \dfrac{\pi}{6}$; Quadrant II → sine is positive.</div>
+        <div class="answer"><strong>2.</strong> $\cos\!\left(\dfrac{7\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$. &nbsp; Reference angle $= \dfrac{\pi}{4}$; Quadrant IV → cosine is positive.</div>
+        <div class="answer"><strong>3.</strong> $\tan\!\left(\dfrac{4\pi}{3}\right) = \sqrt{3}$. &nbsp; Reference angle $= \dfrac{\pi}{3}$; Quadrant III → tangent is positive.</div>
+        <div class="answer"><strong>4.</strong> $\csc\!\left(\dfrac{2\pi}{3}\right) = \dfrac{2}{\sqrt{3}} = \dfrac{2\sqrt{3}}{3}$. &nbsp; $\sin\!\left(\dfrac{2\pi}{3}\right) = \dfrac{\sqrt{3}}{2}$; csc is its reciprocal.</div>
+        <div class="answer"><strong>5.</strong> $\dfrac{17\pi}{6} - 2\pi = \dfrac{17\pi}{6} - \dfrac{12\pi}{6} = \dfrac{5\pi}{6}$. &nbsp; $\cos\!\left(\dfrac{5\pi}{6}\right) = -\dfrac{\sqrt{3}}{2}$ (Quadrant II; reference angle $\dfrac{\pi}{6}$; cosine is negative).</div>
+        <div class="answer"><strong>6.</strong> $\theta = \dfrac{5\pi}{4}$ is in Quadrant III; reference angle $= \dfrac{\pi}{4}$. Point: $\!\left(-\dfrac{\sqrt{2}}{2},\, -\dfrac{\sqrt{2}}{2}\right)$. <br>
+            $\sin = -\dfrac{\sqrt{2}}{2}$, $\cos = -\dfrac{\sqrt{2}}{2}$, $\tan = 1$, $\csc = -\sqrt{2}$, $\sec = -\sqrt{2}$, $\cot = 1$.</div>
+
+        <h3>Section 7.B</h3>
+        <div class="answer"><strong>7.</strong> $\cos\theta = \dfrac{4}{5}$ (QI, Pythagorean theorem on $3{-}4{-}5$ triangle). $\sin(2\theta) = 2\cdot\dfrac{3}{5}\cdot\dfrac{4}{5} = \dfrac{24}{25}$.</div>
+        <div class="answer"><strong>8.</strong> $\cos(2\theta) = 2\cos^2\theta - 1 = 2\!\left(\dfrac{1}{4}\right) - 1 = -\dfrac{1}{2}$. &nbsp; (Or: $\cos^2\theta - \sin^2\theta$ with $\sin\theta = \dfrac{\sqrt{3}}{2}$ gives the same result.)</div>
+        <div class="answer"><strong>9.</strong> $\dfrac{\sin^2\theta + \cos^2\theta}{\cos\theta} = \dfrac{1}{\cos\theta} = \sec\theta$.</div>
+        <div class="answer"><strong>10.</strong> $1 - \sin^2\theta = \cos^2\theta$ &nbsp; (from $\sin^2\theta + \cos^2\theta = 1$).</div>
+        <div class="answer"><strong>11.</strong> $\cos\!\left(\dfrac{\pi}{2}\right) = 1 - 2\sin^2\!\left(\dfrac{\pi}{4}\right) = 1 - 2\!\left(\dfrac{\sqrt{2}}{2}\right)^{\!2} = 1 - 2\cdot\dfrac{1}{2} = 0$. ✓</div>
+        <div class="answer"><strong>12.</strong> $\dfrac{\tan\theta}{\sec\theta} = \dfrac{\sin\theta/\cos\theta}{1/\cos\theta} = \sin\theta$.</div>
+
+        <h3>Section 7.C</h3>
+        <div class="answer"><strong>13.</strong> $\sin(75°) = \sin(45°+30°) = \sin 45°\cos 30° + \cos 45°\sin 30° = \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{6}+\sqrt{2}}{4}$.</div>
+        <div class="answer"><strong>14.</strong> $\cos(15°) = \cos(45°-30°) = \cos 45°\cos 30° + \sin 45°\sin 30° = \dfrac{\sqrt{2}}{2}\cdot\dfrac{\sqrt{3}}{2} + \dfrac{\sqrt{2}}{2}\cdot\dfrac{1}{2} = \dfrac{\sqrt{6}+\sqrt{2}}{4}$.</div>
+        <div class="answer"><strong>15.</strong> $\dfrac{\pi}{8}$ is in Quadrant I → sine is positive. $\sin\!\left(\dfrac{\pi}{8}\right) = \sqrt{\dfrac{1-\cos(\pi/4)}{2}} = \sqrt{\dfrac{1-\frac{\sqrt{2}}{2}}{2}} = \sqrt{\dfrac{2-\sqrt{2}}{4}} = \dfrac{\sqrt{2-\sqrt{2}}}{2}$.</div>
+        <div class="answer"><strong>16.</strong> $\dfrac{3\pi}{8}$ is in Quadrant I → cosine is positive. $\cos\!\left(\dfrac{3\pi}{8}\right) = \sqrt{\dfrac{1+\cos(3\pi/4)}{2}} = \sqrt{\dfrac{1-\frac{\sqrt{2}}{2}}{2}} = \dfrac{\sqrt{2-\sqrt{2}}}{2}$.</div>
+        <div class="answer"><strong>17.</strong> From Pythagorean theorem: $\cos A = \dfrac{3}{5}$, $\cos B = \dfrac{12}{13}$. $\sin(A+B) = \dfrac{4}{5}\cdot\dfrac{12}{13} + \dfrac{3}{5}\cdot\dfrac{5}{13} = \dfrac{48}{65} + \dfrac{15}{65} = \dfrac{63}{65}$.</div>
+        <div class="answer"><strong>18.</strong> $\tan\!\left(\dfrac{\pi}{12}\right) = \dfrac{\sin(\pi/6)}{1+\cos(\pi/6)} = \dfrac{1/2}{1+\sqrt{3}/2} = \dfrac{1/2}{(2+\sqrt{3})/2} = \dfrac{1}{2+\sqrt{3}} = 2-\sqrt{3}$ (after rationalizing).</div>
+
+        <h3>Section 7.D</h3>
+        <div class="answer"><strong>19.</strong> Reference angle: $\dfrac{\pi}{3}$. Sine is negative in QIII and QIV. $\theta = \dfrac{4\pi}{3}$ and $\theta = \dfrac{5\pi}{3}$.</div>
+        <div class="answer"><strong>20.</strong> Reference angle: $\dfrac{\pi}{3}$. Cosine is positive in QI and QIV. $\theta = \dfrac{\pi}{3}$ and $\theta = \dfrac{5\pi}{3}$.</div>
+        <div class="answer"><strong>21.</strong> $\sin^2\theta = \dfrac{1}{2}$, so $\sin\theta = \pm\dfrac{\sqrt{2}}{2}$. Solutions: $\theta = \dfrac{\pi}{4},\, \dfrac{3\pi}{4},\, \dfrac{5\pi}{4},\, \dfrac{7\pi}{4}$.</div>
+        <div class="answer"><strong>22.</strong> $\tan\theta = -1$. Reference angle $= \dfrac{\pi}{4}$. Tangent is negative in QII and QIV. $\theta = \dfrac{3\pi}{4}$ and $\theta = \dfrac{7\pi}{4}$.</div>
+        <div class="answer"><strong>23.</strong> $2\sin\theta\cos\theta = \sin(2\theta) = 1$. So $2\theta = \dfrac{\pi}{2}$ or $2\theta = \dfrac{5\pi}{2}$. Solving: $\theta = \dfrac{\pi}{4}$ and $\theta = \dfrac{5\pi}{4}$ in $[0, 2\pi)$.</div>
+        <div class="answer"><strong>24.</strong> Reference angle $= \dfrac{\pi}{4}$. Sine is positive in QI and QII. General solution: $\theta = \dfrac{\pi}{4} + 2\pi n$ and $\theta = \dfrac{3\pi}{4} + 2\pi n$, where $n \in \mathbb{Z}$.</div>
+
+        <h3>Section 7.E</h3>
+        <div class="answer"><strong>25.</strong> Left Riemann Sum ($\Delta x = 1$): $L_4 = 1\cdot[f(0)+f(1)+f(2)+f(3)] = 3+5+6+4 = \mathbf{18}$.</div>
+        <div class="answer"><strong>26.</strong> Right Riemann Sum: $R_4 = 1\cdot[f(1)+f(2)+f(3)+f(4)] = 5+6+4+2 = \mathbf{17}$.</div>
+        <div class="answer"><strong>27.</strong> Trapezoidal Rule: $T_4 = \dfrac{1}{2}[f(0)+2f(1)+2f(2)+2f(3)+f(4)] = \dfrac{1}{2}[3+10+12+8+2] = \dfrac{35}{2} = \mathbf{17.5}$.</div>
+        <div class="answer"><strong>28.</strong> $\Delta t = 2$. Left Riemann Sum: $L_3 = 2\cdot[v(0)+v(2)+v(4)] = 2\cdot[10+18+24] = 2\cdot 52 = \mathbf{104 \text{ ft}}$.</div>
+        <div class="answer"><strong>29.</strong> For an increasing function: the <strong>left Riemann sum underestimates</strong> (rectangles lie below the curve) and the <strong>right Riemann sum overestimates</strong> (rectangles extend above the curve). The trapezoidal rule provides a better approximation by averaging the two. For a concave up function, the trapezoidal rule still overestimates because the trapezoids lie above the curve.</div>
+        <div class="answer"><strong>30.</strong> $\Delta x = \dfrac{2-0}{4} = 0.5$. Subinterval endpoints: $x = 0, 0.5, 1, 1.5, 2$. Function values: $0, 0.25, 1, 2.25, 4$. <br>$T_4 = \dfrac{0.5}{2}[0 + 2(0.25) + 2(1) + 2(2.25) + 4] = 0.25\cdot[0 + 0.5 + 2 + 4.5 + 4] = 0.25 \cdot 11 = \mathbf{2.75}$. <br><em>(Exact value: $\dfrac{8}{3} \approx 2.667$; trapezoidal rule slightly overestimates for concave-up $f$.)</em></div>
+    </div>
+
+</div>
+</body>
+</html>
