@@ -1,244 +1,593 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Section 7.D</title>
-<script>
-window.MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']] }, svg: { fontCache: 'global' } };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<style>
-body{margin:0.5in;font-family:Arial;line-height:1.6;}
-.workspace{display:flex;gap:40px;min-height:260px;margin-top:15px;}
-.question{font-size:1.2em;margin-top:28px;}
-  /* ============================= */
-/* PRINT STRUCTURE CONTROL       */
-/* ============================= */
-
-@media print {
-
-  /* Remove flex for clean page splitting */
-  .workspace {
-    display: block !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Keep question attached to workspace */
-  .question {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  /* Keep headers attached to content below */
-  h1, h2, h3 {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
-  /* Avoid awkward paragraph splits */
-  p, ul {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.D: Solving Advanced Trigonometric Equations</title>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7; color: #333; background-color: #f5f5f5; padding: 20px;
+        }
+        .container {
+            max-width: 900px; margin: 0 auto; background-color: white;
+            padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .title-page {
+            text-align: center; border-bottom: 3px solid #00003d;
+            padding-bottom: 30px; margin-bottom: 30px;
+        }
+        .section-number { color: #00003d; font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+        h1 { color: #00003d; font-size: 2.5em; margin-bottom: 20px; margin-top: 0; }
+        .intro-text { font-size: 1.05em; color: #555; max-width: 800px; margin: 0 auto 15px auto; font-style: italic; }
+        .inspirational { font-size: 1.15em; color: #004d99; font-style: italic; text-align: center; margin: 18px auto 0 auto; max-width: 700px; padding: 10px 0 0 0; }
+        h2 { color: #00003d; font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; border-left: 5px solid #00003d; padding-left: 15px; }
+        h3 { color: #004d99; font-size: 1.3em; margin-top: 25px; margin-bottom: 15px; }
+        .objectives { background-color: #f0f4f8; padding: 20px; border-radius: 6px; margin-bottom: 30px; }
+        .objectives ul { list-style-position: inside; margin-left: 20px; }
+        .objectives li { margin-bottom: 10px; }
+        .section-content { margin-bottom: 40px; line-height: 1.8; }
+        p { margin-bottom: 12px; }
+        ul { margin-left: 30px; margin-bottom: 12px; }
+        ul li { margin-bottom: 6px; }
+        ol { margin-left: 30px; margin-bottom: 12px; }
+        ol li { margin-bottom: 6px; }
+        .definition { background-color: #fffacd; border-left: 4px solid #ffd700; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .definition strong { color: #00003d; }
+        .example { background-color: #f9f9f9; border: 2px solid #00003d; padding: 20px; margin: 20px 0; border-radius: 6px; }
+        .example h4 { color: #00003d; margin-bottom: 10px; font-size: 1.1em; }
+        .solution { background-color: #f0f0f0; padding: 15px; margin-top: 15px; border-radius: 4px; font-size: 0.95em; line-height: 1.6; }
+        .solution p { margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #00003d; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .summary { background-color: #f0f4f8; border-left: 5px solid #00003d; padding: 20px; margin: 30px 0; border-radius: 6px; }
+        .summary h3 { margin-top: 0; }
+        .summary ul { list-style-position: inside; }
+        .summary li { margin-bottom: 8px; }
+        .practice-problems { background-color: #f0f4f8; padding: 20px; border-radius: 6px; margin: 30px 0; }
+        .practice-problems h3 { margin-top: 0; }
+        .problem { background-color: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #004d99; }
+        .answer-key { background-color: #f5f5f5; padding: 20px; border-radius: 6px; margin-top: 40px; }
+        .answer-key h3 { margin-top: 0; }
+        .answer { background-color: white; padding: 15px; margin: 10px 0; border-radius: 4px; border-left: 4px solid #28a745; }
+        .answer p { margin-bottom: 8px; }
+        .historical-note { background-color: #ffe6e6; border-left: 4px solid #ff6666; padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 0.95em; }
+        .historical-note strong { color: #cc0000; }
+        .key-point { background-color: #e8f5e9; border-left: 4px solid #4caf50; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .key-point strong { color: #2e7d32; }
+        .common-mistakes { background-color: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .common-mistakes h4 { color: #e65100; margin-bottom: 10px; font-size: 1.1em; }
+        .connections { background-color: #f3e5f5; border-left: 4px solid #9c27b0; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .connections strong { color: #6a1b9a; }
+        .key-equation { background-color: #e6f2ff; border: 2px solid #004d99; padding: 20px; margin: 20px 0; border-radius: 6px; text-align: center; }
+        .figure-box { text-align: center; margin: 25px 0; padding: 15px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px; }
+        .figure-caption { font-size: 0.9em; color: #555; margin-top: 10px; font-style: italic; }
+        .realworld { background-color: #e3f2fd; border-left: 4px solid #1976d2; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .realworld strong { color: #0d47a1; }
+    </style>
 </head>
 <body>
+<div class="container">
 
-<h1>SECTION 7.D<br>Solving Advanced Trigonometric Equations</h1>
+    <!-- TITLE PAGE -->
+    <div class="title-page">
+        <div class="section-number">SECTION 7.D</div>
+        <h1>Solving Advanced Trigonometric Equations</h1>
+        <div class="intro-text">
+            Solving a trigonometric equation combines everything you have learned about the unit circle,
+            reference angles, quadrant signs, and algebraic manipulation — all in one problem. Unlike
+            a simple algebraic equation where $x = 3$ might be the only answer, a trig equation can
+            have infinitely many solutions because trig functions repeat. Learning to find all of them,
+            precisely and systematically, is the goal of this section.
+        </div>
+        <div class="inspirational">
+            &#8220; Every equation is a question. The unit circle already knows the answer &mdash; your job is to listen carefully. &#8221;
+        </div>
+    </div>
 
-<h2>Learning Objectives</h2>
-<ul>
-<li>I can solve basic trigonometric equations visually for all six trig functions.</li>
-<li>I can solve linear trigonometric equations in radians involving secant, cosecant, and cotangent.</li>
-<li>I can solve advanced trigonometric equations in radians and verify solutions.</li>
-<li>I can attend to precision when writing general solutions.</li>
-</ul>
+    <!-- LEARNING OBJECTIVES -->
+    <section class="objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>I can solve basic trigonometric equations for all six trig functions in $[0, 2\pi)$.</li>
+            <li>I can solve linear trigonometric equations in radians involving secant, cosecant, and cotangent.</li>
+            <li>I can solve advanced trigonometric equations in radians, including quadratic and double-angle types, and verify solutions.</li>
+            <li>I can write general solutions using correct period notation.</li>
+        </ul>
+    </section>
 
-<h2>Real-World Application</h2>
+    <!-- INTRODUCTION -->
+    <section class="section-content">
+        <h2>Introduction: When Angles Are Unknowns</h2>
 
-<p>Trigonometric equations are used whenever motion repeats in cycles.</p>
+        <p>
+            In Sections 7.A through 7.C, the angle was always given — your job was to find the
+            trig value. Now we flip that around. The trig value is given, and your job is to find
+            the angle. This is the essence of solving a trigonometric equation.
+        </p>
+        <p>
+            Consider the equation $\sin\theta = \frac{1}{2}$. From the unit circle, you know that
+            $\sin\left(\frac{\pi}{6}\right) = \frac{1}{2}$. But sine is also $\frac{1}{2}$ at
+            $\theta = \frac{5\pi}{6}$, because both angles are in quadrants where sine is positive
+            and share the same reference angle. That gives us two solutions in $[0, 2\pi)$.
+            And since sine repeats every $2\pi$, there are actually infinitely many solutions —
+            all described by the <strong>general solution</strong>.
+        </p>
+        <p>
+            The four-step strategy for solving any trig equation is always the same: isolate the
+            trig function, find the reference angle, identify all quadrants where the function has
+            the correct sign, and then list every solution in the interval (or write the general form).
+            The algebra at the beginning may look different depending on the equation type, but the
+            core process never changes.
+        </p>
+        <p>
+            This section also introduces equations involving the reciprocal functions — secant,
+            cosecant, and cotangent. The key insight for all three is to <strong>convert to sine
+            or cosine first</strong>, then solve as usual. These equations are not harder — they
+            just have one extra translation step at the beginning.
+        </p>
 
-<p>Examples include:</p>
-<ul>
-<li>The position of a Ferris wheel rider</li>
-<li>Tidal height changes</li>
-<li>Alternating current in electrical circuits</li>
-<li>Seasonal temperature models</li>
-</ul>
+        <div class="realworld">
+            <strong>&#127758; Real-World Application — Ferris Wheel Height:</strong><br><br>
+            Suppose the height (in feet) of a rider on a Ferris wheel is modeled by:
+            $$h(t) = 20 + 18\sin\left(\frac{\pi}{6}t\right)$$
+            where $t$ is time in minutes. To find when the rider is exactly 29 feet above the ground,
+            we solve:
+            $$20 + 18\sin\left(\frac{\pi}{6}t\right) = 29$$
+            $$\sin\left(\frac{\pi}{6}t\right) = \frac{1}{2}$$
+            This is a trig equation. Solving it tells us the exact times the rider reaches 29 feet —
+            not just once, but every time around the wheel. This section gives you the tools to
+            solve exactly this kind of problem.
+        </div>
 
-<p>Suppose the height (in feet) of a rider on a Ferris wheel is modeled by:</p>
+        <div class="historical-note">
+            <strong>&#128218; Historical Note:</strong> Solving trigonometric equations became important
+            in the 17th century alongside the study of oscillatory motion — pendulums, waves, and
+            planetary orbits. <strong>Galileo Galilei</strong> (1564–1642) noticed that pendulums
+            swing in regular time intervals, and <strong>Isaac Newton</strong> (1643–1727) used
+            trigonometric equations to model gravitational and wave phenomena. The concept of a
+            general solution — using integer $n$ to represent infinite periodic repetitions — was
+            formalized as algebra and trigonometry merged into modern mathematical notation during
+            the 18th century.
+        </div>
 
-<p>$h(t)=20+18\sin\left(\frac{\pi}{6}t\right)$</p>
+        <div class="connections">
+            <strong>&#128279; Connections to Other Subjects and Real Life:</strong><br><br>
+            <strong>Physics — Simple Harmonic Motion:</strong> Any oscillating system (spring, pendulum,
+            sound wave) is modeled by $x(t) = A\sin(\omega t + \phi)$. Solving for specific positions
+            or times requires solving trig equations like those in this section.<br><br>
+            <strong>Electrical Engineering:</strong> AC voltage alternates as $V(t) = V_0\sin(2\pi f t)$.
+            Engineers solve trig equations to find the exact times when voltage crosses a threshold —
+            for example, when safety cutoffs should activate.<br><br>
+            <strong>Astronomy:</strong> The position of a planet in its orbit as a function of time
+            involves solving trig equations. Astronomers use these to predict eclipses, conjunctions,
+            and the timing of seasonal events.<br><br>
+            <strong>Calculus:</strong> Finding where a trig function equals zero or reaches a
+            maximum/minimum — critical for optimization problems — requires solving trig equations.
+            This section builds the exact skill needed for that.
+        </div>
+    </section>
 
-<p>If we want to know when the rider is exactly 29 feet above the ground, we solve:</p>
+    <!-- KEY VOCABULARY -->
+    <section class="section-content">
+        <h2>Key Vocabulary and Concepts</h2>
 
-<p>$20+18\sin\left(\frac{\pi}{6}t\right)=29$</p>
+        <div class="definition">
+            <strong>Principal Solutions:</strong> The solutions to a trig equation that fall within
+            one complete cycle, typically $0 \leq \theta < 2\pi$. These are the "base" solutions
+            from which all others are generated.
+        </div>
 
-<p>This requires isolating the trig function and solving the equation within a time interval.</p>
-<div style="page-break-before: always;"></div>
-<h2>Introduction</h2>
+        <div class="definition">
+            <strong>General Solution:</strong> The complete set of all solutions to a trig equation,
+            expressed using $+ n$ notation where $n$ is any integer. The period of the function
+            determines the spacing: sine and cosine use $+\, 2\pi n$, while tangent uses $+\, \pi n$.
+        </div>
 
-<p>In previous sections, we evaluated and rewrote trigonometric expressions.</p>
+        <div class="definition">
+            <strong>Reference Angle:</strong> The acute angle between the terminal side of $\theta$
+            and the x-axis. In a trig equation, once you know the reference angle from the given value,
+            you find all quadrant solutions by applying ASTC.
+        </div>
 
-<p>Now we solve equations.</p>
+        <div class="definition">
+            <strong>Quadratic-Type Trig Equation:</strong> An equation where a trig function is
+            squared, such as $2\sin^2\theta - 1 = 0$. These are solved like quadratic equations —
+            by factoring or taking square roots — except the variable is a trig function rather than $x$.
+        </div>
 
-<p>Solving trig equations requires:</p>
+        <h3>The Four-Step Solving Strategy</h3>
+        <div class="key-point">
+            <strong>&#10003; Strategy for Solving Any Trig Equation:</strong>
+            <ol style="margin-left: 25px; margin-top: 8px;">
+                <li style="margin-bottom: 8px;"><strong>Isolate the trig function.</strong> Use algebra to get the trig function alone on one side. If the equation involves sec, csc, or cot, rewrite in terms of cos, sin, or tan first.</li>
+                <li style="margin-bottom: 8px;"><strong>Find the reference angle.</strong> Use the unit circle to identify the acute angle whose trig value matches the absolute value of the right side.</li>
+                <li style="margin-bottom: 8px;"><strong>Identify all quadrants.</strong> Use the sign of the right side and the ASTC rule to determine which quadrants contain solutions.</li>
+                <li style="margin-bottom: 8px;"><strong>List all solutions in the interval.</strong> Write the angle in each correct quadrant. If a general solution is required, append $+\, 2\pi n$ (or $+\, \pi n$ for tangent/cotangent).</li>
+            </ol>
+        </div>
 
-<ul>
-<li>Isolating the trig function</li>
-<li>Finding reference angles</li>
-<li>Determining all solutions in an interval</li>
-<li>Writing general solutions when required</li>
-</ul>
+        <h3>Period Reference for General Solutions</h3>
+        <table>
+            <thead>
+                <tr><th>Function</th><th>Period</th><th>General Solution Form</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$\sin\theta$</td><td>$2\pi$</td><td>$\theta = \alpha + 2\pi n$ and $\theta = (\pi - \alpha) + 2\pi n$</td><td>$\sin\theta = \frac{1}{2}$: $\frac{\pi}{6} + 2\pi n$, $\frac{5\pi}{6} + 2\pi n$</td></tr>
+                <tr><td>$\cos\theta$</td><td>$2\pi$</td><td>$\theta = \alpha + 2\pi n$ and $\theta = -\alpha + 2\pi n$</td><td>$\cos\theta = \frac{1}{2}$: $\frac{\pi}{3} + 2\pi n$, $\frac{5\pi}{3} + 2\pi n$</td></tr>
+                <tr><td>$\tan\theta$</td><td>$\pi$</td><td>$\theta = \alpha + \pi n$</td><td>$\tan\theta = 1$: $\frac{\pi}{4} + \pi n$</td></tr>
+                <tr><td>$\csc\theta$</td><td>$2\pi$</td><td>Convert to $\sin\theta = \frac{1}{k}$, then solve</td><td>Same as sine solutions</td></tr>
+                <tr><td>$\sec\theta$</td><td>$2\pi$</td><td>Convert to $\cos\theta = \frac{1}{k}$, then solve</td><td>Same as cosine solutions</td></tr>
+                <tr><td>$\cot\theta$</td><td>$\pi$</td><td>Convert to $\tan\theta = \frac{1}{k}$, then solve</td><td>Same as tangent solutions</td></tr>
+            </tbody>
+        </table>
 
-<p>Precision matters.</p>
+        <h3>Visual: Solutions of $\sin\theta = \frac{1}{2}$ on the Unit Circle</h3>
+        <div class="figure-box">
+            <svg viewBox="-200 -200 400 400" width="340" height="340">
+                <!-- Circle -->
+                <circle cx="0" cy="0" r="160" stroke="#00003d" stroke-width="2" fill="none"/>
+                <!-- Axes -->
+                <line x1="-185" y1="0" x2="185" y2="0" stroke="#333" stroke-width="1.5"/>
+                <line x1="0" y1="-185" x2="0" y2="185" stroke="#333" stroke-width="1.5"/>
+                <!-- y = 1/2 horizontal line -->
+                <line x1="-185" y1="-80" x2="185" y2="-80" stroke="#cc0000" stroke-width="1.5" stroke-dasharray="6,4"/>
+                <text x="148" y="-86" font-size="11" fill="#cc0000" font-family="serif">y = ½</text>
+                <!-- QI solution: pi/6 -->
+                <line x1="0" y1="0" x2="139" y2="-80" stroke="#004d99" stroke-width="2"/>
+                <circle cx="139" cy="-80" r="6" fill="#004d99"/>
+                <text x="143" y="-88" font-size="11" fill="#004d99" font-family="serif">π/6</text>
+                <!-- QII solution: 5pi/6 -->
+                <line x1="0" y1="0" x2="-139" y2="-80" stroke="#2e7d32" stroke-width="2"/>
+                <circle cx="-139" cy="-80" r="6" fill="#2e7d32"/>
+                <text x="-178" y="-88" font-size="11" fill="#2e7d32" font-family="serif">5π/6</text>
+                <!-- Arc for pi/6 -->
+                <path d="M 40,0 A 40,40 0 0,0 34.6,-20" fill="none" stroke="#004d99" stroke-width="1.5"/>
+                <!-- Arc for 5pi/6 -->
+                <path d="M 40,0 A 120,120 0 0,0 -34.6,-20" fill="none" stroke="#2e7d32" stroke-width="1.5"/>
+                <!-- Quadrant labels -->
+                <text x="50" y="-40" font-size="13" fill="#004d99" font-weight="bold" font-family="sans-serif">I</text>
+                <text x="-70" y="-40" font-size="13" fill="#2e7d32" font-weight="bold" font-family="sans-serif">II</text>
+                <text x="-70" y="55" font-size="13" fill="#999" font-weight="bold" font-family="sans-serif">III</text>
+                <text x="50" y="55" font-size="13" fill="#999" font-weight="bold" font-family="sans-serif">IV</text>
+                <!-- Labels -->
+                <text x="-18" y="198" font-size="10" fill="#555" font-family="sans-serif" text-anchor="middle">Two solutions where the</text>
+                <text x="-18" y="210" font-size="10" fill="#555" font-family="sans-serif" text-anchor="middle">horizontal line crosses the circle</text>
+            </svg>
+            <div class="figure-caption">Figure 7.D.1 — $\sin\theta = \frac{1}{2}$ has two solutions in $[0, 2\pi)$: $\frac{\pi}{6}$ (QI) and $\frac{5\pi}{6}$ (QII). The horizontal line $y = \frac{1}{2}$ intersects the unit circle at exactly these two points.</div>
+        </div>
 
-<h2>Key Vocabulary</h2>
+        <h3>Reciprocal Function Conversion</h3>
+        <table>
+            <thead>
+                <tr><th>Equation</th><th>Rewrite As</th><th>Then Solve</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$\csc\theta = k$</td><td>$\sin\theta = \dfrac{1}{k}$</td><td>Standard sine equation</td></tr>
+                <tr><td>$\sec\theta = k$</td><td>$\cos\theta = \dfrac{1}{k}$</td><td>Standard cosine equation</td></tr>
+                <tr><td>$\cot\theta = k$</td><td>$\tan\theta = \dfrac{1}{k}$</td><td>Standard tangent equation</td></tr>
+            </tbody>
+        </table>
+    </section>
 
-<p><strong>Principal Solution:</strong> Solutions within one cycle, typically $0 \le \theta < 2\pi$.</p>
-<p><strong>General Solution:</strong> All solutions written using appropriate period notation.</p>
-<p><strong>Period:</strong> Length of one complete cycle.</p>
+    <!-- COMMON MISTAKES -->
+    <section class="section-content">
+        <div class="common-mistakes">
+            <h4>&#9888; Common Mistakes to Avoid</h4>
+            <p><strong>Mistake 1 — Finding only one solution:</strong>
+            Most trig equations have two solutions in $[0, 2\pi)$. After finding the reference angle,
+            always check both quadrants where the sign is correct. For example, $\sin\theta = \frac{\sqrt{2}}{2}$
+            has solutions in <em>both</em> QI and QII: $\frac{\pi}{4}$ and $\frac{3\pi}{4}$.</p>
+            <br>
+            <p><strong>Mistake 2 — Using the wrong period for general solutions:</strong>
+            Sine and cosine repeat every $2\pi$, so general solutions use $+ 2\pi n$.
+            Tangent (and cotangent) repeat every $\pi$, so their general solutions use $+ \pi n$.
+            Using $2\pi n$ for tangent will miss half of the solutions.</p>
+            <br>
+            <p><strong>Mistake 3 — Leaving answers in degrees when radians are required:</strong>
+            This course works in radians. Always express final answers as fractions of $\pi$,
+            not as decimal degrees. $\frac{\pi}{3}$ is correct; $60°$ is not the expected form.</p>
+            <br>
+            <p><strong>Mistake 4 — Dividing by a trig function instead of factoring:</strong>
+            If you have $\cos\theta(2\sin\theta - 1) = 0$, do <em>not</em> divide both sides by
+            $\cos\theta$. You would lose the solutions where $\cos\theta = 0$. Instead, set each
+            factor equal to zero separately.</p>
+            <br>
+            <p><strong>Mistake 5 — Double-angle equations: forgetting to divide by 2 at the end:</strong>
+            When solving $\cos(2\theta) = 0$, substitute $u = 2\theta$ and solve for $u$ first
+            (getting values in $[0, 4\pi)$ since $u = 2\theta$ can range up to $4\pi$).
+            Then divide each $u$ value by 2 to get $\theta$. Students often forget the last step.</p>
+        </div>
+    </section>
 
-<h2>Core Strategy</h2>
+    <!-- EXAMPLES -->
+    <section class="section-content">
+        <h2>Worked Examples</h2>
 
-<ul>
-<li>Step 1: Isolate the trig function.</li>
-<li>Step 2: Identify the reference angle.</li>
-<li>Step 3: Determine all solutions in the interval.</li>
-<li>Step 4: Write the general solution if required.</li>
-</ul>
-<div style="page-break-before: always;"></div>
-<h2>Examples</h2>
+        <div class="example">
+            <h4>Example 1: Basic Sine Equation — Solve $\sin\theta = \dfrac{1}{2}$ for $0 \leq \theta < 2\pi$</h4>
+            <div class="solution">
+                <p><strong>Step 1: The trig function is already isolated.</strong></p>
+                <p><strong>Step 2: Find the reference angle.</strong><br>
+                $\sin^{-1}\!\left(\frac{1}{2}\right) = \frac{\pi}{6}$ &nbsp; (the reference angle is $\frac{\pi}{6}$)</p>
+                <p><strong>Step 3: Determine quadrants.</strong><br>
+                The right side is positive ($+\frac{1}{2}$), so we need quadrants where sine is positive: <strong>QI and QII</strong>.</p>
+                <p><strong>Step 4: Write solutions.</strong></p>
+                <ul>
+                    <li>QI: $\theta = \frac{\pi}{6}$</li>
+                    <li>QII: $\theta = \pi - \frac{\pi}{6} = \frac{5\pi}{6}$</li>
+                </ul>
+                <p><strong>Final Answer: $\theta = \dfrac{\pi}{6},\; \dfrac{5\pi}{6}$</strong></p>
+                <p>General solution: $\theta = \dfrac{\pi}{6} + 2\pi n$ and $\theta = \dfrac{5\pi}{6} + 2\pi n$, where $n$ is any integer.</p>
+            </div>
+        </div>
 
-<div class="question">Example 1: Solve $\sin\theta=\frac{1}{2}$ for $0\le\theta<2\pi$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="example">
+            <h4>Example 2: Linear Equation — Solve $2\cos\theta - 1 = 0$ for $0 \leq \theta < 2\pi$</h4>
+            <div class="solution">
+                <p><strong>Step 1: Isolate the trig function.</strong></p>
+                $$2\cos\theta = 1 \implies \cos\theta = \frac{1}{2}$$
+                <p><strong>Step 2: Find the reference angle.</strong><br>
+                $\cos\left(\frac{\pi}{3}\right) = \frac{1}{2}$, so the reference angle is $\frac{\pi}{3}$.</p>
+                <p><strong>Step 3: Cosine is positive in QI and QIV.</strong></p>
+                <p><strong>Step 4: Write solutions.</strong></p>
+                <ul>
+                    <li>QI: $\theta = \frac{\pi}{3}$</li>
+                    <li>QIV: $\theta = 2\pi - \frac{\pi}{3} = \frac{5\pi}{3}$</li>
+                </ul>
+                <p><strong>Final Answer: $\theta = \dfrac{\pi}{3},\; \dfrac{5\pi}{3}$</strong></p>
+            </div>
+        </div>
 
-<div class="question">Example 2: Solve $2\cos\theta-1=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="example">
+            <h4>Example 3: Reciprocal Function — Solve $\sec\theta = 2$ for $0 \leq \theta < 2\pi$</h4>
+            <div class="solution">
+                <p><strong>Step 1: Rewrite in terms of cosine.</strong><br>
+                $\sec\theta = 2 \implies \cos\theta = \dfrac{1}{2}$</p>
+                <p><strong>Step 2: Reference angle.</strong><br>
+                $\cos\left(\frac{\pi}{3}\right) = \frac{1}{2}$, so reference angle $= \frac{\pi}{3}$.</p>
+                <p><strong>Step 3: Cosine is positive in QI and QIV.</strong></p>
+                <p><strong>Step 4: Write solutions.</strong></p>
+                <ul>
+                    <li>QI: $\theta = \frac{\pi}{3}$</li>
+                    <li>QIV: $\theta = 2\pi - \frac{\pi}{3} = \frac{5\pi}{3}$</li>
+                </ul>
+                <p><strong>Final Answer: $\theta = \dfrac{\pi}{3},\; \dfrac{5\pi}{3}$</strong></p>
+            </div>
+        </div>
 
-<div class="question">Example 3: Solve $\sec\theta=2$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="example">
+            <h4>Example 4: Quadratic-Type — Solve $2\sin^2\theta - 1 = 0$ for $0 \leq \theta < 2\pi$</h4>
+            <div class="solution">
+                <p><strong>Step 1: Isolate $\sin^2\theta$.</strong></p>
+                $$2\sin^2\theta = 1 \implies \sin^2\theta = \frac{1}{2}$$
+                <p><strong>Step 2: Take the square root (include $\pm$).</strong></p>
+                $$\sin\theta = \pm\frac{1}{\sqrt{2}} = \pm\frac{\sqrt{2}}{2}$$
+                <p><strong>Step 3: Solve each case.</strong></p>
+                <p><em>Case 1:</em> $\sin\theta = +\frac{\sqrt{2}}{2}$ → Reference angle $= \frac{\pi}{4}$ → QI and QII:<br>
+                $\theta = \frac{\pi}{4}$ and $\theta = \frac{3\pi}{4}$</p>
+                <p><em>Case 2:</em> $\sin\theta = -\frac{\sqrt{2}}{2}$ → Reference angle $= \frac{\pi}{4}$ → QIII and QIV:<br>
+                $\theta = \pi + \frac{\pi}{4} = \frac{5\pi}{4}$ and $\theta = 2\pi - \frac{\pi}{4} = \frac{7\pi}{4}$</p>
+                <p><strong>Final Answer: $\theta = \dfrac{\pi}{4},\; \dfrac{3\pi}{4},\; \dfrac{5\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+                <p><em>Note: Four solutions because the $\pm$ creates two separate equations, each with two quadrant solutions.</em></p>
+            </div>
+        </div>
 
-<div class="question">Example 4: Solve $2\sin^2\theta-1=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="example">
+            <h4>Example 5 (Extended): Double-Angle — Solve $\cos(2\theta) = 0$ for $0 \leq \theta < 2\pi$</h4>
+            <div class="solution">
+                <p><strong>Step 1: Substitute $u = 2\theta$ to simplify.</strong><br>
+                $\cos(u) = 0$</p>
+                <p><strong>Step 2: Determine the range of $u$.</strong><br>
+                Since $0 \leq \theta < 2\pi$, multiplying by 2 gives $0 \leq u < 4\pi$.
+                We need all solutions in $[0, 4\pi)$.</p>
+                <p><strong>Step 3: Solve $\cos(u) = 0$.</strong><br>
+                Cosine equals zero at $\frac{\pi}{2}$ and $\frac{3\pi}{2}$ in $[0, 2\pi)$. Extending to $[0, 4\pi)$:</p>
+                $$u = \frac{\pi}{2},\; \frac{3\pi}{2},\; \frac{5\pi}{2},\; \frac{7\pi}{2}$$
+                <p><strong>Step 4: Divide by 2 to get $\theta = \frac{u}{2}$.</strong></p>
+                $$\theta = \frac{\pi}{4},\; \frac{3\pi}{4},\; \frac{5\pi}{4},\; \frac{7\pi}{4}$$
+                <p><strong>Final Answer: $\theta = \dfrac{\pi}{4},\; \dfrac{3\pi}{4},\; \dfrac{5\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+            </div>
+        </div>
 
-<h2>Summary</h2>
-<ul>
-<li>Solve algebra first.</li>
-<li>Use the unit circle for reference angles.</li>
-<li>Include all solutions in the interval.</li>
-<li>Use correct period when writing general solutions.</li>
-</ul>
+        <div class="example">
+            <h4>Example 6 (Extended): Factoring — Solve $\cos\theta(2\sin\theta - 1) = 0$ for $0 \leq \theta < 2\pi$</h4>
+            <div class="solution">
+                <p><strong>Step 1: The equation is already factored. Set each factor equal to zero.</strong></p>
+                <p><em>Factor 1:</em> $\cos\theta = 0$</p>
+                <p><em>Factor 2:</em> $2\sin\theta - 1 = 0 \implies \sin\theta = \frac{1}{2}$</p>
+                <p><strong>Step 2: Solve Factor 1 — $\cos\theta = 0$.</strong><br>
+                Cosine equals zero at: $\theta = \frac{\pi}{2}$ and $\theta = \frac{3\pi}{2}$</p>
+                <p><strong>Step 3: Solve Factor 2 — $\sin\theta = \frac{1}{2}$.</strong><br>
+                Reference angle $= \frac{\pi}{6}$; sine positive in QI and QII:<br>
+                $\theta = \frac{\pi}{6}$ and $\theta = \frac{5\pi}{6}$</p>
+                <p><strong>Step 4: Combine all solutions.</strong></p>
+                <p><strong>Final Answer: $\theta = \dfrac{\pi}{6},\; \dfrac{\pi}{2},\; \dfrac{5\pi}{6},\; \dfrac{3\pi}{2}$</strong></p>
+                <p><em>Key insight: Never divide both sides by $\cos\theta$ — you would lose $\theta = \frac{\pi}{2}$ and $\frac{3\pi}{2}$ entirely. Always factor and set each factor to zero.</em></p>
+            </div>
+        </div>
+    </section>
 
-<h2>Common Mistakes</h2>
-<ul>
-<li>Forgetting multiple quadrant solutions.</li>
-<li>Using the wrong period.</li>
-<li>Leaving answers in degrees.</li>
-<li>Stopping after one solution.</li>
-</ul>
+    <!-- SUMMARY -->
+    <div class="summary">
+        <h3>Summary of Key Concepts</h3>
+        <ul>
+            <li>Solving a trig equation always begins with <strong>isolating the trig function</strong> using algebra.</li>
+            <li>The <strong>reference angle</strong> gives the magnitude; the <strong>ASTC rule</strong> and the sign of the value determine the quadrants.</li>
+            <li>Most trig equations have <strong>two solutions</strong> in $[0, 2\pi)$. Always check both quadrants.</li>
+            <li>For <strong>reciprocal functions</strong> (sec, csc, cot), convert to the corresponding primary function first: $\sec\theta = k \Rightarrow \cos\theta = \frac{1}{k}$.</li>
+            <li><strong>General solutions</strong> use $+ 2\pi n$ for sine and cosine, and $+ \pi n$ for tangent and cotangent.</li>
+            <li><strong>Quadratic-type equations</strong> — take the square root (with $\pm$) or factor, then solve each case separately.</li>
+            <li>For <strong>double-angle equations</strong> like $\cos(2\theta) = k$, let $u = 2\theta$, solve in the expanded interval $[0, 4\pi)$, then divide answers by 2.</li>
+            <li><strong>Factored equations</strong> — set each factor equal to zero separately. Never divide both sides by a trig function.</li>
+            <li>Always leave answers in <strong>exact radian form</strong> (fractions of $\pi$), not decimal approximations or degrees.</li>
+        </ul>
+    </div>
 
-<h2>Practice Problems</h2>
+    <!-- KEY EQUATIONS TABLE -->
+    <h2>Key Equations and Solution Forms</h2>
+    <table>
+        <thead>
+            <tr><th>Equation Type</th><th>Example</th><th>Key Step</th><th>Number of Solutions in $[0,2\pi)$</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Basic sine/cosine</td><td>$\sin\theta = \frac{1}{2}$</td><td>Reference angle + 2 quadrants</td><td>Usually 2</td></tr>
+            <tr><td>Linear</td><td>$2\cos\theta - 1 = 0$</td><td>Isolate, then solve</td><td>Usually 2</td></tr>
+            <tr><td>Tangent/cotangent</td><td>$\tan\theta = 1$</td><td>Period is $\pi$, not $2\pi$</td><td>Usually 2</td></tr>
+            <tr><td>Reciprocal function</td><td>$\sec\theta = 2$</td><td>Rewrite: $\cos\theta = \frac{1}{2}$</td><td>Usually 2</td></tr>
+            <tr><td>Quadratic (square root)</td><td>$2\sin^2\theta - 1 = 0$</td><td>$\pm$ gives 2 sub-equations</td><td>Usually 4</td></tr>
+            <tr><td>Factored product</td><td>$\cos\theta(2\sin\theta-1)=0$</td><td>Zero product property</td><td>Sum of each factor's solutions</td></tr>
+            <tr><td>Double-angle</td><td>$\cos(2\theta) = 0$</td><td>Let $u=2\theta$, range $[0,4\pi)$, divide by 2</td><td>Usually 4</td></tr>
+        </tbody>
+    </table>
 
-<h3>Easy</h3>
+    <!-- PRACTICE PROBLEMS -->
+    <div class="practice-problems">
+        <h3>Practice Problems</h3>
+        <p>Solve for $0 \leq \theta < 2\pi$ unless instructed to find the general solution. Leave all answers in exact radian form.</p>
 
-<div class="question">1. Solve $\cos\theta=\frac{1}{2}$ for $0\le\theta<2\pi$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <p><strong>Easy</strong></p>
+        <div class="problem"><strong>1 (Easy):</strong> Solve $\cos\theta = \dfrac{1}{2}$ for $0 \leq \theta < 2\pi$.</div>
+        <div class="problem"><strong>2 (Easy):</strong> Solve $\sin\theta = -\dfrac{\sqrt{2}}{2}$ for $0 \leq \theta < 2\pi$.</div>
+        <div class="problem"><strong>3 (Easy):</strong> Solve $\tan\theta = 1$ and write the general solution.</div>
+        <div class="problem"><strong>4 (Easy):</strong> Solve $\csc\theta = 2$ for $0 \leq \theta < 2\pi$. (Hint: rewrite in terms of sine first.)</div>
 
-<div class="question">2. Solve $\sin\theta=-\frac{\sqrt2}{2}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <p><strong>Medium</strong></p>
+        <div class="problem"><strong>5 (Medium):</strong> Solve $2\sin\theta - \sqrt{3} = 0$ for $0 \leq \theta < 2\pi$.</div>
+        <div class="problem"><strong>6 (Medium):</strong> Solve $\cot\theta = -1$ for $0 \leq \theta < 2\pi$.</div>
+        <div class="problem"><strong>7 (Medium):</strong> Solve $\sec\theta = -2$ for $0 \leq \theta < 2\pi$.</div>
+        <div class="problem"><strong>8 (Medium):</strong> Solve $\cos(2\theta) = 0$ for $0 \leq \theta < 2\pi$.</div>
 
-<div class="question">3. Solve $\tan\theta=1$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <p><strong>Hard</strong></p>
+        <div class="problem"><strong>9 (Hard):</strong> Solve $2\cos^2\theta - 1 = 0$ for $0 \leq \theta < 2\pi$. Show the $\pm$ step clearly.</div>
+        <div class="problem"><strong>10 (Hard):</strong> Solve $\sin(2\theta) = \dfrac{\sqrt{3}}{2}$ for $0 \leq \theta < 2\pi$. Remember to work in the interval $[0, 4\pi)$ for $2\theta$.</div>
+        <div class="problem"><strong>11 (Hard):</strong> Solve $\cos\theta(2\sin\theta - 1) = 0$ for $0 \leq \theta < 2\pi$. Set each factor to zero separately.</div>
+        <div class="problem"><strong>12 (Hard):</strong> Solve $\tan^2\theta - 1 = 0$ for $0 \leq \theta < 2\pi$. (Hint: factor the left side.)</div>
 
-<div class="question">4. Solve $\csc\theta=2$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <p><strong>Challenging</strong></p>
+        <div class="problem"><strong>13 (Challenging):</strong> Solve $2\sin^2\theta + 3\sin\theta - 2 = 0$ for $0 \leq \theta < 2\pi$. Treat $\sin\theta$ as a variable and factor as a quadratic. Check that each solution for $\sin\theta$ is in $[-1, 1]$.</div>
+        <div class="problem"><strong>14 (Challenging):</strong> Solve $\sin\theta + \cos\theta = 0$ for $0 \leq \theta < 2\pi$. (Hint: rearrange to get $\tan\theta = -1$.)</div>
 
-<h3>Medium</h3>
+        <p><strong>Justify</strong></p>
+        <div class="problem"><strong>15 (Justify):</strong> Explain in complete sentences why $\tan\theta = 1$ has a general solution of $\theta = \frac{\pi}{4} + \pi n$ (using period $\pi$) while $\sin\theta = \frac{1}{2}$ uses period $2\pi$. Include in your explanation what "period" means geometrically on the unit circle and why tangent's period is half that of sine and cosine.</div>
+        <div class="problem"><strong>16 (Justify):</strong> A student solves $\cos\theta(2\sin\theta - 1) = 0$ by dividing both sides by $\cos\theta$ to get $2\sin\theta - 1 = 0$, then solves for $\sin\theta = \frac{1}{2}$ and reports $\theta = \frac{\pi}{6}$ and $\frac{5\pi}{6}$ as the complete solution. Identify the error, explain what solutions were lost and why, and provide the correct complete solution set.</div>
+    </div>
 
-<div class="question">5. Solve $2\sin\theta-\sqrt3=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+    <!-- ANSWER KEY -->
+    <div class="answer-key">
+        <h3>Answer Key</h3>
 
-<div class="question">6. Solve $\cos(2\theta)=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>1.</strong> $\cos\theta = \frac{1}{2}$: Reference angle $= \frac{\pi}{3}$. Cosine positive in QI and QIV.</p>
+            <p><strong>$\theta = \dfrac{\pi}{3},\; \dfrac{5\pi}{3}$</strong></p>
+        </div>
 
-<div class="question">7. Solve $\cot\theta=-1$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>2.</strong> $\sin\theta = -\frac{\sqrt{2}}{2}$: Reference angle $= \frac{\pi}{4}$. Sine negative in QIII and QIV.</p>
+            <p>QIII: $\pi + \frac{\pi}{4} = \frac{5\pi}{4}$; QIV: $2\pi - \frac{\pi}{4} = \frac{7\pi}{4}$</p>
+            <p><strong>$\theta = \dfrac{5\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+        </div>
 
-<div class="question">8. Solve $\sec\theta=-2$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>3.</strong> $\tan\theta = 1$: Reference angle $= \frac{\pi}{4}$. Tangent positive in QI and QIII.</p>
+            <p>In $[0,2\pi)$: $\theta = \frac{\pi}{4}$ and $\frac{5\pi}{4}$</p>
+            <p>General solution: $\theta = \dfrac{\pi}{4} + \pi n$, $n \in \mathbb{Z}$</p>
+        </div>
 
-<h3>Harder</h3>
+        <div class="answer">
+            <p><strong>4.</strong> $\csc\theta = 2 \Rightarrow \sin\theta = \frac{1}{2}$. Reference angle $= \frac{\pi}{6}$. Sine positive in QI and QII.</p>
+            <p><strong>$\theta = \dfrac{\pi}{6},\; \dfrac{5\pi}{6}$</strong></p>
+        </div>
 
-<div class="question">9. Solve $2\cos^2\theta-1=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>5.</strong> $2\sin\theta = \sqrt{3} \Rightarrow \sin\theta = \frac{\sqrt{3}}{2}$. Reference angle $= \frac{\pi}{3}$. Sine positive in QI and QII.</p>
+            <p><strong>$\theta = \dfrac{\pi}{3},\; \dfrac{2\pi}{3}$</strong></p>
+        </div>
 
-<div class="question">10. Solve $\sin(2\theta)=\frac{\sqrt3}{2}$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>6.</strong> $\cot\theta = -1 \Rightarrow \tan\theta = -1$. Reference angle $= \frac{\pi}{4}$. Tangent negative in QII and QIV.</p>
+            <p>QII: $\pi - \frac{\pi}{4} = \frac{3\pi}{4}$; QIV: $2\pi - \frac{\pi}{4} = \frac{7\pi}{4}$</p>
+            <p><strong>$\theta = \dfrac{3\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+        </div>
 
-<div class="question">11. Solve $\tan^2\theta=1$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>7.</strong> $\sec\theta = -2 \Rightarrow \cos\theta = -\frac{1}{2}$. Reference angle $= \frac{\pi}{3}$. Cosine negative in QII and QIII.</p>
+            <p>QII: $\pi - \frac{\pi}{3} = \frac{2\pi}{3}$; QIII: $\pi + \frac{\pi}{3} = \frac{4\pi}{3}$</p>
+            <p><strong>$\theta = \dfrac{2\pi}{3},\; \dfrac{4\pi}{3}$</strong></p>
+        </div>
 
-<div class="question">12. Solve $\cos\theta(2\sin\theta-1)=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>8.</strong> Let $u = 2\theta$; solve $\cos u = 0$ on $[0, 4\pi)$.</p>
+            <p>$u = \frac{\pi}{2}, \frac{3\pi}{2}, \frac{5\pi}{2}, \frac{7\pi}{2}$</p>
+            <p>Divide by 2: <strong>$\theta = \dfrac{\pi}{4},\; \dfrac{3\pi}{4},\; \dfrac{5\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+        </div>
 
-<h3>Challenge</h3>
+        <div class="answer">
+            <p><strong>9.</strong> $2\cos^2\theta = 1 \Rightarrow \cos^2\theta = \frac{1}{2} \Rightarrow \cos\theta = \pm\frac{\sqrt{2}}{2}$</p>
+            <p>$+\frac{\sqrt{2}}{2}$: QI and QIV → $\frac{\pi}{4}$ and $\frac{7\pi}{4}$</p>
+            <p>$-\frac{\sqrt{2}}{2}$: QII and QIII → $\frac{3\pi}{4}$ and $\frac{5\pi}{4}$</p>
+            <p><strong>$\theta = \dfrac{\pi}{4},\; \dfrac{3\pi}{4},\; \dfrac{5\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+        </div>
 
-<div class="question">13. Solve $2\sin^2\theta+3\sin\theta-2=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>10.</strong> Let $u = 2\theta$; solve $\sin u = \frac{\sqrt{3}}{2}$ on $[0, 4\pi)$. Reference angle $= \frac{\pi}{3}$. Sine positive in QI and QII.</p>
+            <p>$u = \frac{\pi}{3}, \frac{2\pi}{3}, \frac{\pi}{3}+2\pi = \frac{7\pi}{3}, \frac{2\pi}{3}+2\pi = \frac{8\pi}{3}$</p>
+            <p>Divide by 2: <strong>$\theta = \dfrac{\pi}{6},\; \dfrac{\pi}{3},\; \dfrac{7\pi}{6},\; \dfrac{4\pi}{3}$</strong></p>
+        </div>
 
-<div class="question">14. Solve $\sec^2\theta-4=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>11.</strong> Factor 1: $\cos\theta = 0$ → $\theta = \frac{\pi}{2},\; \frac{3\pi}{2}$</p>
+            <p>Factor 2: $\sin\theta = \frac{1}{2}$ → $\theta = \frac{\pi}{6},\; \frac{5\pi}{6}$</p>
+            <p><strong>$\theta = \dfrac{\pi}{6},\; \dfrac{\pi}{2},\; \dfrac{5\pi}{6},\; \dfrac{3\pi}{2}$</strong></p>
+        </div>
 
-<div class="question">15. Solve $\sin\theta+\cos\theta=0$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>12.</strong> $\tan^2\theta - 1 = 0 \Rightarrow (\tan\theta - 1)(\tan\theta + 1) = 0$</p>
+            <p>$\tan\theta = 1$: $\theta = \frac{\pi}{4},\; \frac{5\pi}{4}$</p>
+            <p>$\tan\theta = -1$: $\theta = \frac{3\pi}{4},\; \frac{7\pi}{4}$</p>
+            <p><strong>$\theta = \dfrac{\pi}{4},\; \dfrac{3\pi}{4},\; \dfrac{5\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+        </div>
 
-<div class="question">16. Solve $\tan(2\theta)=\sqrt3$.</div>
-<div class="workspace"><div style="flex:1;"></div></div>
+        <div class="answer">
+            <p><strong>13.</strong> Let $s = \sin\theta$: $2s^2 + 3s - 2 = 0 \Rightarrow (2s - 1)(s + 2) = 0$</p>
+            <p>$\sin\theta = \frac{1}{2}$: valid (in $[-1,1]$) → $\theta = \frac{\pi}{6},\; \frac{5\pi}{6}$</p>
+            <p>$\sin\theta = -2$: invalid (outside $[-1,1]$) — no solution from this factor.</p>
+            <p><strong>$\theta = \dfrac{\pi}{6},\; \dfrac{5\pi}{6}$</strong></p>
+        </div>
 
-<h3>Justify</h3>
+        <div class="answer">
+            <p><strong>14.</strong> $\sin\theta + \cos\theta = 0 \Rightarrow \sin\theta = -\cos\theta \Rightarrow \tan\theta = -1$</p>
+            <p>Reference angle $= \frac{\pi}{4}$. Tangent negative in QII and QIV.</p>
+            <p><strong>$\theta = \dfrac{3\pi}{4},\; \dfrac{7\pi}{4}$</strong></p>
+        </div>
 
-<div class="question">17. Explain why tangent solutions use $\pi$ instead of $2\pi$.</div>
-<div style="min-height:420px;"></div>
+        <div class="answer">
+            <p><strong>15.</strong> The period of a function is how long it takes to complete one full cycle. On the unit circle, sine and cosine complete one full cycle as $\theta$ goes from $0$ to $2\pi$ — one full revolution. So their general solutions add $2\pi n$. Tangent, however, completes a full cycle in only half a revolution: $\tan\theta$ goes from $-\infty$ to $+\infty$ and repeats between $0$ and $\pi$. This is because tangent is the ratio $\frac{\sin\theta}{\cos\theta}$, and that ratio returns to the same value after rotating only halfway around the circle. So its general solution adds $\pi n$, capturing solutions every $\pi$ units rather than every $2\pi$ units.</p>
+        </div>
 
-<div class="question">18. Justify why solving $\sec\theta=2$ requires rewriting in terms of cosine.</div>
-<div style="min-height:420px;"></div>
+        <div class="answer">
+            <p><strong>16.</strong> The student divided both sides by $\cos\theta$. This is illegal when $\cos\theta$ could equal zero — dividing by zero is undefined and erases valid solutions. The values $\theta = \frac{\pi}{2}$ and $\theta = \frac{3\pi}{2}$ satisfy $\cos\theta = 0$, making the first factor of the original equation equal to zero. The correct approach is to set each factor equal to zero separately:</p>
+            <p>$\cos\theta = 0$ gives $\theta = \frac{\pi}{2}$ and $\frac{3\pi}{2}$; and $\sin\theta = \frac{1}{2}$ gives $\theta = \frac{\pi}{6}$ and $\frac{5\pi}{6}$.</p>
+            <p>Complete solution: $\theta = \dfrac{\pi}{6},\; \dfrac{\pi}{2},\; \dfrac{5\pi}{6},\; \dfrac{3\pi}{2}$</p>
+        </div>
+    </div>
 
-
-
-<h2>Solutions</h2>
-
-<h3>Easy</h3>
-<p><strong>1.</strong> $\frac{\pi}{3},\frac{5\pi}{3}$</p>
-<p><strong>2.</strong> $\frac{5\pi}{4},\frac{7\pi}{4}$</p>
-<p><strong>3.</strong> $\frac{\pi}{4},\frac{5\pi}{4}$</p>
-<p><strong>4.</strong> $\frac{\pi}{6},\frac{5\pi}{6}$</p>
-
-<h3>Medium</h3>
-<p><strong>5.</strong> $\frac{\pi}{3},\frac{2\pi}{3}$</p>
-<p><strong>6.</strong> $\frac{\pi}{4},\frac{3\pi}{4},\frac{5\pi}{4},\frac{7\pi}{4}$</p>
-<p><strong>7.</strong> $\frac{3\pi}{4},\frac{7\pi}{4}$</p>
-<p><strong>8.</strong> $\frac{2\pi}{3},\frac{4\pi}{3}$</p>
-
-<h3>Harder</h3>
-<p><strong>9.</strong> $\frac{\pi}{4},\frac{3\pi}{4},\frac{5\pi}{4},\frac{7\pi}{4}$</p>
-<p><strong>10.</strong> Multiple solutions within interval</p>
-<p><strong>11.</strong> $\frac{\pi}{4},\frac{3\pi}{4},\frac{5\pi}{4},\frac{7\pi}{4}$</p>
-<p><strong>12.</strong> Combine solutions from each factor</p>
-
-<h3>Challenge</h3>
-<p><strong>13.</strong> Solve quadratic in sine</p>
-<p><strong>14.</strong> $\frac{\pi}{3},\frac{5\pi}{3}$</p>
-<p><strong>15.</strong> $\frac{3\pi}{4},\frac{7\pi}{4}$</p>
-<p><strong>16.</strong> Solve for $2\theta$, then divide by 2</p>
-
-<h3>Justify</h3>
-<p><strong>17.</strong> Tangent has period $\pi$.</p>
-<p><strong>18.</strong> Secant is reciprocal of cosine.</p>
-
+</div>
 </body>
 </html>
