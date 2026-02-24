@@ -545,117 +545,140 @@
         </tbody>
     </table>
 
-    <!-- PRACTICE PROBLEMS -->
-    <div class="practice-problems">
-        <h3>Practice Problems</h3>
-        <p>Show all work: compute $\Delta x$, list endpoints, evaluate $f$ at each, and multiply by $\Delta x$. Include units where applicable.</p>
+    <h3>Practice Problems</h3>
+<p>Show all work clearly. Compute $\Delta x$, list partition points, evaluate function values, and include correct units.</p>
 
-        <p><strong>Easy</strong></p>
-        <div class="problem"><strong>1 (Easy):</strong> Approximate the area under $f(x) = 5 - x^2$ on $[-3, 3]$ using a left Riemann sum with 6 subintervals.</div>
-        <div class="problem"><strong>2 (Easy):</strong> Approximate the area under $f(x) = 5 - x^2$ on $[-3, 3]$ using a right Riemann sum with 6 subintervals.</div>
-        <div class="problem"><strong>3 (Easy):</strong> Determine whether the left Riemann sum from Problem 1 is an overestimate or underestimate, and justify using the behavior of $f(x) = 5 - x^2$ on $[-3, 3]$.</div>
-        <div class="problem"><strong>4 (Easy):</strong> Compute $\Delta x$ for 6 subintervals on $[-3, 3]$ and explain geometrically what this value represents in the context of a Riemann sum.</div>
+<p><strong>Level 1 — Basic Riemann Sums</strong></p>
 
-        <p><strong>Medium</strong></p>
-        <div class="problem"><strong>5 (Medium):</strong> Approximate the area under $f(x) = 2^x + 3$ on $[1, 3]$ using a left Riemann sum with 4 subintervals.</div>
-        <div class="problem"><strong>6 (Medium):</strong> Approximate the area under $f(x) = 2^x + 3$ on $[1, 3]$ using a right Riemann sum with 4 subintervals.</div>
-        <div class="problem"><strong>7 (Medium):</strong> Approximate the area under $f(x) = 2^x + 3$ on $[1, 3]$ using the trapezoidal rule with 4 subintervals.</div>
-        <div class="problem"><strong>8 (Medium):</strong> Compare your answers from Problems 5–7. Which method gives the largest estimate? Explain why, using the behavior (increasing/decreasing, concave up/down) of $f(x) = 2^x + 3$.</div>
+<div class="problem"><strong>1.</strong> Approximate the area under $f(x)=x+4$ on $[0,6]$ using a left Riemann sum with $n=3$.</div>
 
-        <p><strong>Hard</strong></p>
-        <div class="problem"><strong>9 (Hard):</strong> Approximate the area under $f(x) = x^2 + 4$ on $[1, 6]$ using a left Riemann sum with 10 subintervals. Show all 10 function values.</div>
-        <div class="problem"><strong>10 (Hard):</strong> Approximate the area under $f(x) = x^2 + 4$ on $[1, 6]$ using a right Riemann sum with 10 subintervals.</div>
-        <div class="problem"><strong>11 (Hard):</strong> Use the trapezoidal rule with 10 subintervals to approximate the area under $f(x) = x^2 + 4$ on $[1, 6]$. You may use your answers from Problems 9 and 10.</div>
-        <div class="problem"><strong>12 (Hard):</strong> Compare Problems 9–11. Which approximation should be closest to the true area? Use the concepts of concavity and increasing/decreasing behavior to explain — not just the numbers.</div>
+<div class="problem"><strong>2.</strong> Approximate the area under $f(x)=x+4$ on $[0,6]$ using a right Riemann sum with $n=3$.</div>
 
-        <p><strong>Challenging</strong></p>
-        <div class="problem"><strong>13 (Challenging):</strong> A velocity function $v(t)$ is increasing and concave up on $[0, 8]$. Without computing anything, predict which of the three methods (left, right, trapezoidal) gives the smallest estimate and which gives the largest. Justify each prediction using both the increasing and concave-up properties separately.</div>
-        <div class="problem"><strong>14 (Challenging):</strong> A function is decreasing and concave down on $[2, 10]$. Predict which method gives the largest estimate. Then explain: does the trapezoidal rule overestimate or underestimate for a concave-down function, and why?</div>
+<div class="problem"><strong>3.</strong> Is your left sum from Problem 1 an overestimate or underestimate? Justify using function behavior.</div>
 
-        <p><strong>Justify</strong></p>
-        <div class="problem"><strong>15 (Justify):</strong> Explain in complete sentences why increasing the number of subintervals improves the accuracy of a Riemann sum approximation. Use the concept of $\Delta x$ and the gap between the rectangles and the actual curve in your explanation. Include a description of what happens as $n \to \infty$.</div>
-        <div class="problem"><strong>16 (Justify):</strong> Explain why the trapezoidal rule is generally more accurate than either the left or right Riemann sum alone. Then explain a situation where the trapezoidal rule is not the most accurate — that is, when it still produces a noticeable error — and what determines the direction of that error.</div>
-    </div>
+<div class="problem"><strong>4.</strong> Compute the trapezoidal approximation for $f(x)=x+4$ on $[0,6]$ with $n=3$.</div>
 
-    <!-- ANSWER KEY -->
-    <div class="answer-key">
-        <h3>Answer Key</h3>
 
-        <div class="answer">
-            <p><strong>1.</strong> $\Delta x = 1$. Left endpoints: $-3, -2, -1, 0, 1, 2$.</p>
-            <p>$f$ values: $-4, 1, 4, 5, 4, 1$</p>
-            <p>$L_6 = 1(-4 + 1 + 4 + 5 + 4 + 1) = \mathbf{11}$</p>
-        </div>
+<p><strong>Level 2 — Nonlinear Function</strong></p>
 
-        <div class="answer">
-            <p><strong>2.</strong> Right endpoints: $-2, -1, 0, 1, 2, 3$.</p>
-            <p>$f$ values: $1, 4, 5, 4, 1, -4$</p>
-            <p>$R_6 = 1(1 + 4 + 5 + 4 + 1 - 4) = \mathbf{11}$</p>
-        </div>
+<div class="problem"><strong>5.</strong> Approximate the area under $f(x)=\sqrt{x+1}$ on $[0,8]$ using a left Riemann sum with $n=4$.</div>
 
-        <div class="answer">
-            <p><strong>3.</strong> $f(x) = 5 - x^2$ is symmetric about the y-axis and is increasing on $[-3, 0]$ and decreasing on $[0, 3]$. On the left half, the left sum underestimates; on the right half, the left sum overestimates. Because the function is symmetric, these errors cancel exactly, making $L_6$ neither a strict overestimate nor underestimate — it happens to equal the same value as $R_6 = 11$, which is the same reason both equal each other.</p>
-        </div>
+<div class="problem"><strong>6.</strong> Approximate the area under $f(x)=\sqrt{x+1}$ on $[0,8]$ using a right Riemann sum with $n=4$.</div>
 
-        <div class="answer">
-            <p><strong>4.</strong> $\Delta x = \frac{3 - (-3)}{6} = 1$. Geometrically, $\Delta x$ is the width of each rectangle (or trapezoid). It represents how wide each subinterval is — in other words, how much of the x-axis each rectangle occupies. Smaller $\Delta x$ means thinner rectangles that hug the curve more closely.</p>
-        </div>
+<div class="problem"><strong>7.</strong> Use the trapezoidal rule for $f(x)=\sqrt{x+1}$ on $[0,8]$ with $n=4$.</div>
 
-        <div class="answer">
-            <p><strong>5.</strong> $\Delta x = \frac{3-1}{4} = 0.5$. Left endpoints: $1, 1.5, 2, 2.5$.</p>
-            <p>$f(1) = 5$, $f(1.5) = 2^{1.5}+3 \approx 5.828$, $f(2) = 7$, $f(2.5) = 2^{2.5}+3 \approx 8.657$</p>
-            <p>$L_4 \approx 0.5(5 + 5.828 + 7 + 8.657) = 0.5(26.485) \approx \mathbf{13.24}$</p>
-        </div>
+<div class="problem"><strong>8.</strong> Rank the three approximations from smallest to largest and explain why.</div>
 
-        <div class="answer">
-            <p><strong>6.</strong> Right endpoints: $1.5, 2, 2.5, 3$. $f(3) = 2^3 + 3 = 11$.</p>
-            <p>$R_4 \approx 0.5(5.828 + 7 + 8.657 + 11) = 0.5(32.485) \approx \mathbf{16.24}$</p>
-        </div>
 
-        <div class="answer">
-            <p><strong>7.</strong> $T_4 = \frac{L_4 + R_4}{2} \approx \frac{13.24 + 16.24}{2} \approx \mathbf{14.74}$</p>
-        </div>
+<p><strong>Level 3 — Table Data</strong></p>
 
-        <div class="answer">
-            <p><strong>8.</strong> The right sum gives the largest estimate ($\approx 16.24$). $f(x) = 2^x + 3$ is increasing and concave up on $[1, 3]$. Since it is increasing, right endpoints always land higher than the curve's average on each subinterval — so the right sum overestimates. The left sum underestimates for the same reason. The trapezoidal rule falls between them and is the most accurate, though it slightly overestimates because the function is concave up (the chord lies above the curve).</p>
-        </div>
+<div class="problem">
+<strong>9.</strong> The rate of water flow (in liters per minute) is recorded below. Approximate total water collected from $t=0$ to $t=12$ minutes using left and right Riemann sums.
+<br><br>
+<table>
+<tr><th>t (min)</th><th>0</th><th>3</th><th>6</th><th>9</th><th>12</th></tr>
+<tr><td>Flow</td><td>4</td><td>7</td><td>9</td><td>10</td><td>12</td></tr>
+</table>
+</div>
 
-        <div class="answer">
-            <p><strong>9.</strong> $\Delta x = \frac{6-1}{10} = 0.5$. Left endpoints: $1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5$.</p>
-            <p>$f$ values: $5, 6.25, 8, 10.25, 13, 16.25, 20, 24.25, 29, 34.25$</p>
-            <p>$L_{10} = 0.5(5 + 6.25 + 8 + 10.25 + 13 + 16.25 + 20 + 24.25 + 29 + 34.25) = 0.5(166.25) = \mathbf{83.125}$</p>
-        </div>
+<div class="problem"><strong>10.</strong> Use the trapezoidal rule on the data above.</div>
 
-        <div class="answer">
-            <p><strong>10.</strong> Right endpoints: $1.5, 2, 2.5, \ldots, 5.5, 6$. $f(6) = 40$.</p>
-            <p>$R_{10} = 0.5(6.25 + 8 + 10.25 + 13 + 16.25 + 20 + 24.25 + 29 + 34.25 + 40) = 0.5(201.25) = \mathbf{100.625}$</p>
-        </div>
 
-        <div class="answer">
-            <p><strong>11.</strong> $T_{10} = \frac{L_{10} + R_{10}}{2} = \frac{83.125 + 100.625}{2} = \mathbf{91.875}$</p>
-            <p>(The exact value via calculus is $\frac{275}{3} \approx 91.67$, so $T_{10}$ is remarkably close.)</p>
-        </div>
+<p><strong>Level 4 — Quadratic Function</strong></p>
 
-        <div class="answer">
-            <p><strong>12.</strong> $f(x) = x^2 + 4$ is increasing and concave up on $[1,6]$. Because it is increasing: $L_{10}$ underestimates and $R_{10}$ overestimates. Because it is concave up, the trapezoid chords lie above the curve, so $T_{10}$ also slightly overestimates — but by much less than $R_{10}$. The ranking is $L_{10} < $ true area $< T_{10} < R_{10}$, so the trapezoidal rule is closest to the true area.</p>
-        </div>
+<div class="problem"><strong>11.</strong> Approximate the area under $f(x)=3x^2-2x+1$ on $[1,5]$ using a left Riemann sum with $n=4$.</div>
 
-        <div class="answer">
-            <p><strong>13.</strong> Smallest: Left sum. Since $v(t)$ is increasing, left endpoints always pick values below the true height of the curve on each subinterval — guaranteeing an underestimate. Largest: Right sum. Right endpoints pick the highest value on each increasing subinterval, always overestimating. The trapezoidal rule falls between them. The concave-up property means the trapezoidal rule slightly overestimates (chords above curve), so the order is: Left $<$ true area $<$ Trapezoidal $<$ Right.</p>
-        </div>
+<div class="problem"><strong>12.</strong> Approximate the area under $f(x)=3x^2-2x+1$ on $[1,5]$ using a right Riemann sum with $n=4$.</div>
 
-        <div class="answer">
-            <p><strong>14.</strong> Largest estimate: Left sum. For a decreasing function, the left endpoint of each subinterval has the highest function value, so left rectangles are too tall — they overestimate. For a concave-down function, the chord connecting two points lies below the curve, so the trapezoidal rule underestimates. This means the order is: Right $<$ Trapezoidal $<$ true area $<$ Left.</p>
-        </div>
+<div class="problem"><strong>13.</strong> Use the trapezoidal rule with $n=4$ for the same function.</div>
 
-        <div class="answer">
-            <p><strong>15.</strong> As $n$ increases, $\Delta x = \frac{b-a}{n}$ decreases, making each rectangle narrower. On any given narrow subinterval, the function changes very little, so the rectangle height (left or right endpoint value) is very close to the true average height of the function on that piece. The gap between the top of the rectangle and the actual curve — the source of all error — shrinks proportionally to $\Delta x$. When $\Delta x$ is multiplied across $n$ rectangles, the total error decreases. As $n \to \infty$ and $\Delta x \to 0$, the sum of all rectangle areas converges exactly to the definite integral $\int_a^b f(x)\,dx$.</p>
-        </div>
 
-        <div class="answer">
-            <p><strong>16.</strong> The trapezoidal rule is more accurate because it uses both the left and right endpoint values for each subinterval, effectively averaging them. The left sum's error (missing area above the left rectangle) and the right sum's error (extra area above the right rectangle) partially cancel when averaged. However, the trapezoidal rule still produces error when the function is curved. For a concave-up function, the chord (top of the trapezoid) lies above the curve, causing overestimation. For a concave-down function, the chord lies below the curve, causing underestimation. The more curved the function, the larger the trapezoidal error, regardless of whether the function is increasing or decreasing.</p>
-        </div>
-    </div>
+<p><strong>Conceptual</strong></p>
+
+<div class="problem"><strong>14.</strong> A function is decreasing and concave up. Predict the relative sizes of $L_n$, $R_n$, and $T_n$. Explain.</div>
+
+<div class="problem"><strong>15.</strong> Explain why trapezoidal approximations improve as $n$ increases. Use $\Delta x$ in your reasoning.</div>
+
+<div class="answer-key">
+<h3>Answer Key</h3>
+
+<div class="answer">
+<strong>1.</strong> $\Delta x=2$. Left endpoints: 0,2,4.  
+$f$ values: 4,6,8.  
+$L_3=2(4+6+8)=\mathbf{36}$.
+</div>
+
+<div class="answer">
+<strong>2.</strong> Right endpoints: 2,4,6.  
+$f$ values: 6,8,10.  
+$R_3=2(6+8+10)=\mathbf{48}$.
+</div>
+
+<div class="answer">
+<strong>3.</strong> $f(x)=x+4$ is increasing → left sum underestimates.
+</div>
+
+<div class="answer">
+<strong>4.</strong> $T_3=\frac{36+48}{2}=\mathbf{42}$.
+</div>
+
+<div class="answer">
+<strong>5.</strong> $\Delta x=2$. Left endpoints: 0,2,4,6.  
+$f$ values: 1, $\sqrt3$, $\sqrt5$, $\sqrt7$.  
+$L_4=2(1+\sqrt3+\sqrt5+\sqrt7)$ (decimal approx ≈ 17.64).
+</div>
+
+<div class="answer">
+<strong>6.</strong> Right endpoints: 2,4,6,8.  
+$f$ values: $\sqrt3,\sqrt5,\sqrt7,3$.  
+$R_4=2(\sqrt3+\sqrt5+\sqrt7+3)$ (decimal approx ≈ 22.64).
+</div>
+
+<div class="answer">
+<strong>7.</strong> $T_4=\frac{L_4+R_4}{2}$ (approx ≈ 20.14).
+</div>
+
+<div class="answer">
+<strong>8.</strong> Increasing function → $L_4 < T_4 < R_4$.
+</div>
+
+<div class="answer">
+<strong>9.</strong> $\Delta x=3$.  
+$L_4=3(4+7+9+10)=\mathbf{90}$ liters.  
+$R_4=3(7+9+10+12)=\mathbf{114}$ liters.
+</div>
+
+<div class="answer">
+<strong>10.</strong> $T_4=\frac{90+114}{2}=\mathbf{102}$ liters.
+</div>
+
+<div class="answer">
+<strong>11.</strong> $\Delta x=1$. Left endpoints: 1,2,3,4.  
+$f$ values: 2,9,22,41.  
+$L_4=1(2+9+22+41)=\mathbf{74}$.
+</div>
+
+<div class="answer">
+<strong>12.</strong> Right endpoints: 2,3,4,5.  
+$f$ values: 9,22,41,66.  
+$R_4=1(9+22+41+66)=\mathbf{138}$.
+</div>
+
+<div class="answer">
+<strong>13.</strong> $T_4=\frac{74+138}{2}=\mathbf{106}$.
+</div>
+
+<div class="answer">
+<strong>14.</strong> Decreasing → left overestimates, right underestimates.  
+Concave up → trapezoidal overestimates.  
+Ranking: $R_n < $ true area $< L_n$ and $T_n$ slightly above true area.
+</div>
+
+<div class="answer">
+<strong>15.</strong> As $n$ increases, $\Delta x=\frac{b-a}{n}$ decreases, making rectangles thinner and reducing the gap between rectangles and curve. As $n\to\infty$, the approximation approaches the definite integral.
+</div>
+
+</div>
 
 </div>
 </body>
