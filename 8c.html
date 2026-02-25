@@ -1,613 +1,910 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Section 8.C</title>
+<title>Section 8.C: Simplifying Complex Fractions</title>
 
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-  svg: { fontCache: 'global' }
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
 };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  margin: 0.5in;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
 }
 
-/* Workspace system */
-.workspace {
-  width: 100%;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.workspace.regular {
-  height: 420px;
+.title-page {
+  text-align: center;
+  border-bottom: 3px solid #00003d;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
-.workspace.small {
-  height: 300px;
+.section-number {
+  color: #00003d;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.workspace.large {
-  height: 600px;
+h1 {
+  color: #00003d;
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
-.workspace.extra-large {
-  height: 750px;
+.intro-text {
+  font-size: 1.05em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  font-style: italic;
 }
+
+.inspirational {
+  font-size: 1.15em;
+  color: #004d99;
+  font-style: italic;
+  text-align: center;
+  margin-top: 15px;
+}
+
+h2 {
+  color: #00003d;
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left: 5px solid #00003d;
+  padding-left: 15px;
+}
+
+.objectives {
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.definition {
+  background-color: #fffacd;
+  border-left: 4px solid #ffd700;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.key-point {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<!-- Global Grid Definition -->
-<svg width="0" height="0" style="position:absolute">
-  <defs>
-    <pattern id="grid"
-             width="20"
-             height="20"
-             patternUnits="userSpaceOnUse">
-      <path d="M20 0 L0 0 0 20"
-            fill="none"
-            stroke="#555"
-            stroke-width="1.2"/>
-    </pattern>
-  </defs>
-</svg>
+<div class="title-page">
+  <div class="section-number">SECTION 8.C</div>
+  <h1>Simplifying Complex Fractions</h1>
+  <div class="intro-text">
+    A complex fraction is simply a division problem written in layered form. 
+    Once structure is recognized, the simplification follows the same 
+    principles used in rational expressions.
+  </div>
+  <div class="inspirational">
+    “Complex fractions are not harder — they are simply deeper layers of the same structure.”
+  </div>
+</div>
 
-<h1>SECTION 8.C<br>Simplify Complex Fractions</h1>
-
-<p>
-A complex fraction is a fraction that contains another fraction in the numerator, the denominator, or both. While they may appear intimidating at first glance, complex fractions follow the same structural rules as rational expressions. In this section, you will simplify complex fractions by applying factoring, common denominators, and reciprocal reasoning.
-</p>
-
-<hr>
-
+<section class="objectives">
 <h2>Learning Objectives</h2>
-
 <ul>
-<li>I can add and subtract fractions containing variables by identifying least common denominators and simplifying results.</li>
-<li>I can multiply and divide fractions with variables, including using complex fraction structure as a division strategy.</li>
-<li>I can simplify complex fractions by rewriting them as division problems or using the LCD method, persevering through multi-step simplifications.</li>
+<li>I can identify the overall numerator and denominator of a complex fraction.</li>
+<li>I can simplify complex fractions using the reciprocal method.</li>
+<li>I can simplify complex fractions using the least common denominator method.</li>
+<li>I can factor and cancel correctly within multi-layered rational structures.</li>
+<li>I can identify and state all domain restrictions.</li>
 </ul>
+</section>
 
-<hr>
-
-<h2>Introduction</h2>
+<section>
+<h2>Introduction: Layered Rational Structure</h2>
 
 <p>
-A complex fraction is simply a division problem written in layered form. The key to simplifying complex fractions is recognizing that the entire numerator is divided by the entire denominator.
+A complex fraction contains at least one fraction in the numerator, the denominator, or both.
 </p>
 
 <p>
-There are two primary strategies:
+For example:
 </p>
 
-<ul>
-<li>Rewrite the complex fraction as multiplication by the reciprocal.</li>
-<li>Multiply every term by the least common denominator to eliminate smaller fractions.</li>
-</ul>
-
-<p>
-Both methods rely on structural understanding and careful algebraic manipulation.
-</p>
-
-<hr>
-
-<h2>Real-World Connection</h2>
-
-<p>
-Complex fractional structures appear in physics formulas involving ratios of rates, electrical resistance calculations, and fluid dynamics equations. Engineers often simplify layered fractional expressions to make formulas usable in applied settings.
-</p>
-
-<hr>
-
-<h2>Historical Note</h2>
-
-<p>
-The manipulation of complex fractional expressions became increasingly important as algebra evolved in the Renaissance period. As symbolic notation improved, mathematicians formalized rules for simplifying nested rational structures, laying groundwork for modern algebraic manipulation techniques.
-</p>
-
-<hr>
-
-<h2>Key Vocabulary and Concepts</h2>
-
-<p><strong>Complex Fraction:</strong> A fraction that contains another fraction in the numerator, denominator, or both.</p>
-
-<p><strong>Least Common Denominator (LCD):</strong> The smallest common denominator used to combine or eliminate fractional components.</p>
-
-<p><strong>Reciprocal:</strong> The multiplicative inverse of a fraction; used when dividing rational expressions.</p>
-
-<p><strong>Equivalent Expressions:</strong> Different algebraic forms that represent the same value for all permissible inputs.</p>
-
-<hr>
-<h2>Core Strategies</h2>
-
-<p>
-There are two primary methods for simplifying complex fractions:
-</p>
-
-<ol>
-<li>Rewrite the complex fraction as multiplication by the reciprocal.</li>
-<li>Multiply every term in the numerator and denominator by the least common denominator (LCD).</li>
-</ol>
-
-<hr>
-
-<h3>Example 1</h3>
-
-<p><strong>Simplify:</strong></p>
-
-\[
+$$
 \frac{\frac{x}{3}}{\frac{2}{x}}
-\]
+$$
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<p>
+Although it may appear complicated, this expression is simply a division problem:
+</p>
 
-<hr>
+$$
+\left(\frac{x}{3}\right) \div \left(\frac{2}{x}\right)
+$$
 
-<h3>Example 2</h3>
+<p>
+The key insight is structural: the entire numerator is divided by the entire denominator.
+</p>
 
-<p><strong>Simplify:</strong></p>
+<div class="key-point">
+<strong>Structural Rule:</strong>  
+Treat the complex fraction as one division problem before simplifying smaller parts.
+</div>
 
-\[
-\frac{\frac{1}{x} + \frac{2}{x}}{\frac{3}{x}}
-\]
+</section>
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<section>
+<h2>Domain and Restrictions</h2>
 
-<hr>
-
-<h3>Example 3</h3>
-
-<p><strong>Simplify:</strong></p>
-
-\[
-\frac{\frac{x^2 - 4}{x}}{\frac{x - 2}{x}}
-\]
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h3>Example 4</h3>
-
-<p><strong>Simplify:</strong></p>
-
-\[
-\frac{\frac{3}{x} - \frac{1}{x}}{\frac{2}{x}}
-\]
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h3>Example 5</h3>
-
-<p><strong>Simplify:</strong></p>
-
-\[
-\frac{\frac{x}{x+1}}{\frac{2}{x+1}}
-\]
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-<h2>Summary of Key Concepts</h2>
+<p>
+Because complex fractions contain multiple denominators, restrictions may arise from:
+</p>
 
 <ul>
-<li>A complex fraction is a division problem written in layered form.</li>
-<li>Rewrite division as multiplication by the reciprocal.</li>
-<li>Multiply every term by the least common denominator when appropriate.</li>
-<li>Factor completely before canceling.</li>
-<li>State all restrictions clearly.</li>
+<li>The small denominators inside the fraction</li>
+<li>The overall denominator of the complex fraction</li>
 </ul>
 
-<hr>
+<p>
+Every denominator must be identified before simplification.
+</p>
 
-<h2>Strategy Checklist</h2>
+<p>
+Even if a factor cancels later, any value that originally made a denominator zero remains excluded from the domain.
+</p>
+
+</section>
+
+<section>
+<h2>Key Vocabulary</h2>
+
+<div class="definition">
+<strong>Complex Fraction:</strong> A fraction whose numerator or denominator (or both) contains another fraction.
+</div>
+
+<div class="definition">
+<strong>Least Common Denominator (LCD):</strong> The smallest common multiple of denominators used to eliminate fractional components.
+</div>
+
+<div class="definition">
+<strong>Reciprocal Method:</strong> A method where the complex fraction is rewritten as multiplication by the reciprocal of the denominator.
+</div>
+
+<div class="definition">
+<strong>Equivalent Rational Expressions:</strong> Expressions that represent the same value for all permissible inputs.
+</div>
+
+</section>
+
+<section>
+<h2>Operational Strategy</h2>
+
+<p>There are two primary methods for simplifying complex fractions:</p>
 
 <ol>
-<li>Identify the overall numerator and denominator.</li>
-<li>Decide whether to use the reciprocal method or LCD method.</li>
-<li>Factor all expressions completely.</li>
-<li>Cancel only common factors.</li>
-<li>Rewrite the simplified expression clearly.</li>
-<li>State all restrictions.</li>
+<li>
+<strong>Reciprocal Method:</strong><br>
+Rewrite the entire complex fraction as multiplication by the reciprocal of the denominator.
+</li>
+
+<li>
+<strong>LCD Method:</strong><br>
+Multiply every term in the numerator and denominator by the least common denominator to eliminate smaller fractions.
+</li>
 </ol>
 
-<hr>
+<div class="key-point">
+Choose the method that produces the cleanest algebraic structure.  
+Both methods are mathematically equivalent.
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- WORKED EXAMPLES -->
+<!-- ========================= -->
+
+<section>
+
+<h2>Worked Examples</h2>
+
+<!-- ================= EXAMPLE 1 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 1 — Reciprocal Method</h3>
+
+<p>Simplify:</p>
+
+$$
+\frac{\frac{x}{4}}{\frac{3}{x}}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p><strong>Step 1: Identify restrictions.</strong></p>
+
+Denominators: 4 and x  
+
+$$
+x \ne 0
+$$
+
+<p><strong>Step 2: Rewrite as multiplication by the reciprocal.</strong></p>
+
+$$
+\frac{x}{4} \cdot \frac{x}{3}
+$$
+
+<p><strong>Step 3: Multiply straight across.</strong></p>
+
+$$
+\frac{x^2}{12}
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+\frac{x^2}{12}, \quad x \ne 0
+$$
+
+</div>
+</div>
+
+
+<!-- ================= EXAMPLE 2 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 2 — Simplify Before Dividing</h3>
+
+<p>Simplify:</p>
+
+$$
+\frac{\frac{2}{x} + \frac{1}{x}}{\frac{3}{x}}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p><strong>Step 1: Identify restrictions.</strong></p>
+
+$$
+x \ne 0
+$$
+
+<p><strong>Step 2: Combine the numerator first.</strong></p>
+
+$$
+\frac{3}{x}
+$$
+
+Now the complex fraction becomes:
+
+$$
+\frac{\frac{3}{x}}{\frac{3}{x}}
+$$
+
+<p><strong>Step 3: Rewrite as multiplication by reciprocal.</strong></p>
+
+$$
+\frac{3}{x} \cdot \frac{x}{3}
+$$
+
+$$
+= 1
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+1, \quad x \ne 0
+$$
+
+</div>
+</div>
+
+
+<!-- ================= EXAMPLE 3 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 3 — Factoring Required</h3>
+
+<p>Simplify:</p>
+
+$$
+\frac{\frac{x^2 - 9}{x}}{\frac{x - 3}{x}}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p><strong>Step 1: Identify restrictions.</strong></p>
+
+$$
+x \ne 0, \quad x \ne 3
+$$
+
+<p><strong>Step 2: Rewrite as multiplication by reciprocal.</strong></p>
+
+$$
+\frac{x^2 - 9}{x} \cdot \frac{x}{x - 3}
+$$
+
+<p><strong>Step 3: Factor completely.</strong></p>
+
+$$
+\frac{(x - 3)(x + 3)}{x} \cdot \frac{x}{x - 3}
+$$
+
+<p><strong>Step 4: Cancel common factors.</strong></p>
+
+Cancel $x$ and $(x - 3)$:
+
+$$
+x + 3
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+x + 3, \quad x \ne 0,\,3
+$$
+
+</div>
+</div>
+
+
+<!-- ================= EXAMPLE 4 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 4 — LCD Method</h3>
+
+<p>Simplify:</p>
+
+$$
+\frac{\frac{1}{x - 1} + \frac{1}{x + 1}}{\frac{2}{x^2 - 1}}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p><strong>Step 1: Identify restrictions.</strong></p>
+
+$$
+x \ne 1, \quad x \ne -1
+$$
+
+<p><strong>Step 2: Combine numerator using common denominator.</strong></p>
+
+$$
+\frac{(x + 1) + (x - 1)}{(x - 1)(x + 1)}
+=
+\frac{2x}{x^2 - 1}
+$$
+
+Now the complex fraction becomes:
+
+$$
+\frac{\frac{2x}{x^2 - 1}}{\frac{2}{x^2 - 1}}
+$$
+
+<p><strong>Step 3: Rewrite as multiplication by reciprocal.</strong></p>
+
+$$
+\frac{2x}{x^2 - 1} \cdot \frac{x^2 - 1}{2}
+$$
+
+Cancel:
+
+$$
+x
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+x, \quad x \ne \pm1
+$$
+
+</div>
+</div>
+
+
+<!-- ================= EXAMPLE 5 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 5 — Multi-Layered Structure</h3>
+
+<p>Simplify:</p>
+
+$$
+\frac{\frac{x}{x - 2} - \frac{1}{x - 2}}{\frac{3}{x - 2}}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p><strong>Step 1: Identify restrictions.</strong></p>
+
+$$
+x \ne 2
+$$
+
+<p><strong>Step 2: Combine numerator.</strong></p>
+
+$$
+\frac{x - 1}{x - 2}
+$$
+
+Now the complex fraction becomes:
+
+$$
+\frac{\frac{x - 1}{x - 2}}{\frac{3}{x - 2}}
+$$
+
+<p><strong>Step 3: Rewrite as multiplication by reciprocal.</strong></p>
+
+$$
+\frac{x - 1}{x - 2} \cdot \frac{x - 2}{3}
+$$
+
+Cancel $(x - 2)$:
+
+$$
+\frac{x - 1}{3}
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+\frac{x - 1}{3}, \quad x \ne 2
+$$
+
+</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- COMMON MISTAKES -->
+<!-- ========================= -->
+
+<section>
 
 <h2>Common Mistakes</h2>
 
-<h3>Canceling Terms Instead of Factors</h3>
+<ul>
 
-<p>
-Only factors may cancel. Terms separated by addition or subtraction cannot be canceled.
-</p>
+<li>
+<strong>Ignoring the Overall Fraction Structure:</strong><br>
+A complex fraction represents one division problem. Students sometimes simplify only the top or bottom without recognizing the full structure.
+</li>
 
-<h3>Ignoring the Overall Fraction Structure</h3>
+<li>
+<strong>Canceling Terms Instead of Factors:</strong><br>
+Only factors may cancel. Terms separated by addition or subtraction cannot cancel across a fraction bar.
+</li>
 
-<p>
-The entire numerator is divided by the entire denominator. Treat the fraction as one division problem.
-</p>
+<li>
+<strong>Forgetting to Combine the Numerator or Denominator First:</strong><br>
+When the numerator or denominator contains addition or subtraction, those expressions often need to be simplified before rewriting the complex fraction.
+</li>
 
-<h3>Forgetting to Factor First</h3>
+<li>
+<strong>Skipping Factoring:</strong><br>
+Factoring is often required before cancellation. Without factoring, common factors remain hidden.
+</li>
 
-<p>
-Factoring is required before simplification in many complex fractions.
-</p>
+<li>
+<strong>Missing Restrictions:</strong><br>
+Every small denominator and the overall denominator create restrictions. Even if a factor cancels, the original restriction remains.
+</li>
 
-<h3>Missing Restrictions</h3>
+<li>
+<strong>Choosing the Wrong Method:</strong><br>
+Sometimes the reciprocal method produces complicated algebra, while the LCD method simplifies structure quickly. Strategic choice matters.
+</li>
 
-<p>
-Even when factors cancel, original denominator restrictions remain.
-</p>
+</ul>
 
-<hr>
+</section>
+
+
+<!-- ========================= -->
+<!-- ENHANCED SUMMARY -->
+<!-- ========================= -->
+
+<section>
+
+<h2>Summary of Complex Fraction Strategy</h2>
+
+<table style="width:100%;border-collapse:collapse;margin-top:20px;">
+<thead>
+<tr style="background-color:#00003d;color:white;">
+<th style="padding:12px;border:1px solid #ddd;">Structural Situation</th>
+<th style="padding:12px;border:1px solid #ddd;">Best Strategy</th>
+<th style="padding:12px;border:1px solid #ddd;">Key Reminder</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td style="padding:12px;border:1px solid #ddd;"><strong>Single fraction over single fraction</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Reciprocal Method</td>
+<td style="padding:12px;border:1px solid #ddd;">Rewrite as multiplication by the reciprocal.</td>
+</tr>
+
+<tr style="background-color:#f9f9f9;">
+<td style="padding:12px;border:1px solid #ddd;"><strong>Addition or subtraction inside numerator</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Simplify numerator first</td>
+<td style="padding:12px;border:1px solid #ddd;">Use a common denominator before dividing.</td>
+</tr>
+
+<tr>
+<td style="padding:12px;border:1px solid #ddd;"><strong>Multiple small denominators</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">LCD Method</td>
+<td style="padding:12px;border:1px solid #ddd;">Multiply every term by the LCD to eliminate small fractions.</td>
+</tr>
+
+<tr style="background-color:#f9f9f9;">
+<td style="padding:12px;border:1px solid #ddd;"><strong>Factored expressions present</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Factor completely</td>
+<td style="padding:12px;border:1px solid #ddd;">Cancel only true common factors.</td>
+</tr>
+
+<tr>
+<td style="padding:12px;border:1px solid #ddd;"><strong>Domain considerations</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Identify restrictions first</td>
+<td style="padding:12px;border:1px solid #ddd;">Restrictions come from all original denominators.</td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+<div style="background-color:#f0f4f8;border-left:5px solid #00003d;padding:20px;border-radius:6px;">
+
+<strong>Core Structural Principles:</strong>
+
+<ul>
+<li>A complex fraction is one division problem.</li>
+<li>Combine internal fractions before simplifying the whole.</li>
+<li>Reciprocal and LCD methods are equivalent — choose strategically.</li>
+<li>Factoring reveals cancelable structure.</li>
+<li>Restrictions are determined by the original denominators.</li>
+<li>Structure first. Arithmetic second.</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PRACTICE PROBLEMS -->
+<!-- ========================= -->
+
+<section>
+
 <h2>Practice Problems</h2>
 
-<h3>Easy</h3>
+<!-- ================= LEVEL 1 ================= -->
+
+<h3>Level 1 — Reciprocal Method</h3>
 
 <p><strong>1.</strong> Simplify:
-\[
-\frac{\frac{x+1}{x}}{\frac{1}{x}}
-\]
+$$
+\frac{\frac{x}{5}}{\frac{4}{x}}
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
 
 <p><strong>2.</strong> Simplify:
-\[
-\frac{\frac{x+2}{x}}{\frac{2}{x}}
-\]
+$$
+\frac{\frac{3}{x}}{\frac{6}{x}}
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
 
 <p><strong>3.</strong> Simplify:
-\[
+$$
 \frac{\frac{x^2-1}{x}}{\frac{x-1}{x}}
-\]
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h3>Medium</h3>
 
 <p><strong>4.</strong> Simplify:
-\[
-\frac{\frac{x}{x+1}}{\frac{2}{x+1}}
-\]
+$$
+\frac{\frac{2x}{x+3}}{\frac{1}{x+3}}
+$$
 </p>
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<!-- ================= LEVEL 2 ================= -->
+
+<h3>Level 2 — Combine Before Dividing</h3>
 
 <p><strong>5.</strong> Simplify:
-\[
-\frac{\frac{1}{x} + \frac{1}{x+1}}{\frac{1}{x}}
-\]
+$$
+\frac{\frac{1}{x} + \frac{2}{x}}{\frac{3}{x}}
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
 
 <p><strong>6.</strong> Simplify:
-\[
-\frac{\frac{3}{x} - \frac{1}{x}}{\frac{2}{x}}
-\]
+$$
+\frac{\frac{x}{x-1} + \frac{1}{x-1}}{\frac{2}{x-1}}
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h3>Hard</h3>
 
 <p><strong>7.</strong> Simplify:
-\[
-\frac{\frac{x^2-4}{x}}{\frac{x-2}{x}}
-\]
+$$
+\frac{\frac{4}{x} - \frac{1}{x}}{\frac{3}{x}}
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
 
 <p><strong>8.</strong> Simplify:
-\[
-\frac{\frac{x^2-9}{x}}{\frac{x-3}{x}}
-\]
+$$
+\frac{\frac{x^2-4}{x} + \frac{x-2}{x}}{\frac{x-2}{x}}
+$$
 </p>
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<!-- ================= LEVEL 3 ================= -->
+
+<h3>Level 3 — Factoring Required</h3>
 
 <p><strong>9.</strong> Simplify:
-\[
-\frac{\frac{1}{x-2} + \frac{1}{x+2}}{\frac{2}{x^2-4}}
-\]
+$$
+\frac{\frac{x^2-9}{x}}{\frac{x-3}{x}}
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
 
 <p><strong>10.</strong> Simplify:
-\[
-\frac{\frac{x}{x-1} - \frac{1}{x-1}}{\frac{2}{x-1}}
-\]
+$$
+\frac{\frac{x^2-16}{x}}{\frac{x-4}{x}}
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
 
 <p><strong>11.</strong> Simplify:
-\[
+$$
 \frac{\frac{x^2-4}{x-2}}{\frac{x-2}{x+2}}
-\]
+$$
 </p>
-
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
 
 <p><strong>12.</strong> Simplify:
-\[
-\frac{\frac{x^2-9}{x-3}}{\frac{x-3}{x+3}}
-\]
+$$
+\frac{\frac{x^2-25}{x-5}}{\frac{x-5}{x+5}}
+$$
 </p>
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<!-- ================= LEVEL 4 ================= -->
 
-<hr>
+<h3>Level 4 — LCD Method</h3>
 
-<h3>Challenge</h3>
-
-<p><strong>13.</strong> Create a complex fraction that simplifies to:
-\[
-x + 1
-\]
+<p><strong>13.</strong> Simplify:
+$$
+\frac{\frac{1}{x-2} + \frac{1}{x+2}}{\frac{2}{x^2-4}}
+$$
 </p>
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<p><strong>14.</strong> Create a complex fraction that simplifies to:
-\[
-2x
-\]
+<p><strong>14.</strong> Simplify:
+$$
+\frac{\frac{3}{x} + \frac{1}{x+1}}{\frac{1}{x}}
+$$
 </p>
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<p><strong>15.</strong> Simplify:
+$$
+\frac{\frac{x}{x-1} - \frac{1}{x-1}}{\frac{2}{x-1}}
+$$
+</p>
 
-<p><strong>15.</strong> Construct a complex fraction that has two restrictions in its domain.</p>
+<!-- ================= LEVEL 5 ================= -->
 
-<svg class="workspace regular" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<h3>Level 5 — Justify</h3>
 
-<hr>
+<p><strong>16.</strong> Explain why the reciprocal method preserves equivalence when simplifying complex fractions.</p>
 
-<h3>Justify</h3>
+<p><strong>17.</strong> Justify why multiplying by the least common denominator clears smaller fractions without changing the value of the expression.</p>
 
-<p><strong>16.</strong> Explain why the reciprocal method works when simplifying complex fractions.</p>
+<p><strong>18.</strong> Explain why factoring is often necessary before canceling in complex fractions.</p>
 
-<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+</section>
 
-<p><strong>17.</strong> Justify why multiplying by the least common denominator eliminates smaller fractions.</p>
+<!-- ========================= -->
+<!-- SOLUTIONS SECTION -->
+<!-- ========================= -->
 
-<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+<section>
 
-<p><strong>18.</strong> Explain why factoring is essential when simplifying complex fractions.</p>
-
-<svg class="workspace large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
 <h2>Solutions</h2>
 
-<h3>Easy</h3>
+<!-- ================= LEVEL 1 ================= -->
+
+<h3>Level 1 — Reciprocal Method</h3>
 
 <p><strong>1.</strong>
-\[
-\frac{\frac{x+1}{x}}{\frac{1}{x}}
-= \frac{x+1}{x} \cdot \frac{x}{1}
-= x + 1
+$$
+\frac{\frac{x}{5}}{\frac{4}{x}}
+= \frac{x}{5} \cdot \frac{x}{4}
+= \frac{x^2}{20}
 \quad (x \ne 0)
-\]
+$$
 </p>
 
 <p><strong>2.</strong>
-\[
-\frac{\frac{x+2}{x}}{\frac{2}{x}}
-= \frac{x+2}{x} \cdot \frac{x}{2}
-= \frac{x+2}{2}
+$$
+\frac{\frac{3}{x}}{\frac{6}{x}}
+= \frac{3}{x} \cdot \frac{x}{6}
+= \frac{1}{2}
 \quad (x \ne 0)
-\]
+$$
 </p>
 
 <p><strong>3.</strong>
-\[
+$$
 \frac{\frac{x^2-1}{x}}{\frac{x-1}{x}}
 = \frac{(x-1)(x+1)}{x} \cdot \frac{x}{x-1}
 = x+1
-\quad (x \ne 0,\, x \ne 1)
-\]
+\quad (x \ne 0,\,1)
+$$
 </p>
-
-<hr>
-
-<h3>Medium</h3>
 
 <p><strong>4.</strong>
-\[
-\frac{\frac{x}{x+1}}{\frac{2}{x+1}}
-= \frac{x}{x+1} \cdot \frac{x+1}{2}
-= \frac{x}{2}
-\quad (x \ne -1)
-\]
+$$
+\frac{\frac{2x}{x+3}}{\frac{1}{x+3}}
+= \frac{2x}{x+3} \cdot \frac{x+3}{1}
+= 2x
+\quad (x \ne -3)
+$$
 </p>
 
+<!-- ================= LEVEL 2 ================= -->
+
+<h3>Level 2 — Combine Before Dividing</h3>
+
 <p><strong>5.</strong>
-\[
-\frac{\frac{1}{x} + \frac{1}{x+1}}{\frac{1}{x}}
-= \frac{\frac{x+1 + x}{x(x+1)}}{\frac{1}{x}}
-= \frac{2x+1}{x(x+1)} \cdot x
-= \frac{2x+1}{x+1}
-\quad (x \ne 0,\, x \ne -1)
-\]
+$$
+\frac{\frac{3}{x}}{\frac{3}{x}}
+= 1
+\quad (x \ne 0)
+$$
 </p>
 
 <p><strong>6.</strong>
-\[
-\frac{\frac{3}{x} - \frac{1}{x}}{\frac{2}{x}}
-= \frac{\frac{2}{x}}{\frac{2}{x}}
-= 1
-\quad (x \ne 0)
-\]
+$$
+\frac{\frac{x+1}{x-1}}{\frac{2}{x-1}}
+= \frac{x+1}{x-1} \cdot \frac{x-1}{2}
+= \frac{x+1}{2}
+\quad (x \ne 1)
+$$
 </p>
 
-<hr>
-
-<h3>Hard</h3>
-
 <p><strong>7.</strong>
-\[
-\frac{\frac{x^2-4}{x}}{\frac{x-2}{x}}
-= \frac{(x-2)(x+2)}{x} \cdot \frac{x}{x-2}
-= x+2
-\quad (x \ne 0,\, x \ne 2)
-\]
+$$
+\frac{\frac{3}{x}}{\frac{3}{x}}
+= 1
+\quad (x \ne 0)
+$$
 </p>
 
 <p><strong>8.</strong>
-\[
-\frac{\frac{x^2-9}{x}}{\frac{x-3}{x}}
-= \frac{(x-3)(x+3)}{x} \cdot \frac{x}{x-3}
+$$
+\frac{\frac{x^2-4 + x-2}{x}}{\frac{x-2}{x}}
+= \frac{\frac{x^2 + x - 6}{x}}{\frac{x-2}{x}}
+= \frac{(x-2)(x+3)}{x} \cdot \frac{x}{x-2}
 = x+3
-\quad (x \ne 0,\, x \ne 3)
-\]
+\quad (x \ne 0,\,2)
+$$
 </p>
 
+<!-- ================= LEVEL 3 ================= -->
+
+<h3>Level 3 — Factoring Required</h3>
+
 <p><strong>9.</strong>
-\[
-\frac{\frac{1}{x-2} + \frac{1}{x+2}}{\frac{2}{x^2-4}}
-= \frac{\frac{(x+2)+(x-2)}{(x-2)(x+2)}}{\frac{2}{(x-2)(x+2)}}
-= \frac{\frac{2x}{x^2-4}}{\frac{2}{x^2-4}}
-= x
-\quad (x \ne \pm 2)
-\]
+$$
+\frac{\frac{(x-3)(x+3)}{x}}{\frac{x-3}{x}}
+= x+3
+\quad (x \ne 0,\,3)
+$$
 </p>
 
 <p><strong>10.</strong>
-\[
-\frac{\frac{x}{x-1} - \frac{1}{x-1}}{\frac{2}{x-1}}
-= \frac{\frac{x-1}{x-1}}{\frac{2}{x-1}}
-= \frac{1}{2/(x-1)}
-= \frac{x-1}{2}
-\quad (x \ne 1)
-\]
+$$
+\frac{\frac{(x-4)(x+4)}{x}}{\frac{x-4}{x}}
+= x+4
+\quad (x \ne 0,\,4)
+$$
 </p>
 
 <p><strong>11.</strong>
-\[
-\frac{\frac{x^2-4}{x-2}}{\frac{x-2}{x+2}}
-= \frac{(x-2)(x+2)}{x-2} \cdot \frac{x+2}{x-2}
+$$
+\frac{\frac{(x-2)(x+2)}{x-2}}{\frac{x-2}{x+2}}
+= \frac{x+2}{1} \cdot \frac{x+2}{x-2}
 = \frac{(x+2)^2}{x-2}
-\quad (x \ne 2,\, x \ne -2)
-\]
+\quad (x \ne 2,\,-2)
+$$
 </p>
 
 <p><strong>12.</strong>
-\[
-\frac{\frac{x^2-9}{x-3}}{\frac{x-3}{x+3}}
-= \frac{(x-3)(x+3)}{x-3} \cdot \frac{x+3}{x-3}
-= \frac{(x+3)^2}{x-3}
-\quad (x \ne 3,\, x \ne -3)
-\]
+$$
+\frac{\frac{(x-5)(x+5)}{x-5}}{\frac{x-5}{x+5}}
+= \frac{x+5}{1} \cdot \frac{x+5}{x-5}
+= \frac{(x+5)^2}{x-5}
+\quad (x \ne 5,\,-5)
+$$
 </p>
 
-<hr>
+<!-- ================= LEVEL 4 ================= -->
 
-<h3>Challenge</h3>
+<h3>Level 4 — LCD Method</h3>
 
 <p><strong>13.</strong>
-Example:
-\[
-\frac{\frac{x+1}{1}}{\frac{1}{1}} = x+1
-\]
+$$
+\frac{\frac{2x}{x^2-4}}{\frac{2}{x^2-4}}
+= x
+\quad (x \ne \pm2)
+$$
 </p>
 
 <p><strong>14.</strong>
-Example:
-\[
-\frac{\frac{2x}{1}}{\frac{1}{1}} = 2x
-\]
+$$
+\frac{\frac{3(x+1)+x}{x(x+1)}}{\frac{1}{x}}
+= \frac{4x+3}{x+1}
+\quad (x \ne 0,\,-1)
+$$
 </p>
 
 <p><strong>15.</strong>
-Example:
-\[
-\frac{\frac{x}{x-2}}{\frac{1}{x+3}}
-\quad (x \ne 2,\, x \ne -3)
-\]
+$$
+\frac{\frac{x-1}{x-1}}{\frac{2}{x-1}}
+= \frac{1}{2/(x-1)}
+= \frac{x-1}{2}
+\quad (x \ne 1)
+$$
 </p>
 
-<hr>
+<!-- ================= LEVEL 5 ================= -->
 
-<h3>Justify</h3>
+<h3>Level 5 — Justify</h3>
 
 <p><strong>16.</strong>
-The reciprocal method works because dividing by a fraction is equivalent to multiplying by its reciprocal. This preserves equality while eliminating the layered fraction structure.
+Dividing by a fraction is equivalent to multiplying by its reciprocal. This preserves equality while eliminating the layered fraction structure.
 </p>
 
 <p><strong>17.</strong>
-Multiplying by the least common denominator clears smaller denominators by distributing across the numerator and denominator simultaneously, preserving equivalence.
+Multiplying numerator and denominator by the least common denominator distributes across every term, clearing smaller denominators without changing the value.
 </p>
 
 <p><strong>18.</strong>
-Factoring exposes cancelable factors. Without factoring, simplification may incorrectly cancel terms instead of factors.
+Factoring reveals multiplicative structure. Without factoring, cancellation may incorrectly remove terms instead of true common factors.
 </p>
 
+</section>
+</div>
 </body>
 </html>

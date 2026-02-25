@@ -1,854 +1,863 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Section 8.E</title>
+<title>Section 8.E: Limits and Discontinuities</title>
 
 <script>
 window.MathJax = {
-    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-    svg: { fontCache: 'global' }
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
 };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    margin: 0.25in;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 20px;
 }
-svg {
-    display: block;
-    margin: 20px auto;
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
+.title-page {
+  text-align: center;
+  border-bottom: 3px solid #00003d;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.section-number {
+  color: #00003d;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #00003d;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  font-size: 1.05em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  font-style: italic;
+}
+
+.inspirational {
+  font-size: 1.15em;
+  color: #004d99;
+  font-style: italic;
+  text-align: center;
+  margin-top: 15px;
+}
+
+h2 {
+  color: #00003d;
+  font-size: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left: 5px solid #00003d;
+  padding-left: 15px;
+}
+
+.objectives {
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.definition {
+  background-color: #fffacd;
+  border-left: 4px solid #ffd700;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.key-point {
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<h1>SECTION 8.E<br>Limits and Discontinuities</h1>
+<div class="title-page">
+  <div class="section-number">SECTION 8.E</div>
+  <h1>Limits and Discontinuities</h1>
+  <div class="intro-text">
+    A limit describes the value a function approaches as the input approaches a particular number.
+    It focuses on behavior near a point — not necessarily the value at that point.
+  </div>
+  <div class="inspirational">
+    “Limits describe approach, not arrival.”
+  </div>
+</div>
 
-<p>
-Limits describe the behavior of a function as the input approaches a particular value. Instead of focusing on the function’s exact value at a point, limits examine what the function approaches near that point. In this section, you will evaluate limits graphically and algebraically and classify different types of discontinuities.
-</p>
-
-<hr>
-
+<section class="objectives">
 <h2>Learning Objectives</h2>
-
 <ul>
-<li>I can evaluate one-sided and two-sided limits from graphs.</li>
-<li>I can classify discontinuities as removable, infinite, or jump discontinuities.</li>
-<li>I can evaluate limits algebraically by factoring and simplifying rational expressions.</li>
-<li>I can write limit notation correctly and interpret function behavior near undefined points.</li>
+<li>I can evaluate limits graphically using one-sided and two-sided notation.</li>
+<li>I can evaluate limits algebraically using direct substitution and factoring.</li>
+<li>I can distinguish between removable, infinite, and jump discontinuities.</li>
+<li>I can correctly use limit notation and interpret behavior near undefined points.</li>
+<li>I can connect rational expression structure to limit behavior.</li>
 </ul>
+</section>
 
-<hr>
-
+<section>
 <h2>Introduction: Behavior Near a Point</h2>
 
 <p>
-A limit answers the question: what value does the function approach as the input approaches a specific number? The function does not need to be defined at that number for a limit to exist.
+A limit answers the question:
+</p>
+
+<p style="text-align:center;">
+<strong>What value does the function approach as $x$ approaches a specific number?</strong>
 </p>
 
 <p>
-Three main behaviors may occur:
+The function does not need to be defined at that number for a limit to exist.
+</p>
+
+<p>
+Three outcomes are possible when evaluating limits:
 </p>
 
 <ul>
-<li>The function approaches a single value (limit exists).</li>
-<li>The left and right sides approach different values (limit does not exist).</li>
-<li>The function increases or decreases without bound (infinite discontinuity).</li>
+<li>The function approaches a single value → the limit exists.</li>
+<li>The left and right approaches differ → the limit does not exist.</li>
+<li>The function increases or decreases without bound → infinite behavior.</li>
 </ul>
 
-<hr>
+</section>
 
-<h2>Real-World Connection</h2>
+<section>
+<h2>Key Vocabulary</h2>
 
-<p>
-Limits are used in physics to describe instantaneous velocity and acceleration. Engineers analyze system stability by examining behavior near critical thresholds. Economists evaluate how markets behave as prices approach equilibrium.
-</p>
+<div class="definition">
+<strong>Limit:</strong> The value a function approaches as the input approaches a specific number.
+</div>
 
-<hr>
+<div class="definition">
+<strong>One-Sided Limit:</strong> A limit taken from the left ($x \to a^-$) or right ($x \to a^+$).
+</div>
 
-<h2>Historical Note</h2>
+<div class="definition">
+<strong>Two-Sided Limit:</strong> Exists only if both one-sided limits are equal.
+</div>
 
-<p>
-The formal definition of limits was developed in the 19th century to make calculus rigorous. Mathematicians such as Cauchy and Weierstrass established precise foundations that support modern analysis.
-</p>
+<div class="definition">
+<strong>Removable Discontinuity:</strong> A hole caused by a canceled factor.
+</div>
 
-<hr>
+<div class="definition">
+<strong>Infinite Discontinuity:</strong> A vertical asymptote where function values increase or decrease without bound.
+</div>
 
-<h2>Key Vocabulary and Concepts</h2>
+<div class="definition">
+<strong>Jump Discontinuity:</strong> A break where left and right limits are not equal.
+</div>
 
-<p><strong>Limit:</strong> The value a function approaches as the input approaches a given number.</p>
-<p><strong>One-Sided Limit:</strong> A limit taken from the left (\(x \to a^-\)) or right (\(x \to a^+\)).</p>
-<p><strong>Two-Sided Limit:</strong> A limit that exists only if both one-sided limits are equal.</p>
-<p><strong>Removable Discontinuity:</strong> A hole caused by a canceled factor.</p>
-<p><strong>Infinite Discontinuity:</strong> A vertical asymptote where the function increases or decreases without bound.</p>
-<p><strong>Jump Discontinuity:</strong> A break where one-sided limits are not equal.</p>
+</section>
 
-<hr>
+<section>
+<h2>Core Strategy 1: Graphical Evaluation</h2>
 
-<h2>Core Strategy 1: Evaluate Limits Graphically</h2>
+<p>When evaluating limits from a graph:</p>
 
-<h3>Example 1: Removable Discontinuity</h3>
+<ol>
+<li>Follow the curve as $x$ approaches the target value.</li>
+<li>Determine the left-hand limit.</li>
+<li>Determine the right-hand limit.</li>
+<li>If both sides match, the two-sided limit exists.</li>
+</ol>
 
-<p>
-\[
-\lim_{x \to 2} f(x) = 3
-\]
-</p>
+<div class="key-point">
+The function value at the point does not determine the limit.
+</div>
 
-<!-- Removable Discontinuity Graph -->
-<svg width="250" height="250" viewBox="-5 -5 10 10"
-     xmlns="http://www.w3.org/2000/svg">
+</section>
 
-  <defs>
-    <pattern id="grid1" width="1" height="1" patternUnits="userSpaceOnUse">
-      <path d="M1 0 L0 0 0 1"
-            fill="none"
-            stroke="#ddd"
-            stroke-width="0.03"/>
-    </pattern>
-  </defs>
+<section>
+<h2>Core Strategy 2: Algebraic Evaluation</h2>
 
-  <rect x="-5" y="-5" width="10" height="10" fill="url(#grid1)" />
-
-  <line x1="-5" y1="0" x2="5" y2="0" stroke="black" stroke-width="0.08"/>
-  <line x1="0" y1="-5" x2="0" y2="5" stroke="black" stroke-width="0.08"/>
-
-  <path d="M -5,-4 C -3,-2 -1,0 1,2 C 2,3 3,4 5,6"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-
-  <circle cx="2" cy="3" r="0.25"
-          fill="white"
-          stroke="black"
-          stroke-width="0.1"/>
-</svg>
-
-<hr>
-
-<h3>Example 2: Jump Discontinuity</h3>
-
-<p>
-\[
-\lim_{x \to 1^-} f(x) = 2
-\quad
-\lim_{x \to 1^+} f(x) = 0
-\]
-</p>
-
-<svg width="250" height="250" viewBox="-5 -5 10 10"
-     xmlns="http://www.w3.org/2000/svg">
-
-  <defs>
-    <pattern id="grid2" width="1" height="1" patternUnits="userSpaceOnUse">
-      <path d="M1 0 L0 0 0 1"
-            fill="none"
-            stroke="#ddd"
-            stroke-width="0.03"/>
-    </pattern>
-  </defs>
-
-  <rect x="-5" y="-5" width="10" height="10" fill="url(#grid2)" />
-
-  <line x1="-5" y1="0" x2="5" y2="0" stroke="black" stroke-width="0.08"/>
-  <line x1="0" y1="-5" x2="0" y2="5" stroke="black" stroke-width="0.08"/>
-
-  <path d="M -5,-4 C -3,-2 -1,0 1,2"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"
-        stroke-linecap="round"/>
-
-  <circle cx="1" cy="2" r="0.25"
-          fill="white"
-          stroke="black"
-          stroke-width="0.1"/>
-
-  <path d="M 1,0 C 2,1 3,2 5,4"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"
-        stroke-linecap="round"/>
-
-  <circle cx="1" cy="0" r="0.25"
-          fill="#1f77b4"
-          stroke="black"
-          stroke-width="0.1"/>
-</svg>
-
-<hr>
-
-<h3>Example 3: Infinite Discontinuity</h3>
-
-<p>
-\[
-\lim_{x \to 2^-} f(x) = -\infty
-\quad
-\lim_{x \to 2^+} f(x) = \infty
-\]
-</p>
-
-<svg width="250" height="250" viewBox="-5 -5 10 10"
-     xmlns="http://www.w3.org/2000/svg">
-
-  <defs>
-    <pattern id="grid3" width="1" height="1" patternUnits="userSpaceOnUse">
-      <path d="M1 0 L0 0 0 1"
-            fill="none"
-            stroke="#ddd"
-            stroke-width="0.03"/>
-    </pattern>
-  </defs>
-
-  <rect x="-5" y="-5" width="10" height="10" fill="url(#grid3)" />
-
-  <line x1="-5" y1="0" x2="5" y2="0" stroke="black" stroke-width="0.08"/>
-  <line x1="0" y1="-5" x2="0" y2="5" stroke="black" stroke-width="0.08"/>
-
-  <line x1="-2" y1="-5" x2="-2" y2="5"
-        stroke="black"
-        stroke-width="0.08"
-        stroke-dasharray="0.3,0.3"/>
-  <line x1="2" y1="-5" x2="2" y2="5"
-        stroke="black"
-        stroke-width="0.08"
-        stroke-dasharray="0.3,0.3"/>
-
-  <path d="M -5,0.04 C -4,0.08 -3,0.25 -2.5,0.8 C -2.3,1.5 -2.2,2.5 -2.1,4.5"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"
-        stroke-linecap="round"/>
-
-  <path d="M -1.9,-4 C -1.5,-1.2 -1,-0.4 0,-0.25 C 1,-0.4 1.5,-1.2 1.9,-4"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"
-        stroke-linecap="round"/>
-
-  <path d="M 2.1,4.5 C 2.2,2.5 2.3,1.5 2.5,0.8 C 3,0.25 4,0.08 5,0.04"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"
-        stroke-linecap="round"/>
-</svg>
-
-<hr>
-
-<h2>Core Strategy 2: Evaluate Limits Algebraically</h2>
-
-<p>
-If substitution produces \(\frac{0}{0}\), factor and simplify before substituting again.
-</p>
-
-<h3>Example 4: Direct Substitution</h3>
-
-<p>
-\[
-\lim_{x \to 3} (2x^2 - x + 1)
-\]
-</p>
-
-<svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-
-<hr>
-<h3>Example 5: Indeterminate Form (Factoring Required)</h3>
-
-<p>
-\[
-\lim_{x \to 2} \frac{x^2 - 4}{x - 2}
-\]
-</p>
-
-<svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h3>Example 6: Infinite Limit (Vertical Asymptote)</h3>
-
-<p>
-\[
-\lim_{x \to 2} \frac{1}{x - 2}
-\]
-</p>
-
-<svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h2>Classifying Discontinuities</h2>
-
-<p>
-Discontinuities can be identified directly from algebraic structure.
-</p>
-
-<ul>
-<li>If a factor cancels → <strong>Removable discontinuity (hole)</strong>.</li>
-<li>If a factor does not cancel and remains in the denominator → <strong>Infinite discontinuity (vertical asymptote)</strong>.</li>
-<li>If a piecewise function changes values abruptly → <strong>Jump discontinuity</strong>.</li>
-</ul>
-
-<p><strong>Example 7:</strong></p>
-
-<p>
-\[
-f(x) = \frac{(x - 3)(x + 2)}{x - 3}
-\]
-</p>
-
-<svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h2>Summary of Key Concepts</h2>
-
-<ul>
-<li>A limit describes behavior near a point, not necessarily the value at the point.</li>
-<li>If left and right limits are equal, the two-sided limit exists.</li>
-<li>If substitution produces \(\frac{0}{0}\), factor and simplify.</li>
-<li>If the denominator remains zero and does not cancel, analyze one-sided behavior.</li>
-<li>Discontinuities can be removable, infinite, or jump.</li>
-</ul>
-
-<hr>
-
-<h2>Strategy Checklist</h2>
+<p>When evaluating limits algebraically:</p>
 
 <ol>
 <li>Try direct substitution first.</li>
-<li>If you get \(\frac{0}{0}\), factor and simplify.</li>
-<li>If denominator remains zero, analyze left and right behavior.</li>
-<li>Compare one-sided limits.</li>
-<li>Classify the discontinuity.</li>
+<li>If substitution gives a number → that is the limit.</li>
+<li>If substitution gives $\frac{0}{0}$ → factor and simplify.</li>
+<li>If the denominator remains zero → analyze one-sided behavior.</li>
 </ol>
 
-<hr>
+<div class="key-point">
+An indeterminate form $\frac{0}{0}$ signals that simplification is required.
+</div>
 
-<h2>Common Mistakes and How to Avoid Them</h2>
+</section>
 
-<h3>1️⃣ Confusing Function Value with Limit</h3>
+<section>
+<h2>Classifying Discontinuities</h2>
 
-<p>
-The limit depends on approaching behavior, not the actual function value at the point.
-</p>
-
-<h3>2️⃣ Stopping After Getting 0/0</h3>
-
-<p>
-An indeterminate form means further simplification is required.
-</p>
-
-<h3>3️⃣ Ignoring One-Sided Limits</h3>
+<ul>
+<li>If a factor cancels → <strong>Removable discontinuity (hole)</strong>.</li>
+<li>If a denominator factor remains → <strong>Infinite discontinuity (vertical asymptote)</strong>.</li>
+<li>If left and right limits differ → <strong>Jump discontinuity</strong>.</li>
+</ul>
 
 <p>
-If left and right limits differ, the two-sided limit does not exist.
+Factoring reveals which type of discontinuity is present.
 </p>
 
-<h3>4️⃣ Forgetting to Classify the Discontinuity</h3>
+</section>
 
-<p>
-Every non-continuous point should be identified as removable, infinite, or jump.
-</p>
+<!-- ========================= -->
+<!-- WORKED EXAMPLES -->
+<!-- ========================= -->
 
-<hr>
+<section>
+
+<h2>Worked Examples</h2>
+
+<!-- ================= EXAMPLE 1 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 1 — Direct Substitution</h3>
+
+<p>Evaluate:</p>
+
+$$
+\lim_{x \to 3} (2x^2 - x + 1)
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p><strong>Step 1: Substitute directly.</strong></p>
+
+$$
+2(3)^2 - 3 + 1
+$$
+
+$$
+= 18 - 3 + 1
+$$
+
+$$
+= 16
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+16
+$$
+
+<p><em>Polynomials are continuous everywhere, so substitution always works.</em></p>
+
+</div>
+</div>
+
+<!-- ================= EXAMPLE 2 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 2 — Indeterminate Form (Factoring Required)</h3>
+
+<p>Evaluate:</p>
+
+$$
+\lim_{x \to 2} \frac{x^2 - 4}{x - 2}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p><strong>Step 1: Substitute directly.</strong></p>
+
+$$
+\frac{0}{0}
+$$
+
+<p>This is indeterminate.</p>
+
+<p><strong>Step 2: Factor numerator.</strong></p>
+
+$$
+\frac{(x - 2)(x + 2)}{x - 2}
+$$
+
+<p><strong>Step 3: Cancel common factor.</strong></p>
+
+$$
+x + 2
+$$
+
+<p><strong>Step 4: Substitute again.</strong></p>
+
+$$
+2 + 2 = 4
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+4
+$$
+
+<p><em>This is a removable discontinuity (hole at $x = 2$).</em></p>
+
+</div>
+</div>
+
+<!-- ================= EXAMPLE 3 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 3 — Infinite Limit</h3>
+
+<p>Evaluate the one-sided limits:</p>
+
+$$
+\lim_{x \to 2^-} \frac{1}{x - 2}
+\quad
+\lim_{x \to 2^+} \frac{1}{x - 2}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p>As $x \to 2^-$, the denominator is a small negative number.</p>
+
+$$
+\frac{1}{\text{small negative}} \to -\infty
+$$
+
+<p>As $x \to 2^+$, the denominator is a small positive number.</p>
+
+$$
+\frac{1}{\text{small positive}} \to +\infty
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+\lim_{x \to 2^-} = -\infty
+\quad
+\lim_{x \to 2^+} = +\infty
+$$
+
+<p>The two-sided limit does not exist.</p>
+
+<p><em>This is an infinite discontinuity (vertical asymptote).</em></p>
+
+</div>
+</div>
+
+<!-- ================= EXAMPLE 4 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 4 — Limit Exists Even If Function Is Undefined</h3>
+
+<p>Suppose:</p>
+
+$$
+f(x) =
+\begin{cases}
+x^2 - 1 & x \ne 1 \\
+5 & x = 1
+\end{cases}
+$$
+
+Evaluate:
+
+$$
+\lim_{x \to 1} f(x)
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+<p>The expression near $x = 1$ is:</p>
+
+$$
+x^2 - 1
+$$
+
+Substitute:
+
+$$
+1^2 - 1 = 0
+$$
+
+<p><strong>Final Answer:</strong></p>
+
+$$
+0
+$$
+
+<p><em>The limit exists even though $f(1) = 5$.</em></p>
+
+</div>
+</div>
+
+<!-- ================= EXAMPLE 5 ================= -->
+
+<div style="background:#f9f9f9;border:2px solid #00003d;padding:20px;border-radius:6px;margin-bottom:25px;">
+<h3>Example 5 — Classification</h3>
+
+<p>Classify the discontinuity of:</p>
+
+$$
+f(x) = \frac{x^2 - 9}{x - 3}
+$$
+
+<div style="background:#f0f0f0;padding:15px;border-radius:4px;margin-top:15px;">
+
+Factor numerator:
+
+$$
+\frac{(x - 3)(x + 3)}{x - 3}
+$$
+
+Cancel common factor:
+
+$$
+x + 3
+$$
+
+<p>There is a hole at $x = 3$.</p>
+
+<p><strong>Classification:</strong></p>
+
+Removable discontinuity.
+
+</div>
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- COMMON MISTAKES -->
+<!-- ========================= -->
+
+<section>
+
+<h2>Common Mistakes</h2>
+
+<ul>
+
+<li>
+<strong>Confusing the Function Value with the Limit:</strong><br>
+The limit depends on what the function approaches, not necessarily the value of the function at that point.
+</li>
+
+<li>
+<strong>Stopping After Getting $\frac{0}{0}$:</strong><br>
+An indeterminate form means additional algebraic simplification is required.
+</li>
+
+<li>
+<strong>Canceling Terms Instead of Factors:</strong><br>
+Only entire factors may cancel. Factoring is often required before simplification.
+</li>
+
+<li>
+<strong>Ignoring One-Sided Limits:</strong><br>
+If left and right limits are different, the two-sided limit does not exist.
+</li>
+
+<li>
+<strong>Assuming Infinite Limits Exist:</strong><br>
+If a function approaches $\pm\infty$, the limit does not exist as a finite number.
+</li>
+
+<li>
+<strong>Forgetting to Classify the Discontinuity:</strong><br>
+Every discontinuity should be identified as removable, infinite, or jump.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- ENHANCED SUMMARY -->
+<!-- ========================= -->
+
+<section>
+
+<h2>Summary of Limits and Discontinuities</h2>
+
+<table style="width:100%;border-collapse:collapse;margin-top:20px;">
+<thead>
+<tr style="background-color:#00003d;color:white;">
+<th style="padding:12px;border:1px solid #ddd;">Structural Situation</th>
+<th style="padding:12px;border:1px solid #ddd;">What to Do</th>
+<th style="padding:12px;border:1px solid #ddd;">Interpretation</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td style="padding:12px;border:1px solid #ddd;"><strong>Polynomial expression</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Use direct substitution.</td>
+<td style="padding:12px;border:1px solid #ddd;">Polynomials are continuous everywhere.</td>
+</tr>
+
+<tr style="background-color:#f9f9f9;">
+<td style="padding:12px;border:1px solid #ddd;"><strong>Substitution gives $\frac{0}{0}$</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Factor and simplify.</td>
+<td style="padding:12px;border:1px solid #ddd;">Removable discontinuity (hole).</td>
+</tr>
+
+<tr>
+<td style="padding:12px;border:1px solid #ddd;"><strong>Denominator zero but no cancellation</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Analyze one-sided limits.</td>
+<td style="padding:12px;border:1px solid #ddd;">Infinite discontinuity (vertical asymptote).</td>
+</tr>
+
+<tr style="background-color:#f9f9f9;">
+<td style="padding:12px;border:1px solid #ddd;"><strong>Left and right limits differ</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Compare one-sided limits.</td>
+<td style="padding:12px;border:1px solid #ddd;">Jump discontinuity.</td>
+</tr>
+
+<tr>
+<td style="padding:12px;border:1px solid #ddd;"><strong>Function undefined at a point</strong></td>
+<td style="padding:12px;border:1px solid #ddd;">Check nearby behavior.</td>
+<td style="padding:12px;border:1px solid #ddd;">Limit may still exist.</td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+<div style="background-color:#f0f4f8;border-left:5px solid #00003d;padding:20px;border-radius:6px;">
+
+<strong>Core Structural Principles:</strong>
+
+<ul>
+<li>A limit describes approach, not arrival.</li>
+<li>Always attempt substitution first.</li>
+<li>$\frac{0}{0}$ signals factoring.</li>
+<li>Vertical asymptotes create infinite limits.</li>
+<li>Equal one-sided limits are required for a two-sided limit.</li>
+<li>Discontinuities must be classified.</li>
+</ul>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PRACTICE PROBLEMS -->
+<!-- ========================= -->
+
+<section>
 
 <h2>Practice Problems</h2>
 
-<h3>Graphical Limits</h3>
+<!-- ================= LEVEL 1 ================= -->
 
-<p><strong>1.</strong> Evaluate:
+<h3>Level 1 — Direct Substitution</h3>
+
+<p><strong>1.</strong>
 \[
-\lim_{x \to -1} f(x)
-\]
-Does the limit exist?
-</p>
-
-<!-- New Removable Discontinuity Graph -->
-<svg width="250" height="250" viewBox="-5 -5 10 10"
-     xmlns="http://www.w3.org/2000/svg">
-
-  <defs>
-    <pattern id="gridP1" width="1" height="1" patternUnits="userSpaceOnUse">
-      <path d="M1 0 L0 0 0 1"
-            fill="none"
-            stroke="#ddd"
-            stroke-width="0.03"/>
-    </pattern>
-  </defs>
-
-  <rect x="-5" y="-5" width="10" height="10" fill="url(#gridP1)" />
-
-  <line x1="-5" y1="0" x2="5" y2="0" stroke="black" stroke-width="0.08"/>
-  <line x1="0" y1="-5" x2="0" y2="5" stroke="black" stroke-width="0.08"/>
-
-  <!-- Line y = x - 1 -->
-  <path d="M -5,-6 C -3,-4 -1,-2 1,0 C 3,2 5,4 6,5"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"/>
-
-  <!-- Hole at (-1, -2) -->
-  <circle cx="-1" cy="-2"
-          r="0.25"
-          fill="white"
-          stroke="black"
-          stroke-width="0.1"/>
-</svg>
-
-<hr>
-
-<p><strong>2.</strong> Evaluate the one-sided limits and determine if the two-sided limit exists:
-\[
-\lim_{x \to -2^-} f(x)
-\quad
-\lim_{x \to -2^+} f(x)
-\quad
-\lim_{x \to -2} f(x)
+\lim_{x \to 4} (x^2 - 3x + 2)
 \]
 </p>
 
-<!-- New Jump Graph -->
-<svg width="250" height="250" viewBox="-5 -5 10 10"
-     xmlns="http://www.w3.org/2000/svg">
+<p><strong>2.</strong>
+\[
+\lim_{x \to -2} (5x^2 + x - 6)
+\]
+</p>
 
-  <defs>
-    <pattern id="gridP2" width="1" height="1" patternUnits="userSpaceOnUse">
-      <path d="M1 0 L0 0 0 1"
-            fill="none"
-            stroke="#ddd"
-            stroke-width="0.03"/>
-    </pattern>
-  </defs>
+<p><strong>3.</strong>
+\[
+\lim_{x \to 1} (3x^3 - 2x + 4)
+\]
+</p>
 
-  <rect x="-5" y="-5" width="10" height="10" fill="url(#gridP2)" />
+<!-- ================= LEVEL 2 ================= -->
 
-  <line x1="-5" y1="0" x2="5" y2="0" stroke="black" stroke-width="0.08"/>
-  <line x1="0" y1="-5" x2="0" y2="5" stroke="black" stroke-width="0.08"/>
+<h3>Level 2 — Indeterminate Forms</h3>
 
-  <!-- Left branch -->
-  <path d="M -5,-3 C -4,-2.5 -3,-2 -2,-1"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"/>
+<p><strong>4.</strong>
+\[
+\lim_{x \to 3} \frac{x^2 - 9}{x - 3}
+\]
+</p>
 
-  <!-- Open circle -->
-  <circle cx="-2" cy="-1"
-          r="0.25"
-          fill="white"
-          stroke="black"
-          stroke-width="0.1"/>
+<p><strong>5.</strong>
+\[
+\lim_{x \to -1} \frac{x^2 - 1}{x + 1}
+\]
+</p>
 
-  <!-- Right branch -->
-  <path d="M -2,2 C -1,2.5 1,3 5,4"
-        fill="none"
-        stroke="#1f77b4"
-        stroke-width="0.15"/>
+<p><strong>6.</strong>
+\[
+\lim_{x \to 2} \frac{x^2 - 4}{x^2 - 3x + 2}
+\]
+</p>
 
-  <!-- Closed circle -->
-  <circle cx="-2" cy="2"
-          r="0.25"
-          fill="#1f77b4"
-          stroke="black"
-          stroke-width="0.1"/>
-</svg>
+<!-- ================= LEVEL 3 ================= -->
 
-<hr>
+<h3>Level 3 — Infinite Limits</h3>
 
-<p><strong>3.</strong> Evaluate the one-sided limits and determine if the two-sided limit exists:
-    \[
-    \lim_{x \to 3^-} f(x)
-    \quad
-    \lim_{x \to 3^+} f(x)
-    \quad
-    \lim_{x \to 3} f(x)
-    \]
-    </p>
-    
-    <svg width="250" height="250" viewBox="-5 -5 10 10"
-         xmlns="http://www.w3.org/2000/svg">
-    
-      <defs>
-        <pattern id="gridP3" width="1" height="1" patternUnits="userSpaceOnUse">
-          <path d="M1 0 L0 0 0 1"
-                fill="none"
-                stroke="#ddd"
-                stroke-width="0.03"/>
-        </pattern>
-      </defs>
-    
-      <rect x="-5" y="-5" width="10" height="10" fill="url(#gridP3)" />
-    
-      <line x1="-5" y1="0" x2="5" y2="0"
-            stroke="black"
-            stroke-width="0.08"/>
-    
-      <line x1="0" y1="-5" x2="0" y2="5"
-            stroke="black"
-            stroke-width="0.08"/>
-    
-      <!-- Vertical asymptote -->
-      <line x1="3" y1="-5" x2="3" y2="5"
-            stroke="black"
-            stroke-width="0.08"
-            stroke-dasharray="0.3,0.3"/>
-    
-      <!-- Left branch (approaches +∞) -->
-      <path d="
-        M -5,0.1
-        C -2,0.2 0,0.5 2,1
-        C 2.5,2 2.7,3 2.9,5
-      "
-      fill="none"
-      stroke="#1f77b4"
-      stroke-width="0.15"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
-    
-      <!-- Right branch (approaches -∞) -->
-      <path d="
-        M 3.1,-5
-        C 3.2,-4 3.4,-3 4,-2
-        C 4.5,-1 5,-0.5 5,-0.2
-      "
-      fill="none"
-      stroke="#1f77b4"
-      stroke-width="0.15"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
-    
-    </svg>
-    
+<p><strong>7.</strong>
+\[
+\lim_{x \to 0^-} \frac{1}{x}
+\quad
+\lim_{x \to 0^+} \frac{1}{x}
+\]
+</p>
 
-<hr>
+<p><strong>8.</strong>
+\[
+\lim_{x \to 5} \frac{1}{x - 5}
+\]
+</p>
 
-<p><strong>4.</strong> A graph approaches the same value from both sides at x = -1, but the function value at x = -1 is 5 while the graph approaches 2. Does the limit exist? If so, what is it?</p>
+<p><strong>9.</strong>
+\[
+\lim_{x \to -3} \frac{2}{x + 3}
+\]
+</p>
 
-<!-- Workspace for Question 4 -->
-<svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <hr>
-  
-  <h3>Algebraic Limits</h3>
-  
-  <p><strong>5.</strong>
-  \[
-  \lim_{x \to 5} (x^2 - 2x)
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>6.</strong>
-  \[
-  \lim_{x \to -2} (3x^2 + x - 1)
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>7.</strong>
-  \[
-  \lim_{x \to 1} \frac{x^2 - 1}{x - 1}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>8.</strong>
-  \[
-  \lim_{x \to 3} \frac{x^2 - 9}{x - 3}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>9.</strong>
-  \[
-  \lim_{x \to 2} \frac{x^2 - 4}{x^2 - 3x + 2}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <hr>
-  <h3>Infinite Limits</h3>
+<!-- ================= LEVEL 4 ================= -->
 
-  <p><strong>10.</strong>
-  \[
-  \lim_{x \to 0^-} \frac{1}{x}
-  \quad
-  \lim_{x \to 0^+} \frac{1}{x}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>11.</strong>
-  \[
-  \lim_{x \to 3} \frac{1}{x - 3}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <hr>
-  
-  <h3>Classification</h3>
-  
-  <p><strong>12.</strong> Classify the discontinuity:
-  \[
-  f(x) = \frac{x^2 - 4}{x - 2}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>13.</strong> Classify the discontinuity:
-  \[
-  f(x) = \frac{1}{x - 5}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>14.</strong> Classify the discontinuity:
-  \[
-  f(x) =
-  \begin{cases}
-  x+1 & x<2 \\
-  x-3 & x\ge2
-  \end{cases}
-  \]
-  </p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <hr>
-  
-  <h3>Justify</h3>
-  
-  <p><strong>15.</strong> Explain why a removable discontinuity can still have a limit.</p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>16.</strong> Explain why infinite discontinuities prevent a two-sided limit from existing.</p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>17.</strong> Explain why jump discontinuities prevent a two-sided limit from existing.</p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-  
-  <p><strong>18.</strong> Explain why factoring is necessary when evaluating limits algebraically.</p>
-  
-  <svg width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="420" fill="url(#grid)" />
-</svg>
-    
-    
-  <h2>Solutions</h2>
+<h3>Level 4 — Classification</h3>
 
-  <p><strong>1.</strong>
-  The graph approaches 3 from both sides.
-  \[
-  \lim_{x \to 2} f(x) = 3
-  \]
-  The limit exists.
-  </p>
-  
-  <p><strong>2.</strong>
-  \[
-  \lim_{x \to 1^-} f(x) = 2
-  \]
-  \[
-  \lim_{x \to 1^+} f(x) = 0
-  \]
-  Since the one-sided limits are not equal, the two-sided limit does not exist.
-  </p>
-  
-  <p><strong>3.</strong>
-  \[
-  \lim_{x \to 2^-} f(x) = +\infty
-  \]
-  \[
-  \lim_{x \to 2^+} f(x) = -\infty
-  \]
-  The two-sided limit does not exist.
-  </p>
-  
-  <p><strong>4.</strong>
-  The graph approaches 2 from both sides.
-  \[
-  \lim_{x \to -1} f(x) = 2
-  \]
-  The limit exists even though the function value is 5.
-  </p>
-  
-  <p><strong>5.</strong>
-  Direct substitution:
-  \[
-  5^2 - 2(5) = 25 - 10 = 15
-  \]
-  </p>
-  
-  <p><strong>6.</strong>
-  \[
-  3(-2)^2 + (-2) - 1
-  = 3(4) - 2 - 1
-  = 12 - 3
-  = 9
-  \]
-  </p>
-  
-  <p><strong>7.</strong>
-  Factor numerator:
-  \[
-  \frac{(x-1)(x+1)}{x-1}
-  \]
-  Cancel:
-  \[
-  x+1
-  \]
-  Substitute:
-  \[
-  2
-  \]
-  </p>
-  
-  <p><strong>8.</strong>
-  \[
-  \frac{(x-3)(x+3)}{x-3}
-  \]
-  Simplifies to:
-  \[
-  x+3
-  \]
-  Substitute:
-  \[
-  6
-  \]
-  </p>
-  
-  <p><strong>9.</strong>
-  Factor:
-  \[
-  \frac{(x-2)(x+2)}{(x-1)(x-2)}
-  \]
-  Cancel:
-  \[
-  \frac{x+2}{x-1}
-  \]
-  Substitute:
-  \[
-  \frac{4}{1} = 4
-  \]
-  </p>
-  
-  <p><strong>10.</strong>
-  \[
-  \lim_{x \to 0^-} \frac{1}{x} = -\infty
-  \]
-  \[
-  \lim_{x \to 0^+} \frac{1}{x} = +\infty
-  \]
-  The two-sided limit does not exist.
-  </p>
-  
-  <p><strong>11.</strong>
-  As \(x \to 3^-\), the function decreases without bound.
-  \[
-  -\infty
-  \]
-  As \(x \to 3^+\), the function increases without bound.
-  \[
-  +\infty
-  \]
-  The limit does not exist.
-  </p>
-  
-  <p><strong>12.</strong>
-  \[
-  \frac{x^2 - 4}{x - 2}
-  \]
-  Factor:
-  \[
-  \frac{(x-2)(x+2)}{x-2}
-  \]
-  Cancel → removable discontinuity (hole at x = 2).
-  </p>
-  
-  <p><strong>13.</strong>
-  \[
-  \frac{1}{x-5}
-  \]
-  Denominator zero at x = 5 and does not cancel.
-  Infinite discontinuity (vertical asymptote).
-  </p>
-  
-  <p><strong>14.</strong>
-  The function changes formulas at x = 2.
-  Left and right limits differ.
-  Jump discontinuity.
-  </p>
-  
-  <p><strong>15.</strong>
-  A removable discontinuity occurs when a factor cancels. The surrounding values still approach a single number, so the limit exists.
-  </p>
-  
-  <p><strong>16.</strong>
-  Infinite discontinuities cause the function to increase or decrease without bound. Since the value does not approach a finite number, the two-sided limit does not exist.
-  </p>
-  
-  <p><strong>17.</strong>
-  Jump discontinuities produce unequal left and right limits. A two-sided limit requires equality, so it does not exist.
-  </p>
-  
-  <p><strong>18.</strong>
-  Factoring removes removable discontinuities by canceling common factors, allowing evaluation of the simplified expression.
-  </p>
+<p><strong>10.</strong> Classify the discontinuity:
+\[
+f(x) = \frac{x^2 - 16}{x - 4}
+\]
+</p>
+
+<p><strong>11.</strong> Classify the discontinuity:
+\[
+f(x) = \frac{3}{x + 2}
+\]
+</p>
+
+<p><strong>12.</strong> Classify the discontinuity:
+\[
+f(x) =
+\begin{cases}
+x^2 & x<1 \\
+3 & x \ge 1
+\end{cases}
+\]
+</p>
+
+<!-- ================= LEVEL 5 ================= -->
+
+<h3>Level 5 — Justify</h3>
+
+<p><strong>13.</strong> Explain why a removable discontinuity can have a limit even if the function is undefined at that point.</p>
+
+<p><strong>14.</strong> Explain why an infinite discontinuity prevents a finite two-sided limit from existing.</p>
+
+<p><strong>15.</strong> Explain why a jump discontinuity prevents the existence of a two-sided limit.</p>
+
+<p><strong>16.</strong> Explain why factoring is necessary when substitution produces $\frac{0}{0}$.</p>
+
+<p><strong>17.</strong> Describe how limits connect rational expressions to discontinuities.</p>
+
+<p><strong>18.</strong> Explain how limits prepare students for derivative concepts in calculus.</p>
+
+</section>
+
+<!-- ========================= -->
+<!-- SOLUTIONS SECTION -->
+<!-- ========================= -->
+
+<section>
+
+<h2>Solutions</h2>
+
+<!-- ================= LEVEL 1 ================= -->
+
+<h3>Level 1 — Direct Substitution</h3>
+
+<p><strong>1.</strong>
+\[
+4^2 - 3(4) + 2 = 16 - 12 + 2 = 6
+\]
+</p>
+
+<p><strong>2.</strong>
+\[
+5(-2)^2 + (-2) - 6 = 5(4) - 2 - 6 = 20 - 8 = 12
+\]
+</p>
+
+<p><strong>3.</strong>
+\[
+3(1)^3 - 2(1) + 4 = 3 - 2 + 4 = 5
+\]
+</p>
+
+<!-- ================= LEVEL 2 ================= -->
+
+<h3>Level 2 — Indeterminate Forms</h3>
+
+<p><strong>4.</strong>
+\[
+\frac{x^2 - 9}{x - 3}
+= \frac{(x-3)(x+3)}{x-3}
+= x+3
+\]
+Substitute:
+\[
+6
+\]
+</p>
+
+<p><strong>5.</strong>
+\[
+\frac{x^2 - 1}{x + 1}
+= \frac{(x-1)(x+1)}{x+1}
+= x-1
+\]
+Substitute:
+\[
+-2
+\]
+</p>
+
+<p><strong>6.</strong>
+\[
+\frac{x^2 - 4}{x^2 - 3x + 2}
+= \frac{(x-2)(x+2)}{(x-1)(x-2)}
+= \frac{x+2}{x-1}
+\]
+Substitute:
+\[
+\frac{4}{1} = 4
+\]
+</p>
+
+<!-- ================= LEVEL 3 ================= -->
+
+<h3>Level 3 — Infinite Limits</h3>
+
+<p><strong>7.</strong>
+\[
+\lim_{x \to 0^-} \frac{1}{x} = -\infty
+\quad
+\lim_{x \to 0^+} \frac{1}{x} = +\infty
+\]
+Two-sided limit does not exist.
+</p>
+
+<p><strong>8.</strong>
+\[
+\lim_{x \to 5^-} \frac{1}{x-5} = -\infty
+\quad
+\lim_{x \to 5^+} \frac{1}{x-5} = +\infty
+\]
+Limit does not exist.
+</p>
+
+<p><strong>9.</strong>
+\[
+\lim_{x \to -3^-} \frac{2}{x+3} = -\infty
+\quad
+\lim_{x \to -3^+} \frac{2}{x+3} = +\infty
+\]
+Limit does not exist.
+</p>
+
+<!-- ================= LEVEL 4 ================= -->
+
+<h3>Level 4 — Classification</h3>
+
+<p><strong>10.</strong>
+\[
+\frac{x^2 - 16}{x - 4}
+= \frac{(x-4)(x+4)}{x-4}
+= x+4
+\]
+Removable discontinuity (hole at x = 4).
+</p>
+
+<p><strong>11.</strong>
+\[
+\frac{3}{x+2}
+\]
+Denominator zero at x = -2 and does not cancel.  
+Infinite discontinuity (vertical asymptote).
+</p>
+
+<p><strong>12.</strong>
+Left limit at x=1:
+\[
+1^2 = 1
+\]
+Right limit:
+\[
+3
+\]
+Since they differ → Jump discontinuity.
+</p>
+
+<!-- ================= LEVEL 5 ================= -->
+
+<h3>Level 5 — Justify</h3>
+
+<p><strong>13.</strong>
+A removable discontinuity results from a canceled factor. The surrounding values still approach a single number, so the limit exists even if the function is undefined at that point.
+</p>
+
+<p><strong>14.</strong>
+Infinite discontinuities cause values to increase or decrease without bound. Since the function does not approach a finite value, the two-sided limit does not exist.
+</p>
+
+<p><strong>15.</strong>
+Jump discontinuities produce unequal left and right limits. A two-sided limit requires equality, so it does not exist.
+</p>
+
+<p><strong>16.</strong>
+Factoring removes common factors that create indeterminate forms. Without factoring, substitution cannot resolve the limit.
+</p>
+
+<p><strong>17.</strong>
+Rational expressions create discontinuities when denominators equal zero. Factoring reveals whether the discontinuity is removable or infinite.
+</p>
+
+<p><strong>18.</strong>
+Limits describe behavior as inputs approach a value. Derivatives use limits to define instantaneous rates of change, building directly on this concept.
+</p>
+
+</section>
+
+</div>
 </body>
-</html>  
+</html>
