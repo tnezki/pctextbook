@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 9.E: Evaluate Limits from Expressions</title>
+
+<!-- ======================= -->
+<!-- MATHJAX CONFIGURATION  -->
+<!-- ======================= -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ======================= -->
+<!-- STYLES -->
+<!-- ======================= -->
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+/* PAGE */
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* HEADINGS */
+h1{
+  color:#00003d;
+  font-size:2.5em;
+  margin-bottom:20px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+/* TEXT */
+.intro-text{
+  font-size:1.05em;
+  color:#555;
+  margin-bottom:10px;
+  font-style:italic;
+}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:italic;
+}
+
+/* BOXES */
+.objectives{
+  background:#f0f4f8;
+  padding:20px;
+  border-radius:6px;
+}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+/* WORKSPACE */
+.workspace{
+  width:100%;
+  margin-top:10px;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+  margin:0;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>9.E Evaluate Limits from Expressions</h1>
+
+<div class="intro-text">
+Limits describe how a function behaves as the input approaches a specific value. Unlike solving equations, evaluating a limit focuses on the behavior near a point rather than the value at that point.
+</div>
+
+<div class="inspirational">
+“A limit describes what a function approaches, not necessarily what it equals.”
+</div>
+
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can evaluate limits by direct substitution.</p>
+<p>I can simplify expressions to evaluate indeterminate forms.</p>
+<p>I can interpret limits near discontinuities.</p>
+<p>I can explain the meaning of a limit in context.</p>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- INTRODUCTION -->
+<!-- ======================= -->
+<section>
+<h2>Introduction</h2>
+
+<p>
+A limit describes the value a function approaches as $x$ gets closer to a given number. In some cases, the function may not be defined at that point, but the limit still exists.
+</p>
+
+<p>
+Evaluating limits often involves simplifying expressions and analyzing behavior near points of discontinuity.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> A limit describes behavior near a value, not necessarily the value of the function at that point.
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+<h2>Connections</h2>
+
+<div class="key-point">
+<strong>Prior Knowledge:</strong>
+<ul style="margin-left:20px;">
+<li>Factoring and simplifying expressions</li>
+<li>Rational functions and asymptotes (9.B)</li>
+<li>Graphing behavior near discontinuities</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Cross-Disciplinary Connections:</strong>
+<ul style="margin-left:20px;">
+<li>Physics: motion approaching a position or value</li>
+<li>Engineering: systems approaching equilibrium</li>
+<li>Computer Science: behavior of functions as inputs grow large</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Real-World Applications:</strong>
+<ul style="margin-left:20px;">
+<li>Speed approaching zero when stopping</li>
+<li>Temperature approaching equilibrium</li>
+<li>Population growth approaching a limit</li>
+</ul>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- HISTORY -->
+<!-- ======================= -->
+<section>
+<h2>History</h2>
+
+<p>
+The concept of limits developed in the 17th century as mathematicians began studying motion and change. Isaac Newton and Gottfried Wilhelm Leibniz used limits to develop calculus.
+</p>
+
+<p>
+Although early definitions were informal, later mathematicians refined the concept to make it precise and rigorous.
+</p>
+
+<p>
+Today, limits form the foundation of calculus and are essential for understanding continuity, derivatives, and integrals.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+    <h2>Key Concepts</h2>
+    
+    <h3>Evaluating Limits by Substitution</h3>
+    
+    <p>
+    If a function is continuous at a value, the limit can be found by direct substitution.
+    </p>
+    
+    <p><strong>Example:</strong></p>
+    
+    $$ \lim_{x \to 2} (x^2 + 3) $$
+    
+    $$ = 2^2 + 3 = 7 $$
+    
+    
+    <h3>Indeterminate Forms</h3>
+    
+    <p>
+    Sometimes direct substitution does not work. When substitution results in an undefined expression such as $ \frac{0}{0} $, the limit must be evaluated by simplifying the expression.
+    </p>
+    
+    <div class="definition">
+    <strong>Indeterminate Form:</strong>
+    <p>An expression like $ \frac{0}{0} $ that requires further simplification to evaluate the limit.</p>
+    </div>
+    
+    
+    <h3>Simplifying Expressions</h3>
+    
+    <p>
+    To evaluate limits involving indeterminate forms, simplify the expression using algebraic techniques such as factoring.
+    </p>
+    
+    <p><strong>Example:</strong></p>
+    
+    $$ \lim_{x \to 2} \frac{x^2 - 4}{x - 2} $$
+    
+    <p>
+    Factor the numerator:
+    </p>
+    
+    $$ \frac{(x - 2)(x + 2)}{x - 2} $$
+    
+    <p>
+    Simplify:
+    </p>
+    
+    $$ = x + 2 $$
+    
+    <p>
+    Now evaluate:
+    </p>
+    
+    $$ \lim_{x \to 2} (x + 2) = 4 $$
+    
+    
+    <h3>Limits and Discontinuities</h3>
+    
+    <p>
+    A function may be undefined at a value, but the limit can still exist if the function approaches the same value from both sides.
+    </p>
+    
+    <div class="workspace workspace-200">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Limits describe behavior near a point, even when the function is not defined at that point.
+    </div>
+
+    <h3>Rationalizing to Evaluate Limits</h3>
+
+<p>
+When a limit involves a square root, rationalizing the expression can eliminate an indeterminate form.
+</p>
+
+<p><strong>Example:</strong></p>
+
+$$ \lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4} $$
+
+<p>
+Multiply by the conjugate:
+</p>
+
+$$ \frac{\sqrt{x} - 2}{x - 4} \cdot \frac{\sqrt{x} + 2}{\sqrt{x} + 2} $$
+
+<p>
+Simplify:
+</p>
+
+$$ = \frac{x - 4}{(x - 4)(\sqrt{x} + 2)} $$
+
+$$ = \frac{1}{\sqrt{x} + 2} $$
+
+<p>
+Evaluate:
+</p>
+
+$$ \lim_{x \to 4} \frac{1}{\sqrt{x} + 2} = \frac{1}{4} $$
+
+
+<h3>Complex Fractions</h3>
+
+<p>
+Limits involving complex fractions can be simplified by combining terms or multiplying by a common denominator.
+</p>
+
+<p><strong>Example:</strong></p>
+
+$$ \lim_{x \to 1} \frac{\frac{1}{x} - 1}{x - 1} $$
+
+<p>
+Combine the numerator:
+</p>
+
+$$ = \frac{\frac{1 - x}{x}}{x - 1} $$
+
+<p>
+Rewrite:
+</p>
+
+$$ = \frac{1 - x}{x(x - 1)} $$
+
+<p>
+Simplify:
+</p>
+
+$$ = -\frac{1}{x} $$
+
+<p>
+Evaluate:
+</p>
+
+$$ \lim_{x \to 1} -\frac{1}{x} = -1 $$
+
+
+<h3>Other Indeterminate Forms</h3>
+
+<div class="definition">
+<p><strong>Common Indeterminate Forms:</strong></p>
+<ul style="margin-left:20px;">
+<li>$\frac{0}{0}$</li>
+<li>$\frac{\infty}{\infty}$</li>
+</ul>
+</div>
+
+<p>
+These forms require algebraic simplification before evaluating the limit.
+</p>
+    
+    </section>
+
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Limit:</strong>
+    <p>The value a function approaches as $x$ approaches a given number.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Continuous Function:</strong>
+    <p>A function where the limit equals the function value at a point.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Indeterminate Form:</strong>
+    <p>An expression such as $ \frac{0}{0} $ or $ \frac{\infty}{\infty} $ that requires further simplification.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Discontinuity:</strong>
+    <p>A point where a function is not defined or does not behave smoothly.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Conjugate:</strong>
+    <p>An expression used to rationalize radicals, such as $ \sqrt{x} - 2 $ and $ \sqrt{x} + 2 $.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Complex Fraction:</strong>
+    <p>A fraction that contains another fraction in the numerator or denominator.</p>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Evaluating Limits Algebraically:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    
+    <li>
+    <strong>Start with direct substitution.</strong><br>
+    If the expression is defined, substitute the value directly.
+    </li>
+    
+    <li>
+    <strong>Identify indeterminate forms.</strong><br>
+    If substitution gives $ \frac{0}{0} $, further work is required.
+    </li>
+    
+    <li>
+    <strong>Choose a simplification strategy:</strong>
+    <ul style="margin-left:20px;">
+    <li>Factor and simplify</li>
+    <li>Rationalize using conjugates</li>
+    <li>Simplify complex fractions</li>
+    </ul>
+    </li>
+    
+    <li>
+    <strong>Simplify completely.</strong><br>
+    Cancel common factors and rewrite the expression.
+    </li>
+    
+    <li>
+    <strong>Evaluate the simplified expression.</strong><br>
+    Substitute again after simplification.
+    </li>
+    
+    <li>
+    <strong>Interpret the result.</strong><br>
+    Remember the limit describes behavior near the value, not necessarily the function value.
+    </li>
+    
+    </ol>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- EXAMPLES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Examples</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Direct Substitution</h3>
+    <div class="prompt">Evaluate the limit.</div>
+    
+    $$ \lim_{x \to 2} (x^2 + 3) $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Factoring</h3>
+    <div class="prompt">Evaluate the limit by simplifying.</div>
+    
+    $$ \lim_{x \to 2} \frac{x^2 - 4}{x - 2} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Rationalizing</h3>
+    <div class="prompt">Evaluate the limit by rationalizing.</div>
+    
+    $$ \lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Complex Fraction</h3>
+    <div class="prompt">Simplify and evaluate the limit.</div>
+    
+    $$ \lim_{x \to 1} \frac{\frac{1}{x} - 1}{x - 1} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Indeterminate Form</h3>
+    <div class="prompt">Identify the form and evaluate the limit.</div>
+    
+    $$ \lim_{x \to 3} \frac{x^2 - 9}{x - 3} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Limit at a Discontinuity</h3>
+    <div class="prompt">Evaluate the limit and interpret the result.</div>
+    
+    $$ \lim_{x \to 1} \frac{x^2 - 1}{x - 1} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <h3>Example 7 — Interpretation of a Limit</h3>
+    <div class="prompt">Explain what the limit represents.</div>
+    
+    $$ \lim_{x \to 0} \frac{\sin x}{x} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Stopping at $\frac{0}{0}$:</strong><br>
+    This is not the answer—it means further simplification is required.
+    </li>
+    
+    <li>
+    <strong>Not factoring completely:</strong><br>
+    Incomplete factoring can prevent cancellation and lead to incorrect limits.
+    </li>
+    
+    <li>
+    <strong>Forgetting to rationalize:</strong><br>
+    Radical expressions often require multiplying by the conjugate.
+    </li>
+    
+    <li>
+    <strong>Errors with complex fractions:</strong><br>
+    Students often simplify incorrectly when fractions appear inside fractions.
+    </li>
+    
+    <li>
+    <strong>Confusing function value with limit:</strong><br>
+    The limit describes behavior near a value, not necessarily the value at that point.
+    </li>
+    
+    <li>
+    <strong>Not re-substituting after simplifying:</strong><br>
+    After simplification, the limit must be evaluated again.
+    </li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Limits describe how a function behaves as $x$ approaches a value.</li>
+    
+    <li>Direct substitution works when the function is continuous.</li>
+    
+    <li>Indeterminate forms such as $\\frac{0}{0}$ require algebraic simplification.</li>
+    
+    <li>Common techniques include factoring, rationalizing, and simplifying complex fractions.</li>
+    
+    <li>The limit may exist even when the function is undefined at that point.</li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE SET -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1: EASY ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. Evaluate the limit.</p>
+    $$ \lim_{x \to 1} (x^2 + 2) $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>2. Evaluate the limit.</p>
+    $$ \lim_{x \to 3} (2x + 5) $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>3. Evaluate the limit.</p>
+    $$ \lim_{x \to 9} \sqrt{x+7} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>4. Evaluate the limit.</p>
+    $$ \lim_{x \to -2} (x^2 + x - 1) $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>5. Evaluate the limit.</p>
+    $$ \lim_{x \to 4} (x^2 - x + 3) $$
+    <div class="workspace workspace-300"></div>
+    
+    
+    <!-- ===== LEVEL 2: MEDIUM ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. Evaluate the limit.</p>
+    $$ \lim_{x \to 1} \frac{x^2 - 1}{x - 1} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>7. Evaluate the limit.</p>
+    $$ \lim_{x \to -3} \frac{x^2 - 9}{x + 3} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>8. Evaluate the limit.</p>
+    $$ \lim_{x \to 5} \frac{x^2 - 25}{x - 5} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>9. Evaluate the limit.</p>
+    $$ \lim_{x \to 2} \frac{x^2 - 4}{x - 2} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>10. Evaluate the limit.</p>
+    $$ \lim_{x \to -1} \frac{x^2 - 1}{x + 1} $$
+    <div class="workspace workspace-300"></div>
+    
+    
+    <!-- ===== LEVEL 3: HARD ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. Evaluate the limit by rationalizing.</p>
+    $$ \lim_{x \to 1} \frac{\sqrt{x+3} - 2}{x - 1} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>12. Evaluate the limit.</p>
+    $$ \lim_{x \to 0} \frac{\sqrt{x+4} - 2}{x} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>13. Evaluate the limit.</p>
+    $$ \lim_{x \to 9} \frac{3 - \sqrt{x}}{9 - x} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>14. Evaluate the limit.</p>
+    $$ \lim_{x \to 4} \frac{2 - \sqrt{x}}{4 - x} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>15. Evaluate the limit.</p>
+    $$ \lim_{x \to 16} \frac{\sqrt{x} - 4}{x - 16} $$
+    <div class="workspace workspace-300"></div>
+    
+    
+    <!-- ===== LEVEL 4: CHALLENGING ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. Evaluate the limit.</p>
+    $$ \lim_{x \to 2} \frac{\frac{1}{x} - \frac{1}{2}}{x - 2} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>17. Evaluate the limit.</p>
+    $$ \lim_{x \to 3} \frac{\frac{1}{x} - \frac{1}{3}}{x - 3} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>18. Evaluate the limit.</p>
+    $$ \lim_{x \to 1} \frac{x - 1}{\frac{1}{x} - 1} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>19. Evaluate the limit.</p>
+    $$ \lim_{x \to 4} \frac{\frac{x}{4} - 1}{x - 4} $$
+    <div class="workspace workspace-300"></div>
+    
+    <p>20. Evaluate the limit.</p>
+    $$ \lim_{x \to 2} \frac{\frac{2}{x} - 1}{x - 2} $$
+    <div class="workspace workspace-300"></div>
+    
+    
+    <!-- ===== LEVEL 5: JUSTIFICATION ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <p>21. Explain why limits can exist at points where the function is undefined.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>22. Explain why simplifying expressions is necessary when evaluating limits.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>23. Justify why rationalizing removes indeterminate forms involving radicals.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>24. Explain how algebra reveals behavior near discontinuities.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>25. Describe how limits connect algebra and graph behavior.</p>
+    <div class="workspace workspace-100"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    <p>1. 3</p>
+    <p>2. 11</p>
+    <p>3. $\sqrt{16} = 4$</p>
+    <p>4. 1</p>
+    <p>5. 15</p>
+    
+    <h3>Level 2 — Medium</h3>
+    <p>6. 2</p>
+    <p>7. -6</p>
+    <p>8. 10</p>
+    <p>9. 4</p>
+    <p>10. -2</p>
+    
+    <h3>Level 3 — Hard</h3>
+    <p>11. $\frac{1}{4}$</p>
+    <p>12. $\frac{1}{4}$</p>
+    <p>13. $\frac{1}{6}$</p>
+    <p>14. $\frac{1}{4}$</p>
+    <p>15. $\frac{1}{8}$</p>
+    
+    <h3>Level 4 — Challenging</h3>
+    <p>16. $-\frac{1}{4}$</p>
+    <p>17. $-\frac{1}{9}$</p>
+    <p>18. -1</p>
+    <p>19. $\frac{1}{4}$</p>
+    <p>20. $-\frac{1}{2}$</p>
+    
+    <h3>Level 5 — Justification</h3>
+    <p>21–25. Answers vary (conceptual)</p>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- DETAILED EXAMPLE SOLUTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Direct Substitution</h3>
+    
+    $$ \lim_{x \to 2} (x^2 + 3) $$
+    
+    <p>
+    Substitute directly:
+    </p>
+    
+    $$ = 2^2 + 3 = 7 $$
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Factoring</h3>
+    
+    $$ \lim_{x \to 2} \frac{x^2 - 4}{x - 2} $$
+    
+    <p>
+    Factor:
+    </p>
+    
+    $$ \frac{(x-2)(x+2)}{x-2} $$
+    
+    <p>
+    Simplify:
+    </p>
+    
+    $$ = x + 2 $$
+    
+    <p>
+    Evaluate:
+    </p>
+    
+    $$ = 4 $$
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Rationalizing</h3>
+    
+    $$ \lim_{x \to 4} \frac{\sqrt{x} - 2}{x - 4} $$
+    
+    <p>
+    Multiply by conjugate:
+    </p>
+    
+    $$ \frac{\sqrt{x} - 2}{x - 4} \cdot \frac{\sqrt{x} + 2}{\sqrt{x} + 2} $$
+    
+    <p>
+    Simplify:
+    </p>
+    
+    $$ = \frac{x - 4}{(x - 4)(\sqrt{x} + 2)} $$
+    
+    $$ = \frac{1}{\sqrt{x} + 2} $$
+    
+    <p>
+    Evaluate:
+    </p>
+    
+    $$ = \frac{1}{4} $$
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Complex Fraction</h3>
+    
+    $$ \lim_{x \to 1} \frac{\frac{1}{x} - 1}{x - 1} $$
+    
+    <p>
+    Combine numerator:
+    </p>
+    
+    $$ = \frac{\frac{1 - x}{x}}{x - 1} $$
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ = \frac{1 - x}{x(x - 1)} $$
+    
+    <p>
+    Simplify:
+    </p>
+    
+    $$ = -\frac{1}{x} $$
+    
+    <p>
+    Evaluate:
+    </p>
+    
+    $$ = -1 $$
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Indeterminate Form</h3>
+    
+    $$ \lim_{x \to 3} \frac{x^2 - 9}{x - 3} $$
+    
+    <p>
+    Factor:
+    </p>
+    
+    $$ = \frac{(x - 3)(x + 3)}{x - 3} $$
+    
+    <p>
+    Simplify:
+    </p>
+    
+    $$ = x + 3 $$
+    
+    <p>
+    Evaluate:
+    </p>
+    
+    $$ = 6 $$
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Discontinuity</h3>
+    
+    $$ \lim_{x \to 1} \frac{x^2 - 1}{x - 1} $$
+    
+    <p>
+    Factor:
+    </p>
+    
+    $$ = \frac{(x - 1)(x + 1)}{x - 1} $$
+    
+    <p>
+    Simplify:
+    </p>
+    
+    $$ = x + 1 $$
+    
+    <p>
+    Evaluate:
+    </p>
+    
+    $$ = 2 $$
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <h3>Example 7 — Interpretation</h3>
+    
+    $$ \lim_{x \to 0} \frac{\sin x}{x} $$
+    
+    <p>
+    As $x$ approaches 0, the ratio approaches 1.
+    </p>
+    
+    <p><strong>Limit = 1</strong></p>
+    
+    </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 9.B: Graphing Rational Functions Using Asymptotes</title>
+
+<!-- ======================= -->
+<!-- MATHJAX CONFIGURATION  -->
+<!-- ======================= -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ======================= -->
+<!-- STYLES -->
+<!-- ======================= -->
+<style>
+
+/* ================================
+   RESET
+================================ */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ================================
+   PAGE
+================================ */
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* ================================
+   HEADINGS
+================================ */
+h1{
+  color:#00003d;
+  font-size:2.5em;
+  margin-bottom:20px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+/* ================================
+   TEXT ELEMENTS
+================================ */
+.intro-text{
+  font-size:1.05em;
+  color:#555;
+  margin-bottom:10px;
+  font-style:italic;
+}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:italic;
+}
+
+/* ================================
+   CONTENT BOXES
+================================ */
+.objectives{
+  background:#f0f4f8;
+  padding:20px;
+  border-radius:6px;
+}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+/* ================================
+   WORKSPACE SYSTEM
+================================ */
+.workspace{
+  width:100%;
+  margin-top:10px;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+/* ================================
+   IMAGE INSIDE WORKSPACE
+================================ */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+  margin:0;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>9.B Identify Horizontal, Vertical, and Slant Asymptotes</h1>
+
+<div class="intro-text">
+Rational functions are defined by the relationship between two polynomials. Their behavior is often determined not by individual points, but by how the function behaves near values where it becomes undefined or grows without bound.
+</div>
+
+<div class="intro-text">
+Asymptotes describe this behavior. By analyzing the structure of a rational function, we can determine vertical, horizontal, and slant asymptotes without graphing, allowing us to predict how the function behaves across its domain.
+</div>
+
+<div class="inspirational">
+“Asymptotes reveal behavior where the function cannot exist.”
+</div>
+
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can determine vertical asymptotes from the denominator.</p>
+<p>I can determine horizontal asymptotes using degree analysis.</p>
+<p>I can determine slant asymptotes using division or structure.</p>
+<p>I can explain how asymptotes influence graph behavior.</p>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- INTRODUCTION -->
+<!-- ======================= -->
+<section>
+    <h2>Introduction</h2>
+    
+    <p>
+    When a rational function is undefined or grows very large, its graph approaches specific lines called asymptotes. These lines do not represent values the function reaches, but they describe how the function behaves.
+    </p>
+    
+    <p>
+    By analyzing the structure of a rational function, we can determine these asymptotes without graphing. This allows us to predict the overall behavior of the function before sketching it.
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Asymptotes are determined by the structure of the function, not by plotting points.
+    </div>
+    
+    </section>
+
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+    <h2>Connections</h2>
+    
+    <div class="key-point">
+    <strong>Prior Knowledge:</strong>
+    <ul style="margin-left:20px;">
+    <li>Factoring polynomials to identify zeros and restrictions</li>
+    <li>Understanding function notation and domain</li>
+    <li>Graphing transformations of functions (from 9.A)</li>
+    </ul>
+    </div>
+    
+    <div class="key-point">
+    <strong>Cross-Disciplinary Connections:</strong>
+    <ul style="margin-left:20px;">
+    <li>Physics: quantities approaching limits (e.g., intensity, force)</li>
+    <li>Chemistry: concentration and reaction rate relationships</li>
+    <li>Computer Science: asymptotic behavior in algorithm efficiency</li>
+    </ul>
+    </div>
+    
+    <div class="key-point">
+    <strong>Real-World Applications:</strong>
+    <ul style="margin-left:20px;">
+    <li>Situations where values grow large or approach boundaries</li>
+    <li>Modeling systems with restrictions or undefined values</li>
+    <li>Understanding behavior near limits in applied contexts</li>
+    </ul>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- HISTORY -->
+<!-- ======================= -->
+<section>
+    <h2>History</h2>
+    
+    <p>
+    The concept of asymptotes emerged as mathematicians began studying functions that did not behave like simple curves. In the 17th century, René Descartes and others developed coordinate geometry, allowing equations to be visualized as graphs.
+    </p>
+    
+    <p>
+    As mathematicians explored rational functions, they noticed that graphs approached certain lines without ever touching them. These lines became known as asymptotes, providing insight into the long-term behavior of functions.
+    </p>
+    
+    <p>
+    Today, asymptotes are essential in calculus and applied mathematics, where understanding limits and behavior near undefined values is critical.
+    </p>
+    
+    </section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+    <h2>Key Concepts</h2>
+    
+    <h3>Vertical Asymptotes</h3>
+    
+    <p>
+    Vertical asymptotes occur where the denominator of a rational function equals zero, provided the factor does not cancel.
+    </p>
+    
+    <div class="definition">
+    <p><strong>Process:</strong></p>
+    <ul style="margin-left:20px;">
+    <li>Factor the denominator</li>
+    <li>Set each factor equal to zero</li>
+    <li>Exclude any factors that cancel with the numerator</li>
+    </ul>
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ f(x)=\frac{1}{x-3} \quad \Rightarrow \quad \text{VA: } x=3 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <h3>Horizontal Asymptotes</h3>
+    
+    <p>
+    Horizontal asymptotes are determined by comparing the degrees of the numerator and denominator.
+    </p>
+    
+    <div class="definition">
+    <p><strong>Degree Rules:</strong></p>
+    
+    <table style="margin-left:20px; border-collapse:collapse;">
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;"><strong>Case</strong></td>
+    <td style="padding:6px; border:1px solid #ccc;"><strong>Result</strong></td>
+    </tr>
+    
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;">Degree (top) < Degree (bottom)</td>
+    <td style="padding:6px; border:1px solid #ccc;">$y = 0$</td>
+    </tr>
+    
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;">Degree (top) = Degree (bottom)</td>
+    <td style="padding:6px; border:1px solid #ccc;">Ratio of leading coefficients</td>
+    </tr>
+    
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;">Degree (top) > Degree (bottom)</td>
+    <td style="padding:6px; border:1px solid #ccc;">No horizontal asymptote</td>
+    </tr>
+    
+    </table>
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ f(x)=\frac{2x^2}{x^2+1} \quad \Rightarrow \quad \text{HA: } y=2 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <h3>Slant (Oblique) Asymptotes</h3>
+    
+    <p>
+    Slant asymptotes occur when the degree of the numerator is exactly one higher than the degree of the denominator.
+    </p>
+    
+    <div class="definition">
+    <p><strong>Process:</strong></p>
+    <ul style="margin-left:20px;">
+    <li>Use polynomial division</li>
+    <li>The quotient (without remainder) is the slant asymptote</li>
+    </ul>
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{x^2+1}{x} = x + \frac{1}{x} \quad \Rightarrow \quad \text{SA: } y=x $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <h3>Structural Behavior</h3>
+    
+    <p>
+    Asymptotes define how a rational function behaves near undefined values and as $x$ becomes very large or very small. The graph approaches these lines but does not cross vertical asymptotes.
+    </p>
+    
+
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Always determine asymptotes before graphing. They define the structure of the function.
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Rational Function:</strong>
+    <p>A function written as the ratio of two polynomials.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Vertical Asymptote:</strong>
+    <p>A vertical line $x = a$ where the function is undefined and the graph approaches but does not cross.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Horizontal Asymptote:</strong>
+    <p>A horizontal line $y = b$ that the graph approaches as $x$ becomes very large or very small.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Slant (Oblique) Asymptote:</strong>
+    <p>A diagonal line that the graph approaches when the degree of the numerator is exactly one greater than the degree of the denominator.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Degree:</strong>
+    <p>The highest power of the variable in a polynomial.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Leading Coefficient:</strong>
+    <p>The coefficient of the term with the highest degree.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Polynomial Division:</strong>
+    <p>A method used to divide polynomials to rewrite a rational function and identify slant asymptotes.</p>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- STRATEGIES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Finding Asymptotes Efficiently:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    
+    <li>
+    <strong>Start with the denominator.</strong><br>
+    Factor completely and set each factor equal to zero to identify possible vertical asymptotes.
+    </li>
+    
+    <li>
+    <strong>Check for cancellations.</strong><br>
+    If a factor cancels with the numerator, it is not a vertical asymptote (it creates a hole instead).
+    </li>
+    
+    <li>
+    <strong>Compare degrees.</strong><br>
+    Use the degrees of the numerator and denominator to determine whether a horizontal asymptote exists.
+    </li>
+    
+    <li>
+    <strong>Use leading coefficients.</strong><br>
+    When degrees are equal, divide the leading coefficients to find the horizontal asymptote.
+    </li>
+    
+    <li>
+    <strong>Look for slant asymptotes.</strong><br>
+    If the numerator’s degree is exactly one higher, use division to find the slant asymptote.
+    </li>
+    
+    <li>
+    <strong>Use structure, not graphing.</strong><br>
+    Determine asymptotes algebraically before attempting to sketch the graph.
+    </li>
+    
+    </ol>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- EXAMPLES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Examples</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Vertical Asymptote</h3>
+    
+    <div class="prompt">Identify the vertical asymptote.</div>
+    
+    $$ f(x)=\frac{1}{x-3} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Vertical Asymptotes with Factoring</h3>
+    
+    <div class="prompt">Factor and identify all vertical asymptotes.</div>
+    
+    $$ f(x)=\frac{2}{x^2-5x+6} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Horizontal Asymptote (Lower Degree)</h3>
+    
+    <div class="prompt">Determine the horizontal asymptote using degree analysis.</div>
+    
+    $$ f(x)=\frac{3x}{x^2+1} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Horizontal Asymptote (Equal Degree)</h3>
+    
+    <div class="prompt">Determine the horizontal asymptote.</div>
+    
+    $$ f(x)=\frac{2x^2+1}{x^2-4} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — No Horizontal Asymptote</h3>
+    
+    <div class="prompt">Determine whether a horizontal asymptote exists.</div>
+    
+    $$ f(x)=\frac{x^3}{x^2+1} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Slant Asymptote</h3>
+    
+    <div class="prompt">Use division to determine the slant asymptote.</div>
+    
+    $$ f(x)=\frac{x^2+1}{x} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <h3>Example 7 — Cancellation and Holes</h3>
+    
+    <div class="prompt">Determine any vertical asymptotes and identify any holes.</div>
+    
+    $$ f(x)=\frac{x-2}{(x-2)(x+1)} $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Forgetting to factor completely:</strong><br>
+    Failing to factor the denominator can lead to missing vertical asymptotes.
+    </li>
+    
+    <li>
+    <strong>Including canceled factors as asymptotes:</strong><br>
+    If a factor cancels, it creates a hole—not a vertical asymptote.
+    </li>
+    
+    <li>
+    <strong>Confusing degree rules:</strong><br>
+    Students often mix up when the horizontal asymptote is $y=0$ versus a ratio of coefficients.
+    </li>
+    
+    <li>
+    <strong>Incorrect degree comparison:</strong><br>
+    Only the highest power matters when determining horizontal asymptotes.
+    </li>
+    
+    <li>
+    <strong>Missing slant asymptotes:</strong><br>
+    If the numerator’s degree is one higher, a slant asymptote exists—even though there is no horizontal asymptote.
+    </li>
+    
+    <li>
+    <strong>Trying to graph before analyzing:</strong><br>
+    Asymptotes should always be determined algebraically first.
+    </li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Vertical asymptotes occur where the denominator equals zero (after simplification).</li>
+    
+    <li>Horizontal asymptotes are determined by comparing degrees of numerator and denominator.</li>
+    
+    <li>When degrees are equal, the horizontal asymptote is the ratio of leading coefficients.</li>
+    
+    <li>When the numerator’s degree is greater by one, a slant asymptote exists.</li>
+    
+    <li>Structure and algebra determine asymptotes—not graphing.</li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE SET -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1: EASY ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. Find the vertical asymptote.</p>
+    $$ f(x)=\frac{1}{x-2} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>2. Find the vertical asymptote.</p>
+    $$ f(x)=\frac{3}{x+5} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>3. Find the horizontal asymptote.</p>
+    $$ f(x)=\frac{2x}{x^2+1} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>4. Find the horizontal asymptote.</p>
+    $$ f(x)=\frac{5}{x^3+2} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>5. Find the vertical asymptote.</p>
+    $$ f(x)=\frac{4}{x-7} $$
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 2: MEDIUM ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. Find all vertical asymptotes.</p>
+    $$ f(x)=\frac{1}{x^2-4} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>7. Find all vertical asymptotes.</p>
+    $$ f(x)=\frac{2}{x^2+3x-4} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>8. Find the horizontal asymptote.</p>
+    $$ f(x)=\frac{3x^2}{x^2+1} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>9. Find the horizontal asymptote.</p>
+    $$ f(x)=\frac{4x^2+1}{2x^2-3} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>10. Determine if a horizontal asymptote exists.</p>
+    $$ f(x)=\frac{x^3}{x^2+1} $$
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 3: HARD ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. Find all vertical asymptotes.</p>
+    $$ f(x)=\frac{x}{x^2-5x+6} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>12. Find all vertical asymptotes.</p>
+    $$ f(x)=\frac{3x}{x^2+2x-3} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>13. Find the horizontal asymptote.</p>
+    $$ f(x)=\frac{2x^3+1}{x^3-4} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>14. Find the horizontal asymptote.</p>
+    $$ f(x)=\frac{5x^3}{2x^3+7} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>15. Determine if a horizontal asymptote exists.</p>
+    $$ f(x)=\frac{x^4}{x^2+1} $$
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 4: CHALLENGING ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. Find the slant asymptote.</p>
+    $$ f(x)=\frac{x^2+3}{x} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>17. Find the slant asymptote.</p>
+    $$ f(x)=\frac{x^2-4}{x+1} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>18. Find all asymptotes.</p>
+    $$ f(x)=\frac{x^2+1}{x-2} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>19. Find all asymptotes.</p>
+    $$ f(x)=\frac{2x^2-3}{x+1} $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>20. Find all asymptotes.</p>
+    $$ f(x)=\frac{x^3}{x^2-1} $$
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 5: JUSTIFICATION ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <p>21. Explain why a canceled factor does not produce a vertical asymptote.</p>
+    <div class="workspace workspace-200"></div>
+    
+    <p>22. Explain why only the highest degree terms determine horizontal asymptotes.</p>
+    <div class="workspace workspace-200"></div>
+    
+    <p>23. Justify why a slant asymptote occurs when degrees differ by one.</p>
+    <div class="workspace workspace-200"></div>
+    
+    <p>24. Explain how asymptotes describe behavior rather than exact values.</p>
+    <div class="workspace workspace-200"></div>
+    
+    <p>25. Describe how asymptotes help predict graph shape without plotting points.</p>
+    <div class="workspace workspace-200"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    <p>1. VA: $x=2$</p>
+    <p>2. VA: $x=-5$</p>
+    <p>3. HA: $y=0$</p>
+    <p>4. HA: $y=0$</p>
+    <p>5. VA: $x=7$</p>
+    
+    <h3>Level 2 — Medium</h3>
+    <p>6. VA: $x=\pm2$</p>
+    <p>7. VA: $x=1,-4$</p>
+    <p>8. HA: $y=3$</p>
+    <p>9. HA: $y=2$</p>
+    <p>10. No horizontal asymptote</p>
+    
+    <h3>Level 3 — Hard</h3>
+    <p>11. VA: $x=2,3$</p>
+    <p>12. VA: $x=1,-3$</p>
+    <p>13. HA: $y=2$</p>
+    <p>14. HA: $y=\\frac{5}{2}$</p>
+    <p>15. No horizontal asymptote</p>
+    
+    <h3>Level 4 — Challenging</h3>
+    <p>16. SA: $y=x$</p>
+    <p>17. SA: $y=x-1$</p>
+    <p>18. VA: $x=2$, SA: $y=x+2$</p>
+    <p>19. VA: $x=-1$, SA: $y=2x-2$</p>
+    <p>20. VA: $x=1,-1$, SA: $y=x$</p>
+    
+    <h3>Level 5 — Justification / Conceptual</h3>
+    <p>21–25. Answers vary (conceptual explanations)</p>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- DETAILED EXAMPLE SOLUTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Vertical Asymptote</h3>
+    
+    $$ f(x)=\frac{1}{x-3} $$
+    
+    <p>
+    Set the denominator equal to zero:
+    </p>
+    
+    $$ x-3=0 \Rightarrow x=3 $$
+    
+    <p><strong>VA:</strong> $x=3$</p>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Factoring for Vertical Asymptotes</h3>
+    
+    $$ f(x)=\frac{2}{x^2-5x+6} $$
+    
+    <p>
+    Factor the denominator:
+    </p>
+    
+    $$ x^2-5x+6=(x-2)(x-3) $$
+    
+    <p>
+    Set each factor equal to zero:
+    </p>
+    
+    $$ x=2,\; x=3 $$
+    
+    <p><strong>VA:</strong> $x=2,\; x=3$</p>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Horizontal Asymptote (Lower Degree)</h3>
+    
+    $$ f(x)=\frac{3x}{x^2+1} $$
+    
+    <p>
+    Degree of numerator is less than denominator.
+    </p>
+    
+    <p><strong>HA:</strong> $y=0$</p>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Horizontal Asymptote (Equal Degree)</h3>
+    
+    $$ f(x)=\frac{2x^2+1}{x^2-4} $$
+    
+    <p>
+    Degrees are equal. Use leading coefficients:
+    </p>
+    
+    $$ \frac{2}{1}=2 $$
+    
+    <p><strong>HA:</strong> $y=2$</p>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — No Horizontal Asymptote</h3>
+    
+    $$ f(x)=\frac{x^3}{x^2+1} $$
+    
+    <p>
+    Degree of numerator is greater than denominator.
+    </p>
+    
+    <p><strong>No horizontal asymptote</strong></p>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Slant Asymptote</h3>
+    
+    $$ \frac{x^2+1}{x} $$
+    
+    <p>
+    Divide:
+    </p>
+    
+    $$ x^2+1 = x(x) + 1 $$
+    
+    $$ = x + \frac{1}{x} $$
+    
+    <p><strong>SA:</strong> $y=x$</p>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <h3>Example 7 — Cancellation and Holes</h3>
+    
+    $$ f(x)=\frac{x-2}{(x-2)(x+1)} $$
+    
+    <p>
+    Cancel common factor:
+    </p>
+    
+    $$ f(x)=\frac{1}{x+1} $$
+    
+    <p>
+    The factor $x-2$ creates a hole, not an asymptote.
+    </p>
+    
+    <p><strong>VA:</strong> $x=-1$</p>
+    
+    </section>
+
+    </div>
+</body>
+</html>

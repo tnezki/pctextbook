@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 9.D: Solve Polynomial Equations</title>
+
+<!-- ======================= -->
+<!-- MATHJAX CONFIGURATION  -->
+<!-- ======================= -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ======================= -->
+<!-- STYLES -->
+<!-- ======================= -->
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+/* PAGE */
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* HEADINGS */
+h1{
+  color:#00003d;
+  font-size:2.5em;
+  margin-bottom:20px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+/* TEXT */
+.intro-text{
+  font-size:1.05em;
+  color:#555;
+  margin-bottom:10px;
+  font-style:italic;
+}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:italic;
+}
+
+/* BOXES */
+.objectives{
+  background:#f0f4f8;
+  padding:20px;
+  border-radius:6px;
+}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+/* WORKSPACE */
+.workspace{
+  width:100%;
+  margin-top:10px;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+  margin:0;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>9.D Solve Polynomial Equations</h1>
+
+<div class="intro-text">
+Polynomial equations describe relationships where expressions are set equal to zero. Solving these equations requires recognizing algebraic structure and applying appropriate strategies to isolate all possible solutions.
+</div>
+
+<div class="inspirational">
+“Equations are solved not by guessing, but by revealing their structure.”
+</div>
+
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can solve polynomial equations using factoring.</p>
+<p>I can use graphing to approximate solutions.</p>
+<p>I can apply the Zero Product Property.</p>
+<p>I can verify solutions algebraically and graphically.</p>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- INTRODUCTION -->
+<!-- ======================= -->
+<section>
+<h2>Introduction</h2>
+
+<p>
+A polynomial equation is solved by finding all values of $x$ that make the expression equal to zero. These values are called the solutions or zeros of the equation.
+</p>
+
+<p>
+Graphically, solutions correspond to the x-intercepts of the function. Algebraically, they are found by rewriting the equation in factored form and applying properties of multiplication.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Solving a polynomial equation means finding all values of $x$ for which the function equals zero.
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+<h2>Connections</h2>
+
+<div class="key-point">
+<strong>Prior Knowledge:</strong>
+<ul style="margin-left:20px;">
+<li>Factoring expressions and identifying common factors</li>
+<li>Graphing functions and identifying x-intercepts</li>
+<li>Understanding the relationship between equations and their graphs</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Cross-Disciplinary Connections:</strong>
+<ul style="margin-left:20px;">
+<li>Physics: determining when height or velocity equals zero</li>
+<li>Engineering: identifying equilibrium points in systems</li>
+<li>Economics: finding break-even points where profit equals zero</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Real-World Applications:</strong>
+<ul style="margin-left:20px;">
+<li>Determining when a projectile hits the ground</li>
+<li>Finding when revenue equals cost in a business model</li>
+<li>Identifying when a system changes direction or behavior</li>
+</ul>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- HISTORY -->
+<!-- ======================= -->
+<section>
+<h2>History</h2>
+
+<p>
+The solution of polynomial equations has been studied since ancient civilizations, where early methods focused on solving linear and quadratic equations using arithmetic procedures.
+</p>
+
+<p>
+During the Renaissance, mathematicians such as Cardano and Ferrari developed general methods for solving cubic and quartic equations, marking a major advancement in algebra.
+</p>
+
+<p>
+These discoveries contributed to the development of symbolic algebra, allowing equations to be manipulated abstractly and solved using systematic methods that are still used today.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+    <h2>Key Concepts</h2>
+    
+    <h3>Solutions and Zeros</h3>
+    
+    <p>
+    A solution to a polynomial equation is any value of $x$ that makes the expression equal to zero. These solutions are also called zeros of the function.
+    </p>
+    
+    <p>
+    Graphically, solutions correspond to the x-intercepts of the graph.
+    </p>
+    
+    <div class="workspace workspace-200">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <h3>The Zero Product Property</h3>
+    
+    <div class="definition">
+    <p><strong>Zero Product Property:</strong></p>
+    <p>If $ab = 0$, then $a = 0$ or $b = 0$.</p>
+    </div>
+    
+    <p>
+    This property allows us to solve equations by factoring.
+    </p>
+    
+    <p><strong>Example:</strong></p>
+    $$ (x-2)(x+3)=0 $$
+    
+    $$ x-2=0 \quad \text{or} \quad x+3=0 $$
+    
+    $$ x=2 \quad \text{or} \quad x=-3 $$
+    
+    
+    <h3>Factoring to Solve Equations</h3>
+    
+    <p>
+    To solve a polynomial equation, rewrite it in factored form and apply the Zero Product Property.
+    </p>
+    
+    <div class="definition">
+    <p><strong>Process:</strong></p>
+    <ul style="margin-left:20px;">
+    <li>Set the equation equal to zero</li>
+    <li>Factor completely</li>
+    <li>Set each factor equal to zero</li>
+    <li>Solve for $x$</li>
+    </ul>
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ x^2-5x+6=0 $$
+    
+    $$ (x-2)(x-3)=0 $$
+    
+    $$ x=2,\; x=3 $$
+    
+    
+    <h3>Graphing and Solutions</h3>
+    
+    <p>
+    The solutions of a polynomial equation are the x-values where the graph crosses or touches the x-axis.
+    </p>
+    
+    <div class="workspace workspace-200">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Algebraic solutions and graphical solutions represent the same values.
+    </div>
+    
+    
+    <h3>Verifying Solutions</h3>
+    
+    <p>
+    Solutions should always be checked by substituting them back into the original equation.
+    </p>
+    
+    <p>
+    Graphing can also be used to confirm solutions by verifying the x-intercepts.
+    </p>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Polynomial Equation:</strong>
+    <p>An equation involving a polynomial set equal to zero.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Solution:</strong>
+    <p>A value of $x$ that makes the equation true.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Zero (Root):</strong>
+    <p>A value of $x$ where the function equals zero; corresponds to an x-intercept.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Zero Product Property:</strong>
+    <p>If $ab=0$, then $a=0$ or $b=0$.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Factor:</strong>
+    <p>An expression that divides another expression evenly.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>X-intercept:</strong>
+    <p>The point where the graph crosses or touches the x-axis.</p>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Solving Polynomial Equations:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    
+    <li>
+    <strong>Set the equation equal to zero.</strong><br>
+    All solving methods require the equation to be written in standard form.
+    </li>
+    
+    <li>
+    <strong>Factor completely.</strong><br>
+    Use common factoring techniques (GCF, trinomials, grouping, etc.).
+    </li>
+    
+    <li>
+    <strong>Apply the Zero Product Property.</strong><br>
+    Set each factor equal to zero and solve.
+    </li>
+    
+    <li>
+    <strong>Check solutions.</strong><br>
+    Substitute values back into the original equation to verify correctness.
+    </li>
+    
+    <li>
+    <strong>Use graphing when needed.</strong><br>
+    Graph the function to approximate solutions or confirm results.
+    </li>
+    
+    </ol>
+    
+    </div>
+    
+    </section>
+
+<!-- ======================= -->
+<!-- EXAMPLES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Examples</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Long Division (Cubic)</h3>
+    <div class="prompt">Use polynomial long division to factor and solve.</div>
+    
+    $$ x^3 - 4x^2 + x + 6 = 0 $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Long Division (Quartic)</h3>
+    <div class="prompt">Use long division to factor and solve.</div>
+    
+    $$ x^4 - 5x^3 + 6x^2 + 4x - 8 = 0 $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Synthetic Division (Cubic)</h3>
+    <div class="prompt">Use synthetic division to factor and solve.</div>
+    
+    $$ x^3 - 3x^2 - 4x + 12 = 0 $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Synthetic Division (Quartic)</h3>
+    <div class="prompt">Use synthetic division to factor and solve.</div>
+    
+    $$ x^4 - 2x^3 - 7x^2 + 8x + 12 = 0 $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Box Method (Quartic)</h3>
+    <div class="prompt">Use the box method to factor and solve.</div>
+    
+    $$ x^4 + 2x^3 - x^2 - 2x = 0 $$
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+ <!-- ===== EXAMPLE 6 ===== -->
+<h3>Example 6 — Solve and Graph Connection</h3>
+<div class="prompt">Solve and graph the function. Identify how the solutions relate to the graph.</div>
+
+$$ x^3 - 2x^2 - 5x + 6 = 0 $$
+
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+
+<div class="workspace workspace-200"></div>
+
+
+<!-- ===== EXAMPLE 7 ===== -->
+<h3>Example 7 — Graph Interpretation (Repeated Root)</h3>
+<div class="prompt">Solve and graph the function. Describe how the graph behaves at each intercept.</div>
+
+$$ x^3 - 3x^2 + 3x - 1 = 0 $$
+
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+
+<div class="workspace workspace-200"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE SET -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1: EASY ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. Solve the equation.</p>
+    $$ x^2 - 5x + 6 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>2. Solve the equation.</p>
+    $$ x^2 - 9 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>3. Solve the equation.</p>
+    $$ x^3 - 4x^2 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>4. Solve the equation.</p>
+    $$ x^2 + x - 6 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>5. Solve the equation.</p>
+    $$ x^3 - x^2 - 6x = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 2: MEDIUM ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. Factor and solve.</p>
+    $$ x^3 - 3x^2 - 4x = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>7. Factor and solve.</p>
+    $$ x^4 - 4x^2 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>8. Use grouping to solve.</p>
+    $$ x^3 - x^2 - 4x + 4 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>9. Solve the equation.</p>
+    $$ x^4 - x^3 - 6x^2 + 6x = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>10. Solve the equation.</p>
+    $$ x^3 + 2x^2 - x - 2 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 3: HARD ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. Use synthetic division to factor and solve.</p>
+    $$ x^3 - 2x^2 - 5x + 6 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>12. Use synthetic division to factor and solve.</p>
+    $$ x^3 - 4x^2 + x + 6 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>13. Use division to factor and solve.</p>
+    $$ x^4 - 5x^3 + 6x^2 + 4x - 8 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>14. Use synthetic division to factor and solve.</p>
+    $$ x^4 - 2x^3 - 7x^2 + 8x + 12 = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    <p>15. Solve the equation.</p>
+    $$ x^4 + 2x^3 - x^2 - 2x = 0 $$
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 4: CHALLENGING ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. Solve and graph the function.</p>
+    $$ x^3 - 2x^2 - 5x + 6 = 0 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    <div class="workspace workspace-200"></div>
+    
+    <p>17. Solve and graph the function.</p>
+    $$ x^4 - 4x^2 = 0 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    <div class="workspace workspace-200"></div>
+    
+    <p>18. Solve and describe intercept behavior.</p>
+    $$ x^3 - 3x^2 + 3x - 1 = 0 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    <div class="workspace workspace-200"></div>
+    
+    <p>19. Solve and graph.</p>
+    $$ x^4 - x^3 - 6x^2 + 6x = 0 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    <div class="workspace workspace-200"></div>
+    
+    <p>20. Solve and interpret graph behavior.</p>
+    $$ x^3 + 2x^2 - x - 2 = 0 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== LEVEL 5: JUSTIFICATION ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <p>21. Explain why factoring is required before applying the Zero Product Property.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>22. Explain how solutions relate to x-intercepts.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>23. Justify why synthetic division can simplify solving higher-degree polynomials.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>24. Explain how repeated roots affect the graph of a polynomial.</p>
+    <div class="workspace workspace-100"></div>
+    
+    <p>25. Describe how algebraic solutions and graphs represent the same information.</p>
+    <div class="workspace workspace-100"></div>
+    
+    </section>
+
+<!-- ======================= -->
+<!-- ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    <p>1. $x=2,3$</p>
+    <p>2. $x=3,-3$</p>
+    <p>3. $x=0,4$</p>
+    <p>4. $x=2,-3$</p>
+    <p>5. $x=0,3,-2$</p>
+    
+    <h3>Level 2 — Medium</h3>
+    <p>6. $x=0,4,-1$</p>
+    <p>7. $x=0,2,-2$</p>
+    <p>8. $x=1,-2,2$</p>
+    <p>9. $x=0,1,2,-3$</p>
+    <p>10. $x=1,-2,1$</p>
+    
+    <h3>Level 3 — Hard</h3>
+    <p>11. $x=1,3,-2$</p>
+    <p>12. $x=2,3,-1$</p>
+    <p>13. $x=2,1,-2,4$</p>
+    <p>14. $x=3,2,-2,-1$</p>
+    <p>15. $x=0,-1,1,-2$</p>
+    
+    <h3>Level 4 — Challenging</h3>
+    <p>16. $x=1,3,-2$ (crosses at each root)</p>
+    <p>17. $x=0,2,-2$ (touches at 0, crosses at ±2)</p>
+    <p>18. $x=1$ (multiplicity 3, flattens at intercept)</p>
+    <p>19. $x=0,1,2,-3$</p>
+    <p>20. $x=1,-2,1$ (double root at 1)</p>
+    
+    <h3>Level 5 — Justification</h3>
+    <p>21–25. Answers vary (conceptual)</p>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- DETAILED EXAMPLE SOLUTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Factoring a Quadratic</h3>
+    
+    $$ x^2 - 5x + 6 = 0 $$
+    
+    <p>
+    Factor:
+    </p>
+    
+    $$ (x-2)(x-3)=0 $$
+    
+    <p>
+    Apply Zero Product Property:
+    </p>
+    
+    $$ x=2,\; x=3 $$
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Long Division (Quartic)</h3>
+    
+    $$ x^4 - 5x^3 + 6x^2 + 4x - 8 = 0 $$
+    
+    <p>
+    Divide by $(x-2)$ using long division to reduce the polynomial.
+    </p>
+    
+    <p>
+    Resulting factorization allows solving remaining polynomial.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Synthetic Division (Cubic)</h3>
+    
+    $$ x^3 - 3x^2 - 4x + 12 = 0 $$
+    
+    <p>
+    Use synthetic division with root $x=3$:
+    </p>
+    
+    <p>
+    Factorization leads to:
+    </p>
+    
+    $$ (x-3)(x+2)(x-2)=0 $$
+    
+    <p>
+    Solutions:
+    </p>
+    
+    $$ x=3,\; x=-2,\; x=2 $$
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Synthetic Division (Quartic)</h3>
+    
+    <p>
+    Use synthetic division repeatedly to reduce the polynomial into linear factors.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Box Method</h3>
+    
+    $$ x^4 + 2x^3 - x^2 - 2x = 0 $$
+    
+    <p>
+    Group and factor:
+    </p>
+    
+    $$ x(x^3 + 2x^2 - x - 2) $$
+    
+    <p>
+    Then factor remaining cubic using grouping or division.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Solve and Graph Connection</h3>
+    
+    $$ x^3 - 2x^2 - 5x + 6 = 0 $$
+    
+    <p>
+    Factor using synthetic division:
+    </p>
+    
+    $$ (x-1)(x-3)(x+2)=0 $$
+    
+    <p>
+    Solutions correspond to x-intercepts at $x=1, 3, -2$.
+    </p>
+    
+    <p>
+    The graph crosses the x-axis at each intercept.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <h3>Example 7 — Repeated Root Behavior</h3>
+    
+    $$ x^3 - 3x^2 + 3x - 1 = 0 $$
+    
+    <p>
+    Factor:
+    </p>
+    
+    $$ (x-1)^3 = 0 $$
+    
+    <p>
+    Solution:
+    </p>
+    
+    $$ x=1 $$
+    
+    <p>
+    The graph touches and flattens at $x=1$ due to multiplicity 3.
+    </p>
+    
+    </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 9.A: Graph Transformations of Rational Functions</title>
+
+<!-- ======================= -->
+<!-- MATHJAX CONFIGURATION  -->
+<!-- ======================= -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ======================= -->
+<!-- STYLES (MINIMAL START) -->
+<!-- ======================= -->
+<style>
+
+    /* ================================
+       RESET
+    ================================ */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    
+    /* ================================
+       PAGE
+    ================================ */
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      line-height:1.7;
+      color:#333;
+      background:#ffffff;
+      padding:20px;
+    }
+    
+    .container{
+      max-width:900px;
+      margin:auto;
+    }
+    
+    /* ================================
+       HEADINGS
+    ================================ */
+    h1{
+      color:#00003d;
+      font-size:2.5em;
+      margin-bottom:20px;
+    }
+    
+    h2{
+      color:#00003d;
+      font-size:1.8em;
+      margin-top:30px;
+      margin-bottom:15px;
+      border-left:5px solid #00003d;
+      padding-left:10px;
+    }
+    
+    /* ================================
+       TEXT ELEMENTS
+    ================================ */
+    .intro-text{
+      font-size:1.05em;
+      color:#555;
+      margin-bottom:10px;
+      font-style:italic;
+    }
+    
+    .inspirational{
+      font-size:1.15em;
+      color:#004d99;
+      font-style:italic;
+      text-align:center;
+      margin:10px 0 30px 0;
+    }
+    
+    /* ================================
+       CONTENT BOXES
+    ================================ */
+    .objectives{
+      background:#f0f4f8;
+      padding:20px;
+      border-radius:6px;
+    }
+    
+    .key-point{
+      background:#e8f5e9;
+      border-left:5px solid #4caf50;
+      padding:20px;
+      margin-top:20px;
+      border-radius:6px;
+    }
+
+    .summary-box{
+        background:#f0f4f8;
+        border-left:5px solid #00003d;
+        padding:20px;
+        margin:30px 0;
+        border-radius:6px;
+     }
+    
+    /* ================================
+       GRAPH / IMAGE
+    ================================ */
+    .center-graph{
+      text-align:center;
+      margin:20px 0;
+    }
+    
+    .center-graph img{
+      width:420px;
+      max-width:100%;
+    }
+    
+    /* ================================
+       WORKSPACE SYSTEM
+    ================================ */
+    .workspace{
+      width:100%;
+      margin-top:10px;
+    }
+    
+    .workspace-100{height:100px;}
+    .workspace-200{height:200px;}
+    .workspace-300{height:300px;}
+    .workspace-400{height:400px;}
+    .workspace-500{height:500px;}
+    .workspace-600{height:600px;}
+    
+    /* ================================
+       IMAGE INSIDE WORKSPACE
+    ================================ */
+    .workspace img{
+      height:100%;
+      width:auto;
+      max-width:400px;
+      display:block;
+      margin:0;   /* default LEFT (you control per example) */
+    }
+
+    /* ================================
+       Mathjax alignment can override with
+       <div style="text-align:center;">      $$ f(x)=\frac{1}{x} $$       </div>
+    ================================ */
+
+    mjx-container[display="true"] {
+        text-align: left !important;
+        margin: 0 !important;
+    }
+
+
+    
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>9.A Graph Transformations of Rational Functions</h1>
+
+<div class="intro-text">
+Rational functions exhibit predictable structural behavior governed by algebraic transformations. Rather than relying on point-by-point plotting, effective analysis depends on recognizing how transformations alter the fundamental structure of a parent function.
+</div>
+
+<div class="intro-text">
+By interpreting parameters within the function, we can determine asymptotes, orientation, and relative position with precision. This allows for efficient graphing and deeper conceptual understanding.
+</div>
+
+<div class="inspirational">
+“Mathematics reveals structure — it does not create it.”
+</div>
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can identify horizontal and vertical transformations of rational functions.</p>
+<p>I can determine the effects of reflections and stretches/compressions.</p>
+<p>I can sketch transformed rational functions using structural reasoning.</p>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- INTRODUCTION SECTION -->
+<!-- ======================= -->
+<section>
+<h2>Introduction</h2>
+
+<p>
+The parent rational function is:
+</p>
+
+$$ f(x)=\frac{1}{x} $$
+
+<div class="center-graph">
+  <img src="images/plane.png" alt="Coordinate plane">
+</div>
+
+<p>
+This function is defined for all real values of $x$ except $x=0$. At this value, the function is undefined, creating a vertical asymptote. The graph also approaches, but never touches, the horizontal asymptote at $y=0$.
+</p>
+
+<p>
+Unlike polynomial functions, rational functions do not form continuous curves. Instead, they consist of separate branches that approach asymptotes. These asymptotes define the structure of the graph and guide how it behaves.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Transformations do not change the fundamental structure of a rational function. They shift and reshape the graph while preserving its asymptotic behavior.
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+    <h2>Connections</h2>
+    
+    <div class="key-point">
+    <strong>Prior Knowledge:</strong>
+    <ul>
+    <li>Transformations of linear, quadratic, and exponential functions</li>
+    <li>Understanding parent functions and how parameters affect graphs</li>
+    <li>Graphing with symmetry, intercepts, and basic function behavior</li>
+    </ul>
+    </div>
+    
+    <div class="key-point">
+    <strong>Cross-Disciplinary Connections:</strong>
+    <ul>
+    <li>Physics: inverse and inverse-square relationships (gravity, electric force)</li>
+    <li>Chemistry: concentration vs reaction rate relationships</li>
+    <li>Computer Science: asymptotic behavior and efficiency of algorithms</li>
+    </ul>
+    </div>
+    
+    <div class="key-point">
+    <strong>Real-World Applications:</strong>
+    <ul>
+    <li>Cost per person as group size increases</li>
+    <li>Time required to complete tasks with increasing resources</li>
+    <li>Situations where values approach limits but never reach them</li>
+    </ul>
+    </div>
+    
+    </section>
+
+ <!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+    <h2>Key Concepts</h2>
+    
+    <h3>General Form of a Transformed Rational Function</h3>
+    
+    $$ f(x)=\frac{a}{x-h}+k $$
+    
+    <div class="definition">
+    <strong>Parameters and Their Effects:</strong>
+    <ul style="margin-left:20px;">
+    <li><strong>a</strong> → controls vertical stretch/compression and reflection</li>
+    <li><strong>h</strong> → shifts the graph left or right</li>
+    <li><strong>k</strong> → shifts the graph up or down</li>
+    </ul>
+    </div>
+    
+    <h3>Asymptotes</h3>
+    
+    <ul style="margin-left:20px;">
+    <li><strong>Vertical Asymptote:</strong> $x = h$</li>
+    <li><strong>Horizontal Asymptote:</strong> $y = k$</li>
+    </ul>
+    
+    <h3>Transformation Summary</h3>
+    
+    <ul style="margin-left:20px;">
+    <li>$x - h$ → shift right $h$ units</li>
+    <li>$x + h$ → shift left $h$ units</li>
+    <li>$+k$ → shift up $k$ units</li>
+    <li>$-k$ → shift down $k$ units</li>
+    <li>$a > 1$ → vertical stretch</li>
+    <li>$0 < a < 1$ → vertical compression</li>
+    <li>$a < 0$ → reflection across the x-axis</li>
+    </ul>
+    
+    <h3>Structural Behavior</h3>
+    
+    <div style="display:flex; gap:30px; align-items:flex-start; margin-top:10px;">
+    
+      <div style="flex:1;">
+        <p>
+        Rational functions based on $\frac{1}{x}$ always have two branches. These branches are separated by the vertical asymptote and approach both asymptotes without ever touching them.
+        </p>
+      </div>
+    
+      <div style="flex:1; text-align:center;">
+        <img src="images/plane.png" style="width:300px; max-width:100%;">
+      </div>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- STRATEGIES -->
+<!-- ======================= -->
+<section>
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Graphing Strategy for Rational Functions:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    
+    <li>
+    <strong>Identify asymptotes first.</strong><br>
+    Determine the vertical asymptote from the denominator and the horizontal asymptote from the constant shift.
+    </li>
+    
+    <li>
+    <strong>Analyze transformations.</strong><br>
+    Identify shifts ($h$, $k$), reflections, and stretches using the parameters in the function.
+    </li>
+    
+    <li>
+    <strong>Determine branch orientation.</strong><br>
+    Use the sign of $a$ to determine which quadrants the graph will occupy relative to the asymptotes.
+    </li>
+    
+    <li>
+    <strong>Sketch relative to asymptotes.</strong><br>
+    Draw branches approaching asymptotes without touching them. Focus on structure rather than plotting many points.
+    </li>
+    
+    <li>
+    <strong>Verify with key points (if needed).</strong><br>
+    Use one or two points to confirm accuracy, not to build the entire graph.
+    </li>
+    
+    </ol>
+    
+    </div>
+    
+    </section>
+
+<!-- ======================= -->
+<!-- EXAMPLES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Examples</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Horizontal Shift</h3>
+    <div class="prompt">Identify the vertical asymptote before sketching.</div>
+    
+    $$ f(x)=\frac{1}{x-2} $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png" class="workspace-img">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Vertical Translation</h3>
+    <div class="prompt">Determine the horizontal and vertical shifts.</div>
+    
+    $$ f(x)=\frac{1}{x}+3 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png" class="workspace-img">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Reflection Across the x-axis</h3>
+    <div class="prompt">How does the negative sign affect orientation?</div>
+    
+    $$ f(x)=-\frac{1}{x} $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png" class="workspace-img">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Vertical Stretch</h3>
+    <div class="prompt">Describe how the coefficient changes the graph.</div>
+    
+    $$ f(x)=\frac{2}{x} $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png" class="workspace-img">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Combined Transformations</h3>
+    <div class="prompt">Identify both asymptotes and describe all transformations.</div>
+    
+    $$ f(x)=\frac{1}{x+4}-1 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png" class="workspace-img">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Reflection and Translation</h3>
+    <div class="prompt">Determine asymptotes, orientation, and transformations.</div>
+    
+    $$ f(x)=-\frac{3}{x-1}+2 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png" class="workspace-img">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Ignoring asymptotes:</strong><br>
+    Students often try to graph the function without first identifying vertical and horizontal asymptotes, which leads to incorrect structure.
+    </li>
+    
+    <li>
+    <strong>Reversing horizontal shifts:</strong><br>
+    Remember that $x - h$ shifts right and $x + h$ shifts left. This is opposite of what many expect.
+    </li>
+    
+    <li>
+    <strong>Forgetting reflections:</strong><br>
+    A negative value of $a$ reflects the graph across the x-axis, changing the orientation of the branches.
+    </li>
+    
+    <li>
+    <strong>Over-relying on plotting points:</strong><br>
+    Rational functions should be sketched using asymptotes and structure, not built point-by-point.
+    </li>
+    
+    <li>
+    <strong>Drawing branches that cross asymptotes:</strong><br>
+    Graphs should approach asymptotes but never touch or cross them.
+    </li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Rational functions are transformations of the parent function $\\frac{1}{x}$.</li>
+    
+    <li>Asymptotes define the structure of the graph.</li>
+    
+    <li>The parameters $a$, $h$, and $k$ control reflection, stretch, and translation.</li>
+    
+    <li>Graphing should begin with identifying asymptotes before sketching.</li>
+    
+    <li>Understanding structure allows you to graph efficiently without relying on tables of values.</li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE SET -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1: EASY ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. Sketch:</p>
+    $$ f(x)=\frac{1}{x-1} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>2. Sketch:</p>
+    $$ f(x)=\frac{1}{x}+2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>3. Sketch:</p>
+    $$ f(x)=\frac{1}{x+3} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>4. Sketch:</p>
+    $$ f(x)=\frac{1}{x}-4 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>5. Sketch:</p>
+    $$ f(x)=\frac{1}{x-5} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <!-- ===== LEVEL 2: MEDIUM ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. Sketch:</p>
+    $$ f(x)=-\frac{1}{x-2} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>7. Sketch:</p>
+    $$ f(x)=\frac{2}{x}+1 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>8. Sketch:</p>
+    $$ f(x)=\frac{1}{2x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>9. Sketch:</p>
+    $$ f(x)=\frac{1}{x+1}-3 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>10. Sketch:</p>
+    $$ f(x)=-\frac{2}{x-4} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <!-- ===== LEVEL 3: HARD ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. Sketch:</p>
+    $$ f(x)=\frac{3}{x-2}+1 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>12. Sketch:</p>
+    $$ f(x)=-\frac{4}{x+3}-2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>13. Sketch:</p>
+    $$ f(x)=\frac{1}{x-1}+4 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>14. Sketch:</p>
+    $$ f(x)=\frac{5}{x}+2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>15. Sketch:</p>
+    $$ f(x)=-\frac{1}{x-3}+1 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <!-- ===== LEVEL 4: CHALLENGING ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. Describe and sketch:</p>
+    $$ f(x)=\frac{-2}{x-3}+4 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>17. Identify asymptotes and sketch:</p>
+    $$ f(x)=\frac{1}{x+2}-2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>18. Compare graphically:</p>
+    $$ f(x)=\frac{1}{x-4} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>19. Analyze the effect of $a$:</p>
+    $$ f(x)=\frac{a}{x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>20. Sketch:</p>
+    $$ f(x)=\frac{1}{2(x-1)}+3 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <!-- ===== LEVEL 5: JUSTIFICATION ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <p>21. Explain why asymptotes are necessary when graphing rational functions.</p>
+    
+    <p>22. Explain how a negative coefficient changes the graph of $\\frac{1}{x}$.</p>
+    
+    <p>23. Justify why $x-h$ shifts the graph to the right.</p>
+    
+    <p>24. Explain why rational functions have two branches.</p>
+    
+    <p>25. Describe how transformations allow graphing without plotting many points.</p>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. VA: $x=1$, HA: $y=0$</p>
+    <p>2. VA: $x=0$, HA: $y=2$</p>
+    <p>3. VA: $x=-3$, HA: $y=0$</p>
+    <p>4. VA: $x=0$, HA: $y=-4$</p>
+    <p>5. VA: $x=5$, HA: $y=0$</p>
+    
+    
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. VA: $x=2$, HA: $y=0$, reflection</p>
+    <p>7. VA: $x=0$, HA: $y=1$, stretch (factor 2)</p>
+    <p>8. VA: $x=0$, HA: $y=0$, compression</p>
+    <p>9. VA: $x=-1$, HA: $y=-3$</p>
+    <p>10. VA: $x=4$, HA: $y=0$, reflection, stretch</p>
+    
+    
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. VA: $x=2$, HA: $y=1$, stretch (factor 3)</p>
+    <p>12. VA: $x=-3$, HA: $y=-2$, reflection, stretch</p>
+    <p>13. VA: $x=1$, HA: $y=4$</p>
+    <p>14. VA: $x=0$, HA: $y=2$, stretch (factor 5)</p>
+    <p>15. VA: $x=3$, HA: $y=1$, reflection</p>
+    
+    
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. VA: $x=3$, HA: $y=4$, reflection, stretch (factor 2)</p>
+    <p>17. VA: $x=-2$, HA: $y=-2$</p>
+    <p>18. Shift right 4 units</p>
+    <p>19. $a$ controls stretch/compression and reflection</p>
+    <p>20. VA: $x=1$, HA: $y=3$, compression</p>
+    
+    
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <p>21. Asymptotes define the structure and behavior of the graph.</p>
+    
+    <p>22. A negative coefficient reflects the graph across the x-axis, changing branch orientation.</p>
+    
+    <p>23. Because the input must equal $h$ to make the denominator zero, shifting the vertical asymptote right.</p>
+    
+    <p>24. The function is undefined at the vertical asymptote, splitting the graph into two branches.</p>
+    
+    <p>25. Transformations allow prediction of graph shape using structure instead of plotting points.</p>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- DETAILED EXAMPLE SOLUTIONS -->
+<!-- ======================= -->
+<section>
+
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Horizontal Shift</h3>
+    
+    <p><strong>Given:</strong></p>
+    $$ f(x)=\frac{1}{x-2} $$
+    
+    <p><strong>Step 1: Identify asymptotes</strong></p>
+    <p>Vertical asymptote occurs when the denominator is zero:</p>
+    $$ x-2=0 \Rightarrow x=2 $$
+    
+    <p>Horizontal asymptote:</p>
+    $$ y=0 $$
+    
+    <p><strong>Step 2: Describe transformation</strong></p>
+    <p>The graph is shifted right 2 units from $\\frac{1}{x}$.</p>
+    
+    <p><strong>Final Answer:</strong></p>
+    <p>VA: $x=2$, HA: $y=0$</p>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Vertical Translation</h3>
+    
+    <p><strong>Given:</strong></p>
+    $$ f(x)=\frac{1}{x}+3 $$
+    
+    <p><strong>Step 1: Identify asymptotes</strong></p>
+    <p>Vertical asymptote:</p>
+    $$ x=0 $$
+    
+    <p>Horizontal asymptote:</p>
+    $$ y=3 $$
+    
+    <p><strong>Step 2: Describe transformation</strong></p>
+    <p>The graph is shifted up 3 units.</p>
+    
+    <p><strong>Final Answer:</strong></p>
+    <p>VA: $x=0$, HA: $y=3$</p>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Reflection Across the x-axis</h3>
+    
+    <p><strong>Given:</strong></p>
+    $$ f(x)=-\frac{1}{x} $$
+    
+    <p><strong>Step 1: Identify asymptotes</strong></p>
+    <p>Vertical asymptote:</p>
+    $$ x=0 $$
+    
+    <p>Horizontal asymptote:</p>
+    $$ y=0 $$
+    
+    <p><strong>Step 2: Describe transformation</strong></p>
+    <p>The negative sign reflects the graph across the x-axis.</p>
+    
+    <p><strong>Final Answer:</strong></p>
+    <p>VA: $x=0$, HA: $y=0$, reflection across x-axis</p>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Vertical Stretch</h3>
+    
+    <p><strong>Given:</strong></p>
+    $$ f(x)=\frac{2}{x} $$
+    
+    <p><strong>Step 1: Identify asymptotes</strong></p>
+    <p>Vertical asymptote:</p>
+    $$ x=0 $$
+    
+    <p>Horizontal asymptote:</p>
+    $$ y=0 $$
+    
+    <p><strong>Step 2: Describe transformation</strong></p>
+    <p>The factor of 2 creates a vertical stretch.</p>
+    
+    <p><strong>Final Answer:</strong></p>
+    <p>VA: $x=0$, HA: $y=0$, stretch factor 2</p>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Combined Transformations</h3>
+    
+    <p><strong>Given:</strong></p>
+    $$ f(x)=\frac{1}{x+4}-1 $$
+    
+    <p><strong>Step 1: Identify asymptotes</strong></p>
+    <p>Vertical asymptote:</p>
+    $$ x+4=0 \Rightarrow x=-4 $$
+    
+    <p>Horizontal asymptote:</p>
+    $$ y=-1 $$
+    
+    <p><strong>Step 2: Describe transformation</strong></p>
+    <p>The graph shifts left 4 units and down 1 unit.</p>
+    
+    <p><strong>Final Answer:</strong></p>
+    <p>VA: $x=-4$, HA: $y=-1$</p>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Reflection and Translation</h3>
+    
+    <p><strong>Given:</strong></p>
+    $$ f(x)=-\frac{3}{x-1}+2 $$
+    
+    <p><strong>Step 1: Identify asymptotes</strong></p>
+    <p>Vertical asymptote:</p>
+    $$ x-1=0 \Rightarrow x=1 $$
+    
+    <p>Horizontal asymptote:</p>
+    $$ y=2 $$
+    
+    <p><strong>Step 2: Describe transformation</strong></p>
+    <p>The graph is shifted right 1 unit and up 2 units.</p>
+    <p>The negative sign reflects the graph across the x-axis.</p>
+    <p>The factor of 3 creates a vertical stretch.</p>
+    
+    <p><strong>Final Answer:</strong></p>
+    <p>VA: $x=1$, HA: $y=2$, reflection, stretch factor 3</p>
+    
+    </section>
+
+</div>
+</body>
+</html>

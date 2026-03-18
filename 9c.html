@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 9.C: Graph Reciprocal Functions</title>
+
+<!-- ======================= -->
+<!-- MATHJAX CONFIGURATION  -->
+<!-- ======================= -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ======================= -->
+<!-- STYLES -->
+<!-- ======================= -->
+<style>
+
+/* ================================
+   RESET
+================================ */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ================================
+   PAGE
+================================ */
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* ================================
+   HEADINGS
+================================ */
+h1{
+  color:#00003d;
+  font-size:2.5em;
+  margin-bottom:20px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+/* ================================
+   TEXT ELEMENTS
+================================ */
+.intro-text{
+  font-size:1.05em;
+  color:#555;
+  margin-bottom:10px;
+  font-style:italic;
+}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:italic;
+}
+
+/* ================================
+   CONTENT BOXES
+================================ */
+.objectives{
+  background:#f0f4f8;
+  padding:20px;
+  border-radius:6px;
+}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+/* ================================
+   WORKSPACE SYSTEM
+================================ */
+.workspace{
+  width:100%;
+  margin-top:10px;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+/* ================================
+   IMAGE INSIDE WORKSPACE
+================================ */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+  margin:0;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>9.C Graph Reciprocal Functions</h1>
+
+<div class="intro-text">
+Reciprocal functions are defined by division and behave differently from polynomial functions. Their graphs are shaped by asymptotes and symmetry rather than intercepts and turning points.
+</div>
+
+<div class="inspirational">
+“Reciprocal graphs are defined by what they approach, not what they reach.”
+</div>
+
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can graph basic reciprocal functions and identify key features.</p>
+<p>I can identify asymptotes and intercepts.</p>
+<p>I can describe how transformations affect reciprocal graphs.</p>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- INTRODUCTION -->
+<!-- ======================= -->
+<section>
+<h2>Introduction</h2>
+
+<p>
+The parent reciprocal function is:
+</p>
+
+$$ f(x)=\frac{1}{x} $$
+
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+
+<p>
+Unlike polynomial functions, reciprocal functions are not continuous. The graph is split into separate branches by a vertical asymptote, and it approaches—but never touches—both vertical and horizontal asymptotes.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Reciprocal functions are defined by asymptotes and symmetry, not by intercepts or turning points.
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+    <h2>Connections</h2>
+    
+    <div class="key-point">
+    <strong>Prior Knowledge:</strong>
+    <ul style="margin-left:20px;">
+    <li>Transformations of functions from 9.A</li>
+    <li>Asymptotes from 9.B</li>
+    <li>Understanding domain and restrictions</li>
+    </ul>
+    </div>
+    
+    <div class="key-point">
+    <strong>Cross-Disciplinary Connections:</strong>
+    <ul style="margin-left:20px;">
+    <li>Physics: light intensity decreases as distance increases (inverse relationship)</li>
+    <li>Chemistry: concentration changes relative to volume in solutions</li>
+    <li>Computer Science: time per task decreases as resources increase</li>
+    </ul>
+    </div>
+    
+    <div class="key-point">
+    <strong>Real-World Applications:</strong>
+    <ul style="margin-left:20px;">
+    <li>Cost per person when splitting a bill: $ \text{cost} = \frac{\text{total}}{x} $</li>
+    <li>Time per worker when completing a job: $ \text{time} = \frac{\text{work}}{x} $</li>
+    <li>Travel time for a fixed distance: $ \text{time} = \frac{d}{v} $</li>
+    <li>Signal strength or brightness decreasing with distance</li>
+    <li>Density relationships: $ \text{density} = \frac{\text{mass}}{\text{volume}} $</li>
+    </ul>
+    </div>
+    
+    </section>
+
+
+<!-- ======================= -->
+<!-- HISTORY -->
+<!-- ======================= -->
+<section>
+<h2>History</h2>
+
+<p>
+Reciprocal relationships have been studied since ancient mathematics, where ratios were used to compare quantities. These early ideas laid the foundation for functions defined by division.
+</p>
+
+<p>
+With the development of coordinate geometry in the 17th century, mathematicians such as René Descartes began graphing functions like $\frac{1}{x}$, revealing their distinct structure and asymptotic behavior.
+</p>
+
+<p>
+Today, reciprocal functions are used in science and engineering to model inverse relationships and systems that approach limits without reaching them.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+    <h2>Key Concepts</h2>
+    
+    <h3>Parent Reciprocal Function</h3>
+    
+    $$ f(x)=\frac{1}{x} $$
+    
+    <p>
+    The graph of $ \frac{1}{x} $ consists of two branches and is defined for all real values except $x=0$.
+    </p>
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <h3>Asymptotes</h3>
+    
+    <p>
+    Reciprocal functions have two asymptotes that define their structure:
+    </p>
+    
+    <ul style="margin-left:20px;">
+    <li><strong>Vertical Asymptote:</strong> $x=0$</li>
+    <li><strong>Horizontal Asymptote:</strong> $y=0$</li>
+    </ul>
+    
+    <p>
+    The graph approaches these lines but never touches them.
+    </p>
+    
+    <div class="workspace workspace-200">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <h3>Intercepts</h3>
+    
+    <p>
+    Reciprocal functions do not have an x-intercept because the function never equals zero.
+    </p>
+    
+    <p>
+    There is also no y-intercept because the function is undefined at $x=0$.
+    </p>
+    
+    <div class="definition">
+    <strong>Key Observation:</strong>
+    <p>The graph of a reciprocal function has no intercepts.</p>
+    </div>
+    
+    
+    <h3>Symmetry and Orientation</h3>
+    
+    <p>
+    The graph of $ \frac{1}{x} $ is symmetric about the origin.
+    </p>
+    
+    <ul style="margin-left:20px;">
+    <li>One branch lies in Quadrant I</li>
+    <li>The other branch lies in Quadrant III</li>
+    </ul>
+    
+    <div class="workspace workspace-200">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <h3>Transformations</h3>
+    
+    $$ f(x)=\frac{a}{x-h}+k $$
+    
+    <ul style="margin-left:20px;">
+    <li>$h$ shifts the graph left or right</li>
+    <li>$k$ shifts the graph up or down</li>
+    <li>$a$ controls stretch and reflection</li>
+    </ul>
+    
+    <div class="workspace workspace-200">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Reciprocal graphs are defined by asymptotes and symmetry. Transformations move the graph but do not change its fundamental structure.
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Reciprocal Function:</strong>
+    <p>A function of the form $ f(x)=\frac{1}{x} $, where the variable appears in the denominator.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Asymptote:</strong>
+    <p>A line that the graph approaches but never touches.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Vertical Asymptote:</strong>
+    <p>A vertical line where the function is undefined and the graph approaches without crossing.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Horizontal Asymptote:</strong>
+    <p>A horizontal line that describes the end behavior of the function as $x$ becomes large.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Symmetry:</strong>
+    <p>A property where a graph is unchanged under a transformation, such as reflection about the origin.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Branch:</strong>
+    <p>One part of a graph separated by a vertical asymptote.</p>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Graphing Reciprocal Functions:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    
+    <li>
+    <strong>Identify asymptotes first.</strong><br>
+    Determine the vertical and horizontal asymptotes before drawing the graph.
+    </li>
+    
+    <li>
+    <strong>Determine orientation.</strong><br>
+    Use the sign of the function to decide which quadrants the branches will lie in.
+    </li>
+    
+    <li>
+    <strong>Apply transformations.</strong><br>
+    Shift the graph according to $h$ and $k$, and adjust for reflections or stretches using $a$.
+    </li>
+    
+    <li>
+    <strong>Sketch branches near asymptotes.</strong><br>
+    Draw the graph approaching the asymptotes without touching them.
+    </li>
+    
+    <li>
+    <strong>Check for intercepts.</strong><br>
+    Verify whether intercepts exist based on the structure of the function.
+    </li>
+    
+    </ol>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- EXAMPLES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Examples</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Parent Function</h3>
+    <div class="prompt">Identify asymptotes and describe the graph.</div>
+    
+    $$ f(x)=\frac{1}{x} $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Horizontal Shift</h3>
+    <div class="prompt">Identify asymptotes and sketch the graph.</div>
+    
+    $$ f(x)=\frac{1}{x-2} $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Vertical Shift</h3>
+    <div class="prompt">Identify asymptotes and sketch the graph.</div>
+    
+    $$ f(x)=\frac{1}{x}+3 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Reflection</h3>
+    <div class="prompt">Determine the orientation of the graph.</div>
+    
+    $$ f(x)=-\frac{1}{x} $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Vertical Stretch</h3>
+    <div class="prompt">Describe how the coefficient affects the graph.</div>
+    
+    $$ f(x)=\frac{2}{x} $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Combined Transformations</h3>
+    <div class="prompt">Identify asymptotes and describe all transformations.</div>
+    
+    $$ f(x)=\frac{1}{x+4}-1 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <h3>Example 7 — Reflection and Translation</h3>
+    <div class="prompt">Determine asymptotes, orientation, and transformations.</div>
+    
+    $$ f(x)=-\frac{3}{x-1}+2 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <div class="workspace workspace-200"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Crossing asymptotes:</strong><br>
+    Reciprocal graphs approach asymptotes but never touch or cross them.
+    </li>
+    
+    <li>
+    <strong>Incorrect orientation:</strong><br>
+    Forgetting that a negative sign reflects the graph across the x-axis, changing which quadrants the branches occupy.
+    </li>
+    
+    <li>
+    <strong>Misidentifying asymptotes:</strong><br>
+    Students often forget to shift asymptotes when $h$ and $k$ are present.
+    </li>
+    
+    <li>
+    <strong>Expecting intercepts:</strong><br>
+    Reciprocal functions typically do not have x- or y-intercepts.
+    </li>
+    
+    <li>
+    <strong>Graphing like a polynomial:</strong><br>
+    Reciprocal functions are not continuous curves—they have separate branches.
+    </li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Reciprocal functions are defined by asymptotes and symmetry.</li>
+    
+    <li>The parent function $\\frac{1}{x}$ has asymptotes at $x=0$ and $y=0$.</li>
+    
+    <li>Transformations shift asymptotes and change orientation.</li>
+    
+    <li>The graph consists of two branches separated by a vertical asymptote.</li>
+    
+    <li>Understanding structure allows accurate graphing without plotting many points.</li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE SET -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1: EASY ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{1}{x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>2. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{1}{x-1} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>3. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{1}{x+3} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>4. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{1}{x}-2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>5. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{1}{x}+4 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <!-- ===== LEVEL 2: MEDIUM ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. Sketch and describe orientation:</p>
+    $$ f(x)=-\frac{1}{x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>7. Sketch and describe orientation:</p>
+    $$ f(x)=\frac{2}{x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>8. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{1}{x-2}+1 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>9. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{1}{x+1}-3 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>10. Sketch and describe transformations:</p>
+    $$ f(x)=\frac{3}{x}+2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <!-- ===== LEVEL 3: HARD ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. Sketch and describe transformations:</p>
+    $$ f(x)=-\frac{2}{x-1} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>12. Sketch and describe transformations:</p>
+    $$ f(x)=\frac{1}{x-3}-2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>13. Sketch and identify asymptotes:</p>
+    $$ f(x)=\frac{4}{x+2}+1 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>14. Sketch and describe orientation:</p>
+    $$ f(x)=-\frac{5}{x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>15. Sketch and describe transformations:</p>
+    $$ f(x)=\frac{1}{x-4}+3 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+    <!-- ===== LEVEL 4: CHALLENGING ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. Sketch and describe all transformations:</p>
+    $$ f(x)=\frac{-2}{x-2}+4 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>17. Compare the graphs of $\\frac{1}{x}$ and $\\frac{1}{x-3}$.</p>
+    $$ f(x)=\frac{1}{x-3} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>18. Compare the graphs of $\\frac{1}{x}$ and $-\\frac{1}{x}$.</p>
+    $$ f(x)=-\frac{1}{x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>19. Sketch and explain the effect of $a$ in $\\frac{a}{x}$.</p>
+    $$ f(x)=\frac{a}{x} $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    <p>20. Sketch and describe transformations:</p>
+    $$ f(x)=\frac{1}{2(x-1)}+2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    
+    
+ <!-- ===== LEVEL 5: JUSTIFICATION ===== -->
+<h3>Level 5 — Justification / Conceptual</h3>
+
+<p>21. Explain why reciprocal functions have two branches.</p>
+<div class="workspace workspace-100"></div>
+
+<p>22. Explain why reciprocal graphs never cross vertical asymptotes.</p>
+<div class="workspace workspace-100"></div>
+
+<p>23. Justify how the sign of $a$ affects orientation.</p>
+<div class="workspace workspace-100"></div>
+
+<p>24. Explain why reciprocal functions usually have no intercepts.</p>
+<div class="workspace workspace-100"></div>
+
+<p>25. Describe how asymptotes determine the shape of the graph.</p>
+<div class="workspace workspace-100"></div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    <p>1. VA: $x=0$, HA: $y=0$</p>
+    <p>2. VA: $x=1$, HA: $y=0$</p>
+    <p>3. VA: $x=-3$, HA: $y=0$</p>
+    <p>4. VA: $x=0$, HA: $y=-2$</p>
+    <p>5. VA: $x=0$, HA: $y=4$</p>
+    
+    <h3>Level 2 — Medium</h3>
+    <p>6. Reflection across x-axis</p>
+    <p>7. Vertical stretch (factor 2)</p>
+    <p>8. VA: $x=2$, HA: $y=1$</p>
+    <p>9. VA: $x=-1$, HA: $y=-3$</p>
+    <p>10. Stretch (factor 3), shift up 2</p>
+    
+    <h3>Level 3 — Hard</h3>
+    <p>11. VA: $x=1$, reflection, stretch (2)</p>
+    <p>12. VA: $x=3$, HA: $y=-2$</p>
+    <p>13. VA: $x=-2$, HA: $y=1$, stretch (4)</p>
+    <p>14. Reflection, stretch (5)</p>
+    <p>15. VA: $x=4$, HA: $y=3$</p>
+    
+    <h3>Level 4 — Challenging</h3>
+    <p>16. VA: $x=2$, HA: $y=4$, reflection, stretch (2)</p>
+    <p>17. Shift right 3 units</p>
+    <p>18. Reflection across x-axis</p>
+    <p>19. Controls stretch/compression and orientation</p>
+    <p>20. VA: $x=1$, HA: $y=2$, compression</p>
+    
+    <h3>Level 5 — Justification</h3>
+    <p>21–25. Answers vary (conceptual)</p>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- DETAILED EXAMPLE SOLUTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <h3>Example 1 — Parent Function</h3>
+    
+    $$ f(x)=\frac{1}{x} $$
+    
+    <p>
+    The vertical asymptote is $x=0$ and the horizontal asymptote is $y=0$. The graph has two branches in Quadrants I and III.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <h3>Example 2 — Horizontal Shift</h3>
+    
+    $$ f(x)=\frac{1}{x-2} $$
+    
+    <p>
+    The graph shifts right 2 units, so the vertical asymptote is $x=2$ and the horizontal asymptote remains $y=0$.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <h3>Example 3 — Vertical Shift</h3>
+    
+    $$ f(x)=\frac{1}{x}+3 $$
+    
+    <p>
+    The graph shifts upward 3 units. The vertical asymptote remains $x=0$ and the horizontal asymptote becomes $y=3$.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <h3>Example 4 — Reflection</h3>
+    
+    $$ f(x)=-\frac{1}{x} $$
+    
+    <p>
+    The negative sign reflects the graph across the x-axis, moving branches to Quadrants II and IV.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <h3>Example 5 — Vertical Stretch</h3>
+    
+    $$ f(x)=\frac{2}{x} $$
+    
+    <p>
+    The graph is stretched vertically, making it steeper, but asymptotes remain unchanged.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <h3>Example 6 — Combined Transformations</h3>
+    
+    $$ f(x)=\frac{1}{x+4}-1 $$
+    
+    <p>
+    The graph shifts left 4 units and down 1 unit. The asymptotes become $x=-4$ and $y=-1$.
+    </p>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <h3>Example 7 — Reflection and Translation</h3>
+    
+    $$ f(x)=-\frac{3}{x-1}+2 $$
+    
+    <p>
+    The graph shifts right 1 unit and up 2 units. The negative sign reflects the graph and the factor of 3 creates a vertical stretch.
+    </p>
+    
+    </section>
+
+</div>
+</body>
+</html>
