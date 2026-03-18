@@ -6,6 +6,15 @@
 <title>Precalculus Curriculum</title>
 
 <style>
+
+    .module {
+    min-width: 0; /* CRITICAL FIX */
+}
+
+.topic-list li a:last-child {
+    white-space: normal;   /* allow natural wrapping */
+    word-break: keep-all;  /* prevent word-by-word stacking */
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
