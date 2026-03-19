@@ -21,17 +21,7 @@ window.MathJax = {
 <style>
 
 
-  @page {
-    size: 8.5in 400in;
-    margin: 0;
-  }
 
-  @media print {
-    body {
-      margin: 0;
-      padding: 0;
-    }
-  }
 
   /* ... rest of your existing styles ... */
 
@@ -876,5 +866,15 @@ Unlike polynomial functions, rational functions do not form continuous curves. I
     </section>
 
 </div>
+
+<script>
+  window.addEventListener('load', () => {
+    // Set body height as the page height so PDF has no extra whitespace
+    const height = document.body.scrollHeight;
+    const style = document.createElement('style');
+    style.textContent = `@page { size: 8.5in ${height}px; margin: 0; }`;
+    document.head.appendChild(style);
+  });
+</script>
 </body>
 </html>
