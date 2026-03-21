@@ -3,33 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <title>9.A Showdown (Printable)</title>
+
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
-@page { size: landscape; margin: 20px; }
 
-body{ font-family: Arial; margin:0; color:#000; }
+    /* TRUE PORTRAIT PAGE */
+    @page {
+      size: 8.5in 11in;
+      margin: 0in;
+    }
+    
+   
 
-.page{ page-break-after: always; height: 100vh; padding:40px; box-sizing:border-box; }
+    body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 centers pages horizontally */
+}
+    
+    /* Each page */
+    .page{
+  width: 8in;
+  height: 11in;
+  padding: 0.2in;
+  box-sizing: border-box;
+  page-break-after: always;
 
-.header{ background:#0b3d91; color:#fff; padding:12px 20px; font-size:28px; font-weight:bold; margin-bottom:20px; }
-
-.content{ font-size:26px; line-height:1.35; }
-
-.math{ margin-top:12px; font-size:32px; }
-
-img{ margin-top:18px; width:420px; }
-
-.center-title{ text-align:center; margin-top:120px; }
-
-.columns{ display:flex; gap:30px; }
-.col{ flex:1; }
-.small{ font-size:20px; }
-
-ul{ margin:8px 0 0 20px; }
-li{ margin-bottom:6px; }
-
-</style>
+  margin: 0 auto; /* backup centering */
+}
+    
+    /* Header */
+    .header{
+      background:#0b3d91;
+      color:#fff;
+      padding:6px 12px;
+      font-size:20px;
+      font-weight:bold;
+      margin-bottom:12px;
+    }
+    
+    /* Content */
+    .content{
+      font-size:20px;
+      line-height:1.25;
+    }
+    
+    /* Math */
+    .math{
+      margin-top:6px;
+      font-size:24px;
+    }
+    
+    /* Images */
+    img{
+      margin-top:10px;
+      width:300px;
+    }
+    
+    /* Title slide */
+    .center-title{
+      text-align:center;
+      margin-top:2.5in;
+    }
+    
+    /* Directions layout */
+    .columns{
+      display:flex;
+      gap:16px;
+    }
+    .col{ flex:1; }
+    
+    .small{ font-size:16px; }
+    
+    ul{ margin:6px 0 0 18px; }
+    li{ margin-bottom:4px; }
+    
+    /* BUFFER SPACE */
+    .spacer{
+      height:200px;
+    }
+    
+    </style>
 </head>
 
 <body>
@@ -38,9 +96,10 @@ li{ margin-bottom:6px; }
 <div class="page center-title">
   <h1>9.A Graph Transformations of Rational Functions</h1>
   <h2>Showdown</h2>
+  <div class="spacer"></div>
 </div>
 
-<!-- DIRECTIONS (CONDENSED TO FIT ONE SLIDE) -->
+<!-- DIRECTIONS -->
 <div class="page">
   <div class="header">Showdown Directions</div>
   <div class="content">
@@ -74,6 +133,7 @@ li{ margin-bottom:6px; }
       </div>
     </div>
   </div>
+  <div class="spacer"></div>
 </div>
 
 <!-- PROBLEM 1 -->
@@ -83,20 +143,24 @@ li{ margin-bottom:6px; }
     <b>Sketch the function using asymptotes.</b>
     <div class="math">\( f(x)=\frac{3}{x-4}+2 \)</div>
   </div>
+  <div class="spacer"></div>
 </div>
 
-<!-- ANSWER 1 (INCLUDES PROBLEM) -->
+<!-- ANSWER 1 -->
 <div class="page">
   <div class="header">Problem 1 Answer</div>
   <div class="content">
     <b>Sketch the function using asymptotes.</b>
     <div class="math">\( f(x)=\frac{3}{x-4}+2 \)</div>
+
     <br>
+
     VA: \(x=4\), HA: \(y=2\)<br>
     Right 4, up 2, vertical stretch factor 3
-    <br>
-    <img src="image/plane.png" alt="graph">
+
+    <img src="images/plane.png" alt="graph">
   </div>
+  <div class="spacer"></div>
 </div>
 
 <!-- PROBLEM 2 -->
@@ -106,210 +170,235 @@ li{ margin-bottom:6px; }
     <b>Write a rational function.</b>
     <div class="math">Shifted left 3 units</div>
   </div>
+  <div class="spacer"></div>
 </div>
 
-<!-- ANSWER 2 (INCLUDES PROBLEM) -->
+<!-- ANSWER 2 -->
 <div class="page">
   <div class="header">Problem 2 Answer</div>
   <div class="content">
     <b>Write a rational function.</b>
     <div class="math">Shifted left 3 units</div>
+
     <br>
+
     \( f(x)=\frac{1}{x+3} \)
   </div>
+  <div class="spacer"></div>
 </div>
 
 <!-- PROBLEM 3 -->
 <div class="page">
-  <div class="header">Problem 3</div>
-  <div class="content">
-    <b>Identify asymptotes and transformations.</b>
-    <div class="math">\( f(x)=-\frac{1}{x}+2 \)</div>
+    <div class="header">Problem 3</div>
+    <div class="content">
+      <b>Identify asymptotes and transformations.</b>
+      <div class="math">\( f(x)=-\frac{1}{x}+2 \)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 3 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 3 Answer</div>
-  <div class="content">
-    <b>Identify asymptotes and transformations.</b>
-    <div class="math">\( f(x)=-\frac{1}{x}+2 \)</div>
-    <br>
-    VA: \(x=0\), HA: \(y=2\)<br>
-    Reflection across x-axis
+  
+  <!-- ANSWER 3 -->
+  <div class="page">
+    <div class="header">Problem 3 Answer</div>
+    <div class="content">
+      <b>Identify asymptotes and transformations.</b>
+      <div class="math">\( f(x)=-\frac{1}{x}+2 \)</div>
+  
+      <br>
+  
+      VA: \(x=0\), HA: \(y=2\)<br>
+      Reflection across x-axis
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 4 -->
-<div class="page">
-  <div class="header">Problem 4</div>
-  <div class="content">
-    <b>Simplify, then compare to the parent function.</b>
-    <div class="math">\( \frac{1}{x} \)</div>
-    <b>(Describe the graph or sketch.)</b>
-    <div class="math">\( \frac{x+6}{x+2}-\frac{x+7}{x+2} \)</div>
+  
+  <!-- PROBLEM 4 -->
+  <div class="page">
+    <div class="header">Problem 4</div>
+    <div class="content">
+      <b>Simplify, then compare to the parent function.</b>
+      <div class="math">\( \frac{1}{x} \)</div>
+      <b>(Describe the graph or sketch.)</b>
+      <div class="math">\( \frac{x+6}{x+2}-\frac{x+7}{x+2} \)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 4 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 4 Answer</div>
-  <div class="content">
-    <b>Simplify, then compare to the parent function.</b>
-    <div class="math">\( \frac{1}{x} \)</div>
-    <div class="math">\( \frac{x+6}{x+2}-\frac{x+7}{x+2} \)</div>
-    <br>
-    Combine over common denominator:
-    <div class="math">\( \frac{(x+6)-(x+7)}{x+2}=\frac{-1}{x+2} \)</div>
-    So the function is \( f(x)=-\frac{1}{x+2} \).<br>
-    VA: \(x=-2\), HA: \(y=0\). Reflection across x-axis; shift left 2.
-    <br>
-    <img src="images/plane.png" alt="graph">
+  
+  <!-- ANSWER 4 -->
+  <div class="page">
+    <div class="header">Problem 4 Answer</div>
+    <div class="content">
+      <b>Simplify, then compare to the parent function.</b>
+      <div class="math">\( \frac{1}{x} \)</div>
+      <div class="math">\( \frac{x+6}{x+2}-\frac{x+7}{x+2} \)</div>
+  
+      <br>
+  
+      Combine over common denominator:
+      <div class="math">\( \frac{(x+6)-(x+7)}{x+2}=\frac{-1}{x+2} \)</div>
+  
+      So the function is \( f(x)=-\frac{1}{x+2} \).<br>
+  
+      VA: \(x=-2\), HA: \(y=0\)<br>
+      Reflection across x-axis; shift left 2
+  
+      <img src="images/plane.png" alt="graph">
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 5 -->
-<div class="page">
-  <div class="header">Problem 5</div>
-  <div class="content">
-    <b>Identify asymptotes.</b>
-    <div class="math">\( f(x)=\frac{1}{x-2} \)</div>
+  
+  <!-- PROBLEM 5 -->
+  <div class="page">
+    <div class="header">Problem 5</div>
+    <div class="content">
+      <b>Identify asymptotes.</b>
+      <div class="math">\( f(x)=\frac{1}{x-2} \)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 5 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 5 Answer</div>
-  <div class="content">
-    <b>Identify asymptotes.</b>
-    <div class="math">\( f(x)=\frac{1}{x-2} \)</div>
-    <br>
-    VA: \(x=2\), HA: \(y=0\)
+  
+  <!-- ANSWER 5 -->
+  <div class="page">
+    <div class="header">Problem 5 Answer</div>
+    <div class="content">
+      <b>Identify asymptotes.</b>
+      <div class="math">\( f(x)=\frac{1}{x-2} \)</div>
+  
+      <br>
+  
+      VA: \(x=2\), HA: \(y=0\)
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 6 -->
-<div class="page">
-  <div class="header">Problem 6</div>
-  <div class="content">
-    <b>Describe the transformation.</b>
-    <div class="math">\( f(x)=\frac{4}{x} \)</div>
+  
+  <!-- PROBLEM 6 -->
+  <div class="page">
+    <div class="header">Problem 6</div>
+    <div class="content">
+      <b>Describe the transformation.</b>
+      <div class="math">\( f(x)=\frac{4}{x} \)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 6 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 6 Answer</div>
-  <div class="content">
-    <b>Describe the transformation.</b>
-    <div class="math">\( f(x)=\frac{4}{x} \)</div>
-    <br>
-    Vertical stretch factor 4
+  
+  <!-- ANSWER 6 -->
+  <div class="page">
+    <div class="header">Problem 6 Answer</div>
+    <div class="content">
+      <b>Describe the transformation.</b>
+      <div class="math">\( f(x)=\frac{4}{x} \)</div>
+  
+      <br>
+  
+      Vertical stretch factor 4
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 7 -->
-<div class="page">
-  <div class="header">Problem 7</div>
-  <div class="content">
-    <b>Sketch the function.</b>
-    <div class="math">\( f(x)=-\frac{2}{x+3}+4 \)</div>
+  
+  <!-- PROBLEM 7 -->
+  <div class="page">
+    <div class="header">Problem 7</div>
+    <div class="content">
+      <b>Sketch the function.</b>
+      <div class="math">\( f(x)=-\frac{2}{x+3}+4 \)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 7 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 7 Answer</div>
-  <div class="content">
-    <b>Sketch the function.</b>
-    <div class="math">\( f(x)=-\frac{2}{x+3}+4 \)</div>
-    <br>
-    VA: \(x=-3\), HA: \(y=4\)<br>
-    Reflection, stretch factor 2
-    <br>
-    <img src="image/plane.png" alt="graph">
+  
+  <!-- ANSWER 7 -->
+  <div class="page">
+    <div class="header">Problem 7 Answer</div>
+    <div class="content">
+      <b>Sketch the function.</b>
+      <div class="math">\( f(x)=-\frac{2}{x+3}+4 \)</div>
+  
+      <br>
+  
+      VA: \(x=-3\), HA: \(y=4\)<br>
+      Reflection, stretch factor 2
+  
+      <img src="images/plane.png" alt="graph">
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 8 -->
-<div class="page">
-  <div class="header">Problem 8</div>
-  <div class="content">
-    <b>Identify asymptotes.</b>
-    <div class="math">\( f(x)=\frac{1}{x}+3 \)</div>
+  
+  <!-- PROBLEM 8 -->
+  <div class="page">
+    <div class="header">Problem 8</div>
+    <div class="content">
+      <b>Identify asymptotes.</b>
+      <div class="math">\( f(x)=\frac{1}{x}+3 \)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 8 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 8 Answer</div>
-  <div class="content">
-    <b>Identify asymptotes.</b>
-    <div class="math">\( f(x)=\frac{1}{x}+3 \)</div>
-    <br>
-    VA: \(x=0\), HA: \(y=3\)
+  
+  <!-- ANSWER 8 -->
+  <div class="page">
+    <div class="header">Problem 8 Answer</div>
+    <div class="content">
+      <b>Identify asymptotes.</b>
+      <div class="math">\( f(x)=\frac{1}{x}+3 \)</div>
+  
+      <br>
+  
+      VA: \(x=0\), HA: \(y=3\)
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 9 -->
-<div class="page">
-  <div class="header">Problem 9</div>
-  <div class="content">
-    <b>Compare the functions.</b>
-    <div class="math">\( \frac{1}{x} \) and \( -\frac{1}{x} \)</div>
+  
+  <!-- PROBLEM 9 -->
+  <div class="page">
+    <div class="header">Problem 9</div>
+    <div class="content">
+      <b>Compare the functions.</b>
+      <div class="math">\( \frac{1}{x} \) and \( -\frac{1}{x} \)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 9 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 9 Answer</div>
-  <div class="content">
-    <b>Compare the functions.</b>
-    <div class="math">\( \frac{1}{x} \) and \( -\frac{1}{x} \)</div>
-    <br>
-    Reflection across x-axis
+  
+  <!-- ANSWER 9 -->
+  <div class="page">
+    <div class="header">Problem 9 Answer</div>
+    <div class="content">
+      <b>Compare the functions.</b>
+      <div class="math">\( \frac{1}{x} \) and \( -\frac{1}{x} \)</div>
+  
+      <br>
+  
+      Reflection across x-axis
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 10 -->
-<div class="page">
-  <div class="header">Problem 10</div>
-  <div class="content">
-    <b>Write a function with given asymptotes.</b>
-    <div class="math">VA: \(x=3\), HA: \(y=1\)</div>
+  
+  <!-- PROBLEM 10 -->
+  <div class="page">
+    <div class="header">Problem 10</div>
+    <div class="content">
+      <b>Write a function with given asymptotes.</b>
+      <div class="math">VA: \(x=3\), HA: \(y=1\)</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 10 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 10 Answer</div>
-  <div class="content">
-    <b>Write a function with given asymptotes.</b>
-    <div class="math">VA: \(x=3\), HA: \(y=1\)</div>
-    <br>
-    \( f(x)=\frac{1}{x-3}+1 \)
+  
+  <!-- ANSWER 10 -->
+  <div class="page">
+    <div class="header">Problem 10 Answer</div>
+    <div class="content">
+      <b>Write a function with given asymptotes.</b>
+      <div class="math">VA: \(x=3\), HA: \(y=1\)</div>
+  
+      <br>
+  
+      \( f(x)=\frac{1}{x-3}+1 \)
+    </div>
   </div>
-</div>
-
-<!-- PROBLEM 11 -->
-<div class="page">
-  <div class="header">Problem 11</div>
-  <div class="content">
-    <b>Explain.</b>
-    <div class="math">Why do rational functions have vertical asymptotes?</div>
+  
+  <!-- PROBLEM 11 -->
+  <div class="page">
+    <div class="header">Problem 11</div>
+    <div class="content">
+      <b>Explain.</b>
+      <div class="math">Why do rational functions have vertical asymptotes?</div>
+    </div>
   </div>
-</div>
-
-<!-- ANSWER 11 (INCLUDES PROBLEM) -->
-<div class="page">
-  <div class="header">Problem 11 Answer</div>
-  <div class="content">
-    <b>Explain.</b>
-    <div class="math">Why do rational functions have vertical asymptotes?</div>
-    <br>
-    The denominator equals zero, making the function undefined.
+  
+  <!-- ANSWER 11 -->
+  <div class="page">
+    <div class="header">Problem 11 Answer</div>
+    <div class="content">
+      <b>Explain.</b>
+      <div class="math">Why do rational functions have vertical asymptotes?</div>
+  
+      <br>
+  
+      The denominator equals zero, making the function undefined.
+    </div>
   </div>
-</div>
 
 </body>
 </html>
