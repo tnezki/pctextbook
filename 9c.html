@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Section 9.C: Graph Reciprocal Functions</title>
+<title>Section 9.C: Graph Rational Functions and Identify Their Features</title>
 
 <!-- ======================= -->
 <!-- MATHJAX CONFIGURATION  -->
@@ -43,6 +43,25 @@ body{
   max-width:900px;
   margin:auto;
 }
+
+/* TRUE PORTRAIT PAGE */
+
+
+ /* MANUAL PAGE BREAKS add the following code
+ 
+ <div class="page-break"></div>
+
+ */
+ .page-break{
+  page-break-before: always;
+}
+
+
+
+
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
 
 /* ================================
    HEADINGS
@@ -161,6 +180,35 @@ h3{
   margin:0;
 }
 
+/* ================================
+   PRINT-SAFE BLOCK CONTROL
+================================ */
+
+section, .definition, .key-point, .strategy-box {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+h3 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.workspace {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.problem{
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 10px;
+}
+
 </style>
 </head>
 
@@ -170,205 +218,273 @@ h3{
 <!-- ======================= -->
 <!-- TITLE + INTRO -->
 <!-- ======================= -->
-<h1>9.C Graph Reciprocal Functions</h1>
+<h1>9.C Graph Rational Functions and Identify Their Features</h1>
 
 <div class="intro-text">
-Reciprocal functions are defined by division and behave differently from polynomial functions. Their graphs are shaped by asymptotes and symmetry rather than intercepts and turning points.
+Rational functions contain important structural features that define their graphs. While asymptotes describe behavior near undefined values, intercepts and holes provide additional information needed to fully understand the function.
+</div>
+
+<div class="intro-text">
+By analyzing the numerator and denominator, we can determine where a function crosses the axes, where it is undefined, and how it behaves near those points. This allows us to predict the entire graph before sketching.
 </div>
 
 <div class="inspirational">
-“Reciprocal graphs are defined by what they approach, not what they reach.”
+“Every feature of a rational function comes from its structure.”
 </div>
-
 
 <!-- ======================= -->
 <!-- LEARNING TARGETS -->
 <!-- ======================= -->
 <section>
-<h2>Learning Targets</h2>
-
-<div class="objectives">
-<p>I can graph basic reciprocal functions and identify key features.</p>
-<p>I can identify asymptotes and intercepts.</p>
-<p>I can describe how transformations affect reciprocal graphs.</p>
-</div>
-
-</section>
-
-
-<!-- ======================= -->
-<!-- INTRODUCTION -->
-<!-- ======================= -->
-<section>
-<h2>Introduction</h2>
-
-<p>
-The parent reciprocal function is:
-</p>
-
-$$ f(x)=\frac{1}{x} $$
-
-<div class="workspace workspace-400">
-  <img src="images/plane.png">
-</div>
-
-<p>
-Unlike polynomial functions, reciprocal functions are not continuous. The graph is split into separate branches by a vertical asymptote, and it approaches—but never touches—both vertical and horizontal asymptotes.
-</p>
-
-<div class="key-point">
-<strong>Key Idea:</strong> Reciprocal functions are defined by asymptotes and symmetry, not by intercepts or turning points.
-</div>
-
-</section>
-
-
-<!-- ======================= -->
-<!-- CONNECTIONS -->
-<!-- ======================= -->
-<section>
+    <h2>Learning Targets</h2>
+    
+    <div class="objectives">
+    <p>I can find x-intercepts of rational functions by setting the numerator equal to zero and solving.</p>
+    <p>I can find y-intercepts of rational functions by substituting \(x = 0\) and simplifying.</p>
+    <p>I can determine all features of a rational function, including intercepts, asymptotes, holes, and behavior near asymptotes.</p>
+    </div>
+    
+    </section>
+    
+    <!-- ======================= -->
+    <!-- INTRODUCTION -->
+    <!-- ======================= -->
+    <section>
+    <h2>Introduction</h2>
+    
+    <p>
+    In previous sections, we focused on how rational functions behave near values where they are undefined. While asymptotes describe this behavior, they are only part of the full picture.
+    </p>
+    
+    <p>
+    To completely understand a rational function, we must also determine where the graph crosses the axes, where it has missing points, and how it behaves near its asymptotes. These features work together to define the structure of the graph.
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> A rational graph is determined by its structure—intercepts, asymptotes, holes, and behavior.
+    </div>
+    
+    </section>
+   
+    <!-- ======================= -->
+    <!-- CONNECTIONS -->
+    <!-- ======================= -->
+    <section>
     <h2>Connections</h2>
     
     <div class="key-point">
     <strong>Prior Knowledge:</strong>
     <ul style="margin-left:20px;">
-    <li>Transformations of functions from 9.A</li>
-    <li>Asymptotes from 9.B</li>
-    <li>Understanding domain and restrictions</li>
+    <li>Factoring polynomials and identifying zeros</li>
+    <li>Asymptotes from Section 9.B</li>
+    <li>Understanding function notation and domain restrictions</li>
     </ul>
     </div>
     
     <div class="key-point">
     <strong>Cross-Disciplinary Connections:</strong>
     <ul style="margin-left:20px;">
-    <li>Physics: light intensity decreases as distance increases (inverse relationship)</li>
-    <li>Chemistry: concentration changes relative to volume in solutions</li>
-    <li>Computer Science: time per task decreases as resources increase</li>
+    <li>Physics: systems approaching limits or undefined conditions</li>
+    <li>Chemistry: concentration and rate relationships involving ratios</li>
+    <li>Computer Science: behavior near undefined inputs or limits</li>
     </ul>
     </div>
     
     <div class="key-point">
     <strong>Real-World Applications:</strong>
     <ul style="margin-left:20px;">
-    <li>Cost per person when splitting a bill: $ \text{cost} = \frac{\text{total}}{x} $</li>
-    <li>Time per worker when completing a job: $ \text{time} = \frac{\text{work}}{x} $</li>
-    <li>Travel time for a fixed distance: $ \text{time} = \frac{d}{v} $</li>
-    <li>Signal strength or brightness decreasing with distance</li>
-    <li>Density relationships: $ \text{density} = \frac{\text{mass}}{\text{volume}} $</li>
+    <li>Situations where values cannot exist at certain inputs</li>
+    <li>Modeling systems with restrictions or discontinuities</li>
+    <li>Understanding how systems behave near critical points</li>
     </ul>
     </div>
     
     </section>
+    
+    <!-- ======================= -->
+    <!-- HISTORY -->
+    <!-- ======================= -->
+    <section>
+    <h2>History</h2>
+    
+    <p>
+    As mathematicians expanded the study of functions, they began analyzing expressions that were undefined at certain values. These early investigations revealed that some functions behaved differently near these points, leading to the concept of discontinuities and asymptotic behavior.
+    </p>
+    
+    <p>
+    During the development of algebra and calculus, rational functions became important examples of functions that could not be understood by plotting points alone. Instead, their structure had to be analyzed algebraically to determine key features such as intercepts, asymptotes, and undefined values.
+    </p>
+    
+    <p>
+    Today, this structural approach is essential in mathematics, science, and engineering, where understanding how a system behaves near restrictions is just as important as knowing its exact values.
+    </p>
+    
+    </section>
 
-
-<!-- ======================= -->
-<!-- HISTORY -->
-<!-- ======================= -->
-<section>
-<h2>History</h2>
-
-<p>
-Reciprocal relationships have been studied since ancient mathematics, where ratios were used to compare quantities. These early ideas laid the foundation for functions defined by division.
-</p>
-
-<p>
-With the development of coordinate geometry in the 17th century, mathematicians such as René Descartes began graphing functions like $\frac{1}{x}$, revealing their distinct structure and asymptotic behavior.
-</p>
-
-<p>
-Today, reciprocal functions are used in science and engineering to model inverse relationships and systems that approach limits without reaching them.
-</p>
-
-</section>
-
-<!-- ======================= -->
+    <!-- ======================= -->
 <!-- KEY CONCEPTS -->
 <!-- ======================= -->
+
+
 <section>
     <h2>Key Concepts</h2>
     
-    <h3>Parent Reciprocal Function</h3>
-    
-    $$ f(x)=\frac{1}{x} $$
+    <h3>x-Intercepts</h3>
     
     <p>
-    The graph of $ \frac{1}{x} $ consists of two branches and is defined for all real values except $x=0$.
-    </p>
-    
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
-    
-    
-    <h3>Asymptotes</h3>
-    
-    <p>
-    Reciprocal functions have two asymptotes that define their structure:
-    </p>
-    
-    <ul style="margin-left:20px;">
-    <li><strong>Vertical Asymptote:</strong> $x=0$</li>
-    <li><strong>Horizontal Asymptote:</strong> $y=0$</li>
-    </ul>
-    
-    <p>
-    The graph approaches these lines but never touches them.
-    </p>
-    
-    <div class="workspace workspace-200">
-      <img src="images/plane.png">
-    </div>
-    
-    
-    <h3>Intercepts</h3>
-    
-    <p>
-    Reciprocal functions do not have an x-intercept because the function never equals zero.
-    </p>
-    
-    <p>
-    There is also no y-intercept because the function is undefined at $x=0$.
+    x-intercepts occur where the function equals zero. For rational functions, this happens when the numerator equals zero, provided the denominator is not zero at the same value.
     </p>
     
     <div class="definition">
-    <strong>Key Observation:</strong>
-    <p>The graph of a reciprocal function has no intercepts.</p>
+    <p><strong>Process:</strong></p>
+    <ul style="margin-left:20px;">
+    <li>Set the numerator equal to zero</li>
+    <li>Solve for \(x\)</li>
+    <li>Check that the denominator is not zero</li>
+    </ul>
     </div>
     
+    <p><strong>Example:</strong></p>
+    $$ f(x)=\frac{x-3}{x+2} \quad \Rightarrow \quad x=3 $$
     
-    <h3>Symmetry and Orientation</h3>
+    
+    
+    
+    <h3>y-Intercepts</h3>
     
     <p>
-    The graph of $ \frac{1}{x} $ is symmetric about the origin.
+    The y-intercept occurs where \(x=0\), as long as the function is defined at that value.
     </p>
     
+    <div class="definition">
+    <p><strong>Process:</strong></p>
     <ul style="margin-left:20px;">
-    <li>One branch lies in Quadrant I</li>
-    <li>The other branch lies in Quadrant III</li>
+    <li>Substitute \(x=0\)</li>
+    <li>Simplify</li>
+    <li>Ensure the denominator is not zero</li>
     </ul>
-    
-    <div class="workspace workspace-200">
-      <img src="images/plane.png">
     </div>
     
+    <p><strong>Example:</strong></p>
+    $$ f(x)=\frac{x-2}{x+1} \quad \Rightarrow \quad f(0)=\frac{-2}{1}=-2 $$
     
-    <h3>Transformations</h3>
     
-    $$ f(x)=\frac{a}{x-h}+k $$
     
+ 
+    <h3>Holes</h3>
+    
+    <p>
+    Holes occur when a factor appears in both the numerator and denominator and cancels. The function is undefined at that value, but it does not create a vertical asymptote.
+    </p>
+    
+    <div class="definition">
+    <p><strong>Process:</strong></p>
     <ul style="margin-left:20px;">
-    <li>$h$ shifts the graph left or right</li>
-    <li>$k$ shifts the graph up or down</li>
-    <li>$a$ controls stretch and reflection</li>
+    <li>Factor numerator and denominator completely</li>
+    <li>Cancel common factors</li>
+    <li>The canceled value creates a hole</li>
     </ul>
-    
-    <div class="workspace workspace-200">
-      <img src="images/plane.png">
     </div>
     
+    <p><strong>Example:</strong></p>
+    $$ \frac{x-2}{(x-2)(x+1)} = \frac{1}{x+1} $$
     
     <div class="key-point">
-    <strong>Key Idea:</strong> Reciprocal graphs are defined by asymptotes and symmetry. Transformations move the graph but do not change its fundamental structure.
+    <strong>Important:</strong> A canceled factor creates a hole, not an asymptote.
+    </div>
+    
+    
+    
+    
+    <h3>Vertical Asymptotes</h3>
+    
+    <p>
+    Vertical asymptotes occur where the denominator equals zero after simplification.
+    </p>
+    
+    <div class="definition">
+    <p><strong>Process:</strong></p>
+    <ul style="margin-left:20px;">
+    <li>Factor completely</li>
+    <li>Cancel common factors</li>
+    <li>Set remaining denominator equal to zero</li>
+    </ul>
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{x-2}{(x-2)(x+1)} = \frac{1}{x+1} \quad \Rightarrow \quad x=-1 $$
+    
+    
+    
+    <h3>Horizontal and Slant Asymptotes</h3>
+    
+    <p>
+    End behavior is determined by comparing the degrees of the numerator and denominator.
+    </p>
+    
+    <div class="definition">
+    <table style="margin-left:20px; border-collapse:collapse;">
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;"><strong>Case</strong></td>
+    <td style="padding:6px; border:1px solid #ccc;"><strong>Result</strong></td>
+    </tr>
+    
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;">Degree (top) < Degree (bottom)</td>
+    <td style="padding:6px; border:1px solid #ccc;">\(y=0\)</td>
+    </tr>
+    
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;">Degrees equal</td>
+    <td style="padding:6px; border:1px solid #ccc;">Ratio of leading coefficients</td>
+    </tr>
+    
+    <tr>
+    <td style="padding:6px; border:1px solid #ccc;">Top degree is one higher</td>
+    <td style="padding:6px; border:1px solid #ccc;">Slant asymptote</td>
+    </tr>
+    
+    </table>
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{x^3-1}{x^2-1} = x + \frac{x-1}{x^2-1} \Rightarrow y=x $$
+    
+    
+    
+    <h3>Behavior Near Asymptotes</h3>
+    
+    <p>
+    Near vertical asymptotes, the function increases or decreases without bound. The direction depends on the sign of the function near the asymptote.
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Determine whether the function approaches \(+\infty\) or \(-\infty\) on each side.
+    </div>
+    
+    
+    
+    
+    <h3>Full Structural Analysis</h3>
+    
+    <p>
+    To completely understand a rational function, all features must be identified before graphing.
+    </p>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Complete Process:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Factor numerator and denominator completely</li>
+    <li>Simplify to identify holes</li>
+    <li>Find x-intercepts</li>
+    <li>Find y-intercept</li>
+    <li>Find vertical asymptotes</li>
+    <li>Determine horizontal or slant asymptotes</li>
+    <li>Analyze behavior near asymptotes</li>
+    </ol>
+    
     </div>
     
     </section>
@@ -381,33 +497,43 @@ Today, reciprocal functions are used in science and engineering to model inverse
     <h2>Vocabulary</h2>
     
     <div class="definition">
-    <strong>Reciprocal Function:</strong>
-    <p>A function of the form $ f(x)=\frac{1}{x} $, where the variable appears in the denominator.</p>
+    <strong>Rational Function:</strong>
+    <p>A function written as a ratio of two polynomials.</p>
     </div>
     
     <div class="definition">
-    <strong>Asymptote:</strong>
-    <p>A line that the graph approaches but never touches.</p>
+    <strong>x-Intercept:</strong>
+    <p>A point where the graph crosses the x-axis, found by setting the numerator equal to zero.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>y-Intercept:</strong>
+    <p>A point where the graph crosses the y-axis, found by substituting \(x=0\).</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Hole:</strong>
+    <p>A point where the function is undefined due to a canceled factor, but does not create an asymptote.</p>
     </div>
     
     <div class="definition">
     <strong>Vertical Asymptote:</strong>
-    <p>A vertical line where the function is undefined and the graph approaches without crossing.</p>
+    <p>A vertical line where the function is undefined after simplification and the graph approaches but does not cross.</p>
     </div>
     
     <div class="definition">
     <strong>Horizontal Asymptote:</strong>
-    <p>A horizontal line that describes the end behavior of the function as $x$ becomes large.</p>
+    <p>A horizontal line that describes the end behavior of a function as \(x\) becomes large.</p>
     </div>
     
     <div class="definition">
-    <strong>Symmetry:</strong>
-    <p>A property where a graph is unchanged under a transformation, such as reflection about the origin.</p>
+    <strong>Slant Asymptote:</strong>
+    <p>A diagonal line that describes end behavior when the degree of the numerator is one greater than the denominator.</p>
     </div>
     
     <div class="definition">
-    <strong>Branch:</strong>
-    <p>One part of a graph separated by a vertical asymptote.</p>
+    <strong>Discontinuity:</strong>
+    <p>A point where a function is not defined, including holes and asymptotes.</p>
     </div>
     
     </section>
@@ -422,33 +548,53 @@ Today, reciprocal functions are used in science and engineering to model inverse
     
     <div class="strategy-box">
     
-    <p><strong>Graphing Reciprocal Functions:</strong></p>
+    <p><strong>Complete Feature Analysis:</strong></p>
     
     <ol style="margin-left:20px;">
     
     <li>
-    <strong>Identify asymptotes first.</strong><br>
-    Determine the vertical and horizontal asymptotes before drawing the graph.
+    <strong>Factor completely.</strong><br>
+    Factor both the numerator and denominator to reveal structure.
     </li>
     
     <li>
-    <strong>Determine orientation.</strong><br>
-    Use the sign of the function to decide which quadrants the branches will lie in.
+    <strong>Simplify first.</strong><br>
+    Cancel any common factors to identify holes.
     </li>
     
     <li>
-    <strong>Apply transformations.</strong><br>
-    Shift the graph according to $h$ and $k$, and adjust for reflections or stretches using $a$.
+    <strong>Identify holes.</strong><br>
+    Any canceled factor creates a hole, not an asymptote.
     </li>
     
     <li>
-    <strong>Sketch branches near asymptotes.</strong><br>
-    Draw the graph approaching the asymptotes without touching them.
+    <strong>Find x-intercepts.</strong><br>
+    Set the simplified numerator equal to zero.
     </li>
     
     <li>
-    <strong>Check for intercepts.</strong><br>
-    Verify whether intercepts exist based on the structure of the function.
+    <strong>Find the y-intercept.</strong><br>
+    Substitute \(x=0\), if defined.
+    </li>
+    
+    <li>
+    <strong>Find vertical asymptotes.</strong><br>
+    Set the remaining denominator equal to zero.
+    </li>
+    
+    <li>
+    <strong>Determine end behavior.</strong><br>
+    Use degrees to find horizontal or slant asymptotes.
+    </li>
+    
+    <li>
+    <strong>Analyze behavior near asymptotes.</strong><br>
+    Determine whether the function approaches \(+\infty\) or \(-\infty\).
+    </li>
+    
+    <li>
+    <strong>Use structure before graphing.</strong><br>
+    All key features should be identified algebraically first.
     </li>
     
     </ol>
@@ -457,7 +603,7 @@ Today, reciprocal functions are used in science and engineering to model inverse
     
     </section>
 
-    <!-- ======================= -->
+<!-- ======================= -->
 <!-- EXAMPLES -->
 <!-- ======================= -->
 <section>
@@ -465,94 +611,84 @@ Today, reciprocal functions are used in science and engineering to model inverse
     <h2>Examples</h2>
     
     <!-- ===== EXAMPLE 1 ===== -->
-    <h3>Example 1 — Parent Function</h3>
-    <div class="prompt">Identify asymptotes and describe the graph.</div>
+    <h3>Example 1 — Intercepts</h3>
     
-    $$ f(x)=\frac{1}{x} $$
+    <div class="prompt">Find all intercepts.</div>
     
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
+    $$ f(x)=\frac{x-4}{x+1} $$
     
     <div class="workspace workspace-200"></div>
     
     
     <!-- ===== EXAMPLE 2 ===== -->
-    <h3>Example 2 — Horizontal Shift</h3>
-    <div class="prompt">Identify asymptotes and sketch the graph.</div>
+    <h3>Example 2 — Hole</h3>
     
-    $$ f(x)=\frac{1}{x-2} $$
+    <div class="prompt">Simplify and identify any holes.</div>
     
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
+    $$ \frac{x-2}{(x-2)(x+3)} $$
     
     <div class="workspace workspace-200"></div>
     
     
     <!-- ===== EXAMPLE 3 ===== -->
-    <h3>Example 3 — Vertical Shift</h3>
-    <div class="prompt">Identify asymptotes and sketch the graph.</div>
+    <div class="page-break"></div>
+    <h3>Example 3 — Full Feature Analysis</h3>
     
-    $$ f(x)=\frac{1}{x}+3 $$
+    <div class="prompt">Identify all features.</div>
     
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
+    $$ f(x)=\frac{x^2-9}{x^2-x-6} $$
     
-    <div class="workspace workspace-200"></div>
+    <div class="workspace workspace-300"></div>
     
     
     <!-- ===== EXAMPLE 4 ===== -->
-    <h3>Example 4 — Reflection</h3>
-    <div class="prompt">Determine the orientation of the graph.</div>
+    <h3>Example 4 — Cubic Structure + Slant</h3>
     
-    $$ f(x)=-\frac{1}{x} $$
+    <div class="prompt">Identify all features.</div>
     
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
+    $$ f(x)=\frac{x^3-1}{x^2-1} $$
     
-    <div class="workspace workspace-200"></div>
+    <div class="workspace workspace-300"></div>
     
     
     <!-- ===== EXAMPLE 5 ===== -->
-    <h3>Example 5 — Vertical Stretch</h3>
-    <div class="prompt">Describe how the coefficient affects the graph.</div>
+    <h3>Example 5 — Factor, Simplify, Then Analyze</h3>
     
-    $$ f(x)=\frac{2}{x} $$
+    <div class="prompt">Factor, simplify, and identify all features.</div>
     
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
+    $$ f(x)=\frac{x^3-4x^2+3x}{x^2-3x+2} $$
     
-    <div class="workspace workspace-200"></div>
+    <div class="workspace workspace-300"></div>
     
     
     <!-- ===== EXAMPLE 6 ===== -->
-    <h3>Example 6 — Combined Transformations</h3>
-    <div class="prompt">Identify asymptotes and describe all transformations.</div>
+    <div class="page-break"></div>
+    <h3>Example 6 — Graph from Features</h3>
     
-    $$ f(x)=\frac{1}{x+4}-1 $$
+    <div class="prompt">
+    Identify all features, then sketch the graph.
+    </div>
+    
+    $$ f(x)=\frac{x(x-2)}{(x-2)(x+3)} $$
     
     <div class="workspace workspace-400">
       <img src="images/plane.png">
     </div>
-    
-    <div class="workspace workspace-200"></div>
     
     
     <!-- ===== EXAMPLE 7 ===== -->
-    <h3>Example 7 — Reflection and Translation</h3>
-    <div class="prompt">Determine asymptotes, orientation, and transformations.</div>
+    <div class="page-break"></div>
+    <h3>Example 7 — Full Graph (Advanced)</h3>
     
-    $$ f(x)=-\frac{3}{x-1}+2 $$
+    <div class="prompt">
+    Identify all features and sketch the graph.
+    </div>
+    
+    $$ f(x)=\frac{x^2-4}{x^2-5x+6} $$
     
     <div class="workspace workspace-400">
       <img src="images/plane.png">
     </div>
-    
-    <div class="workspace workspace-200"></div>
     
     </section>
 
@@ -568,28 +704,38 @@ Today, reciprocal functions are used in science and engineering to model inverse
     <ul style="margin-left:20px;">
     
     <li>
-    <strong>Crossing asymptotes:</strong><br>
-    Reciprocal graphs approach asymptotes but never touch or cross them.
+    <strong>Not simplifying first:</strong><br>
+    Failing to factor and cancel before analyzing leads to incorrect asymptotes and missed holes.
     </li>
     
     <li>
-    <strong>Incorrect orientation:</strong><br>
-    Forgetting that a negative sign reflects the graph across the x-axis, changing which quadrants the branches occupy.
+    <strong>Confusing holes with vertical asymptotes:</strong><br>
+    If a factor cancels, it creates a hole—not a vertical asymptote.
     </li>
     
     <li>
-    <strong>Misidentifying asymptotes:</strong><br>
-    Students often forget to shift asymptotes when $h$ and $k$ are present.
+    <strong>Including undefined values as intercepts:</strong><br>
+    A value that makes the denominator zero cannot be an intercept.
     </li>
     
     <li>
-    <strong>Expecting intercepts:</strong><br>
-    Reciprocal functions typically do not have x- or y-intercepts.
+    <strong>Incorrect x-intercepts:</strong><br>
+    x-intercepts come only from the numerator and must be checked against the denominator.
     </li>
     
     <li>
-    <strong>Graphing like a polynomial:</strong><br>
-    Reciprocal functions are not continuous curves—they have separate branches.
+    <strong>Forgetting to check \(x=0\):</strong><br>
+    The y-intercept exists only if the function is defined at \(x=0\).
+    </li>
+    
+    <li>
+    <strong>Skipping behavior near asymptotes:</strong><br>
+    Knowing the asymptote is not enough—you must determine how the graph approaches it.
+    </li>
+    
+    <li>
+    <strong>Trying to graph too early:</strong><br>
+    All features should be determined algebraically before sketching.
     </li>
     
     </ul>
@@ -610,15 +756,19 @@ Today, reciprocal functions are used in science and engineering to model inverse
     
     <ul style="margin-left:20px;">
     
-    <li>Reciprocal functions are defined by asymptotes and symmetry.</li>
+    <li>x-intercepts are found by setting the numerator equal to zero.</li>
     
-    <li>The parent function $\\frac{1}{x}$ has asymptotes at $x=0$ and $y=0$.</li>
+    <li>y-intercepts are found by substituting \(x=0\), if the function is defined.</li>
     
-    <li>Transformations shift asymptotes and change orientation.</li>
+    <li>Holes occur when factors cancel between numerator and denominator.</li>
     
-    <li>The graph consists of two branches separated by a vertical asymptote.</li>
+    <li>Vertical asymptotes come from remaining denominator factors after simplification.</li>
     
-    <li>Understanding structure allows accurate graphing without plotting many points.</li>
+    <li>Horizontal and slant asymptotes describe end behavior.</li>
+    
+    <li>Behavior near asymptotes determines how the graph approaches these lines.</li>
+    
+    <li>Complete structure must be identified before graphing.</li>
     
     </ul>
     
@@ -626,288 +776,456 @@ Today, reciprocal functions are used in science and engineering to model inverse
     
     </section>
 
-    <!-- ======================= -->
+<!-- ======================= -->
 <!-- PRACTICE SET -->
 <!-- ======================= -->
 <section>
 
     <h2>Practice Set</h2>
     
-    <!-- ===== LEVEL 1: EASY ===== -->
+    <!-- ===== LEVEL 1 ===== -->
     <h3>Level 1 — Easy</h3>
     
-    <p>1. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{1}{x} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>1. Find the x-intercept.</p>
+    $$ f(x)=\frac{x-2}{x+1} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>2. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{1}{x-1} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>2. Find the x-intercepts.</p>
+    $$ f(x)=\frac{x^2-9}{x+2} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>3. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{1}{x+3} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>3. Find the y-intercept.</p>
+    $$ f(x)=\frac{2x+3}{x-1} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>4. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{1}{x}-2 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>4. Find the y-intercept.</p>
+    $$ f(x)=\frac{x^2-1}{x+3} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>5. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{1}{x}+4 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>5. Determine if an x-intercept exists.</p>
+    $$ f(x)=\frac{1}{x+4} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
     
-    <!-- ===== LEVEL 2: MEDIUM ===== -->
+    <!-- ===== LEVEL 2 ===== -->
     <h3>Level 2 — Medium</h3>
     
-    <p>6. Sketch and describe orientation:</p>
-    $$ f(x)=-\frac{1}{x} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>6. Find all intercepts and vertical asymptotes.</p>
+    $$ f(x)=\frac{x-3}{x-2} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>7. Sketch and describe orientation:</p>
-    $$ f(x)=\frac{2}{x} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>7. Find all intercepts and vertical asymptotes.</p>
+    $$ f(x)=\frac{x+1}{x^2-4} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>8. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{1}{x-2}+1 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>8. Find all asymptotes.</p>
+    $$ f(x)=\frac{2x^2}{x^2+1} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>9. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{1}{x+1}-3 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>9. Find all asymptotes.</p>
+    $$ f(x)=\frac{x^2+1}{x-3} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>10. Sketch and describe transformations:</p>
-    $$ f(x)=\frac{3}{x}+2 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>10. Identify all features.</p>
+    $$ f(x)=\frac{x-2}{x+3} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
     
-    <!-- ===== LEVEL 3: HARD ===== -->
+    <!-- ===== LEVEL 3 ===== -->
     <h3>Level 3 — Hard</h3>
     
-    <p>11. Sketch and describe transformations:</p>
-    $$ f(x)=-\frac{2}{x-1} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>11. Simplify and identify all features.</p>
+    $$ \frac{x-3}{(x-3)(x+2)} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>12. Sketch and describe transformations:</p>
-    $$ f(x)=\frac{1}{x-3}-2 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>12. Simplify and identify all features.</p>
+    $$ \frac{x+4}{(x+4)(x-1)} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>13. Sketch and identify asymptotes:</p>
-    $$ f(x)=\frac{4}{x+2}+1 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>13. Find intercepts, asymptotes, and holes.</p>
+    $$ f(x)=\frac{x(x-2)}{(x-2)(x+1)} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>14. Sketch and describe orientation:</p>
-    $$ f(x)=-\frac{5}{x} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>14. Find intercepts, asymptotes, and holes.</p>
+    $$ f(x)=\frac{(x+3)(x-1)}{(x+3)(x-4)} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
-    <p>15. Sketch and describe transformations:</p>
-    $$ f(x)=\frac{1}{x-4}+3 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
-    
-    
-    <!-- ===== LEVEL 4: CHALLENGING ===== -->
-    <h3>Level 4 — Challenging</h3>
-    
-    <p>16. Sketch and describe all transformations:</p>
-    $$ f(x)=\frac{-2}{x-2}+4 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
-    
-    <p>17. Compare the graphs of $\\frac{1}{x}$ and $\\frac{1}{x-3}$.</p>
-    $$ f(x)=\frac{1}{x-3} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
-    
-    <p>18. Compare the graphs of $\\frac{1}{x}$ and $-\\frac{1}{x}$.</p>
-    $$ f(x)=-\frac{1}{x} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
-    
-    <p>19. Sketch and explain the effect of $a$ in $\\frac{a}{x}$.</p>
-    $$ f(x)=\frac{a}{x} $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
-    </div>
-    
-    <p>20. Sketch and describe transformations:</p>
-    $$ f(x)=\frac{1}{2(x-1)}+2 $$
-    <div class="workspace workspace-400">
-      <img src="images/plane.png">
+    <div class="problem">
+    <p>15. Describe behavior near the asymptote.</p>
+    $$ f(x)=\frac{2}{x-3} $$
+    <div class="workspace workspace-200"></div>
     </div>
     
     
- <!-- ===== LEVEL 5: JUSTIFICATION ===== -->
-<h3>Level 5 — Justification / Conceptual</h3>
+ <!-- ===== LEVEL 4 ===== -->
+<h3>Level 4 — Challenging</h3>
 
-<p>21. Explain why reciprocal functions have two branches.</p>
-<div class="workspace workspace-100"></div>
+<div class="problem">
+<p>16. Factor completely, identify all features, and sketch the graph.</p>
+$$ f(x)=\frac{x^3-6x^2+11x-6}{x^2-5x+6} $$
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+</div>
 
-<p>22. Explain why reciprocal graphs never cross vertical asymptotes.</p>
-<div class="workspace workspace-100"></div>
+<div class="problem">
+<p>17. Factor completely, identify all features, and sketch the graph.</p>
+$$ f(x)=\frac{x^3-4x^2-x+4}{x^2-4} $$
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+</div>
 
-<p>23. Justify how the sign of $a$ affects orientation.</p>
-<div class="workspace workspace-100"></div>
+<div class="problem">
+<p>18. Factor, simplify, identify all features, and sketch the graph.</p>
+$$ \frac{x^3-3x^2+2x}{x^2-3x+2} $$
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+</div>
 
-<p>24. Explain why reciprocal functions usually have no intercepts.</p>
-<div class="workspace workspace-100"></div>
+<div class="problem">
+<p>19. Factor, simplify, identify all features, and sketch the graph.</p>
+$$ \frac{x^3-9x}{x^2-3x} $$
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+</div>
 
-<p>25. Describe how asymptotes determine the shape of the graph.</p>
-<div class="workspace workspace-100"></div>
+<div class="problem">
+<p>20. Identify all features and sketch the graph. Clearly show behavior near asymptotes.</p>
+$$ f(x)=\frac{x^2-4}{x^2-5x+6} $$
+<div class="workspace workspace-400">
+  <img src="images/plane.png">
+</div>
+</div>
+    
+    
+    <!-- ===== LEVEL 5 ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <div class="problem">
+    <p>21. Explain why x-intercepts come from the numerator.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>22. Explain why holes occur instead of asymptotes.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>23. Explain how asymptotes affect the shape of a graph.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>24. Explain why some rational functions have no x-intercepts.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>25. Describe a complete process for analyzing a rational function before graphing.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
     
     </section>
 
     <!-- ======================= -->
-<!-- ANSWER KEY -->
+<!-- PRACTICE ANSWER KEY -->
 <!-- ======================= -->
 <section>
 
-    <h2>Answer Key</h2>
+    <h2>Practice Answer Key</h2>
     
     <h3>Level 1 — Easy</h3>
-    <p>1. VA: $x=0$, HA: $y=0$</p>
-    <p>2. VA: $x=1$, HA: $y=0$</p>
-    <p>3. VA: $x=-3$, HA: $y=0$</p>
-    <p>4. VA: $x=0$, HA: $y=-2$</p>
-    <p>5. VA: $x=0$, HA: $y=4$</p>
+    <p>1. x=2</p>
+    <p>2. x=±3</p>
+    <p>3. y=-3</p>
+    <p>4. y=-\(\frac{1}{3}\)</p>
+    <p>5. none</p>
     
     <h3>Level 2 — Medium</h3>
-    <p>6. Reflection across x-axis</p>
-    <p>7. Vertical stretch (factor 2)</p>
-    <p>8. VA: $x=2$, HA: $y=1$</p>
-    <p>9. VA: $x=-1$, HA: $y=-3$</p>
-    <p>10. Stretch (factor 3), shift up 2</p>
+    <p>6. x-int: 3, VA: x=2</p>
+    <p>7. x-int: -1, VA: x=±2</p>
+    <p>8. HA: y=2</p>
+    <p>9. VA: x=3, SA: y=x+3</p>
+    <p>10. x-int: 2, VA: -3, HA: 1</p>
     
     <h3>Level 3 — Hard</h3>
-    <p>11. VA: $x=1$, reflection, stretch (2)</p>
-    <p>12. VA: $x=3$, HA: $y=-2$</p>
-    <p>13. VA: $x=-2$, HA: $y=1$, stretch (4)</p>
-    <p>14. Reflection, stretch (5)</p>
-    <p>15. VA: $x=4$, HA: $y=3$</p>
+    <p>11. hole at x=3, VA: -2, HA: 0</p>
+    <p>12. hole at x=-4, VA: 1, HA: 0</p>
+    <p>13. hole at x=2, VA: -1, x-int: 0, HA: 0</p>
+    <p>14. hole at x=-3, VA: 4, x-int: 1, HA: 0</p>
+    <p>15. approaches ±∞ near x=3</p>
     
     <h3>Level 4 — Challenging</h3>
-    <p>16. VA: $x=2$, HA: $y=4$, reflection, stretch (2)</p>
-    <p>17. Shift right 3 units</p>
-    <p>18. Reflection across x-axis</p>
-    <p>19. Controls stretch/compression and orientation</p>
-    <p>20. VA: $x=1$, HA: $y=2$, compression</p>
+    <p>16. holes at x=1,2,3 → simplifies to linear; graph line with holes</p>
+    <p>17. factor → cancellation + VA at x=±2; slant asymptote present</p>
+    <p>18. simplifies; hole at x=1,2; reduced linear behavior</p>
+    <p>19. hole at x=0, VA at x=3; remaining linear structure</p>
+    <p>20. VA: x=2,3; HA: y=1; x-int: ±2</p>
     
     <h3>Level 5 — Justification</h3>
     <p>21–25. Answers vary (conceptual)</p>
     
     </section>
-    
-    
+
     <!-- ======================= -->
-    <!-- DETAILED EXAMPLE SOLUTIONS -->
-    <!-- ======================= -->
-    <section>
-    
+<!-- DETAILED EXAMPLE SOLUTIONS -->
+<!-- ======================= -->
+<section>
+
     <h2>Detailed Example Solutions</h2>
     
     <!-- ===== EXAMPLE 1 ===== -->
-    <h3>Example 1 — Parent Function</h3>
+    <h3>Example 1 — Intercepts</h3>
     
-    $$ f(x)=\frac{1}{x} $$
+    $$ f(x)=\frac{x-4}{x+1} $$
     
     <p>
-    The vertical asymptote is $x=0$ and the horizontal asymptote is $y=0$. The graph has two branches in Quadrants I and III.
+    Set numerator equal to zero:
     </p>
+    
+    $$ x-4=0 \Rightarrow x=4 $$
+    
+    <p><strong>x-intercept:</strong> (4,0)</p>
+    
+    <p>
+    Find y-intercept:
+    </p>
+    
+    $$ f(0)=\frac{-4}{1}=-4 $$
+    
+    <p><strong>y-intercept:</strong> (0,-4)</p>
     
     
     <!-- ===== EXAMPLE 2 ===== -->
-    <h3>Example 2 — Horizontal Shift</h3>
+    <h3>Example 2 — Hole</h3>
     
-    $$ f(x)=\frac{1}{x-2} $$
+    $$ \frac{x-2}{(x-2)(x+3)} $$
     
     <p>
-    The graph shifts right 2 units, so the vertical asymptote is $x=2$ and the horizontal asymptote remains $y=0$.
+    Factor and cancel:
     </p>
+    
+    $$ =\frac{1}{x+3} $$
+    
+    <p>
+    Hole at \(x=2\)
+    </p>
+    
+    <p>
+    Find y-value:
+    </p>
+    
+    $$ f(2)=\frac{1}{5} $$
+    
+    <p><strong>Hole:</strong> (2, \(\frac{1}{5}\))</p>
     
     
     <!-- ===== EXAMPLE 3 ===== -->
-    <h3>Example 3 — Vertical Shift</h3>
+    <h3>Example 3 — Full Feature Analysis</h3>
     
-    $$ f(x)=\frac{1}{x}+3 $$
+    $$ f(x)=\frac{x^2-9}{x^2-x-6} $$
     
     <p>
-    The graph shifts upward 3 units. The vertical asymptote remains $x=0$ and the horizontal asymptote becomes $y=3$.
+    Factor:
     </p>
+    
+    $$ \frac{(x-3)(x+3)}{(x-3)(x+2)} $$
+    
+    <p>
+    Cancel:
+    </p>
+    
+    $$ =\frac{x+3}{x+2} $$
+    
+    <p>
+    Hole at \(x=3\)
+    </p>
+    
+    <p>
+    Vertical asymptote:
+    </p>
+    
+    $$ x=-2 $$
+    
+    <p>
+    x-intercept:
+    </p>
+    
+    $$ x=-3 $$
+    
+    <p>
+    Horizontal asymptote:
+    </p>
+    
+    $$ y=1 $$
     
     
     <!-- ===== EXAMPLE 4 ===== -->
-    <h3>Example 4 — Reflection</h3>
+    <h3>Example 4 — Cubic Structure + Slant</h3>
     
-    $$ f(x)=-\frac{1}{x} $$
+    $$ f(x)=\frac{x^3-1}{x^2-1} $$
     
     <p>
-    The negative sign reflects the graph across the x-axis, moving branches to Quadrants II and IV.
+    Factor:
     </p>
+    
+    $$ \frac{(x-1)(x^2+x+1)}{(x-1)(x+1)} $$
+    
+    <p>
+    Cancel:
+    </p>
+    
+    $$ =\frac{x^2+x+1}{x+1} $$
+    
+    <p>
+    Hole at \(x=1\)
+    </p>
+    
+    <p>
+    Divide:
+    </p>
+    
+    $$ =x + \frac{1}{x+1} $$
+    
+    <p><strong>Slant asymptote:</strong> y=x</p>
+    
+    <p><strong>Vertical asymptote:</strong> x=-1</p>
     
     
     <!-- ===== EXAMPLE 5 ===== -->
-    <h3>Example 5 — Vertical Stretch</h3>
+    <h3>Example 5 — Factor, Simplify, Then Analyze</h3>
     
-    $$ f(x)=\frac{2}{x} $$
+    $$ f(x)=\frac{x^3-4x^2+3x}{x^2-3x+2} $$
     
     <p>
-    The graph is stretched vertically, making it steeper, but asymptotes remain unchanged.
+    Factor:
     </p>
+    
+    $$ \frac{x(x-1)(x-3)}{(x-1)(x-2)} $$
+    
+    <p>
+    Cancel:
+    </p>
+    
+    $$ =\frac{x(x-3)}{x-2} $$
+    
+    <p>
+    Hole at \(x=1\)
+    </p>
+    
+    <p>
+    Vertical asymptote:
+    </p>
+    
+    $$ x=2 $$
     
     
     <!-- ===== EXAMPLE 6 ===== -->
-    <h3>Example 6 — Combined Transformations</h3>
+    <h3>Example 6 — Graph from Features</h3>
     
-    $$ f(x)=\frac{1}{x+4}-1 $$
+    $$ f(x)=\frac{x(x-2)}{(x-2)(x+3)} $$
     
     <p>
-    The graph shifts left 4 units and down 1 unit. The asymptotes become $x=-4$ and $y=-1$.
+    Simplify:
     </p>
+    
+    $$ =\frac{x}{x+3} $$
+    
+    <p>
+    Hole at \(x=2\)
+    </p>
+    
+    <p>
+    Vertical asymptote:
+    </p>
+    
+    $$ x=-3 $$
+    
+    <p>
+    x-intercept:
+    </p>
+    
+    $$ x=0 $$
+    
+    <p>
+    Horizontal asymptote:
+    </p>
+    
+    $$ y=1 $$
     
     
     <!-- ===== EXAMPLE 7 ===== -->
-    <h3>Example 7 — Reflection and Translation</h3>
+    <h3>Example 7 — Full Graph</h3>
     
-    $$ f(x)=-\frac{3}{x-1}+2 $$
+    $$ f(x)=\frac{x^2-4}{x^2-5x+6} $$
     
     <p>
-    The graph shifts right 1 unit and up 2 units. The negative sign reflects the graph and the factor of 3 creates a vertical stretch.
+    Factor:
     </p>
+    
+    $$ \frac{(x-2)(x+2)}{(x-2)(x-3)} $$
+    
+    <p>
+    Cancel:
+    </p>
+    
+    $$ =\frac{x+2}{x-3} $$
+    
+    <p>
+    Hole at \(x=2\)
+    </p>
+    
+    <p>
+    Vertical asymptote:
+    </p>
+    
+    $$ x=3 $$
+    
+    <p>
+    x-intercept:
+    </p>
+    
+    $$ x=-2 $$
+    
+    <p>
+    Horizontal asymptote:
+    </p>
+    
+    $$ y=1 $$
     
     </section>
 
-</div>
 </body>
 </html>
