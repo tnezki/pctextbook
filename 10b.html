@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 10.B: Graph Exponential and Logarithmic Functions</title>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+/* COPY EXACT FROM 9C — NO CHANGES */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{max-width:900px;margin:auto;}
+
+.page-break{page-break-before:always;}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{color:#004d99;font-size:1.3em;margin-top:30px;margin-bottom:10px;}
+
+.intro-text{font-size:1.05em;color:#555;margin-bottom:10px;font-style:italic;}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.workspace{width:100%;margin-top:10px;}
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+section, .definition, .key-point, .strategy-box{
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+h3{
+  break-after:avoid;
+  page-break-after:avoid;
+}
+
+.workspace{
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+section{margin-bottom:30px;}
+
+.problem{
+  break-inside:avoid;
+  page-break-inside:avoid;
+  margin-bottom:10px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- TITLE -->
+<h1>10.B Graph Exponential and Logarithmic Functions</h1>
+
+<div class="intro-text">
+Exponential and logarithmic functions describe relationships involving growth and decay. While exponential functions model rapid change, logarithmic functions allow us to reverse that process and analyze structure.
+</div>
+
+<div class="intro-text">
+Understanding these functions requires identifying key features such as domain, range, intercepts, and asymptotes, as well as recognizing how transformations affect their graphs.
+</div>
+
+<div class="inspirational">
+“Exponential growth and logarithmic scaling describe how systems change and how we measure that change.”
+</div>
+
+<!-- LEARNING TARGETS -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can identify key features of exponential and logarithmic functions.</p>
+<p>I can determine domain, range, and asymptotes.</p>
+<p>I can graph exponential and logarithmic functions.</p>
+<p>I can describe transformations of these functions.</p>
+</div>
+
+</section>
+
+<!-- INTRO -->
+<section>
+<h2>Introduction</h2>
+
+<p>
+Exponential functions represent repeated multiplication and describe rapid growth or decay. Logarithmic functions are their inverses and allow us to determine how many times a base must be multiplied to reach a value.
+</p>
+
+<p>
+Although these functions behave differently, they are closely connected. Understanding their structure helps us analyze real-world relationships involving growth, decay, and scaling.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Exponential and logarithmic functions are inverses that describe opposite processes.
+</div>
+
+</section>
+
+<!-- CONNECTIONS -->
+<section>
+<h2>Connections</h2>
+
+<div class="key-point">
+<strong>Prior Knowledge:</strong>
+<ul style="margin-left:20px;">
+<li>Exponent rules</li>
+<li>Inverse functions</li>
+<li>Graphing transformations</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Cross-Disciplinary Connections:</strong>
+<ul style="margin-left:20px;">
+<li>Biology: population growth</li>
+<li>Physics: radioactive decay</li>
+<li>Computer Science: logarithmic complexity</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Real-World Applications:</strong>
+<ul style="margin-left:20px;">
+<li>Interest and investment growth</li>
+<li>Sound intensity and decibels</li>
+<li>Earthquake magnitude (Richter scale)</li>
+</ul>
+</div>
+
+</section>
+
+<!-- HISTORY -->
+<section>
+<h2>History</h2>
+
+<p>
+Exponential growth has been studied for centuries in relation to population and finance. Logarithms were introduced in the 17th century to simplify calculations involving exponential relationships.
+</p>
+
+<p>
+John Napier and Henry Briggs developed logarithms to make multiplication and division easier, which was critical before modern calculators.
+</p>
+
+<p>
+Today, exponential and logarithmic functions are essential tools in science, engineering, and mathematics.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+
+    <h2>Key Concepts</h2>
+    
+    <!-- ===== PAGE 1 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Exponential Functions</h3>
+    
+    <p>
+    An exponential function has the form:
+    </p>
+    
+    <div class="definition">
+    $$ f(x)=a^x \quad \text{where } a>0,\ a\neq1 $$
+    </div>
+    
+    <p>
+    These functions model repeated multiplication and describe growth or decay.
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Exponential functions change by a constant multiplicative factor.
+    </div>
+    </div>
+    
+    <div class="problem">
+    <h3>Logarithmic Functions</h3>
+    
+    <p>
+    A logarithmic function is the inverse of an exponential function.
+    </p>
+    
+    <div class="definition">
+    $$ f(x)=\log_b x \iff b^y=x $$
+    </div>
+    
+    <p>
+    Logarithms tell us what exponent is needed to produce a value.
+    </p>
+    </div>
+    
+    <div class="problem">
+    <h3>Domain and Range</h3>
+    
+    <p>
+    These functions have different restrictions.
+    </p>
+    
+    <div class="definition">
+    <ul style="margin-left:20px;">
+    <li>Exponential: Domain = all real, Range = \(y>0\)</li>
+    <li>Logarithmic: Domain = \(x>0\), Range = all real</li>
+    </ul>
+    </div>
+    
+    <div class="key-point">
+    <strong>Important:</strong> Logarithms are undefined for nonpositive values.
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 2 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Asymptotes</h3>
+    
+    <p>
+    Exponential and logarithmic functions each have characteristic asymptotes.
+    </p>
+    
+    <div class="definition">
+    <ul style="margin-left:20px;">
+    <li>Exponential: horizontal asymptote \(y=0\)</li>
+    <li>Logarithmic: vertical asymptote \(x=0\)</li>
+    </ul>
+    </div>
+    
+    <p>
+    These asymptotes describe how the graph behaves near extreme values.
+    </p>
+    </div>
+    
+    <div class="problem">
+    <h3>Key Points</h3>
+    
+    <p>
+    Each function has standard points that help sketch the graph.
+    </p>
+    
+    <div class="definition">
+    <ul style="margin-left:20px;">
+    <li>Exponential: \( (0,1) \)</li>
+    <li>Logarithmic: \( (1,0) \)</li>
+    </ul>
+    </div>
+    
+    <p>
+    These points act as anchors when graphing.
+    </p>
+    </div>
+    
+    <div class="problem">
+    <h3>Transformations</h3>
+    
+    <p>
+    Transformations shift or reflect the graph.
+    </p>
+    
+    <div class="definition">
+    <ul style="margin-left:20px;">
+    <li>\( f(x-h) \): shift right</li>
+    <li>\( f(x)+k \): shift up</li>
+    <li>\( -f(x) \): reflection across x-axis</li>
+    </ul>
+    </div>
+    
+    <p>
+    These change position but not the overall shape.
+    </p>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 3 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Inverse Relationship</h3>
+    
+    <p>
+    Exponential and logarithmic functions are inverses.
+    </p>
+    
+    <div class="definition">
+    $$ y=a^x \quad \text{and} \quad y=\log_a x $$
+    </div>
+    
+    <p>
+    Their graphs reflect across the line \(y=x\).
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Inverse functions undo each other.
+    </div>
+    </div>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Exponential Function:</strong>
+    <p>A function of the form \(f(x)=a^x\) representing growth or decay.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Logarithmic Function:</strong>
+    <p>The inverse of an exponential function, written \(f(x)=\log_a x\).</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Asymptote:</strong>
+    <p>A line that a graph approaches but does not reach.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Domain:</strong>
+    <p>The set of all possible input values.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Range:</strong>
+    <p>The set of all possible output values.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Transformation:</strong>
+    <p>A change in the graph such as a shift, reflection, or stretch.</p>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Graphing Exponential Functions:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Identify the base and determine growth or decay</li>
+    <li>Plot key points such as \((0,1)\)</li>
+    <li>Identify horizontal asymptote \(y=0\)</li>
+    <li>Sketch smooth curve through points</li>
+    </ol>
+    
+    <p style="margin-top:15px;"><strong>Graphing Logarithmic Functions:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Start from inverse relationship with exponential</li>
+    <li>Plot key point \((1,0)\)</li>
+    <li>Identify vertical asymptote</li>
+    <li>Apply transformations if needed</li>
+    </ol>
+    
+    </div>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Exponential graphs grow, logarithmic graphs scale.
+    </div>
+    
+    </section>
+    
+    
+  <!-- ======================= -->
+<!-- EXAMPLES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Examples</h2>
+    
+    <!-- ===== PAGE 1 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 1 — Exponential Features</h3>
+    <div class="prompt">Identify domain, range, and asymptote.</div>
+    $$ f(x)=2^x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 2 — Logarithmic Features</h3>
+    <div class="prompt">Identify domain, range, and asymptote.</div>
+    $$ f(x)=\log x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 2 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 3 — Graphing Exponential Function</h3>
+    <div class="prompt">Create a table and sketch the graph.</div>
+    
+    $$ f(x)=3^x $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 4 — Graphing Logarithmic Function</h3>
+    <div class="prompt">Create a table and sketch the graph.</div>
+    
+    $$ f(x)=\ln x $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 3 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 5 — Logarithmic Transformation</h3>
+    <div class="prompt">Describe the transformation and sketch the graph.</div>
+    
+    $$ f(x)=\log(x-3)+2 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 6 — Exponential Transformation</h3>
+    <div class="prompt">Describe the transformation and sketch the graph.</div>
+    
+    $$ f(x)=2^{x-2}-1 $$
+    
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 4 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 7 — Inverse Relationship</h3>
+    <div class="prompt">Describe the relationship between the functions.</div>
+    
+    $$ y=2^x \quad \text{and} \quad y=\log_2 x $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Confusing domain and range:</strong><br>
+    Exponential and logarithmic functions have opposite restrictions.
+    </li>
+    
+    <li>
+    <strong>Incorrect asymptotes:</strong><br>
+    Exponential functions have horizontal asymptotes, logarithmic functions have vertical ones.
+    </li>
+    
+    <li>
+    <strong>Forgetting key points:</strong><br>
+    Not using \((0,1)\) or \((1,0)\) leads to inaccurate graphs.
+    </li>
+    
+    <li>
+    <strong>Misidentifying transformations:</strong><br>
+    Shifts inside vs. outside the function change direction.
+    </li>
+    
+    <li>
+    <strong>Ignoring domain restrictions after shifts:</strong><br>
+    Shifting logarithmic functions changes where the graph is defined.
+    </li>
+    
+    <li>
+    <strong>Graphing before analyzing:</strong><br>
+    Always identify features first.
+    </li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Exponential functions model growth and decay.</li>
+    
+    <li>Logarithmic functions are inverses of exponential functions.</li>
+    
+    <li>Exponential functions have horizontal asymptotes.</li>
+    
+    <li>Logarithmic functions have vertical asymptotes.</li>
+    
+    <li>Key points help anchor graphs.</li>
+    
+    <li>Transformations shift or reflect graphs.</li>
+    
+    <li>Understanding structure allows accurate graphing.</li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- PRACTICE SET -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1 ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <div class="problem">
+    <p>1. Identify domain, range, and asymptote.</p>
+    $$ f(x)=2^x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>2. Identify domain, range, and asymptote.</p>
+    $$ f(x)=\log x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>3. Evaluate.</p>
+    $$ 3^0 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>4. Evaluate.</p>
+    $$ \log 100 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>5. Identify a key point.</p>
+    $$ f(x)=\ln x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 2 ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <div class="problem">
+    <p>6. Create a table and graph.</p>
+    $$ f(x)=2^x $$
+    <div class="workspace workspace-300">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <p>7. Create a table and graph.</p>
+    $$ f(x)=\log x $$
+    <div class="workspace workspace-300">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <p>8. Identify domain and range.</p>
+    $$ f(x)=3^x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>9. Identify domain and range.</p>
+    $$ f(x)=\ln x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>10. Identify asymptote.</p>
+    $$ f(x)=2^x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== LEVEL 3 ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <div class="problem">
+    <p>11. Describe the transformation and graph.</p>
+    $$ f(x)=\log(x-2)+1 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <p>12. Describe the transformation and graph.</p>
+    $$ f(x)=2^{x-1}-2 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <p>13. Identify asymptote and key points.</p>
+    $$ f(x)=\log(x+3) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>14. Identify asymptote and key points.</p>
+    $$ f(x)=3^{x}+2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>15. Compare graphs.</p>
+    $$ \log x \text{ and } \log(x-2) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 4 ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <div class="problem">
+    <p>16. Graph and identify all features.</p>
+    $$ f(x)=\log(x-4)+3 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <p>17. Graph and identify all features.</p>
+    $$ f(x)=2^{x+2}-1 $$
+    <div class="workspace workspace-400">
+      <img src="images/plane.png">
+    </div>
+    </div>
+    
+    <div class="problem">
+    <p>18. Compare and describe differences.</p>
+    $$ 2^x \text{ and } 2^{x}+3 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>19. Compare and describe differences.</p>
+    $$ \ln x \text{ and } -\ln x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>20. Identify transformations.</p>
+    $$ f(x)=3^{x-2}+1 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 5 ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <div class="problem">
+    <p>21. Explain why logarithmic functions have vertical asymptotes.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>22. Explain why exponential functions have horizontal asymptotes.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>23. Explain how transformations affect domain.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>24. Explain why exponential and logarithmic functions are inverses.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>25. Describe how asymptotes change under transformations.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUPPLEMENTAL NOTES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Supplemental Notes</h2>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    <p>1. Domain: all real, Range: \(y>0\), HA: \(y=0\)</p>
+    <p>2. Domain: \(x>0\), Range: all real, VA: \(x=0\)</p>
+    <p>3. 1</p>
+    <p>4. 2</p>
+    <p>5. (1,0)</p>
+    
+    <h3>Level 2 — Medium</h3>
+    <p>6. Table + exponential growth curve</p>
+    <p>7. Table + logarithmic curve</p>
+    <p>8. Domain all real, Range \(y>0\)</p>
+    <p>9. Domain \(x>0\), Range all real</p>
+    <p>10. HA: \(y=0\)</p>
+    
+    <h3>Level 3 — Hard</h3>
+    <p>11. Right 2, up 1</p>
+    <p>12. Right 1, down 2</p>
+    <p>13. VA: \(x=-3\), key point (1,0)</p>
+    <p>14. HA: \(y=2\), key point (0,1)</p>
+    <p>15. Shift right 2</p>
+    
+    <h3>Level 4 — Challenging</h3>
+    <p>16. VA: \(x=4\), shift up 3</p>
+    <p>17. Left 2, down 1</p>
+    <p>18. Shift up 3</p>
+    <p>19. Reflection across x-axis</p>
+    <p>20. Right 2, up 1</p>
+    
+    <h3>Level 5 — Justification</h3>
+    <p>21–25. Answers vary (conceptual)</p>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- DETAILED EXAMPLE SOLUTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <div class="problem">
+    <h3>Example 1 — Exponential Features</h3>
+    
+    $$ f(x)=2^x $$
+    
+    <p><strong>Domain:</strong> all real</p>
+    <p><strong>Range:</strong> \(y>0\)</p>
+    <p><strong>Asymptote:</strong> \(y=0\)</p>
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <div class="problem">
+    <h3>Example 2 — Logarithmic Features</h3>
+    
+    $$ f(x)=\log x $$
+    
+    <p><strong>Domain:</strong> \(x>0\)</p>
+    <p><strong>Range:</strong> all real</p>
+    <p><strong>Asymptote:</strong> \(x=0\)</p>
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <div class="problem">
+    <h3>Example 3 — Graphing Exponential</h3>
+    
+    $$ f(x)=3^x $$
+    
+    <p>
+    Key points:
+    </p>
+    
+    <ul style="margin-left:20px;">
+    <li>(0,1)</li>
+    <li>(1,3)</li>
+    <li>(-1,\(\frac{1}{3}\))</li>
+    </ul>
+    
+    <p>
+    Graph increases rapidly with horizontal asymptote \(y=0\).
+    </p>
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <div class="problem">
+    <h3>Example 4 — Graphing Logarithmic</h3>
+    
+    $$ f(x)=\ln x $$
+    
+    <p>
+    Key points:
+    </p>
+    
+    <ul style="margin-left:20px;">
+    <li>(1,0)</li>
+    <li>(e,1)</li>
+    </ul>
+    
+    <p>
+    Graph increases slowly with vertical asymptote \(x=0\).
+    </p>
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <div class="problem">
+    <h3>Example 5 — Log Transformation</h3>
+    
+    $$ f(x)=\log(x-3)+2 $$
+    
+    <p>
+    Transformation:
+    </p>
+    
+    <ul style="margin-left:20px;">
+    <li>Right 3</li>
+    <li>Up 2</li>
+    </ul>
+    
+    <p>
+    Vertical asymptote: \(x=3\)
+    </p>
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <div class="problem">
+    <h3>Example 6 — Exponential Transformation</h3>
+    
+    $$ f(x)=2^{x-2}-1 $$
+    
+    <p>
+    Transformation:
+    </p>
+    
+    <ul style="margin-left:20px;">
+    <li>Right 2</li>
+    <li>Down 1</li>
+    </ul>
+    
+    <p>
+    Horizontal asymptote: \(y=-1\)
+    </p>
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <div class="problem">
+    <h3>Example 7 — Inverse Relationship</h3>
+    
+    $$ y=2^x \quad \text{and} \quad y=\log_2 x $$
+    
+    <p>
+    These functions are inverses and reflect across the line \(y=x\).
+    </p>
+    
+    <p>
+    Each point on one graph corresponds to a reflected point on the other.
+    </p>
+    </div>
+    
+    </section>
+
+</div>
+</body>
+</html>
