@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>9.C Traveling Salesman</title>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+@page { size: 8.5in 11in; margin: 0in; }
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page{
+  width: 8in;
+  height: 11in;
+  padding: 0.25in;
+  box-sizing: border-box;
+  page-break-after: always;
+}
+
+.header{
+  background:#0b3d91;
+  color:#fff;
+  padding:6px 12px;
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.content{
+  font-size:22px;
+  line-height:1.3;
+}
+
+.math{
+  margin-top:10px;
+  font-size:26px;
+}
+
+.center-title{
+  text-align:center;
+  margin-top:2.5in;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<div class="page center-title">
+  <h1>9.C Rational Functions</h1>
+  <h2>Traveling Salesman</h2>
+</div>
+
+<!-- DIRECTIONS -->
+<div class="page">
+  <div class="header">Traveling Salesman Directions</div>
+  <div class="content">
+
+    <b>1. Setup:</b> Groups of 4. One whiteboard and marker per group.
+    <br><br>
+
+    <b>2. Solve:</b> Work together to solve the problem and prepare an explanation.
+    <br><br>
+
+    <b>3. Rotate:</b> One student travels to a new group and presents the solution.
+    <br><br>
+
+    <b>4. Listen:</b> Receiving group listens, asks questions, and checks understanding.
+    <br><br>
+
+    <b>5. Repeat:</b> Teacher gives a new problem. Groups solve again.
+
+  </div>
+</div>
+
+<!-- LEVEL 1 -->
+<div class="page">
+  <div class="header">Problem 1</div>
+  <div class="content">
+    Find x-intercepts:
+    <div class="math">\( f(x)=\frac{x-4}{x+2} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>x=4</div>
+
+<div class="page">
+  <div class="header">Problem 2</div>
+  <div class="content">
+    Find y-intercept:
+    <div class="math">\( f(x)=\frac{x+3}{x-2} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>y=-\(\frac{3}{2}\)</div>
+
+<div class="page">
+  <div class="header">Problem 3</div>
+  <div class="content">
+    Determine if x-intercept exists:
+    <div class="math">\( f(x)=\frac{x^2+4}{x+1} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>none</div>
+
+<div class="page">
+  <div class="header">Problem 4</div>
+  <div class="content">
+    Find intercepts:
+    <div class="math">\( f(x)=\frac{x(x+1)}{x-3} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>x=0,-1; y=0</div>
+
+<!-- LEVEL 2 -->
+<div class="page">
+  <div class="header">Problem 5</div>
+  <div class="content">
+    Find intercepts and VA:
+    <div class="math">\( f(x)=\frac{x-5}{x-2} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>x=5; VA=2</div>
+
+<div class="page">
+  <div class="header">Problem 6</div>
+  <div class="content">
+    Find all asymptotes:
+    <div class="math">\( f(x)=\frac{x^2}{x^2-4} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>VA=±2, HA=1</div>
+
+<div class="page">
+  <div class="header">Problem 7</div>
+  <div class="content">
+    Identify all features:
+    <div class="math">\( f(x)=\frac{x^2-1}{x+3} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>x=±1, VA=-3, HA=1</div>
+
+<div class="page">
+  <div class="header">Problem 8</div>
+  <div class="content">
+    Find all asymptotes:
+    <div class="math">\( f(x)=\frac{x^3}{x^2-1} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>VA=±1, SA=y=x</div>
+
+<!-- LEVEL 3 -->
+<div class="page">
+  <div class="header">Problem 9</div>
+  <div class="content">
+    Simplify and identify hole:
+    <div class="math">\( \frac{x-1}{(x-1)(x+2)} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>hole x=1</div>
+
+<div class="page">
+  <div class="header">Problem 10</div>
+  <div class="content">
+    Identify all features:
+    <div class="math">\( f(x)=\frac{x(x-3)}{(x-3)(x+2)} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>hole x=3, VA=-2</div>
+
+<div class="page">
+  <div class="header">Problem 11</div>
+  <div class="content">
+    Identify features:
+    <div class="math">\( f(x)=\frac{x^2-9}{x^2-4} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>VA=±2, HA=1</div>
+
+<div class="page">
+  <div class="header">Problem 12</div>
+  <div class="content">
+    Behavior near asymptote:
+    <div class="math">\( f(x)=\frac{2}{x-4} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>∞ behavior at x=4</div>
+
+<!-- LEVEL 4 -->
+<div class="page">
+  <div class="header">Problem 13</div>
+  <div class="content">
+    Identify all features:
+    <div class="math">\( f(x)=\frac{x^3-6x^2+11x-6}{x^2-5x+6} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>holes at 1,2,3</div>
+
+<div class="page">
+  <div class="header">Problem 14</div>
+  <div class="content">
+    Identify all features:
+    <div class="math">\( f(x)=\frac{x^3-4x^2-x+4}{x^2-4} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>VA=±2, SA present</div>
+
+<div class="page">
+  <div class="header">Problem 15</div>
+  <div class="content">
+    Simplify and analyze:
+    <div class="math">\( \frac{x^3-3x^2+2x}{x^2-3x+2} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>holes at 1,2</div>
+
+<div class="page">
+  <div class="header">Problem 16</div>
+  <div class="content">
+    Identify all features:
+    <div class="math">\( \frac{x^3-9x}{x^2-3x} \)</div>
+  </div>
+</div>
+
+<div class="page"><div class="header">Answer</div>hole x=0, VA=3</div>
+
+</body>
+</html>
