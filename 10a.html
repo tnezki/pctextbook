@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 10.A: Properties of Logarithms</title>
+
+<!-- ======================= -->
+<!-- MATHJAX CONFIGURATION  -->
+<!-- ======================= -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ======================= -->
+<!-- STYLES (COPIED EXACTLY FROM 9C) -->
+<!-- ======================= -->
+<style>
+
+/* ================================
+   RESET
+================================ */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ================================
+   PAGE
+================================ */
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* PAGE BREAK */
+.page-break{
+  page-break-before: always;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* ================================
+   HEADINGS
+================================ */
+h1{
+  color:#00003d;
+  font-size:2.5em;
+  margin-bottom:20px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+/* ================================
+   TEXT ELEMENTS
+================================ */
+.intro-text{
+  font-size:1.05em;
+  color:#555;
+  margin-bottom:10px;
+  font-style:italic;
+}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+/* ================================
+   CONTENT BOXES
+================================ */
+.objectives{
+  background:#f0f4f8;
+  padding:20px;
+  border-radius:6px;
+}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+/* ================================
+   WORKSPACE SYSTEM
+================================ */
+.workspace{
+  width:100%;
+  margin-top:10px;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+/* ================================
+   PRINT CONTROL
+================================ */
+section, .definition, .key-point, .strategy-box {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+h3 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.workspace {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.problem{
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 10px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>10.A Properties of Logarithms</h1>
+
+<div class="intro-text">
+Logarithms allow us to rewrite complex exponential expressions into simpler forms by revealing the structure hidden inside multiplication and powers.
+</div>
+
+<div class="intro-text">
+Instead of working directly with large expressions, logarithmic properties help break them apart or combine them strategically, making algebra more manageable and efficient.
+</div>
+
+<div class="inspirational">
+“Logarithms reveal structure hidden inside exponents.”
+</div>
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can condense logarithmic expressions using product, quotient, and power properties.</p>
+<p>I can expand logarithmic expressions into simpler components.</p>
+<p>I can apply logarithmic properties to rewrite complex expressions.</p>
+<p>I can use structure to simplify multi-step logarithmic expressions.</p>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- INTRODUCTION -->
+<!-- ======================= -->
+<section>
+<h2>Introduction</h2>
+
+<p>
+Logarithms are the inverse of exponential functions. While exponentials involve repeated multiplication, logarithms allow us to express those relationships using addition and subtraction.
+</p>
+
+<p>
+For example, an expression like \(x^3y^2\) represents multiplication and powers. Using logarithms, we can separate this structure into simpler pieces that are easier to analyze.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Logarithms transform multiplication into addition and exponents into multiplication.
+</div>
+
+<p>
+This transformation makes logarithms a powerful tool for simplifying expressions and solving equations.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+<h2>Connections</h2>
+
+<div class="key-point">
+<strong>Prior Knowledge:</strong>
+<ul style="margin-left:20px;">
+<li>Exponent rules: \(a^m \cdot a^n = a^{m+n}\)</li>
+<li>Factoring and simplifying expressions</li>
+<li>Understanding inverse relationships</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Cross-Disciplinary Connections:</strong>
+<ul style="margin-left:20px;">
+<li>Science: pH scale and logarithmic measurements</li>
+<li>Earth Science: earthquake magnitude (Richter scale)</li>
+<li>Computer Science: logarithmic growth rates</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Real-World Applications:</strong>
+<ul style="margin-left:20px;">
+<li>Sound intensity (decibels)</li>
+<li>Population growth models</li>
+<li>Data scaling and compression</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- HISTORY -->
+<!-- ======================= -->
+<section>
+<h2>History</h2>
+
+<p>
+Logarithms were developed in the early 1600s by John Napier to simplify calculations involving large numbers. Before calculators, they allowed multiplication and division to be replaced with addition and subtraction.
+</p>
+
+<p>
+Henry Briggs later refined logarithms into the base-10 system, making them more practical for scientific use. Natural logarithms, based on the constant \(e\), emerged through the study of growth and calculus.
+</p>
+
+<p>
+Today, logarithms are essential in mathematics, science, and engineering wherever exponential relationships appear.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+
+    <h2>Key Concepts</h2>
+    
+    <!-- ===== CONCEPT 1 ===== -->
+    <div class="problem">
+    <h3>Logarithms and Exponents</h3>
+    
+    <p>
+    A logarithm answers the question: “What exponent produces a given value?”
+    </p>
+    
+    <div class="definition">
+    $$ \log_b(x) = y \iff b^y = x $$
+    </div>
+    
+    <p>
+    This inverse relationship connects logarithms directly to exponent rules.
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Logarithm properties come from exponent rules.
+    </div>
+    </div>
+    
+    
+    <!-- ===== CONCEPT 2 ===== -->
+    <div class="problem">
+    <h3>Product Rule</h3>
+    
+    <p>
+    Multiplication inside a logarithm becomes addition.
+    </p>
+    
+    <div class="definition">
+    $$ \log(xy) = \log x + \log y $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \log(3x) = \log 3 + \log x $$
+    </div>
+    
+    
+    <!-- ===== CONCEPT 3 ===== -->
+    <div class="problem">
+    <h3>Quotient Rule</h3>
+    
+    <p>
+    Division inside a logarithm becomes subtraction.
+    </p>
+    
+    <div class="definition">
+    $$ \log\left(\frac{x}{y}\right) = \log x - \log y $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \log\left(\frac{5x}{y}\right) = \log 5 + \log x - \log y $$
+    </div>
+    
+    
+    <!-- ===== CONCEPT 4 ===== -->
+    <div class="problem">
+    <h3>Power Rule</h3>
+    
+    <p>
+    Exponents inside a logarithm become coefficients.
+    </p>
+    
+    <div class="definition">
+    $$ \log(x^n) = n\log x $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \log(x^4) = 4\log x $$
+    
+    <p>
+    This also applies to roots and fractional exponents.
+    </p>
+    
+    <p><strong>Example:</strong></p>
+    $$ \log(\sqrt{x}) = \frac{1}{2}\log x $$
+    </div>
+    
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== CONCEPT 5 ===== -->
+    <div class="problem">
+    <h3>Expanding Expressions</h3>
+    
+    <p>
+    To expand, apply the product, quotient, and power rules step-by-step.
+    </p>
+    
+    <p><strong>Example:</strong></p>
+    
+    $$ \log\left(\frac{2x^3y}{z}\right) $$
+    
+    $$ = \log 2 + 3\log x + \log y - \log z $$
+    </div>
+    
+    
+    <!-- ===== CONCEPT 6 ===== -->
+    <div class="problem">
+    <h3>Condensing Expressions</h3>
+    
+    <p>
+    Condensing combines multiple logarithms into a single expression.
+    </p>
+    
+    <p><strong>Example:</strong></p>
+    
+    $$ 2\log x + \log y - \log z $$
+    
+    $$ = \log(x^2) + \log y - \log z $$
+    
+    $$ = \log\left(\frac{x^2y}{z}\right) $$
+    </div>
+    
+    
+    <!-- ===== CONCEPT 7 ===== -->
+    <div class="problem">
+    <h3>Restrictions on Logarithms</h3>
+    
+    <div class="definition">
+    $$ x > 0 $$
+    </div>
+    
+    <p>
+    The argument of a logarithm must always be positive.
+    </p>
+    
+    <div class="key-point">
+    <strong>Important:</strong> Logarithm properties do not apply to addition or subtraction.
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    
+    $$ \log(x+y) \neq \log x + \log y $$
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Logarithm:</strong>
+    <p>An expression that represents the exponent needed to produce a value.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Product Rule:</strong>
+    <p>A property that rewrites multiplication inside a logarithm as addition.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Quotient Rule:</strong>
+    <p>A property that rewrites division inside a logarithm as subtraction.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Power Rule:</strong>
+    <p>A property that moves exponents in front of the logarithm as coefficients.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Expand:</strong>
+    <p>Rewrite a logarithmic expression as a sum or difference of logarithms.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Condense:</strong>
+    <p>Rewrite multiple logarithms as a single logarithmic expression.</p>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Expanding Logarithmic Expressions:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Identify multiplication, division, and powers inside the logarithm</li>
+    <li>Apply product and quotient rules first</li>
+    <li>Apply the power rule last</li>
+    <li>Expand completely</li>
+    </ol>
+    
+    <p style="margin-top:15px;"><strong>Condensing Logarithmic Expressions:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Rewrite coefficients as exponents</li>
+    <li>Combine using the product rule</li>
+    <li>Apply the quotient rule if needed</li>
+    <li>Write the final answer as a single logarithm</li>
+    </ol>
+    
+    </div>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Expanding breaks expressions apart. Condensing builds them back together.
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- EXAMPLES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Examples</h2>
+    
+    <!-- ===== PAGE 1 ===== -->
+    <div class="problem">
+    <h3>Example 1 — Product Rule</h3>
+    <div class="prompt">Expand the expression.</div>
+    $$ \log(6x) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 2 — Quotient Rule</h3>
+    <div class="prompt">Expand the expression.</div>
+    $$ \log\left(\frac{x}{4}\right) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- ===== PAGE 2 ===== -->
+    <div class="problem">
+    <h3>Example 3 — Power Rule</h3>
+    <div class="prompt">Expand the expression.</div>
+    $$ \log(x^5) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 4 — Multiple Properties</h3>
+    <div class="prompt">Expand completely.</div>
+    $$ \log\left(\frac{3x^2y}{z}\right) $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- ===== PAGE 3 ===== -->
+    <div class="problem">
+    <h3>Example 5 — Condensing</h3>
+    <div class="prompt">Condense into a single logarithm.</div>
+    $$ \log x + \log y $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 6 — Condensing with Powers</h3>
+    <div class="prompt">Condense into a single logarithm.</div>
+    $$ 2\log x - \log y $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- ===== PAGE 4 ===== -->
+    <div class="problem">
+    <h3>Example 7 — Complex Expression</h3>
+    <div class="prompt">Condense into a single logarithm.</div>
+    $$ 3\log x + \log y - 2\log z $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Trying to split addition inside a logarithm:</strong><br>
+    $$ \log(x+y) \neq \log x + \log y $$
+    </li>
+    
+    <li>
+    <strong>Forgetting to apply the power rule:</strong><br>
+    Students often leave exponents inside instead of bringing them out.
+    </li>
+    
+    <li>
+    <strong>Incorrect order of expansion:</strong><br>
+    Apply product and quotient rules before the power rule.
+    </li>
+    
+    <li>
+    <strong>Dropping coefficients when condensing:</strong><br>
+    $$ 2\log x \neq \log x $$
+    </li>
+    
+    <li>
+    <strong>Not rewriting coefficients as exponents:</strong><br>
+    Must convert before combining logs.
+    </li>
+    
+    <li>
+    <strong>Combining logs incorrectly:</strong><br>
+    Multiplication and division only — not addition or subtraction.
+    </li>
+    
+    <li>
+    <strong>Ignoring domain restrictions:</strong><br>
+    Logarithms are only defined for positive arguments.
+    </li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Logarithms are the inverse of exponential functions.</li>
+    
+    <li>Product rule converts multiplication into addition.</li>
+    
+    <li>Quotient rule converts division into subtraction.</li>
+    
+    <li>Power rule converts exponents into coefficients.</li>
+    
+    <li>Expanding breaks expressions apart into simpler terms.</li>
+    
+    <li>Condensing combines expressions into a single logarithm.</li>
+    
+    <li>Logarithm properties do not apply to addition or subtraction inside the argument.</li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- PRACTICE SET -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1 ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <div class="problem">
+    <p>1. Expand the expression.</p>
+    $$ \log(2x) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>2. Expand the expression.</p>
+    $$ \log\left(\frac{x}{5}\right) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>3. Expand the expression.</p>
+    $$ \log(x^3) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>4. Condense the expression.</p>
+    $$ \log a + \log b $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>5. Condense the expression.</p>
+    $$ 2\log x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 2 ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <div class="problem">
+    <p>6. Expand completely.</p>
+    $$ \log(4x^2) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>7. Expand completely.</p>
+    $$ \log\left(\frac{3x^2}{y}\right) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>8. Condense into a single logarithm.</p>
+    $$ \log x + 2\log y $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>9. Condense into a single logarithm.</p>
+    $$ 3\log x - \log y $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>10. Expand completely.</p>
+    $$ \log(x^2y^3) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 3 ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <div class="problem">
+    <p>11. Expand completely.</p>
+    $$ \log\left(\frac{5x^3y}{z}\right) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>12. Expand completely.</p>
+    $$ \log\left(\frac{2a^4}{b^2c}\right) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>13. Condense into a single logarithm.</p>
+    $$ 2\log x + 3\log y - \log z $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>14. Condense into a single logarithm.</p>
+    $$ \log a + 2\log b - 3\log c $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>15. Rewrite and expand.</p>
+    $$ \log(\sqrt{x}) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 4 ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <div class="problem">
+    <p>16. Expand completely.</p>
+    $$ \log\left(\frac{6x^4y^2}{z^3}\right) $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>17. Condense into a single logarithm.</p>
+    $$ 4\log x + 2\log y - 3\log z $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>18. Expand completely.</p>
+    $$ \log(x^3y^2z^4) $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>19. Condense into a single logarithm.</p>
+    $$ 2\log a + \log b - \log c $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>20. Rewrite and expand.</p>
+    $$ \log\left(\frac{\sqrt{x}}{y^2}\right) $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 5 ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <div class="problem">
+    <p>21. Explain why logarithms turn multiplication into addition.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>22. Explain why the power rule works.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>23. Explain why \( \log(x+y) \neq \log x + \log y \).</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>24. Explain how exponent rules connect to logarithm properties.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>25. Describe the process for condensing logarithmic expressions.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    <p>1. $\log 2 + \log x$</p>
+    <p>2. $\log x - \log 5$</p>
+    <p>3. $3\log x$</p>
+    <p>4. $\log(ab)$</p>
+    <p>5. $\log(x^2)$</p>
+    
+    <h3>Level 2 — Medium</h3>
+    <p>6. $\log 4 + 2\log x$</p>
+    <p>7. $\log 3 + 2\log x - \log y$</p>
+    <p>8. $\log(xy^2)$</p>
+    <p>9. $\log\left(\frac{x^3}{y}\right)$</p>
+    <p>10. $2\log x + 3\log y$</p>
+    
+    <h3>Level 3 — Hard</h3>
+    <p>11. $\log 5 + 3\log x + \log y - \log z$</p>
+    <p>12. $\log 2 + 4\log a - 2\log b - \log c$</p>
+    <p>13. $\log\left(\frac{x^2y^3}{z}\right)$</p>
+    <p>14. $\log\left(\frac{ab^2}{c^3}\right)$</p>
+    <p>15. $\frac{1}{2}\log x$</p>
+    
+    <h3>Level 4 — Challenging</h3>
+    <p>16. $\log 6 + 4\log x + 2\log y - 3\log z$</p>
+    <p>17. $\log\left(\frac{x^4y^2}{z^3}\right)$</p>
+    <p>18. $3\log x + 2\log y + 4\log z$</p>
+    <p>19. $\log\left(\frac{a^2b}{c}\right)$</p>
+    <p>20. $\frac{1}{2}\log x - 2\log y$</p>
+    
+    <h3>Level 5 — Justification</h3>
+    <p>21–25. Answers vary (conceptual)</p>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- DETAILED EXAMPLE SOLUTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <div class="problem">
+    <h3>Example 1 — Product Rule</h3>
+    
+    $$ \log(6x) $$
+    
+    <p>
+    Apply the product rule:
+    </p>
+    
+    $$ = \log 6 + \log x $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <div class="problem">
+    <h3>Example 2 — Quotient Rule</h3>
+    
+    $$ \log\left(\frac{x}{4}\right) $$
+    
+    <p>
+    Apply the quotient rule:
+    </p>
+    
+    $$ = \log x - \log 4 $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <div class="problem">
+    <h3>Example 3 — Power Rule</h3>
+    
+    $$ \log(x^5) $$
+    
+    <p>
+    Apply the power rule:
+    </p>
+    
+    $$ = 5\log x $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <div class="problem">
+    <h3>Example 4 — Multiple Properties</h3>
+    
+    $$ \log\left(\frac{3x^2y}{z}\right) $$
+    
+    <p>
+    Apply rules step-by-step:
+    </p>
+    
+    $$ = \log 3 + 2\log x + \log y - \log z $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <div class="problem">
+    <h3>Example 5 — Condensing</h3>
+    
+    $$ \log x + \log y $$
+    
+    <p>
+    Apply product rule:
+    </p>
+    
+    $$ = \log(xy) $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <div class="problem">
+    <h3>Example 6 — Condensing with Powers</h3>
+    
+    $$ 2\log x - \log y $$
+    
+    <p>
+    Rewrite coefficient and combine:
+    </p>
+    
+    $$ = \log(x^2) - \log y $$
+    
+    $$ = \log\left(\frac{x^2}{y}\right) $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <div class="problem">
+    <h3>Example 7 — Complex Expression</h3>
+    
+    $$ 3\log x + \log y - 2\log z $$
+    
+    <p>
+    Rewrite coefficients:
+    </p>
+    
+    $$ = \log(x^3) + \log y - \log(z^2) $$
+    
+    <p>
+    Combine:
+    </p>
+    
+    $$ = \log\left(\frac{x^3y}{z^2}\right) $$
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- SUPPLEMENTAL NOTES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Supplemental Notes</h2>
+    
+    <div class="problem">
+    <p>This section is reserved for additional notes, examples, or extensions.</p>
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    </section>
+
+</div>
+</body>
+</html>
