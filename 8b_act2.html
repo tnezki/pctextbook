@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>8.B Numbered Heads Together</title>
+
+<!--
+==================================================
+TEMPLATE NOTES (DO NOT DELETE)
+==================================================
+This is the LOCKED Numbered Heads Together template.
+
+RULES:
+1. Title + Directions layout MUST match Tarsia template EXACTLY.
+2. ONLY change text content, NEVER structure.
+3. Problem/Answer slides MUST match 9E style:
+   - Header bar (Problem X / Answer X)
+   - Large readable math
+4. Pattern:
+   Problem page -> Answer page (repeat)
+5. 16 total problems (4 per level)
+6. Keep MathJax formatting
+==================================================
+-->
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+/* ===== BASE PRINT SYSTEM ===== */
+html, body { margin:0; padding:0; }
+@page { size: letter; margin: 0.25in; }
+
+body{
+  font-family:'DM Sans', sans-serif;
+  color:#1a1a2e;
+}
+
+.page{
+  width:8in;
+  height:10.5in;
+  margin:0 auto;
+}
+
+@media print{
+  .page{page-break-after:always;}
+}
+
+/* ===== TITLE PAGE ===== */
+.title-half{
+  height:5in;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.title-half::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#1e3a8a,#1d4ed8);
+}
+
+.title-content{
+  position:relative;
+  text-align:center;
+  color:#fff;
+}
+
+.section-number{ font-size:82px; font-weight:900; }
+.section-title{ font-size:34px; }
+.activity{ margin-top:12px; font-size:16px; }
+
+/* ===== DIRECTIONS (LOCKED STRUCTURE) ===== */
+.content-wrap{ width:8in; }
+
+.header{
+  background:#2f4a8a;
+  color:white;
+  font-size:22px;
+  font-weight:700;
+  padding:8px 12px;
+}
+
+.content{
+  padding:10px 12px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  margin-top:10px;
+  border:1px solid #cbd5e1;
+}
+
+.box{ padding:10px; }
+.success{ background:#dfeee5; border-right:1px solid #cbd5e1; }
+.avoid{ background:#f1e1e1; }
+
+/* ===== PROBLEM SLIDES (LOCKED STYLE) ===== */
+.problem-page{ font-family:'Times New Roman', Times, serif; }
+.problem-content{ font-size:22px; padding:20px; }
+.math{ margin-top:10px; font-size:26px; }
+.hint{ font-size:17px; margin-top:12px; color:#444; font-style:italic; }
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= TITLE PAGE ================= -->
+<div class="page">
+  <div class="title-half">
+    <div class="title-content">
+      <div class="section-number">8.B</div>
+      <div class="section-title">Operations with Rational Expressions</div>
+      <div class="activity">Whiteboard Partners</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DIRECTIONS PAGE ================= -->
+<div class="page">
+  <div class="content-wrap">
+
+    <div class="header">Whiteboard Partners</div>
+
+    <div class="content">
+
+      <div style="margin-bottom:6px;">
+        <strong style="color:#2f4a8a;">Setup:</strong>
+        Work with your partner. One whiteboard and one marker between you.
+      </div>
+
+      <ul style="margin-left:20px;">
+        <li>Both partners stay engaged — no one is off-task at any point.</li>
+        <li>Take turns writing. Alternate who holds the marker each problem.</li>
+        <li>The partner who isn't writing checks each step and verifies the work.</li>
+        <li>Write large and clearly — your work should be readable from across the room.</li>
+        <li>Stay with your partner. No phones.</li>
+        <li>Use your resources: ask your partner first, then the teacher. Do not copy.</li>
+        <li>Mistakes are part of learning — fix them together and discuss what went wrong.</li>
+      </ul>
+
+      <div class="grid">
+
+        <div class="box success">
+          <strong>✓ Looks Like Success</strong>
+          <ul style="padding-left:18px;">
+            <li>Both partners actively writing or checking</li>
+            <li>Clear, large work visible from a distance</li>
+            <li>Talking through errors together before erasing</li>
+          </ul>
+        </div>
+
+        <div class="box avoid">
+          <strong>✗ What to Avoid</strong>
+          <ul style="padding-left:18px;">
+            <li>One person doing all the writing while the other watches</li>
+            <li>Work too small or messy to read from your seat</li>
+            <li>Copying from another group without understanding</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= PROBLEMS ================= -->
+
+<!-- ===== LEVEL 1 — Simplify: trinomial numerator or denominator ===== -->
+
+<div class="page problem-page">
+  <div class="header">Problem 1</div>
+  <div class="problem-content">
+    Simplify and state all restrictions:
+    <div class="math">$$\frac{x^2 + 5x + 6}{x + 3}$$</div>
+    <div class="hint">Factor the numerator first.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 1</div>
+  <div class="problem-content">
+    $x^2 + 5x + 6 = (x+2)(x+3)$
+    $$\frac{(x+2)(x+3)}{x+3} = x + 2, \quad x \ne -3$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 2</div>
+  <div class="problem-content">
+    Simplify and state all restrictions:
+    <div class="math">$$\frac{x^2 - 7x + 12}{x^2 - 9}$$</div>
+    <div class="hint">Factor both numerator and denominator.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 2</div>
+  <div class="problem-content">
+    $x^2 - 7x + 12 = (x-3)(x-4)$ &nbsp;&nbsp; $x^2-9=(x-3)(x+3)$
+    $$\frac{x - 4}{x + 3}, \quad x \ne \pm 3$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 3</div>
+  <div class="problem-content">
+    Simplify and state all restrictions:
+    <div class="math">$$\frac{x^2 + x - 6}{x^2 - 4}$$</div>
+    <div class="hint">Both are factorable — one is a trinomial, one is a difference of squares.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 3</div>
+  <div class="problem-content">
+    $x^2+x-6=(x+3)(x-2)$ &nbsp;&nbsp; $x^2-4=(x+2)(x-2)$
+    $$\frac{x + 3}{x + 2}, \quad x \ne \pm 2$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 4</div>
+  <div class="problem-content">
+    Simplify and state all restrictions:
+    <div class="math">$$\frac{2x^2 + 7x + 3}{2x + 1}$$</div>
+    <div class="hint">Factor the numerator — leading coefficient is 2.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 4</div>
+  <div class="problem-content">
+    $2x^2 + 7x + 3 = (2x+1)(x+3)$
+    $$\frac{(2x+1)(x+3)}{2x+1} = x + 3, \quad x \ne -\tfrac{1}{2}$$
+  </div>
+</div>
+
+<!-- ===== LEVEL 2 — Multiply and Divide: trinomial factoring required ===== -->
+
+<div class="page problem-page">
+  <div class="header">Problem 5</div>
+  <div class="problem-content">
+    Multiply:
+    <div class="math">$$\frac{x^2 - x - 6}{x^2 - 9} \cdot \frac{x + 3}{x + 2}$$</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 5</div>
+  <div class="problem-content">
+    $x^2-x-6=(x-3)(x+2)$ &nbsp;&nbsp; $x^2-9=(x-3)(x+3)$
+    $$\frac{(x-3)(x+2)}{(x-3)(x+3)} \cdot \frac{x+3}{x+2} = 1, \quad x \ne \pm3,\,-2$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 6</div>
+  <div class="problem-content">
+    Multiply:
+    <div class="math">$$\frac{x^2 + 3x - 10}{x^2 - 4} \cdot \frac{x - 2}{x + 5}$$</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 6</div>
+  <div class="problem-content">
+    $x^2+3x-10=(x+5)(x-2)$ &nbsp;&nbsp; $x^2-4=(x+2)(x-2)$
+    $$\frac{(x+5)(x-2)}{(x+2)(x-2)} \cdot \frac{x-2}{x+5} = \frac{x-2}{x+2}, \quad x \ne \pm2,\,-5$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 7</div>
+  <div class="problem-content">
+    Divide:
+    <div class="math">$$\frac{x^2 - 2x - 8}{x^2 - 16} \div \frac{x + 2}{x + 4}$$</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 7</div>
+  <div class="problem-content">
+    $x^2-2x-8=(x-4)(x+2)$ &nbsp;&nbsp; $x^2-16=(x-4)(x+4)$
+    $$\frac{(x-4)(x+2)}{(x-4)(x+4)} \cdot \frac{x+4}{x+2} = 1, \quad x \ne \pm4,\,-2$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 8</div>
+  <div class="problem-content">
+    Divide:
+    <div class="math">$$\frac{2x^2 + x - 6}{x^2 - 4} \div \frac{2x - 3}{x - 2}$$</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 8</div>
+  <div class="problem-content">
+    $2x^2+x-6=(2x-3)(x+2)$ &nbsp;&nbsp; $x^2-4=(x+2)(x-2)$
+    $$\frac{(2x-3)(x+2)}{(x+2)(x-2)} \cdot \frac{x-2}{2x-3} = 1, \quad x \ne \pm2,\,\tfrac{3}{2}$$
+  </div>
+</div>
+
+<!-- ===== LEVEL 3 — Add and Subtract: factor denominators (trinomials) ===== -->
+
+<div class="page problem-page">
+  <div class="header">Problem 9</div>
+  <div class="problem-content">
+    Add:
+    <div class="math">$$\frac{3}{x^2 + 5x + 6} + \frac{1}{x + 2}$$</div>
+    <div class="hint">Factor the first denominator to find the LCD.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 9</div>
+  <div class="problem-content">
+    $x^2+5x+6=(x+2)(x+3)$ &nbsp;&nbsp; LCD $= (x+2)(x+3)$
+    $$\frac{3 + (x+3)}{(x+2)(x+3)} = \frac{x+6}{(x+2)(x+3)}, \quad x \ne -2,\,-3$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 10</div>
+  <div class="problem-content">
+    Subtract:
+    <div class="math">$$\frac{x}{x^2 - x - 6} - \frac{2}{x - 3}$$</div>
+    <div class="hint">Factor the first denominator: it's a trinomial.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 10</div>
+  <div class="problem-content">
+    $x^2-x-6=(x-3)(x+2)$ &nbsp;&nbsp; LCD $= (x-3)(x+2)$
+    $$\frac{x - 2(x+2)}{(x-3)(x+2)} = \frac{-x-4}{(x-3)(x+2)}, \quad x \ne 3,\,-2$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 11</div>
+  <div class="problem-content">
+    Add:
+    <div class="math">$$\frac{2}{x + 1} + \frac{x}{x^2 + 3x + 2}$$</div>
+    <div class="hint">Factor the second denominator to find the LCD.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 11</div>
+  <div class="problem-content">
+    $x^2+3x+2=(x+1)(x+2)$ &nbsp;&nbsp; LCD $= (x+1)(x+2)$
+    $$\frac{2(x+2) + x}{(x+1)(x+2)} = \frac{3x+4}{(x+1)(x+2)}, \quad x \ne -1,\,-2$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 12</div>
+  <div class="problem-content">
+    Subtract:
+    <div class="math">$$\frac{4}{x - 2} - \frac{3}{x^2 - 5x + 6}$$</div>
+    <div class="hint">Factor the second denominator — it shares a factor with the first.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 12</div>
+  <div class="problem-content">
+    $x^2-5x+6=(x-2)(x-3)$ &nbsp;&nbsp; LCD $= (x-2)(x-3)$
+    $$\frac{4(x-3) - 3}{(x-2)(x-3)} = \frac{4x-15}{(x-2)(x-3)}, \quad x \ne 2,\,3$$
+  </div>
+</div>
+
+<!-- ===== LEVEL 4 — Multi-Step: combine operations, leading coefficients, full complexity ===== -->
+
+<div class="page problem-page">
+  <div class="header">Problem 13</div>
+  <div class="problem-content">
+    Simplify completely:
+    <div class="math">$$\frac{2x^2 + 5x - 3}{x^2 - 9} \cdot \frac{x + 3}{2x - 1}$$</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 13</div>
+  <div class="problem-content">
+    $2x^2+5x-3=(2x-1)(x+3)$ &nbsp;&nbsp; $x^2-9=(x-3)(x+3)$
+    $$\frac{(2x-1)(x+3)}{(x-3)(x+3)} \cdot \frac{x+3}{2x-1} = \frac{x+3}{x-3}, \quad x \ne \pm3,\,\tfrac{1}{2}$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 14</div>
+  <div class="problem-content">
+    Simplify completely:
+    <div class="math">$$\frac{3x^2 - 5x - 2}{x^2 + x - 6} \div \frac{3x + 1}{x - 2}$$</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 14</div>
+  <div class="problem-content">
+    $3x^2-5x-2=(3x+1)(x-2)$ &nbsp;&nbsp; $x^2+x-6=(x+3)(x-2)$
+    $$\frac{(3x+1)(x-2)}{(x+3)(x-2)} \cdot \frac{x-2}{3x+1} = \frac{x-2}{x+3}, \quad x \ne 2,\,-3,\,-\tfrac{1}{3}$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 15</div>
+  <div class="problem-content">
+    Add:
+    <div class="math">$$\frac{x+1}{x^2 - x - 2} + \frac{2}{x^2 + x - 6}$$</div>
+    <div class="hint">Factor both denominators — they share a common factor.</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 15</div>
+  <div class="problem-content">
+    $x^2-x-2=(x-2)(x+1)$ &nbsp;&nbsp; $x^2+x-6=(x-2)(x+3)$
+    <br>LCD $= (x-2)(x+1)(x+3)$
+    $$\frac{(x+1)(x+3) + 2(x+1)}{(x-2)(x+1)(x+3)} = \frac{(x+1)(x+5)}{(x-2)(x+1)(x+3)}$$
+    $$= \frac{x+5}{(x-2)(x+3)}, \quad x \ne 2,\,-1,\,-3$$
+  </div>
+</div>
+
+<div class="page problem-page">
+  <div class="header">Problem 16</div>
+  <div class="problem-content">
+    Simplify completely:
+    <div class="math">$$\frac{x^2 + 2x - 15}{x^2 - 2x - 3} \div \frac{x^2 - 25}{x^2 + 4x + 3}$$</div>
+  </div>
+</div>
+<div class="page problem-page">
+  <div class="header">Answer 16</div>
+  <div class="problem-content">
+    $x^2+2x-15=(x+5)(x-3)$ &nbsp;&nbsp; $x^2-2x-3=(x-3)(x+1)$
+    <br>$x^2-25=(x+5)(x-5)$ &nbsp;&nbsp; $x^2+4x+3=(x+1)(x+3)$
+    $$\frac{(x+5)(x-3)}{(x-3)(x+1)} \cdot \frac{(x+1)(x+3)}{(x+5)(x-5)} = \frac{x+3}{x-5}$$
+    $$x \ne \pm5,\,3,\,-1,\,-3$$
+  </div>
+</div>
+
+</body>
+</html>
