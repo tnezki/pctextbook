@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section X.X</title>
+
+<!-- ======================= -->
+<!-- MATHJAX -->
+<!-- ======================= -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ======================= -->
+<!-- STYLES (FINAL LOCKED SYSTEM) -->
+<!-- ======================= -->
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* PAGE */
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* PRINT COLOR FIX */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* PAGE BREAK CONTROL */
+.page-break{
+  page-break-before: always;
+}
+
+/* HEADINGS */
+h1{
+  color:#00003d;
+  font-size:2.5em;
+  margin-bottom:20px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* TEXT */
+.intro-text{
+  font-size:1.05em;
+  color:#555;
+  margin-bottom:10px;
+  font-style:italic;
+}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:italic;
+}
+
+/* BOXES */
+
+/* Learning Targets */
+.objectives{
+  background:#f0f4f8;
+  padding:20px;
+  border-radius:6px;
+}
+
+/* Vocabulary + Definitions */
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Key Points + Connections */
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Strategies */
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Summary */
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* WORKSPACE SYSTEM */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+/* GRAPH IMAGE SUPPORT */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* PROBLEM BLOCK (EXAMPLES + PRACTICE) */
+.problem{
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom:10px;
+}
+
+/* SECTIONS */
+section{
+  margin-bottom:30px;
+}
+
+</style>
+</head>
+
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>10.D Logarithmic Equations with Extraneous Solutions</h1>
+
+<div class="intro-text">
+Logarithmic equations often produce multiple solutions when solved algebraically, but not all of those solutions are valid.
+</div>
+
+<div class="intro-text">
+Understanding domain restrictions and checking solutions is essential to identifying extraneous solutions.
+</div>
+
+<div class="inspirational">
+“Not every solution is a valid solution — always check.”
+</div>
+
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can solve logarithmic equations involving multiple terms.</p>
+<p>I can solve quadratic logarithmic equations.</p>
+<p>I can identify extraneous solutions.</p>
+<p>I can verify solutions using domain restrictions.</p>
+</div>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- INTRODUCTION -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Introduction</h2>
+
+<p>
+When solving logarithmic equations, algebraic steps such as combining expressions or rewriting equations can introduce solutions that do not satisfy the original equation.
+</p>
+
+<p>
+Because logarithms are only defined for positive values, every solution must be checked against domain restrictions.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Solving logarithmic equations requires checking all solutions for validity.
+</div>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Connections</h2>
+
+<div class="key-point">
+<strong>Prior Knowledge:</strong>
+<ul style="margin-left:20px;">
+<li>Logarithmic properties</li>
+<li>Solving quadratic equations</li>
+<li>Domain restrictions</li>
+</ul>
+</div>
+</div>
+
+<div class="key-point">
+<strong>Cross-Disciplinary Connections:</strong>
+<ul style="margin-left:20px;">
+<li>Science: equations involving decay and concentration</li>
+<li>Engineering: solving systems with constraints</li>
+<li>Computer Science: handling invalid inputs</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Real-World Applications:</strong>
+<ul style="margin-left:20px;">
+<li>Population models with constraints</li>
+<li>Chemical concentration limits</li>
+<li>Financial models with restricted domains</li>
+</ul>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- HISTORY -->
+<!-- ======================= -->
+<section>
+
+<h2>History</h2>
+
+<p>
+As logarithmic methods developed, mathematicians observed that algebraic manipulation could produce solutions that were not valid within the original context.
+</p>
+
+<p>
+This led to the concept of extraneous solutions — results that must be tested and sometimes rejected.
+</p>
+
+<p>
+Today, checking solutions is a standard part of solving logarithmic equations.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+
+    <div class="problem">
+    <h2>Key Concepts</h2>
+    
+    <h3>Domain Restrictions</h3>
+    
+    <p>
+    Logarithmic expressions are only defined when their arguments are positive.
+    </p>
+    
+    <div class="definition">
+    $$ x > 0 $$
+    </div>
+    
+    <p>
+    This restriction must be applied before solving any logarithmic equation.
+    </p>
+    
+    <div class="key-point">
+    <strong>Important:</strong> Values that make a logarithm undefined are not valid solutions.
+    </div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Checking Solutions</h3>
+    
+    <p>
+    After solving, all solutions must be checked in the original equation.
+    </p>
+    
+    <div class="definition">
+    $$ \log(x-1) \Rightarrow x>1 $$
+    </div>
+    
+    <p>
+    Any solution that violates this condition must be rejected.
+    </p>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Combining Logarithms</h3>
+    
+    <p>
+    Logarithmic equations often require combining expressions before solving.
+    </p>
+    
+    <div class="definition">
+    $$ \log x + \log(x-2) = \log 8 $$
+    </div>
+    
+    <p>
+    Combine:
+    </p>
+    
+    $$ \log[x(x-2)] = \log 8 $$
+    
+    $$ x(x-2)=8 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Quadratic Structure</h3>
+    
+    <p>
+    After combining logarithms, the resulting equation is often quadratic.
+    </p>
+    
+    <div class="definition">
+    $$ x^2 - 2x - 8 = 0 $$
+    </div>
+    
+    <p>
+    Solve using factoring or the quadratic formula.
+    </p>
+    
+    $$ (x-4)(x+2)=0 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Extraneous Solutions</h3>
+    
+    <p>
+    Some solutions obtained algebraically are not valid in the original equation.
+    </p>
+    
+    <div class="definition">
+    $$ x=4,\ -2 $$
+    </div>
+    
+    <p>
+    Check domain:
+    </p>
+    
+    <ul style="margin-left:20px;">
+    <li>\(x=4\) is valid</li>
+    <li>\(x=-2\) is invalid</li>
+    </ul>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Extraneous solutions occur when algebra ignores domain restrictions.
+    </div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Rational Logarithmic Equations</h3>
+    
+    <p>
+    Subtracting logarithms creates rational expressions.
+    </p>
+    
+    <div class="definition">
+    $$ \log(x-1) - \log(x-3) = \log 2 $$
+    </div>
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ \log\left(\frac{x-1}{x-3}\right)=\log 2 $$
+    
+    $$ \frac{x-1}{x-3}=2 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Opposing Domains</h3>
+    
+    <p>
+    Some equations create restrictions from both sides.
+    </p>
+    
+    <div class="definition">
+    $$ \log(x-2)=\log(6-x) $$
+    </div>
+    
+    <p>
+    Solve:
+    </p>
+    
+    $$ x-2 = 6-x $$
+    
+    $$ x=4 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Squared Arguments</h3>
+    
+    <p>
+    Equations involving squared expressions can produce multiple solutions.
+    </p>
+    
+    <div class="definition">
+    $$ \ln(x^2-4)=2 $$
+    </div>
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ x^2-4 = e^2 $$
+    
+    $$ x = \pm\sqrt{e^2+4} $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Validating All Solutions</h3>
+    
+    <p>
+    Each solution must be checked against domain restrictions.
+    </p>
+    
+    <div class="definition">
+    $$ x^2 - 4 > 0 $$
+    </div>
+    
+    <p>
+    Only values that satisfy the inequality are valid.
+    </p>
+    
+    <div class="key-point">
+    <strong>Final Rule:</strong> Solve → Check → Reject invalid solutions.
+    </div>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <div class="problem">
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Extraneous Solution:</strong>
+    <p>A solution obtained algebraically that does not satisfy the original equation.</p>
+    </div>
+    </div>
+    
+    <div class="definition">
+    <strong>Domain Restriction:</strong>
+    <p>A condition that limits allowable values of a variable.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Quadratic Log Equation:</strong>
+    <p>An equation that becomes quadratic after combining logarithmic expressions.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Valid Solution:</strong>
+    <p>A solution that satisfies both the equation and all domain restrictions.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Opposing Domains:</strong>
+    <p>Restrictions coming from both sides of an equation that limit possible solutions.</p>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <div class="problem">
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Solving Logarithmic Equations:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Identify domain restrictions first</li>
+    <li>Combine logarithms using properties</li>
+    <li>Rewrite as an exponential equation</li>
+    <li>Solve the resulting equation</li>
+    </ol>
+    
+    <p style="margin-top:15px;"><strong>Checking Solutions:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Substitute each solution into the original equation</li>
+    <li>Check domain restrictions</li>
+    <li>Reject any invalid solutions</li>
+    </ol>
+    
+    </div>
+    </div>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Solve → Check → Reject invalid solutions.
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- EXAMPLES -->
+    <!-- ======================= -->
+    <section>
+    
+    <div class="problem">
+    <h2>Examples</h2>
+    
+    <h3>Example 1 — Domain Restriction</h3>
+    <div class="prompt">State the domain.</div>
+    
+    $$ \log(x-3) $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Example 2 — Check a Solution</h3>
+    <div class="prompt">Determine if the value is valid.</div>
+    
+    $$ x=2 \quad \text{for } \log(x-2)=0 $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Example 3 — Quadratic Log Equation</h3>
+    <div class="prompt">Solve and check for extraneous solutions.</div>
+    
+    $$ \log(x-1)+\log(x-4)=\log 6 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Example 4 — Rational Log Equation</h3>
+    <div class="prompt">Solve and check for extraneous solutions.</div>
+    
+    $$ \log(x-1)-\log(x-3)=\log 2 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Example 5 — Opposing Domains</h3>
+    <div class="prompt">Solve and determine valid solutions.</div>
+    
+    $$ \log(x-2)=\log(6-x) $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Example 6 — Squared Argument</h3>
+    <div class="prompt">Solve and check for extraneous solutions.</div>
+    
+    $$ \ln(x^2-4)=2 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Example 7 — Multi-Step with Extraneous Solution</h3>
+    <div class="prompt">Solve and identify valid solutions.</div>
+    
+    $$ \log(x-2)+\log(x-3)=\log 4 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <div class="problem">
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Not checking solutions:</strong><br>
+    Extraneous solutions must always be rejected.
+    </li>
+    
+    <li>
+    <strong>Ignoring domain restrictions:</strong><br>
+    Logarithmic expressions require positive arguments.
+    </li>
+    
+    <li>
+    <strong>Incorrectly combining logs:</strong><br>
+    Forgetting product or quotient rules leads to errors.
+    </li>
+    
+    <li>
+    <strong>Algebra mistakes after combining:</strong><br>
+    Errors occur when solving resulting quadratic equations.
+    </li>
+    
+    <li>
+    <strong>Keeping invalid solutions:</strong><br>
+    Solutions violating the domain must be removed.
+    </li>
+    
+    <li>
+    <strong>Stopping too early:</strong><br>
+    Solving is not complete until checking is done.
+    </li>
+    
+    </ul>
+    
+    </div>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <div class="problem">
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Logarithmic equations can produce multiple solutions.</li>
+    <li>Domain restrictions must always be applied.</li>
+    <li>Combining logs often leads to quadratic equations.</li>
+    <li>Extraneous solutions arise from algebraic manipulation.</li>
+    <li>All solutions must be checked.</li>
+    
+    </ul>
+    
+    </div>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- PRACTICE SET -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- ===== LEVEL 1 ===== -->
+    <div class="problem">
+    <h2>Practice Set</h2>
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. State the domain.</p>
+    $$ \log(x-2) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>2. State the domain.</p>
+    $$ \ln(x+3) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>3. Check if valid.</p>
+    $$ x=3 \text{ for } \log(x-2)=0 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>4. Check if valid.</p>
+    $$ x=2 \text{ for } \log(x-2)=0 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>5. Identify restrictions.</p>
+    $$ \log(x-1)+\log(x-4) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 2 ===== -->
+    <div class="problem">
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. Solve and check.</p>
+    $$ \log(x-1)+\log(x-4)=\log 6 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>7. Solve and check.</p>
+    $$ \ln(x-2)+\ln(x-5)=\ln 6 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>8. Solve and check.</p>
+    $$ \log(x-1)-\log(x-3)=\log 2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>9. Solve and check.</p>
+    $$ \ln(x+2)-\ln(x-1)=\ln 3 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>10. Solve and check.</p>
+    $$ \log(x-2)-\log(x-5)=\log 4 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- ===== LEVEL 3 ===== -->
+<div class="problem">
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. Solve and check.</p>
+    $$ \log(x-2)+\log(x-5)=\log 6 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>12. Solve and check.</p>
+    $$ \ln(x-1)+\ln(x-4)=\ln 5 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>13. Solve and check.</p>
+    $$ \log(x-3)+\log(x-7)=\log 10 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>14. Solve and check.</p>
+    $$ \ln(x^2-4)=2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>15. Solve and check.</p>
+    $$ \log(x^2-9)=1 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 4 ===== -->
+    <div class="problem">
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. Solve and justify.</p>
+    $$ \log(x-2)+\log(x-6)=\log 8 $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>17. Solve and justify.</p>
+    $$ \ln(x-3)+\ln(x-5)=\ln 6 $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>18. Solve and justify.</p>
+    $$ \log(x-4)-\log(x-8)=\log 2 $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>19. Compare validity.</p>
+    $$ \log(x-3)=\log(5-x) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>20. Compare validity.</p>
+    $$ \ln(x+1)=\ln(3-x) $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 5 ===== -->
+    <div class="problem">
+    <h3>Level 5 — Conceptual</h3>
+    
+    <p>21. Explain why extraneous solutions occur.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>22. Explain how domain restrictions affect solutions.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>23. Explain why combining logs can create invalid solutions.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>24. Explain how quadratic structure appears.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>25. Explain why checking is required.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+
+    </section>
+    <!-- ======================= -->
+<!-- SUPPLEMENTAL NOTES -->
+<!-- ======================= -->
+<div class="page-break"></div>
+
+<section>
+
+<h2>Supplemental Notes</h2>
+
+<div class="problem"><div class="workspace workspace-600"></div></div>
+<div class="page-break"></div>
+
+<div class="problem"><div class="workspace workspace-600"></div></div>
+<div class="page-break"></div>
+
+<div class="problem"><div class="workspace workspace-600"></div></div>
+<div class="page-break"></div>
+
+<div class="problem"><div class="workspace workspace-600"></div></div>
+<div class="page-break"></div>
+
+<div class="problem"><div class="workspace workspace-600"></div></div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- PRACTICE ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Practice Answer Key</h2>
+
+<h3>Level 1</h3>
+<p>1. \(x>2\)</p>
+<p>2. \(x>-3\)</p>
+<p>3. Yes</p>
+<p>4. No</p>
+<p>5. \(x>4\)</p>
+
+<h3>Level 2</h3>
+<p>6. \(x=4\) (valid), other root extraneous</p>
+<p>7. \(x=5\) (valid), other root extraneous</p>
+<p>8. \(x=5\)</p>
+<p>9. \(x=\frac{5}{2}\)</p>
+<p>10. \(x=6\)</p>
+
+<h3>Level 3</h3>
+<p>11–13. Quadratic solutions, reject extraneous</p>
+<p>14–15. Both valid (symmetric structure)</p>
+
+<h3>Level 4</h3>
+<p>16–18. One valid, one extraneous</p>
+<p>19–20. Solve linear, check domain</p>
+
+<h3>Level 5</h3>
+<p>21–25. Answers vary</p>
+</div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- DETAILED EXAMPLE SOLUTIONS -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Detailed Example Solutions</h2>
+
+<h3>Example 3 — Quadratic Log Equation</h3>
+
+$$ \log(x-1)+\log(x-4)=\log 6 $$
+
+$$ \log[(x-1)(x-4)] = \log 6 $$
+
+$$ (x-1)(x-4)=6 $$
+
+$$ x^2 -5x -2 =0 $$
+
+$$ x=\frac{5\pm\sqrt{33}}{2} $$
+
+<p>
+Check both solutions:
+</p>
+
+<ul style="margin-left:20px;">
+<li>One satisfies domain → valid</li>
+<li>One violates domain → extraneous</li>
+</ul>
+</div>
+
+
+<div class="problem">
+<h3>Example 4 — Rational Log Equation</h3>
+
+$$ \log(x-1)-\log(x-3)=\log 2 $$
+
+$$ \log\left(\frac{x-1}{x-3}\right)=\log 2 $$
+
+$$ \frac{x-1}{x-3}=2 $$
+
+$$ x-1=2x-6 $$
+
+$$ x=5 $$
+
+<p>Check → valid</p>
+</div>
+
+
+<div class="problem">
+<h3>Example 5 — Opposing Domains</h3>
+
+$$ \log(x-2)=\log(6-x) $$
+
+$$ x-2=6-x $$
+
+$$ x=4 $$
+
+<p>
+Check domain → valid
+</p>
+</div>
+
+
+<div class="problem">
+<h3>Example 6 — Squared Argument</h3>
+
+$$ \ln(x^2-4)=2 $$
+
+$$ x^2-4 = e^2 $$
+
+$$ x = \pm\sqrt{e^2+4} $$
+
+<p>
+Check both → valid
+</p>
+</div>
+
+
+<div class="problem">
+<h3>Example 7 — Multi-Step with Extraneous Solution</h3>
+
+$$ \log(x-2)+\log(x-3)=\log 4 $$
+
+$$ \log[(x-2)(x-3)] = \log 4 $$
+
+$$ (x-2)(x-3)=4 $$
+
+$$ x^2-5x+2=0 $$
+
+$$ x=\frac{5\pm\sqrt{17}}{2} $$
+
+<p>
+Check solutions:
+</p>
+
+<ul style="margin-left:20px;">
+<li>One valid</li>
+<li>One extraneous</li>
+</ul>
+</div>
+
+</section>
+
+</div>
+</body>
+</html>

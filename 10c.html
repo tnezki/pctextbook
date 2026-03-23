@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 10.C: Solving Exponential and Logarithmic Equations</title>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+/* EXACT 9C CSS — NO CHANGES */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{max-width:900px;margin:auto;}
+
+.page-break{page-break-before:always;}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{color:#004d99;font-size:1.3em;margin-top:30px;margin-bottom:10px;}
+
+.intro-text{font-size:1.05em;color:#555;margin-bottom:10px;font-style:italic;}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+}
+
+.workspace{width:100%;margin-top:10px;}
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+section, .definition, .key-point, .strategy-box{
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+h3{
+  break-after:avoid;
+  page-break-after:avoid;
+}
+
+.workspace{
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+section{margin-bottom:30px;}
+
+.problem{
+  break-inside:avoid;
+  page-break-inside:avoid;
+  margin-bottom:10px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- TITLE -->
+<h1>10.C Solving Exponential and Logarithmic Equations</h1>
+
+<div class="intro-text">
+Exponential and logarithmic equations allow us to solve for unknown exponents and understand relationships involving growth, decay, and scaling.
+</div>
+
+<div class="intro-text">
+Solving these equations requires recognizing structure, rewriting expressions, and applying inverse relationships between exponential and logarithmic forms.
+</div>
+
+<div class="inspirational">
+“To solve exponential equations, reveal the structure. To solve logarithmic equations, reverse it.”
+</div>
+
+
+<!-- LEARNING TARGETS -->
+<section>
+<h2>Learning Targets</h2>
+
+<div class="objectives">
+<p>I can solve exponential equations by rewriting with a common base.</p>
+<p>I can convert between exponential and logarithmic forms.</p>
+<p>I can solve logarithmic equations using properties of logs.</p>
+<p>I can apply structure to solve multi-step exponential and logarithmic equations.</p>
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+<section>
+<h2>Introduction</h2>
+
+<p>
+Solving exponential and logarithmic equations involves reversing operations. Exponential equations require isolating exponents, while logarithmic equations require rewriting expressions and applying properties.
+</p>
+
+<p>
+Some equations can be solved by rewriting both sides with a common base, while others require converting between logarithmic and exponential forms.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Solving equations depends on recognizing structure and using inverse relationships.
+</div>
+
+</section>
+
+
+<!-- CONNECTIONS -->
+<section>
+<h2>Connections</h2>
+
+<div class="key-point">
+<strong>Prior Knowledge:</strong>
+<ul style="margin-left:20px;">
+<li>Exponent rules</li>
+<li>Logarithmic properties</li>
+<li>Algebraic equation solving</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Cross-Disciplinary Connections:</strong>
+<ul style="margin-left:20px;">
+<li>Science: decay rates and half-life</li>
+<li>Finance: compound interest</li>
+<li>Computer Science: exponential growth</li>
+</ul>
+</div>
+
+<div class="key-point">
+<strong>Real-World Applications:</strong>
+<ul style="margin-left:20px;">
+<li>Population growth models</li>
+<li>Radioactive decay</li>
+<li>Interest and investment growth</li>
+</ul>
+</div>
+
+</section>
+
+
+<!-- HISTORY -->
+<section>
+<h2>History</h2>
+
+<p>
+Exponential equations have been studied since early algebra, particularly in relation to growth and compounding. Logarithms were later introduced as a way to simplify these calculations.
+</p>
+
+<p>
+Mathematicians realized that solving exponential equations could be simplified by using logarithms, leading to a deeper understanding of inverse relationships.
+</p>
+
+<p>
+Today, these techniques are fundamental in algebra and are widely used in science, engineering, and economics.
+</p>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+
+    <h2>Key Concepts</h2>
+    
+    <!-- ===== PAGE 1 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Solving Exponential Equations</h3>
+    
+    <p>
+    Exponential equations can be solved by rewriting both sides with a common base.
+    </p>
+    
+    <div class="definition">
+    $$ a^x = a^n \Rightarrow x = n $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ 2^x = 8 \Rightarrow 2^x = 2^3 \Rightarrow x=3 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Using a Common Base</h3>
+    
+    <p>
+    Rewrite expressions so both sides have the same base before solving.
+    </p>
+    
+    <div class="definition">
+    $$ 9^x = 3^{2x} \Rightarrow (3^2)^x = 3^{2x} $$
+    </div>
+    
+    <p>
+    Simplify and compare exponents.
+    </p>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Converting Logarithmic Form</h3>
+    
+    <p>
+    Logarithmic equations can be rewritten in exponential form.
+    </p>
+    
+    <div class="definition">
+    $$ \log_b(x) = y \Rightarrow b^y = x $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \log_2 x = 3 \Rightarrow 2^3 = x \Rightarrow x=8 $$
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 2 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Solving Logarithmic Equations</h3>
+    
+    <p>
+    Logarithmic equations can be solved by rewriting or applying properties.
+    </p>
+    
+    <div class="definition">
+    $$ \log x = 2 \Rightarrow x = 100 $$
+    </div>
+    
+    <p>
+    Convert to exponential form and solve.
+    </p>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Applying Logarithm Properties</h3>
+    
+    <p>
+    Use properties to combine or simplify expressions before solving.
+    </p>
+    
+    <div class="definition">
+    $$ \log x + \log(x-1) = \log 20 $$
+    </div>
+    
+    <p>
+    Combine:
+    </p>
+    
+    $$ \log[x(x-1)] = \log 20 $$
+    
+    $$ x(x-1)=20 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Isolating the Variable</h3>
+    
+    <p>
+    After rewriting, solve using algebraic techniques.
+    </p>
+    
+    <div class="definition">
+    $$ x^2 - x - 20 = 0 $$
+    </div>
+    
+    <p>
+    Factor and solve for \(x\).
+    </p>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 3 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Multi-Step Exponential Equations</h3>
+    
+    <p>
+    Some equations require rewriting and simplifying before solving.
+    </p>
+    
+    <div class="definition">
+    $$ 2^{x+1} = 16 $$
+    </div>
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ 2^{x+1} = 2^4 $$
+    
+    $$ x+1=4 \Rightarrow x=3 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Multi-Step Logarithmic Equations</h3>
+    
+    <p>
+    Use properties and algebra together to solve.
+    </p>
+    
+    <div class="definition">
+    $$ \log(x+3) + \log(x-1) = \log 24 $$
+    </div>
+    
+    <p>
+    Combine and solve:
+    </p>
+    
+    $$ (x+3)(x-1)=24 $$
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Mixed Equations</h3>
+    
+    <p>
+    When no common base exists, use logarithms to solve.
+    </p>
+    
+    <div class="definition">
+    $$ 2^x = 7 $$
+    </div>
+    
+    <p>
+    Take logarithm:
+    </p>
+    
+    $$ x = \log_2 7 $$
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 4 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Using Natural Logarithms</h3>
+    
+    <p>
+    Natural logarithms are used when the base is \(e\).
+    </p>
+    
+    <div class="definition">
+    $$ e^x = 5 \Rightarrow x = \ln 5 $$
+    </div>
+    </div>
+    
+    
+    <div class="problem">
+    <h3>Checking Solutions</h3>
+    
+    <p>
+    All solutions must be checked to ensure they satisfy the original equation.
+    </p>
+    
+    <div class="definition">
+    $$ \log(x-1) \Rightarrow x>1 $$
+    </div>
+    
+    <div class="key-point">
+    <strong>Important:</strong> Logarithmic equations require checking domain restrictions.
+    </div>
+    </div>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Exponential Equation:</strong>
+    <p>An equation where the variable appears in the exponent.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Logarithmic Equation:</strong>
+    <p>An equation involving logarithmic expressions.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Common Base:</strong>
+    <p>Rewriting expressions so both sides have the same base.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Equivalent Forms:</strong>
+    <p>Different representations of the same relationship, such as logarithmic and exponential forms.</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Natural Logarithm:</strong>
+    <p>A logarithm with base \(e\), written as \(\ln x\).</p>
+    </div>
+    
+    <div class="definition">
+    <strong>Domain Restriction:</strong>
+    <p>A condition that limits valid solutions, especially in logarithmic expressions.</p>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Solving Exponential Equations:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Rewrite both sides using a common base if possible</li>
+    <li>Set exponents equal</li>
+    <li>Solve algebraically</li>
+    </ol>
+    
+    <p style="margin-top:15px;"><strong>Solving Logarithmic Equations:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Combine logs using properties if needed</li>
+    <li>Rewrite in exponential form</li>
+    <li>Solve the resulting equation</li>
+    </ol>
+    
+    <p style="margin-top:15px;"><strong>When No Common Base Exists:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Apply logarithms to both sides</li>
+    <li>Solve for the variable</li>
+    </ol>
+    
+    </div>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Always simplify structure before solving.
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- EXAMPLES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Examples</h2>
+    
+    <!-- ===== PAGE 1 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 1 — Common Base</h3>
+    <div class="prompt">Solve the equation.</div>
+    
+    $$ 2^x = 32 $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 2 — Rewrite and Solve</h3>
+    <div class="prompt">Solve the equation.</div>
+    
+    $$ 9^x = 3^4 $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 2 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 3 — Convert to Exponential Form</h3>
+    <div class="prompt">Solve the equation.</div>
+    
+    $$ \log_2 x = 5 $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 4 — Natural Logarithm</h3>
+    <div class="prompt">Solve the equation.</div>
+    
+    $$ \ln x = 2 $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 3 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 5 — Log Properties</h3>
+    <div class="prompt">Solve the equation.</div>
+    
+    $$ \log x + \log(x-1) = \log 20 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 6 — Multi-Step Equation</h3>
+    <div class="prompt">Solve the equation.</div>
+    
+    $$ 2^{x+1} = 16 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    </div>
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== PAGE 4 ===== -->
+    <div>
+    
+    <div class="problem">
+    <h3>Example 7 — No Common Base</h3>
+    <div class="prompt">Solve the equation.</div>
+    
+    $$ 2^x = 7 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>
+    <strong>Not rewriting with a common base:</strong><br>
+    Missing this step makes exponential equations harder than they need to be.
+    </li>
+    
+    <li>
+    <strong>Incorrect conversion between forms:</strong><br>
+    Confusing logarithmic and exponential relationships leads to errors.
+    </li>
+    
+    <li>
+    <strong>Not combining logarithms first:</strong><br>
+    Equations must often be simplified before solving.
+    </li>
+    
+    <li>
+    <strong>Algebra mistakes after rewriting:</strong><br>
+    Factoring and solving errors occur after structure is revealed.
+    </li>
+    
+    <li>
+    <strong>Ignoring domain restrictions:</strong><br>
+    Logarithmic expressions require positive arguments.
+    </li>
+    
+    <li>
+    <strong>Stopping too early:</strong><br>
+    Students may rewrite but not fully solve.
+    </li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>Exponential equations can be solved by rewriting with a common base.</li>
+    
+    <li>Logarithmic equations can be converted to exponential form.</li>
+    
+    <li>Logarithm properties help simplify expressions before solving.</li>
+    
+    <li>Some equations require multiple steps and algebraic manipulation.</li>
+    
+    <li>When no common base exists, logarithms can be used to solve.</li>
+    
+    <li>Solutions must be checked for validity.</li>
+    
+    </ul>
+    
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- PRACTICE SET -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Practice Set</h2>
+    
+    <!-- ===== LEVEL 1 ===== -->
+    <h3>Level 1 — Easy</h3>
+    
+    <div class="problem">
+    <p>1. Solve.</p>
+    $$ 2^x = 32 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>2. Solve.</p>
+    $$ 3^x = 81 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>3. Rewrite and solve.</p>
+    $$ \log x = 2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>4. Rewrite and solve.</p>
+    $$ \log_2 x = 4 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>5. Solve.</p>
+    $$ \ln x = 1 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 2 ===== -->
+    <h3>Level 2 — Medium</h3>
+    
+    <div class="problem">
+    <p>6. Rewrite with a common base and solve.</p>
+    $$ 8^x = 2^6 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>7. Rewrite with a common base and solve.</p>
+    $$ 9^x = 3^4 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>8. Solve.</p>
+    $$ \log x + \log(x-1) = \log 12 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>9. Solve.</p>
+    $$ \log(x+2) - \log x = \log 2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>10. Solve.</p>
+    $$ 2\log x = \log 25 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <div class="page-break"></div>
+    
+    
+    <!-- ===== LEVEL 3 ===== -->
+    <h3>Level 3 — Hard</h3>
+    
+    <div class="problem">
+    <p>11. Solve.</p>
+    $$ 2^{x+2} = 16 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>12. Solve.</p>
+    $$ 3^{x+1} = 9^x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>13. Solve.</p>
+    $$ \log(x+3) + \log(x-1) = \log 15 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>14. Solve.</p>
+    $$ \ln(x^2) = 4 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>15. Solve.</p>
+    $$ 2\ln x = \ln 9 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 4 ===== -->
+    <h3>Level 4 — Challenging</h3>
+    
+    <div class="problem">
+    <p>16. Solve.</p>
+    $$ 2^x = 5 $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>17. Solve.</p>
+    $$ 3^{x-1} = 7 $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>18. Solve.</p>
+    $$ e^{2x} = 10 $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>19. Compare solutions.</p>
+    $$ \log x = 2 \quad \text{and} \quad \log(x-2)=2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>20. Compare solutions.</p>
+    $$ 2^x = 8 \quad \text{and} \quad 2^{x+1}=8 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 5 ===== -->
+    <h3>Level 5 — Justification / Conceptual</h3>
+    
+    <div class="problem">
+    <p>21. Explain why exponential equations can be solved using common bases.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>22. Explain why logarithmic equations can be rewritten as exponential equations.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>23. Explain why logarithm properties help simplify equations.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>24. Explain how structure helps in solving equations.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>25. Explain why solutions must be checked.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUPPLEMENTAL NOTES -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Supplemental Notes</h2>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <div class="problem">
+    <div class="workspace workspace-600"></div>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- PRACTICE ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+    <h2>Practice Answer Key</h2>
+    
+    <h3>Level 1 — Easy</h3>
+    <p>1. \(x=5\)</p>
+    <p>2. \(x=4\)</p>
+    <p>3. \(x=100\)</p>
+    <p>4. \(x=16\)</p>
+    <p>5. \(x=e\)</p>
+    
+    <h3>Level 2 — Medium</h3>
+    <p>6. \(x=2\)</p>
+    <p>7. \(x=2\)</p>
+    <p>8. \(x=4\)</p>
+    <p>9. \(x=2\)</p>
+    <p>10. \(x=5\)</p>
+    
+    <h3>Level 3 — Hard</h3>
+    <p>11. \(x=2\)</p>
+    <p>12. \(x=1\)</p>
+    <p>13. \(x=4\)</p>
+    <p>14. \(x=\pm e^2\)</p>
+    <p>15. \(x=3\)</p>
+    
+    <h3>Level 4 — Challenging</h3>
+    <p>16. \(x=\log_2 5\)</p>
+    <p>17. \(x=1+\log_3 7\)</p>
+    <p>18. \(x=\frac{1}{2}\ln 10\)</p>
+    <p>19. Second solution is 2 greater</p>
+    <p>20. Second solution is 1 less</p>
+    
+    <h3>Level 5 — Justification</h3>
+    <p>21–25. Answers vary (conceptual)</p>
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- DETAILED EXAMPLE SOLUTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>Detailed Example Solutions</h2>
+    
+    <!-- ===== EXAMPLE 1 ===== -->
+    <div class="problem">
+    <h3>Example 1 — Common Base</h3>
+    
+    $$ 2^x = 32 $$
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ 32 = 2^5 $$
+    
+    $$ 2^x = 2^5 $$
+    
+    <p>
+    Set exponents equal:
+    </p>
+    
+    $$ x=5 $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 2 ===== -->
+    <div class="problem">
+    <h3>Example 2 — Rewrite and Solve</h3>
+    
+    $$ 9^x = 3^4 $$
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ 9 = 3^2 $$
+    
+    $$ (3^2)^x = 3^4 $$
+    
+    $$ 3^{2x} = 3^4 $$
+    
+    <p>
+    Solve:
+    </p>
+    
+    $$ 2x=4 \Rightarrow x=2 $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 3 ===== -->
+    <div class="problem">
+    <h3>Example 3 — Convert to Exponential Form</h3>
+    
+    $$ \log_2 x = 5 $$
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ 2^5 = x $$
+    
+    $$ x=32 $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 4 ===== -->
+    <div class="problem">
+    <h3>Example 4 — Natural Logarithm</h3>
+    
+    $$ \ln x = 2 $$
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ e^2 = x $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 5 ===== -->
+    <div class="problem">
+    <h3>Example 5 — Log Properties</h3>
+    
+    $$ \log x + \log(x-1) = \log 20 $$
+    
+    <p>
+    Combine:
+    </p>
+    
+    $$ \log[x(x-1)] = \log 20 $$
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ x(x-1)=20 $$
+    
+    $$ x^2 - x - 20 = 0 $$
+    
+    $$ (x-5)(x+4)=0 $$
+    
+    <p>
+    Solutions:
+    </p>
+    
+    $$ x=5, -4 $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 6 ===== -->
+    <div class="problem">
+    <h3>Example 6 — Multi-Step Equation</h3>
+    
+    $$ 2^{x+1} = 16 $$
+    
+    <p>
+    Rewrite:
+    </p>
+    
+    $$ 16 = 2^4 $$
+    
+    $$ 2^{x+1} = 2^4 $$
+    
+    <p>
+    Solve:
+    </p>
+    
+    $$ x+1=4 \Rightarrow x=3 $$
+    </div>
+    
+    
+    <!-- ===== EXAMPLE 7 ===== -->
+    <div class="problem">
+    <h3>Example 7 — No Common Base</h3>
+    
+    $$ 2^x = 7 $$
+    
+    <p>
+    Take logarithm:
+    </p>
+    
+    $$ x = \log_2 7 $$
+    </div>
+    
+    </section>
+
+</div>
+</body>
+</html>

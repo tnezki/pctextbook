@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 10.E: Power Rule and Derivatives</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+/* EXACT 9C CSS — NO CHANGES */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{max-width:900px;margin:auto;}
+
+.page-break{page-break-before:always;}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.intro-text{font-size:1.05em;color:#555;margin-bottom:10px;font-style:italic;}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:italic;
+}
+
+.objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.problem{
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom:10px;
+}
+
+section{
+  margin-bottom:30px;
+}
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+    
+    <!-- ======================= -->
+    <!-- TITLE + INTRO -->
+    <!-- ======================= -->
+    <h1>10.E Power Rule and Derivatives</h1>
+    
+    <div class="intro-text">
+    Derivatives measure how a function changes. The power rule provides a fast and efficient way to differentiate polynomial and power functions.
+    </div>
+    
+    <div class="intro-text">
+    By recognizing structure and simplifying expressions, derivatives can be computed quickly and applied to real-world problems involving rates of change.
+    </div>
+    
+    <div class="inspirational">
+    “Derivatives reveal how change happens.”
+    </div>
+    
+    
+    <!-- ======================= -->
+    <!-- LEARNING TARGETS -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- UNBREAKABLE: header + first block -->
+    <div class="problem">
+    <h2>Learning Targets</h2>
+    
+    <div class="objectives">
+    <p>I can apply the power rule to find derivatives.</p>
+    <p>I can differentiate polynomial functions.</p>
+    <p>I can work with negative and fractional exponents.</p>
+    <p>I can interpret derivatives as rates of change.</p>
+    </div>
+    </div>
+    <!-- UNBREAKABLE: header + first block -->
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- INTRODUCTION -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- UNBREAKABLE: header + first block -->
+    <div class="problem">
+    <h2>Introduction</h2>
+    
+    <p>
+    The derivative represents the rate at which a function changes. For many functions, especially polynomials, the power rule allows us to compute derivatives efficiently.
+    </p>
+    
+    <p>
+    Instead of repeatedly using limits, we can apply patterns that simplify differentiation.
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> The power rule converts exponents into coefficients.
+    </div>
+    
+    </div>
+    <!-- UNBREAKABLE: header + first block -->
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- CONNECTIONS -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- UNBREAKABLE: header + first block -->
+    <div class="problem">
+    <h2>Connections</h2>
+    
+    <!-- UNBREAKABLE: key-point -->
+    <div class="key-point">
+    <strong>Prior Knowledge:</strong>
+    <ul style="margin-left:20px;">
+    <li>Exponent rules</li>
+    <li>Algebraic simplification</li>
+    <li>Function notation</li>
+    </ul>
+    </div>
+    <!-- UNBREAKABLE: key-point -->
+    
+    </div>
+    <!-- UNBREAKABLE: header + first block -->
+    
+    
+    <!-- UNBREAKABLE: key-point -->
+    <div class="key-point">
+    <strong>Cross-Disciplinary Connections:</strong>
+    <ul style="margin-left:20px;">
+    <li>Physics: velocity and acceleration</li>
+    <li>Economics: rate of change</li>
+    <li>Engineering: modeling dynamic systems</li>
+    </ul>
+    </div>
+    <!-- UNBREAKABLE: key-point -->
+    
+    
+    <!-- UNBREAKABLE: key-point -->
+    <div class="key-point">
+    <strong>Real-World Applications:</strong>
+    <ul style="margin-left:20px;">
+    <li>Motion and speed</li>
+    <li>Population growth rates</li>
+    <li>Optimization problems</li>
+    </ul>
+    </div>
+    <!-- UNBREAKABLE: key-point -->
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- HISTORY -->
+    <!-- ======================= -->
+    <section>
+    
+    <h2>History</h2>
+    
+    <p>
+    The concept of derivatives was developed by Newton and Leibniz in the 17th century as part of calculus. Their work allowed mathematicians to describe motion and change precisely.
+    </p>
+    
+    <p>
+    The power rule emerged as a pattern from these discoveries and remains one of the most important tools in calculus.
+    </p>
+    
+    <p>
+    Today, derivatives are used across science, engineering, and economics to analyze change.
+    </p>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+
+    <!-- UNBREAKABLE: header + first concept -->
+    <div class="problem">
+    <h2>Key Concepts</h2>
+    
+    <h3>Power Rule</h3>
+    
+    <p>
+    The power rule provides a direct way to differentiate power functions.
+    </p>
+    
+    <div class="definition">
+    $$ \frac{d}{dx}(x^n)=nx^{n-1} $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{d}{dx}(x^3)=3x^2 $$
+    </div>
+    <!-- UNBREAKABLE: header + first concept -->
+    
+    
+    <!-- UNBREAKABLE: concept -->
+    <div class="problem">
+    <h3>Constant Multiple Rule</h3>
+    
+    <p>
+    Constants remain as factors when differentiating.
+    </p>
+    
+    <div class="definition">
+    $$ \frac{d}{dx}(c\,x^n)=c\cdot n x^{n-1} $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{d}{dx}(4x^2)=8x $$
+    </div>
+    <!-- UNBREAKABLE: concept -->
+    
+    
+    <!-- UNBREAKABLE: concept -->
+    <div class="problem">
+    <h3>Derivative of a Constant</h3>
+    
+    <p>
+    The derivative of a constant is zero because it does not change.
+    </p>
+    
+    <div class="definition">
+    $$ \frac{d}{dx}(c)=0 $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{d}{dx}(7)=0 $$
+    </div>
+    <!-- UNBREAKABLE: concept -->
+    
+    
+    <!-- UNBREAKABLE: concept -->
+    <div class="problem">
+    <h3>Polynomial Functions</h3>
+    
+    <p>
+    Differentiate each term separately using the power rule.
+    </p>
+    
+    <div class="definition">
+    $$ \frac{d}{dx}(ax^n + bx^m)=anx^{n-1}+bmx^{m-1} $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{d}{dx}(3x^4 + 2x^2)=12x^3 + 4x $$
+    </div>
+    <!-- UNBREAKABLE: concept -->
+    
+    
+    <!-- UNBREAKABLE: concept -->
+    <div class="problem">
+    <h3>Negative Exponents</h3>
+    
+    <p>
+    Negative exponents follow the same rule.
+    </p>
+    
+    <div class="definition">
+    $$ \frac{d}{dx}(x^{-n})=-n x^{-n-1} $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{d}{dx}(x^{-1})=-x^{-2} $$
+    </div>
+    <!-- UNBREAKABLE: concept -->
+    
+    
+    <!-- UNBREAKABLE: concept -->
+    <div class="problem">
+    <h3>Fractional Exponents</h3>
+    
+    <p>
+    Fractional exponents represent roots and follow the same rule.
+    </p>
+    
+    <div class="definition">
+    $$ \frac{d}{dx}(x^{1/2})=\frac{1}{2}x^{-1/2} $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{d}{dx}(\sqrt{x})=\frac{1}{2\sqrt{x}} $$
+    </div>
+    <!-- UNBREAKABLE: concept -->
+    
+    
+    <!-- UNBREAKABLE: concept -->
+    <div class="problem">
+    <h3>Simplify Before Differentiating</h3>
+    
+    <p>
+    Simplifying expressions first often makes differentiation easier.
+    </p>
+    
+    <div class="definition">
+    $$ \frac{x^3}{x}=x^2 $$
+    </div>
+    
+    <p><strong>Example:</strong></p>
+    $$ \frac{d}{dx}\left(\frac{x^3}{x}\right)=\frac{d}{dx}(x^2)=2x $$
+    </div>
+    <!-- UNBREAKABLE: concept -->
+    
+    
+    <!-- UNBREAKABLE: concept -->
+    <div class="problem">
+    <h3>Interpreting Derivatives</h3>
+    
+    <p>
+    The derivative represents the rate of change of a function.
+    </p>
+    
+    <div class="definition">
+    $$ f'(x) = \text{rate of change} $$
+    </div>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Derivatives measure how fast a function changes.
+    </div>
+    </div>
+    <!-- UNBREAKABLE: concept -->
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+    <!-- UNBREAKABLE: header + first term -->
+    <div class="problem">
+    <h2>Vocabulary</h2>
+    
+    <div class="definition">
+    <strong>Derivative:</strong>
+    <p>A measure of how a function changes with respect to its input.</p>
+    </div>
+    </div>
+    <!-- UNBREAKABLE: header + first term -->
+    
+    
+    <!-- UNBREAKABLE: definition -->
+    <div class="definition">
+    <strong>Power Rule:</strong>
+    <p>A rule used to differentiate functions of the form \(x^n\).</p>
+    </div>
+    <!-- UNBREAKABLE: definition -->
+    
+    
+    <!-- UNBREAKABLE: definition -->
+    <div class="definition">
+    <strong>Polynomial Function:</strong>
+    <p>A function made up of terms with nonnegative integer exponents.</p>
+    </div>
+    <!-- UNBREAKABLE: definition -->
+    
+    
+    <!-- UNBREAKABLE: definition -->
+    <div class="definition">
+    <strong>Negative Exponent:</strong>
+    <p>An exponent indicating reciprocal powers.</p>
+    </div>
+    <!-- UNBREAKABLE: definition -->
+    
+    
+    <!-- UNBREAKABLE: definition -->
+    <div class="definition">
+    <strong>Fractional Exponent:</strong>
+    <p>An exponent representing roots of a quantity.</p>
+    </div>
+    <!-- UNBREAKABLE: definition -->
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- STRATEGIES -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- UNBREAKABLE: header + strategy box -->
+    <div class="problem">
+    <h2>Strategies</h2>
+    
+    <div class="strategy-box">
+    
+    <p><strong>Using the Power Rule:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Identify each term</li>
+    <li>Apply the power rule to each term</li>
+    <li>Simplify the result</li>
+    </ol>
+    
+    <p style="margin-top:15px;"><strong>Working with Exponents:</strong></p>
+    
+    <ol style="margin-left:20px;">
+    <li>Rewrite roots as fractional exponents</li>
+    <li>Rewrite reciprocals as negative exponents</li>
+    <li>Simplify before differentiating</li>
+    </ol>
+    
+    </div>
+    </div>
+    <!-- UNBREAKABLE: header + strategy box -->
+    
+    
+    <!-- UNBREAKABLE: key point -->
+    <div class="key-point">
+    <strong>Key Idea:</strong> Simplify first, then apply the power rule.
+    </div>
+    <!-- UNBREAKABLE: key point -->
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- EXAMPLES -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- UNBREAKABLE: header + first example -->
+    <div class="problem">
+    <h2>Examples</h2>
+    
+    <h3>Example 1 — Basic Power Rule</h3>
+    <div class="prompt">Find the derivative.</div>
+    
+    $$ f(x)=x^3 $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: header + first example -->
+    
+    
+    <!-- UNBREAKABLE: example -->
+    <div class="problem">
+    <h3>Example 2 — Constant Multiple</h3>
+    <div class="prompt">Find the derivative.</div>
+    
+    $$ f(x)=4x^2 $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: example -->
+    
+    
+    <!-- UNBREAKABLE: example -->
+    <div class="problem">
+    <h3>Example 3 — Polynomial</h3>
+    <div class="prompt">Find the derivative.</div>
+    
+    $$ f(x)=3x^4 + 2x^2 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    <!-- UNBREAKABLE: example -->
+    
+    
+    <!-- UNBREAKABLE: example -->
+    <div class="problem">
+    <h3>Example 4 — Negative Exponent</h3>
+    <div class="prompt">Find the derivative.</div>
+    
+    $$ f(x)=x^{-1} $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: example -->
+    
+    
+    <!-- UNBREAKABLE: example -->
+    <div class="problem">
+    <h3>Example 5 — Fractional Exponent</h3>
+    <div class="prompt">Find the derivative.</div>
+    
+    $$ f(x)=x^{1/2} $$
+    
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: example -->
+    
+    
+    <!-- UNBREAKABLE: example -->
+    <div class="problem">
+    <h3>Example 6 — Simplify First</h3>
+    <div class="prompt">Simplify and find the derivative.</div>
+    
+    $$ f(x)=\frac{x^3}{x} $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    <!-- UNBREAKABLE: example -->
+    
+    
+    <!-- UNBREAKABLE: example -->
+    <div class="problem">
+    <h3>Example 7 — Evaluate Derivative</h3>
+    <div class="prompt">Find \(f'(x)\) and evaluate at \(x=2\).</div>
+    
+    $$ f(x)=x^3 $$
+    
+    <div class="workspace workspace-300"></div>
+    </div>
+    <!-- UNBREAKABLE: example -->
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+    <!-- UNBREAKABLE: header + first block -->
+    <div class="problem">
+    <h2>Common Mistakes</h2>
+    
+    <div class="definition">
+    
+    <ul style="margin-left:20px;">
+    
+    <li><strong>Forgetting the power rule:</strong> not multiplying by the exponent.</li>
+    
+    <li><strong>Not reducing the exponent:</strong> forgetting to subtract 1.</li>
+    
+    <li><strong>Dropping constants incorrectly:</strong> constants multiply through.</li>
+    
+    <li><strong>Not simplifying first:</strong> expressions like \( \frac{x^3}{x} \) should be simplified.</li>
+    
+    <li><strong>Errors with negative exponents:</strong> sign mistakes are common.</li>
+    
+    <li><strong>Errors with fractional exponents:</strong> they follow the same rule.</li>
+    
+    </ul>
+    
+    </div>
+    </div>
+    <!-- UNBREAKABLE: header + first block -->
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- SUMMARY -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- UNBREAKABLE: header + first block -->
+    <div class="problem">
+    <h2>Summary</h2>
+    
+    <div class="summary-box">
+    
+    <ul style="margin-left:20px;">
+    
+    <li>\( \frac{d}{dx}(x^n)=nx^{n-1} \)</li>
+    <li>Differentiate each term separately</li>
+    <li>Constants multiply through</li>
+    <li>Negative and fractional exponents follow the same rule</li>
+    <li>Simplify before differentiating</li>
+    <li>Derivatives represent rate of change</li>
+    
+    </ul>
+    
+    </div>
+    </div>
+    <!-- UNBREAKABLE: header + first block -->
+    
+    </section>
+    
+    
+    <!-- ======================= -->
+    <!-- PRACTICE SET -->
+    <!-- ======================= -->
+    <section>
+    
+    <!-- ===== LEVEL 1 ===== -->
+    <!-- UNBREAKABLE: header + first problem -->
+    <div class="problem">
+    <h2>Practice Set</h2>
+    <h3>Level 1 — Easy</h3>
+    
+    <p>1. Find \(f'(x)\).</p>
+    $$ f(x)=x^3 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: header + first problem -->
+    
+    <div class="problem">
+    <p>2. Find \(f'(x)\).</p>
+    $$ f(x)=x^5 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>3. Find \(f'(x)\).</p>
+    $$ f(x)=4x^2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>4. Find \(f'(x)\).</p>
+    $$ f(x)=7x^4 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>5. Evaluate at \(x=2\).</p>
+    $$ f(x)=x^3 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 2 ===== -->
+    <!-- UNBREAKABLE: level header + first problem -->
+    <div class="problem">
+    <h3>Level 2 — Medium</h3>
+    
+    <p>6. Find \(f'(x)\).</p>
+    $$ f(x)=3x^4+2x^2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: level header + first problem -->
+    
+    <div class="problem">
+    <p>7. Find \(f'(x)\).</p>
+    $$ f(x)=5x^3-4x $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>8. Find \(f'(x)\).</p>
+    $$ f(x)=2x^5+x^2-3 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>9. Evaluate at \(x=1\).</p>
+    $$ f(x)=x^3+2x^2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>10. Simplify and differentiate.</p>
+    $$ f(x)=x^2+x^2 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 3 ===== -->
+    <!-- UNBREAKABLE: level header + first problem -->
+    <div class="problem">
+    <h3>Level 3 — Hard</h3>
+    
+    <p>11. Rewrite and differentiate.</p>
+    $$ f(x)=\sqrt{x} $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: level header + first problem -->
+    
+    <div class="problem">
+    <p>12. Rewrite and differentiate.</p>
+    $$ f(x)=\frac{1}{x} $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>13. Rewrite and differentiate.</p>
+    $$ f(x)=x^{3/2} $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>14. Find \(f'(x)\).</p>
+    $$ f(x)=x^{-2} $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>15. Evaluate at \(x=1\).</p>
+    $$ f(x)=x^{-2} $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 4 ===== -->
+    <!-- UNBREAKABLE: level header + first problem -->
+    <div class="problem">
+    <h3>Level 4 — Challenging</h3>
+    
+    <p>16. Simplify and differentiate.</p>
+    $$ f(x)=\frac{x^3}{x} $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    <!-- UNBREAKABLE: level header + first problem -->
+    
+    <div class="problem">
+    <p>17. Simplify and differentiate.</p>
+    $$ f(x)=\frac{x^5}{x^2} $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>18. Simplify and differentiate.</p>
+    $$ f(x)=x^2 \cdot x^3 $$
+    <div class="workspace workspace-300"></div>
+    </div>
+    
+    <div class="problem">
+    <p>19. Compare derivatives.</p>
+    $$ x^2 \text{ vs } x^3 $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>20. Compare derivatives.</p>
+    $$ x^{-1} \text{ vs } x^{-2} $$
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    
+    <!-- ===== LEVEL 5 ===== -->
+    <!-- UNBREAKABLE: level header + first problem -->
+    <div class="problem">
+    <h3>Level 5 — Conceptual</h3>
+    
+    <p>21. Explain why the power rule works.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    <!-- UNBREAKABLE: level header + first problem -->
+    
+    <div class="problem">
+    <p>22. Explain negative exponents.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>23. Explain constants in derivatives.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>24. Explain simplifying first.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    <div class="problem">
+    <p>25. Explain rate of change.</p>
+    <div class="workspace workspace-200"></div>
+    </div>
+    
+    </section>
+
+    <!-- ======================= -->
+<!-- SUPPLEMENTAL NOTES -->
+<!-- ======================= -->
+<div class="page-break"></div>
+
+<section>
+
+<h2>Supplemental Notes</h2>
+
+<!-- UNBREAKABLE: notes page -->
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
+<!-- UNBREAKABLE: notes page -->
+
+<div class="page-break"></div>
+
+<!-- UNBREAKABLE: notes page -->
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
+<!-- UNBREAKABLE: notes page -->
+
+<div class="page-break"></div>
+
+<!-- UNBREAKABLE: notes page -->
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
+<!-- UNBREAKABLE: notes page -->
+
+<div class="page-break"></div>
+
+<!-- UNBREAKABLE: notes page -->
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
+<!-- UNBREAKABLE: notes page -->
+
+<div class="page-break"></div>
+
+<!-- UNBREAKABLE: notes page -->
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
+<!-- UNBREAKABLE: notes page -->
+
+</section>
+
+
+<!-- ======================= -->
+<!-- PRACTICE ANSWER KEY -->
+<!-- ======================= -->
+<section>
+
+<!-- UNBREAKABLE: header + key -->
+<div class="problem">
+<h2>Practice Answer Key</h2>
+
+<h3>Level 1</h3>
+<p>1. \(3x^2\)</p>
+<p>2. \(5x^4\)</p>
+<p>3. \(8x\)</p>
+<p>4. \(28x^3\)</p>
+<p>5. \(12\)</p>
+
+<h3>Level 2</h3>
+<p>6. \(12x^3+4x\)</p>
+<p>7. \(15x^2-4\)</p>
+<p>8. \(10x^4+2x\)</p>
+<p>9. \(7\)</p>
+<p>10. \(4x\)</p>
+
+<h3>Level 3</h3>
+<p>11. \(\frac{1}{2}x^{-1/2}\)</p>
+<p>12. \(-x^{-2}\)</p>
+<p>13. \(\frac{3}{2}x^{1/2}\)</p>
+<p>14. \(-2x^{-3}\)</p>
+<p>15. \(-2\)</p>
+
+<h3>Level 4</h3>
+<p>16. \(2x\)</p>
+<p>17. \(3x^2\)</p>
+<p>18. \(5x^4\)</p>
+<p>19. \(x^3\) grows faster</p>
+<p>20. \(x^{-2}\) decreases faster</p>
+
+<h3>Level 5</h3>
+<p>21–25. Answers vary</p>
+
+</div>
+<!-- UNBREAKABLE: header + key -->
+
+</section>
+
+
+<!-- ======================= -->
+<!-- DETAILED EXAMPLE SOLUTIONS -->
+<!-- ======================= -->
+<section>
+
+<!-- UNBREAKABLE: header + first solution -->
+<div class="problem">
+<h2>Detailed Example Solutions</h2>
+
+<h3>Example 1 — Basic Power Rule</h3>
+
+$$ f(x)=x^3 $$
+
+$$ f'(x)=3x^2 $$
+</div>
+<!-- UNBREAKABLE: header + first solution -->
+
+
+<!-- UNBREAKABLE: solution -->
+<div class="problem">
+<h3>Example 2 — Constant Multiple</h3>
+
+$$ f(x)=4x^2 $$
+
+$$ f'(x)=8x $$
+</div>
+<!-- UNBREAKABLE: solution -->
+
+
+<!-- UNBREAKABLE: solution -->
+<div class="problem">
+<h3>Example 3 — Polynomial</h3>
+
+$$ f(x)=3x^4 + 2x^2 $$
+
+$$ f'(x)=12x^3 + 4x $$
+</div>
+<!-- UNBREAKABLE: solution -->
+
+
+<!-- UNBREAKABLE: solution -->
+<div class="problem">
+<h3>Example 4 — Negative Exponent</h3>
+
+$$ f(x)=x^{-1} $$
+
+$$ f'(x)=-x^{-2} $$
+</div>
+<!-- UNBREAKABLE: solution -->
+
+
+<!-- UNBREAKABLE: solution -->
+<div class="problem">
+<h3>Example 5 — Fractional Exponent</h3>
+
+$$ f(x)=x^{1/2} $$
+
+$$ f'(x)=\frac{1}{2}x^{-1/2} $$
+</div>
+<!-- UNBREAKABLE: solution -->
+
+
+<!-- UNBREAKABLE: solution -->
+<div class="problem">
+<h3>Example 6 — Simplify First</h3>
+
+$$ f(x)=\frac{x^3}{x}=x^2 $$
+
+$$ f'(x)=2x $$
+</div>
+<!-- UNBREAKABLE: solution -->
+
+
+<!-- UNBREAKABLE: solution -->
+<div class="problem">
+<h3>Example 7 — Evaluate Derivative</h3>
+
+$$ f(x)=x^3 $$
+
+$$ f'(x)=3x^2 $$
+
+$$ f'(2)=12 $$
+</div>
+<!-- UNBREAKABLE: solution -->
+
+</section>
+
+
+</div>
+</body>
+</html>
