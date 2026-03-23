@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>10.A Tarsia — Properties of Logarithms</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* RESET */
+html, body { margin:0; padding:0; }
+
+@page { size: letter; margin: 0.25in; }
+
+body {
+  font-family:'DM Sans', sans-serif;
+  color:#1a1a2e;
+}
+
+.page {
+  width:8in;
+  height:10.5in;
+  margin:0 auto;
+}
+
+@media print {
+  .page { page-break-after:always; }
+}
+
+/* TITLE */
+.title-half{
+  height:5in;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.title-half::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 30%, #fde68a 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 80% 70%, #bfdbfe 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 55% 15%, #d9f99d 0%, transparent 50%),
+    linear-gradient(135deg,#1e3a8a,#1d4ed8);
+}
+
+.title-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:#fff;
+}
+
+.section-number{
+  font-family:'Playfair Display';
+  font-size:82px;
+  font-weight:900;
+}
+
+.section-title{
+  font-family:'Playfair Display';
+  font-size:34px;
+  color:#fef9c3;
+}
+
+.activity{
+  margin-top:12px;
+  font-size:16px;
+}
+
+/* PAGE 2 */
+.content-wrap{
+  width:8in;
+}
+
+.header{
+  background:#2f4a8a;
+  color:white;
+  font-size:22px;
+  font-weight:700;
+  padding:8px 12px;
+}
+
+.content{
+  padding:10px 12px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  margin-top:10px;
+  border:1px solid #cbd5e1;
+}
+
+.box{
+  padding:10px;
+}
+
+.success{
+  background:#dfeee5;
+  border-right:1px solid #cbd5e1;
+}
+
+.avoid{
+  background:#f1e1e1;
+}
+
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="title-half">
+    <div class="title-content">
+      <div class="section-number">10.A</div>
+      <div class="section-title">Properties of Logarithms</div>
+      <div class="activity">🧩 Tarsia Puzzle</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="content-wrap">
+
+    <div class="header">Tarsia Puzzle</div>
+
+    <div class="content">
+
+      <div style="margin-bottom:6px;">
+        <strong style="color:#2f4a8a;">Setup:</strong>
+        Groups of 4. Each group gets one handout and a pair of scissors. Cut out all the pieces before you begin.
+      </div>
+
+      <ol style="margin-left:20px;">
+        <li><strong>Examine the Pieces:</strong> Each piece has expressions, answers, or steps along its edges. Your job is to match edges that belong together.</li>
+        <li><strong>Build the Puzzle:</strong> Place pieces so that matching edges touch. When all pieces are correctly matched, they will form a complete shape.</li>
+        <li><strong>Check Your Shape:</strong> If the pieces form a clean shape with no gaps or overlaps, your matches are correct. If anything doesn't fit, there is an error somewhere — find it and fix it.</li>
+        <li><strong>Troubleshoot Together:</strong> If the shape doesn't close, go back and check each match. Work the math, don't just try random placements.</li>
+        <li><strong>When Finished:</strong> Raise your hand for the teacher to verify, then discuss: were there any matches that surprised you?</li>
+      </ol>
+
+      <div class="grid">
+
+        <div class="box success">
+          <strong>✓ Looks Like Success</strong>
+          <ul style="padding-left:18px;">
+            <li>Every match is verified by working the math, not guessing</li>
+            <li>Group catches a wrong match by checking the shape, not asking the teacher</li>
+            <li>All four members can explain why each edge pair belongs together</li>
+          </ul>
+        </div>
+
+        <div class="box avoid">
+          <strong>✗ What to Avoid</strong>
+          <ul style="padding-left:18px;">
+            <li>Forcing pieces to fit without checking the math</li>
+            <li>One person assembling while others watch</li>
+            <li>Calling it done before the shape is fully closed and clean</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

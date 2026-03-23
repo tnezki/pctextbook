@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>10.A Numbered Heads Together</title>
+
+<!--
+==================================================
+TEMPLATE NOTES (DO NOT DELETE)
+==================================================
+This is the LOCKED Numbered Heads Together template.
+
+RULES:
+1. Title + Directions layout MUST match Tarsia template EXACTLY.
+2. ONLY change text content, NEVER structure.
+3. Problem/Answer slides MUST match 9E style:
+   - Header bar (Problem X / Answer X)
+   - Large readable math
+4. Pattern:
+   Problem page -> Answer page (repeat)
+5. 16 total problems (4 per level)
+6. Keep MathJax formatting
+==================================================
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+/* ===== BASE PRINT SYSTEM ===== */
+html, body { margin:0; padding:0; }
+@page { size: letter; margin: 0.25in; }
+
+body{
+  font-family:'DM Sans', sans-serif;
+  color:#1a1a2e;
+}
+
+.page{
+  width:8in;
+  height:10.5in;
+  margin:0 auto;
+}
+
+@media print{
+  .page{page-break-after:always;}
+}
+
+/* ===== TITLE PAGE ===== */
+.title-half{
+  height:5in;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.title-half::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#1e3a8a,#1d4ed8);
+}
+
+.title-content{
+  position:relative;
+  text-align:center;
+  color:#fff;
+}
+
+.section-number{ font-size:82px; font-weight:900; }
+.section-title{ font-size:34px; }
+.activity{ margin-top:12px; font-size:16px; }
+
+/* ===== DIRECTIONS (LOCKED STRUCTURE) ===== */
+.content-wrap{ width:8in; }
+
+.header{
+  background:#2f4a8a;
+  color:white;
+  font-size:22px;
+  font-weight:700;
+  padding:8px 12px;
+}
+
+.content{
+  padding:10px 12px;
+  font-size:14px;
+  line-height:1.4;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  margin-top:10px;
+  border:1px solid #cbd5e1;
+}
+
+.box{ padding:10px; }
+.success{ background:#dfeee5; border-right:1px solid #cbd5e1; }
+.avoid{ background:#f1e1e1; }
+
+/* ===== PROBLEM SLIDES (LOCKED STYLE) ===== */
+.problem-page{ font-family:'Times New Roman', Times, serif; }
+.problem-content{ font-size:22px; }
+.math{ margin-top:10px; font-size:26px; }
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= TITLE PAGE ================= -->
+<div class="page">
+  <div class="title-half">
+    <div class="title-content">
+      <div class="section-number">10.A</div>
+      <div class="section-title">Properties of Logarithms</div>
+      <div class="activity">Numbered Heads Together</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DIRECTIONS PAGE ================= -->
+<div class="page">
+  <div class="content-wrap">
+
+    <div class="header">Numbered Heads Together</div>
+
+    <div class="content">
+
+      <div style="margin-bottom:6px;">
+        <strong style="color:#2f4a8a;">Setup:</strong>
+        Groups of 4. Each person takes a number: 1, 2, 3, or 4.
+      </div>
+
+      <ol style="margin-left:20px;">
+        <li><strong>Solve Together:</strong> Work as a group to solve the problem. Make sure every person understands every step.</li>
+        <li><strong>Teach Each Other:</strong> If someone is unclear on a step, the group teaches them before moving on.</li>
+        <li><strong>Be Ready:</strong> The teacher will call a number. The student with that number explains the solution for the class.</li>
+        <li><strong>Standard:</strong> The group succeeds only when every member could be called and explain the solution fully.</li>
+      </ol>
+
+      <div class="grid">
+
+        <div class="box success">
+          <strong>✓ Looks Like Success</strong>
+          <ul style="padding-left:18px;">
+            <li>Every member can explain the full solution — not just the answer</li>
+            <li>Group checks understanding before declaring done</li>
+            <li>The called student explains reasoning, not just steps</li>
+          </ul>
+        </div>
+
+        <div class="box avoid">
+          <strong>✗ What to Avoid</strong>
+          <ul style="padding-left:18px;">
+            <li>Letting one person do all the talking during group work</li>
+            <li>Moving on before everyone understands</li>
+            <li>The called student saying 'I don't know' — that means the group isn't done yet</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= PROBLEMS ================= -->
+
+<!-- LEVEL 1 -->
+<div class="page problem-page"><div class="header">Problem 1</div><div class="problem-content">Expand:<div class="math">\( \log(xy) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 1</div><div class="problem-content">\( \log x + \log y \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 2</div><div class="problem-content">Expand:<div class="math">\( \log(x/y) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 2</div><div class="problem-content">\( \log x - \log y \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 3</div><div class="problem-content">Expand:<div class="math">\( \log(x^4) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 3</div><div class="problem-content">\( 4\log x \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 4</div><div class="problem-content">Expand:<div class="math">\( \log(3x) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 4</div><div class="problem-content">\( \log 3 + \log x \)</div></div>
+
+<!-- LEVEL 2 -->
+<div class="page problem-page"><div class="header">Problem 5</div><div class="problem-content">Expand:<div class="math">\( \log(2x^3) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 5</div><div class="problem-content">\( \log 2 + 3\log x \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 6</div><div class="problem-content">Expand:<div class="math">\( \log(3x^2/y) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 6</div><div class="problem-content">\( \log 3 + 2\log x - \log y \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 7</div><div class="problem-content">Expand:<div class="math">\( \log(x^2y^4) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 7</div><div class="problem-content">\( 2\log x + 4\log y \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 8</div><div class="problem-content">Expand:<div class="math">\( \log(5x/y^3) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 8</div><div class="problem-content">\( \log 5 + \log x - 3\log y \)</div></div>
+
+<!-- LEVEL 3 -->
+<div class="page problem-page"><div class="header">Problem 9</div><div class="problem-content">Expand:<div class="math">\( \log(4x^2y/z) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 9</div><div class="problem-content">\( \log 4 + 2\log x + \log y - \log z \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 10</div><div class="problem-content">Expand:<div class="math">\( \log(3a^4/b^2c) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 10</div><div class="problem-content">\( \log 3 + 4\log a - 2\log b - \log c \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 11</div><div class="problem-content">Expand:<div class="math">\( \log(x^3y^2z^5) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 11</div><div class="problem-content">\( 3\log x + 2\log y + 5\log z \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 12</div><div class="problem-content">Expand:<div class="math">\( \log(2m^3n/p^2) \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 12</div><div class="problem-content">\( \log 2 + 3\log m + \log n - 2\log p \)</div></div>
+
+<!-- LEVEL 4 -->
+<div class="page problem-page"><div class="header">Problem 13</div><div class="problem-content">Simplify:<div class="math">\( \log x + \log x \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 13</div><div class="problem-content">\( \log(x^2) \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 14</div><div class="problem-content">Simplify:<div class="math">\( 2\log x - \log x \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 14</div><div class="problem-content">\( \log x \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 15</div><div class="problem-content">Simplify:<div class="math">\( \log(xy) + \log z \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 15</div><div class="problem-content">\( \log(xyz) \)</div></div>
+
+<div class="page problem-page"><div class="header">Problem 16</div><div class="problem-content">Compare:<div class="math">\( \log(xy) \) and \( \log x + \log y \)</div></div></div>
+<div class="page problem-page"><div class="header">Answer 16</div><div class="problem-content">They are equivalent.</div></div>
+
+</body>
+</html>
