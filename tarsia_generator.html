@@ -278,8 +278,19 @@ function buildTriangleSides(pairs) {
 function getDisplaySides(triIdx, sides) {
   const { c } = idxToRC(triIdx);
   const isDown = (c % 2 === 1);
+  if (isDown) {
+    // DOWN triangle printed upright (flipped 180°):
+    // top edge    -> displayed as bottom
+    // left edge   -> displayed as RIGHT (mirrored)
+    // right edge  -> displayed as LEFT  (mirrored)
+    return {
+      displayBottom: sides.top,
+      displayLeft:   sides.right,
+      displayRight:  sides.left,
+    };
+  }
   return {
-    displayBottom: isDown ? sides.top    : sides.bottom,
+    displayBottom: sides.bottom,
     displayLeft:   sides.left,
     displayRight:  sides.right,
   };
