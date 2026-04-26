@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10.C Solving Exponential and Logarithmic Equations - Round Table</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+@page { margin: 0.5in; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page {
+  min-height: 10in;
+  padding: 0.2in;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+.page:last-child { page-break-after: auto; }
+.title-page {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title-page h1 {
+  font-size: 34px;
+  color: #00003d;
+  margin-bottom: 18px;
+}
+.title-page h2 {
+  font-size: 28px;
+  color: #163a70;
+  font-weight: 600;
+}
+.title-page .subtitle {
+  margin-top: 28px;
+  font-size: 18px;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+.directions-page {
+  justify-content: center;
+  align-items: center;
+}
+.directions-page img {
+  max-width: 100%;
+  max-height: 9.2in;
+  object-fit: contain;
+}
+.header {
+  background: #00003d;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+.content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.content p { margin-bottom: 14px; }
+.content ul, .content ol { margin: 10px 0 14px 28px; }
+.content li { margin-bottom: 8px; }
+.problem-statement {
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+.solution-step {
+  margin-bottom: 14px;
+}
+.note {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #eef3ff;
+  border-left: 4px solid #163a70;
+}
+.cyu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.cyu-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  padding: 6px 4px;
+}
+.cyu-item strong {
+  display: inline-block;
+  margin-right: 4px;
+}
+.center-math {
+  text-align: center;
+  margin: 14px 0;
+}
+.small-gap { margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<div class="page title-page">
+  <h1>10.C Solving Exponential and Logarithmic Equations</h1>
+  <h2>Round Table</h2>
+  <div class="subtitle">Exponential and Logarithmic Equations Activity</div>
+</div>
+
+<div class="page directions-page">
+  <img src="directions/round_table.png" alt="Round Table Directions">
+</div>
+
+<div class="page">
+  <div class="header">Problem 1</div>
+  <div class="content problem-statement">
+    Solve the equation by rewriting both sides with a common base.
+    <div class="center-math">$$3^x = 81$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 1</div>
+  <div class="content">
+    <p class="solution-step">Rewrite $81$ as a power of $3$.</p>
+    <div class="center-math">$$81 = 3^4$$</div>
+    <p class="solution-step">Now the equation is</p>
+    <div class="center-math">$$3^x = 3^4$$</div>
+    <p class="solution-step">When the bases are the same, the exponents must be equal.</p>
+    <div class="center-math">$$x = 4$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 2</div>
+  <div class="content problem-statement">
+    Solve the logarithmic equation.
+    <div class="center-math">$$\log_2 x = 5$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 2</div>
+  <div class="content">
+    <p class="solution-step">Rewrite the logarithmic equation in exponential form.</p>
+    <div class="center-math">$$2^5 = x$$</div>
+    <p class="solution-step">Evaluate the power.</p>
+    <div class="center-math">$$x = 32$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 3</div>
+  <div class="content problem-statement">
+    Solve the equation by combining logarithms first.
+    <div class="center-math">$$\log x + \log(x-1) = \log 20$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 3</div>
+  <div class="content">
+    <p class="solution-step">Use the product property of logarithms.</p>
+    <div class="center-math">$$\log[x(x-1)] = \log 20$$</div>
+    <p class="solution-step">If the logs are equal, their arguments are equal.</p>
+    <div class="center-math">$$x(x-1)=20$$</div>
+    <div class="center-math">$$x^2-x-20=0$$</div>
+    <p class="solution-step">Factor the quadratic.</p>
+    <div class="center-math">$$(x-5)(x+4)=0$$</div>
+    <div class="center-math">$$x=5 \text{ or } x=-4$$</div>
+    <p class="solution-step">Check domain restrictions: both $x$ and $x-1$ must be positive, so $x>1$.</p>
+    <div class="center-math">$$\boxed{x=5}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 4</div>
+  <div class="content problem-statement">
+    Solve the exponential equation.
+    <div class="center-math">$$2^{x+3} = 64$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 4</div>
+  <div class="content">
+    <p class="solution-step">Rewrite $64$ as a power of $2$.</p>
+    <div class="center-math">$$64 = 2^6$$</div>
+    <p class="solution-step">Now solve by equating exponents.</p>
+    <div class="center-math">$$2^{x+3} = 2^6$$</div>
+    <div class="center-math">$$x+3=6$$</div>
+    <div class="center-math">$$x=3$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 5</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$\ln x = 2$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 5</div>
+  <div class="content">
+    <p class="solution-step">Rewrite the natural logarithm in exponential form.</p>
+    <div class="center-math">$$e^2 = x$$</div>
+    <p class="solution-step">So the exact solution is</p>
+    <div class="center-math">$$\boxed{x=e^2}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 6</div>
+  <div class="content problem-statement">
+    Solve by using a common base.
+    <div class="center-math">$$9^x = 3^8$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 6</div>
+  <div class="content">
+    <p class="solution-step">Rewrite $9$ as $3^2$.</p>
+    <div class="center-math">$$(3^2)^x = 3^8$$</div>
+    <div class="center-math">$$3^{2x} = 3^8$$</div>
+    <p class="solution-step">Set the exponents equal.</p>
+    <div class="center-math">$$2x=8$$</div>
+    <div class="center-math">$$x=4$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 7</div>
+  <div class="content problem-statement">
+    Solve the logarithmic equation.
+    <div class="center-math">$$\log x = 3$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 7</div>
+  <div class="content">
+    <p class="solution-step">A common logarithm has base $10$.</p>
+    <div class="center-math">$$10^3 = x$$</div>
+    <div class="center-math">$$x=1000$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 8</div>
+  <div class="content problem-statement">
+    Solve the equation. Give an exact answer.
+    <div class="center-math">$$2^x = 7$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 8</div>
+  <div class="content">
+    <p class="solution-step">The two sides do not have a common base, so use logarithms.</p>
+    <div class="center-math">$$2^x=7$$</div>
+    <p class="solution-step">Take the logarithm of both sides or rewrite directly in logarithmic form.</p>
+    <div class="center-math">$$x=\log_2 7$$</div>
+    <p class="solution-step">An equivalent form is</p>
+    <div class="center-math">$$x=\frac{\ln 7}{\ln 2}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 9</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$\log(x+4)-\log x = \log 2$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 9</div>
+  <div class="content">
+    <p class="solution-step">Use the quotient property of logarithms.</p>
+    <div class="center-math">$$\log\left(\frac{x+4}{x}\right)=\log 2$$</div>
+    <p class="solution-step">Set the arguments equal.</p>
+    <div class="center-math">$$\frac{x+4}{x}=2$$</div>
+    <p class="solution-step">Solve the rational equation.</p>
+    <div class="center-math">$$x+4=2x$$</div>
+    <div class="center-math">$$x=4$$</div>
+    <p class="solution-step">Check the domain: $x>0$, so $x=4$ is valid.</p>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 10</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$2\ln x = \ln 49$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 10</div>
+  <div class="content">
+    <p class="solution-step">Use the power property of logarithms.</p>
+    <div class="center-math">$$\ln(x^2)=\ln 49$$</div>
+    <p class="solution-step">Set the arguments equal.</p>
+    <div class="center-math">$$x^2=49$$</div>
+    <div class="center-math">$$x=\pm 7$$</div>
+    <p class="solution-step">Because the original expression is $\ln x$, we need $x>0$.</p>
+    <div class="center-math">$$\boxed{x=7}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 11</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$3^{x-1} = 27$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 11</div>
+  <div class="content">
+    <p class="solution-step">Rewrite $27$ as a power of $3$.</p>
+    <div class="center-math">$$27=3^3$$</div>
+    <div class="center-math">$$3^{x-1}=3^3$$</div>
+    <div class="center-math">$$x-1=3$$</div>
+    <div class="center-math">$$x=4$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 12</div>
+  <div class="content problem-statement">
+    Solve the logarithmic equation.
+    <div class="center-math">$$\log_5 x = -1$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 12</div>
+  <div class="content">
+    <p class="solution-step">Rewrite in exponential form.</p>
+    <div class="center-math">$$5^{-1}=x$$</div>
+    <div class="center-math">$$x=\frac{1}{5}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 13</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$8^x = 2^{x+6}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 13</div>
+  <div class="content">
+    <p class="solution-step">Rewrite $8$ as $2^3$.</p>
+    <div class="center-math">$$(2^3)^x = 2^{x+6}$$</div>
+    <div class="center-math">$$2^{3x}=2^{x+6}$$</div>
+    <p class="solution-step">Set exponents equal.</p>
+    <div class="center-math">$$3x=x+6$$</div>
+    <div class="center-math">$$2x=6$$</div>
+    <div class="center-math">$$x=3$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 14</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$\log(x+1)+\log(x-3)=\log 28$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 14</div>
+  <div class="content">
+    <p class="solution-step">Combine the logarithms.</p>
+    <div class="center-math">$$\log[(x+1)(x-3)] = \log 28$$</div>
+    <p class="solution-step">Set the arguments equal.</p>
+    <div class="center-math">$$(x+1)(x-3)=28$$</div>
+    <div class="center-math">$$x^2-2x-3=28$$</div>
+    <div class="center-math">$$x^2-2x-31=0$$</div>
+    <p class="solution-step">Use the quadratic formula.</p>
+    <div class="center-math">$$x=\frac{2\pm\sqrt{128}}{2}=1\pm4\sqrt{2}$$</div>
+    <p class="solution-step">Check the domain. We need $x+1>0$ and $x-3>0$, so $x>3$.</p>
+    <div class="center-math">$$\boxed{x=1+4\sqrt{2}}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 15</div>
+  <div class="content problem-statement">
+    Solve the equation exactly.
+    <div class="center-math">$$e^{2x} = 11$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 15</div>
+  <div class="content">
+    <p class="solution-step">Take the natural logarithm of both sides.</p>
+    <div class="center-math">$$\ln(e^{2x})=\ln 11$$</div>
+    <div class="center-math">$$2x=\ln 11$$</div>
+    <div class="center-math">$$x=\frac{\ln 11}{2}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 16</div>
+  <div class="content problem-statement">
+    Compare the solutions to the two equations.
+    <div class="center-math">$$\log x = 2 \qquad \text{and} \qquad \log(x-3)=2$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 16</div>
+  <div class="content">
+    <p class="solution-step">First equation:</p>
+    <div class="center-math">$$\log x=2 \Rightarrow x=100$$</div>
+    <p class="solution-step">Second equation:</p>
+    <div class="center-math">$$\log(x-3)=2 \Rightarrow x-3=100 \Rightarrow x=103$$</div>
+    <p class="solution-step">The second solution is 3 greater because the input was shifted right by 3.</p>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 17</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$4^x = 32$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 17</div>
+  <div class="content">
+    <p class="solution-step">A common base is not obvious until we rewrite both sides as powers of $2$.</p>
+    <div class="center-math">$$4^x=(2^2)^x=2^{2x}$$</div>
+    <div class="center-math">$$32=2^5$$</div>
+    <div class="center-math">$$2^{2x}=2^5$$</div>
+    <div class="center-math">$$2x=5$$</div>
+    <div class="center-math">$$x=\frac{5}{2}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 18</div>
+  <div class="content problem-statement">
+    Solve and check for extraneous solutions.
+    <div class="center-math">$$\log(x-2)+\log(x-5)=\log 14$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 18</div>
+  <div class="content">
+    <p class="solution-step">Combine the logarithms.</p>
+    <div class="center-math">$$\log[(x-2)(x-5)] = \log 14$$</div>
+    <div class="center-math">$$(x-2)(x-5)=14$$</div>
+    <div class="center-math">$$x^2-7x+10=14$$</div>
+    <div class="center-math">$$x^2-7x-4=0$$</div>
+    <p class="solution-step">Use the quadratic formula.</p>
+    <div class="center-math">$$x=\frac{7\pm\sqrt{65}}{2}$$</div>
+    <p class="solution-step">The domain requires $x-2>0$ and $x-5>0$, so $x>5$.</p>
+    <p class="solution-step">Only the larger value works.</p>
+    <div class="center-math">$$\boxed{x=\frac{7+\sqrt{65}}{2}}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 19</div>
+  <div class="content problem-statement">
+    Solve the equation.
+    <div class="center-math">$$5^{x+1} = 125^{x-1}$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 19</div>
+  <div class="content">
+    <p class="solution-step">Rewrite $125$ as $5^3$.</p>
+    <div class="center-math">$$5^{x+1} = (5^3)^{x-1}$$</div>
+    <div class="center-math">$$5^{x+1}=5^{3x-3}$$</div>
+    <p class="solution-step">Set the exponents equal.</p>
+    <div class="center-math">$$x+1=3x-3$$</div>
+    <div class="center-math">$$4=2x$$</div>
+    <div class="center-math">$$x=2$$</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Problem 20</div>
+  <div class="content problem-statement">
+    Explain why checking solutions matters when solving logarithmic equations.
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Solution 20</div>
+  <div class="content">
+    <p class="solution-step">Logarithms are only defined when their arguments are positive.</p>
+    <p class="solution-step">During the algebra, especially after combining logs or solving a quadratic, you can produce values that make one of the original log expressions undefined.</p>
+    <p class="solution-step">Checking each candidate solution in the original equation removes extraneous answers and makes sure the solution is actually valid.</p>
+    <div class="note">For example, if a solution makes $x-1\le 0$ in $\log(x-1)$, that value must be rejected.</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="header">Check Your Understanding</div>
+  <div class="content">
+    <div class="cyu-grid">
+      <div class="cyu-item"><strong>1.</strong> Solve: $$3^x=243$$</div>
+      <div class="cyu-item"><strong>2.</strong> Solve: $$\log_2 x=6$$</div>
+      <div class="cyu-item"><strong>3.</strong> Solve: $$\log x+\log(x-2)=\log 15$$</div>
+      <div class="cyu-item"><strong>4.</strong> Solve: $$2^{x+1}=32$$</div>
+      <div class="cyu-item"><strong>5.</strong> Solve: $$\ln x=3$$</div>
+      <div class="cyu-item"><strong>6.</strong> Solve: $$9^x=3^6$$</div>
+      <div class="cyu-item"><strong>7.</strong> Solve: $$\log x=1$$</div>
+      <div class="cyu-item"><strong>8.</strong> Give an exact solution: $$2^x=10$$</div>
+      <div class="cyu-item"><strong>9.</strong> Solve: $$\log(x+6)-\log x=\log 3$$</div>
+      <div class="cyu-item"><strong>10.</strong> Solve: $$2\ln x=\ln 81$$</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
