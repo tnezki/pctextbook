@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10.B Graph Exponential and Logarithmic Functions - Whiteboard Partners</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@page {
+  size: letter;
+  margin: 0.6in;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  min-height: calc(11in - 1.2in);
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+
+.page:last-child {
+  page-break-after: auto;
+}
+
+.title-page {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1in 0.5in;
+}
+
+.title-main {
+  font-size: 34pt;
+  font-weight: 700;
+  color: #0b1f5c;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.title-sub {
+  font-size: 28pt;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 36px;
+}
+
+.title-accent {
+  width: 180px;
+  height: 6px;
+  background: #0b1f5c;
+  margin: 0 auto 36px auto;
+}
+
+.title-note {
+  font-size: 14pt;
+  color: #444;
+}
+
+.directions-page {
+  justify-content: center;
+  align-items: center;
+}
+
+.directions-page img {
+  max-width: 100%;
+  max-height: 9.5in;
+  object-fit: contain;
+}
+
+.header {
+  background: #0b1f5c;
+  color: #fff;
+  font-size: 24pt;
+  font-weight: 700;
+  padding: 14px 18px;
+  margin-bottom: 26px;
+}
+
+.question-page, .solution-page {
+  padding-top: 4px;
+}
+
+.question-text {
+  font-size: 16pt;
+  line-height: 1.55;
+}
+
+.question-text p {
+  margin-bottom: 16px;
+}
+
+.question-text ul, .question-text ol {
+  margin: 8px 0 16px 32px;
+}
+
+.question-text li {
+  margin-bottom: 8px;
+}
+
+.solution-step {
+  font-size: 15pt;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.solution-step strong {
+  color: #0b1f5c;
+}
+
+.answer-line {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: #eef3ff;
+  border-left: 6px solid #0b1f5c;
+  font-size: 15pt;
+}
+
+.small-note {
+  font-size: 13pt;
+  color: #444;
+}
+
+.cyu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+}
+
+.cyu-item {
+  font-size: 12pt;
+  line-height: 1.35;
+  border: 1px solid #c9d3eb;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+
+.cyu-item .num {
+  font-weight: 700;
+  color: #0b1f5c;
+}
+
+.center-math {
+  margin: 14px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="page title-page">
+  <div class="title-main">10.B Graph Exponential and Logarithmic Functions</div>
+  <div class="title-accent"></div>
+  <div class="title-sub">Whiteboard Partners</div>
+  <div class="title-note">Partner activity for graphing, describing, and comparing exponential and logarithmic functions.</div>
+</div>
+
+<div class="page directions-page">
+  <img src="directions/whiteboards_partners.png" alt="Whiteboard Partners directions">
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 1</div>
+  <div class="question-text">
+    <p>For the exponential function below, identify the domain, range, horizontal asymptote, and whether the graph shows growth or decay.</p>
+    <div class="center-math">$$f(x)=3^x$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 1</div>
+  <div class="solution-step"><strong>Step 1:</strong> An exponential function of the form $a^x$ has domain all real numbers as long as the base is positive and not equal to 1.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Because outputs of $3^x$ are always positive, the range is $y&gt;0$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> The parent exponential graph approaches but never reaches the x-axis, so the horizontal asymptote is $y=0$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> Since the base $3$ is greater than 1, the function represents exponential growth.</div>
+  <div class="answer-line"><strong>Answer:</strong> Domain: $(-\infty,\infty)$, Range: $(0,\infty)$, horizontal asymptote: $y=0$, growth.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 2</div>
+  <div class="question-text">
+    <p>Create a table with at least four points and use it to graph the logarithmic function.</p>
+    <div class="center-math">$$g(x)=\log_2 x$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 2</div>
+  <div class="solution-step"><strong>Step 1:</strong> Choose x-values that are powers of 2 because those are easy to evaluate in a base-2 logarithm.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Compute the outputs:
+    <ul>
+      <li>$\log_2\left(\tfrac14\right)=-2$ because $2^{-2}=\tfrac14$</li>
+      <li>$\log_2\left(\tfrac12\right)=-1$ because $2^{-1}=\tfrac12$</li>
+      <li>$\log_2(1)=0$ because $2^0=1$</li>
+      <li>$\log_2(2)=1$ because $2^1=2$</li>
+      <li>$\log_2(4)=2$ because $2^2=4$</li>
+    </ul>
+  </div>
+  <div class="solution-step"><strong>Step 3:</strong> Plot the points $\left(\tfrac14,-2\right)$, $\left(\tfrac12,-1\right)$, $(1,0)$, $(2,1)$, and $(4,2)$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> Draw a smooth increasing curve with vertical asymptote $x=0$.</div>
+  <div class="answer-line"><strong>Possible table:</strong> $\left(\tfrac14,-2\right)$, $\left(\tfrac12,-1\right)$, $(1,0)$, $(2,1)$, $(4,2)$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 3</div>
+  <div class="question-text">
+    <p>Describe the transformations from the parent function and state the new horizontal asymptote.</p>
+    <div class="center-math">$$h(x)=2^{x-3}+4$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 3</div>
+  <div class="solution-step"><strong>Step 1:</strong> The parent exponential function is $y=2^x$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Replacing $x$ with $x-3$ shifts the graph 3 units to the right.</div>
+  <div class="solution-step"><strong>Step 3:</strong> Adding 4 outside the function shifts the graph 4 units up.</div>
+  <div class="solution-step"><strong>Step 4:</strong> The parent asymptote $y=0$ also shifts up 4 units, so the new asymptote is $y=4$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Shift right 3, shift up 4, horizontal asymptote $y=4$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 4</div>
+  <div class="question-text">
+    <p>Identify the domain, range, and vertical asymptote of the function.</p>
+    <div class="center-math">$$p(x)=\ln(x+5)$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 4</div>
+  <div class="solution-step"><strong>Step 1:</strong> The expression inside the logarithm must be positive.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Solve $x+5&gt;0$, which gives $x&gt;-5$. That is the domain.</div>
+  <div class="solution-step"><strong>Step 3:</strong> A logarithmic function can produce any real output, so the range is all real numbers.</div>
+  <div class="solution-step"><strong>Step 4:</strong> The input becomes 0 at $x=-5$, so the graph has vertical asymptote $x=-5$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Domain: $(-5,\infty)$, Range: $(-\infty,\infty)$, vertical asymptote: $x=-5$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 5</div>
+  <div class="question-text">
+    <p>Compare the graphs of the two functions. Describe at least two similarities or differences.</p>
+    <div class="center-math">$$y=2^x \qquad \text{and} \qquad y=2^x-3$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 5</div>
+  <div class="solution-step"><strong>Step 1:</strong> The second function subtracts 3 outside the exponential expression, so it is a vertical translation of the first graph.</div>
+  <div class="solution-step"><strong>Step 2:</strong> That means every point on $y=2^x$ moves down 3 units to create $y=2^x-3$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> The original graph has horizontal asymptote $y=0$, while the translated graph has horizontal asymptote $y=-3$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> Both graphs are increasing exponential growth curves with the same shape.</div>
+  <div class="answer-line"><strong>Answer:</strong> Same shape and both are increasing; $y=2^x-3$ is the graph of $y=2^x$ shifted down 3 units, so its asymptote changes from $y=0$ to $y=-3$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 6</div>
+  <div class="question-text">
+    <p>Graph the function by starting with the parent logarithmic function. Give the transformation and identify the vertical asymptote.</p>
+    <div class="center-math">$$q(x)=\log_3(x-2)-1$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 6</div>
+  <div class="solution-step"><strong>Step 1:</strong> The parent function is $y=\log_3 x$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Replacing $x$ with $x-2$ shifts the graph 2 units to the right.</div>
+  <div class="solution-step"><strong>Step 3:</strong> Subtracting 1 outside the logarithm shifts the graph 1 unit down.</div>
+  <div class="solution-step"><strong>Step 4:</strong> The parent vertical asymptote is $x=0$; shifting right 2 gives the new asymptote $x=2$.</div>
+  <div class="solution-step"><strong>Step 5:</strong> Useful points come from the parent points $(1,0)$, $(3,1)$, and $\left(\tfrac13,-1\right)$. After shifting right 2 and down 1, they become $(3,-1)$, $(5,0)$, and $\left(\tfrac73,-2\right)$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Shift right 2 and down 1; vertical asymptote $x=2$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 7</div>
+  <div class="question-text">
+    <p>Determine whether the function is exponential growth or exponential decay. Then state the y-intercept and horizontal asymptote.</p>
+    <div class="center-math">$$r(x)=\left(\frac13\right)^x$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 7</div>
+  <div class="solution-step"><strong>Step 1:</strong> In an exponential function $a^x$, if $0&lt;a&lt;1$, the graph shows exponential decay.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Here the base is $\tfrac13$, which is between 0 and 1, so the function is decay.</div>
+  <div class="solution-step"><strong>Step 3:</strong> The y-intercept occurs when $x=0$: $r(0)=\left(\tfrac13\right)^0=1$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> The parent exponential asymptote is unchanged, so the horizontal asymptote is $y=0$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Exponential decay, y-intercept $(0,1)$, horizontal asymptote $y=0$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 8</div>
+  <div class="question-text">
+    <p>The two functions below are inverses. Explain how you can tell from their equations and describe how their graphs are related.</p>
+    <div class="center-math">$$y=5^x \qquad \text{and} \qquad y=\log_5 x$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 8</div>
+  <div class="solution-step"><strong>Step 1:</strong> A logarithmic function with base 5 undoes an exponential function with base 5.</div>
+  <div class="solution-step"><strong>Step 2:</strong> If $y=5^x$, then switching x and y gives $x=5^y$, which is equivalent to $y=\log_5 x$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> Because inverse functions switch inputs and outputs, ordered pairs reverse. For example, $(1,5)$ on $y=5^x$ corresponds to $(5,1)$ on $y=\log_5 x$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> Graphs of inverse functions are reflections across the line $y=x$.</div>
+  <div class="answer-line"><strong>Answer:</strong> They are inverses because logarithms undo exponentials with the same base, and their graphs reflect across $y=x$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 9</div>
+  <div class="question-text">
+    <p>Identify the key features of the graph: domain, range, horizontal asymptote, and one convenient point to plot first.</p>
+    <div class="center-math">$$s(x)=4^{x+1}-2$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 9</div>
+  <div class="solution-step"><strong>Step 1:</strong> This is an exponential function, so the domain is all real numbers.</div>
+  <div class="solution-step"><strong>Step 2:</strong> The parent function $4^x$ has range $y&gt;0$. Shifting down 2 changes the range to $y&gt;-2$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> The parent asymptote $y=0$ shifts down 2 units, so the horizontal asymptote is $y=-2$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> A convenient point comes from making the exponent 0: if $x+1=0$, then $x=-1$. So $s(-1)=4^0-2=1-2=-1$, giving point $(-1,-1)$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Domain: $(-\infty,\infty)$, Range: $(-2,\infty)$, horizontal asymptote: $y=-2$, useful point: $(-1,-1)$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 10</div>
+  <div class="question-text">
+    <p>State the domain, range, and x-intercept of the logarithmic function.</p>
+    <div class="center-math">$$t(x)=\log(x)-2$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 10</div>
+  <div class="solution-step"><strong>Step 1:</strong> The logarithm requires $x&gt;0$, so the domain is $(0,\infty)$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> A vertical shift does not change the range of a logarithmic function, so the range is still all real numbers.</div>
+  <div class="solution-step"><strong>Step 3:</strong> To find the x-intercept, set the function equal to 0:
+    <div class="center-math">$$\log(x)-2=0$$</div>
+  </div>
+  <div class="solution-step"><strong>Step 4:</strong> Solve:
+    <div class="center-math">$$\log(x)=2$$</div>
+    Since this is common log, $x=10^2=100$.
+  </div>
+  <div class="answer-line"><strong>Answer:</strong> Domain: $(0,\infty)$, Range: $(-\infty,\infty)$, x-intercept $(100,0)$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 11</div>
+  <div class="question-text">
+    <p>Sketch the graph of the function using three transformed key points from the parent exponential graph.</p>
+    <div class="center-math">$$u(x)=-2^x+1$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 11</div>
+  <div class="solution-step"><strong>Step 1:</strong> Start with the parent points for $y=2^x$: $(-1,\tfrac12)$, $(0,1)$, and $(1,2)$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> The negative sign reflects the graph across the x-axis, giving $(-1,-\tfrac12)$, $(0,-1)$, and $(1,-2)$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> Adding 1 shifts every point up 1 unit, so the transformed points are $(-1,\tfrac12)$, $(0,0)$, and $(1,-1)$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> The original asymptote $y=0$ shifts up to $y=1$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Reflect across the x-axis, then shift up 1. Sample points: $(-1,\tfrac12)$, $(0,0)$, $(1,-1)$; horizontal asymptote $y=1$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 12</div>
+  <div class="question-text">
+    <p>For the function below, identify the vertical asymptote and use it to explain the domain.</p>
+    <div class="center-math">$$v(x)=\log_4(x+1)+3$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 12</div>
+  <div class="solution-step"><strong>Step 1:</strong> The expression inside the logarithm must stay positive, so solve $x+1&gt;0$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> This gives $x&gt;-1$, so the domain is $(-1,\infty)$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> The boundary value $x=-1$ makes the logarithm input 0, which is where the graph has a vertical asymptote.</div>
+  <div class="solution-step"><strong>Step 4:</strong> The +3 shifts the graph up but does not change the asymptote or domain restriction.</div>
+  <div class="answer-line"><strong>Answer:</strong> Vertical asymptote $x=-1$; domain $(-1,\infty)$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 13</div>
+  <div class="question-text">
+    <p>Explain how the graph of the function compares to the parent graph $y=\ln x$.</p>
+    <div class="center-math">$$w(x)=\ln(2x)$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 13</div>
+  <div class="solution-step"><strong>Step 1:</strong> Replacing $x$ with $2x$ creates a horizontal compression by a factor of $\tfrac12$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Another way to see this is by using log properties: $\ln(2x)=\ln 2+\ln x$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> That means the graph is also the graph of $y=\ln x$ shifted up by $\ln 2$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> The domain remains $x&gt;0$, and the vertical asymptote is still $x=0$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Compared to $y=\ln x$, the graph is horizontally compressed (or equivalently shifted up by $\ln 2$ using log properties). Domain $x&gt;0$, asymptote $x=0$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 14</div>
+  <div class="question-text">
+    <p>Identify a helpful table of points for graphing the function, then state whether the graph increases or decreases.</p>
+    <div class="center-math">$$y=\left(\frac12\right)^{x-1}+2$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 14</div>
+  <div class="solution-step"><strong>Step 1:</strong> Make the exponent $x-1$ equal to $-1$, 0, and 1 to get easy values. That gives $x=0,1,2$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Evaluate:
+    <ul>
+      <li>$x=0$: $\left(\tfrac12\right)^{-1}+2=2+2=4$</li>
+      <li>$x=1$: $\left(\tfrac12\right)^0+2=1+2=3$</li>
+      <li>$x=2$: $\left(\tfrac12\right)^1+2=\tfrac12+2=\tfrac52$</li>
+    </ul>
+  </div>
+  <div class="solution-step"><strong>Step 3:</strong> Since the base is $\tfrac12$, the function is exponential decay, so the graph decreases from left to right.</div>
+  <div class="answer-line"><strong>Possible table:</strong> $(0,4)$, $(1,3)$, $(2,\tfrac52)$. The graph decreases.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 15</div>
+  <div class="question-text">
+    <p>State the x-intercept and one other key point you would use to graph the logarithmic function.</p>
+    <div class="center-math">$$y=\log_5(x-4)$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 15</div>
+  <div class="solution-step"><strong>Step 1:</strong> The x-intercept happens when $y=0$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Solve $\log_5(x-4)=0$. This means $x-4=5^0=1$, so $x=5$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> A second convenient point comes from making $x-4=5$, because $\log_5(5)=1$. Then $x=9$, so $(9,1)$ is on the graph.</div>
+  <div class="solution-step"><strong>Step 4:</strong> You could also use $x-4=\tfrac15$ to get point $\left(\tfrac{21}{5},-1\right)$.</div>
+  <div class="answer-line"><strong>Answer:</strong> x-intercept $(5,0)$. Another easy point is $(9,1)$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 16</div>
+  <div class="question-text">
+    <p>Which function has the steeper growth, and how can you tell from the base?</p>
+    <div class="center-math">$$y=2^x \qquad \text{or} \qquad y=6^x$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 16</div>
+  <div class="solution-step"><strong>Step 1:</strong> Both functions are exponential growth because their bases are greater than 1.</div>
+  <div class="solution-step"><strong>Step 2:</strong> For growth functions, a larger base means the outputs multiply faster as x increases.</div>
+  <div class="solution-step"><strong>Step 3:</strong> Since $6&gt;2$, the graph of $y=6^x$ rises more quickly than the graph of $y=2^x$.</div>
+  <div class="answer-line"><strong>Answer:</strong> $y=6^x$ has the steeper growth because it has the larger base.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 17</div>
+  <div class="question-text">
+    <p>Find the domain and explain why the function cannot be graphed for all real x-values.</p>
+    <div class="center-math">$$y=\log(7-x)$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 17</div>
+  <div class="solution-step"><strong>Step 1:</strong> The logarithm input must be positive, so solve $7-x&gt;0$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Subtract 7 or rewrite to get $x&lt;7$.</div>
+  <div class="solution-step"><strong>Step 3:</strong> That means the domain is $(-\infty,7)$.</div>
+  <div class="solution-step"><strong>Step 4:</strong> If $x\ge 7$, then $7-x\le 0$, and logarithms of 0 or negative numbers are undefined in the real number system.</div>
+  <div class="answer-line"><strong>Answer:</strong> Domain: $(-\infty,7)$. The graph cannot include $x\ge 7$ because the log input would not be positive.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 18</div>
+  <div class="question-text">
+    <p>Explain why the graph of the function never crosses its horizontal asymptote.</p>
+    <div class="center-math">$$y=3^x+1$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 18</div>
+  <div class="solution-step"><strong>Step 1:</strong> The parent function $3^x$ is always positive, so $3^x&gt;0$ for every real x.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Adding 1 gives $3^x+1&gt;1$ for every real x.</div>
+  <div class="solution-step"><strong>Step 3:</strong> The horizontal asymptote is $y=1$, but the outputs are always greater than 1.</div>
+  <div class="solution-step"><strong>Step 4:</strong> Because the function can get very close to 1 without ever equaling 1, the graph approaches the asymptote but never crosses it.</div>
+  <div class="answer-line"><strong>Answer:</strong> The asymptote is $y=1$, and since $3^x+1$ is always greater than 1, the graph never crosses that line.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 19</div>
+  <div class="question-text">
+    <p>Describe the transformations of the function and state the domain, range, and vertical asymptote.</p>
+    <div class="center-math">$$y=-\log_2(x-1)+4$$</div>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 19</div>
+  <div class="solution-step"><strong>Step 1:</strong> Start from the parent function $y=\log_2 x$.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Replacing $x$ with $x-1$ shifts the graph right 1 unit.</div>
+  <div class="solution-step"><strong>Step 3:</strong> The negative sign reflects the graph across the x-axis.</div>
+  <div class="solution-step"><strong>Step 4:</strong> Adding 4 shifts the graph up 4 units.</div>
+  <div class="solution-step"><strong>Step 5:</strong> The input restriction is $x-1&gt;0$, so $x&gt;1$. Therefore the domain is $(1,\infty)$ and the vertical asymptote is $x=1$.</div>
+  <div class="solution-step"><strong>Step 6:</strong> Logarithmic functions still have all real outputs after reflections and vertical shifts, so the range is $(-\infty,\infty)$.</div>
+  <div class="answer-line"><strong>Answer:</strong> Right 1, reflect across the x-axis, up 4. Domain: $(1,\infty)$, Range: $(-\infty,\infty)$, vertical asymptote: $x=1$.</div>
+</div>
+
+<div class="page question-page">
+  <div class="header">Problem 20</div>
+  <div class="question-text">
+    <p>A student says, “Every logarithmic graph is decreasing because it has an asymptote.” Decide whether the statement is true or false and justify your answer.</p>
+  </div>
+</div>
+
+<div class="page solution-page">
+  <div class="header">Solution 20</div>
+  <div class="solution-step"><strong>Step 1:</strong> The statement is false.</div>
+  <div class="solution-step"><strong>Step 2:</strong> Whether a logarithmic graph increases or decreases depends on the base.</div>
+  <div class="solution-step"><strong>Step 3:</strong> If the base is greater than 1, such as $\log_2 x$, the graph is increasing.</div>
+  <div class="solution-step"><strong>Step 4:</strong> If the base is between 0 and 1, the graph is decreasing.</div>
+  <div class="solution-step"><strong>Step 5:</strong> Having a vertical asymptote does not determine whether the graph increases or decreases.</div>
+  <div class="answer-line"><strong>Answer:</strong> False. Some logarithmic functions increase and some decrease; the base determines the behavior, not the asymptote alone.</div>
+</div>
+
+<div class="page">
+  <div class="header">Check Your Understanding</div>
+  <div class="small-note" style="margin-bottom: 14px;">These questions sample the same ideas from Problems 1-10. Keep work on your whiteboard.</div>
+  <div class="cyu-grid">
+    <div class="cyu-item"><span class="num">1.</span> Identify the domain, range, and horizontal asymptote of $$y=5^x$$</div>
+    <div class="cyu-item"><span class="num">2.</span> Give four easy points for $$y=\log_3 x$$</div>
+    <div class="cyu-item"><span class="num">3.</span> Describe the transformations of $$y=4^{x+2}-1$$</div>
+    <div class="cyu-item"><span class="num">4.</span> State the domain and vertical asymptote of $$y=\ln(x-6)$$</div>
+    <div class="cyu-item"><span class="num">5.</span> Compare $$y=3^x$$ and $$y=3^x+2$$</div>
+    <div class="cyu-item"><span class="num">6.</span> State the transformation and asymptote of $$y=\log_2(x+4)+1$$</div>
+    <div class="cyu-item"><span class="num">7.</span> Is $$y=\left(\frac14\right)^x$$ growth or decay? Give the y-intercept.</div>
+    <div class="cyu-item"><span class="num">8.</span> Explain how $$y=10^x$$ and $$y=\log x$$ are related.</div>
+    <div class="cyu-item"><span class="num">9.</span> Give one easy point and the asymptote for $$y=2^{x-2}+3$$</div>
+    <div class="cyu-item"><span class="num">10.</span> Find the x-intercept of $$y=\log(x)+1$$</div>
+  </div>
+</div>
+
+</body>
+</html>
