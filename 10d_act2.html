@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>10.D Logarithmic Equations with Extraneous Solutions - Showdown</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.5;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+.container{max-width:900px;margin:auto;}
+.page-break{page-break-before:always;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+.activity-subtitle{font-size:2.1em;color:#00003d;font-weight:700;margin-top:10px;}
+.title-page{
+  min-height:88vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.title-page h1{margin-bottom:12px;}
+.header-box{
+  background:#00003d;
+  color:#ffffff;
+  font-size:24px;
+  font-weight:700;
+  padding:14px 18px;
+  margin-bottom:24px;
+}
+.problem-page{
+  min-height:88vh;
+  display:flex;
+  flex-direction:column;
+}
+.question-text{
+  font-size:16px;
+}
+.solution-text{
+  font-size:16px;
+}
+.solution-text p{margin-bottom:12px;}
+.solution-text ul{margin-bottom:12px;}
+.check-header{
+  background:#00003d;
+  color:#ffffff;
+  font-size:24px;
+  font-weight:700;
+  padding:14px 18px;
+  margin-bottom:20px;
+}
+.check-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  row-gap:8px;
+  font-size:14px;
+  line-height:1.25;
+}
+.check-grid .item{
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+.answer-key-list{
+  font-size:16px;
+  line-height:1.55;
+}
+.directions-page{
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.directions-page img{
+  max-width:100%;
+  max-height:92vh;
+  display:block;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="title-page">
+    <h1>10.D Logarithmic Equations with Extraneous Solutions</h1>
+    <div class="activity-subtitle">Showdown</div>
+  </div>
+  <div class="page-break"></div>
+  <div class="directions-page">
+    <img src="directions/showdown.png" alt="Showdown directions">
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 1</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-2)+\log(x-5)=\log 21$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 1</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x-2>0\) and \(x-5>0\), so \(x>5\).</p>
+<p>Combine the logarithms:</p>
+$$ \log[(x-2)(x-5)] = \log 21 $$
+<p>Set the arguments equal:</p>
+$$ (x-2)(x-5)=21 $$
+$$ x^2-7x+10=21 $$
+$$ x^2-7x-11=0 $$
+<p>Use the quadratic formula:</p>
+$$ x=\frac{7\pm\sqrt{49+44}}{2}=\frac{7\pm\sqrt{93}}{2} $$
+<p>Check both values:</p>
+<ul style="margin-left:24px;">
+<li>\(x=\frac{7+\sqrt{93}}{2}\) is greater than 5, so it is valid.</li>
+<li>\(x=\frac{7-\sqrt{93}}{2}\) is not greater than 5, so it is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=\frac{7+\sqrt{93}}{2}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 2</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x-3)+\ln(x-7)=\ln 18$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 2</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>7\).</p>
+<p>Combine the logarithms:</p>
+$$ \ln[(x-3)(x-7)] = \ln 18 $$
+$$ (x-3)(x-7)=18 $$
+$$ x^2-10x+21=18 $$
+$$ x^2-10x+3=0 $$
+<p>Use the quadratic formula:</p>
+$$ x=\frac{10\pm\sqrt{100-12}}{2}=\frac{10\pm\sqrt{88}}{2}=5\pm\sqrt{22} $$
+<p>Check both values:</p>
+<ul style="margin-left:24px;">
+<li>\(5+\sqrt{22}>7\), so it is valid.</li>
+<li>\(5-\sqrt{22}<7\), so it is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=5+\sqrt{22}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 3</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-4)-\log(x-9)=\log 3$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 3</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x-4>0\) and \(x-9>0\), so \(x>9\).</p>
+<p>Use the quotient property:</p>
+$$ \log\left(\frac{x-4}{x-9}\right)=\log 3 $$
+<p>Set the arguments equal:</p>
+$$ \frac{x-4}{x-9}=3 $$
+$$ x-4=3x-27 $$
+$$ 23=2x $$
+$$ x=\frac{23}{2} $$
+<p>Check: \(\frac{23}{2}>9\), so it is valid.</p>
+<p><strong>Solution:</strong> $$x=\frac{23}{2}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 4</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x+5)-\ln(x-2)=\ln 4$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 4</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x+5>0\) and \(x-2>0\), so \(x>2\).</p>
+<p>Use the quotient property:</p>
+$$ \ln\left(\frac{x+5}{x-2}\right)=\ln 4 $$
+$$ \frac{x+5}{x-2}=4 $$
+$$ x+5=4x-8 $$
+$$ 13=3x $$
+$$ x=\frac{13}{3} $$
+<p>Check: \(\frac{13}{3}>2\), so it is valid.</p>
+<p><strong>Solution:</strong> $$x=\frac{13}{3}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 5</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-3)+\log(x-8)=\log 20$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 5</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>8\).</p>
+<p>Combine the logarithms:</p>
+$$ \log[(x-3)(x-8)] = \log 20 $$
+$$ (x-3)(x-8)=20 $$
+$$ x^2-11x+24=20 $$
+$$ x^2-11x+4=0 $$
+<p>Use the quadratic formula:</p>
+$$ x=\frac{11\pm\sqrt{121-16}}{2}=\frac{11\pm\sqrt{105}}{2} $$
+<p>Check both values:</p>
+<ul style="margin-left:24px;">
+<li>\(\frac{11+\sqrt{105}}{2}>8\), so it is valid.</li>
+<li>\(\frac{11-\sqrt{105}}{2}<8\), so it is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=\frac{11+\sqrt{105}}{2}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 6</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x^2-16)=2$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 6</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restriction:</strong> \(x^2-16>0\), so \(|x|>4\).</p>
+<p>Rewrite in exponential form:</p>
+$$ x^2-16=e^2 $$
+$$ x^2=e^2+16 $$
+$$ x=\pm\sqrt{e^2+16} $$
+<p>Both values satisfy \(|x|>4\), so both are valid.</p>
+<p><strong>Solutions:</strong> $$x=\pm\sqrt{e^2+16}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 7</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-6)+\log(x-10)=\log 24$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 7</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>10\).</p>
+<p>Combine the logarithms:</p>
+$$ \log[(x-6)(x-10)] = \log 24 $$
+$$ (x-6)(x-10)=24 $$
+$$ x^2-16x+60=24 $$
+$$ x^2-16x+36=0 $$
+<p>Use the quadratic formula:</p>
+$$ x=\frac{16\pm\sqrt{256-144}}{2}=\frac{16\pm\sqrt{112}}{2}=8\pm 2\sqrt7 $$
+<p>Check both values:</p>
+<ul style="margin-left:24px;">
+<li>\(8+2\sqrt7\approx 13.29\), so it is valid.</li>
+<li>\(8-2\sqrt7\approx 2.71\), so it is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=8+2\sqrt7$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 8</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-1)=\log(11-x)$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 8</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x-1>0\) and \(11-x>0\), so \(1<x<11\).</p>
+<p>Set the arguments equal:</p>
+$$ x-1=11-x $$
+$$ 2x=12 $$
+$$ x=6 $$
+<p>Check: \(6\) is in the interval \(1<x<11\), so it is valid.</p>
+<p><strong>Solution:</strong> $$x=6$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 9</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x+2)+\ln(x-4)=\ln 32$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 9</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x+2>0\) and \(x-4>0\), so \(x>4\).</p>
+<p>Combine the logarithms:</p>
+$$ \ln[(x+2)(x-4)] = \ln 32 $$
+$$ (x+2)(x-4)=32 $$
+$$ x^2-2x-8=32 $$
+$$ x^2-2x-40=0 $$
+<p>Use the quadratic formula:</p>
+$$ x=\frac{2\pm\sqrt{4+160}}{2}=\frac{2\pm\sqrt{164}}{2}=1\pm\sqrt{41} $$
+<p>Check both values:</p>
+<ul style="margin-left:24px;">
+<li>\(1+\sqrt{41}>4\), so it is valid.</li>
+<li>\(1-\sqrt{41}<4\), so it is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=1+\sqrt{41}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 10</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x^2-25)=1$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 10</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restriction:</strong> \(x^2-25>0\), so \(|x|>5\).</p>
+<p>Rewrite in exponential form:</p>
+$$ x^2-25=10 $$
+$$ x^2=35 $$
+$$ x=\pm\sqrt{35} $$
+<p>Since \(\sqrt{35}\approx 5.92\), both values satisfy \(|x|>5\).</p>
+<p><strong>Solutions:</strong> $$x=\pm\sqrt{35}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 11</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x-2)-\ln(x-6)=\ln 2$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 11</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>6\).</p>
+<p>Use the quotient property:</p>
+$$ \ln\left(\frac{x-2}{x-6}\right)=\ln 2 $$
+$$ \frac{x-2}{x-6}=2 $$
+$$ x-2=2x-12 $$
+$$ x=10 $$
+<p>Check: \(10>6\), so it is valid.</p>
+<p><strong>Solution:</strong> $$x=10$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 12</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-4)+\log(x-5)=\log 14$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 12</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>5\).</p>
+<p>Combine the logarithms:</p>
+$$ \log[(x-4)(x-5)] = \log 14 $$
+$$ (x-4)(x-5)=14 $$
+$$ x^2-9x+20=14 $$
+$$ x^2-9x+6=0 $$
+<p>Use the quadratic formula:</p>
+$$ x=\frac{9\pm\sqrt{81-24}}{2}=\frac{9\pm\sqrt{57}}{2} $$
+<p>Check both values:</p>
+<ul style="margin-left:24px;">
+<li>\(\frac{9+\sqrt{57}}{2}>5\), so it is valid.</li>
+<li>\(\frac{9-\sqrt{57}}{2}<5\), so it is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=\frac{9+\sqrt{57}}{2}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 13</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x+1)-\log(x-7)=\log 5$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 13</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x+1>0\) and \(x-7>0\), so \(x>7\).</p>
+<p>Use the quotient property:</p>
+$$ \log\left(\frac{x+1}{x-7}\right)=\log 5 $$
+$$ \frac{x+1}{x-7}=5 $$
+$$ x+1=5x-35 $$
+$$ 36=4x $$
+$$ x=9 $$
+<p>Check: \(9>7\), so it is valid.</p>
+<p><strong>Solution:</strong> $$x=9$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 14</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x-5)+\ln(x-9)=\ln 12$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 14</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>9\).</p>
+<p>Combine the logarithms:</p>
+$$ \ln[(x-5)(x-9)] = \ln 12 $$
+$$ (x-5)(x-9)=12 $$
+$$ x^2-14x+45=12 $$
+$$ x^2-14x+33=0 $$
+<p>Factor the quadratic:</p>
+$$ (x-11)(x-3)=0 $$
+<p>Check both candidates against \(x>9\):</p>
+<ul style="margin-left:24px;">
+<li>\(x=11\) is valid.</li>
+<li>\(x=3\) is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=11$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 15</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-7)=\log(19-x)$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 15</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>7\) and \(x<19\), so \(7<x<19\).</p>
+<p>Set the arguments equal:</p>
+$$ x-7=19-x $$
+$$ 2x=26 $$
+$$ x=13 $$
+<p>Check: \(13\) is in the domain interval, so it is valid.</p>
+<p><strong>Solution:</strong> $$x=13$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 16</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x^2-4)=3$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 16</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restriction:</strong> \(x^2-4>0\), so \(|x|>2\).</p>
+<p>Rewrite in exponential form:</p>
+$$ x^2-4=e^3 $$
+$$ x^2=e^3+4 $$
+$$ x=\pm\sqrt{e^3+4} $$
+<p>Both solutions satisfy \(|x|>2\), so both are valid.</p>
+<p><strong>Solutions:</strong> $$x=\pm\sqrt{e^3+4}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 17</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-3)+\log(x-9)=\log 18$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 17</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>9\).</p>
+<p>Combine the logarithms:</p>
+$$ \log[(x-3)(x-9)] = \log 18 $$
+$$ (x-3)(x-9)=18 $$
+$$ x^2-12x+27=18 $$
+$$ x^2-12x+9=0 $$
+<p>Use the quadratic formula:</p>
+$$ x=\frac{12\pm\sqrt{144-36}}{2}=\frac{12\pm\sqrt{108}}{2}=6\pm 3\sqrt3 $$
+<p>Check both values:</p>
+<ul style="margin-left:24px;">
+<li>\(6+3\sqrt3\approx 11.20\), so it is valid.</li>
+<li>\(6-3\sqrt3\approx 0.80\), so it is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=6+3\sqrt3$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 18</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\ln(x+6)-\ln(x-3)=\ln 3$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 18</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>3\).</p>
+<p>Use the quotient property:</p>
+$$ \ln\left(\frac{x+6}{x-3}\right)=\ln 3 $$
+$$ \frac{x+6}{x-3}=3 $$
+$$ x+6=3x-9 $$
+$$ 15=2x $$
+$$ x=\frac{15}{2} $$
+<p>Check: \(\frac{15}{2}>3\), so it is valid.</p>
+<p><strong>Solution:</strong> $$x=\frac{15}{2}$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 19</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-9)+\log(x-12)=\log 28$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 19</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>12\).</p>
+<p>Combine the logarithms:</p>
+$$ \log[(x-9)(x-12)] = \log 28 $$
+$$ (x-9)(x-12)=28 $$
+$$ x^2-21x+108=28 $$
+$$ x^2-21x+80=0 $$
+<p>Factor the quadratic:</p>
+$$ (x-16)(x-5)=0 $$
+<p>Check both candidates against \(x>12\):</p>
+<ul style="margin-left:24px;">
+<li>\(x=16\) is valid.</li>
+<li>\(x=5\) is extraneous.</li>
+</ul>
+<p><strong>Solution:</strong> $$x=16$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Problem 20</div>
+    <div class="question-text">
+      <p>Solve and check for extraneous solutions: $$\log(x-4)=\log(12-x)$$</p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="header-box">Solution 20</div>
+    <div class="solution-text">
+      
+<p><strong>Domain restrictions:</strong> \(x>4\) and \(x<12\), so \(4<x<12\).</p>
+<p>Set the arguments equal:</p>
+$$ x-4=12-x $$
+$$ 2x=16 $$
+$$ x=8 $$
+<p>Check: \(8\) is in the domain interval, so it is valid.</p>
+<p><strong>Solution:</strong> $$x=8$$</p>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="check-header">Check Your Understanding</div>
+    <div class="check-grid">
+      <div class="item">1. Solve and check: $$\log(x-2)+\log(x-5)=\log 21$$</div>
+      <div class="item">2. Solve and check: $$\ln(x-3)+\ln(x-7)=\ln 18$$</div>
+      <div class="item">3. Solve and check: $$\log(x-4)-\log(x-9)=\log 3$$</div>
+      <div class="item">4. Solve and check: $$\ln(x+5)-\ln(x-2)=\ln 4$$</div>
+      <div class="item">5. Solve and check: $$\log(x-3)+\log(x-8)=\log 20$$</div>
+      <div class="item">6. Solve and check: $$\ln(x^2-16)=2$$</div>
+      <div class="item">7. Solve and check: $$\log(x-6)+\log(x-10)=\log 24$$</div>
+      <div class="item">8. Solve and check: $$\log(x-1)=\log(11-x)$$</div>
+      <div class="item">9. Solve and check: $$\ln(x+2)+\ln(x-4)=\ln 32$$</div>
+      <div class="item">10. Solve and check: $$\log(x^2-25)=1$$</div>
+
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+  <div class="problem-page">
+    <div class="check-header">Check Your Understanding Answer Key</div>
+    <div class="answer-key-list">
+      <p>1. \(x=\frac{7+\sqrt{93}}{2}\)</p>
+      <p>2. \(x=5+\sqrt{22}\)</p>
+      <p>3. \(x=\frac{23}{2}\)</p>
+      <p>4. \(x=\frac{13}{3}\)</p>
+      <p>5. \(x=\frac{11+\sqrt{105}}{2}\)</p>
+      <p>6. \(x=\pm\sqrt{e^2+16}\)</p>
+      <p>7. \(x=8+2\sqrt7\)</p>
+      <p>8. \(x=6\)</p>
+      <p>9. \(x=1+\sqrt{41}\)</p>
+      <p>10. \(x=\pm\sqrt{35}\)</p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
