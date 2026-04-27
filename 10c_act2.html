@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>10.C Solving Exponential and Logarithmic Equations - Stations</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.45;
+  color:#222;
+  background:#ffffff;
+  padding:20px;
+}
+.container{max-width:900px;margin:auto;}
+.page-break{page-break-before:always;}
+.page{min-height:1000px; padding:10px 0;}
+.title-page{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  min-height:1000px;
+}
+.title-page h1{
+  font-size:2.5em;
+  color:#00003d;
+  margin-bottom:22px;
+}
+.title-page h2{
+  font-size:2em;
+  color:#ffffff;
+  background:#00003d;
+  padding:14px 28px;
+  border-radius:8px;
+  font-weight:700;
+}
+.directions-page{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:1000px;
+}
+.directions-page img{
+  max-width:100%;
+  max-height:940px;
+  display:block;
+}
+.station-header, .solution-header{
+  background:#00003d;
+  color:#ffffff;
+  font-size:24px;
+  font-weight:700;
+  padding:12px 16px;
+  margin-bottom:18px;
+}
+.station-subtitle{
+  font-size:1rem;
+  color:#444;
+  margin-bottom:14px;
+}
+.question-list{
+  font-size:16px;
+  padding-left:28px;
+}
+.question-list li{
+  margin-bottom:20px;
+}
+.question-list li.compact{
+  margin-bottom:14px;
+}
+.solution-list{
+  font-size:16px;
+  padding-left:28px;
+}
+.solution-list li{
+  margin-bottom:14px;
+}
+.solution-list p{margin:4px 0;}
+.check-title{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.check-grid{
+  columns:2;
+  column-gap:36px;
+  font-size:14px;
+}
+.check-item{
+  break-inside:avoid;
+  margin-bottom:12px;
+}
+@media print {
+  .page{min-height:auto;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="page title-page">
+  <h1>10.C Solving Exponential and Logarithmic Equations</h1>
+  <h2>Stations</h2>
+</div>
+
+<div class="page-break"></div>
+<div class="page directions-page">
+  <img src="directions/stations.png" alt="Stations directions">
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="station-header">Station 1</div>
+  <div class="station-subtitle">Solve each equation by rewriting with a common base when possible.</div>
+  <ol class="question-list">
+    <li>$$2^x=32$$</li>
+    <li>$$3^x=81$$</li>
+    <li>$$4^x=64$$</li>
+    <li>$$8^x=2^9$$</li>
+    <li>$$9^x=3^6$$</li>
+    <li>$$5^{x-1}=125$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="solution-header">Station 1 Solutions</div>
+  <ol class="solution-list">
+    <li>$$2^x=2^5\Rightarrow x=5$$</li>
+    <li>$$3^x=3^4\Rightarrow x=4$$</li>
+    <li>$$4^x=4^3\Rightarrow x=3$$</li>
+    <li>$$\left(2^3\right)^x=2^9\Rightarrow 2^{3x}=2^9\Rightarrow x=3$$</li>
+    <li>$$\left(3^2\right)^x=3^6\Rightarrow 3^{2x}=3^6\Rightarrow x=3$$</li>
+    <li>$$5^{x-1}=5^3\Rightarrow x-1=3\Rightarrow x=4$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="station-header">Station 2</div>
+  <div class="station-subtitle">Rewrite each logarithmic equation in exponential form and solve.</div>
+  <ol class="question-list">
+    <li>$$\log x=2$$</li>
+    <li>$$\log_2 x=5$$</li>
+    <li>$$\log_3 x=4$$</li>
+    <li>$$\ln x=1$$</li>
+    <li>$$\log_5(x)=3$$</li>
+    <li>$$\ln(x)=2$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="solution-header">Station 2 Solutions</div>
+  <ol class="solution-list">
+    <li>$$x=10^2=100$$</li>
+    <li>$$x=2^5=32$$</li>
+    <li>$$x=3^4=81$$</li>
+    <li>$$x=e^1=e$$</li>
+    <li>$$x=5^3=125$$</li>
+    <li>$$x=e^2$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="station-header">Station 3</div>
+  <div class="station-subtitle">Use logarithm properties to combine first, then solve. Check for valid answers.</div>
+  <ol class="question-list">
+    <li>$$\log x+\log(x-1)=\log 12$$</li>
+    <li>$$\log(x+2)-\log x=\log 2$$</li>
+    <li>$$2\log x=\log 49$$</li>
+    <li>$$\log(x+4)+\log(x-1)=\log 36$$</li>
+    <li>$$\ln x+\ln(x-3)=\ln 28$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="solution-header">Station 3 Solutions</div>
+  <ol class="solution-list">
+    <li>$$x(x-1)=12\Rightarrow x^2-x-12=0\Rightarrow x=4,-3$$ Valid: $$x=4$$</li>
+    <li>$$\frac{x+2}{x}=2\Rightarrow x+2=2x\Rightarrow x=2$$</li>
+    <li>$$\log(x^2)=\log 49\Rightarrow x^2=49$$ Valid: $$x=7$$</li>
+    <li>$$ (x+4)(x-1)=36\Rightarrow x^2+3x-40=0\Rightarrow x=5,-8$$ Valid: $$x=5$$</li>
+    <li>$$x(x-3)=28\Rightarrow x^2-3x-28=0\Rightarrow x=7,-4$$ Valid: $$x=7$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="station-header">Station 4</div>
+  <div class="station-subtitle">Solve each multi-step exponential equation.</div>
+  <ol class="question-list">
+    <li>$$2^{x+1}=16$$</li>
+    <li>$$3^{x-2}=27$$</li>
+    <li>$$5^{2x}=125$$</li>
+    <li>$$2^{x+3}=64$$</li>
+    <li>$$4^{x-1}=16$$</li>
+    <li>$$9^{x+1}=27$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="solution-header">Station 4 Solutions</div>
+  <ol class="solution-list">
+    <li>$$2^{x+1}=2^4\Rightarrow x+1=4\Rightarrow x=3$$</li>
+    <li>$$3^{x-2}=3^3\Rightarrow x-2=3\Rightarrow x=5$$</li>
+    <li>$$5^{2x}=5^3\Rightarrow 2x=3\Rightarrow x=\frac{3}{2}$$</li>
+    <li>$$2^{x+3}=2^6\Rightarrow x+3=6\Rightarrow x=3$$</li>
+    <li>$$4^{x-1}=4^2\Rightarrow x-1=2\Rightarrow x=3$$</li>
+    <li>$$3^{2x+2}=3^3\Rightarrow 2x+2=3\Rightarrow x=\frac12$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="station-header">Station 5</div>
+  <div class="station-subtitle">When no convenient common base exists, solve using logarithms.</div>
+  <ol class="question-list">
+    <li>$$2^x=7$$</li>
+    <li>$$3^x=11$$</li>
+    <li>$$5^{x-1}=9$$</li>
+    <li>$$e^{2x}=10$$</li>
+    <li>$$7^{x+2}=20$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="solution-header">Station 5 Solutions</div>
+  <ol class="solution-list">
+    <li>$$x=\log_2 7=\frac{\ln 7}{\ln 2}$$</li>
+    <li>$$x=\log_3 11=\frac{\ln 11}{\ln 3}$$</li>
+    <li>$$x-1=\log_5 9\Rightarrow x=1+\log_5 9$$</li>
+    <li>$$2x=\ln 10\Rightarrow x=\frac{\ln 10}{2}$$</li>
+    <li>$$x+2=\log_7 20\Rightarrow x=\log_7 20-2$$</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="station-header">Station 6</div>
+  <div class="station-subtitle">Compare equations, determine solutions, and notice how structure changes the answer.</div>
+  <ol class="question-list">
+    <li class="compact">Solve both: $$\log x=2 \quad \text{and} \quad \log(x-2)=2$$</li>
+    <li class="compact">Solve both: $$2^x=8 \quad \text{and} \quad 2^{x+1}=8$$</li>
+    <li class="compact">Solve both: $$\ln x=3 \quad \text{and} \quad \ln(x+1)=3$$</li>
+    <li class="compact">Solve both: $$3^x=27 \quad \text{and} \quad 3^{x-2}=27$$</li>
+    <li class="compact">Explain in one sentence how a horizontal shift inside the input changes the solution.</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="solution-header">Station 6 Solutions</div>
+  <ol class="solution-list">
+    <li>$$\log x=2\Rightarrow x=100$$ and $$\log(x-2)=2\Rightarrow x-2=100\Rightarrow x=102$$</li>
+    <li>$$2^x=8\Rightarrow x=3$$ and $$2^{x+1}=8\Rightarrow x+1=3\Rightarrow x=2$$</li>
+    <li>$$\ln x=3\Rightarrow x=e^3$$ and $$\ln(x+1)=3\Rightarrow x+1=e^3\Rightarrow x=e^3-1$$</li>
+    <li>$$3^x=27\Rightarrow x=3$$ and $$3^{x-2}=27\Rightarrow x-2=3\Rightarrow x=5$$</li>
+    <li>A horizontal shift inside the expression changes the value that must equal the solved quantity, so the final answer shifts accordingly.</li>
+  </ol>
+</div>
+
+<div class="page-break"></div>
+<div class="page">
+  <div class="check-title">Check Your Understanding</div>
+  <div class="check-grid">
+    <div class="check-item">1. Solve: $$2^x=64$$</div>
+    <div class="check-item">2. Solve: $$3^{x-1}=9$$</div>
+    <div class="check-item">3. Solve: $$\log x=3$$</div>
+    <div class="check-item">4. Solve: $$\log_2 x=6$$</div>
+    <div class="check-item">5. Solve: $$\ln x=2$$</div>
+    <div class="check-item">6. Solve: $$\log x+\log(x-4)=\log 21$$</div>
+    <div class="check-item">7. Solve: $$2\log x=\log 81$$</div>
+    <div class="check-item">8. Solve: $$2^{x+2}=32$$</div>
+    <div class="check-item">9. Solve: $$5^x=12$$</div>
+    <div class="check-item">10. Solve both: $$\log x=1 \quad \text{and} \quad \log(x+3)=1$$</div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-break"></div>
+<h2 style="font-size:18px;font-weight:bold;">Check Your Understanding Answer Key</h2>
+<p>1. x=5</p>
+<p>2. x=4</p>
+<p>3. x=100</p>
+<p>4. x=16</p>
+<p>5. x=e</p>
+<p>6. x=2</p>
+<p>7. x=2</p>
+<p>8. x=4</p>
+<p>9. x=2</p>
+<p>10. x=5</p>
+
+</body>
+</html>
