@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Precalculus - Chapter 1 Section 1 HTML Reconstruction</title>
+<style>
+  :root{
+    --page-width: 8.5in;
+    --page-min-height: 11in;
+    --text: #111;
+    --muted: #555;
+    --line: #999;
+    --light: #f5f5f5;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    font-family: "Georgia", "Times New Roman", serif;
+    color:var(--text);
+    background:#e9e9e9;
+    line-height:1.35;
+  }
+  .document{
+    width: var(--page-width);
+    margin: 0 auto;
+    padding: 0.2in 0;
+  }
+  .page{
+    width: var(--page-width);
+    min-height: var(--page-min-height);
+    background:#fff;
+    margin: 0 auto 0.18in auto;
+    padding: 0.55in 0.6in 0.6in 0.6in;
+    position: relative;
+    box-shadow: 0 1px 4px rgba(0,0,0,.15);
+    page-break-after: always;
+    overflow: hidden;
+  }
+  .page-number{
+    position:absolute;
+    right:0.55in;
+    bottom:0.38in;
+    font-size:11px;
+    color:#222;
+  }
+  .running-footer{
+    position:absolute;
+    left:0.55in;
+    bottom:0.38in;
+    font-size:10px;
+    color:#444;
+  }
+  .problem, .section-block, .math-notes, .learning-log, .chapter-outline, .goals-box, .reflection-box{
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, h4{ margin:0 0 0.12in 0; }
+  .chapter-cloud{
+    border:2px solid #999;
+    border-radius:40px;
+    padding:0.3in 0.2in;
+    text-align:center;
+    width:70%;
+    margin:0.25in auto 0.45in auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .chapter-cloud .big{ font-size:34px; font-weight:700; }
+  .chapter-cloud .small{ font-size:18px; }
+  .hero-road{
+    margin-top:0.25in;
+  }
+  .placeholder{
+    border:2px dashed #888;
+    background: repeating-linear-gradient(
+      45deg,
+      #fafafa,
+      #fafafa 12px,
+      #f0f0f0 12px,
+      #f0f0f0 24px
+    );
+    color:#333;
+    padding:0.15in;
+  }
+  figure{
+    margin:0.12in 0;
+  }
+  figcaption{
+    font-size:11px;
+    color:#333;
+    margin-top:6px;
+  }
+  .img-large{ min-height:4.5in; }
+  .img-medium{ min-height:2.3in; }
+  .img-small{ min-height:1.2in; }
+  .placeholder-name{
+    font-weight:700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom:6px;
+  }
+  .access{
+    font-size:11px;
+    color:#333;
+  }
+  .chapter-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:1px dotted #777;
+    padding-bottom:0.08in;
+    margin-bottom:0.18in;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .chapter-header .left{
+    font-size:24px;
+    letter-spacing:0.02em;
+  }
+  .chapter-header .right{
+    font-size:18px;
+  }
+  .two-col{
+    display:grid;
+    grid-template-columns: 1.6fr 0.9fr;
+    gap:0.22in;
+    align-items:start;
+  }
+  .goals-box{
+    border:1px solid #888;
+    padding:0.12in;
+    font-size:12px;
+  }
+  .goals-box h3{
+    text-align:center;
+    margin-bottom:0.1in;
+    font-size:16px;
+  }
+  .chapter-outline{
+    margin-top:0.45in;
+    border:1px solid #aaa;
+    padding:0.12in 0.16in;
+  }
+  .outline-row{
+    display:grid;
+    grid-template-columns:0.7in 0.8in 1fr;
+    gap:0.1in;
+    align-items:center;
+    margin:0.1in 0;
+  }
+  .icon-box{
+    border:1px solid #888;
+    height:0.35in;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    background:#fafafa;
+  }
+  .lesson-head{
+    display:grid;
+    grid-template-columns:1fr 1.15in;
+    gap:0.16in;
+    align-items:start;
+    margin-bottom:0.12in;
+  }
+  .lesson-title{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .lesson-title h2{
+    font-size:28px;
+    font-weight:700;
+  }
+  .lesson-title .subtitle{
+    font-size:17px;
+    margin-top:-0.02in;
+  }
+  .problem{
+    margin:0.12in 0;
+  }
+  .problem .num{
+    font-weight:400;
+    margin-right:0.08in;
+    white-space:nowrap;
+  }
+  .problem-title{
+    font-variant: small-caps;
+    font-weight:700;
+    letter-spacing:0.03em;
+    margin-bottom:0.06in;
+  }
+  .subparts{
+    margin:0.05in 0 0.08in 0.22in;
+  }
+  .subparts li{ margin-bottom:0.05in; }
+  p{ margin:0 0 0.08in 0; }
+  ul{ margin:0.05in 0 0.08in 0.25in; }
+  .role-box{
+    border:2px solid #aaa;
+    border-radius:24px;
+    padding:0.16in 0.18in;
+  }
+  .workspace{
+    border:1px solid #bbb;
+    min-height:0.8in;
+    margin-top:0.08in;
+    background:
+      linear-gradient(to bottom, transparent 23px, #ececec 24px);
+    background-size:100% 24px;
+  }
+  .workspace.tall{ min-height:1.8in; }
+  .workspace.xtall{ min-height:2.6in; }
+  .review{
+    text-align:center;
+    margin:0.16in 0;
+    font-style:italic;
+  }
+  .math-notes{
+    border:2px solid #888;
+    padding:0.14in 0.16in;
+    margin:0.14in 0;
+  }
+  .math-notes h3{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+    letter-spacing:0.08em;
+    font-size:18px;
+  }
+  .math-notes h4{
+    text-align:center;
+    font-size:16px;
+    font-weight:400;
+  }
+  table{
+    border-collapse:collapse;
+    width:100%;
+    margin:0.08in 0;
+    font-size:13px;
+  }
+  th, td{
+    border:1px solid #888;
+    padding:6px 8px;
+    vertical-align:top;
+  }
+  .small{
+    font-size:12px;
+  }
+  .center{ text-align:center; }
+  .right{ text-align:right; }
+  .muted{ color:var(--muted); }
+  .reflection-box{
+    border:2px solid #888;
+    padding:0.1in 0.14in;
+    margin-top:0.14in;
+  }
+  @media print{
+    body{ background:#fff; }
+    .document{ padding:0; width:auto; }
+    .page{
+      margin:0;
+      box-shadow:none;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="document">
+
+  <section class="page" aria-label="Chapter 1 title page">
+    <div class="chapter-cloud">
+      <div class="big">Chapter 1</div>
+      <div class="small">Preparing for Your Journey</div>
+    </div>
+
+    <figure class="hero-road">
+      <div class="placeholder img-large" role="img" aria-label="Placeholder for chapter opener road illustration with signs for graph, function notation, and coordinate axes leading into the chapter.">
+        <div class="placeholder-name">tb_images/image_1_0_1.png</div>
+        <div class="access">Accessibility description: Decorative chapter opener illustration showing a winding road, a car, and three roadside signs representing course themes such as graphs, functions, and coordinates.</div>
+      </div>
+      <figcaption>Chapter opener image placeholder.</figcaption>
+    </figure>
+    <div class="page-number">1</div>
+  </section>
+
+  <section class="page" aria-label="Chapter 1 introduction and outline">
+    <div class="chapter-header">
+      <div class="left">CHAPTER 1</div>
+      <div class="right">Preparing for Your Journey</div>
+    </div>
+
+    <div class="two-col">
+      <div class="section-block">
+        <p>Welcome to Precalculus! In this course you will explore a variety of functions in multiple ways and develop concepts that are used in calculus and other advanced math courses. Listen carefully, work hard, and remember to ask lots of questions.</p>
+        <p>This chapter is important since it provides you with background knowledge that will be used later in the course. Most of the ideas are extensions of concepts you have already learned in previous courses.</p>
+      </div>
+      <aside class="goals-box">
+        <h3>Chapter Goals</h3>
+        <p>Learn the modeling cycle.</p>
+        <p>Complete various operations with functions.</p>
+        <p>Write equations of inverse functions.</p>
+        <p>Investigate piecewise-defined functions.</p>
+        <p>Use radians to measure angles.</p>
+      </aside>
+    </div>
+
+    <div class="chapter-outline">
+      <h3 class="center">Chapter Outline</h3>
+
+      <div class="outline-row">
+        <div class="icon-box">icon</div>
+        <div><strong>Section 1.1</strong></div>
+        <div>In this section you will work with your team to complete six lessons that introduce some of the main topics of this course.</div>
+      </div>
+
+      <div class="outline-row">
+        <div class="icon-box">f(x)</div>
+        <div><strong>Section 1.2</strong></div>
+        <div>In this section you will review and revisit inverse and piecewise-defined functions. You will also be introduced to composite functions.</div>
+      </div>
+
+      <div class="outline-row">
+        <div class="icon-box">θ</div>
+        <div><strong>Section 1.3</strong></div>
+        <div>You will define radians, use them to measure angles, and apply these units of measure to the unit circle.</div>
+      </div>
+    </div>
+
+    <div class="page-number">2</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.1 page 1">
+    <div class="lesson-head">
+      <div class="lesson-title">
+        <h2>1.1.1 <span style="font-size:20px;font-weight:400;">What is the story?</span></h2>
+        <div class="subtitle">Interpreting Graphs</div>
+      </div>
+      <div class="placeholder img-small" role="img" aria-label="Placeholder for small sign illustration used in the lesson header.">
+        <div class="placeholder-name">tb_images/image_1_1_1.png</div>
+        <div class="access">Accessibility description: Small decorative roadside sign graphic used beside the lesson title.</div>
+      </div>
+    </div>
+
+    <p>Welcome to Precalculus! This is the first step on the road to college level mathematics. Congratulations on taking this exciting journey! Throughout this course you will work as a member of a study team. Your teammates will help you solve through problems and serve as a valuable resource when you do not understand a problem completely. At the same time, you will contribute to your teammates' understanding by sharing your ideas and questions with your team. Anyone can learn the mathematics, and discussing the topics helps everyone.</p>
+
+    <p>The course begins with a familiar topic, functions. Functions are a main focus in this course. As you take this journey through precalculus, you will be reminded of functions you have studied before, learning more about their graphs, and investigating new functions, particularly in different modeling situations. Let's get started!</p>
+
+    <div class="problem">
+      <div><span class="num">1-1.</span><span class="problem-title">Team Sort</span></div>
+      <p>Obtain a card that has a section of a graph. Search for three students in your class who have a different graph piece from the same related set. These students will be your teammates, so you should sit together as instructed by your teacher. Once your team is together, introduce yourselves. Then arrange your team's function pieces to create a single continuous function that will tell a story. Be creative! Your square pieces do not need to line up horizontally. However, all the line/curves must be connected forming a continuous function.</p>
+      <p>How do you know that your team’s creation is a function? Do you recognize any function types within the individual pieces? If so, name them.</p>
+      <div class="workspace tall" aria-label="Workspace for problem 1-1"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-2.</span><span class="problem-title">A Function Story</span></div>
+      <p>Working effectively with your study team will be an important part of your learning process throughout this course. To help you work together in your team, each member of your team has a specific role, but every student is responsible for completing the lesson. Read about the team roles and assign them as outlined on the following page.</p>
+      <p>Then as a team, you will create a story to go with your team’s function.</p>
+    </div>
+
+    <figure style="float:right; width:2.2in; margin:0 0 0.08in 0.12in;">
+      <div class="placeholder img-medium" role="img" aria-label="Placeholder for illustration of students collaborating at a table.">
+        <div class="placeholder-name">tb_images/image_1_1_2.png</div>
+        <div class="access">Accessibility description: Group of students sitting together and discussing their work at a table.</div>
+      </div>
+      <figcaption>Collaboration illustration placeholder.</figcaption>
+    </figure>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">3</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.1 page 2">
+    <div class="problem">
+      <div><span class="num">1-2.</span><em class="muted">Problem continued from previous page.</em></div>
+      <div class="role-box">
+        <h3 class="center">General Team Roles</h3>
+
+        <p><strong>Resource Manager</strong> (tallest team member)<br>
+        Responsible for getting your team’s materials and asking the teacher questions.</p>
+        <ul>
+          <li>Get supplies for your team and make sure that your team cleans up.</li>
+          <li>Help your team decide when it needs outside help.</li>
+          <li>Assist in creating team questions for the teacher.</li>
+        </ul>
+
+        <p><strong>Facilitator</strong> (second tallest team member)<br>
+        Responsible for keeping your team working together.</p>
+        <ul>
+          <li>Get your team started by having someone read the task out loud.</li>
+          <li>Check that everyone understands what to work on.</li>
+          <li>Make sure each team member has shared ideas.</li>
+          <li>Make sure no one is getting left out or left behind.</li>
+        </ul>
+
+        <p><strong>Recorder/Reporter</strong> (third tallest team member)<br>
+        Responsible for verifying that your team is writing justifications and explanations.</p>
+        <ul>
+          <li>Make sure that each team member can see the work your team is discussing.</li>
+          <li>Make sure that your team agrees about how to explain and justify answers, and that everyone understands your team’s answer.</li>
+          <li>Make sure that each member of your team is able to share ideas.</li>
+        </ul>
+
+        <p><strong>Task Manager</strong> (fourth tallest team member)<br>
+        Responsible for facilitating and effectively participating team.</p>
+        <ul>
+          <li>Help keep your team on task, talking about math, and respecting each other’s right to learn.</li>
+          <li>Keep track of time if you have been given a time limit.</li>
+          <li>Make sure conversations stay within your team.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="problem">
+      <ol class="subparts" type="a">
+        <li>As a team, decide on a theme for your story.</li>
+        <li>On a blank sheet of paper, sketch a set of axes and decide where to place your continuous function on the axes. Sketch the function on the axes.</li>
+        <li>Each team member is responsible for coming up with the part of the story that corresponds with their function piece.</li>
+        <li>After each team member has created a story for their function piece, read the story as a team to make sure the combined story makes sense.</li>
+      </ol>
+      <div class="workspace tall" aria-label="Workspace for team story planning"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">4</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.1 page 3">
+    <div class="problem">
+      <div><span class="num">1-3.</span></div>
+      <p>Create a presentation that can be used to share your team’s function story with the class. Be sure to justify how each piece of the story makes sense with the graph. Each team member should be ready to present their piece of the story.</p>
+      <div class="workspace tall" aria-label="Workspace for problem 1-3"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-4.</span></div>
+      <p>After listening to other teams present their stories, how would you revise your team’s function story?</p>
+      <div class="workspace tall" aria-label="Workspace for problem 1-4"></div>
+    </div>
+
+    <p>Did you know that you have at least 100 billion brain cells, called neurons? As you listen to, talk about, or practice something, fibers called dendrites grow out of these cells. When you think deeply about something, make connections to previous knowledge, and apply your knowledge in new ways, a synapse forms in your brain connecting the neurons through the contact points between the dendrites. You can grow as many as 10,000 synapses for each neuron.</p>
+
+    <p>So how can you grow your brain, not only to be a better mathematician, but also to be a better student, thinker, and decision maker throughout your life? Metacognition is one powerful way to accomplish this. Think about how you learn, not just what you are learning. Monitor and direct your thinking. Ask not just work problems mindlessly. Put yourself in the driver’s seat when it comes to your learning. If you are not sure how to do that, we have given you some reflection questions to think about and discuss throughout this book. Whenever you see a box with the metacognition icon like the one below, you know it is time for some synapses! Let’s get started!</p>
+
+    <div class="reflection-box">
+      <p><strong>How did you help your team today? How did you feel when you did this?</strong></p>
+    </div>
+
+    <figure style="position:absolute; right:0.65in; top:5.7in; width:1.2in;">
+      <div class="placeholder img-small" role="img" aria-label="Placeholder for metacognition stop-and-think icon.">
+        <div class="placeholder-name">tb_images/image_1_1_3.png</div>
+        <div class="access">Accessibility description: Small stop-and-think classroom reflection icon.</div>
+      </div>
+    </figure>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">5</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.1 page 4 Math Notes">
+    <div class="math-notes">
+      <h3>MATH NOTES</h3>
+      <h4>Functions</h4>
+
+      <p>A relationship between inputs and outputs is a <strong>function</strong> if there is exactly one output for each input. Functions are often written as <em>y</em> = some expression involving <em>x</em>, where <em>x</em> is the input and <em>y</em> is the output. The following is an example of a function.</p>
+
+      <table>
+        <tr><th>x</th><td>−2</td><td>−1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+        <tr><th>y</th><td>16</td><td>9</td><td>4</td><td>1</td><td>0</td><td>1</td><td>4</td><td>9</td></tr>
+      </table>
+
+      <p class="center"><strong>y = (x − 2)<sup>2</sup></strong></p>
+      <p>In the example above, the value of <em>y</em> depends on <em>x</em>, so <em>y</em> is the <strong>dependent variable</strong> and <em>x</em> is the <strong>independent variable</strong>.</p>
+      <p>Another way to write a function is with the notation “f(x)” instead of “y”. The function named “f” has output f(x). The input is x.</p>
+      <p>In the example at right, <em>f</em>(5) = 9. The input is 5 and the output is 9. This is stated, “f of 5 equals 9.”</p>
+      <p>The set of all inputs for which there is an output is the <strong>domain</strong>. The set of all possible outputs is the <strong>range</strong>.</p>
+
+      <figure style="width:2in; float:right; margin:0 0 0.08in 0.16in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for small graph illustrations accompanying the math notes on functions.">
+          <div class="placeholder-name">tb_images/image_1_1_4.png</div>
+          <div class="access">Accessibility description: Small graphs and function notation examples including a parabola, a point evaluation, and a circle relation used to contrast function and non-function examples.</div>
+        </div>
+      </figure>
+
+      <p><strong>x<sup>2</sup> + y<sup>2</sup> = 1</strong> is not a function because there are two possible outputs y-values for some x-values, as shown at right.</p>
+    </div>
+
+    <div class="review">Review &amp; Preview</div>
+
+    <div class="problem">
+      <div><span class="num">1-5.</span></div>
+      <p>All of the graphs used in your Team Sort were functions. Describe what it means for a graph to be a “function.” Sketch two non-functions and explain why these two examples are not functions.</p>
+      <div class="workspace xtall" aria-label="Workspace for problem 1-5"></div>
+    </div>
+
+    <div class="running-footer">Precalculus</div>
+    <div class="page-number">6</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.1 page 5">
+    <div class="problem">
+      <div><span class="num">1-6.</span></div>
+      <p>Recall that functions that have similar graphs and characteristics can be grouped together into what are called <strong>families of functions</strong>. Some families of functions appear over and over in many different situations that you will encounter in this course and in future math courses. It is important that you learn to recognize which family or particular function belongs to.</p>
+
+      <p>The simplest form of each function family is referred to as the <strong>parent graph</strong> or <strong>parent function</strong>. The parent graphs you have seen in previous courses are as follows:</p>
+
+      <table>
+        <tr><th>Function</th><th>Family</th></tr>
+        <tr><td>f(x) = x</td><td>Linear</td></tr>
+        <tr><td>f(x) = x<sup>2</sup></td><td>Quadratic</td></tr>
+        <tr><td>f(x) = x<sup>3</sup></td><td>Cubic</td></tr>
+        <tr><td>f(x) = b<sup>x</sup> for b &gt; 1</td><td>Exponential</td></tr>
+        <tr><td>f(x) = b<sup>x</sup> for 0 &lt; b &lt; 1</td><td>Exponential</td></tr>
+        <tr><td>f(x) = 1/x</td><td>Rational</td></tr>
+        <tr><td>f(x) = |x|</td><td>Absolute Value</td></tr>
+        <tr><td>f(x) = √x</td><td>Square Root</td></tr>
+        <tr><td>f(x) = ∛x</td><td>Cube Root</td></tr>
+        <tr><td>f(x) = log(x)</td><td>Logarithmic</td></tr>
+      </table>
+
+      <p>Complete the Parent Graph Graphic Organizer. Be sure to sketch accurate graphs since they will be used as models for their respective families. Write down each parent graph’s key features and its graph. Be sure to include domain and range, intercepts, asymptotes, lines of symmetry, and the name of each function. This Parent Graph Graphic Organizer will be used throughout the course.</p>
+      <div class="workspace xtall" aria-label="Workspace for problem 1-6"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">7</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.2 page 1">
+    <div class="lesson-head">
+      <div class="lesson-title">
+        <h2>1.1.2 <span style="font-size:20px;font-weight:400;">Is there more bounce to your spring?</span></h2>
+        <div class="subtitle">The Spring Problem</div>
+      </div>
+      <div class="placeholder img-small" role="img" aria-label="Placeholder for lesson 1.1.2 header sign illustration.">
+        <div class="placeholder-name">tb_images/image_1_1_5.png</div>
+        <div class="access">Accessibility description: Small decorative sign graphic used beside the lesson title for the spring problem lesson.</div>
+      </div>
+    </div>
+
+    <p>In previous courses, you learned that multiple representations such as situations, tables, graphs, and equations, along with their connections, are useful for learning about functions. They will also be useful in the modeling process. Mathematicians, acting as the process of choosing and using various mathematical concepts to make sense of a situation. Today you will use the modeling process to make sense of a situation as well as understand it more fully.</p>
+
+    <div class="problem">
+      <div><span class="num">1-7.</span></div>
+      <p>When working with your team to solve problems in this course, it is important to work effectively with other people. Effective math conversations are a valuable part of the learning process throughout this course. Choose a member of your team to read the Collaborative Learning Expectations out loud.</p>
+
+      <div class="role-box">
+        <h3 class="center">Collaborative Learning Expectations</h3>
+        <p>Working with other students allows you to develop new ways of thinking about mathematics, helps you to learn to communicate about math, and helps you to understand ideas better by having to explain your thinking to others.</p>
+        <ul>
+          <li>Respect the right of others to learn.</li>
+          <li>Help anyone on the team who asks—by giving hints and asking good questions, but not by giving answers right away.</li>
+          <li>Assist in creating team questions to ask the teacher.</li>
+          <li>Justify and explain ideas, instead of giving up when others do not understand.</li>
+          <li>Listen carefully to all team members and consider their responses thoughtfully.</li>
+          <li>Keep their team working together on the same problem.</li>
+          <li>Keep conversations within their team.</li>
+        </ul>
+      </div>
+
+      <figure style="float:right; width:2in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for students discussing collaborative learning expectations.">
+          <div class="placeholder-name">tb_images/image_1_1_6.png</div>
+          <div class="access">Accessibility description: Students in conversation at a table, illustrating collaborative teamwork.</div>
+        </div>
+      </figure>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-8.</span></div>
+      <p>Kora loves to collect nostalgic toys. In her collection she has Rubik’s cubes, yo-yos, hula-hoops, Frisbees, and Slinkies®. While cleaning up her collection, she notices a blob of clay stuck to the bottom of one of her Slinkies®. Kora picks up the Slinky® and clay with both hands to remove the clay. She accidentally drops the clay end of the Slinky® while holding the non-clay end in the other hand. After watching the weighted spring oscillate five times, Kora begins to wonder:</p>
+      <p>Try it! Attach a weight to one end of a Slinky®. Hold the weighted and the Slinky®-tie with both hands pressing the Slinky® together. Drop the weighted end of the Slinky® while holding the non-weighted end steady. What do you notice? What do you wonder?</p>
+      <div class="workspace tall" aria-label="Workspace for problem 1-8"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">8</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.2 page 2">
+    <div class="problem">
+      <div><span class="num">1-9.</span><span class="problem-title">Modeling the Motion of the Spring</span></div>
+      <p>Consider the motion of the weight that is attached to the spring in terms of its time and position.</p>
+      <ol class="subparts" type="a">
+        <li>Use the directions on the Lesson 1.1.2 Resource Page to set up and collect data to model Kora’s situation.</li>
+        <li>Use your video to make a table and a graph of the motion of the weight.</li>
+        <li>After careful consideration, Kora wonders if she can accurately predict the time and position of the weight at its 15th maximum point. Use your model to make a prediction for Kora. What will the time and position of Kora’s clay be at its 15th maximum?</li>
+      </ol>
+      <div class="workspace xtall" aria-label="Workspace for problem 1-9"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-10.</span><span class="problem-title">The Problem-Solving Process: Modeling with Mathematics</span></div>
+      <p>When solving a problem, begin by analyzing the given information to formulate a plan or strategy that will determine a solution. Once a solution is determined, it needs to be justified and evaluated for reasonableness. If you are not satisfied with the solution, the problem-solving process repeats until a reasonable and justified solution is reached. As a team, use this problem-solving process to help Kora.</p>
+      <ol class="subparts" type="a">
+        <li>What are the time and position of the weight at its 15<sup>th</sup> maximum point?</li>
+        <li>What are the domain and the range in the context of this situation?</li>
+        <li>What assumptions did you make about the situation while solving the problem in part (a)?</li>
+      </ol>
+
+      <figure style="float:right; width:2in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for the modeling with mathematics cycle diagram.">
+          <div class="placeholder-name">tb_images/image_1_1_7.png</div>
+          <div class="access">Accessibility description: Circular modeling cycle with stages such as plan, verify, justify, reflect, reanalyze, and apply your model.</div>
+        </div>
+      </figure>
+      <div class="workspace tall" aria-label="Workspace for problem 1-10"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-11.</span></div>
+      <p>Review the questions your class developed in problem 1-8. Were you able to answer any of these questions as you worked today? Choose two to three unanswered questions from the list and provide reasonable solutions for them.</p>
+      <p class="small">Note: Be sure to keep your data, videos, and classwork in a safe place. You will need them for future lessons.</p>
+      <div class="workspace tall" aria-label="Workspace for problem 1-11"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">9</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.2 page 3 review and preview">
+    <div class="math-notes">
+      <h3>MATH NOTES</h3>
+      <h4>Properties of Exponents</h4>
+      <table>
+        <tr><th>Property</th><th>Examples</th></tr>
+        <tr><td>x<sup>m</sup>x<sup>n</sup> = x<sup>m+n</sup></td><td>2<sup>1</sup> · 2<sup>3</sup> = 2<sup>4</sup></td></tr>
+        <tr><td>x<sup>m</sup>/x<sup>n</sup> = x<sup>m−n</sup></td><td>4<sup>3</sup>/4<sup>2</sup> = 4</td></tr>
+        <tr><td>(x<sup>m</sup>)<sup>n</sup> = x<sup>mn</sup></td><td>(10<sup>5</sup>)<sup>2</sup> = 10<sup>10</sup></td></tr>
+        <tr><td>x<sup>0</sup> = 1 for x ≠ 0</td><td>9<sup>0</sup> = 1</td></tr>
+        <tr><td>x<sup>−n</sup> = 1/x<sup>n</sup></td><td>3<sup>−1</sup> = 1/3</td></tr>
+        <tr><td>x<sup>m/n</sup> = <sup>n</sup>√(x<sup>m</sup>)</td><td>8<sup>2/3</sup> = <sup>3</sup>√(8<sup>2</sup>) = 4</td></tr>
+      </table>
+    </div>
+
+    <div class="review">Review &amp; Preview</div>
+
+    <div class="problem">
+      <div><span class="num">1-12.</span></div>
+      <p>Simplify each expression to a single integer with an integer power, or state “impossible” and explain why.</p>
+      <ol class="subparts" type="a">
+        <li>2<sup>3</sup> · 3<sup>2</sup></li>
+        <li>2<sup>2</sup> + 2<sup>3</sup></li>
+        <li>2<sup>2</sup> · 2<sup>5</sup></li>
+        <li>(2<sup>3</sup>)<sup>2</sup></li>
+        <li>2<sup>6</sup>/2<sup>3</sup></li>
+        <li>2<sup>7</sup> − 2<sup>4</sup></li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-13.</span></div>
+      <p>Multiply or expand each expression below.</p>
+      <ol class="subparts" type="a">
+        <li>(2x)<sup>3</sup></li>
+        <li>(x − 2)<sup>2</sup></li>
+        <li>(3xy)<sup>4</sup></li>
+        <li>(3x<sup>2</sup>)<sup>2</sup></li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-14.</span></div>
+      <p>For △ABC at right, state each ratio in terms of the sides.</p>
+      <ol class="subparts" type="a">
+        <li>sin(α) = ?</li>
+        <li>cos(α) = ?</li>
+        <li>tan(α) = ?</li>
+      </ol>
+
+      <figure style="float:right; width:2in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-small" role="img" aria-label="Placeholder for labeled right triangle diagram.">
+          <div class="placeholder-name">tb_images/image_1_1_8.png</div>
+          <div class="access">Accessibility description: Right triangle labeled with vertices A, B, C and side labels used to define sine, cosine, and tangent of angle alpha.</div>
+        </div>
+      </figure>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-15.</span></div>
+      <p>Let f(x) = 2x<sup>2</sup> − 3. Evaluate:</p>
+      <ol class="subparts" type="a">
+        <li>f(4)</li>
+        <li>f(−5)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="running-footer">Precalculus</div>
+    <div class="page-number">10</div>
+  </section>
+
+  <section class="page" aria-label="Section 1.1 continuation practice">
+    <div class="problem"><div><span class="num">1-16.</span></div>
+      <p>Consider the relation {(2, 6), (−5, 1), (−7, 4)}.</p>
+      <ol class="subparts" type="a">
+        <li>Is the given relation a function? Explain.</li>
+        <li>Add a fourth point so that the relation is not a function.</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-17.</span></div>
+      <p>Write the equations of the following lines.</p>
+      <ol class="subparts" type="a">
+        <li>A line with slope m = −1/3 through (5, −2).</li>
+        <li>A line through points (1, 4) and (3, 0).</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-18.</span></div>
+      <p>Calculate the area of the shaded region in two different ways. Explain the difference between your two methods.</p>
+      <figure style="float:right; width:1.9in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for graph with a line segment and a shaded triangular region on a coordinate plane.">
+          <div class="placeholder-name">tb_images/image_1_1_9.png</div>
+          <div class="access">Accessibility description: Coordinate plane showing a diagonal line and a shaded region bounded by axes and the line.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">11</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.3 page 1">
+    <div class="lesson-head">
+      <div class="lesson-title">
+        <h2>1.1.3 <span style="font-size:20px;font-weight:400;">How can I minimize the cost?</span></h2>
+        <div class="subtitle">Modeling with Functions</div>
+      </div>
+      <div class="placeholder img-small" role="img" aria-label="Placeholder for lesson 1.1.3 header sign illustration.">
+        <div class="placeholder-name">tb_images/image_1_1_10.png</div>
+        <div class="access">Accessibility description: Small decorative roadside sign beside the lesson title.</div>
+      </div>
+    </div>
+
+    <p>In past courses, you have studied many functions and used them to interpret situations. Today your team will use function pieces to create a situation that optimizes the solution to a problem.</p>
+
+    <div class="problem">
+      <div><span class="num">1-19.</span><span class="problem-title">Functions of America Cross Section — Modeling the Course</span></div>
+      <p>Vera Vente, Functions of America CEO, heard about the stories your team created in Lesson 1.1.1 and is extremely impressed. She is inspired by your work and the function pieces used to create your team’s graph, so she is hiring your team to design and cost out the cross section for the community function course of America using basic engineering methods. She has provided a grid on which your team can plan the course, and she has made the point to your design team that she wants the course to be as low as possible. Why does your team need to focus on cost so much? Because she wants to save money. The team has determined that costs are $1.32 per square foot on the cross section drawing, removing dirt from the site costs $1.32 per square foot, and delivering dirt to the site costs $0.97 per square foot. Because of the community goal the course’s overall outside edge must be smooth and use only one continuous path.</p>
+
+      <p><strong>Your Task:</strong> Use the four function pieces from the Lesson 1.1.1 Resource Page and the grid on the Lesson 1.1.3 Resource Page to design a cross-section drawing of the dirt bike course. You must create a continuous curve by translating and reflecting the four function pieces. The x-axis represents ground level on the site.</p>
+      <p>Each member of your team should be prepared to present your team’s design to the Functions of America Executive Committee. Be prepared to justify why your design is the lowest cost design possible.</p>
+
+      <figure style="float:right; width:2.2in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for group of students or committee discussing design plans.">
+          <div class="placeholder-name">tb_images/image_1_1_11.png</div>
+          <div class="access">Accessibility description: Illustration of people seated around a table discussing plans for a modeled course design.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-20.</span></div>
+      <p>Your teacher will provide you with directions for presenting your design to the Executive Committee. In your presentation, be sure to justify your design and its cost. You should expect the Executive Committee to ask tough questions. Be prepared!</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem">
+      <div><span class="num">1-21.</span></div>
+      <p>As a team, reflect on what you have learned from other designs as well as the questions from the Executive Committee. What improvements can you make to your team’s design?</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="running-footer">Precalculus</div>
+    <div class="page-number">12</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.3 practice and review">
+    <div class="reflection-box">
+      <p><strong>What challenges did you encounter today and how were you able to overcome those challenges?</strong></p>
+    </div>
+
+    <div class="review">Review &amp; Preview</div>
+
+    <div class="problem"><div><span class="num">1-22.</span></div>
+      <p>Graph y = −|x| + 5. How does it compare to the parent graph y = |x|?</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-23.</span></div>
+      <p>Solve for x: 3x + w = 20. (Note that your answer will have w in it.)</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-24.</span></div>
+      <p>Let g(x) = x<sup>2</sup> − 2x. Evaluate:</p>
+      <ol class="subparts" type="a">
+        <li>g(−1)</li>
+        <li>g(3)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-25.</span></div>
+      <p>Use △PIN to complete the parts below.</p>
+      <ol class="subparts" type="a">
+        <li>Calculate the exact length of PN.</li>
+        <li>Write and simplify a ratio for cos(P).</li>
+        <li>Write and simplify a ratio for sin(P).</li>
+      </ol>
+      <figure style="float:right; width:1.8in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-small" role="img" aria-label="Placeholder for right triangle PIN with side labels 3, 6, and unknown side.">
+          <div class="placeholder-name">tb_images/image_1_1_12.png</div>
+          <div class="access">Accessibility description: Right triangle with vertices P, I, and N and side lengths shown for trigonometric ratio questions.</div>
+        </div>
+      </figure>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-26.</span></div>
+      <p>Factor each expression.</p>
+      <ol class="subparts" type="a">
+        <li>x<sup>2</sup> + 8x</li>
+        <li>6x<sup>2</sup> + 48x</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-27.</span></div>
+      <p>Rewrite each expression in simple radical form.</p>
+      <ol class="subparts" type="a">
+        <li>√18</li>
+        <li>2√27</li>
+        <li>√(32b<sup>5</sup>)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-28.</span></div>
+      <p>Is the equation (3x + 2)<sup>2</sup> = 9x<sup>2</sup> + 4 always, sometimes, or never true? Explain.</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">13</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.4 page 1">
+    <div class="lesson-head">
+      <div class="lesson-title">
+        <h2>1.1.4 <span style="font-size:20px;font-weight:400;">What is the rate?</span></h2>
+        <div class="subtitle">Rates of Change</div>
+      </div>
+      <div class="placeholder img-small" role="img" aria-label="Placeholder for lesson 1.1.4 header sign illustration.">
+        <div class="placeholder-name">tb_images/image_1_1_13.png</div>
+        <div class="access">Accessibility description: Small decorative sign graphic beside the lesson title.</div>
+      </div>
+    </div>
+
+    <p>Rates occur naturally in many applications. You might have experienced how much money you make per hour or how many miles per gallon of gas a car gets. Both are examples of common rates. Things can change at different rates as well. Think of the average temperature going through a growth spurt when their rate of growth suddenly speeds up. Parents often comment that it seems their little child grew overnight!</p>
+    <p>Today’s lesson investigates rates of change. Use your intuition when you first read a situation to guide your thinking.</p>
+
+    <div class="problem"><div><span class="num">1-29.</span></div>
+      <p>A few years ago, Carlos was driving on the New Jersey Turnpike (a toll road that collects money every few miles). He was given a speeding ticket at the booth the last booth. Since there were no highway patrolmen or radar on the turnpike, he could not figure out how anyone knew that he had been speeding.</p>
+      <ol class="subparts" type="a">
+        <li>How do you suppose his speed had been determined?</li>
+        <li>Using your answer from part (a), do you think it would be possible for someone to speed on part of their turnpike trip and not get caught?</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-30.</span></div>
+      <p>Rates are used to describe how one quantity is changing in relation to another. For a function, the average rate of change is defined as the change in the dependent variable (y<sub>2</sub> − y<sub>1</sub>) divided by the change in the independent variable (x<sub>2</sub> − x<sub>1</sub>) for two distinct points on the graph. What is another way to describe average rate of change?</p>
+      <p>To illustrate average rate of change, consider the following situation: Macario started in Vacaville and drove to Davis (a distance of 28 miles) in 30 minutes. Most of his journey was spent driving on the freeway. He stopped in Davis.</p>
+      <ol class="subparts" type="a">
+        <li>What was Macario’s average speed in miles per hour?</li>
+        <li>Sketch a possible speed vs. time graph for Macario’s trip. Then compare your graph with the graphs of your teammates. What do you notice?</li>
+        <li>Did Macario drive at his average speed the entire trip? Explain.</li>
+        <li>Did he ever drive the average speed of 56 mph? Discuss this with your team.</li>
+      </ol>
+      <figure style="float:right; width:1.9in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-small" role="img" aria-label="Placeholder for small roadway traffic illustration.">
+          <div class="placeholder-name">tb_images/image_1_1_14.png</div>
+          <div class="access">Accessibility description: Illustration of cars traveling on a roadway to accompany the rate-of-change lesson.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="running-footer">Precalculus</div>
+    <div class="page-number">14</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.4 page 2">
+    <div class="problem"><div><span class="num">1-31.</span></div>
+      <p>A huge storm is quickly filling up Manuel’s rainwater collection tank. Manuel wants to know if his 1800 gallon tank will overflow in the next hour, so he uses a rain gauge to determine that rain water is filling up his tank at a rate of 0.5 gallons per minute.</p>
+      <ol class="subparts" type="a">
+        <li>Sketch a graph of this situation. Label the axes with correct units.</li>
+        <li>How fast is the tank filling at t = 10 minutes? 20 minutes? 30 minutes? What does this tell you about how fast the tank is filling up?</li>
+        <li>Write a summary statement describing how the rate of 0.5 gallons per minute relates to how fast the tank is filling up.</li>
+        <li>If Manuel’s predicted rate is correct, will his rainwater tank overflow within the hour? Support your answer with mathematics.</li>
+      </ol>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-32.</span></div>
+      <p>A child tosses a tennis ball into the air and it lands in the mud. The function h(t) = −16t<sup>2</sup> + 16t + 4 gives the ball’s height in feet with respect to time in seconds.</p>
+      <ol class="subparts" type="a">
+        <li>Sketch a graph of y = h(t). Highlight the portion of the curve that fits this situation.</li>
+        <li>What is happening to the height of the tennis ball with respect to the time?</li>
+        <li>Since velocity is a function of distance traveled over time, what part of the graph represents the velocity of the ball? What is happening to the velocity of the tennis ball with respect to time?</li>
+        <li>Copy and complete the following table of time (s) versus height (ft).</li>
+      </ol>
+
+      <table>
+        <tr><th>t (s)</th><td>0</td><td>0.25</td><td>0.5</td><td>0.75</td><td>1</td><td>1.25</td><td>1.5</td></tr>
+        <tr><th>h (t)</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+
+      <ol class="subparts" type="a" start="5">
+        <li>Use the table to determine the ball’s average velocity in ft/sec for each 0.25-second time interval.</li>
+        <li>Predict the velocity of the ball at t = 0.8 seconds. Be prepared to justify your answer to the class.</li>
+      </ol>
+
+      <figure style="float:right; width:1.7in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-small" role="img" aria-label="Placeholder for sketch of a tennis ball landing in mud.">
+          <div class="placeholder-name">tb_images/image_1_1_15.png</div>
+          <div class="access">Accessibility description: Tennis ball shown near a splash or impact area in mud, illustrating a projectile-motion context.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="review">Review &amp; Preview</div>
+    <div class="problem"><div><span class="num">1-33.</span></div>
+      <p>“You are growing like a weed!” D’rek’s grandmother said to him when she saw him for the first time in a year. If D’rek grew 8 inches over the last year, and an average dandelion (a common weed) grows 0.1 inches in one day, is D’rek growing like a weed? Justify your answer.</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-34.</span></div>
+      <p>If f(x) = 3x<sup>2</sup> + 5x − 2, show that f(x + 2) = 3x<sup>2</sup> + 17x + 20.</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">15</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.4 page 3">
+    <div class="problem"><div><span class="num">1-35.</span></div>
+      <p>Which expressions below are equivalent?</p>
+      <ol class="subparts" type="a">
+        <li>(1/4)<sup>2</sup></li>
+        <li>2 − 1/3</li>
+        <li>−3<sup>−1</sup></li>
+        <li>(2x−1)/(3+5x)</li>
+        <li>(2/3)<sup>0</sup> − 1</li>
+        <li>(8−2)/(2+4)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-36.</span></div>
+      <p>Megan went walking for 2 hours and walked at a steady pace of 3 mph.</p>
+      <ol class="subparts" type="a">
+        <li>How far did she walk?</li>
+        <li>Make a careful graph of the situation with the horizontal axis having units of hours and the vertical axis having units of miles per hour. Under the curve. You should get a rectangle for the area under the curve. Then explain what the area means in the space between the curve and the x-axis.</li>
+        <li>Divide the rectangle into six smaller rectangles by drawing vertical lines at the 1-hour and 2 mph marks, and horizontal lines at the 1 mph and 2 mph marks.</li>
+        <li>Explain why each of the smaller rectangles that you created in part (c) represents a distance of 1 mile that Megan walked. Hint: What are the units of the sides of the rectangle?</li>
+      </ol>
+
+      <figure style="float:right; width:1.5in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for walking person illustration.">
+          <div class="placeholder-name">tb_images/image_1_1_16.png</div>
+          <div class="access">Accessibility description: Person walking briskly, used to accompany a distance-rate-time problem.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-37.</span></div>
+      <p>Write an equation for the line that passes through the points (−4, −4) and (8, 5).</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-38.</span></div>
+      <p>Solve each equation for exact values of x using the Quadratic Formula. Simplify your answers as much as possible.</p>
+      <ol class="subparts" type="a">
+        <li>0 = 3x<sup>2</sup> + 4x − 20</li>
+        <li>0 = x<sup>2</sup> − 3x − 1</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-39.</span></div>
+      <p>Solve for x in each triangle below.</p>
+      <figure>
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for four triangle diagrams used in problem 1-39.">
+          <div class="placeholder-name">tb_images/image_1_1_17.png</div>
+          <div class="access">Accessibility description: Four separate triangle diagrams with side lengths and angles for solving unknown side x.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="running-footer">Precalculus</div>
+    <div class="page-number">16</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.5 page 1">
+    <div class="lesson-head">
+      <div class="lesson-title">
+        <h2>1.1.5 <span style="font-size:20px;font-weight:400;">Maybe you’ve been set up.</span></h2>
+        <div class="subtitle">Setting up Word Problems</div>
+      </div>
+      <div class="placeholder img-small" role="img" aria-label="Placeholder for lesson 1.1.5 header sign illustration.">
+        <div class="placeholder-name">tb_images/image_1_1_18.png</div>
+        <div class="access">Accessibility description: Small decorative sign used with the lesson header.</div>
+      </div>
+    </div>
+
+    <p>In math courses, you are often asked to investigate or explore situations. Does the following situation sound familiar?</p>
+    <p><em>“You are given a scenario to investigate. You understand the scenario. You understand the question. You just have no idea how to set up the problem. If someone would just set it up for you, you could solve it.”</em></p>
+    <p>When this happens, it generally means that you are having trouble expressing the situation in symbols from your intuitive description or graph. Today you will practice this skill so that it will be easier for you to do it during the rest of the class and in future math courses, especially Calculus.</p>
+    <p>While solving the following problems, be aware of strategies that you or your teammates use that help further your learning. As a class you will make a list of these procedures and strategies for future use.</p>
+
+    <div class="problem"><div><span class="num">1-40.</span></div>
+      <p>The volume of an open-top rectangular box is 4500 cc (cubic centimeters). The length of the rectangular base of the box is twice the width. What height will make the surface area as small as possible?</p>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-41.</span></div>
+      <p>What strategies helped your team solve the previous problem? (For instance, did you draw a picture? That is a strategy!) Write three of the most helpful. Create a list and be ready to share it with the class.</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-42.</span></div>
+      <p>Farmer Jibrun has 300 feet of fencing to enclose two identical rectangular pens that share a common fence.</p>
+      <ol class="subparts" type="a">
+        <li>What are the dimensions of the pens that make their areas as large as possible?</li>
+        <li>If x represents the length of the enclosure, what is the domain in the context of this situation?</li>
+      </ol>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-43.</span></div>
+      <p>A man who is 6 feet tall is walking at a rate of 4 feet/second, directly away from a light that is located 10 feet above the ground.</p>
+      <ol class="subparts" type="a">
+        <li>How long is the man’s shadow when he is 20 feet away from the light?</li>
+        <li>How long is the man’s shadow t seconds after he starts walking? The answer will be in terms of t.</li>
+      </ol>
+      <figure style="float:right; width:2.2in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for lamp post, person, and shadow similar-triangle diagram.">
+          <div class="placeholder-name">tb_images/image_1_1_19.png</div>
+          <div class="access">Accessibility description: Streetlight diagram showing a person walking away from a tall light, casting a shadow on the ground and forming similar triangles.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">17</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.5 page 2">
+    <div class="problem"><div><span class="num">1-44.</span><span class="problem-title">Learning Log</span></div>
+      <p>Throughout this course, you are asked to reflect on your understanding of mathematical concepts in a Learning Log. Your Learning Log should contain explanations and examples to help you remember what you have learned throughout the course, as well as questions you are trying to answer. It is important to write each entry of the learning log in your own words. It is encouraged that you review your Learning Log as a resource to refresh your memory.</p>
+      <p>In your Learning Log, write a list of steps and strategies that you can use to solve a word problem. Title this entry “Strategies for Solving Word Problems” and include today’s date.</p>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="review">Review &amp; Preview</div>
+
+    <div class="problem"><div><span class="num">1-45.</span></div>
+      <p>In problem 1-40, suppose that the box has a closed top. How would the solution to the problem change? Write new equations or explain what changes you would make to your method for solving the problem. You do not need to solve the problem.</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-46.</span></div>
+      <p>Let f(x) = x<sup>2</sup> − 3. Evaluate:</p>
+      <ol class="subparts" type="a">
+        <li>f(3b)</li>
+        <li>f(a + 1)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-47.</span></div>
+      <p>Multiply the following binomials.</p>
+      <ol class="subparts" type="a">
+        <li>(2x + 3)(2x + 3)</li>
+        <li>(x − a)(x − b)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-48.</span></div>
+      <p>Rewrite each expression below in simple radical form.</p>
+      <ol class="subparts" type="a">
+        <li>√24</li>
+        <li>3√(162x<sup>2</sup>)</li>
+        <li>2√40</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-49.</span></div>
+      <p>△PAT is an isosceles right triangle with PT = TA.</p>
+      <ol class="subparts" type="a">
+        <li>Calculate the exact length of PA. Express your answer in simple radical form.</li>
+        <li>What is the exact value of sin(P)?</li>
+        <li>What is the exact value of cos(P)?</li>
+      </ol>
+      <figure style="float:right; width:1.8in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-small" role="img" aria-label="Placeholder for isosceles right triangle PAT with one side marked 8.">
+          <div class="placeholder-name">tb_images/image_1_1_20.png</div>
+          <div class="access">Accessibility description: Isosceles right triangle labeled P, A, and T with matching tick marks and one side labeled 8.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="running-footer">Precalculus</div>
+    <div class="page-number">18</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.5 page 3">
+    <div class="problem"><div><span class="num">1-50.</span></div>
+      <p>Solve for x: <sup>3x</sup>/<sub>4</sub> = 5x + y − 6.</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-51.</span></div>
+      <p>Though it looks like the following equations are true, each of them is actually false. Confirm this by substituting simple numbers for the variables and doing the arithmetic. Note: Do not use 0 or 1; they are too special. <strong>Remember: Each of these statements is false.</strong></p>
+      <ol class="subparts" type="a">
+        <li>(x + y)<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup></li>
+        <li>√(p<sup>2</sup> + q<sup>2</sup>) = p + q</li>
+        <li>3w<sup>−2</sup> = 1/3w<sup>2</sup></li>
+        <li>(a<sup>2</sup> + b<sup>2</sup>)<sup>1/2</sup> = a + b</li>
+        <li>3 · 2<sup>x</sup> = 6<sup>x</sup></li>
+      </ol>
+
+      <figure style="float:right; width:2in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for note icon warning about common mistakes.">
+          <div class="placeholder-name">tb_images/image_1_1_21.png</div>
+          <div class="access">Accessibility description: Teacher-style note icon explaining that these are common false statements students should test numerically.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">19</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.6 page 1">
+    <div class="lesson-head">
+      <div class="lesson-title">
+        <h2>1.1.6 <span style="font-size:20px;font-weight:400;">Are they equivalent?</span></h2>
+        <div class="subtitle">Equivalent Expressions</div>
+      </div>
+      <div class="placeholder img-small" role="img" aria-label="Placeholder for lesson 1.1.6 header sign illustration.">
+        <div class="placeholder-name">tb_images/image_1_1_22.png</div>
+        <div class="access">Accessibility description: Small decorative sign graphic used with the lesson title.</div>
+      </div>
+    </div>
+
+    <p>Using algebra to rewrite expressions is an important skill in this course and beyond. Today you will work with your team to identify equivalent expressions. Two algebraic expressions are considered equivalent if, for all values, substituting the same variable values into each of the expressions results in equal values once simplified.</p>
+
+    <div class="problem">
+      <div><span class="num">1-52.</span><span class="problem-title">Equivalent Expression Sort</span></div>
+      <p>Obtain a Lesson 1.1.6 Resource Page. Cut apart the cards and work with your team to group the expressions that are equivalent. Be sure to provide justifications and record your reasoning with the class.</p>
+
+      <figure>
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for a large table or grid of algebraic expressions to sort into equivalent groups.">
+          <div class="placeholder-name">tb_images/image_1_1_23.png</div>
+          <div class="access">Accessibility description: A rectangular array of algebraic-expression cards that students sort into equivalent sets.</div>
+        </div>
+      </figure>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-53.</span></div>
+      <p>In pairs, choose a set of equivalent expressions. Do you need to show the algebraic steps required to get from one expression to another? How many sets of equivalent expressions can you do this for?</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-54.</span></div>
+      <p>Is every set of equivalent expressions you found equivalent for all real values of x? If not, which ones are not, and why?</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="review">Review &amp; Preview</div>
+
+    <div class="problem"><div><span class="num">1-55.</span></div>
+      <p>Are the following pairs of expressions equivalent? Explain how you know using at least two different methods.</p>
+      <ol class="subparts" type="a">
+        <li>(x+1)/(x<sup>2</sup>−1) and −1</li>
+        <li>3x+2 / x+2 and 3 + 5/(x+2)</li>
+      </ol>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="running-footer">Precalculus</div>
+    <div class="page-number">20</div>
+  </section>
+
+  <section class="page" aria-label="Lesson 1.1.6 page 2">
+    <div class="problem"><div><span class="num">1-56.</span></div>
+      <p>Let g(x) = x<sup>2</sup> − 2x. Evaluate:</p>
+      <ol class="subparts" type="a">
+        <li>g(a)</li>
+        <li>g(t − 2)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-57.</span></div>
+      <p>Rewrite each expression below using the properties of exponents.</p>
+      <ol class="subparts" type="a">
+        <li>(5a<sup>−2</sup>)<sup>3</sup></li>
+        <li>(m<sup>4</sup>n<sup>−2</sup>)<sup>0</sup></li>
+        <li>(2x<sup>−1</sup>y<sup>2</sup>)(2x<sup>6</sup>)</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-58.</span></div>
+      <p>Factor each binomial.</p>
+      <ol class="subparts" type="a">
+        <li>2p<sup>2</sup> + 5x</li>
+        <li>3x<sup>2</sup>y − 9xy<sup>3</sup></li>
+        <li>17x<sup>2</sup>y − 34x<sup>4</sup>y<sup>2</sup></li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-59.</span></div>
+      <p>A linear function includes the points (2, 7) and (4, 8). What is the average rate of change, Δy/Δx, between these two points? What will happen to the average rate of change if you choose other points on the graph of the function?</p>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="problem"><div><span class="num">1-60.</span></div>
+      <p>A function machine is shown at right.</p>
+      <ol class="subparts" type="a">
+        <li>If the input is x = −2, what is the output?<br>If the input is x = 10, what is the output?</li>
+        <li>If 27 is the output, what was the input?<br>If 147 is the output, what was the input?</li>
+        <li>If the equation for determining the output from a given input is f(x) = 3x<sup>2</sup>, what is the equation for determining the input from a given output?</li>
+      </ol>
+      <figure style="float:right; width:1.7in; margin:0 0 0.08in 0.12in;">
+        <div class="placeholder img-medium" role="img" aria-label="Placeholder for stacked function machine diagram showing x input and f(x) output.">
+          <div class="placeholder-name">tb_images/image_1_1_24.png</div>
+          <div class="access">Accessibility description: Function machine drawing with arrows feeding an x input through a rule to produce f(x) output.</div>
+        </div>
+      </figure>
+      <div class="workspace xtall"></div>
+    </div>
+
+    <div class="math-notes">
+      <h3>MATH NOTES</h3>
+      <h4>Point-Slope Form of a Line</h4>
+      <p>The equation of a line with slope m that passes through the point (x<sub>1</sub>, y<sub>1</sub>) is written in point-slope form as <strong>y − y<sub>1</sub> = m(x − x<sub>1</sub>)</strong>.</p>
+      <p>Example: The equation of a line that has a slope of −3/4 that passes through the point (−1, 5) can be written as y − 5 = −3/4(x + 1).</p>
+    </div>
+
+    <div class="problem"><div><span class="num">1-61.</span></div>
+      <p>Write the equation of each line in point-slope form.</p>
+      <ol class="subparts" type="a">
+        <li>A line that has slope 5 and passes through the point (3, 10).</li>
+        <li>A line that has slope of −0.23 and passes through the point (0.1, −1.7).</li>
+      </ol>
+      <div class="workspace tall"></div>
+    </div>
+
+    <div class="running-footer">Chapter 1: Preparing for Your Journey</div>
+    <div class="page-number">21</div>
+  </section>
+
+</div>
+</body>
+</html>
