@@ -200,6 +200,7 @@
   }
   .workspace{
     border:1px solid #bbb;
+    border-radius:4px;
     min-height:0.8in;
     margin-top:0.08in;
     background:
@@ -260,9 +261,26 @@
     }
   }
 </style>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)'], ['$', '$']],
+    displayMath: [['\\[','\\]']],
+    processEscapes: true
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 <body>
 <div class="document">
+
+  <!-- MathJax enabled in second pass for cleaner textbook-style notation. -->
 
   <section class="page" aria-label="Chapter 1 title page">
     <div class="chapter-cloud">
@@ -399,7 +417,7 @@
         </ul>
 
         <p><strong>Task Manager</strong> (fourth tallest team member)<br>
-        Responsible for facilitating and effectively participating team.</p>
+        Responsible for facilitating and effectively participating in team work.</p>
         <ul>
           <li>Help keep your team on task, talking about math, and respecting each other’s right to learn.</li>
           <li>Keep track of time if you have been given a time limit.</li>
@@ -466,7 +484,7 @@
         <tr><th>y</th><td>16</td><td>9</td><td>4</td><td>1</td><td>0</td><td>1</td><td>4</td><td>9</td></tr>
       </table>
 
-      <p class="center"><strong>y = (x − 2)<sup>2</sup></strong></p>
+      <p class="center"><strong>\(y=(x-2)^2\)</strong></p>
       <p>In the example above, the value of <em>y</em> depends on <em>x</em>, so <em>y</em> is the <strong>dependent variable</strong> and <em>x</em> is the <strong>independent variable</strong>.</p>
       <p>Another way to write a function is with the notation “f(x)” instead of “y”. The function named “f” has output f(x). The input is x.</p>
       <p>In the example at right, <em>f</em>(5) = 9. The input is 5 and the output is 9. This is stated, “f of 5 equals 9.”</p>
@@ -479,7 +497,7 @@
         </div>
       </figure>
 
-      <p><strong>x<sup>2</sup> + y<sup>2</sup> = 1</strong> is not a function because there are two possible outputs y-values for some x-values, as shown at right.</p>
+      <p><strong>\(x^2+y^2=1\)</strong> is not a function because there are two possible outputs y-values for some x-values, as shown at right.</p>
     </div>
 
     <div class="review">Review &amp; Preview</div>
@@ -503,16 +521,16 @@
 
       <table>
         <tr><th>Function</th><th>Family</th></tr>
-        <tr><td>f(x) = x</td><td>Linear</td></tr>
-        <tr><td>f(x) = x<sup>2</sup></td><td>Quadratic</td></tr>
-        <tr><td>f(x) = x<sup>3</sup></td><td>Cubic</td></tr>
-        <tr><td>f(x) = b<sup>x</sup> for b &gt; 1</td><td>Exponential</td></tr>
-        <tr><td>f(x) = b<sup>x</sup> for 0 &lt; b &lt; 1</td><td>Exponential</td></tr>
-        <tr><td>f(x) = 1/x</td><td>Rational</td></tr>
-        <tr><td>f(x) = |x|</td><td>Absolute Value</td></tr>
-        <tr><td>f(x) = √x</td><td>Square Root</td></tr>
-        <tr><td>f(x) = ∛x</td><td>Cube Root</td></tr>
-        <tr><td>f(x) = log(x)</td><td>Logarithmic</td></tr>
+        <tr><td>\(f(x)=x\)</td><td>Linear</td></tr>
+        <tr><td>\(f(x)=x\)<sup>2</sup></td><td>Quadratic</td></tr>
+        <tr><td>\(f(x)=x\)<sup>3</sup></td><td>Cubic</td></tr>
+        <tr><td>\(f(x)=b^x\) for \(b&gt;1\)</td><td>Exponential</td></tr>
+        <tr><td>\(f(x)=b^x\) for \(0&lt;b&lt;1\)</td><td>Exponential</td></tr>
+        <tr><td>\(f(x)=\frac{1}{x}\)</td><td>Rational</td></tr>
+        <tr><td>\(f(x)=|x|\)</td><td>Absolute Value</td></tr>
+        <tr><td>\(f(x)=\sqrt{x}\)</td><td>Square Root</td></tr>
+        <tr><td>\(f(x)=\sqrt[3]{x}\)</td><td>Cube Root</td></tr>
+        <tr><td>\(f(x)=\log(x)\)</td><td>Logarithmic</td></tr>
       </table>
 
       <p>Complete the Parent Graph Graphic Organizer. Be sure to sketch accurate graphs since they will be used as models for their respective families. Write down each parent graph’s key features and its graph. Be sure to include domain and range, intercepts, asymptotes, lines of symmetry, and the name of each function. This Parent Graph Graphic Organizer will be used throughout the course.</p>
@@ -535,7 +553,7 @@
       </div>
     </div>
 
-    <p>In previous courses, you learned that multiple representations such as situations, tables, graphs, and equations, along with their connections, are useful for learning about functions. They will also be useful in the modeling process. Mathematicians, acting as the process of choosing and using various mathematical concepts to make sense of a situation. Today you will use the modeling process to make sense of a situation as well as understand it more fully.</p>
+    <p>In previous courses, you learned that multiple representations such as situations, tables, graphs, and equations, along with their connections, are useful for learning about functions. They will also be useful in the modeling process. Mathematical modeling is the process of choosing and using various mathematical concepts to make sense of a situation. Today you will use the modeling process to make sense of a situation as well as understand it more fully.</p>
 
     <div class="problem">
       <div><span class="num">1-7.</span></div>
@@ -621,12 +639,12 @@
       <h4>Properties of Exponents</h4>
       <table>
         <tr><th>Property</th><th>Examples</th></tr>
-        <tr><td>x<sup>m</sup>x<sup>n</sup> = x<sup>m+n</sup></td><td>2<sup>1</sup> · 2<sup>3</sup> = 2<sup>4</sup></td></tr>
-        <tr><td>x<sup>m</sup>/x<sup>n</sup> = x<sup>m−n</sup></td><td>4<sup>3</sup>/4<sup>2</sup> = 4</td></tr>
-        <tr><td>(x<sup>m</sup>)<sup>n</sup> = x<sup>mn</sup></td><td>(10<sup>5</sup>)<sup>2</sup> = 10<sup>10</sup></td></tr>
-        <tr><td>x<sup>0</sup> = 1 for x ≠ 0</td><td>9<sup>0</sup> = 1</td></tr>
-        <tr><td>x<sup>−n</sup> = 1/x<sup>n</sup></td><td>3<sup>−1</sup> = 1/3</td></tr>
-        <tr><td>x<sup>m/n</sup> = <sup>n</sup>√(x<sup>m</sup>)</td><td>8<sup>2/3</sup> = <sup>3</sup>√(8<sup>2</sup>) = 4</td></tr>
+        <tr><td>x<sup>m</sup>x<sup>n</sup> = x<sup>m+n</sup></td><td>\(2^1\cdot 2^3=2^4\)</td></tr>
+        <tr><td>x<sup>m</sup>/x<sup>n</sup> = x<sup>m−n</sup></td><td>\(\frac{4^3}{4^2}=4\)</td></tr>
+        <tr><td>(x<sup>m</sup>)<sup>n</sup> = x<sup>mn</sup></td><td>\((10^5)^2=10^{10}\)</td></tr>
+        <tr><td>x<sup>0</sup> = 1 for x ≠ 0</td><td>\(9^0=1\)</td></tr>
+        <tr><td>x<sup>−n</sup> = 1/x<sup>n</sup></td><td>\(3^{-1}=\frac{1}{3}\)</td></tr>
+        <tr><td>x<sup>m/n</sup> = <sup>n</sup>√(x<sup>m</sup>)</td><td>\(8^{2/3}=\sqrt[3]{8^2}=4\)</td></tr>
       </table>
     </div>
 
@@ -636,12 +654,12 @@
       <div><span class="num">1-12.</span></div>
       <p>Simplify each expression to a single integer with an integer power, or state “impossible” and explain why.</p>
       <ol class="subparts" type="a">
-        <li>2<sup>3</sup> · 3<sup>2</sup></li>
-        <li>2<sup>2</sup> + 2<sup>3</sup></li>
-        <li>2<sup>2</sup> · 2<sup>5</sup></li>
-        <li>(2<sup>3</sup>)<sup>2</sup></li>
-        <li>2<sup>6</sup>/2<sup>3</sup></li>
-        <li>2<sup>7</sup> − 2<sup>4</sup></li>
+        <li>\(2^3\cdot 3^2\)</li>
+        <li>\(2^2+2^3\)</li>
+        <li>\(2^2\cdot 2^5\)</li>
+        <li>\((2^3)^2\)</li>
+        <li>\(\frac{2^6}{2^3}\)</li>
+        <li>\(2^7-2^4\)</li>
       </ol>
       <div class="workspace tall"></div>
     </div>
@@ -650,10 +668,10 @@
       <div><span class="num">1-13.</span></div>
       <p>Multiply or expand each expression below.</p>
       <ol class="subparts" type="a">
-        <li>(2x)<sup>3</sup></li>
-        <li>(x − 2)<sup>2</sup></li>
-        <li>(3xy)<sup>4</sup></li>
-        <li>(3x<sup>2</sup>)<sup>2</sup></li>
+        <li>\((2x)^3\)</li>
+        <li>\((x-2)^2\)</li>
+        <li>\((3xy)^4\)</li>
+        <li>\((3x^2)^2\)</li>
       </ol>
       <div class="workspace tall"></div>
     </div>
@@ -662,9 +680,9 @@
       <div><span class="num">1-14.</span></div>
       <p>For △ABC at right, state each ratio in terms of the sides.</p>
       <ol class="subparts" type="a">
-        <li>sin(α) = ?</li>
-        <li>cos(α) = ?</li>
-        <li>tan(α) = ?</li>
+        <li>\(\sin(\alpha)=?\)</li>
+        <li>\(\cos(\alpha)=?\)</li>
+        <li>\(\tan(\alpha)=?\)</li>
       </ol>
 
       <figure style="float:right; width:2in; margin:0 0 0.08in 0.12in;">
@@ -678,10 +696,10 @@
 
     <div class="problem">
       <div><span class="num">1-15.</span></div>
-      <p>Let f(x) = 2x<sup>2</sup> − 3. Evaluate:</p>
+      <p>Let \(f(x)=2x^2-3\). Evaluate:</p>
       <ol class="subparts" type="a">
-        <li>f(4)</li>
-        <li>f(−5)</li>
+        <li>\(f(4)\)</li>
+        <li>\(f(-5)\)</li>
       </ol>
       <div class="workspace tall"></div>
     </div>
@@ -778,17 +796,17 @@
     <div class="review">Review &amp; Preview</div>
 
     <div class="problem"><div><span class="num">1-22.</span></div>
-      <p>Graph y = −|x| + 5. How does it compare to the parent graph y = |x|?</p>
+      <p>Graph Graph \(y=-|x|+5\). How does it compare to the parent graph \(y=|x|\)?</p>
       <div class="workspace tall"></div>
     </div>
 
     <div class="problem"><div><span class="num">1-23.</span></div>
-      <p>Solve for x: 3x + w = 20. (Note that your answer will have w in it.)</p>
+      <p>Solve for \(x\): \(3x+w=20\). (Note that your answer will have w in it.)</p>
       <div class="workspace tall"></div>
     </div>
 
     <div class="problem"><div><span class="num">1-24.</span></div>
-      <p>Let g(x) = x<sup>2</sup> − 2x. Evaluate:</p>
+      <p>Let \(g(x)=x^2-2x\). Evaluate:</p>
       <ol class="subparts" type="a">
         <li>g(−1)</li>
         <li>g(3)</li>
@@ -815,8 +833,8 @@
     <div class="problem"><div><span class="num">1-26.</span></div>
       <p>Factor each expression.</p>
       <ol class="subparts" type="a">
-        <li>x<sup>2</sup> + 8x</li>
-        <li>6x<sup>2</sup> + 48x</li>
+        <li>\(x^2+8x\)</li>
+        <li>\(6x^2+48x\)</li>
       </ol>
       <div class="workspace tall"></div>
     </div>
@@ -824,15 +842,15 @@
     <div class="problem"><div><span class="num">1-27.</span></div>
       <p>Rewrite each expression in simple radical form.</p>
       <ol class="subparts" type="a">
-        <li>√18</li>
-        <li>2√27</li>
-        <li>√(32b<sup>5</sup>)</li>
+        <li>\(\sqrt{18}\)</li>
+        <li>\(2\sqrt{27}\)</li>
+        <li>\(\sqrt{32b^5}\)</li>
       </ol>
       <div class="workspace tall"></div>
     </div>
 
     <div class="problem"><div><span class="num">1-28.</span></div>
-      <p>Is the equation (3x + 2)<sup>2</sup> = 9x<sup>2</sup> + 4 always, sometimes, or never true? Explain.</p>
+      <p>Is the equation \((3x+2)^2=9x^2+4\) always, sometimes, or never true? Explain.</p>
       <div class="workspace tall"></div>
     </div>
 
@@ -865,7 +883,7 @@
     </div>
 
     <div class="problem"><div><span class="num">1-30.</span></div>
-      <p>Rates are used to describe how one quantity is changing in relation to another. For a function, the average rate of change is defined as the change in the dependent variable (y<sub>2</sub> − y<sub>1</sub>) divided by the change in the independent variable (x<sub>2</sub> − x<sub>1</sub>) for two distinct points on the graph. What is another way to describe average rate of change?</p>
+      <p>Rates are used to describe how one quantity is changing in relation to another. For a function, the average rate of change is defined as the change in the dependent variable (\(y_2-y_1\)) divided by the change in the independent variable (\(x_2-x_1\)) for two distinct points on the graph. What is another way to describe average rate of change?</p>
       <p>To illustrate average rate of change, consider the following situation: Macario started in Vacaville and drove to Davis (a distance of 28 miles) in 30 minutes. Most of his journey was spent driving on the freeway. He stopped in Davis.</p>
       <ol class="subparts" type="a">
         <li>What was Macario’s average speed in miles per hour?</li>
@@ -899,9 +917,9 @@
     </div>
 
     <div class="problem"><div><span class="num">1-32.</span></div>
-      <p>A child tosses a tennis ball into the air and it lands in the mud. The function h(t) = −16t<sup>2</sup> + 16t + 4 gives the ball’s height in feet with respect to time in seconds.</p>
+      <p>A child tosses a tennis ball into the air and it lands in the mud. The function \(h(t)=-16t^2+16t+4\) gives the ball’s height in feet with respect to time in seconds.</p>
       <ol class="subparts" type="a">
-        <li>Sketch a graph of y = h(t). Highlight the portion of the curve that fits this situation.</li>
+        <li>Sketch a graph of \(y=h(t)\). Highlight the portion of the curve that fits this situation.</li>
         <li>What is happening to the height of the tennis ball with respect to the time?</li>
         <li>Since velocity is a function of distance traveled over time, what part of the graph represents the velocity of the ball? What is happening to the velocity of the tennis ball with respect to time?</li>
         <li>Copy and complete the following table of time (s) versus height (ft).</li>
@@ -914,7 +932,7 @@
 
       <ol class="subparts" type="a" start="5">
         <li>Use the table to determine the ball’s average velocity in ft/sec for each 0.25-second time interval.</li>
-        <li>Predict the velocity of the ball at t = 0.8 seconds. Be prepared to justify your answer to the class.</li>
+        <li>Predict the velocity of the ball at \(t=0.8\) seconds. Be prepared to justify your answer to the class.</li>
       </ol>
 
       <figure style="float:right; width:1.7in; margin:0 0 0.08in 0.12in;">
@@ -933,7 +951,7 @@
     </div>
 
     <div class="problem"><div><span class="num">1-34.</span></div>
-      <p>If f(x) = 3x<sup>2</sup> + 5x − 2, show that f(x + 2) = 3x<sup>2</sup> + 17x + 20.</p>
+      <p>If \(f(x)=3x^2+5x-2\), show that \(f(x+2)=3x^2+17x+20\).</p>
       <div class="workspace tall"></div>
     </div>
 
@@ -1072,7 +1090,7 @@
     </div>
 
     <div class="problem"><div><span class="num">1-46.</span></div>
-      <p>Let f(x) = x<sup>2</sup> − 3. Evaluate:</p>
+      <p>Let \(f(x)=x\)<sup>2</sup> − 3. Evaluate:</p>
       <ol class="subparts" type="a">
         <li>f(3b)</li>
         <li>f(a + 1)</li>
@@ -1121,18 +1139,18 @@
 
   <section class="page" aria-label="Lesson 1.1.5 page 3">
     <div class="problem"><div><span class="num">1-50.</span></div>
-      <p>Solve for x: <sup>3x</sup>/<sub>4</sub> = 5x + y − 6.</p>
+      <p>Solve for x: \(\frac{3x}{4}=5x+y-6\).</p>
       <div class="workspace tall"></div>
     </div>
 
     <div class="problem"><div><span class="num">1-51.</span></div>
       <p>Though it looks like the following equations are true, each of them is actually false. Confirm this by substituting simple numbers for the variables and doing the arithmetic. Note: Do not use 0 or 1; they are too special. <strong>Remember: Each of these statements is false.</strong></p>
       <ol class="subparts" type="a">
-        <li>(x + y)<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup></li>
-        <li>√(p<sup>2</sup> + q<sup>2</sup>) = p + q</li>
-        <li>3w<sup>−2</sup> = 1/3w<sup>2</sup></li>
-        <li>(a<sup>2</sup> + b<sup>2</sup>)<sup>1/2</sup> = a + b</li>
-        <li>3 · 2<sup>x</sup> = 6<sup>x</sup></li>
+        <li>\((x+y)^2=x^2+y^2\)</li>
+        <li>\(\sqrt{p^2+q^2}=p+q\)</li>
+        <li>\(3w^{-2}=\frac{1}{3w^2}\)</li>
+        <li>\((a^2+b^2)^{1/2}=a+b\)</li>
+        <li>\(3\cdot 2^x=6^x\)</li>
       </ol>
 
       <figure style="float:right; width:2in; margin:0 0 0.08in 0.12in;">
@@ -1202,7 +1220,7 @@
 
   <section class="page" aria-label="Lesson 1.1.6 page 2">
     <div class="problem"><div><span class="num">1-56.</span></div>
-      <p>Let g(x) = x<sup>2</sup> − 2x. Evaluate:</p>
+      <p>Let \(g(x)=x^2-2x\). Evaluate:</p>
       <ol class="subparts" type="a">
         <li>g(a)</li>
         <li>g(t − 2)</li>
@@ -1213,9 +1231,9 @@
     <div class="problem"><div><span class="num">1-57.</span></div>
       <p>Rewrite each expression below using the properties of exponents.</p>
       <ol class="subparts" type="a">
-        <li>(5a<sup>−2</sup>)<sup>3</sup></li>
-        <li>(m<sup>4</sup>n<sup>−2</sup>)<sup>0</sup></li>
-        <li>(2x<sup>−1</sup>y<sup>2</sup>)(2x<sup>6</sup>)</li>
+        <li>\((5a^{-2})^3\)</li>
+        <li>\((m^4n^{-2})^0\)</li>
+        <li>\((2x^{-1}y^2)(2x^6)\)</li>
       </ol>
       <div class="workspace tall"></div>
     </div>
@@ -1223,9 +1241,9 @@
     <div class="problem"><div><span class="num">1-58.</span></div>
       <p>Factor each binomial.</p>
       <ol class="subparts" type="a">
-        <li>2p<sup>2</sup> + 5x</li>
-        <li>3x<sup>2</sup>y − 9xy<sup>3</sup></li>
-        <li>17x<sup>2</sup>y − 34x<sup>4</sup>y<sup>2</sup></li>
+        <li>\(2p^2+5x\)</li>
+        <li>\(3x^2y-9xy^3\)</li>
+        <li>\(17x^2y-34x^4y^2\)</li>
       </ol>
       <div class="workspace tall"></div>
     </div>
@@ -1240,7 +1258,7 @@
       <ol class="subparts" type="a">
         <li>If the input is x = −2, what is the output?<br>If the input is x = 10, what is the output?</li>
         <li>If 27 is the output, what was the input?<br>If 147 is the output, what was the input?</li>
-        <li>If the equation for determining the output from a given input is f(x) = 3x<sup>2</sup>, what is the equation for determining the input from a given output?</li>
+        <li>If the equation for determining the output from a given input is \(f(x)=3x^2\), what is the equation for determining the input from a given output?</li>
       </ol>
       <figure style="float:right; width:1.7in; margin:0 0 0.08in 0.12in;">
         <div class="placeholder img-medium" role="img" aria-label="Placeholder for stacked function machine diagram showing x input and f(x) output.">
@@ -1254,8 +1272,8 @@
     <div class="math-notes">
       <h3>MATH NOTES</h3>
       <h4>Point-Slope Form of a Line</h4>
-      <p>The equation of a line with slope m that passes through the point (x<sub>1</sub>, y<sub>1</sub>) is written in point-slope form as <strong>y − y<sub>1</sub> = m(x − x<sub>1</sub>)</strong>.</p>
-      <p>Example: The equation of a line that has a slope of −3/4 that passes through the point (−1, 5) can be written as y − 5 = −3/4(x + 1).</p>
+      <p>The equation of a line with slope m that passes through the point (x<sub>1</sub>, y<sub>1</sub>) is written in point-slope form as <strong>\(y-y_1=m(x-x_1)\)</strong>.</p>
+      <p>Example: The equation of a line that has a slope of −3/4 that passes through the point (−1, 5) can be written as \(y-5=-\frac{3}{4}(x+1)\).</p>
     </div>
 
     <div class="problem"><div><span class="num">1-61.</span></div>
