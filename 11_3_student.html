@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 3 - Tangent Lines</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      line-height:1.7;
+      color:#333;
+      background:#ffffff;
+      padding:20px;
+    }
+
+    .container{max-width:900px;margin:auto;}
+    .page-break{page-break-before:always;}
+
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+
+    h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+    h2{
+      color:#00003d;
+      font-size:1.8em;
+      margin-top:30px;
+      margin-bottom:15px;
+      border-left:5px solid #00003d;
+      padding-left:10px;
+    }
+
+    h3{
+      color:#004d99;
+      font-size:1.3em;
+      margin-top:16px;
+      margin-bottom:8px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p{margin-bottom:10px;}
+    ol, ul{margin-left:22px;}
+    li{margin-bottom:6px;}
+
+    .intro-text{
+      font-size:1.05em;
+      color:#555;
+      margin-bottom:10px;
+      font-style:italic;
+    }
+
+    .objectives{
+      background:#f0f4f8;
+      padding:20px;
+      border-radius:6px;
+    }
+
+    .definition{
+      background:#fffacd;
+      border-left:5px solid #ffd700;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .key-point{
+      background:#e8f5e9;
+      border-left:5px solid #4caf50;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .strategy-box{
+      background:#eef3ff;
+      border-left:5px solid #4a6fdc;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .annotation-box{
+      border:1px solid #bfc8d8;
+      border-radius:6px;
+      padding:14px;
+      margin:14px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box{
+      border:none;
+      border-radius:0;
+      padding:0;
+      margin:6px 0 12px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box h3{margin-top:0;margin-bottom:8px;}
+
+    .problem{
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom:12px;
+    }
+
+    section{margin-bottom:30px;}
+
+    .workspace,
+    .workspace-100,
+    .workspace-120,
+    .workspace-140,
+    .workspace-150,
+    .workspace-180,
+    .workspace-200,
+    .workspace-220,
+    .workspace-240,
+    .workspace-260,
+    .workspace-300,
+    .workspace-350,
+    .workspace-400,
+    .workspace-500,
+    .workspace-600{
+      width:100%;
+      margin-top:8px;
+      border-bottom:0px solid #000;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .workspace-100{height:100px;}
+    .workspace-120{height:120px;}
+    .workspace-140{height:140px;}
+    .workspace-150{height:150px;}
+    .workspace-180{height:180px;}
+    .workspace-200{height:200px;}
+    .workspace-220{height:220px;}
+    .workspace-240{height:240px;}
+    .workspace-260{height:260px;}
+    .workspace-300{height:300px;}
+    .workspace-350{height:350px;}
+    .workspace-400{height:400px;}
+    .workspace-500{height:500px;}
+    .workspace-600{height:600px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section>
+      <div class="problem">
+        <h1>Section 3 — Tangent Lines</h1>
+      </div>
+
+      <div class="problem">
+        <h2>Learning Target</h2>
+        <div class="objectives">
+          <p>Find the equation of a tangent line to a function by using the product rule to determine slope at a given point.</p>
+          <p><strong>I can statements</strong></p>
+          <ul>
+            <li>I can use the product rule to find the derivative of a function at a given value of $x$.</li>
+            <li>I can evaluate a derivative to find the slope of a tangent line.</li>
+            <li>I can use a point on the graph and the slope to write the equation of a tangent line.</li>
+            <li>I can connect the derivative of a function to the rate of change shown by its tangent line.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Warm-Up</h2>
+        <p>Use the questions below to bring forward the product-rule work and line-writing skills that support tangent-line problems.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> Find the derivative of $f(x)=(x+1)\sin x$.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Evaluate the derivative from Question 1 at $x=0$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find the point on the graph of $f(x)=(x+1)\sin x$ when $x=0$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Write the equation of the line through $(0,0)$ with slope $1$.</p>
+        <div class="workspace-150"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>What’s To Come</h2>
+        <p>
+          Later in this section, you will return to the task below. For now, do not solve it. Instead, annotate it individually. Circle anything familiar, underline symbols or directions that seem important, and write notes about what information you think will be needed. As you annotate, ask yourself: Where will the slope come from? How will you know which point belongs on the tangent line?
+        </p>
+
+        <div class="annotation-box">
+          <p><strong>Future Task</strong></p>
+          <p>Find the equation of the tangent line to</p>
+          \[
+          y=(x^2+1)\sin x
+          \]
+          <p>at $x=0$. Then explain what the slope of that tangent line says about how the function is changing at that point.</p>
+        </div>
+        <div class="workspace-140"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Intro</h2>
+
+        <div class="strategy-box">
+          <p><strong>Directions</strong></p>
+          <p>Read the introduction aloud with a partner or in a small group. As you read, annotate the text by marking important ideas, circling key vocabulary, and writing short notes about connections, questions, or predictions in the margins.</p>
+        </div>
+
+        <p>
+          In the previous section, the derivative of a product gave a new way to compute how a function changes. This section takes the next step by using that derivative to build a tangent line. The slope of a tangent line is still the derivative at a point, but now that idea becomes part of a larger task: find the slope, find the point on the graph, and write the equation of the line that best matches the function at that instant.
+        </p>
+
+        <p>
+          This idea connects naturally to science and engineering because tangent lines are a way of describing local behavior. In physics, a derivative can represent velocity, and the tangent line shows how position is changing at an instant. In economics or biology, a tangent line can show how a quantity is increasing or decreasing at a given moment. The line itself becomes a visual model of rate of change.
+        </p>
+
+        <p>
+          Tangent lines also matter because they connect algebra, geometry, and function behavior in one picture. A function gives the curve, the derivative gives the slope, and the tangent line shows what the function is doing right there. For product functions such as $(x^2+1)\sin x$ or $\cos x(x^2-1)$, that means a single tangent-line problem combines algebraic structure, trigonometric behavior, and a geometric interpretation of change.
+        </p>
+
+        <p>
+          Historically, tangent lines were one of the driving questions behind the development of calculus. Mathematicians wanted a precise way to describe instantaneous direction and change on a curve. The derivative answered that question by turning local behavior into slope. Once that connection was made, tangent lines became one of the clearest geometric interpretations of differentiation.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>What does this section ask you to do beyond simply finding a derivative?</li>
+            <li>Why are tangent lines useful in science and real-world models?</li>
+            <li>What is one cross-curricular connection named in the text?</li>
+            <li>What historical question helped lead to the development of derivatives?</li>
+          </ol>
+        </div>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Notation Reminder</h2>
+        <div class="definition">
+          <p><strong>Common Tangent-Line Notation</strong></p>
+          <ul>
+            <li>$m=f'(a)$ gives the slope of the tangent line at $x=a$.</li>
+            <li>The point on the graph is $(a,f(a))$.</li>
+            <li>Point-slope form: $y-y_1=m(x-x_1)$</li>
+          </ul>
+          <p>In a tangent-line problem, the derivative gives the slope, the original function gives the point, and point-slope form builds the equation of the line.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>From Derivative to Tangent-Line Slope</h2>
+        <p>
+          The first step in a tangent-line problem is to find the slope. That slope comes from the derivative, not from the original function value. When the function is a product, the product rule is used first, and only after that do we evaluate at the given $x$ value.
+        </p>
+
+        <div class="key-point">
+          <p><strong>Slope of the Tangent Line</strong></p>
+          \[
+          m=f'(a)
+          \]
+          <p>The slope at $x=a$ comes from evaluating the derivative at that same input value.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 1</h3>
+          <p>For $f(x)=(x+1)\sin x$, find the slope of the tangent line at $x=0$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 1</h3>
+          <p>For $g(x)=\cos x(x^2-1)$, find the slope of the tangent line at $x=0$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>Why does the slope in a tangent-line problem come from $f'(a)$ instead of from $f(a)$?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Finding the Point on the Graph</h2>
+        <p>
+          After finding the slope, the next step is to find the point where the tangent line touches the graph. That point comes from the original function, not from the derivative. If the tangent line is at $x=a$, then the point is $(a,f(a))$.
+        </p>
+
+        <div class="key-point">
+          <p><strong>Point on the Curve</strong></p>
+          \[
+          (a,f(a))
+          \]
+          <p>Use the original function value to locate the point of tangency.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 2</h3>
+          <p>For $h(x)=(x^2+1)\sin x$, find the point on the graph when $x=0$.</p>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 2</h3>
+          <p>For $p(x)=\cos x(x+2)$, find the point on the graph when $x=0$.</p>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>Why do tangent-line problems need information from both the derivative and the original function?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Writing the Equation of the Tangent Line</h2>
+        <p>
+          Once the slope and the point are known, the tangent line can be written using point-slope form. This step turns the derivative information into a full linear equation that describes the function locally.
+        </p>
+
+        <div class="definition">
+          <p><strong>Point-Slope Form</strong></p>
+          \[
+          y-y_1=m(x-x_1)
+          \]
+          <p>Substitute the slope and the point of tangency into the formula.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 3</h3>
+          <p>Find the equation of the tangent line to $q(x)=(x^2+1)\sin x$ at $x=0$.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 3</h3>
+          <p>Find the equation of the tangent line to $r(x)=\cos x(x+2)$ at $x=0$.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>How does point-slope form connect the derivative to the graph of the function?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Connecting the Tangent Line to Rate of Change</h2>
+        <p>
+          A tangent line is not only a geometric object. Its slope tells how the function is changing at that exact point. A positive slope means the function is increasing there, a negative slope means it is decreasing there, and a slope of zero means the function is momentarily flat at that point.
+        </p>
+        <p>
+          Interpreting the tangent line helps connect symbolic work back to meaning. In this way, the tangent line becomes a visible picture of the instantaneous rate of change described by the derivative.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 4</h3>
+          <p>Find the tangent line to $s(x)=\sin x(x^2+1)$ at $x=0$, and explain what the slope tells you about the function at that point.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 4</h3>
+          <p>Find the tangent line to $t(x)=\cos x(x^2-1)$ at $x=0$, and explain what the slope tells you about the function at that point.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>What does the slope of a tangent line tell you about the rate of change of the function at that point?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Summary Concepts</h2>
+        <div class="key-point">
+          <ul>
+            <li>The slope of a tangent line at $x=a$ is $f'(a)$.</li>
+            <li>The point of tangency is found from the original function as $(a,f(a))$.</li>
+            <li>The equation of the tangent line can be written with point-slope form.</li>
+            <li>The product rule is used first when the function is a product.</li>
+            <li>The slope of the tangent line shows the instantaneous rate of change at that point.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Common Mistakes</h2>
+        <div class="strategy-box">
+          <ul>
+            <li>Using $f(a)$ as the slope instead of $f'(a)$.</li>
+            <li>Using the derivative to find the point on the graph instead of the original function.</li>
+            <li>Forgetting point-slope form after finding the slope and point.</li>
+            <li>Forgetting product-rule structure or the negative sign in the derivative of cosine.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Practice Set</h2>
+        <p>Complete each problem in the space provided.</p>
+      </div>
+
+      <div class="problem">
+        <h3>Level 1</h3>
+        <p><strong>1.</strong> For $f(x)=(x+1)\sin x$, find $f'(x)$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> For $f(x)=(x+1)\sin x$, find $f'(0)$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> For $f(x)=(x+1)\sin x$, find the point on the graph when $x=0$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Write the tangent line to $f(x)=(x+1)\sin x$ at $x=0$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 2</h3>
+        <p><strong>5.</strong> Find the tangent line to $g(x)=(x^2+1)\sin x$ at $x=0$.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>6.</strong> Find the tangent line to $h(x)=\cos x(x+2)$ at $x=0$.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>7.</strong> Find the tangent line to $p(x)=(2x^2-x+1)\sin x$ at $x=0$.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>8.</strong> Find the tangent line to $q(x)=\cos x(x^2-4)$ at $x=0$.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 3</h3>
+        <p><strong>9.</strong> If $r(x)=(x^2-x+3)\sin x$, find $r'(x)$.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>10.</strong> Evaluate $r'(0)$ for $r(x)=(x^2-x+3)\sin x$, and then write the tangent line at $x=0$.</p>
+        <div class="workspace-200"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>11.</strong> Explain why tangent-line equations need information from both the derivative and the original function.</p>
+        <div class="workspace-200"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>12.</strong> Create a product-rule function and find the tangent line at $x=0$.</p>
+        <div class="workspace-220"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 4</h3>
+        <p><strong>13.</strong> A model is $s(t)=(t^2+1)\sin t$. Find the tangent line at $t=0$ and explain what the slope means in context.</p>
+        <div class="workspace-220"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>14.</strong> Create a function involving a negative or fractional power of $x$ and a trig function. Find a tangent line at a value where the work stays defined, and explain your process.</p>
+        <div class="workspace-240"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>15.</strong> A student says, “Once I know $f'(a)$, I do not need the original function anymore.” Write a response that corrects this statement.</p>
+        <div class="workspace-220"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Check Your Understanding</h2>
+        <p>These eight problems represent the core ideas of the section.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> For $f(x)=(x+1)\sin x$, find $f'(x)$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Find $f'(0)$ for $f(x)=(x+1)\sin x$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find the point on the graph of $f(x)=(x+1)\sin x$ when $x=0$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Write the tangent line to $f(x)=(x+1)\sin x$ at $x=0$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>5.</strong> Write the tangent line to $g(x)=\cos x(x^2-1)$ at $x=0$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>6.</strong> If $h(x)=\sin x(x^2+1)$, find $h'(0)$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>7.</strong> Explain why $f(0)$ is not the slope of the tangent line.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>8.</strong> What does the slope of a tangent line tell you about a function at one point?</p>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Exit Ticket</h2>
+        <p>Complete these four problems on a separate sheet of paper.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> For $f(x)=(x^2+1)\sin x$, find $f'(0)$.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> For $f(x)=(x^2+1)\sin x$, find the point on the graph when $x=0$.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Write the tangent line to $f(x)=(x^2+1)\sin x$ at $x=0$.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> What does the slope of that tangent line say about how the function is changing at $x=0$?</p>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Detailed Example Solutions</h2>
+      </div>
+
+      <div class="problem">
+        <h3>Example 1 Solution</h3>
+        <p>For $f(x)=(x+1)\sin x$, find the slope of the tangent line at $x=0$.</p>
+        \[
+        f'(x)=\sin x+(x+1)\cos x
+        \]
+        \[
+        f'(0)=\sin 0+(0+1)\cos 0=1
+        \]
+        <p>The slope is $1$.</p>
+      </div>
+
+      <div class="problem">
+        <h3>Example 2 Solution</h3>
+        <p>For $h(x)=(x^2+1)\sin x$, find the point on the graph when $x=0$.</p>
+        \[
+        h(0)=((0)^2+1)\sin 0=0
+        \]
+        <p>The point is $(0,0)$.</p>
+      </div>
+
+      <div class="problem">
+        <h3>Example 3 Solution</h3>
+        <p>Find the equation of the tangent line to $q(x)=(x^2+1)\sin x$ at $x=0$.</p>
+        \[
+        q'(x)=2x\sin x+(x^2+1)\cos x
+        \]
+        \[
+        q'(0)=1
+        \]
+        \[
+        q(0)=0
+        \]
+        \[
+        y-0=1(x-0)
+        \]
+        \[
+        y=x
+        \]
+      </div>
+
+      <div class="problem">
+        <h3>Example 4 Solution</h3>
+        <p>Find the tangent line to $s(x)=\sin x(x^2+1)$ at $x=0$, and explain what the slope tells you.</p>
+        \[
+        s'(x)=\cos x(x^2+1)+\sin x(2x)
+        \]
+        \[
+        s'(0)=1
+        \]
+        \[
+        s(0)=0
+        \]
+        \[
+        y=x
+        \]
+        <p>The positive slope means the function is increasing there at an instantaneous rate of $1$.</p>
+      </div>
+
+  </div>
+</body>
+</html>
