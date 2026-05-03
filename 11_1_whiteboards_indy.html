@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 8.1 - Power Rule - Whiteboards Indy</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:#222;
+      background:#fff;
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+    }
+    @page{size:letter;margin:0.5in;}
+    .page{
+      min-height:10in;
+      page-break-after:always;
+      padding:0;
+      position:relative;
+    }
+    .title-page{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      min-height:10in;
+    }
+    .title-page h1{
+      color:#00003d;
+      font-size:44px;
+      margin:0 0 16px 0;
+      line-height:1.15;
+    }
+    .title-page h2{
+      color:#00003d;
+      font-size:34px;
+      margin:0;
+      font-weight:600;
+    }
+    .directions-page{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:10in;
+    }
+    .directions-page img{
+      max-width:100%;
+      max-height:9.4in;
+      display:block;
+      object-fit:contain;
+    }
+    .page-header{
+      background:#00003d;
+      color:#fff;
+      font-size:24px;
+      font-weight:700;
+      padding:12px 18px;
+      margin-bottom:28px;
+      border-radius:2px;
+    }
+    .problem-text,
+    .solution-text{
+      font-size:16px;
+      line-height:1.65;
+      padding:0 8px;
+    }
+    .problem-text{
+      margin-top:18px;
+    }
+    .solution-text p{margin:0 0 10px 0;}
+    .skill-list{
+      font-size:14.8px;
+      line-height:1.45;
+      margin:0;
+      padding-left:24px;
+    }
+    .skill-list li{margin-bottom:9px;}
+    .answer-key-list{
+      font-size:14.5px;
+      line-height:1.42;
+      margin:0;
+      padding-left:24px;
+    }
+    .answer-key-list li{margin-bottom:7px;}
+    .note{
+      font-size:14px;
+      color:#444;
+      margin-top:22px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page title-page">
+    <h1>Section 8.1 &mdash; Power Rule</h1>
+    <h2>Whiteboards Indy</h2>
+  </section>
+
+  <section class="page directions-page">
+    <img src="directions/whiteboards_indy.png" alt="Whiteboards Indy directions">
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 1</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(f(x)=x^8-5x^3+2\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 1</div>
+    <div class="solution-text">
+      
+        <p>Use the power rule on each power term. The constant derivative is 0.</p>
+        \[
+        \frac{d}{dx}(x^8)=8x^7
+        \]
+        \[
+        \frac{d}{dx}(-5x^3)=-15x^2
+        \]
+        \[
+        f'(x)=8x^7-15x^2
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 2</div>
+    <div class="problem-text">
+      <p>Rewrite first, then differentiate: \(g(x)=4\sqrt{x}-\dfrac{3}{x^2}\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 2</div>
+    <div class="solution-text">
+      
+        <p>Rewrite radicals and quotients using exponents.</p>
+        \[
+        g(x)=4x^{1/2}-3x^{-2}
+        \]
+        <p>Apply the power rule to each term.</p>
+        \[
+        g'(x)=4\left(\frac12\right)x^{-1/2}-3(-2)x^{-3}
+        \]
+        \[
+        g'(x)=2x^{-1/2}+6x^{-3}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 3</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(h(x)=7x^{3/2}-2x^{-4}\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 3</div>
+    <div class="solution-text">
+      
+        <p>Use the power rule with fractional and negative exponents.</p>
+        \[
+        h'(x)=7\left(\frac32\right)x^{1/2}-2(-4)x^{-5}
+        \]
+        \[
+        h'(x)=\frac{21}{2}x^{1/2}+8x^{-5}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 4</div>
+    <div class="problem-text">
+      <p>If \(y=5x^6-2x^2+9\), find \(y'\) and evaluate \(y'\) when \(x=1\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 4</div>
+    <div class="solution-text">
+      
+        <p>First find the derivative.</p>
+        \[
+        y'=30x^5-4x
+        \]
+        <p>Now substitute \(x=1\).</p>
+        \[
+        y'(1)=30(1)^5-4(1)=26
+        \]
+        <p>The derivative value is \(26\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 5</div>
+    <div class="problem-text">
+      <p>Rewrite first, then differentiate: \(p(x)=\dfrac{3}{x^5}+6\sqrt[3]{x^2}\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 5</div>
+    <div class="solution-text">
+      
+        <p>Rewrite each expression using exponent notation.</p>
+        \[
+        p(x)=3x^{-5}+6x^{2/3}
+        \]
+        <p>Apply the power rule.</p>
+        \[
+        p'(x)=3(-5)x^{-6}+6\left(\frac23\right)x^{-1/3}
+        \]
+        \[
+        p'(x)=-15x^{-6}+4x^{-1/3}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 6</div>
+    <div class="problem-text">
+      <p>A student says, \"The derivative of \(x^5\) is \(x^4\) because the exponent goes down by 1.\" Correct the mistake.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 6</div>
+    <div class="solution-text">
+      
+        <p>The student remembered only part of the power rule.</p>
+        <p>The power rule says to multiply by the original exponent and then subtract 1 from the exponent.</p>
+        \[
+        \frac{d}{dx}(x^5)=5x^4
+        \]
+        <p>The missing factor is \(5\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 7</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(r(x)=-2x^{-3}+5x^{1/2}-4\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 7</div>
+    <div class="solution-text">
+      
+        <p>Differentiate each term separately.</p>
+        \[
+        r'(x)=-2(-3)x^{-4}+5\left(\frac12\right)x^{-1/2}-0
+        \]
+        \[
+        r'(x)=6x^{-4}+\frac52x^{-1/2}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 8</div>
+    <div class="problem-text">
+      <p>If \(f(x)=3x^4-8x+1\), find \(f'(x)\), then find \(f'(2)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 8</div>
+    <div class="solution-text">
+      
+        <p>First find the derivative.</p>
+        \[
+        f'(x)=12x^3-8
+        \]
+        <p>Now evaluate at \(x=2\).</p>
+        \[
+        f'(2)=12(2)^3-8=96-8=88
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 9</div>
+    <div class="problem-text">
+      <p>A position function is \(s(t)=t^4-6t^2\). Find the velocity function \(v(t)=s'(t)\), then find \(v(3)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 9</div>
+    <div class="solution-text">
+      
+        <p>Velocity is the derivative of position.</p>
+        \[
+        v(t)=s'(t)=4t^3-12t
+        \]
+        <p>Evaluate at \(t=3\).</p>
+        \[
+        v(3)=4(3)^3-12(3)=108-36=72
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 10</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(m(x)=2x^3-x^2+5x-7\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 10</div>
+    <div class="solution-text">
+      
+        <p>Use the power rule term by term.</p>
+        \[
+        m'(x)=6x^2-2x+5
+        \]
+        <p>The constant term \(-7\) has derivative \(0\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 11</div>
+    <div class="problem-text">
+      <p>Rewrite first, then differentiate: \(a(x)=\sqrt[4]{x^3}+\dfrac{2}{\sqrt{x}}\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 11</div>
+    <div class="solution-text">
+      
+        <p>Rewrite both terms using exponents.</p>
+        \[
+        a(x)=x^{3/4}+2x^{-1/2}
+        \]
+        <p>Apply the power rule.</p>
+        \[
+        a'(x)=\frac34x^{-1/4}+2\left(-\frac12\right)x^{-3/2}
+        \]
+        \[
+        a'(x)=\frac34x^{-1/4}-x^{-3/2}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 12</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(b(x)=9x^{-1/2}-4x^{5/3}\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 12</div>
+    <div class="solution-text">
+      
+        <p>Use the power rule with each rational exponent.</p>
+        \[
+        b'(x)=9\left(-\frac12\right)x^{-3/2}-4\left(\frac53\right)x^{2/3}
+        \]
+        \[
+        b'(x)=-\frac92x^{-3/2}-\frac{20}{3}x^{2/3}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 13</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(c(x)=\dfrac{6}{x^2}-\dfrac{8}{\sqrt{x}}\). Leave your answer using exponents.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 13</div>
+    <div class="solution-text">
+      
+        <p>Rewrite the function using exponent notation.</p>
+        \[
+        c(x)=6x^{-2}-8x^{-1/2}
+        \]
+        <p>Differentiate with the power rule.</p>
+        \[
+        c'(x)=6(-2)x^{-3}-8\left(-\frac12\right)x^{-3/2}
+        \]
+        \[
+        c'(x)=-12x^{-3}+4x^{-3/2}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 14</div>
+    <div class="problem-text">
+      <p>Find the slope of the tangent line to \(f(x)=x^4-2x^2\) at \(x=1\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 14</div>
+    <div class="solution-text">
+      
+        <p>The slope of the tangent line comes from the derivative value.</p>
+        \[
+        f'(x)=4x^3-4x
+        \]
+        \[
+        f'(1)=4(1)^3-4(1)=0
+        \]
+        <p>The tangent-line slope is \(0\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 15</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(d(x)=12x^7-5x^4+\dfrac{9}{x}\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 15</div>
+    <div class="solution-text">
+      
+        <p>Rewrite the quotient term first.</p>
+        \[
+        d(x)=12x^7-5x^4+9x^{-1}
+        \]
+        <p>Differentiate each term.</p>
+        \[
+        d'(x)=84x^6-20x^3-9x^{-2}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 16</div>
+    <div class="problem-text">
+      <p>Find \(k'(3)\) if \(k(x)=x^3-9x^2+6x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 16</div>
+    <div class="solution-text">
+      
+        <p>First find the derivative.</p>
+        \[
+        k'(x)=3x^2-18x+6
+        \]
+        <p>Evaluate at \(x=3\).</p>
+        \[
+        k'(3)=3(3)^2-18(3)+6=27-54+6=-21
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 17</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(w(x)=(2x^4-3x^2+1)+\left(5x^{-2}-x^{1/2}\right)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 17</div>
+    <div class="solution-text">
+      
+        <p>Differentiate all terms. Parentheses are grouping only.</p>
+        \[
+        w'(x)=8x^3-6x+5(-2)x^{-3}-\frac12x^{-1/2}
+        \]
+        \[
+        w'(x)=8x^3-6x-10x^{-3}-\frac12x^{-1/2}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 18</div>
+    <div class="problem-text">
+      <p>The derivative of \(f(x)=ax^4\) is \(f'(x)=20x^3\). Find the value of \(a\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 18</div>
+    <div class="solution-text">
+      
+        <p>Differentiate the general function.</p>
+        \[
+        f'(x)=4ax^3
+        \]
+        <p>Match it to the given derivative.</p>
+        \[
+        4a x^3=20x^3
+        \]
+        \[
+        4a=20 \quad \Rightarrow \quad a=5
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 19</div>
+    <div class="problem-text">
+      <p>Create a function with one positive power, one negative power, and one fractional power. Then find its derivative.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 19</div>
+    <div class="solution-text">
+      
+        <p>Answers will vary. One possible function is</p>
+        \[
+        f(x)=x^4+3x^{-2}-2x^{1/2}
+        \]
+        <p>Differentiate term by term.</p>
+        \[
+        f'(x)=4x^3-6x^{-3}-x^{-1/2}
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 20</div>
+    <div class="problem-text">
+      <p>A student says, \"The derivative of a constant is the same constant.\" Use an example to explain why this is incorrect.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 20</div>
+    <div class="solution-text">
+      
+        <p>A constant does not change, so its rate of change is 0.</p>
+        <p>For example, if \(f(x)=7\), then</p>
+        \[
+        f'(x)=0
+        \]
+        <p>The derivative of any constant is \(0\), not the original constant.</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Skill Check</div>
+    <div class="problem-text">
+      <ol class="skill-list">
+        <li>Find \(\dfrac{d}{dx}(x^6)\).</li>
+        <li>Find \(\dfrac{d}{dx}(4x^3-7x)\).</li>
+        <li>Rewrite and differentiate \(\sqrt{x}\).</li>
+        <li>Find \(\dfrac{d}{dx}\left(\dfrac{5}{x^2}\right)\).</li>
+        <li>Find \(\dfrac{d}{dx}(3x^{4/3})\).</li>
+        <li>If \(f(x)=x^3-2x\), find \(f'(2)\).</li>
+        <li>Find the slope of \(g(x)=x^4\) at \(x=1\).</li>
+        <li>Find \(\dfrac{d}{dx}(6x^{-1/2})\).</li>
+        <li>What is the derivative of a constant?</li>
+        <li>Correct the error: \(\dfrac{d}{dx}(x^8)=x^7\).</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Skill Check Answer Key</div>
+    <div class="solution-text">
+      <ol class="answer-key-list">
+        <li>\(6x^5\)</li>
+        <li>\(12x^2-7\)</li>
+        <li>\(\sqrt{x}=x^{1/2}\), so derivative is \(\frac12x^{-1/2}\)</li>
+        <li>\(-10x^{-3}\)</li>
+        <li>\(4x^{1/3}\)</li>
+        <li>\(10\)</li>
+        <li>\(4\)</li>
+        <li>\(-3x^{-3/2}\)</li>
+        <li>\(0\)</li>
+        <li>The coefficient is missing: \(\frac{d}{dx}(x^8)=8x^7\).</li>
+      </ol>
+    </div>
+  </section>
+</body>
+</html>
