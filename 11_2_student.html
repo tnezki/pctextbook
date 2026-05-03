@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 2 - Product Rule</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      line-height:1.7;
+      color:#333;
+      background:#ffffff;
+      padding:20px;
+    }
+
+    .container{max-width:900px;margin:auto;}
+    .page-break{page-break-before:always;}
+
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+
+    h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+    h2{
+      color:#00003d;
+      font-size:1.8em;
+      margin-top:30px;
+      margin-bottom:15px;
+      border-left:5px solid #00003d;
+      padding-left:10px;
+    }
+
+    h3{
+      color:#004d99;
+      font-size:1.3em;
+      margin-top:16px;
+      margin-bottom:8px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p{margin-bottom:10px;}
+    ol, ul{margin-left:22px;}
+    li{margin-bottom:6px;}
+
+    .intro-text{
+      font-size:1.05em;
+      color:#555;
+      margin-bottom:10px;
+      font-style:italic;
+    }
+
+    .objectives{
+      background:#f0f4f8;
+      padding:20px;
+      border-radius:6px;
+    }
+
+    .definition{
+      background:#fffacd;
+      border-left:5px solid #ffd700;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .key-point{
+      background:#e8f5e9;
+      border-left:5px solid #4caf50;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .strategy-box{
+      background:#eef3ff;
+      border-left:5px solid #4a6fdc;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .annotation-box{
+      border:1px solid #bfc8d8;
+      border-radius:6px;
+      padding:14px;
+      margin:14px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box{
+      border:none;
+      border-radius:0;
+      padding:0;
+      margin:6px 0 12px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box h3{margin-top:0;margin-bottom:8px;}
+
+    .problem{
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom:12px;
+    }
+
+    section{margin-bottom:30px;}
+
+    .workspace,
+    .workspace-100,
+    .workspace-120,
+    .workspace-140,
+    .workspace-150,
+    .workspace-180,
+    .workspace-200,
+    .workspace-220,
+    .workspace-240,
+    .workspace-260,
+    .workspace-300,
+    .workspace-350,
+    .workspace-400,
+    .workspace-500,
+    .workspace-600{
+      width:100%;
+      margin-top:8px;
+      border-bottom:0px solid #000;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .workspace-100{height:100px;}
+    .workspace-120{height:120px;}
+    .workspace-140{height:140px;}
+    .workspace-150{height:150px;}
+    .workspace-180{height:180px;}
+    .workspace-200{height:200px;}
+    .workspace-220{height:220px;}
+    .workspace-240{height:240px;}
+    .workspace-260{height:260px;}
+    .workspace-300{height:300px;}
+    .workspace-350{height:350px;}
+    .workspace-400{height:400px;}
+    .workspace-500{height:500px;}
+    .workspace-600{height:600px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section>
+      <div class="problem">
+        <h1>Section 2 — Product Rule</h1>
+        <div class="intro-text">Student version built from the Section 11.1 standard.</div>
+      </div>
+
+      <div class="problem">
+        <h2>Learning Target</h2>
+        <div class="objectives">
+          <p>Apply the product rule to differentiate expressions formed by multiplying polynomial and trigonometric functions.</p>
+          <p><strong>I can statements</strong></p>
+          <ul>
+            <li>I can identify when the product rule is needed to differentiate a function.</li>
+            <li>I can apply the product rule correctly to expressions involving powers of $x$, $\sin x$, and $\cos x$.</li>
+            <li>I can combine the product rule with the power rule and basic trigonometric derivatives in one problem.</li>
+            <li>I can evaluate derivative expressions at a given $x$ value after using the product rule.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Warm-Up</h2>
+        <p>Use the questions below to bring forward the derivative facts and algebra structure that will support the product rule.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> Find each derivative.</p>
+        <ul>
+          <li>$\dfrac{d}{dx}(x^4)$</li>
+          <li>$\dfrac{d}{dx}(\sin x)$</li>
+          <li>$\dfrac{d}{dx}(\cos x)$</li>
+        </ul>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Decide whether each expression is a sum or a product.</p>
+        <ul>
+          <li>$x^2+\sin x$</li>
+          <li>$x^2\sin x$</li>
+          <li>$(x^3)(\cos x)$</li>
+        </ul>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> In words, what does it mean to multiply two functions together?</p>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Why might differentiating a product be more complicated than differentiating a sum?</p>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>What’s To Come</h2>
+        <p>
+          Later in this section, you will return to the task below. For now, do not solve it. Instead, annotate it individually. Circle anything familiar, underline words or symbols that seem important, and write short notes about what you notice, what feels uncertain, and what you think you may need to learn before solving it completely. As you annotate, ask yourself: Which parts of this expression already look familiar? What would make this different from differentiating a sum?
+        </p>
+
+        <div class="annotation-box">
+          <p><strong>Future Task</strong></p>
+          <p>Find the derivative of</p>
+          \[
+          y=x^3\sin x
+          \]
+          <p>Then evaluate the derivative at $x=0$.</p>
+        </div>
+        <div class="workspace-140"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Intro</h2>
+
+        <div class="strategy-box">
+          <p><strong>Directions</strong></p>
+          <p>Read the introduction aloud with a partner or in a small group. As you read, annotate the text by marking important ideas, circling key vocabulary, and writing short notes about connections, questions, or predictions in the margins.</p>
+        </div>
+
+        <p>
+          Up to this point, derivatives of sums have been manageable because each term could be differentiated separately. This section begins with a different kind of structure: multiplication. When two functions are multiplied together, the derivative cannot be found by differentiating each factor independently and then multiplying those results. The product rule is the shortcut that handles that situation and shows how the rate of change of a product depends on both factors.
+        </p>
+
+        <p>
+          This kind of reasoning connects naturally to science and engineering, where changing quantities are often linked together rather than added separately. In physics, formulas for motion, force, and energy often involve products of variables. In computer science and data analysis, combined quantities frequently depend on more than one changing component at a time. The product rule reflects that same idea mathematically: when parts interact through multiplication, their rates of change interact too.
+        </p>
+
+        <p>
+          Product relationships also appear in real-world models. The area of a rectangle depends on the product of length and width. Quantities in periodic motion can combine algebraic growth with trigonometric behavior. A function like $x^2\sin x$ combines a steadily changing polynomial factor with a repeating trigonometric factor, creating a model whose rate of change depends on both parts. The product rule gives a way to describe that combined change.
+        </p>
+
+        <p>
+          Historically, the product rule emerged as calculus developed into a system for working with increasingly complicated functions. Once mathematicians understood basic derivatives of powers and trigonometric functions, they needed rules that explained how derivatives behave when functions are combined. The product rule became one of the foundational derivative rules because it answered that question for multiplication and opened the door to more realistic models and more complex expressions.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>What new structure makes this section different from the previous one?</li>
+            <li>Why are products important in science and real-world models?</li>
+            <li>What is one cross-curricular connection named in the text?</li>
+            <li>What question did the product rule answer for calculus?</li>
+          </ol>
+        </div>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Notation Reminder</h2>
+        <div class="definition">
+          <p><strong>Common Derivative Notation</strong></p>
+          <ul>
+            <li>$f'(x)$</li>
+            <li>$y'$</li>
+            <li>$\dfrac{d}{dx}$</li>
+          </ul>
+          <p>These symbols all represent derivative notation. In this section, you will also see product notation such as $(u)(v)$ and factors written side by side.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>When the Product Rule Is Needed</h2>
+        <p>
+          The product rule is used when a function is formed by multiplying two functions together. If the parts are being added or subtracted, the product rule is not needed. The first step is always to identify the structure correctly.
+        </p>
+
+        <div class="key-point">
+          <p><strong>Look for Two Factors</strong></p>
+          <ul>
+            <li>$x^2+\sin x$ is a sum.</li>
+            <li>$x^2\sin x$ is a product.</li>
+            <li>$(x^3)(\cos x)$ is a product.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 1</h3>
+          <p>State whether the product rule is needed for each function.</p>
+          <ol>
+            <li>$x^3+\cos x$</li>
+            <li>$x^3\cos x$</li>
+            <li>$(x^2)(\sin x)$</li>
+          </ol>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 1</h3>
+          <p>State whether the product rule is needed for each function.</p>
+          <ol>
+            <li>$x^4-\sin x$</li>
+            <li>$(x^4+1)\sin x$</li>
+            <li>$\cos x(x+3)$</li>
+          </ol>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>How can you tell whether a function should be handled with the product rule or by differentiating term by term?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>The Product Rule</h2>
+        <div class="definition">
+          <p><strong>Product Rule</strong></p>
+          \[
+          \frac{d}{dx}[u(x)v(x)] = u'(x)v(x)+u(x)v'(x)
+          \]
+          <p>Differentiate the first factor and leave the second alone, then add the first factor times the derivative of the second.</p>
+        </div>
+        <p>
+          The product rule shows that the derivative of a product comes from two contributions: one from the first factor changing and one from the second factor changing. Both factors matter, so the derivative must contain two terms.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 2</h3>
+          <p>Find the derivative of $f(x)=x^2\sin x$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 2</h3>
+          <p>Find the derivative of $g(x)=x^3\cos x$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>Why does the product rule have two terms instead of one?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Combining the Product Rule with Other Derivative Rules</h2>
+        <p>
+          The product rule does not replace the power rule or the trig derivative facts. Instead, it works together with them. Each factor is differentiated using the rule that matches its structure.
+        </p>
+
+        <div class="key-point">
+          <p><strong>Strategy</strong></p>
+          <ol>
+            <li>Identify the two factors.</li>
+            <li>Differentiate each factor using the correct rule.</li>
+            <li>Substitute into the product rule.</li>
+            <li>Simplify the result.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 3</h3>
+          <p>Find the derivative of $h(x)=(2x^3-x+4)\sin x$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 3</h3>
+          <p>Find the derivative of $p(x)=\cos x(x^2-3x+2)$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>How do the power rule and the basic trigonometric derivatives show up inside a product-rule problem?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Evaluating a Product-Rule Derivative at a Given Value</h2>
+        <p>
+          Sometimes the derivative expression is only the first step. After finding the derivative, the next task may be to evaluate it at a specific input value.
+        </p>
+        <p>
+          In product-rule problems, that means the structure still matters first. It is usually better to find the full derivative expression, simplify it if needed, and only then substitute the given value.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 4</h3>
+          <p>For $q(x)=(x^2+1)\sin x$, find $q'(x)$ and then evaluate $q'(0)$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 4</h3>
+          <p>For $r(x)=\cos x(x^2-1)$, find $r'(x)$ and then evaluate $r'(0)$.</p>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>Why should the derivative expression be found before substituting a specific value?</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Summary Concepts</h2>
+        <div class="key-point">
+          <ul>
+            <li>The product rule is needed when two functions are multiplied together.</li>
+            <li>The product rule gives a way to differentiate products by accounting for how both factors change.</li>
+            <li>Each factor is differentiated using the rule that fits its structure.</li>
+            <li>After finding the derivative, a given $x$ value can be substituted into the derivative expression.</li>
+            <li>The product rule works together with the power rule and the basic trigonometric derivatives.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Common Mistakes</h2>
+        <div class="strategy-box">
+          <ul>
+            <li>Treating a product like a sum and differentiating only one factor.</li>
+            <li>Forgetting the second term in $u'v+uv'$.</li>
+            <li>Forgetting that $\dfrac{d}{dx}(\cos x)=-\sin x$.</li>
+            <li>Substituting a value before finding the derivative expression.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Practice Set</h2>
+        <p>Complete each problem in the space provided.</p>
+      </div>
+
+      <div class="problem">
+        <h3>Level 1</h3>
+        <p><strong>1.</strong> Decide whether the product rule is needed for $x^2+\sin x$.</p>
+        <div class="workspace-100"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Decide whether the product rule is needed for $(x^2+1)\sin x$.</p>
+        <div class="workspace-100"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find $\dfrac{d}{dx}(x\sin x)$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Find $\dfrac{d}{dx}(x\cos x)$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 2</h3>
+        <p><strong>5.</strong> Find $\dfrac{d}{dx}\big((3x^2-x+1)\sin x\big)$.</p>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>6.</strong> Find $\dfrac{d}{dx}\big(\cos x(x^3+2x)\big)$.</p>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>7.</strong> Find $\dfrac{d}{dx}\big((x^2+4)\cos x\big)$.</p>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>8.</strong> Find $\dfrac{d}{dx}\big(\sin x(2x^2-5x+1)\big)$.</p>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 3</h3>
+        <p><strong>9.</strong> If $q(x)=(x^2-x+3)\sin x$, find $q'(x)$.</p>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>10.</strong> Evaluate $q'(0)$ for $q(x)=(x^2-x+3)\sin x$.</p>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>11.</strong> Explain why $\dfrac{d}{dx}\big((x^2+1)\sin x\big)$ is not equal to $(2x)(\cos x)$.</p>
+        <div class="workspace-200"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>12.</strong> Create a product of a polynomial sum and a trig function, then differentiate it.</p>
+        <div class="workspace-200"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 4</h3>
+        <p><strong>13.</strong> A model is $s(t)=(t^2+1)\sin t$. Describe what the derivative tells you about the motion.</p>
+        <div class="workspace-220"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>14.</strong> Create a function involving a negative or fractional power of $x$ and a trig function. Differentiate it and explain your work.</p>
+        <div class="workspace-240"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>15.</strong> A student says, “To differentiate a product, just differentiate both parts and multiply.” Write a response that corrects this statement.</p>
+        <div class="workspace-220"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Check Your Understanding</h2>
+        <p>These eight problems represent the core ideas of the section.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> Decide whether the product rule is needed for $(x^2-1)\cos x$.</p>
+        <div class="workspace-100"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Find the derivative of $(x^2+1)\sin x$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find the derivative of $\cos x(x^2-4x)$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Find the derivative of $(2x^3-x)\cos x$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>5.</strong> Find the derivative of $\sin x(x^2+3)$.</p>
+        <div class="workspace-140"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>6.</strong> If $f(x)=(x+1)\sin x$, find $f'(0)$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>7.</strong> If $g(x)=\cos x(x^2+1)$, find $g'(0)$.</p>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>8.</strong> Explain why a product needs a different derivative rule than a sum.</p>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Exit Ticket</h2>
+        <p>Complete these four problems on a separate sheet of paper.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> Find the derivative of $(x+2)\sin x$.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Find the derivative of $\cos x(x^2-1)$.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find the derivative of $(x^2+3x)\cos x$.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> If $f(x)=\sin x(x^2+1)$, find $f'(0)$.</p>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Detailed Example Solutions</h2>
+      </div>
+
+      <div class="problem">
+        <h3>Example 1 Solution</h3>
+        <p>State whether the product rule is needed for each function.</p>
+        <ol>
+          <li>$x^3+\cos x$</li>
+          <li>$x^3\cos x$</li>
+          <li>$(x^2)(\sin x)$</li>
+        </ol>
+        <p>$x^3+\cos x$ is a sum, so the product rule is not needed.</p>
+        <p>$x^3\cos x$ and $(x^2)(\sin x)$ are products, so the product rule is needed for both.</p>
+      </div>
+
+      <div class="problem">
+        <h3>Example 2 Solution</h3>
+        <p>Find the derivative of $f(x)=x^2\sin x$.</p>
+        <p>Let $u=x^2$ and $v=\sin x$.</p>
+        \[
+        u'=2x \quad \text{and} \quad v'=\cos x
+        \]
+        <p>Apply the product rule.</p>
+        \[
+        f'(x)=u'v+uv'=(2x)(\sin x)+(x^2)(\cos x)
+        \]
+        \[
+        f'(x)=2x\sin x+x^2\cos x
+        \]
+      </div>
+
+      <div class="problem">
+        <h3>Example 3 Solution</h3>
+        <p>Find the derivative of $h(x)=(2x^3-x+4)\sin x$.</p>
+        <p>Differentiate the polynomial factor with the power rule and the trig factor with the basic trig derivative.</p>
+        \[
+        h'(x)=(6x^2-1)\sin x+(2x^3-x+4)\cos x
+        \]
+      </div>
+
+      <div class="problem">
+        <h3>Example 4 Solution</h3>
+        <p>For $q(x)=(x^2+1)\sin x$, find $q'(x)$ and evaluate $q'(0)$.</p>
+        \[
+        q'(x)=2x\sin x+(x^2+1)\cos x
+        \]
+        \[
+        q'(0)=2(0)\sin 0+((0)^2+1)\cos 0=1
+        \]
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
