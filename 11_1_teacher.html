@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ==========================================================
+       DOCUMENT METADATA
+       Full teacher version of Section 1.
+       This revision includes:
+       1. What’s To Come prompts folded into the text above the task
+       2. Warm-Up, Check Your Understanding, and Exit Ticket each
+          starting on their own page
+       3. A compact Exit Ticket for projection
+       4. A Notation Reminder before the first rule section
+       5. A Common Mistakes box before the Practice Set
+       ========================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 1 - Power Rule with Sine and Cosine (Teacher Final Revision)</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      line-height:1.7;
+      color:#333;
+      background:#ffffff;
+      padding:20px;
+    }
+
+    .container{max-width:900px;margin:auto;}
+    .page-break{page-break-before:always;}
+
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+
+    h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+    h2{
+      color:#00003d;
+      font-size:1.8em;
+      margin-top:30px;
+      margin-bottom:15px;
+      border-left:5px solid #00003d;
+      padding-left:10px;
+    }
+
+    h3{
+      color:#004d99;
+      font-size:1.3em;
+      margin-top:16px;
+      margin-bottom:8px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p{margin-bottom:10px;}
+    ol, ul{margin-left:22px;}
+    li{margin-bottom:6px;}
+
+    .intro-text{
+      font-size:1.05em;
+      color:#555;
+      margin-bottom:10px;
+      font-style:italic;
+    }
+
+    .objectives{
+      background:#f0f4f8;
+      padding:20px;
+      border-radius:6px;
+    }
+
+    .definition{
+      background:#fffacd;
+      border-left:5px solid #ffd700;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .key-point{
+      background:#e8f5e9;
+      border-left:5px solid #4caf50;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .strategy-box{
+      background:#eef3ff;
+      border-left:5px solid #4a6fdc;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .annotation-box{
+      border:1px solid #bfc8d8;
+      border-radius:6px;
+      padding:14px;
+      margin:14px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box{
+      border:none;
+      border-radius:0;
+      padding:0;
+      margin:6px 0 12px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box h3{
+      margin-top:0;
+      margin-bottom:8px;
+    }
+
+    .problem{
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom:12px;
+    }
+
+    section{margin-bottom:30px;}
+
+    .workspace,
+    .workspace-100,
+    .workspace-120,
+    .workspace-140,
+    .workspace-150,
+    .workspace-180,
+    .workspace-200,
+    .workspace-220,
+    .workspace-240,
+    .workspace-260,
+    .workspace-300,
+    .workspace-350,
+    .workspace-400,
+    .workspace-500,
+    .workspace-600{
+      width:100%;
+      margin-top:8px;
+      border-bottom:0px solid #000;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .workspace-100{height:100px;}
+    .workspace-120{height:120px;}
+    .workspace-140{height:140px;}
+    .workspace-150{height:150px;}
+    .workspace-180{height:180px;}
+    .workspace-200{height:200px;}
+    .workspace-220{height:220px;}
+    .workspace-240{height:240px;}
+    .workspace-260{height:260px;}
+    .workspace-300{height:300px;}
+    .workspace-350{height:350px;}
+    .workspace-400{height:400px;}
+    .workspace-500{height:500px;}
+    .workspace-600{height:600px;}
+
+    .teacher-answer{
+      color:#c00000;
+      margin:10px 0 6px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section>
+      <div class="problem">
+        <h1>Section 1 — Power Rule with Sine and Cosine</h1>
+        <div class="intro-text">
+          Full teacher version of the section with answer layer included.
+        </div>
+      </div>
+
+      <div class="problem">
+        <h2>Learning Target</h2>
+        <div class="objectives">
+          <p>Use the power rule together with the derivatives of sine and cosine to differentiate basic polynomial and trigonometric expressions.</p>
+          <p><strong>I can statements</strong></p>
+          <ul>
+            <li>I can use the power rule to find the derivative of a polynomial term.</li>
+            <li>I can find the derivative of $\sin x$ and $\cos x$.</li>
+            <li>I can differentiate expressions that contain both power-rule terms and sine or cosine terms.</li>
+            <li>I can simplify and interpret derivative results correctly.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Warm-Up</h2>
+        <p>Use the questions below to bring forward ideas from algebra, trigonometry, and the meaning of derivative before beginning the section.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> Rewrite each expression using exponent notation.</p>
+        <ul>
+          <li>$\sqrt{x}$</li>
+          <li>$\sqrt[3]{x^2}$</li>
+          <li>$\dfrac{1}{x^4}$</li>
+        </ul>
+        <div class="teacher-answer">
+          <p><strong>Answer:</strong> $\sqrt{x}=x^{1/2}$, $\sqrt[3]{x^2}=x^{2/3}$, and $\dfrac{1}{x^4}=x^{-4}$.</p>
+        </div>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Evaluate each trigonometric expression.</p>
+        <ul>
+          <li>$\sin 0$</li>
+          <li>$\cos 0$</li>
+          <li>$\sin\left(\dfrac{\pi}{2}\right)$</li>
+          <li>$\cos(\pi)$</li>
+        </ul>
+        <div class="teacher-answer">
+          <p><strong>Answer:</strong> $\sin 0=0$, $\cos 0=1$, $\sin\left(\dfrac{\pi}{2}\right)=1$, and $\cos(\pi)=-1$.</p>
+        </div>
+        <div class="workspace-180"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> In words, what does it mean to say that a derivative gives the instantaneous rate of change at a point?</p>
+        <div class="teacher-answer">
+          <p><strong>Sample Answer:</strong> It describes how fast a function is changing at one exact input value. On a graph, it is the slope of the tangent line at that point.</p>
+        </div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Sketch a curve and draw a tangent line at one point. What does the slope of that tangent line represent?</p>
+        <div class="teacher-answer">
+          <p><strong>Sample Answer:</strong> The slope of the tangent line represents the derivative at that point, or the instantaneous rate of change there.</p>
+        </div>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>What’s To Come</h2>
+        <p>
+          Later in this section, you will return to the task below. For now, do not solve it. Instead, annotate it individually. Circle anything that looks familiar, underline words or symbols that seem important, and write short notes about what you notice, what feels uncertain, and what you think you may need to learn before solving it completely. As you annotate, ask yourself: What part of this future task already feels familiar from algebra or trigonometry? What questions come to mind when you see this expression and the instruction to find its derivative?
+        </p>
+
+        <div class="annotation-box">
+          <p><strong>Future Task</strong></p>
+          <p>Find the derivative of</p>
+          \[
+          y=4x^3-2\sin x+5\cos x
+          \]
+          <p>Then explain how you knew which derivative rule to use on each term.</p>
+        </div>
+
+        <div class="teacher-answer">
+          <p><strong>Teacher Modeling Hints:</strong> Model how to notice structure before solving. Prompt them to identify the polynomial term, the sine term, and the cosine term. Ask what the phrase <em>find the derivative</em> is asking for, what seems familiar from earlier courses, and what still feels missing. Useful annotation moves might include writing notes such as “power,” “trig,” “rate of change,” “need derivative rule,” or “probably handle each term separately.” Sample student observations may include noticing the power $x^3$, the functions $\sin x$ and $\cos x$, and the fact that the expression has multiple terms.</p>
+        </div>
+        <div class="workspace-140"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Intro</h2>
+
+        <div class="strategy-box">
+          <p><strong>Directions</strong></p>
+          <p>Read the introduction aloud with a partner or in a small group. As you read, annotate the text by marking important ideas, circling key vocabulary, and writing short notes about connections, questions, or predictions in the margins.</p>
+        </div>
+
+        <p>
+          This section begins with an idea that has already mattered in earlier work: a derivative tells how a function is changing at a single instant and connects to the slope of a tangent line. That meaning stays central here, but the focus now begins to shift toward efficient computation. The power rule offers a first major shortcut for differentiating expressions built from powers of $x$, while the derivatives of sine and cosine extend that work into familiar trigonometric territory. Together, these ideas start to turn the derivative from a concept students can describe into a tool they can actually use.
+        </p>
+
+        <p>
+          The reasoning in this section connects naturally to work beyond precalculus. In physics, rates of change describe motion, velocity, and the behavior of changing systems. In computer science and data analysis, recognizing structure and using efficient rules often matters more than repeating a long process from scratch each time. This section highlights that same habit of mind: looking closely at structure, deciding what kind of object is in front of you, and choosing a strategy that fits.
+        </p>
+
+        <p>
+          These functions also appear in models of real phenomena. Powers of $x$ show up in relationships involving growth, area, volume, and motion, while sine and cosine appear in circular motion, waves, sound, seasonal patterns, and other repeating behavior. When those functions are differentiated, they help describe how the modeled quantity is changing at a given instant. In that way, the derivative becomes more than a classroom procedure; it becomes a way of describing change in systems that students can actually imagine or observe.
+        </p>
+
+        <p>
+          Historically, the ideas in this section come from different mathematical traditions that later met through calculus. Powers and exponent rules grew out of algebraic work, while sine and cosine were developed through geometry, astronomy, and trigonometry. Calculus brought those worlds together by asking a new kind of question: not only what a function is, but how it changes. The power rule became one of the earliest and most useful shortcuts in differential calculus, and the derivatives of sine and cosine helped show that trigonometric functions could also be studied through the language of change.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>What earlier idea does this section continue to build on?</li>
+            <li>According to the introduction, why are sine and cosine useful outside of math class?</li>
+            <li>What is one cross-curricular connection named in the text?</li>
+            <li>What new question did calculus bring to the study of functions?</li>
+          </ol>
+        </div>
+        <div class="teacher-answer">
+          <p><strong>Answer:</strong> This section continues to build on the idea that a derivative describes instantaneous rate of change and relates to the slope of a tangent line. Sine and cosine are useful outside of math class because they model repeating phenomena such as waves, sound, seasons, and circular motion. One cross-curricular connection named in the text is physics, where rates of change describe motion and changing systems. The new question calculus brought was how a function changes, not only what the function is.</p>
+        </div>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Notation Reminder</h2>
+        <div class="definition">
+          <p><strong>Common Derivative Notation</strong></p>
+          <ul>
+            <li>$f'(x)$</li>
+            <li>$y'$</li>
+            <li>$\dfrac{d}{dx}$</li>
+          </ul>
+          <p>These symbols all represent derivative notation. In this section, you will see and use all three forms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>The Power Rule</h2>
+        <div class="definition">
+          <p><strong>Power Rule</strong></p>
+          \[
+          \frac{d}{dx}(x^n)=nx^{n-1}
+          \]
+          <p>To differentiate a power of $x$, multiply by the exponent and then subtract $1$ from the exponent.</p>
+        </div>
+        <p>
+          This is the first major shortcut in the section and gives an efficient way to differentiate polynomial terms written as powers of $x$.
+        </p>
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>Why is the power rule helpful?</p>
+        </div>
+        <div class="teacher-answer">
+          <p><strong>Answer:</strong> The power rule gives a fast way to differentiate powers of $x$.</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 1</h3>
+          <p>Find the derivative of $f(x)=x^6$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong> By the power rule, $f'(x)=6x^5$.</p>
+          </div>
+          <div class="workspace-150"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 1</h3>
+          <p>Find the derivative of $g(x)=x^8$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong> $g'(x)=8x^7$.</p>
+          </div>
+          <div class="workspace-150"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Rewrite Before You Differentiate</h2>
+        <p>Some expressions are easier to differentiate after rewriting them in exponent form.</p>
+
+        <div class="key-point">
+          <p><strong>Useful Rewrites</strong></p>
+          \[
+          \sqrt{x}=x^{1/2}
+          \]
+          \[
+          \sqrt[3]{x^2}=x^{2/3}
+          \]
+          \[
+          \frac{1}{x^4}=x^{-4}
+          \]
+        </div>
+
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>Why do we often rewrite expressions in exponent form before differentiating?</p>
+        </div>
+        <div class="teacher-answer">
+          <p><strong>Answer:</strong> Rewriting expressions in exponent form often makes the derivative easier to find.</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 2</h3>
+          <p>Find the derivative of $h(x)=2\sqrt{x}-\dfrac{3}{x^2}$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong> Rewrite first: $h(x)=2x^{1/2}-3x^{-2}$.</p>
+            \[
+            h'(x)=2\left(\frac{1}{2}\right)x^{-1/2}-3(-2)x^{-3}=x^{-1/2}+6x^{-3}
+            \]
+          </div>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 2</h3>
+          <p>Find the derivative of $m(x)=3\sqrt{x}+\dfrac{4}{x^3}$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong> Rewrite first: $m(x)=3x^{1/2}+4x^{-3}$.</p>
+            \[
+            m'(x)=3\left(\frac{1}{2}\right)x^{-1/2}+4(-3)x^{-4}=\frac{3}{2}x^{-1/2}-12x^{-4}
+            \]
+          </div>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>The Derivatives of Sine and Cosine</h2>
+        <p>Sine and cosine do not use the power rule. They have their own basic derivative facts.</p>
+
+        <div class="definition">
+          <p><strong>Basic Trigonometric Derivatives</strong></p>
+          \[
+          \frac{d}{dx}(\sin x)=\cos x
+          \]
+          \[
+          \frac{d}{dx}(\cos x)=-\sin x
+          \]
+        </div>
+
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>What two trigonometric derivative facts do we need to know in this section?</p>
+        </div>
+        <div class="teacher-answer">
+          <p><strong>Answer:</strong> The basic trigonometric derivatives are $\dfrac{d}{dx}(\sin x)=\cos x$ and $\dfrac{d}{dx}(\cos x)=-\sin x$.</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 3</h3>
+          <p>Find the derivative of $p(x)=3\sin x-4\cos x$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong></p>
+            \[
+            p'(x)=3\cos x+4\sin x
+            \]
+          </div>
+          <div class="workspace-150"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 3</h3>
+          <p>Find the derivative of $q(x)=5\sin x+2\cos x$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong></p>
+            \[
+            q'(x)=5\cos x-2\sin x
+            \]
+          </div>
+          <div class="workspace-150"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Combining Power Terms with Sine and Cosine</h2>
+        <p>
+          When an expression is built from terms that are added or subtracted, each term can be differentiated separately. That lets the power rule and the trig derivative facts work together in one problem.
+        </p>
+
+        <div class="key-point">
+          <p><strong>Strategy</strong></p>
+          <ol>
+            <li>Rewrite any radicals or quotients if needed.</li>
+            <li>Identify which terms are powers of $x$.</li>
+            <li>Identify which terms are sine or cosine terms.</li>
+            <li>Differentiate term by term.</li>
+            <li>Simplify the result.</li>
+          </ol>
+        </div>
+
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>How are mixed expressions with power terms and trig terms differentiated in this section?</p>
+        </div>
+        <div class="teacher-answer">
+          <p><strong>Answer:</strong> Mixed expressions can be differentiated term by term when the terms are added or subtracted.</p>
+        </div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Example 4</h3>
+          <p>Find the derivative of $r(x)=5x^3-2\sin x+7\cos x$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong></p>
+            \[
+            r'(x)=15x^2-2\cos x-7\sin x
+            \]
+          </div>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 4</h3>
+          <p>Find the derivative of $s(x)=6x^2+4\sin x-3\cos x$.</p>
+          <div class="teacher-answer">
+            <p><strong>Answer:</strong></p>
+            \[
+            s'(x)=12x+4\cos x+3\sin x
+            \]
+          </div>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Summary Concepts</h2>
+        <div class="key-point">
+          <ul>
+            <li>The derivative still represents instantaneous rate of change at a point.</li>
+            <li>The power rule gives a fast way to differentiate powers of $x$.</li>
+            <li>Rewriting expressions in exponent form often makes the derivative easier to find.</li>
+            <li>The basic trigonometric derivatives are $\dfrac{d}{dx}(\sin x)=\cos x$ and $\dfrac{d}{dx}(\cos x)=-\sin x$.</li>
+            <li>Mixed expressions can be differentiated term by term when the terms are added or subtracted.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Common Mistakes</h2>
+        <div class="strategy-box">
+          <ul>
+            <li>Forgetting that $\dfrac{d}{dx}(\cos x)=-\sin x$.</li>
+            <li>Forgetting to rewrite radicals or reciprocal powers before differentiating.</li>
+            <li>Not treating added and subtracted terms separately.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <h2>Practice Set</h2>
+        <p>Complete each problem in the space provided.</p>
+      </div>
+
+      <div class="problem">
+        <h3>Level 1</h3>
+        <p><strong>1.</strong> Find $\dfrac{d}{dx}(x^7)$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $7x^6$</p></div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Find $\dfrac{d}{dx}(x^{-5})$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $-5x^{-6}$</p></div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find $\dfrac{d}{dx}(\sin x)$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $\cos x$</p></div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Find $\dfrac{d}{dx}(\cos x)$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $-\sin x$</p></div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 2</h3>
+        <p><strong>5.</strong> Find $\dfrac{d}{dx}(4x^3-2\sin x)$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $12x^2-2\cos x$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>6.</strong> Find $\dfrac{d}{dx}(7\cos x+x^{-2})$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $-7\sin x-2x^{-3}$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>7.</strong> Find $\dfrac{d}{dx}(x^{1/3}+5\sin x-\cos x)$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $\dfrac{1}{3}x^{-2/3}+5\cos x+\sin x$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>8.</strong> Find $\dfrac{d}{dx}(9x^{1/2}-4x^{-3})$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $\dfrac{9}{2}x^{-1/2}+12x^{-4}$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 3</h3>
+        <p><strong>9.</strong> If $q(x)=3x^4+2\sin x-\cos x$, find $q'(x)$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $q'(x)=12x^3+2\cos x+\sin x$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>10.</strong> Evaluate $q'(0)$ for $q(x)=3x^4+2\sin x-\cos x$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $q'(0)=2$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>11.</strong> Explain why $\dfrac{d}{dx}(\cos x)\neq \sin x$.</p>
+        <div class="teacher-answer"><p><strong>Sample Answer:</strong> The correct derivative fact is $\dfrac{d}{dx}(\cos x)=-\sin x$, so the negative sign matters.</p></div>
+        <div class="workspace-200"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>12.</strong> Create a function with one power term and one trigonometric term, then differentiate it.</p>
+        <div class="teacher-answer"><p><strong>Sample Answer:</strong> If $u(x)=x^5+3\sin x$, then $u'(x)=5x^4+3\cos x$.</p></div>
+        <div class="workspace-200"></div>
+      </div>
+
+      <div class="problem">
+        <h3>Level 4</h3>
+        <p><strong>13.</strong> A simplified motion model is $s(t)=t^3+2\sin t$. Describe what the derivative tells you about the motion.</p>
+        <div class="teacher-answer"><p><strong>Sample Answer:</strong> The derivative gives the instantaneous rate of change of position, or velocity. Here $s'(t)=3t^2+2\cos t$.</p></div>
+        <div class="workspace-220"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>14.</strong> Create a function involving a radical, a negative exponent, and a trig term. Rewrite it, differentiate it, and explain your work.</p>
+        <div class="teacher-answer"><p><strong>Sample Answer:</strong> If $v(x)=\sqrt{x}+x^{-2}-\cos x$, then $v(x)=x^{1/2}+x^{-2}-\cos x$ and $v'(x)=\dfrac{1}{2}x^{-1/2}-2x^{-3}+\sin x$.</p></div>
+        <div class="workspace-260"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>15.</strong> A student says, “Every derivative just lowers the exponent by 1.” Write a response that corrects this statement using this section.</p>
+        <div class="teacher-answer"><p><strong>Sample Answer:</strong> That works for powers of $x$, but not for every function. For example, $\dfrac{d}{dx}(\sin x)=\cos x$ and $\dfrac{d}{dx}(\cos x)=-\sin x$.</p></div>
+        <div class="workspace-240"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Check Your Understanding</h2>
+        <p>These eight problems represent the core ideas of the section.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> Find the derivative of $x^9$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $9x^8$</p></div>
+        <div class="workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Find the derivative of $\sqrt{x}$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> Rewrite as $x^{1/2}$, then $\dfrac{d}{dx}(\sqrt{x})=\dfrac{1}{2}x^{-1/2}$.</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find the derivative of $\dfrac{1}{x^4}$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> Rewrite as $x^{-4}$, then $\dfrac{d}{dx}\left(\dfrac{1}{x^4}\right)=-4x^{-5}$.</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Find the derivative of $\sin x$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $\cos x$</p></div>
+        <div class="workspace-100"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>5.</strong> Find the derivative of $\cos x$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $-\sin x$</p></div>
+        <div class="workspace-100"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>6.</strong> Find the derivative of $6x^2+\sin x$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $12x+\cos x$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>7.</strong> Find the derivative of $4\cos x-x^{-4}$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $-4\sin x+4x^{-5}$</p></div>
+        <div class="workspace-150"></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>8.</strong> Explain why rewriting can help before differentiating.</p>
+        <div class="teacher-answer"><p><strong>Sample Answer:</strong> Rewriting can expose exponent form, which makes the correct derivative rule easier to apply.</p></div>
+        <div class="workspace-180"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Exit Ticket</h2>
+        <p>Complete these four problems on a separate sheet of paper.</p>
+      </div>
+
+      <div class="problem">
+        <p><strong>1.</strong> Find the derivative of $x^5$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $5x^4$</p></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>2.</strong> Find the derivative of $2\sqrt{x}-\dfrac{1}{x^2}$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> Rewrite as $2x^{1/2}-x^{-2}$, then the derivative is $x^{-1/2}+2x^{-3}$.</p></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>3.</strong> Find the derivative of $3\sin x+\cos x$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $3\cos x-\sin x$</p></div>
+      </div>
+
+      <div class="problem">
+        <p><strong>4.</strong> Find the derivative of $4x^3-\sin x+2\cos x$.</p>
+        <div class="teacher-answer"><p><strong>Answer:</strong> $12x^2-\cos x-2\sin x$</p></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <h2>Detailed Example Solutions</h2>
+      </div>
+
+      <div class="problem">
+        <h3>Example 1 Solution</h3>
+        <p>Find the derivative of $f(x)=x^6$.</p>
+        <p>Apply the power rule.</p>
+        \[
+        f'(x)=6x^5
+        \]
+      </div>
+
+      <div class="problem">
+        <h3>Example 2 Solution</h3>
+        <p>Find the derivative of $h(x)=2\sqrt{x}-\dfrac{3}{x^2}$.</p>
+        <p>Rewrite the function first.</p>
+        \[
+        h(x)=2x^{1/2}-3x^{-2}
+        \]
+        <p>Differentiate each term.</p>
+        \[
+        h'(x)=2\left(\frac{1}{2}\right)x^{-1/2}-3(-2)x^{-3}
+        \]
+        \[
+        h'(x)=x^{-1/2}+6x^{-3}
+        \]
+      </div>
+
+      <div class="problem">
+        <h3>Example 3 Solution</h3>
+        <p>Find the derivative of $p(x)=3\sin x-4\cos x$.</p>
+        <p>Use the trig derivative facts term by term.</p>
+        \[
+        p'(x)=3\cos x+4\sin x
+        \]
+      </div>
+
+      <div class="problem">
+        <h3>Example 4 Solution</h3>
+        <p>Find the derivative of $r(x)=5x^3-2\sin x+7\cos x$.</p>
+        <p>Differentiate each term separately and simplify.</p>
+        \[
+        r'(x)=15x^2-2\cos x-7\sin x
+        \]
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
