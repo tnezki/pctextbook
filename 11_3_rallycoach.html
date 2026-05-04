@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 8.3 - Tangent Lines Rally Coach</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    *{box-sizing:border-box;}
+    @page{size:letter;margin:0.5in;}
+    body{
+      margin:0;
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      color:#222;
+      background:white;
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+    }
+    .page{
+      min-height:10in;
+      page-break-after:always;
+      padding:0.15in 0.1in;
+      position:relative;
+    }
+    .title-page{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+    .title-page h1{
+      color:#00003d;
+      font-size:40pt;
+      line-height:1.15;
+      margin:0 0 24px 0;
+    }
+    .title-page h2{
+      color:#00003d;
+      font-size:32pt;
+      margin:0;
+      font-weight:700;
+    }
+    .directions-page{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:0;
+    }
+    .directions-page img{
+      max-width:100%;
+      max-height:9.8in;
+      object-fit:contain;
+      display:block;
+    }
+    .header{
+      background:#00003d;
+      color:white;
+      font-size:24px;
+      font-weight:700;
+      padding:10px 14px;
+      margin-bottom:28px;
+      border-radius:2px;
+    }
+    .question{
+      font-size:16px;
+      line-height:1.8;
+      margin-top:18px;
+    }
+    .solution{
+      font-size:16px;
+      line-height:1.75;
+    }
+    .solution p{margin:0 0 10px 0;}
+    .skill-check .header, .answer-key .header{margin-bottom:16px;}
+    .skill-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px 28px;
+      font-size:13.5px;
+      line-height:1.45;
+    }
+    .skill-item{
+      break-inside:avoid;
+      page-break-inside:avoid;
+      margin-bottom:4px;
+    }
+    .answer-list{
+      font-size:15px;
+      line-height:1.7;
+      columns:2;
+      column-gap:36px;
+    }
+    .answer-list li{break-inside:avoid;margin-bottom:7px;}
+    @media print{
+      .page{min-height:auto;height:10in;}
+    }
+  </style>
+</head>
+<body>
+  <section class="page title-page">
+    <h1>Section 8.3 &mdash; Tangent Lines</h1>
+    <h2>Rally Coach</h2>
+  </section>
+
+  <section class="page directions-page">
+    <img src="directions/rallycoach.png" alt="Rally Coach directions">
+  </section>
+    <section class="page">
+    <div class="header">Problem 1</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(f(x)=(x+1)\sin x\) at \(x=0\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 1</div>
+    <div class="solution">
+      
+<p>Use the product rule first.</p>
+\[
+f'(x)=1\cdot\sin x+(x+1)\cos x
+\]
+<p>Evaluate the derivative at \(x=0\) to get the slope.</p>
+\[
+f'(0)=\sin 0+(0+1)\cos 0=0+1=1
+\]
+<p>Find the point using the original function.</p>
+\[
+f(0)=(0+1)\sin 0=0
+\]
+<p>The point is \((0,0)\), and the slope is \(1\).</p>
+\[
+y-0=1(x-0)
+\]
+\[
+y=x
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 2</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(g(x)=\cos x(x^2-1)\) at \(x=0\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 2</div>
+    <div class="solution">
+      
+<p>Use the product rule with \(u=\cos x\) and \(v=x^2-1\).</p>
+\[
+g'(x)=-\sin x(x^2-1)+\cos x(2x)
+\]
+<p>Evaluate the derivative at \(x=0\).</p>
+\[
+g'(0)=-\sin 0((0)^2-1)+\cos 0(2\cdot0)=0
+\]
+<p>Find the point using the original function.</p>
+\[
+g(0)=\cos 0((0)^2-1)=-1
+\]
+<p>The point is \((0,-1)\), and the slope is \(0\).</p>
+\[
+y+1=0(x-0)
+\]
+\[
+y=-1
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 3</div>
+    <div class="question">
+      <p>For \(h(x)=(2x^2-x+1)\sin x\), find the slope of the tangent line at \(x=0\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 3</div>
+    <div class="solution">
+      
+<p>The slope of the tangent line at \(x=0\) is \(h'(0)\).</p>
+\[
+h'(x)=(4x-1)\sin x+(2x^2-x+1)\cos x
+\]
+<p>Now evaluate at \(x=0\).</p>
+\[
+h'(0)=(4\cdot0-1)\sin 0+(2(0)^2-0+1)\cos 0=1
+\]
+<p>The slope of the tangent line is \(1\).</p>
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 4</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(p(x)=(x^2+2x)\cos x\) at \(x=\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 4</div>
+    <div class="solution">
+      
+<p>Use the product rule.</p>
+\[
+p'(x)=(2x+2)\cos x-(x^2+2x)\sin x
+\]
+<p>Evaluate the derivative at \(x=\dfrac{\pi}{2}\).</p>
+\[
+p'\left(\frac{\pi}{2}\right)=\left(\pi+2\right)\cos\left(\frac{\pi}{2}\right)-\left(\frac{\pi^2}{4}+\pi\right)\sin\left(\frac{\pi}{2}\right)
+\]
+\[
+p'\left(\frac{\pi}{2}\right)=-\left(\frac{\pi^2}{4}+\pi\right)
+\]
+<p>Find the point on the graph.</p>
+\[
+p\left(\frac{\pi}{2}\right)=\left(\frac{\pi^2}{4}+\pi\right)\cos\left(\frac{\pi}{2}\right)=0
+\]
+<p>The point is \(\left(\dfrac{\pi}{2},0\right)\), and the slope is \(-\left(\dfrac{\pi^2}{4}+\pi\right)\).</p>
+\[
+y=-\left(\frac{\pi^2}{4}+\pi\right)\left(x-\frac{\pi}{2}\right)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 5</div>
+    <div class="question">
+      <p>A student says the slope of the tangent line to \(f(x)=(x+2)\cos x\) at \(x=\pi\) is \(f(\pi)=-(\pi+2)\). Explain the mistake and find the correct tangent line.</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 5</div>
+    <div class="solution">
+      
+<p>The mistake is using \(f(\pi)\) as the slope. The value \(f(\pi)\) gives the \(y\)-coordinate of the point. The slope comes from \(f'(\pi)\).</p>
+\[
+f'(x)=1\cdot\cos x-(x+2)\sin x
+\]
+\[
+f'(\pi)=\cos \pi-(\pi+2)\sin \pi=-1
+\]
+<p>Now find the point.</p>
+\[
+f(\pi)=(\pi+2)\cos \pi=-(\pi+2)
+\]
+<p>The point is \((\pi,-(\pi+2))\), and the slope is \(-1\).</p>
+\[
+y+(\pi+2)=-1(x-\pi)
+\]
+\[
+y=-x-2
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 6</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(y=(3x^2-x+4)\sin x\) at \(x=-\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 6</div>
+    <div class="solution">
+      
+<p>Differentiate using the product rule.</p>
+\[
+y'=(6x-1)\sin x+(3x^2-x+4)\cos x
+\]
+<p>Evaluate the derivative at \(x=-\dfrac{\pi}{2}\).</p>
+\[
+y'\left(-\frac{\pi}{2}\right)=\left(6\left(-\frac{\pi}{2}\right)-1\right)\sin\left(-\frac{\pi}{2}\right)+\left(\frac{3\pi^2}{4}+\frac{\pi}{2}+4\right)\cos\left(-\frac{\pi}{2}\right)
+\]
+\[
+y'\left(-\frac{\pi}{2}\right)=3\pi+1
+\]
+<p>Find the point on the graph.</p>
+\[
+y\left(-\frac{\pi}{2}\right)=\left(\frac{3\pi^2}{4}+\frac{\pi}{2}+4\right)\sin\left(-\frac{\pi}{2}\right)=-\left(\frac{3\pi^2}{4}+\frac{\pi}{2}+4\right)
+\]
+<p>The tangent line is</p>
+\[
+y+\left(\frac{3\pi^2}{4}+\frac{\pi}{2}+4\right)=(3\pi+1)\left(x+\frac{\pi}{2}\right)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 7</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(f(x)=(x+1)\sin x\) at \(x=\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 7</div>
+    <div class="solution">
+      
+<p>Differentiate first.</p>
+\[
+f'(x)=\sin x+(x+1)\cos x
+\]
+<p>Evaluate the derivative at \(x=\dfrac{\pi}{2}\).</p>
+\[
+f'\left(\frac{\pi}{2}\right)=\sin\left(\frac{\pi}{2}\right)+\left(\frac{\pi}{2}+1\right)\cos\left(\frac{\pi}{2}\right)=1
+\]
+<p>Find the point on the graph.</p>
+\[
+f\left(\frac{\pi}{2}\right)=\left(\frac{\pi}{2}+1\right)\sin\left(\frac{\pi}{2}\right)=\frac{\pi}{2}+1
+\]
+<p>The point is \(\left(\dfrac{\pi}{2},\dfrac{\pi}{2}+1\right)\), and the slope is \(1\).</p>
+\[
+y-\left(\frac{\pi}{2}+1\right)=1\left(x-\frac{\pi}{2}\right)
+\]
+\[
+y=x+1
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 8</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(k(x)=(x^2+1)(x-2)\) at \(x=-1\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 8</div>
+    <div class="solution">
+      
+<p>Use the product rule on the two polynomial factors.</p>
+\[
+k'(x)=2x(x-2)+(x^2+1)(1)
+\]
+<p>Evaluate the derivative at \(x=-1\).</p>
+\[
+k'(-1)=2(-1)(-3)+((-1)^2+1)=6+2=8
+\]
+<p>Find the point.</p>
+\[
+k(-1)=((-1)^2+1)(-1-2)=2(-3)=-6
+\]
+<p>The point is \((-1,-6)\), and the slope is \(8\).</p>
+\[
+y+6=8(x+1)
+\]
+\[
+y=8x+2
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 9</div>
+    <div class="question">
+      <p>For \(m(x)=(x^2+1)\sin x\), find the slope of the tangent line at \(x=\pi\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 9</div>
+    <div class="solution">
+      
+<p>The slope is \(m'(\pi)\).</p>
+\[
+m'(x)=2x\sin x+(x^2+1)\cos x
+\]
+<p>Evaluate at \(x=\pi\).</p>
+\[
+m'(\pi)=2\pi\sin\pi+(\pi^2+1)\cos\pi=0-(\pi^2+1)
+\]
+\[
+m'(\pi)=-(\pi^2+1)
+\]
+<p>The slope of the tangent line is \(-\pi^2-1\).</p>
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 10</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(y=\sin x(2x^2-3x+1)\) at \(x=-\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 10</div>
+    <div class="solution">
+      
+<p>Use the product rule.</p>
+\[
+y'=\cos x(2x^2-3x+1)+\sin x(4x-3)
+\]
+<p>Evaluate the derivative at \(x=-\dfrac{\pi}{2}\).</p>
+\[
+y'\left(-\frac{\pi}{2}\right)=\cos\left(-\frac{\pi}{2}\right)\left(\frac{\pi^2}{2}+\frac{3\pi}{2}+1\right)+\sin\left(-\frac{\pi}{2}\right)(-2\pi-3)
+\]
+\[
+y'\left(-\frac{\pi}{2}\right)=2\pi+3
+\]
+<p>Find the point.</p>
+\[
+y\left(-\frac{\pi}{2}\right)=\sin\left(-\frac{\pi}{2}\right)\left(\frac{\pi^2}{2}+\frac{3\pi}{2}+1\right)=-\left(\frac{\pi^2}{2}+\frac{3\pi}{2}+1\right)
+\]
+<p>The tangent line is</p>
+\[
+y+\left(\frac{\pi^2}{2}+\frac{3\pi}{2}+1\right)=(2\pi+3)\left(x+\frac{\pi}{2}\right)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 11</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(y=\cos x(2x^2-1)\) at \(x=-\pi\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 11</div>
+    <div class="solution">
+      
+<p>Differentiate using the product rule.</p>
+\[
+y'=-\sin x(2x^2-1)+\cos x(4x)
+\]
+<p>Evaluate at \(x=-\pi\).</p>
+\[
+y'(-\pi)=-\sin(-\pi)(2\pi^2-1)+\cos(-\pi)(-4\pi)=4\pi
+\]
+<p>Find the point.</p>
+\[
+y(-\pi)=\cos(-\pi)(2\pi^2-1)=1-2\pi^2
+\]
+<p>The point is \((-\pi,1-2\pi^2)\), and the slope is \(4\pi\).</p>
+\[
+y-(1-2\pi^2)=4\pi(x+\pi)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 12</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(q(x)=(x^2+1)\sin x\) at \(x=\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 12</div>
+    <div class="solution">
+      
+<p>Find the derivative first.</p>
+\[
+q'(x)=2x\sin x+(x^2+1)\cos x
+\]
+<p>Evaluate at \(x=\dfrac{\pi}{2}\).</p>
+\[
+q'\left(\frac{\pi}{2}\right)=2\left(\frac{\pi}{2}\right)(1)+\left(\frac{\pi^2}{4}+1\right)(0)=\pi
+\]
+<p>Find the point.</p>
+\[
+q\left(\frac{\pi}{2}\right)=\left(\frac{\pi^2}{4}+1\right)(1)=\frac{\pi^2}{4}+1
+\]
+<p>The tangent line is</p>
+\[
+y-\left(\frac{\pi^2}{4}+1\right)=\pi\left(x-\frac{\pi}{2}\right)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 13</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(r(x)=(x^3-2x+5)\cos x\) at \(x=-\pi\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 13</div>
+    <div class="solution">
+      
+<p>Use the product rule.</p>
+\[
+r'(x)=(3x^2-2)\cos x-(x^3-2x+5)\sin x
+\]
+<p>Evaluate the derivative at \(x=-\pi\).</p>
+\[
+r'(-\pi)=(3\pi^2-2)\cos(-\pi)-(-\pi^3+2\pi+5)\sin(-\pi)=2-3\pi^2
+\]
+<p>Find the point.</p>
+\[
+r(-\pi)=(-\pi^3+2\pi+5)\cos(-\pi)=\pi^3-2\pi-5
+\]
+<p>The point is \((-\pi,\pi^3-2\pi-5)\), and the slope is \(2-3\pi^2\).</p>
+\[
+y-(\pi^3-2\pi-5)=(2-3\pi^2)(x+\pi)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 14</div>
+    <div class="question">
+      <p>A motion model is \(s(t)=(t^2+1)\sin t\). Find the tangent line at \(t=0\), then explain what the slope means.</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 14</div>
+    <div class="solution">
+      
+<p>Differentiate using the product rule.</p>
+\[
+s'(t)=2t\sin t+(t^2+1)\cos t
+\]
+<p>Evaluate at \(t=0\).</p>
+\[
+s'(0)=0+(1)(1)=1
+\]
+<p>Find the point.</p>
+\[
+s(0)=1\cdot\sin 0=0
+\]
+<p>The tangent line is</p>
+\[
+y=t
+\]
+<p>The slope \(1\) means the position is increasing at an instantaneous rate of \(1\) unit of position per unit of time at \(t=0\).</p>
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 15</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(y=\sin x(x^2-4x+2)\) at \(x=-\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 15</div>
+    <div class="solution">
+      
+<p>Use the product rule.</p>
+\[
+y'=\cos x(x^2-4x+2)+\sin x(2x-4)
+\]
+<p>Evaluate at \(x=-\dfrac{\pi}{2}\).</p>
+\[
+y'\left(-\frac{\pi}{2}\right)=\cos\left(-\frac{\pi}{2}\right)\left(\frac{\pi^2}{4}+2\pi+2\right)+\sin\left(-\frac{\pi}{2}\right)(-\pi-4)
+\]
+\[
+y'\left(-\frac{\pi}{2}\right)=\pi+4
+\]
+<p>Find the point.</p>
+\[
+y\left(-\frac{\pi}{2}\right)=\sin\left(-\frac{\pi}{2}\right)\left(\frac{\pi^2}{4}+2\pi+2\right)=-\left(\frac{\pi^2}{4}+2\pi+2\right)
+\]
+<p>The tangent line is</p>
+\[
+y+\left(\frac{\pi^2}{4}+2\pi+2\right)=(\pi+4)\left(x+\frac{\pi}{2}\right)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 16</div>
+    <div class="question">
+      <p>Determine whether \(q(x)=(x^2+3)(x-1)\) has a horizontal tangent line at \(x=1\). If not, state the slope and write the tangent line.</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 16</div>
+    <div class="solution">
+      
+<p>A horizontal tangent line has slope \(0\), so check \(q'(1)\).</p>
+\[
+q'(x)=2x(x-1)+(x^2+3)
+\]
+\[
+q'(1)=2(1)(0)+(1^2+3)=4
+\]
+<p>So the tangent is not horizontal. Find the point.</p>
+\[
+q(1)=(1^2+3)(1-1)=0
+\]
+<p>The point is \((1,0)\), and the slope is \(4\).</p>
+\[
+y-0=4(x-1)
+\]
+\[
+y=4x-4
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 17</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(f(x)=(x^2-1)\sin x\) at \(x=\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 17</div>
+    <div class="solution">
+      
+<p>Differentiate first.</p>
+\[
+f'(x)=2x\sin x+(x^2-1)\cos x
+\]
+<p>Evaluate the derivative.</p>
+\[
+f'\left(\frac{\pi}{2}\right)=2\left(\frac{\pi}{2}\right)(1)+\left(\frac{\pi^2}{4}-1\right)(0)=\pi
+\]
+<p>Find the point.</p>
+\[
+f\left(\frac{\pi}{2}\right)=\left(\frac{\pi^2}{4}-1\right)(1)=\frac{\pi^2}{4}-1
+\]
+<p>The tangent line is</p>
+\[
+y-\left(\frac{\pi^2}{4}-1\right)=\pi\left(x-\frac{\pi}{2}\right)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 18</div>
+    <div class="question">
+      <p>A student says the tangent line to \(f(x)=(x+2)\cos x\) at \(x=-\pi\) is \(y=(\pi-2)x\). Identify the error and write the correct tangent line.</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 18</div>
+    <div class="solution">
+      
+<p>The student used the point value as a slope. The slope must come from \(f'(-\pi)\), not from \(f(-\pi)\).</p>
+\[
+f'(x)=\cos x-(x+2)\sin x
+\]
+\[
+f'(-\pi)=\cos(-\pi)-(-\pi+2)\sin(-\pi)=-1
+\]
+\[
+f(-\pi)=(-\pi+2)\cos(-\pi)=\pi-2
+\]
+<p>The correct tangent line has slope \(-1\) and passes through \((-\pi,\pi-2)\).</p>
+\[
+y-(\pi-2)=-1(x+\pi)
+\]
+\[
+y=-x-2
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 19</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(y=(x^2+x+1)\sin x\) at \(x=-\dfrac{\pi}{2}\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 19</div>
+    <div class="solution">
+      
+<p>Use the product rule.</p>
+\[
+y'=(2x+1)\sin x+(x^2+x+1)\cos x
+\]
+<p>Evaluate at \(x=-\dfrac{\pi}{2}\).</p>
+\[
+y'\left(-\frac{\pi}{2}\right)=(-\pi+1)\sin\left(-\frac{\pi}{2}\right)+\left(\frac{\pi^2}{4}-\frac{\pi}{2}+1\right)\cos\left(-\frac{\pi}{2}\right)
+\]
+\[
+y'\left(-\frac{\pi}{2}\right)=\pi-1
+\]
+<p>Find the point.</p>
+\[
+y\left(-\frac{\pi}{2}\right)=\left(\frac{\pi^2}{4}-\frac{\pi}{2}+1\right)\sin\left(-\frac{\pi}{2}\right)=-\left(\frac{\pi^2}{4}-\frac{\pi}{2}+1\right)
+\]
+<p>The tangent line is</p>
+\[
+y+\left(\frac{\pi^2}{4}-\frac{\pi}{2}+1\right)=(\pi-1)\left(x+\frac{\pi}{2}\right)
+\]
+
+    </div>
+  </section>
+    <section class="page">
+    <div class="header">Problem 20</div>
+    <div class="question">
+      <p>Find the equation of the tangent line to \(F(x)=(2x^3-x+4)\sin x\) at \(x=\pi\).</p>
+    </div>
+  </section>
+
+    <section class="page">
+    <div class="header">Solution 20</div>
+    <div class="solution">
+      
+<p>Differentiate using the product rule.</p>
+\[
+F'(x)=(6x^2-1)\sin x+(2x^3-x+4)\cos x
+\]
+<p>Evaluate the derivative at \(x=\pi\).</p>
+\[
+F'(\pi)=(6\pi^2-1)\sin\pi+(2\pi^3-\pi+4)\cos\pi
+\]
+\[
+F'(\pi)=-(2\pi^3-\pi+4)
+\]
+<p>Find the point on the graph.</p>
+\[
+F(\pi)=(2\pi^3-\pi+4)\sin\pi=0
+\]
+<p>The point is \((\pi,0)\), and the slope is \(-(2\pi^3-\pi+4)\).</p>
+\[
+y=-(2\pi^3-\pi+4)(x-\pi)
+\]
+
+    </div>
+  </section>
+  <section class="page skill-check">
+    <div class="header">Skill Check</div>
+    <div class="skill-grid">
+      <div class="skill-item"><strong>1.</strong> Find \(\dfrac{d}{dx}\big((x+1)\sin x\big)\).</div>
+      <div class="skill-item"><strong>2.</strong> Find the point on \(g(x)=\cos x(x^2-1)\) when \(x=0\).</div>
+      <div class="skill-item"><strong>3.</strong> For \(f(x)=(x^2+1)\sin x\), find \(f'(0)\).</div>
+      <div class="skill-item"><strong>4.</strong> Find the tangent line to \(f(x)=(x^2+1)\sin x\) at \(x=0\).</div>
+      <div class="skill-item"><strong>5.</strong> Find the tangent line to \(r(x)=\cos x(x+2)\) at \(x=0\).</div>
+      <div class="skill-item"><strong>6.</strong> Find the tangent line to \(y=(3x^2-x+4)\sin x\) at \(x=0\).</div>
+      <div class="skill-item"><strong>7.</strong> For \(m(x)=(x^2+1)\sin x\), find the slope of the tangent line at \(x=\pi\).</div>
+      <div class="skill-item"><strong>8.</strong> Explain why a tangent-line problem needs both the derivative and the original function.</div>
+      <div class="skill-item"><strong>9.</strong> Find the tangent line to \(r(x)=(x^3-2x+5)\cos x\) at \(x=0\).</div>
+      <div class="skill-item"><strong>10.</strong> Does \(q(x)=\cos x(x^2+3)\) have a horizontal tangent line at \(x=0\)? Write the tangent line if it does.</div>
+    </div>
+  </section>
+
+  <section class="page answer-key">
+    <div class="header">Skill Check Answer Key</div>
+    <ol class="answer-list">
+      <li>\(\sin x+(x+1)\cos x\)</li>
+      <li>\((0,-1)\)</li>
+      <li>\(1\)</li>
+      <li>\(y=x\)</li>
+      <li>\(y=x+2\)</li>
+      <li>\(y=4x\)</li>
+      <li>\(-\pi^2-1\)</li>
+      <li>The derivative gives the slope, while the original function gives the point \((a,f(a))\).</li>
+      <li>\(y=-2x+5\)</li>
+      <li>Yes. The tangent line is \(y=3\).</li>
+    </ol>
+  </section>
+
+</body>
+</html>
