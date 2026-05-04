@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 8.2 - Product Rule - Round Table</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:#222;
+      background:#fff;
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+    }
+    @page{size:letter;margin:0.5in;}
+    .page{
+      min-height:10in;
+      page-break-after:always;
+      padding:0;
+      position:relative;
+    }
+    .title-page{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      min-height:10in;
+    }
+    .title-page h1{
+      color:#00003d;
+      font-size:44px;
+      margin:0 0 16px 0;
+      line-height:1.15;
+    }
+    .title-page h2{
+      color:#00003d;
+      font-size:34px;
+      margin:0;
+      font-weight:600;
+    }
+    .directions-page{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:10in;
+    }
+    .directions-page img{
+      max-width:100%;
+      max-height:9.4in;
+      display:block;
+      object-fit:contain;
+    }
+    .page-header{
+      background:#00003d;
+      color:#fff;
+      font-size:24px;
+      font-weight:700;
+      padding:12px 18px;
+      margin-bottom:28px;
+      border-radius:2px;
+    }
+    .problem-text,
+    .solution-text{
+      font-size:16px;
+      line-height:1.65;
+      padding:0 8px;
+    }
+    .problem-text{margin-top:18px;}
+    .solution-text p{margin:0 0 10px 0;}
+    .skill-list{
+      font-size:14px;
+      line-height:1.32;
+      margin:0;
+      padding-left:22px;
+    }
+    .skill-list li{margin-bottom:6px;}
+    .answer-key-list{
+      font-size:14px;
+      line-height:1.32;
+      margin:0;
+      padding-left:22px;
+    }
+    .answer-key-list li{margin-bottom:6px;}
+  </style>
+</head>
+<body>
+
+  <section class="page title-page">
+    <h1>Section 8.2 &mdash; Product Rule</h1>
+    <h2>Round Table</h2>
+  </section>
+
+  <section class="page directions-page">
+    <img src="directions/round_table.png" alt="Round Table directions">
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 1</div>
+    <div class="problem-text">
+      <p>Decide whether the product rule is needed for each expression: \(x^2+\sin x\) and \((x^2+1)\sin x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 1</div>
+    <div class="solution-text">
+      
+        <p>Look at the structure of each expression.</p>
+        <p>\(x^2+\sin x\) is a <strong>sum</strong>, so the product rule is not needed.</p>
+        <p>\((x^2+1)\sin x\) is a <strong>product</strong> of two functions, so the product rule is needed.</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 2</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(f(x)=x^2\sin x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 2</div>
+    <div class="solution-text">
+      
+        <p>Let \(u=x^2\) and \(v=\sin x\).</p>
+        \[
+        u'=2x \quad \text{and} \quad v'=\cos x
+        \]
+        <p>Apply the product rule \(u'v+uv'\).</p>
+        \[
+        f'(x)=(2x)(\sin x)+(x^2)(\cos x)
+        \]
+        \[
+        f'(x)=2x\sin x+x^2\cos x
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 3</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(g(x)=\cos x(x^2-3x+2)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 3</div>
+    <div class="solution-text">
+      
+        <p>Let \(u=\cos x\) and \(v=x^2-3x+2\).</p>
+        \[
+        u'=-\sin x \quad \text{and} \quad v'=2x-3
+        \]
+        <p>Use the product rule.</p>
+        \[
+        g'(x)=(-\sin x)(x^2-3x+2)+(\cos x)(2x-3)
+        \]
+        \[
+        g'(x)=-\sin x(x^2-3x+2)+\cos x(2x-3)
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 4</div>
+    <div class="problem-text">
+      <p>If \(q(x)=(x^2+1)\sin x\), find \(q'(x)\) and then evaluate \(q'(0)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 4</div>
+    <div class="solution-text">
+      
+        <p>Differentiate first.</p>
+        \[
+        q'(x)=2x\sin x+(x^2+1)\cos x
+        \]
+        <p>Now substitute \(x=0\).</p>
+        \[
+        q'(0)=2(0)\sin 0+((0)^2+1)\cos 0=1
+        \]
+        <p>So \(q'(0)=1\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 5</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(h(x)=(3x^2-x+1)\sin x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 5</div>
+    <div class="solution-text">
+      
+        <p>Differentiate the polynomial factor and the trig factor separately.</p>
+        \[
+        \frac{d}{dx}(3x^2-x+1)=6x-1 \quad \text{and} \quad \frac{d}{dx}(\sin x)=\cos x
+        \]
+        <p>Apply the product rule.</p>
+        \[
+        h'(x)=(6x-1)\sin x+(3x^2-x+1)\cos x
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 6</div>
+    <div class="problem-text">
+      <p>A student says, \"The derivative of \(x^3\cos x\) is \(3x^2(-\sin x)\).\" Correct the mistake.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 6</div>
+    <div class="solution-text">
+      
+        <p>The student multiplied the derivatives of the two factors instead of using the product rule.</p>
+        <p>For \(x^3\cos x\), we need</p>
+        \[
+        \frac{d}{dx}(x^3\cos x)=(3x^2)(\cos x)+(x^3)(-\sin x)
+        \]
+        \[
+        =3x^2\cos x-x^3\sin x
+        \]
+        <p>The missing idea is that the derivative of a product has <strong>two terms</strong>.</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 7</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(m(x)=x\cos x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 7</div>
+    <div class="solution-text">
+      
+        <p>Let \(u=x\) and \(v=\cos x\).</p>
+        \[
+        u'=1 \quad \text{and} \quad v'=-\sin x
+        \]
+        \[
+        m'(x)=u'v+uv'=(1)(\cos x)+x(-\sin x)
+        \]
+        \[
+        m'(x)=\cos x-x\sin x
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 8</div>
+    <div class="problem-text">
+      <p>If \(p(x)=x^3\cos x\), find \(p'(x)\) and then evaluate \(p'(0)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 8</div>
+    <div class="solution-text">
+      
+        <p>Differentiate with the product rule.</p>
+        \[
+        p'(x)=3x^2\cos x-x^3\sin x
+        \]
+        <p>Now evaluate at \(x=0\).</p>
+        \[
+        p'(0)=3(0)^2\cos 0-(0)^3\sin 0=0
+        \]
+        <p>So the derivative value is \(0\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 9</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(r(x)=x^{1/2}\sin x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 9</div>
+    <div class="solution-text">
+      
+        <p>Let \(u=x^{1/2}\) and \(v=\sin x\).</p>
+        \[
+        u'=\frac12x^{-1/2} \quad \text{and} \quad v'=\cos x
+        \]
+        <p>Apply the product rule.</p>
+        \[
+        r'(x)=\left(\frac12x^{-1/2}\right)\sin x+x^{1/2}\cos x
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 10</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(s(x)=(2x^3-x+4)\cos x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 10</div>
+    <div class="solution-text">
+      
+        <p>Let \(u=2x^3-x+4\) and \(v=\cos x\).</p>
+        \[
+        u'=6x^2-1 \quad \text{and} \quad v'=-\sin x
+        \]
+        \[
+        s'(x)=(6x^2-1)\cos x+(2x^3-x+4)(-\sin x)
+        \]
+        \[
+        s'(x)=(6x^2-1)\cos x-(2x^3-x+4)\sin x
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 11</div>
+    <div class="problem-text">
+      <p>Compare the derivatives of \(a(x)=x^2+\sin x\) and \(b(x)=x^2\sin x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 11</div>
+    <div class="solution-text">
+      
+        <p>For the sum, differentiate term by term.</p>
+        \[
+        a'(x)=2x+\cos x
+        \]
+        <p>For the product, use the product rule.</p>
+        \[
+        b'(x)=2x\sin x+x^2\cos x
+        \]
+        <p>The two expressions have different derivatives because one is a sum and the other is a product.</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 12</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(t(x)=\cos x(x^2-1)\), then evaluate \(t'(0)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 12</div>
+    <div class="solution-text">
+      
+        \[
+        t'(x)=-\sin x(x^2-1)+\cos x(2x)
+        \]
+        <p>Evaluate at \(x=0\).</p>
+        \[
+        t'(0)=-\sin 0((0)^2-1)+\cos 0(2\cdot 0)=0
+        \]
+        <p>So \(t'(0)=0\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 13</div>
+    <div class="problem-text">
+      <p>A position function is \(s(t)=t^2\sin t\). Find the velocity function \(v(t)=s'(t)\), then find \(v(0)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 13</div>
+    <div class="solution-text">
+      
+        <p>Velocity is the derivative of position.</p>
+        \[
+        v(t)=s'(t)=2t\sin t+t^2\cos t
+        \]
+        <p>Now evaluate at \(t=0\).</p>
+        \[
+        v(0)=2(0)\sin 0+(0)^2\cos 0=0
+        \]
+        <p>The velocity at \(t=0\) is \(0\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 14</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(u(x)=(x^{-1}+x^2)\cos x\). Leave your answer with exponents.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 14</div>
+    <div class="solution-text">
+      
+        <p>Differentiate the first factor term by term.</p>
+        \[
+        \frac{d}{dx}(x^{-1}+x^2)=-x^{-2}+2x
+        \]
+        <p>Now use the product rule.</p>
+        \[
+        u'(x)=(-x^{-2}+2x)\cos x+(x^{-1}+x^2)(-\sin x)
+        \]
+        \[
+        u'(x)=(-x^{-2}+2x)\cos x-(x^{-1}+x^2)\sin x
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 15</div>
+    <div class="problem-text">
+      <p>A student says, \"To differentiate a product, just differentiate both parts and multiply.\" Use an example to explain why this is incorrect.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 15</div>
+    <div class="solution-text">
+      
+        <p>The derivative of a product is not the product of the derivatives.</p>
+        <p>For example, if \(f(x)=x\sin x\), then</p>
+        \[
+        f'(x)=\sin x+x\cos x
+        \]
+        <p>But multiplying the derivatives would give</p>
+        \[
+        (1)(\cos x)=\cos x
+        \]
+        <p>Those are not the same, so the correct rule is \(u'v+uv'\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 16</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(v(x)=\sin x(2x^2-5x+1)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 16</div>
+    <div class="solution-text">
+      
+        <p>Let \(u=\sin x\) and \(w=2x^2-5x+1\).</p>
+        \[
+        u'=\cos x \quad \text{and} \quad w'=4x-5
+        \]
+        \[
+        v'(x)=u'w+uw'=(\cos x)(2x^2-5x+1)+(\sin x)(4x-5)
+        \]
+        \[
+        v'(x)=\cos x(2x^2-5x+1)+\sin x(4x-5)
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 17</div>
+    <div class="problem-text">
+      <p>If \(f(x)=(x^2+3x)\cos x\), find \(f'(0)\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 17</div>
+    <div class="solution-text">
+      
+        <p>Differentiate first.</p>
+        \[
+        f'(x)=(2x+3)\cos x-(x^2+3x)\sin x
+        \]
+        <p>Now substitute \(x=0\).</p>
+        \[
+        f'(0)=(2(0)+3)\cos 0-((0)^2+3(0))\sin 0=3
+        \]
+        <p>So \(f'(0)=3\).</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 18</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(w(x)=(x^4+1)\sin x\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 18</div>
+    <div class="solution-text">
+      
+        <p>Differentiate the polynomial and trig factors, then apply the product rule.</p>
+        \[
+        w'(x)=4x^3\sin x+(x^4+1)\cos x
+        \]
+        <p>This derivative keeps both product-rule terms.</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 19</div>
+    <div class="problem-text">
+      <p>If \(g(x)=(x^2+1)\sin x\), find \(g'(\tfrac{\pi}{2})\).</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 19</div>
+    <div class="solution-text">
+      
+        <p>First find the derivative.</p>
+        \[
+        g'(x)=2x\sin x+(x^2+1)\cos x
+        \]
+        <p>Now substitute \(x=\tfrac{\pi}{2}\).</p>
+        \[
+        g'\!\left(\frac{\pi}{2}\right)=2\left(\frac{\pi}{2}\right)\sin\left(\frac{\pi}{2}\right)+\left(\left(\frac{\pi}{2}\right)^2+1\right)\cos\left(\frac{\pi}{2}\right)
+        \]
+        \[
+        g'\!\left(\frac{\pi}{2}\right)=\pi+0=\pi
+        \]
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Problem 20</div>
+    <div class="problem-text">
+      <p>Find the derivative of \(y=(x^3-2x)\sin x\), then explain which part came from differentiating the polynomial factor and which part came from differentiating the trig factor.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Solution 20</div>
+    <div class="solution-text">
+      
+        <p>Use the product rule with \(u=x^3-2x\) and \(v=\sin x\).</p>
+        \[
+        u'=3x^2-2 \quad \text{and} \quad v'=\cos x
+        \]
+        \[
+        y'=(3x^2-2)\sin x+(x^3-2x)\cos x
+        \]
+        <p>The term \((3x^2-2)\sin x\) comes from differentiating the polynomial factor.</p>
+        <p>The term \((x^3-2x)\cos x\) comes from differentiating the trig factor.</p>
+        
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Skill Check</div>
+    <div class="problem-text">
+      <ol class="skill-list">
+        <li>Decide whether the product rule is needed for \((x^2+1)\sin x\).</li>
+        <li>Find \(\dfrac{d}{dx}(x\sin x)\).</li>
+        <li>Find \(\dfrac{d}{dx}(x\cos x)\).</li>
+        <li>Find \(\dfrac{d}{dx}\big((x^2+1)\sin x\big)\).</li>
+        <li>Find \(\dfrac{d}{dx}\big(\cos x(x^2-3x+2)\big)\).</li>
+        <li>If \(q(x)=x^3\cos x\), find \(q'(0)\).</li>
+        <li>Find \(\dfrac{d}{dx}\big(x^{1/2}\sin x\big)\).</li>
+        <li>Find \(\dfrac{d}{dx}\big((3x^2-x+1)\sin x\big)\).</li>
+        <li>What rule is used for \(x^2+\sin x\): sum rule or product rule?</li>
+        <li>Explain in words why a product derivative has two terms.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-header">Skill Check Answer Key</div>
+    <div class="solution-text">
+      <ol class="answer-key-list">
+        <li>Yes</li>
+        <li>\(\sin x+x\cos x\)</li>
+        <li>\(\cos x-x\sin x\)</li>
+        <li>\(2x\sin x+(x^2+1)\cos x\)</li>
+        <li>\(-\sin x(x^2-3x+2)+\cos x(2x-3)\)</li>
+        <li>\(0\)</li>
+        <li>\(\left(\frac12x^{-1/2}\right)\sin x+x^{1/2}\cos x\)</li>
+        <li>\((6x-1)\sin x+(3x^2-x+1)\cos x\)</li>
+        <li>Term-by-term as a sum; product rule is not needed.</li>
+        <li>Because both factors are changing, and each factor contributes to the overall rate of change.</li>
+      </ol>
+    </div>
+  </section>
+</body>
+</html>
