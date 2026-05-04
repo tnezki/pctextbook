@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11.3 Tangent Lines - Investigation</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      background: #fff;
+      line-height: 1.45;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 10in;
+      page-break-after: always;
+      break-after: page;
+      padding: 0.1in 0.05in;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .title-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 9.4in;
+      gap: 16px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #00003d;
+      font-weight: 700;
+    }
+
+    .activity-title {
+      font-size: 2.4rem;
+      color: #00003d;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #4a4a4a;
+      max-width: 8in;
+    }
+
+    .dir-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 9.4in;
+    }
+
+    .dir-page img {
+      max-width: 100%;
+      max-height: 9in;
+      width: auto;
+      height: auto;
+      display: block;
+    }
+
+    .bar {
+      background: #00003d;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+
+    .part-intro {
+      font-size: 1rem;
+      margin-bottom: 14px;
+      color: #333;
+    }
+
+    .card {
+      border: 1px solid #cfd7e6;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .card h3 {
+      color: #004d99;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .math-text {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .prompt {
+      margin: 8px 0;
+      font-size: 0.98rem;
+    }
+
+    .small-note {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .eq-line {
+      margin: 6px 0 8px 20px;
+      font-size: 16px;
+    }
+
+    .workspace {
+      min-height: 120px;
+      border: 1px solid #d9dfe9;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .workspace-tall {
+      min-height: 170px;
+      border: 1px solid #d9dfe9;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .workspace-short {
+      min-height: 80px;
+      border: 1px solid #d9dfe9;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .code-line {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f6f8fb;
+      border: 1px solid #d6dce7;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin: 8px 0;
+      font-size: 0.98rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .reflection-list {
+      margin-left: 22px;
+      font-size: 1rem;
+    }
+
+    .reflection-list li {
+      margin-bottom: 10px;
+    }
+
+    .mini-space {
+      min-height: 70px;
+      border: 1px solid #d9dfe9;
+      border-radius: 6px;
+      margin: 8px 0 12px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="title-page">
+      <div class="section-title">Section 11.3 — Tangent Lines</div>
+      <div class="activity-title">Investigation</div>
+      <div class="subtitle">
+        Find tangent lines at two different input values, check them with function notation in Desmos,
+        and then generalize the process using a slider.
+      </div>
+    </div>
+  </div>
+
+  <div class="page dir-page">
+    <img src="directions/investigation.png" alt="Investigation directions">
+  </div>
+
+  <div class="page">
+    <div class="bar">Part 1 — Fixed Values: Function A and Function B</div>
+    <p class="part-intro">
+      For each function below, find the equation of the tangent line at the two given input values.
+      Name your tangent-line equations using function notation as \(L_1(x)\) and \(L_2(x)\).
+      After you finish, enter the function and your tangent lines in Desmos to check your work.
+    </p>
+
+    <div class="card">
+      <h3>Function A</h3>
+      <p class="math-text">Let \(f(x)=(x+1)\sin x\).</p>
+      <p class="prompt">1. Find the tangent line at \(x=0\). Name it \(L_1(x)\).</p>
+      <p class="prompt">2. Find the tangent line at \(x=\pi\). Name it \(L_2(x)\).</p>
+      <p class="small-note">Use the derivative to find the slope and the original function to find the point of tangency.</p>
+      <div class="workspace-tall"></div>
+    </div>
+
+    <div class="card">
+      <h3>Function B</h3>
+      <p class="math-text">Let \(g(x)=\cos x\,(x^2-1)\).</p>
+      <p class="prompt">1. Find the tangent line at \(x=\dfrac{\pi}{2}\). Name it \(L_1(x)\).</p>
+      <p class="prompt">2. Find the tangent line at \(x=\pi\). Name it \(L_2(x)\).</p>
+      <p class="small-note">Once you have both equations, graph \(g(x)\), \(L_1(x)\), and \(L_2(x)\) together to compare them.</p>
+      <div class="workspace-tall"></div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Part 1 — Fixed Values: Function C and Function D</div>
+    <p class="part-intro">
+      Keep naming the tangent lines with function notation. Write each line in a clear form that you can type directly into Desmos.
+    </p>
+
+    <div class="card">
+      <h3>Function C</h3>
+      <p class="math-text">Let \(h(x)=(2x^2-x+1)\sin x\).</p>
+      <p class="prompt">1. Find the tangent line at \(x=1\). Name it \(L_1(x)\).</p>
+      <p class="prompt">2. Find the tangent line at \(x=-1\). Name it \(L_2(x)\).</p>
+      <div class="workspace-tall"></div>
+    </div>
+
+    <div class="card">
+      <h3>Function D</h3>
+      <p class="math-text">Let \(p(x)=(x-2)(x+3)\).</p>
+      <p class="prompt">1. Find the tangent line at \(x=0\). Name it \(L_1(x)\).</p>
+      <p class="prompt">2. Find the tangent line at \(x=2\). Name it \(L_2(x)\).</p>
+      <p class="small-note">This one is a product of two polynomials. The same tangent-line process still works.</p>
+      <div class="workspace-tall"></div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Part 1 — Fixed Values: Function E</div>
+    <p class="part-intro">
+      Complete one more function, then compare how the tangent lines behave near each chosen input value.
+    </p>
+
+    <div class="card">
+      <h3>Function E</h3>
+      <p class="math-text">Let \(q(x)=x\cos x\).</p>
+      <p class="prompt">1. Find the tangent line at \(x=\dfrac{\pi}{2}\). Name it \(L_1(x)\).</p>
+      <p class="prompt">2. Find the tangent line at \(x=\pi\). Name it \(L_2(x)\).</p>
+      <p class="prompt">3. After graphing both lines, describe how the slope changes from one point to the other.</p>
+      <div class="workspace-tall"></div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Part 2 — How to Check a Tangent Line at a Specific Value</div>
+    <p class="part-intro">
+      In Desmos, you can define a function, evaluate the derivative at a specific value, and then graph the tangent line in point-slope form.
+      Use the exact structure shown below.
+    </p>
+
+    <div class="card">
+      <h3>Example A: Checking at \(x=4\)</h3>
+      <p class="math-text">Suppose \(f(x)=x^2\sin x\).</p>
+      <div class="code-line">f(x)=x^2 sin(x)</div>
+      <div class="code-line">f'(4)</div>
+      <div class="code-line">y-f(4)=f'(4)(x-4)</div>
+      <p class="small-note">This graphs the function, calculates the slope at \(x=4\), and then graphs the tangent line at that point.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example B: Checking at \(x=1\)</h3>
+      <p class="math-text">Suppose \(g(x)=(x+2)\cos x\).</p>
+      <div class="code-line">g(x)=(x+2) cos(x)</div>
+      <div class="code-line">g'(1)</div>
+      <div class="code-line">y-g(1)=g'(1)(x-1)</div>
+      <p class="small-note">Compare the line Desmos graphs with the equation you found by hand.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example C: Polynomial Product</h3>
+      <p class="math-text">Suppose \(h(x)=(x-1)(x+3)\).</p>
+      <div class="code-line">h(x)=(x-1)(x+3)</div>
+      <div class="code-line">h'(2)</div>
+      <div class="code-line">y-h(2)=h'(2)(x-2)</div>
+      <p class="small-note">This works even when the function is a product of two polynomials.</p>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Part 3 — Generalizing the Tangent Line with a Slider</div>
+    <p class="part-intro">
+      Instead of checking at one fixed value, you can write the tangent line at a variable point \(x=a\).
+      Then add a slider for \(a\) and watch the tangent line move along the graph.
+    </p>
+
+    <div class="card">
+      <h3>General Form</h3>
+      <p class="math-text">If the function is \(f(x)\), then the tangent line at \(x=a\) can be graphed as</p>
+      <p class="eq-line">\[y-f(a)=f'(a)(x-a)\]</p>
+      <p class="small-note">After entering the line, click on the variable \(a\) to create a slider.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example D: Slider with a Trig Product</h3>
+      <div class="code-line">f(x)=sin(x)(x^2+1)</div>
+      <div class="code-line">y-f(a)=f'(a)(x-a)</div>
+      <p class="small-note">Add a slider for \(a\), then drag it. Watch how the tangent line changes as the point of tangency moves.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example E: Slider with a Polynomial Product</h3>
+      <div class="code-line">g(x)=(x-2)(x+3)</div>
+      <div class="code-line">y-g(a)=g'(a)(x-a)</div>
+      <p class="small-note">Try several values of \(a\). Notice when the tangent line has positive slope, negative slope, or zero slope.</p>
+    </div>
+
+    <div class="card">
+      <h3>Try It Yourself</h3>
+      <p class="prompt">Choose one of your functions from Part 1. Enter it in Desmos using a new name and create a tangent line with \(x=a\).</p>
+      <div class="workspace"></div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Reflection Questions</div>
+    <p class="part-intro">
+      Answer the questions below after completing the graphing checks and slider exploration.
+    </p>
+
+    <ol class="reflection-list">
+      <li>
+        When you wrote a tangent line by hand, what information came from the derivative and what information came from the original function?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        How did Desmos help you confirm whether your tangent-line equations were correct?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        In the equation \(y-f(a)=f'(a)(x-a)\), what does each part represent?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        What changed and what stayed the same when you moved from a fixed value like \(x=4\) to a variable value like \(x=a\)?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        Describe a situation where the tangent line had a positive slope, a negative slope, and a slope of zero.
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        How is a tangent line connected to the idea of instantaneous rate of change?
+        <div class="mini-space"></div>
+      </li>
+    </ol>
+  </div>
+
+</body>
+</html>
