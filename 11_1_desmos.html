@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11.1 Power Rule - Investigation</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: letter; margin: 0.5in; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #222; background: #fff; line-height: 1.45; }
+    .page { min-height: 9.7in; page-break-after: always; break-after: page; padding: 0.1in 0.05in; }
+    .page:last-child { page-break-after: auto; break-after: auto; }
+    .title-page { min-height: 9.2in; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 16px; }
+    .title-page h1 { font-size: 2.3rem; color: #00003d; }
+    .title-page h2 { font-size: 2.7rem; color: #00003d; font-weight: 800; }
+    .subtitle { max-width: 7.5in; font-size: 1.05rem; color: #555; }
+    .bar { background: #00003d; color: #fff; font-size: 24px; font-weight: 700; padding: 10px 14px; margin-bottom: 16px; }
+    .intro { font-size: 1rem; margin-bottom: 14px; }
+    .directions { background: #eef3ff; border-left: 5px solid #4a6fdc; border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; }
+    .directions ul { margin-left: 22px; margin-top: 8px; }
+    .directions li { margin-bottom: 6px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { border: 1px solid #cfd7e6; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; break-inside: avoid; page-break-inside: avoid; }
+    .card h3 { color: #004d99; font-size: 1.12rem; margin-bottom: 8px; }
+    .math { font-size: 16px; margin-bottom: 8px; }
+    .prompt { margin-bottom: 8px; font-size: 0.98rem; }
+    .code-line { font-family: Consolas, 'Courier New', monospace; background: #f7f8fb; border: 1px solid #d6dce7; border-radius: 6px; padding: 7px 9px; margin: 7px 0; font-size: 0.95rem; }
+    .note { color: #555; font-size: 0.94rem; margin-top: 6px; }
+    .workspace { min-height: 120px; border: 1px solid #d9dfe9; border-radius: 6px; margin-top: 10px; }
+    .workspace-tall { min-height: 190px; border: 1px solid #d9dfe9; border-radius: 6px; margin-top: 10px; }
+    .reflection-list { margin-left: 22px; font-size: 1rem; }
+    .reflection-list li { margin-bottom: 12px; }
+    .mini-space { min-height: 70px; border: 1px solid #d9dfe9; border-radius: 6px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="title-page">
+      <h1>11.1 Power Rule</h1>
+      <h2>Investigation</h2>
+      <div class="subtitle">
+        Graph unusual power-rule functions, estimate tangent lines at two input values, and test your line equations by graphing them.
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">How This Investigation Works</div>
+
+    <div class="directions">
+      <p><strong>For each function:</strong></p>
+      <ul>
+        <li>Graph the function in Desmos.</li>
+        <li>Find the point on the graph at each given input value.</li>
+        <li>Estimate the slope of the tangent line by looking carefully at the graph.</li>
+        <li>Write an equation for your estimated tangent line. Name them \(L_1(x)\) and \(L_2(x)\).</li>
+        <li>Enter your estimated lines into Desmos to test how closely they match the curve near the point of tangency.</li>
+        <li>Revise your estimate if needed.</li>
+      </ul>
+    </div>
+
+    <div class="directions">
+      <p><strong>Suggested Desmos setup:</strong></p>
+      <div class="code-line">f(x)= ...</div>
+      <div class="code-line">L_1(x)= ...</div>
+      <div class="code-line">L_2(x)= ...</div>
+      <p class="note">Do not use derivative commands. The goal is to estimate the slope visually, use the point on the graph, and practice writing the line yourself.</p>
+    </div>
+
+    <p class="intro">
+      These functions are intentionally more unusual than the ones from class notes. Pay attention to where the graph is steep, flat, increasing, decreasing, or changing shape.
+    </p>
+  </div>
+
+  <div class="page">
+    <div class="bar">Functions 1 and 2</div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Function 1</h3>
+        <p class="math">\(f(x)=x^{5/3}-2x^{1/3}\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=-1\) and \(x=8\).</p>
+        <div class="code-line">f(x)=x^(5/3)-2x^(1/3)</div>
+        <p class="prompt">Write your estimated equations for \(L_1(x)\) and \(L_2(x)\), then graph them.</p>
+        <div class="workspace-tall"></div>
+      </div>
+      <div class="card">
+        <h3>Function 2</h3>
+        <p class="math">\(g(x)=3x^{1/2}-x^2\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=4\).</p>
+        <div class="code-line">g(x)=3x^(1/2)-x^2</div>
+        <p class="prompt">After graphing, decide whether your line looks too steep, too flat, or close to correct.</p>
+        <div class="workspace-tall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Functions 3 and 4</div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Function 3</h3>
+        <p class="math">\(h(x)=x^{-2}+2x\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=2\).</p>
+        <div class="code-line">h(x)=x^(-2)+2x</div>
+        <p class="prompt">Be careful near values where the graph changes steepness quickly.</p>
+        <div class="workspace-tall"></div>
+      </div>
+      <div class="card">
+        <h3>Function 4</h3>
+        <p class="math">\(p(x)=2x^{3/2}-5x^{1/2}\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=9\).</p>
+        <div class="code-line">p(x)=2x^(3/2)-5x^(1/2)</div>
+        <p class="prompt">Use the graph to judge whether the slope should be positive, negative, or near zero.</p>
+        <div class="workspace-tall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Functions 5 and 6</div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Function 5</h3>
+        <p class="math">\(q(x)=x^{4/3}-4x^{1/3}\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=8\).</p>
+        <div class="code-line">q(x)=x^(4/3)-4x^(1/3)</div>
+        <p class="prompt">Write the equations in line form, not just point-slope form.</p>
+        <div class="workspace-tall"></div>
+      </div>
+      <div class="card">
+        <h3>Function 6</h3>
+        <p class="math">\(r(x)=x^{-1/2}+x^{3/2}\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=4\).</p>
+        <div class="code-line">r(x)=x^(-1/2)+x^(3/2)</div>
+        <p class="prompt">Notice how the negative exponent affects the graph near smaller positive \(x\)-values.</p>
+        <div class="workspace-tall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Functions 7 and 8</div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Function 7</h3>
+        <p class="math">\(s(x)=5x^{2/3}-x^{5/3}\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=8\).</p>
+        <div class="code-line">s(x)=5x^(2/3)-x^(5/3)</div>
+        <p class="prompt">Compare the local shape of the graph at the two points before writing your lines.</p>
+        <div class="workspace-tall"></div>
+      </div>
+      <div class="card">
+        <h3>Function 8</h3>
+        <p class="math">\(t(x)=2x^{-3}+x^2\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=-1\) and \(x=1\).</p>
+        <div class="code-line">t(x)=2x^(-3)+x^2</div>
+        <p class="prompt">The graph behaves very differently on the two sides. Let that guide your estimate.</p>
+        <div class="workspace-tall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Functions 9 and 10</div>
+    <div class="two-col">
+      <div class="card">
+        <h3>Function 9</h3>
+        <p class="math">\(u(x)=x^{7/3}-3x^{4/3}\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=8\).</p>
+        <div class="code-line">u(x)=x^(7/3)-3x^(4/3)</div>
+        <p class="prompt">After graphing your lines, decide where your estimate was strongest and where it needed adjustment.</p>
+        <div class="workspace-tall"></div>
+      </div>
+      <div class="card">
+        <h3>Function 10</h3>
+        <p class="math">\(v(x)=4x^{-1}+x^3\)</p>
+        <p class="prompt">Estimate the tangent lines at \(x=1\) and \(x=2\).</p>
+        <div class="code-line">v(x)=4x^(-1)+x^3</div>
+        <p class="prompt">Think carefully about how the graph bends as the cubic term begins to dominate.</p>
+        <div class="workspace-tall"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="bar">Discussion and Reflection</div>
+    <ol class="reflection-list">
+      <li>
+        Which functions were easiest to estimate tangent lines for, and what made them easier to read from the graph?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        Which functions were hardest to estimate, and why?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        What graph features made it easier to tell whether a tangent line should have a positive slope, a negative slope, or a slope near zero?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        How did negative exponents affect the shape of the graph and your ability to estimate the slope?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        How did fractional exponents affect the shape of the graph and your ability to estimate the slope?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        When your estimated line and the graph did not match well, what usually needed to change more: the point, the slope, or the equation form?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        How did you use a point on the graph together with an estimated slope to write the tangent line equation?
+        <div class="mini-space"></div>
+      </li>
+      <li>
+        What clues helped you decide whether a line looked tangent to the curve rather than just crossing the graph nearby?
+        <div class="mini-space"></div>
+      </li>
+    </ol>
+  </div>
+
+</body>
+</html>
