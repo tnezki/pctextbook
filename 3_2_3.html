@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3_2_3.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+.figure-xxxs img{ max-width:40px; }
+
+.figure-xxs img{ max-width:100px; }
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 3.2.3</h1>
+<div class="lesson-header">
+  <h2>3.2.3 How can I approximate the area?</h2>
+  <div class="lesson-subtitle">Area Under a Curve: Part Two</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-114 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-114">
+  <div class="problem-number">3-114</div>
+  <p>The graph of <em>\(f(x)=x^2\)</em> for <em>\(x\ge0\)</em> is shown shown. Notice that the interval, \(1\le x\le3\), is divided into four equal sub-intervals.</p><ol type="a" class="lower-alpha"><li><p>Carefully copy the graph onto graph paper. Use the equation <em>\(f(x)=x^2\)</em> to obtain the coordinates of the points where the rectangles touch the curve. Label the points on your graph.</p></li><li><p>In terms of the rectangles drawn, what does the <em>y</em>-value of each coordinate represent?</p></li><li><p>What is the width of each rectangle?</p></li><li><p>Subscript notation will be used to help describe the locations of the rectangles on the interval. Refer to the Math Notes box in Lesson 3.2.1 if you are unfamiliar with this notation. Label <em>\(x_0\)</em>, <em>\(x_1\)</em>, <em>\(x_2\)</em>, <em>\(x_3\)</em>, and <em>\(x_4\)</em> under each of the corresponding <em>\(x\)-</em>values on the graph</p></li><li><p>The four shaded rectangles in the diagram are called<strong> left endpoint rectangles</strong>. Why are they called left endpoint rectangles?</p></li><li><p>Approximate the area under the curve by writing and evaluating a sum for the total area of the shaded rectangles. Is this sum greater than or less than the actual area under the curve?</p></li></ol>
+
+  <!-- figure for 3-114 -->
+  <div class="figure-block figure-md">
+    <img src="figures/3-114.png" alt="Figure for problem 3-114">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-115 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-115">
+  <div class="problem-number">3-115</div>
+  <p>Now, take another look at the same situation with a similar, but slightly different approach. The graph of <em>\(f(x)=x^2\)</em> for <em>\(x\ge0\)</em> is shown again shown, but this time the rectangles on the interval \(1\le x\le3\) are different.</p><ol type="a" class="lower-alpha"><li><p>Carefully copy this graph onto graph paper near your graph from the previous problem. Label the coordinates of the points where the rectangles touch the curve.</p></li><li><p>In terms of the rectangles drawn, what does the <em>\(y\)</em>-value of each coordinate represent?</p></li><li><p>Label <em>\(x_0\)</em>, <em>\(x_1\)</em>, <em>\(x_2\)</em>, <em>\(x_3\)</em>, and <em>\(x_4\)</em> under each of the corresponding <em>\(x\)-</em>values on the graph.</p></li><li><p>The rectangles drawn are called<strong> right endpoint rectangles</strong>. Why are they called right endpoint rectangles?</p></li><li><p>Approximate the area under the curve by writing and evaluating a sum for the total area of the shaded rectangles. Is this sum greater than or less than the actual area under the curve?</p></li></ol>
+
+  <!-- figure for 3-115 -->
+  <div class="figure-block figure-md">
+    <img src="figures/3-115.png" alt="Figure for problem 3-115">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-116 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-116">
+  <div class="problem-number">3-116</div>
+  <p>In the previous two problems you approximated <em>\(A(x^2,1\le x\le3)\)</em>, the area under the curve of <em>\(f(x)=x^2\)</em> on the interval \(1\le x\le3\). The left endpoint approximation of \(6.75\text{ un}^2\) is an <span>underestimate</span> of the actual area under the curve<em></em>and the right endpoint approximation of \(10.75\text{ un}^2\) is an <span>overestimate</span> of the actual area under the curve. How can the shape of a curve determine if a rectangular approximation will produce an underestimate or an overestimate?</p><ol class="lower-alpha"><li><p>Is the graph of <em>\(f(x)=x^2\)</em> increasing or decreasing for \(1\le x\le3\)?</p></li><li><p>Which type of rectangles produced the underestimate of the actual area under the curve? Why?</p></li><li><p>Sketch an example of a curve where the right endpoint rectangles will produce an underestimate of the area under a curve. Is your curve increasing or decreasing?</p></li><li><p>The approximations \(6.75\text{ un}^2\) and \(10.75\text{ un}^2\), from problems 3-114 and 3-115, are not close to one another. In your team, discuss what you can do to make the approximations closer together and record your ideas.</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-117 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-117">
+  <div class="problem-number">3-117</div>
+  <p>A LITTLE BIT CLOSER NOW</p><p>The graph of <em>\(f(x)=x^2\)</em> for <em>\(x\ge0\)</em> is shown shown. This time on the interval \(1\le x\le3\) the width of each rectangle has been made smaller.</p><ol class="lower-alpha"><li><p>What is the width of each rectangle?</p></li><li><p>What is the height of each rectangle?</p></li><li><p>How are the heights generated from the function?</p></li><li><p>Approximate <em>\(A(f,1\le x\le3)\)</em>. How does this answer compare to the approximations from problems 3-114 and 3-115?</p></li></ol>
+
+  <!-- figure for 3-117 -->
+  <div class="figure-block figure-md">
+    <img src="figures/3-117.png" alt="Figure for problem 3-117">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-118 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-118">
+  <div class="problem-number">3-118</div>
+  <p>How can sigma notation be used to express the sums you computed to approximate the area under the curve? Look back to the graph of <em>\(f(x)=x^2\)</em> for \(1\le x\le3\) from problem 3-114 and complete the parts shown to develop this notation.</p><ol type="a" class="lower-alpha"><li><p>Make sure you have the subscript values <em>\(x_0\)</em>, <em>\(x_1\)</em>, <em>\(x_2\)</em>, <em>\(x_3\)</em>, and <em>\(x_4\)</em> written under each corresponding <em>\(x\)-</em>value on the graph. Write a linear equation for <em>\(x_k\)</em>. Remember that when <em>\(k=0\)</em> then <em>\(x_0=1\)</em>, and when<em> \(k=4\)</em> then <em>\(x_4=3\)</em>.</p></li><li><p>Write an expression for the heights of the left endpoint rectangles in terms of <em>\(k\)</em>.</p></li><li><p>What is the width of each rectangle?</p></li><li><p>The area of a rectangle is calculated by computing <em>\(A=\text{(height)(width)}\)</em>. Use your expressions from parts (b) and (c) to write an equation for the area of a left endpoint rectangles in terms of <em>\(k\)</em>.</p></li><li><p>Now, use sigma notation and your equation in part (d) to write an expression that can be used to calculate the sum of the areas of the four left endpoint rectangles from problem 3-114. Remember that for left endpoint rectangles, start with <em>\(k=0\)</em>.</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-122 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-122">
+  <div class="problem-number">3-122</div>
+  <p>Let \(y=\frac{2}{x}\).</p><ol type="a" class="lower-alpha"><li><p>Divide the interval \(4\le x\le6\) into five equal pieces. What is the width of each piece?</p></li><li><p>List the values of <em>\(x_0\)</em>, <em>\(x_1\)</em>, <em>\(x_2\)</em>, <em>\(x_3\)</em>, <em>\(x_4\)</em>, and <em>\(x_5\)</em>.</p></li><li><p>Use five rectangles to produce an underestimate for the area under the curve.</p></li><li><p>Next, use five rectangles to produce an overestimate for the area under the curve.</p></li><li><p>What change can you make so that the underestimate and overestimate are closer together?</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-123 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-123">
+  <div class="problem-number">3-123</div>
+  <p>Write the following expression using summation notation.</p><p>\(0.25(3)^2+0.25(3.25)^2+0.25(3.5)^2+\ ...\ +0.25(5.5)^2+0.25(5.75)^2\)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-124 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-124">
+  <div class="problem-number">3-124</div>
+  <p><span></span>The graph shown shows the rate of water flowing through a pipe.</p><ol type="a" class="lower-alpha"><li><p>What does the shaded region represent in terms of the pipe? Be specific and include the interval.</p></li><li><p>Approximate the area using the correct units.</p></li></ol>
+
+  <!-- figure for 3-124 -->
+  <div class="figure-block figure-md">
+    <img src="figures/3-124.png" alt="Figure for problem 3-124">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-125 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-125">
+  <div class="problem-number">3-125</div>
+  <p>Solve<span> the following system of equations</span>:</p><p><span>\(\begin{array}{c} 3x-2y=-6 \\ xy=12 \end{array}\)</span><br></p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-126 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-126">
+  <div class="problem-number">3-126</div>
+  <p>Solve each equation.</p><ol type="a" class="lower-alpha"><li><p>\(2^x=8^{(x-1)}\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(4^{-x}=8^{(x+2)}\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(7^{(x+3)}=1\)</p></li></ol>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-127 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-127">
+  <div class="problem-number">3-127</div>
+  <p>If \(\sin(\theta)=\frac{5}{13}\) and \(\frac{\pi}{2}\leθ\le\pi\), sketch a triangle to match this situation and then evaluate \(\cos(θ)\) and \(\tan(θ)\).</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-128 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-128">
+  <div class="problem-number">3-128</div>
+  <p>A rodent got into Barndale’s Department Store and chewed right through one of the store displays. Sidney and her manager Eloise need to work together to build a new display. When Sidney works alone she can build the display in \(7\) hours. When Eloise works alone it takes her \(5\) hours. How much time will it take to build the new display if Eloise and Sidney work together?</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-129 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-129">
+  <div class="problem-number">3-129</div>
+  <p>Sketch a graph of each the following functions. Include at least two cycles.</p><ol type="a" class="lower-alpha"><li><p><em>\(y=2\sin(x)-1\) </em></p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(y = - \operatorname { sin } ( x - \frac { \pi } { 4 } ) + 2\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

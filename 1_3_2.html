@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1_3_2.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Exact setup based on the user's uploaded Section X.X file -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- LOCKED / FROZEN FROM 1_1_1.html -->
+<!-- Added per user request: .figure-full img{ max-width:100%; } -->
+<!-- ====================================================== -->
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- FILE HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 1.3.2</h1>
+<div class="intro-text">Direct rebuild for Lesson 1.3.2 from the uploaded source HTML. Frozen head/style from 1_1_1.html with the added <code>.figure-full</code> image option. Homework Help text omitted. Figure filenames now use hyphens. Code comments included for easier editing.</div>
+
+<!-- ====================================================== -->
+<!-- SECTION START LABEL -->
+<!-- ====================================================== -->
+<div class="section-label">Start of Section 1.3.2</div>
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<div class="lesson-header">
+  <h2>1.3.2 How do I measure angles in radians?</h2>
+  <div class="lesson-subtitle">Radian Measure in the Unit Circle</div>
+</div>
+
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-122 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-122">
+  <div class="problem-number">1-122</div>
+  <p>Sketch a graph of the unit circle with the angles specified below.</p><ol type="a" class="lower-alpha"><li><p>\(\frac { \pi } { 6 }\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\frac{3\pi}{4}\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\frac{5\pi}{3}\)</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-123 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-123">
+  <div class="problem-number">1-123</div>
+  <p>Given \(f\left(x\right)=\sqrt[3]{x}+2\).</p><ol class="lower-alpha"><li><p>Write an equation for <em>\(f^{-1}\)</em>.</p></li><li><p>Sketch <em>\(y=f(x)\)</em> and <em>\(y=f^{-1}(x)\)</em> on the same set of axes.</p></li><li><p>What are<em> \(f^{-1}(f(6))\)</em> and <em>\(f(f^{-1}(2))\)</em>? What do you notice?</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-124 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-124">
+  <div class="problem-number">1-124</div>
+  <p>Rewrite <em>\(y=3x-2\)</em> in point-slope form. How did you decide which point to use?</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-125 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-125">
+  <div class="problem-number">1-125</div>
+  <p>Solve for <em>\(θ\) </em>in each triangle below.</p><ol type="a" class="lower-alpha"><li><p>Right triangle labeled as follows: Short leg, 2, hypotenuse, 7, angle opposite short leg, theta.</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>Right triangle labeled as follows: Long leg, 10, hypotenuse, 12, angle opposite short leg, theta.</p></li></ol>
+
+  <!-- figure for 1-125 -->
+  <div class="figure-block figure-full">
+    <img src="figures/1-125.png" alt="Figure for problem 1-125">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-126 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-126">
+  <div class="problem-number">1-126</div>
+  <p>Sketch the graph of \(f ( x ) = \left\{ \begin{array} { c c c } { 2 x } & { \text { if } x < 3 } \\ { 10 - x } & { \text { if } x \geq 3 } \end{array} \right.\).</p>
+
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-127 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-127">
+  <div class="problem-number">1-127</div>
+  <p>Factor each expression.</p><ol type="a" class="lower-alpha"><li><p><em>\(x^2+8x-9\) </em></p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(6x^2+48x-54\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-128 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-128">
+  <div class="problem-number">1-128</div>
+  <p>Allison drove for a total of \(2\) hours. She drove \(50\) mph for the first \(90\) minutes and then drove \(75\) mph for the last \(30\) minutes.</p><ol class="lower-alpha"><li><p>How far did she travel?</p></li><li><p>Sketch a graph of this information using velocity in miles per hour and time in hours. Shade the area in the first quadrant that is under the graph. Describe the shape(s) of the shaded region.</p></li><li><p>What is the area of the shaded region?</p></li><li><p>What units are used for the area? Use the units for the height and base of the rectangles to justify your answer.</p></li></ol>
+
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

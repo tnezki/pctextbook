@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3_2_2.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+.figure-xxxs img{ max-width:40px; }
+
+.figure-xxs img{ max-width:100px; }
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 3.2.2</h1>
+<div class="lesson-header">
+  <h2>3.2.2 The journey begins.</h2>
+  <div class="lesson-subtitle">Area Under a Curve: Part One</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-101 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-101">
+  <div class="problem-number">3-101</div>
+  <p>Erin drove from Green Bay to Milwaukee. For the first half hour she drove through a residential neighborhood traveling at a constant speed of \(25\) miles per hour. As she entered the on-ramp to the freeway, she encountered heavy traffic. She was able to gradually increase her speed at a constant rate as the traffic slowly dissipated, until she reached a speed of \(75\) miles per hour, <span>a quarter of an hour later</span>. She continued at that speed until she got to her destination after <span>a total of </span>\(2\) hours of driving. <span>A</span>ssume she made no stops along the way.</p><ol type="a" class="lower-alpha"><li><p><span>Sketch a neat and accurate graph of the situation</span>, being sure to label and scale your axes. Shade in the area between the curve and the positive <em>\(x\)</em>-axis.</p></li><li><p><span>What are the units when calculating the area of the shaded region? Use unit analysis to justify your answer.</span></p></li><li><p><span>Calculate the area of the shaded region from \(0\le x\le2\). What does this area represent?</span></p></li><li><p>What does the area from <span>\(0.5\le x\le0.75\)</span> represent<span> in the context of the problem</span>?</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-106 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-106">
+  <div class="problem-number">3-106</div>
+  <p>Lew walks every day at lunch when he is working. The amazing thing about Lew is that he walks at a constant rate (velocity) the entire time he walks. He walks for \(1\) hour every day and travels at a rate of \(4\) miles per hour.</p><ol type="a" class="lower-alpha"><li><p>Sketch a velocity graph of Lew’s lunchtime walk, being sure to label both axes. Shade the area between the curve and the <em>\(x\)</em>-axis over the appropriate domain.</p></li><li><p>What are the domain and the range of this function?</p></li><li><p>The region that is shaded on your graph should resemble a rectangle. What are the units when calculating the area of the shaded region? Use unit analysis to justify your answer.</p></li><li><p>What is the area of the shaded region? Include the proper units.</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-107 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-107">
+  <div class="problem-number">3-107</div>
+  <p>Solve the system of equations:</p><p><em>\(x^2-2y=-3\)</em><br><em>\(x^2+y=6\)</em></p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-108 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-108">
+  <div class="problem-number">3-108</div>
+  <p>Suppose \(f\left(g\left(x\right)\right)=\frac{1}{x+7}\). Write a possible set of equations for functions <em>\(f\)</em> and <em>\(g\)</em>. (Note: <em>\(f(x)\ne g(x)\ne x\)</em>)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-109 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-109">
+  <div class="problem-number">3-109</div>
+  <p>Simplify each of the following expressions.</p><ol type="a" class="lower-alpha"><li><p>\(\left(1+\frac{x}{y}\right)\left(\frac{4y^2}{x^2-y^2}\right)\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\large \frac { x ^ { 2 } - 6 x + 8 } { x ^ { 2 } - 16 } \div \frac { x ^ { 2 } - 4 x + 4 } { x + 4 }\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\left( \frac { x ^ { - 2 } + x ^ { - 1 } } { x + x ^ { - 3 } } \right) ^ { - 1 }\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-110 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-110">
+  <div class="problem-number">3-110</div>
+  <p>Use the functions shown to write an equation for <em>\(f(g(k))\)</em>.</p><p>\(f(x)=wx^2\)</p><table class="parent-table"></table>
+ <!-- figure for 3-110 -->
+<div class="figure-block figure-xxs">
+ <img src="figures/3-110.png" alt="Figure for problem">
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-111 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-111">
+  <div class="problem-number">3-111</div>
+  <p>What is the difference between the values of each of the following<span> pairs of sigma expressions</span>? Expand each one to find out.</p><ol type="a" class="lower-alpha"><li><p>\(\displaystyle \sum _ { j = 3 } ^ { 7 } j ^ { 2 }\) and \(\displaystyle \sum _ { k = 3 } ^ { 7 } k ^ { 2 }\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\displaystyle \sum _ { j = 3 } ^ { 7 } j ^ { 2 }\) and \(\displaystyle \sum _ { j = 4 } ^ { 8 } ( j - 1 ) ^ { 2 }\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-112 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-112">
+  <div class="problem-number">3-112</div>
+  <p>If Arnold invests \(\$6500\) at \(4\%\) per year, how much additional money must he invest at \(10\%\) to ensure that the interest he receives each year is \(8\%\) of the total invested?</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-113 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-113">
+  <div class="problem-number">3-113</div>
+  <p>Simplify: \(\sin^2(4x+2)+\)\(\cos^2(4x+2)\)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+</div>
+</body>
+</html>

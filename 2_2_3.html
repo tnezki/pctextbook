@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2_2_3.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Exact setup based on the user's uploaded Section X.X file -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- LOCKED / FROZEN FROM 1_1_1.html -->
+<!-- Added per user request: .figure-full img{ max-width:100%; } -->
+<!-- ====================================================== -->
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- FILE HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 2.2.3</h1>
+<div class="intro-text">Direct rebuild for Lesson 2.2.3 from the uploaded source HTML. Frozen head/style from 1_1_1.html with the added <code>.figure-full</code> image option. Homework Help text omitted. Figure filenames now use hyphens. Code comments included for easier editing.</div>
+
+<!-- ====================================================== -->
+<!-- SECTION START LABEL -->
+<!-- ====================================================== -->
+<div class="section-label">Start of Section 2.2.3</div>
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<div class="lesson-header">
+  <h2>2.2.3 How can I build a wave?</h2>
+  <div class="lesson-subtitle">Graphs of Sine and Cosine</div>
+</div>
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-77 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-77">
+  <div class="problem-number">2-77</div>
+  <p>Sketch a unit circle. In your circle, sketch an angle in standard position so that the angle has:</p><ol class="lower-alpha"><li><p>A positive cosine and a negative sine.</p></li><li><p>A negative cosine and a negative sine. <em></em></p></li></ol>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-78 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-78">
+  <div class="problem-number">2-78</div>
+  <p>Let <em>\(f(x)=2x+3\)</em> and \(h(x)=\frac{x-3}{2}\). Use function composition to determine if <em>\(f\)</em> and <em>\(h\)</em> are inverse functions. How can you check your answer graphically?</p>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-79 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-79">
+  <div class="problem-number">2-79</div>
+  <p>Curve, starting at the point (1, comma negative 2), opening up, turning up at the point 4, comma negative 5), continuing, up &amp; right.​Given the portion of a curve graphed at right, complete the curve so that it represents an:</p><ol class="lower-alpha"><li><p>even function</p></li><li><p>odd function</p></li></ol>
+
+  <!-- figure for 2-79 -->
+  <div class="figure-block figure-sm" style="display:flex; gap:12px; justify-content:center; ">
+  <img src="figures/2-79.png" alt="Figure for problem 2-79" style="max-width:30%; height:auto;">
+  <img src="figures/2-79.png" alt="Figure for problem 2-79" style="max-width:30%; height:auto;">
+</div>
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-80 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-80">
+  <div class="problem-number">2-80</div>
+  <p>​Evaluate each expression without using a calculator. Compute without a calculator</p><ol type="a" class="lower-alpha"><li><p>\(64^{2/3}\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(125^{4/3}\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(81^{3/4}\)</p></li></ol><ol type="a" start="4" class="lower-alpha"><li><p>\(\left(\frac{27}{8}\right)^{-2/3}\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-81 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-81">
+  <div class="problem-number">2-81</div>
+  <p>​​Sketch the graph of \(f(x) =\left\{ \begin{array} { c } { - x ^ { 2 } + 4 \text { for } x < 0 } \\ { x ^ { 2 } - 1 \text { for } x \geq 0 } \end{array} \right.\). Is <em>\(y=f(x)\)</em> continuous? Explain.</p>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-82 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-82">
+  <div class="problem-number">2-82</div>
+  <p>Unit circle, with point in second quadrant labeled, p, segment connecting p to center of circle, and a curved arrow, labeled theta, pointing counterclockwise, from the positive x axis, to the radius.​Examine the diagram at right. If the <em>\(y\)</em>-coordinate of <em>\(P\)</em> is \(0.8\), answer the following questions.</p><ol class="lower-alpha"><li><p>What does \(\sin(θ)\) equal?</p></li><li><p>What does \(\cos(θ)\) equal?</p></li></ol>
+
+  <!-- figure for 2-82 -->
+  <div class="figure-block figure-sm">
+    <img src="figures/2-82.png" alt="Figure for problem 2-82">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-83 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-83">
+  <div class="problem-number">2-83</div>
+  <p>​​A<strong> periodic function</strong> is a function whose graph repeats itself identically, over and over, as it is followed from left to right. Periodic functions have “periodicity,” which simply means that they repeat at regular intervals. Many things you are familiar with also have this quality. Clocks have it, so do metronomes, and of course, periodicals.</p><p>The graph of <em>\(y=f(x)\)</em> is a periodic function. Use it to complete parts (a) through (d) below.</p><p>Linear piecewise, arrows on both ends, rising to an unidentified vertex in second quadrant, falling to a vertex on the positive y axis, rising to the vertex, (1, comma 4), falling to the vertex, (5, comma 2), rising to the vertex, (6, comma 4), falling to an unidentified vertex, then rising.</p><ol type="a" class="lower-alpha"><li><p>The<strong> period</strong> of a periodic function can be described as the smallest horizontal shift possible that preserves the function’s appearance. What is the period of <em>\(f\)</em> ?</p></li><li><p>Even though the points are not shown on the graph, what are <em>\(f(-14)\)</em> and <em>\(f(105)\)</em>? Explain how you determined these values.</p></li><li><p>Is <em>\(f(2)\)</em> equal to <em>\(f(50)\)</em>? Explain.</p></li><li><p>Use the idea of transformations of functions to write an equivalent expression for <em>\(f(x)\)</em> in this situation.</p></li></ol>
+
+  <!-- graph for 2-83 -->
+  <div class="graph-block graph-md">
+    <img src="images/plane.png" alt="Graph workspace for problem 2-83">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-84 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-84">
+  <div class="problem-number">2-84</div>
+  <p>Calculate the <em>exact</em> length of each side of the triangles. Write your answers in simplified radical form.</p><ol type="a" class="lower-alpha"><li><p>Right triangle labeled as follows: vertical leg, 4, angle opposite vertical leg, 45 degrees.</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>Right triangle labeled as follows: hypotenuse, 6, angle opposite vertical leg, 45 degrees.</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>Right triangle labeled as follows: vertical leg, 2, angle opposite vertical leg, 30 degrees.</p></li></ol>
+
+  <!-- figure for 2-84 -->
+  <div class="figure-block figure-full">
+    <img src="figures/2-84.png" alt="Figure for problem 2-84">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-85 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-85">
+  <div class="problem-number">2-85</div>
+  <p>Periodic linear graph, x axis scaled from negative 6 to 6, with 5 visible turning points: (negative 4, comma 2), (negative 2, comma negative 2), (0, comma 2), (2, comma negative 2), (4, comma 2), &amp; (6, comma negative 2). X intercepts at negative 5, negative 3, negative 1, 1, 3, &amp; 5.Consider the “saw tooth” graph at right.</p><ol class="lower-alpha"><li><p>What is the amplitude?</p></li><li><p>What is the period?</p></li><li><p>State the domain and range.</p></li><li><p>What are the <em>\(x\)</em>-intercepts of the function? Express your answer as an equation.</p></li></ol>
+
+  <!-- figure for 2-85 -->
+  <div class="figure-block figure-md">
+    <img src="figures/2-85.png" alt="Figure for problem 2-85">
+  </div>
+
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-86 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-86">
+  <div class="problem-number">2-86</div>
+  <p>Continuous piecewise, labeled, f of x, with following 3 linear pieces: from the left side, horizontal to the point (negative 4, comma 2), falling to the point (2, comma negative 4), rising up &amp; right, passing through the point (5, comma 2).Using the graph of <em>\(y=f(x)\)</em> at right, sketch the following function transformations.</p><ol type="a" class="lower-alpha"><li><p><em>\(y=f(2x)\) </em></p></li><li><p>\(y=f\left(\frac{1}{2}x\right)\)</p></li><li><p><em>\(y=f(-x)\) </em></p></li></ol>
+
+  <!-- figure for 2-86 -->
+  <div class="figure-block figure-md">
+    <img src="figures/2-86.png" alt="Figure for problem 2-86">
+  </div>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-400"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-87 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-87">
+  <div class="problem-number">2-87</div>
+  <p>Burton travels on cruise control at \(50\) mph from 2:00 p.m. until 5:00 p.m.</p><ol class="lower-alpha"><li><p>How far does he travel?</p></li><li><p>Sketch a graph of this situation using velocity in miles per hour and time in hours. Shade the area under the curve in the first quadrant. What shape is the shaded region?</p></li><li><p>Explain why the shaded area represents a distance of \(150\) miles.</p></li></ol>
+
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-88 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-88">
+  <div class="problem-number">2-88</div>
+  <p>Use a graphing calculator to graph <em>\(f(x)=\frac{1}{3}x^3−\frac{1}{2}x^2−2x\)</em>. Describe where the function is increasing, decreasing, concave up, concave down, and include any maxima or minima.</p>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-89 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-89">
+  <div class="problem-number">2-89</div>
+  <p>​Algebraically solve each system of equations and state the method you used. Check your answer graphically.</p><ol type="a" class="lower-alpha"><li><p>\(4y-5x=-2\) <br><em>\(x-2y=-8\) </em></p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p><em>\(y=-\frac{3}{4}x+9\)</em><br> \(2x-y=2\)<sup>​ </sup></p></li></ol>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-90 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-90">
+  <div class="problem-number">2-90</div>
+  <p>​Solve for <em>\(h\)</em>: <em>\(S=2\pi r^2h+\pi r^2\)</em></p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-91 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-91">
+  <div class="problem-number">2-91</div>
+  <p>​Which equations have exactly the same solutions? (Note: Solving is not required.)</p><ol type="a" class="lower-alpha"><li><p><em>\(x^3+2x=x+5\) </em></p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p><em>\(x^3+x=5\) </em></p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p><em>\(x^3+x-5=0\) </em></p></li></ol><ol type="a" start="4" class="lower-alpha"><li><p>\(\frac{x^3+2x}{x+5}=1\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-92 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-92">
+  <div class="problem-number">2-92</div>
+  <p>​How are distance, rate, and time related?</p><ol class="lower-alpha"><li><p>Suppose you are driving at a steady rate of \(20\) mph. How long will it take you to travel \(80\) miles?</p></li><li><p>Now suppose you are driving at a steady rate of \(60\) mph, so three times as fast. Now how long will it take you to travel \(80\) miles?</p></li><li><p>If you are driving at <em>\(r\)</em> mph, write an expression for the time it takes to drive <em>\(d\)</em> miles.</p></li><li><p>If you increase your speed by a multiple of <em>\(m\)</em>, write an expression for the time it takes to drive <em>\(d\)</em> miles.</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1_1_6_corrected.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Exact setup based on the user's uploaded Section X.X file -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- LOCKED / FROZEN FROM 1_1_1.html -->
+<!-- ====================================================== -->
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- FILE HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 1.1.6</h1>
+<div class="intro-text">Corrected rebuild for Lesson 1.1.6 only. Pulled directly from the uploaded lesson HTML source, with Homework Help text omitted.</div>
+
+<!-- ====================================================== -->
+<!-- SECTION START LABEL -->
+<!-- ====================================================== -->
+<div class="section-label">Start of Section 1.1.6</div>
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<div class="lesson-header">
+  <h2>1.1.6 Are they equivalent?</h2>
+  <div class="lesson-subtitle">Equivalent Expressions</div>
+</div>
+
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-55 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-55">
+  <div class="problem-number">1-55</div>
+  <p>Are the following pairs of expressions equivalent? Explain how you know using at least two different methods.</p><ol type="a"><li><p>\(\frac { x ^ { 2 } - 1 } { x ^ { 2 } + 1 }\) and \(-1\)</p></li></ol><ol type="a" start="2"><li><p>\(\frac { 3 x + 2 } { x - 1 }\) and \(3+\frac{5}{x-1}\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-56 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-56">
+  <div class="problem-number">1-56</div>
+  <p>Let <em>\(g(x)=x^2-2x\)</em>. Evaluate:</p><ol type="a"><li><p><em>\(g(a)\) </em></p></li></ol><ol type="a" start="2"><li><p><em>\(g(t-2)\) </em></p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-57 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-57">
+  <div class="problem-number">1-57</div>
+  <p>Rewrite each expression below using the properties of exponents.</p><ol type="a"><li><p>\((5a^{-2})^2\)</p></li></ol><ol type="a" start="2"><li><p>\((m^{-1}n^{-2})^3\)</p></li></ol><ol type="a" start="3"><li><p>\((2x^{-1})^2(2x^0)\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-58 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-58">
+  <div class="problem-number">1-58</div>
+  <p>Factor each binomial.</p><ol type="a"><li><p>\(2x^2+5x\)</p></li></ol><ol type="a" start="2"><li><p>\(3x^2y^5-9xy^3\)</p></li></ol><ol type="a" start="3"><li><p>\(17x^3y-34x^4y^2\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-59 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-59">
+  <div class="problem-number">1-59</div>
+  <p>A <em>linear</em> function includes the points \((2,7)\) and \((4,8)\). What is the average rate of change, \(\frac { \Delta y } { \Delta x }\), between these two points? What will happen to the average rate of change if you choose two other points on the graph of the function?</p>
+
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-60 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-60">
+  <div class="problem-number">1-60</div>
+  <p>A function machine is shown at right.</p><ol><li><p>If the input is <em>\(x=-2\)</em>, what is the output? <br> If the input is <em>\(x=10\)</em>, what is the output?</p></li><li><p>If \(27\) is the output, what was the input? <br> If \(147\\)is the output, what was the input?</p></li><li><p>If the equation for determining the output from a given input is <em>\(f(x)=3x^2\)</em>, what is the equation for determining the input from a given output?</p></li></ol>
+
+  <!-- figure for 1-60 -->
+  <div class="figure-block figure-md">
+    <img src="figures/1_60.png" alt="Figure for problem 1-60">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-61 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-61">
+  <div class="problem-number">1-61</div>
+  <p>Write the equation of each line in point-slope form.</p><ol type="a"><li><p>A line that has a slope of \(5\) and passes through the point \((3,10)\).</p></li><li><p>A line that has a slope of \(-0.23\) and passes through the point \((0.1,-17)\).</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+</div>
+</body>
+</html>

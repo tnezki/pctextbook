@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2_1_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Exact setup based on the user's uploaded Section X.X file -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- LOCKED / FROZEN FROM 1_1_1.html -->
+<!-- Added per user request: .figure-full img{ max-width:100%; } -->
+<!-- ====================================================== -->
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- FILE HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 2.1.1</h1>
+<div class="intro-text">Direct rebuild for Lesson 2.1.1 from the uploaded source HTML. Frozen head/style from 1_1_1.html with the added <code>.figure-full</code> image option. Homework Help text omitted. Figure filenames now use hyphens. Code comments included for easier editing.</div>
+
+<!-- ====================================================== -->
+<!-- SECTION START LABEL -->
+<!-- ====================================================== -->
+<div class="section-label">Start of Section 2.1.1</div>
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<div class="lesson-header">
+  <h2>2.1.1 What is your best description?</h2>
+  <div class="lesson-subtitle">Characteristics of Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-1 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-1">
+  <div class="problem-number">2-1</div>
+  <p>One day Riley decides to take a scenic drive. The graph below represents Riley’s trip.</p>Write a story that matches the graph. Be sure to include units in your story.</p>
+
+  <!-- graph for 2-1 -->
+  <div class="graph-block graph-xl">
+    <img src="figures/2-1.png" alt="Graph workspace for problem 2-1">
+  </div>
+<p>Consider Riley’s distance from home, using the graph from problem 2-1 as you answer the following questions. Estimate your answers to the nearest \(0.25\).</p><ol class="lower-alpha"><li><p>When is Riley’s distance from home increasing? How is this represented on the graph?</p></li><li><p>When is Riley’s distance from home decreasing? How is this represented on the graph?</p></li><li><p>Is Riley’s distance from home ever constant? If yes, explain how you know. If no, describe what the graph would look like if the distance was constant over a period of time.</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-400"></div>
+</section>
+
+
+
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-4 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-4">
+  <div class="problem-number">2-4</div>
+  <p>EXTREMA</p><p>Points on a graph that are “high” points or “low” points are called extreme points, or extrema. A<strong> local maximum/minimum </strong>of a function is the largest/smallest value of the function within a small interval around the extreme point. A<strong> global maximum/minimum</strong> of a function is the largest/smallest value of the function over its entire domain. The plural of maximum is maxima and the plural of minimum is minima.</p><ol type="a" class="lower-alpha"><li><p>Look back at the graph in problem 2-1 representing Riley’s drive. Which points are the maxima? Label each maximum point as local or global. What is happening in Riley’s drive at these points?</p></li><li><p>Which points are the minima? Label each minimum point as local or global. What is happening in Riley’s drive at these points?</p></li><li><p>Describe the graph near a local maximum point using the words increasing and decreasing. How is it changing?</p></li><li><p>Describe the graph near a local minimum point using the words increasing and decreasing. How is it changing?</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-7 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-7">
+  <div class="problem-number">2-7</div>
+  <p>Sketch a curve that is:</p><ol type="a" class="lower-alpha"><li><p>increasing and concave down</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>increasing and concave up</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>decreasing and concave down</p></li></ol><ol type="a" start="4" class="lower-alpha"><li><p>decreasing and concave up</p></li></ol>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-9 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-9">
+  <div class="problem-number">2-9</div>
+  <p>CURVE SKETCHING</p><ol class="lower-alpha"><li><p>Sketch a curve that increases then decreases. What is the point where a function changes from increasing to decreasing called?</p></li><li><p>Sketch a curve that decreases then increases. What is the point where a function changes from decreasing to increasing called?</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-10 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-10">
+  <div class="problem-number">2-10</div>
+  <p><span>Convert</span> the following radian measures to degrees.</p><ol type="a" class="lower-alpha"><li><p>\(\frac { 4 \pi } { 3 }\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\frac { 18 \pi } { 5 }\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(4\) radians</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-11 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-11">
+  <div class="problem-number">2-11</div>
+  <p>Write an equation for <em>\(f^{-1}(x)\)</em> if \(f(x)=\frac{5}{2}x-3\).</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-12 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-12">
+  <div class="problem-number">2-12</div>
+  <p>As the connected complexity of mathematical concepts evolve, your mathematical knowledge evolves as well. Previous knowledge provides the necessary skills to acquire new learning. If necessary, review the Solving Right Triangles Skill Builder, to strengthen your understanding of this topic.</p><p>Calculate the value of <em>\(x\)</em> in each diagram below. (Diagrams not to scale.)</p><ol type="a" class="lower-alpha"><li><p>Right triangle labeled as follows: vertical leg, 10, hypotenuse, x, angle opposite vertical leg, 77 degrees.</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>Right triangle labeled as follows: vertical leg, 5, horizontal leg, x, angle opposite vertical angle. 21 degrees.</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>Right triangle labeled as follows: short leg, 4, hypotenuse, 14, angle opposite long leg, x degrees.</p></li></ol>
+
+  <!-- figure for 2-12 -->
+  <div class="figure-block figure-full">
+    <img src="figures/2-12.png" alt="Figure for problem 2-12">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-13 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-13">
+  <div class="problem-number">2-13</div>
+  <p>Solve for <em>\(x\)</em>: <em>\(x(2+q)=5x-6(3-q)\)</em></p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-14 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-14">
+  <div class="problem-number">2-14</div>
+  <p>Algebraically solve each system of equations and state the method you used. Graphically check your answer.</p><ol type="a" class="lower-alpha"><li><p>\(y=\frac{1}{2}x+5\) <br>\(2x+y=10\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(2y-3x=7\) <br> \(-y+2x=-2\)</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-15 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-15">
+  <div class="problem-number">2-15</div>
+  <p>Simplify each expression.</p><ol type="a" class="lower-alpha"><li><p>\(5 \sqrt { 2 } + 3 \sqrt { 7 } - 2 \sqrt { 2 } + 4 \sqrt { 7 }\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(4 \sqrt [ 3 ] { 2 } + 5 \sqrt { 2 } - 7 \sqrt [ 3 ] { 2 } + \sqrt { 2 }\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\sqrt { 20 } + \sqrt { 45 }\)</p></li></ol><ol type="a" start="4" class="lower-alpha"><li><p>\(3 \sqrt { 12 } - \sqrt { 32 } + \sqrt { 27 } + 2 \sqrt { 8 }\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 2-16 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-2-16">
+  <div class="problem-number">2-16</div>
+  <p>Consider the parent function <em>\(f(x)=x^2\)</em>.</p><ol class="lower-alpha"><li><p>Graph <em>\(y=f(x)\)</em>.</p></li><li><p>Write an equation for \(f\left(\frac{1}{2}x\right)\). Then sketch a graph of \(y=f\left(\frac{1}{2}x\right)\) and describe the transformation.</p></li><li><p>Write an equation for \(f(3x)\). Then sketch a graph of <em>\(y=f(3x)\)</em> and describe the transformation.</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

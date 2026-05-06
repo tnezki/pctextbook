@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3_2_1.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+.figure-xxxs img{ max-width:40px; }
+
+.figure-xxs img{ max-width:100px; }
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 3.2.1</h1>
+<div class="lesson-header">
+  <h2>3.2.1 Summing it up with sigma.</h2>
+  <div class="lesson-subtitle">Using Sigma Notation</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-86 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-86">
+  <div class="problem-number">3-86</div>
+  <p>Evaluate each equation shown for the given values of <em>n</em> and write the associated sum in expanded form by adding the terms of each sequence. Calculate the value of each sum and check your answers with your team.</p><ol class="lower-alpha"><li><p><em>\(t(n)=0.5(0.5n+2)^2\)</em> where <em>\(n=0\)</em>, \(1\), \(2\), and \(3\)</p></li><li><p><em>\(t(n)=0.5(0.5n+2)^2\)</em> where <em>\(n=1\)</em>, \(2\), \(3\), and \(4\)</p></li><li><p>What are the similarities and differences between the two sums written in expanded form?</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-87 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-87">
+  <div class="problem-number">3-87</div>
+  <p>Write each of the following sums in expanded form and then calculate the value of each sum. Note: The first one has been expanded for you. The second one has been partially expanded.</p><ol type="a" class="lower-alpha"><li><p>\(\displaystyle \sum _ { j = 3 } ^ { 6 } ( 2 ) ^ { j } = (2)^3+(2)^4+(2)^5+(2)^6=\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\displaystyle \sum _ { n = 3 } ^ { 5 } ( 4 n ^ { 2 } + 2 ) = (4(3)^2+2)+\ldots =\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\displaystyle \sum _ { k = 1 } ^ { 5 } 16 \left( \frac { 1 } { 2 } \right) ^ { k } =\)</p></li></ol><ol type="a" start="4" class="lower-alpha"><li><p>\(\displaystyle \sum _ { m = 1 } ^ { 4 } \frac { 1 } { m ( m + 1 ) } =\)</p></li></ol><ol type="a" start="5" class="lower-alpha"><li><p>For part (b) above, identify the argument and the index.<strong></strong>​</p></li><li><p>Locate the summation feature on a calculator. Use this feature to verify that the sum you calculated by hand in part (a) is correct.</p></li></ol>
+
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-88 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-88">
+  <div class="problem-number">3-88</div>
+  <p><strong><span></span></strong>Waylon wrote the following expansion for the sum shown. <span>Check his work. Is it correct? Explain.</span></p><p>\(\displaystyle \sum _ { p = 5 } ^ { 7 } p ^ { 2 } = 5 ^ { 2 } + 5.5 ^ { 2 } + 6 ^ { 2 } + 6.5 ^ { 2 } + 7 ^ { 2 } = 182.5\)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-89 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-89">
+  <div class="problem-number">3-89</div>
+  <p>On his Calculus test, Carter needs to divide the interval \(2\le x\le3\) into five segments of equal length.</p><ol class="lower-alpha"><li><p>What is the length of each sub-segment? How did you calculate this length?</p></li><li><p>Sketch a diagram of this interval.</p></li><li><p>List the left endpoints of each sub-segment as a sequence. Then write an equation for this sequence.</p></li><li><p>List the right endpoints of each sub-segment as a sequence. Then write an equation for this sequence.</p></li><li><p>How are your sequences in parts (c) and (d) related?</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-90 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-90">
+  <div class="problem-number">3-90</div>
+  <p>A<strong> series</strong> is the sum of the terms in a sequence. Use the following series written in expanded form to complete the parts shown.</p><p>\(3.6+4.0+4.4+4.8+5.2\)</p><ol type="a" class="lower-alpha"><li><p>Use sigma notation to express the sum.</p></li><li><p>What changes would you make in your notation from part (a) to express the sum \(4.0+4.4+4.8+5.2+5.6\)?</p></li><li><p>Compute the sum from part (a) by hand, and then use a calculator’s summation feature to verify your sum written in sigma notation.</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-91 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-91">
+  <div class="problem-number">3-91</div>
+  <p>Suppose that \(3.6+4.0+4.4+4.8\ +...+\ 23.6\) <span>is to be expressed </span>in sigma notation where the index <em><span>\(n\)</span></em> begins at \(0\).</p><ol type="a" class="lower-alpha"><li><p><span>Why is the argument</span> \(0.4n+3.6\)?</p></li><li><p>What is the value of <em><span>\(n\) </span></em><span>for the last term</span>?</p></li><li><p>Express the sum using sigma notation.</p></li><li><p>Use the same idea to express \(2.5+2.7+2.9+3.1\ +...+\ 22.5\) in sigma notation where the index <em><span>\(n\)</span></em> begins at \(0\).</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-93 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-93">
+  <div class="problem-number">3-93</div>
+  <p><em>\(x_0\)</em>, <em>\(x_1\)</em>, <em>\(x_2\)</em>, <em>\(x_3\)</em>, <em>\(x_4\)</em>, and <em>\(x_5\)</em><span>can be used </span>to represent the values of <em>\(x\)</em> when an interval is broken into <span>five</span> equal pieces. If the interval \(1\le x\le4\) is divided into <span>five</span> equal pieces, <span>where </span><em>\(x_0=1\)</em> and <em>\(x_5=4\)</em><span>, list</span><em>\(x_1\)</em>, <em>\(x_2\)</em>, <em>\(x_3\)</em>, and <em>\(x_4\)</em>.<span> Refer to the preceding Math Notes box for an example.</span></p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-94 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-94">
+  <div class="problem-number">3-94</div>
+  <p>Express the given series using sigma notation, then evaluate the sums with <span>a calculator</span> or by hand.</p><ol type="a" class="lower-alpha"><li><p>\(4+8+12+16+20\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(1+2+4+8+16+32\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(2+4+6+8\ +\ ...\ +\ 200\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-95 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-95">
+  <div class="problem-number">3-95</div>
+  <p>Complete the following division problem. Express any remainder as a fraction.</p><p>\((x^3+x^2-14x+2)\div\)\((x-3)\)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-96 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-96">
+  <div class="problem-number">3-96</div>
+  <p>Deja wants a coffee from Luckstars, but the store closes very soon. She drives as fast as she can, \(45\) mph, to get to the store before they close. On the way back she is relaxed and drives at half the speed. Assuming that she drives on the same straight road with no traffic or stops both there and back, what is her average driving speed?</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-97 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-97">
+  <div class="problem-number">3-97</div>
+  <p>Factor completely.</p><ol type="a" class="lower-alpha"><li><p>\(2a^2+5ab-3b^2\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(-3c^2+5cd-2d^2\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-98 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-98">
+  <div class="problem-number">3-98</div>
+  <p>Determine the exact value of each of the following trigonometric expressions without using a calculator.</p><ol type="a" class="lower-alpha"><li><p>\(\cos\left(\frac{7\pi}{6}\right)\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\sin\left(\frac{3\pi}{2}\right)\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\tan\left(\frac{3\pi}{2}\right)\)</p></li></ol><ol type="a" start="4" class="lower-alpha"><li><p>\(\tan\left(\frac{2\pi}{3}\right)\)</p></li></ol>
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-99 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-99">
+  <div class="problem-number">3-99</div>
+  <p>Use the table shown to write an equation for <em>\(x_k\)</em> in terms of <em>\(k\)</em>.</p><table class="parent-table"></table>
+ <!-- figure for 3-99 -->
+  <div class="figure-block figure-xxs">
+    <img src="figures/3-99.png" alt="Figure for problem 3-99">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-100 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-100">
+  <div class="problem-number">3-100</div>
+  <p>KRISTOF’S EARNINGS</p><p>Kristof worked at MacDonut’s for \(\$8.00\)/hour. One Friday night he worked \(5\) hours.</p><ol type="a" class="lower-alpha"><li><p>How much did he earn that night? What is his rate of pay?</p></li><li><p><span>Sketch a graph of Kristof’s pay rate where the horizontal axis represents hours and the vertical axis represents dollars earned per hour. How is Kristof’s constant pay rate represented on your graph?</span></p></li><li><p>The area under your <span>line</span> should be a rectangle. Divide the rectangle you get into smaller rectangles by drawing vertical lines at the \(1\)-hour, \(2\)-hour, \(3\)-hour, \(4\)-hour, and \(5\)-hour marks. How many rectangles have you created?</p></li><li><p>Explain to the other people on your team what the area of each of the rectangles you created in part (c) represents. Hint: What are the units of each side<span> of the rectangles and how are they related to the area</span>?</p></li></ol>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

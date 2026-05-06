@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3_1_4.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 3.1.4</h1>
+<div class="lesson-header">
+  <h2>3.1.4 How do I handle what remains?</h2>
+  <div class="lesson-subtitle">Polynomial Division</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-54 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-54">
+  <div class="problem-number">3-54</div>
+  <p>Show by division that \(\large \frac { x ^ { 2 } + 6 x + 9 } { x - 2 }\) equals \(x + 8 + \frac { 25 } { x - 2 }\).</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-55 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-55">
+  <div class="problem-number">3-55</div>
+  <p>Michelle has the problem \((2x+3)^2-3(2x+3)-10=0\) and is thinking of expanding the \((2x+3)\) terms and then solving. Laura suggests that she let <em>\(a=2x+3\)</em> then solve <em>\(a^2-3a-10=0\)</em>. Use Laura’s suggestion to solve for <em>\(a\)</em> and then use your solutions to solve for the values of <em>\(x\). </em></p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-56 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-56">
+  <div class="problem-number">3-56</div>
+  <p>Write each rational expression as a single simplified fraction.</p><ol type="a" class="lower-alpha"><li><p>\(\frac{3}{x+3}\cdot\frac{5}{x-5}\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\frac{x+y}{x}-\frac{x-y}{y}\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\left( \frac { x } { y } - \frac { y } { x } \right) \left( \large\frac { x ^ { 2 } y ^ { 2 } } { x ^ { 2 } y - x y ^ { 2 } } \right)\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-57 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-57">
+  <div class="problem-number">3-57</div>
+  <p>Solve the system shown for <em>\(x\)</em> and <em>\(y\)</em> in terms of <em>\(a\)</em> and <em>\(b\)</em>.</p><p><em>\(ax+y=7\)</em><br> \(3x-y=b\)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-58 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-58">
+  <div class="problem-number">3-58</div>
+  <p>If a ball is thrown vertically upward with a velocity of \(32\) ft/s, its height after <em>t</em> seconds is given by the equation <em>\(s(t)=32t-16t^2\)</em>. At what instant will the ball be at its highest point, and how high will it rise?</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-59 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-59">
+  <div class="problem-number">3-59</div>
+  <p>Solve each of the following equations by first expressing each side with the same base. Give exact answers using fractions, not decimals.</p><ol type="a" class="lower-alpha"><li><p>\(8^{(x+3)}=32\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(27^{2x}=\left(\frac{1}{9}\right)^{(x-1)}\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\left(\frac{1}{125}\right)^{(2x-3)}=\frac{1}{25}\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-60 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-60">
+  <div class="problem-number">3-60</div>
+  <p>Use the table shown to write an equation for <em>\(x_k\)</em> in terms of <em>\(k\)</em>.</p><table class="parent-table"></table>
+   <!-- figure for 3-60 -->
+<div class="figure-block figure-xs">
+ <img src="figures/3-60.png" alt="Figure for problem">
+</div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-61 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-61">
+  <div class="problem-number">3-61</div>
+  <p>The Monsters are going to visit relatives. They drive over many kinds of terrain ranging from the highway to gravel roads. They are able to drive \(40\) mph for \(2\) hours, \(60\) mph for another hour, and only \(20\) mph for the final \(30\) minutes of the trip. What was their average speed for the entire \(3.5\)-hour trip?</p>
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+</div>
+</body>
+</html>

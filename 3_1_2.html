@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3_1_2.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 3.1.2</h1>
+<div class="lesson-header">
+  <h2>3.1.2 How can I simplify algebraically?</h2>
+  <div class="lesson-subtitle">Rewriting Expressions and Equations</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-21 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-21">
+  <div class="problem-number">3-21</div>
+  <p>Simplify each of the following complex fractions.</p><ol type="a" class="lower-alpha"><li><p>\(\Large \frac { \frac { 4 } { x } - \frac { 5 } { 3 x ^ { 2 } } } { \frac { 8 } { x ^ { 2 } } + 6 }\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\large \frac{x^{-1}+8}{x+y^{-2}}\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-23 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-23">
+  <div class="problem-number">3-23</div>
+  <p>Use substitution to help you factor each of the following expressions. First state what the substitution is (that is, write what <em>\(u\)</em> equals), then factor. Be sure to write your final answer in terms of <em>\(x\)</em>.</p><ol type="a" class="lower-alpha"><li><p>\(5\cos^2(x)-9\cos(x)-2\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\((4x-1)^2+12(4x-1)+20\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(7^{2x}+4(7^x)-12\)</p></li></ol><ol type="a" start="4" class="lower-alpha"><li><p>\(4x^{8/3}+11x^{4/3}+6\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-28 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-28">
+  <div class="problem-number">3-28</div>
+  <p>Rewrite each complex fraction as a single fraction without negative exponents.</p><ol type="a" class="lower-alpha"><li><p>\(\large \frac { t + \frac { 1 } { t } } { t }\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\large \frac { 1 } { x + \frac { y ^ { 2 } } { x } }\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\large \frac { \frac { \sqrt { 3 } } { 2 } } { \frac { 1 } { 2 } }\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-29 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-29">
+  <div class="problem-number">3-29</div>
+  <p>Factor out \((x+2)\) from each expression, then simplify.<span> If needed, let </span><em><span>\(u=x+2\)</span></em><span>.</span></p><ol type="a" class="lower-alpha"><li><p>\((x+2)^2-3(x+2)\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\((x+2)^3-4(x+2)\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(2(x+2)^2+6(x+2)\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-30 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-30">
+  <div class="problem-number">3-30</div>
+  <p><span>Simplify each of</span> the following rational expressions.</p><ol type="a" class="lower-alpha"><li><p>\(\frac { x + 2 } { 4 } + \frac { x - 3 } { 5 }\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\frac { 4 } { 2 - x } + \frac { x } { 5 }\)</p></li></ol><ol type="a" start="3" class="lower-alpha"><li><p>\(\frac { 6 } { x + 2 } - \frac { 4 } { x - 2 }\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-31 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-31">
+  <div class="problem-number">3-31</div>
+  <p>Solve each equation for \(0\le x<2\pi\). Give exact answers.</p><ol type="a" class="lower-alpha"><li><p>\(\sin(x)(\cos(x)+1)=0\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(\cos(x)(\tan(x)-1)=0\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-32 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-32">
+  <div class="problem-number">3-32</div>
+  <p>If <em>\(f(x)=2^{x-1}+4x^2\)</em>, <span>write an equation for</span><em>\(f(x+2)\)</em>.<span></span></p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-33 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-33">
+  <div class="problem-number">3-33</div>
+  <p><span>A trough is in the shape of an equilateral triangular prism, as shown in the diagram shown. The length of the trough is \(12\) feet.</span></p><ol type="a" class="lower-alpha"><li><p><span>Write an equation for</span> the height of the equilateral triangle in terms of <em>\(x\)</em>.</p></li><li><p><span>Write an equation for</span> the volume <em>\(V\) </em>of the trough in terms of <em>\(x\)</em>.</p></li><li><p>If the trough can hold <span>\(200\text{ ft}^3\)</span> of water, how deep is the trough?</p></li></ol>
+
+  <!-- figure for 3-33 -->
+  <div class="figure-block figure-md">
+    <img src="figures/3-33.png" alt="Figure for problem 3-33">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-34 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-34">
+  <div class="problem-number">3-34</div>
+  <p>Use the table shown to write an equation for <em>\(x_k\)</em> in terms of <em>\(k\)</em>.</p><table class="parent-table"></table>
+
+ <!-- figure for 3-34 -->
+<div class="figure-block figure-xs">
+ <img src="figures/3-34.png" alt="Figure for problem" style="max-width:180px; height:auto;">
+</div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 3-35 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-3-35">
+  <div class="problem-number">3-35</div>
+  <p>As the connected complexity of mathematical concepts evolve, your mathematical knowledge evolves as well. Previous knowledge provides the necessary skills to acquire new learning. If necessary, review the Solving Linear and Quadratic Systems of Equations Skill Builder, to strengthen your understanding of this topic.</p><p>Solve each system of equations.</p><ol type="a" class="lower-alpha"><li><p>\(p^2+2p+q=24\) <br>\(2q+p=4\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(x^2+2y=1\) <br>\(2x-y=2\)</p></li></ol>
+
+
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+</div>
+</body>
+</html>

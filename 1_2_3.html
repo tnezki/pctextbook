@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1_2_3.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Exact setup based on the user's uploaded Section X.X file -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- LOCKED / FROZEN FROM 1_1_1.html -->
+<!-- Added per user request: .figure-full img{ max-width:100%; } -->
+<!-- ====================================================== -->
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+.figure-full img{ max-width:100%; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- FILE HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 1.2.3</h1>
+<div class="intro-text">Direct rebuild for Lesson 1.2.3 from the uploaded source HTML. Frozen head/style from 1_1_1.html with the added <code>.figure-full</code> image option. Homework Help text omitted. Code comments included for easier editing.</div>
+
+<!-- ====================================================== -->
+<!-- SECTION START LABEL -->
+<!-- ====================================================== -->
+<div class="section-label">Start of Section 1.2.3</div>
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<div class="lesson-header">
+  <h2>1.2.3 What if it is in pieces?</h2>
+  <div class="lesson-subtitle">Piecewise-Defined Functions and Continuity</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-91 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-91">
+  <div class="problem-number">1-91</div>
+  <p>Lisa makes \(\$8/\text{hr}\) babysitting until midnight and \(\$10/\text{hr}\) after midnight. She begins her babysitting job at 7 p.m.</p><ol type="a" class="lower-alpha"><li><p>Draw a graph that shows the total amount of money Lisa earns after she babysits for <em>\(t\)</em> hours.</p></li><li><p>Write an equation for a function that represents the total amount of money Lisa earns after she babysits for <em>\(t\)</em> hours. Be ready to share your function with the class.</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-92 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-92">
+  <div class="problem-number">1-92</div>
+  <p>Consider the function \(g ( x ) = \left\{ \begin{array} { l l } { x ^ { 2 } + 2 } & { \text { for } x \leq 1 } \\ { 2 x + 7 } & { \text { for } x > 1 } \end{array} \right.\).</p><ol type="a" class="lower-alpha"><li><p>​Complete the table for <em>\(g(x)\)</em>below.</p><table class="parent-table"></table><table class="parent-table"></table></li><li><p>Using your table, make a careful sketch of the graph <em>\(y=g(x)\)</em>. Recall the use of open circles to indicate that an endpoint <em>is</em><em>not</em> included and closed circles to indicate that an endpoint <em>is</em> included. At which points will the open and closed circles be located on this graph?</p></li><li><p>What are the domain and the range of this function?</p></li></ol>
+ 
+  <!-- figure for 1-92 -->
+<div class="figure-block figure-xl">
+ <img src="figures/1-92.png" alt="Figure for problem 1-92" style="max-width:700px; height:auto;">
+</div>
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-93 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-93">
+  <div class="problem-number">1-93</div>
+  <p>Let \(f ( x ) = \left\{ \begin{array} { l l } { x ^ { 2 } + 2 } & { \text { for } x \leq 2 } \\ { \frac { 1 } { 2 } x + 5 } & { \text { for } x > 2 } \end{array} \right.\).</p><ol class="lower-alpha"><li><p>With your team, investigate this function thoroughly just as you have investigated other functions in the past. Remember all the aspects of investigating a function: Make a careful sketch, state the domain and range, and identify any <em>\(x\)</em>- and/or <em>\(y\)</em>-intercepts, lines of symmetry, asymptotes, and endpoints. Once you and your teammates have completely described the function, be ready to share your description with the rest of the class.</p></li><li><p>Research how to use domain restrictions for your particular graphing calculator. Then graph this function on your graphing calculator and verify that it agrees with your original graph.</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-95 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-95">
+  <div class="problem-number">1-95</div>
+  <p>Graph each piecewise-defined function given below and determine whether the function is continuous.</p><ol type="a" class="lower-alpha"><li><p>\(j ( x ) = \left\{ \begin{array} { l l } { 2 ^ { x } } & { \text { for } x \leq 2 } \\ { - 2 x + 9 } & { \text { for } x > 2 } \end{array} \right.\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(h ( x ) = \left\{ \begin{array} { l l } { x ^ { 2 } - 2 } & { \text { for } x \leq - 1 } \\ { x } & { \text { for } x > - 1 } \end{array} \right.\)</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-96 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-96">
+  <div class="problem-number">1-96</div>
+  <p>Graph each piecewise-defined function given below and determine whether the function is continuous.</p><ol type="a" class="lower-alpha"><li><p>\(f ( x ) = \left\{ \begin{array} { l l } { x + 4 } & { \text { for } x < - 2 } \\ { \frac { 1 } { 2 } x ^ { 2 } } & { \text { for } x \geq - 2 } \end{array} \right.\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(g ( x ) = \left\{ \begin{array} { l l } { x + 4} & {\text { for } x \geq 3 } \\ { \frac { 1 } { 2 } x ^ { 2 } } & { \text { for } x < 3 } \end{array} \right.\)</p></li></ol>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-97 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-97">
+  <div class="problem-number">1-97</div>
+  <p>Solid Increasing exponential curve, horizontal asymptote at, x axis, passing through the points (0, comma 1), &amp; (1, comma 3). A dashed line passing through the origin &amp; the point (1, comma 1)The graph of an exponential function is sketched below. Sketch the graph of the inverse and state the domain and range for the function and its inverse. The dotted line is <em>\(y=x\)</em>. <br></p>
+
+  <!-- figure for 1-97 -->
+  <div class="figure-block figure-md">
+    <img src="figures/1_97.png" alt="Figure for problem 1-97">
+  </div>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-98 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-98">
+  <div class="problem-number">1-98</div>
+  <p>A line passes through the point \((-3,20)\) and has a slope of \(-6\). Write the equation of this line in point-slope form.</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-99 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-99">
+  <div class="problem-number">1-99</div>
+  <p>Tiffani has a craft business that is expanding and she plans to cut down on expenses by purchasing craft paints in bulk. Most of them are straight mixtures, except for vibrant green, which she mixes specially. To create the mixture, she mixes one pint of the standard green paint with one teaspoon of red and two teaspoons of yellow. She has one pint of red and two pints of yellow paint that she wishes to add to the green paint to create the special mix. How many gallons of the green paint will she need in order to use all of her red and yellow paint? Below is a list of the equivalent measures.</p><p>\(\text{one gallon}=128\ \text{ounces}\)</p><p>\(\text{one ounce}=6\ \text{teaspoons}\)</p><p>\(\text{one pint}=16\ \text{ounces}\)</p><p>\(\text{one pint}=2\ \text{cups}\)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-100 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-100">
+  <div class="problem-number">1-100</div>
+  <p>Sketch the graph of <em>\(y=\frac{1}{2}x^3\)</em>.</p><ol class="lower-alpha"><li><p>What is the parent equation?</p></li><li><p>Graph the parent and transformed graphs on the same set of axes.</p></li><li><p>Describe the transformation.</p></li></ol>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-101 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-101">
+  <div class="problem-number">1-101</div>
+  <p>Rationalizing the denominator can make it easier to recognize “like terms” in expressions. <br>For example, \(\sqrt { 2 }\) and \(\frac { 1 } { \sqrt { 2 } }\) can be combined if \(\frac { 1 } { \sqrt { 2 } }\) is rewritten as \(\frac { 1 } { \sqrt { 2 } } \cdot \frac { \sqrt { 2 } } { \sqrt { 2 } } = \frac { \sqrt { 2 } } { 2 }\).<br>Then \(\sqrt{2}+\frac{1}{\sqrt{2}}=\)\(\sqrt{2}+\frac{\sqrt{2}}{2}=\frac{3\sqrt{2}}{2}\).<br>Use this method to combine the like terms of each radical expression below.</p><ol type="a" class="lower-alpha"><li><p>\(8\sqrt { 2 }-\frac{8}{\sqrt{2}}\)</p></li></ol><ol type="a" start="2" class="lower-alpha"><li><p>\(-5\sqrt{6}+\frac{4}{\sqrt{6}}\)</p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-102 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-102">
+  <div class="problem-number">1-102</div>
+  <p>Circle with a horizontal diameter, Right end point labeled, A, in top right quarter of the circle, point, labeled B, with radius from center to, B, labeled 1 m, and central angle for Arc, A,B, labeled 60 degrees.The circle at right has a radius of one meter.</p><ol type="a" class="lower-alpha"><li><p>How many degrees are in a half circle?</p></li><li><p>What is the length of the arc that covers half of the circle?</p></li><li><p>Using exact values, what is the length of \(\overparen {\textit{AB}}\)? You will have <em>\(\pi\)</em> as part of your answer.</p></li></ol>
+
+  <!-- figure for 1-102 -->
+  <div class="figure-block figure-sm">
+    <img src="figures/1_102.png" alt="Figure for problem 1-102">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+</div>
+</body>
+</html>

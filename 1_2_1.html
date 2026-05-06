@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1_2_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Exact setup based on the user's uploaded Section X.X file -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- LOCKED / FROZEN FROM 1_1_1.html -->
+<!-- ====================================================== -->
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- FILE HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 1.2.1</h1>
+<div class="intro-text">Direct rebuild for Lesson 1.2.1 from the uploaded source HTML. Frozen head/style from 1_1_1.html. Homework Help text omitted. Code comments included for easier editing.</div>
+
+<!-- ====================================================== -->
+<!-- SECTION START LABEL -->
+<!-- ====================================================== -->
+<div class="section-label">Start of Section 1.2.1</div>
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<div class="lesson-header">
+  <h2>1.2.1</h2>
+  <div class="lesson-subtitle">Directly extracted from source; no reconstructed problem text.</div>
+</div>
+
+
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-69 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-69">
+  <div class="problem-number">1-69</div>
+  <p>Let <em>\(f(x)=2x^2-5\)</em> and <em>\(g(x)=3x-1\)</em>. Evaluate:</p><ol type="a"><li><p><em>\(f(g(2))\) </em></p></li></ol><ol type="a" start="2"><li><p><em>\(g(f(-1))\) </em></p></li></ol><ol type="a" start="3"><li><p><em>\(f(g(x))\) </em></p></li></ol><ol type="a" start="4"><li><p><em>\(g(f(x))\) </em></p></li></ol>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-70 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-70">
+  <div class="problem-number">1-70</div>
+  <p>Solve for <em>\(x\)</em>: \(k=\frac{3x+2}{x-1}\)</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-71 -->
+<!-- ====================================================== -->
+
+
+<section class="problem" id="problem-1-71">
+  <div class="problem-number">1-71</div>
+  <p>Graph <em>\(y=(x+2)^3\)</em>. How does your graph compare to the graph of <em>\(y=x^3\)</em>?</p>
+
+ 
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-72 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-72">
+  <div class="problem-number">1-72</div>
+  <p>In this course, you will need to <span>rationalize the denominator</span> (make the denominator a rational number) of fractions with radicals in the denominator. Before calculators, there was good reason to rationalize denominators—all calculations had to be done by hand. Consider dividing \(1\) by \(\sqrt { 3 }\), or \(\frac { 1 } { \sqrt { 3 } }\). What about dividing \(\sqrt { 3 }\) by \(3\), or \(\frac { \sqrt { 3 } } { 3 }\)? Since \(\frac { \sqrt { 3 } } { 3 }\) was a more useful form, it became the standard form. Use the following method to rationalize the denominator of each radical expression below: \(\frac{1}{\sqrt{3}}·\frac{\sqrt{3}}{\sqrt{3}}=\frac{\sqrt{3}}{3}\).</p><ol type="a"><li><p>\(\frac { 2 } { \sqrt { 3 } }\)</p></li></ol><ol type="a" start="2"><li><p>\(\frac { 2 } { \sqrt { 2 } }\)</p></li></ol><ol type="a" start="3"><li><p>\(\frac { 2 } { 3 \sqrt { 5 } }\)</p></li></ol>
+
+  
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-73 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-73">
+  <div class="problem-number">1-73</div>
+  <p>Use the triangle at right to answer the following questions.</p><ol type="a"><li><p>What kind of a special triangle is this?</p></li><li><p>What is the exact length of <em>\(\overline{PQ}\)</em>?</p></li><li><p>What is the exact length of side <em>\(\overline{QR}\)</em>?</p></li><li><p>Write and simplify the sine ratio for \(∠P\). Leave in simplified radical form.</p></li></ol>
+
+  <!-- figure for 1-73 -->
+  <div class="figure-block figure-md">
+    <img src="figures/1_73.png" alt="Figure for problem 1-73">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-74 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-74">
+  <div class="problem-number">1-74</div>
+  <p>Consider the function <em>\(f(x)=5x-3\)</em>.</p><ol><li><p>Describe, in words, what the function does to any input.</p></li><li><p>List steps, in order, that will “undo” the function.</p></li><li><p>Write an equation for the steps you wrote in part (b).<br> Name this equation <em>\(g\)</em>.</p></li><li><p>What happens if you compose <em>\(f\)</em> and <em>\(g\)</em>? Use the function machine diagram at right to evaluate <em>\(g(f(5))\)</em>. Explain why your answer makes sense.</p></li></ol>
+
+  <!-- figure for 1-74 -->
+  <div class="figure-block figure-md">
+    <img src="figures/1_74.png" alt="Figure for problem 1-74">
+  </div>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 1-75 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-1-75">
+  <div class="problem-number">1-75</div>
+  <p>For what values of <em>\(x\)</em> is \(\sqrt { 3 - x }\) a real number?</p>
+
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+</div>
+</body>
+</html>
