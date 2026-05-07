@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4_3_1.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 4.3.1</h1>
+<div class="lesson-header">
+  <h2>4.3.1 What’s your sign?</h2>
+  <div class="lesson-subtitle">Polynomial and Rational Inequalities</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-109 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-109">
+  <div class="problem-number">4-109</div>
+  <p>Solve the inequalities shown and express the solutions in both interval and inequality notation.</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <ol type="a" class="lower-alpha">
+        <li><p>\(x^2-7x\le-6\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-6">
+      <ol start="2" type="a" class="lower-alpha">
+        <li><p>\((x-2)(x-1)(x+3)&lt;0\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-110 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-110">
+  <div class="problem-number">4-110</div>
+  <p>Rewrite \(f(x)=\frac{3x-2}{x+1}\) in the form \(y=\frac{a}{x-h}+k\). Then sketch its graph and state the domain, range, intercepts, and end behavior.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-111 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-111">
+  <div class="problem-number">4-111</div>
+  <p>A cubic function has roots of <em>\(x=3\)</em>, <em>\(x=2+i\)</em>, and <em>\(x=2-i\)</em>. Write a possible equation for the function in standard form.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-112 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-112">
+  <div class="problem-number">4-112</div>
+  <p>Use the functions shown to write an equation for <em>\(f(x_n)\)</em>.</p>
+  <div class="figure-block figure-xs">
+    <img src="figures/4-112.png" alt="Figure for problem 4-112">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-113 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-113">
+  <div class="problem-number">4-113</div>
+  <p>Write an equation for the inverse of each function below. Be sure to state any necessary domain restrictions.</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <ol type="a" class="lower-alpha">
+        <li><p>\(g\left(x\right)=\sqrt{2x}-3\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-6">
+      <ol start="2" type="a" class="lower-alpha">
+        <li><p>\(h(x)=2x^3+14\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-114 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-114">
+  <div class="problem-number">4-114</div>
+  <p>Sketch the graph of <em>\(f(x)=x(x+3)(x-4.5)\)</em>. Then use your graph of <em>\(y=f(x)\)</em> to sketch a graph of <em>\(y=\frac{1}{f(x)}\)</em>.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-115 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-115">
+  <div class="problem-number">4-115</div>
+  <p>\(\frac{x^2-3x+A}{x-1}=x+B\) for some numbers <em>\(A\)</em> and <em>\(B\)</em>. Determine the values of <em>\(A\)</em> and <em>\(B\)</em>.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-116 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-116">
+  <div class="problem-number">4-116</div>
+  <p>This problem is a checkpoint for writing equations of and graphing trigonometric functions.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write an equation for the graph shown.</p></li>
+  </ol>
+  <div class="figure-block figure-md">
+    <img src="figures/4-116.png" alt="Figure for problem 4-116">
+  </div>
+  <ol start="2" type="a" class="lower-alpha">
+    <li><p>Graph two cycles of <em>\(y=-2\cos(x)+1\)</em>.</p></li>
+    <li><p>Write the equation of your graph from part (b) as a transformation of the sine function.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

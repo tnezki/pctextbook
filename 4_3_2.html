@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4_3_2.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 4.3.2</h1>
+<div class="lesson-header">
+  <h2>4.3.2 How can I use polynomials to make rational decisions?</h2>
+  <div class="lesson-subtitle">Applications of Polynomial and Rational Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-119 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-119">
+  <div class="problem-number">4-119</div>
+  <p>Solve the inequalities below and express the solutions in both interval and inequality notation.</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <ol type="a" class="lower-alpha">
+        <li><p>\((1-x)(x-3)(x-5)&gt;0\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-6">
+      <ol start="2" type="a" class="lower-alpha">
+        <li><p>\(x^2-2x-15&lt;0\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-120 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-120">
+  <div class="problem-number">4-120</div>
+  <p>Use polynomial division to rewrite the equation of <em>\(r(x)=\frac{3x^2+x-5}{x-4}\)</em>. Then graph the function and describe the end behavior.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-121 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-121">
+  <div class="problem-number">4-121</div>
+  <p>Spannoni’s Deli is keeping track of the rate of customers who are served on a typical day.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/4-121.png" alt="Figure for problem 4-121">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>Why does this graph have this kind of shape?</p></li>
+    <li><p>What does the area shown in the shaded region represent? The interval of the shaded region starts at 11 a.m. and ends at 1 p.m.</p></li>
+    <li><p>Ms. Spannoni thinks that they should hire an extra worker for the lunch rush, 11 a.m. to 1 p.m., if they have over \(16\) customers during that time. Should they hire an extra worker?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-122 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-122">
+  <div class="problem-number">4-122</div>
+  <p>Solve each equation.</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <ol type="a" class="lower-alpha">
+        <li><p>\(x^3-3x^2-10x=0\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-6">
+      <ol start="2" type="a" class="lower-alpha">
+        <li><p>\(c^4-12c^2-64=0\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-123 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-123">
+  <div class="problem-number">4-123</div>
+  <p>Let \(f(x)=\left\{ \begin{array} { c c c } { x ^ { 2 } } & { \text { for } } & { x &lt; 2 } \\ { 4 } & { \text { for } } & { x \geq 2 } \end{array} \right.\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Let <em>\(g(x)=f(x)+2\)</em> and <em>\(k(x)=f(x-3)\)</em>. Graph the functions <em>\(f\)</em>, <em>\(g\)</em>, and <em>\(k\)</em> on the same set of axes. Use contrasting colors and label the graphs.</p></li>
+    <li><p>Write explicit equations to represent the functions <em>\(g\)</em> and <em>\(k\)</em>. Be sure to change the domain of <em>\(f\)</em> when writing these equations.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-124 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-124">
+  <div class="problem-number">4-124</div>
+  <p>Graph each of the following functions and state the equations of the asymptotes.</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <ol type="a" class="lower-alpha">
+        <li><p>\(y=\frac{10}{x}\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-6">
+      <ol start="2" type="a" class="lower-alpha">
+        <li><p>\(y=0.5^x\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <ol start="3" type="a" class="lower-alpha">
+        <li><p>\(y=\frac{1}{x+2}\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-6">
+      <ol start="4" type="a" class="lower-alpha">
+        <li><p>\(y=2^x-3\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-125 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-125">
+  <div class="problem-number">4-125</div>
+  <p>For each situation below, write an equation for an exponential function.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Bread costs \(\$1.87\) now and is increasing in price by \(2\%\) each month.</p></li>
+    <li><p>A car is worth \(\$12000\) now and is depreciating in value by \(12\%\) each year.</p></li>
+    <li><p>Bacteria grow at a rate of \(30\%\) every hour. There are currently \(1000\).</p></li>
+    <li><p>A \(\$5000\) investment earns \(1\%\) interest every month.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 4-126 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-4-126">
+  <div class="problem-number">4-126</div>
+  <p>Write an equation for an exponential function of the form <em>\(y=a\cdot b^x\)</em> that passes through the points \((2,18)\) and \((4,162)\). </p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+</div>
+</body>
+</html>
