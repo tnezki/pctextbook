@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5_1_1.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 5.1.1</h1>
+<div class="lesson-header">
+  <h2>5.1.1 How can I use exponential functions?</h2>
+  <div class="lesson-subtitle">Applications of Exponential Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-4 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-4">
+  <div class="problem-number">5-4</div>
+  <p>Noah Clue’s work for the following algebra problem is given below:</p>
+  <p>When the Foresthill Wildfire band returned from a recent competition, <em>\(24\)</em> of the students attended school before realizing they had contracted a strong flu virus. The virus quickly spread and each day the number of students with the flu increased by an estimated <em>\(30\%\)</em>. How many people will have the flu after five days?</p>
+  <p style="text-align:center;"><em>\(y=24(0.3)^5\)</em><br><em>\(y=0.0582\)</em></p>
+  <p>Explain completely what Noah’s mistake is and write a complete solution to the problem.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-5 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-5">
+  <div class="problem-number">5-5</div>
+  <p>Most investments receive compound interest as opposed to simple interest. This allows an investment to earn interest on the interest already received. Miranda plans to invest <em>\(\$5500\)</em>. Calculate the value of her investment after one year, given the following rates:</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Annual interest of <em>\(12\%\)</em> compounded monthly.</p></li>
+    <li><p>Annual interest of <em>\(8\%\)</em> compounded quarterly (<em>\(4\)</em> times per year).</p></li>
+    <li><p>Annual interest of <em>\(5.2\%\)</em> compounded weekly.</p></li>
+    <li><p>Annual interest of <em>\(7.3\%\)</em> compounded daily.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-6 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-6">
+  <div class="problem-number">5-6</div>
+  <p>Write out the sum and calculate: <em>\(\displaystyle \sum_{k=2}^{5}(k-2)^2\)</em></p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-7 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-7">
+  <div class="problem-number">5-7</div>
+  <p>Use the graph of <em>\(f(x)=-x^2+9\)</em> to sketch the graph of <em>\(y=\frac{1}{f(x)}\)</em> without using a graphing calculator. State the equations of the asymptotes in the graph of <em>\(y=\frac{1}{f(x)}\)</em>.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-8 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-8">
+  <div class="problem-number">5-8</div>
+  <p>Given the function <em>\(f(x)=\left\{ \begin{array}{ll} x^2+a & \text{ for } x \leq 1 \\ -2ax+7 & \text{ for } x > 1 \end{array} \right.\)</em>, what must the value of <em>\(a\)</em> be so that <em>\(y=f(x)\)</em> is continuous at <em>\(x=1\)</em>? (You can draw it without lifting your pencil.)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-9 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-9">
+  <div class="problem-number">5-9</div>
+  <p>Evaluate each of the following trigonometric expressions without a calculator.</p>
+  <div class="row">
+    <div class="col-sm-4">
+      <ol type="a" class="lower-alpha">
+        <li><p>\(\sin\left(\frac{5\pi}{3}\right)\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-4">
+      <ol start="2" type="a" class="lower-alpha">
+        <li><p>\(\cos\left(-\frac{\pi}{4}\right)\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-4">
+      <ol start="3" type="a" class="lower-alpha">
+        <li><p>\(\tan\left(\frac{\pi}{2}\right)\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-10 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-10">
+  <div class="problem-number">5-10</div>
+  <p>Sketch the graph of <em>\(f(x)=x^2(x+3)^2(x-1)^2\)</em> without using a graphing calculator. Do not scale your axes, but be sure to label the important points. Describe the end behavior.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-11 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-11">
+  <div class="problem-number">5-11</div>
+  <p>Driving from Cleveland to Washington, D.C., Ernie averaged <em>\(60\)</em> mph for the first <em>\(2\)</em> hours, <em>\(20\)</em> mph the next hour due to construction, and <em>\(65\)</em> mph for the final <em>\(3\)</em> hours of his journey.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>How fast was Ernie going after one hour?</p></li>
+    <li><p>What was Ernie’s average rate for his entire <em>\(6\)</em>-hour trip?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5_1_2.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 5.1.2</h1>
+<div class="lesson-header">
+  <h2>5.1.2 Can two transformations be equivalent?</h2>
+  <div class="lesson-subtitle">Stretching Exponential Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-18 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-18">
+  <div class="problem-number">5-18</div>
+  <p>For each of the following functions, compare the graph of <em>\(y=g(x)\)</em> to the graph of <em>\(f(x)=x^2\)</em>. Describe the transformation using words.</p>
+  <div class="row">
+    <div class="col-sm-4">
+      <ol type="a" class="lower-alpha">
+        <li><p>\(g(x)=3x^2\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-4">
+      <ol start="2" type="a" class="lower-alpha">
+        <li><p>\(h(x)=(3x)^2\)</p></li>
+      </ol>
+    </div>
+    <div class="col-sm-4">
+      <ol start="3" type="a" class="lower-alpha">
+        <li><p>\(g(x)=\left(\frac{1}{4}x\right)^2\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <p>Sometimes <em>\(f(x)\)</em> will look like a vertical stretch. Explain why when you look at the graph of <em>\(g(x)=(3x)^2\)</em> it would not appear to be stretched.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-19 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-19">
+  <div class="problem-number">5-19</div>
+  <p>Consider <em>\(h(x)=3(2)^{x-2}\)</em>.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Describe the transformation from <em>\(y=2^x\)</em> to <em>\(y=h(x)\)</em>.</p></li>
+    <li><p>What is the <em>\(y\)</em>-intercept of <em>\(y=h(x)\)</em>?</p></li>
+    <li><p>Write the equation of an exponential function in the form <em>\(m(x)=A(2)^x\)</em> with the same <em>\(y\)</em>-intercept as part (b).</p></li>
+    <li><p>Is <em>\(m(x)=h(x)\)</em>? Justify your answer algebraically.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-20 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-20">
+  <div class="problem-number">5-20</div>
+  <p>Use your knowledge of compound interest to complete the parts below.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>How much money will you have after <em>\(5\)</em> years if <em>\(\$1050\)</em> is invested at <em>\(7\%\)</em> annual interest, compounded quarterly?</p></li>
+    <li><p>How long will it take an account to pass <em>\(\$11,000\)</em> if <em>\(\$500\)</em> is invested at <em>\(8.2\%\)</em> annual interest, compounded monthly?</p></li>
+    <li><p>Write an equation for the amount of money you will have after <em>\(t\)</em> years if <em>\(P\)</em> dollars are invested at <em>\(4.6\%\)</em> annual interest, compounded <em>\(n\)</em> times per year.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-21 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-21">
+  <div class="problem-number">5-21</div>
+  <p>Rewrite <em>\(y=\frac{2\cdot3^x}{5}\)</em> as a transformation of <em>\(y=\frac{1}{x}\)</em>. State the asymptotes for the function.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-22 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-22">
+  <div class="problem-number">5-22</div>
+  <p>Solve for <em>\(x\)</em> on the indicated domain. Begin by solving for the function. Recall that if no domain is indicated, the domain is all real numbers. Remember to use a unit circle or graph as a visual model.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(2\sin(x)-1=0\)</p></li>
+    <li><p>\(2+2\cos(x)=0\)</p></li>
+    <li><p>\(\sqrt{2}-2\sin(x)=0\)</p></li>
+    <li><p>\(\cos(x)+3=0\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-23 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-23">
+  <div class="problem-number">5-23</div>
+  <p>Complete the following division problem. Express any remainder as a fraction.</p>
+  <p style="text-align:center;"><em>\(\frac{2x^4-x^3+x+5}{x-1}\)</em></p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-24 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-24">
+  <div class="problem-number">5-24</div>
+  <p>Solve for <em>\(x\)</em>: <em>\(x+\frac{2}{x}=x+2\)</em></p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-25 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-25">
+  <div class="problem-number">5-25</div>
+  <p>In a previous CPM course you may have seen the ancient puzzle mathematicians first created in India in the second century BCE. Below are some clues to help you figure out how the puzzle works. Use the clues in the puzzle to evaluate each logarithmic expression below.</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <p>\(\log_3(16)=4\)</p>
+      <p>\(\log_2(81)=2\)</p>
+      <p>\(\log_5(25)=2\)</p>
+      <p>\(\log(1000)=3\)</p>
+    </div>
+    <div class="col-sm-6">
+      <ol type="a" class="lower-alpha">
+        <li><p>\(\log_3(81)\)</p></li>
+        <li><p>\(\log_4(64)\)</p></li>
+        <li><p>\(\log_4\left(\frac{1}{16}\right)\)</p></li>
+        <li><p>\(\log(100)\)</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+</div>
+</body>
+</html>

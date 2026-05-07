@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5_2_5.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen style base -->
+<!-- ====================================================== -->
+<style>
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 5.2.5</h1>
+<div class="lesson-header">
+  <h2>5.2.5 Is true love exponential?</h2>
+  <div class="lesson-subtitle">Applications of Exponentials and Logarithms</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-112 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-112">
+  <div class="problem-number">5-112</div>
+  <p>An original journal of Benjamin Franklin is up for bid at an auction house. Each bidder increases the previous bid by 25%. The 12<sup>th</sup> bid is $43,656. What was the original bid? When will the journal exceed $1,000,000?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-113 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-113">
+  <div class="problem-number">5-113</div>
+  <p>Rewrite each expression in the form <em>a(b)<sup>x</sup></em>.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><em>6·2<sup>4x+3</sup></em></p></li>
+    <li><p><em>18·3<sup>3x−4</sup></em></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-114 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-114">
+  <div class="problem-number">5-114</div>
+  <p>Copy and replace the question mark with the correct value, or state “impossible” and explain why.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><em>log</em><sub>2</sub><em>(□)=7</em></p></li>
+    <li><p><em>ln(?)=0</em></p></li>
+    <li><p><em>log</em><sub>3</sub><em>(27√3)=7</em></p></li>
+    <li><p><em>ln(e<sup>?</sup>)=7</em></p></li>
+    <li><p><em>log</em><sub>4</sub><em>(8)=?</em></p></li>
+    <li><p><em>log</em><sub>5</sub><em>(√25)=?</em></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-115 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-115">
+  <div class="problem-number">5-115</div>
+  <p>Given <em>log(M)=5.4</em>, <em>log(N)=1.2</em>, and <em>log(T)=−1.4</em>, evaluate <em>log √</em><span style="font-size:0.85em; vertical-align:super;">3</span><em> </em><span>
+</span><em>(M</em><sup><em>2</em></sup><em>N/T)</em>.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-116 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-116">
+  <div class="problem-number">5-116</div>
+  <p>Graph <em>f(x)=log(x2+4)</em> and state the domain and range.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-117 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-117">
+  <div class="problem-number">5-117</div>
+  <p>Given the function <em>F(x)=</em> <span style="font-size:1.15em;">\(\frac{x+1}{x^2+1}\)</span><em>, answer the following questions.</em></p>
+  <ol type="a" class="lower-alpha">
+    <li><p>On what intervals is the function increasing?</p></li>
+    <li><p>Where is the function concave up?</p></li>
+    <li><p>Where is the function concave down?</p></li>
+    <li><p>Is <em>F</em> even, odd, or neither? Justify your answer algebraically.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-118 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-118">
+  <div class="problem-number">5-118</div>
+  <p>Solve: <em>0 = x</em><sup><em>5</em></sup><em> + x</em><sup><em>4</em></sup><em> − 20x</em><sup><em>3</em></sup><em> − 68x</em><sup><em>2</em></sup><em> − 80x − 32</em></p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-119 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-119">
+  <div class="problem-number">5-119</div>
+  <p>Samantha and Jeanne each create a rational expression with a linear factor in the denominator and give the sum of their expressions to Sarah and Karen, challenging them to figure out the original fractions. If the sum is <em>\(\frac{23x+45}{(2x+5)(x−4)}\)</em> what were Samantha and Jeanne’s original fractions?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-120 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-120">
+  <div class="problem-number">5-120</div>
+  <p>An investment of $5000 is placed in an account that accrues 3% interest, compounded continuously. What is the value of the investment after 10 years? How long will it take for the investment to double?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-121 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-121">
+  <div class="problem-number">5-121</div>
+  <p>Solve each of the following equations. Use exact values.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><em>log(x + 3) = 2</em></p></li>
+    <li><p><em>ln(x + 3) = 3</em></p></li>
+    <li><p><em>ln(3) + ln(x) = 4</em></p></li>
+    <li><p><em>ln(x + 4) − ln(x) = 2</em></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-122 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-122">
+  <div class="problem-number">5-122</div>
+  <p>Let <em>f(x)=−2log(x−2)</em>.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Sketch a graph of <em>y=f(x)</em>.</p></li>
+    <li><p>What are the domain and range of <em>f</em>?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-123 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-123">
+  <div class="problem-number">5-123</div>
+  <p>Write the equation of the inverse for each function.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><em>f(x)=−5(3</em><sup><em>x</em></sup><em>)<sup>−1</sup> + 8</em></p></li>
+    <li><p><em>g(x)=</em> <span style="font-size:1.15em;">\(\frac{3}{\sqrt{x−6}}\)</span><em> − 4</em></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-124 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-124">
+  <div class="problem-number">5-124</div>
+  <p>Sylvie needs to solve <em>cos(x)=−0.1</em> on a math test. She knows that <em>cos</em><sup><em>−1</em></sup><em>(x)</em> is the inverse function for cosine, so she applies this function to both sides of the equation. This gives her <em>x=cos</em><sup><em>−1</em></sup><em>(−0.1)=1.57</em>. But when her test is returned, she learns she earned only partial credit on the problem.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Why did Sylvie only get partial credit?</p></li>
+    <li><p>What should Sylvie have answered to receive full credit? Explain your answer.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-125 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-125">
+  <div class="problem-number">5-125</div>
+  <p>Solve each of the following inequalities.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><em>\(\frac{4x+1}{x−1}>1\)</em></p></li>
+    <li><p><em>x</em><sup><em>3</em></sup><em> − x</em><sup><em>2</em></sup><em> − 17x ≤ 15</em></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-126 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-126">
+  <div class="problem-number">5-126</div>
+  <p>Given <em>f(x)=4x + 2</em>, <em>g(x)=10x</em><sup><em>2</em></sup><em> − 8</em>, and <em>h(x)=√x + 2</em>, write equations for:</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><em>f(g(−2))</em></p></li>
+    <li><p><em>g(f(h(0)))</em></p></li>
+    <li><p><em>h</em><sup><em>−1</em></sup><em>(6)</em></p></li>
+    <li><p><em>g(h(0))</em></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 5-127 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-5-127">
+  <div class="problem-number">5-127</div>
+  <p>This problem is a checkpoint for operations with rational expressions and complex fractions. Simplify each of the following expressions. Be sure to state any necessary restrictions of the variable(s).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><span style="font-size:1.1em;">\(\frac{x}{x^2−2x+1}+\frac{4}{x^2−1}\)</span></p></li>
+    <li><p><span style="font-size:1.1em;">\(\frac{7x^2−1}{x^2−2x−3}\cdot\frac{9x+1}{x^2−x−2}\)</span></p></li>
+    <li><p><span style="font-size:1.1em;">\(\frac{1+\frac{3}{x}}{2+\frac{4}{x}}\)</span></p></li>
+  </ol>
+  <p>Check your answers by referring to the selected answers located at the back of your book.</p>
+  <p>Ideally at this point you are comfortable working with these types of problems and can complete them correctly. If you feel that you need more confidence when completing these types of problems, then review the Rational Expressions and Complex Fractions Checkpoint materials available at cpm.org and try the practice problems provided. From this point on, you will be expected to complete these correctly and with confidence.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>
