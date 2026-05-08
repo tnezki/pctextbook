@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8_2_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 8.2.1</h1>
+<div class="lesson-header">
+  <h2>8.2.1 How can I graph them?</h2>
+  <div class="lesson-subtitle">Graphing Reciprocal Trigonometric Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-61 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-61">
+  <div class="problem-number">8-61</div>
+  <p>There are no buttons for secant, cosecant, or cotangent on a calculator. In order to evaluate these expressions, the definition of the reciprocal function needs to be utilized. Use a calculator to evaluate each of the expressions below. The first answer is given as a check. All angles are in radians.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\operatorname{csc}(3)\approx 7.086\)</p></li>
+    <li><p>\(\cot\left(\frac{2}{7}\right)\)</p></li>
+    <li><p>\(\sec\left(\frac{4\pi}{5}\right)\)</p></li>
+    <li><p>\(\csc(x)=1\)</p></li>
+    <li><p>\(\sin(x)=\frac{\sqrt{2}}{2}\)</p></li>
+    <li><p>\(\csc(x)=\sqrt{2}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-62 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-62">
+  <div class="problem-number">8-62</div>
+  <p>The diagram has three right triangles. How are these three triangles related? Use this relationship to calculate the value of \(x\) in the diagram.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/8-62.png" alt="Figure for problem 8-62">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-63 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-63">
+  <div class="problem-number">8-63</div>
+  <p>Use the Pythagorean Identity to simplify each trigonometric expression.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\cos^{2}(\theta)+\sin^{2}(\theta)\)</p></li>
+    <li><p>\(1-\cos^{2}(\theta)\)</p></li>
+    <li><p>\(1-\cos^{2}(5)\)</p></li>
+    <li><p>\(1-\sin^{2}(\beta)\)</p></li>
+    <li><p>\(1-\sin^{2}(3\delta)\)</p></li>
+    <li><p>\(4-4\sin^{2}(3\delta)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-64 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-64">
+  <div class="problem-number">8-64</div>
+  <p>The graphs of \(y=f(x)\) and \(y=g(x)\) are shown below. Write an equation in terms of \(f(x)\) that will transform the graph of \(y=f(x)\) into \(y=g(x)\).</p>
+  <div class="figure-block figure-full">
+    <img src="figures/8-64.png" alt="Figure for problem 8-64">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-65 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-65">
+  <div class="problem-number">8-65</div>
+  <p>Complete the following division problem. Express any remainder as a fraction.</p>
+  <p style="text-align:center;">\(\left(4x^4-2x^3-7x-5\right)\div\left(2x-3\right)\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-66 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-66">
+  <div class="problem-number">8-66</div>
+  <p>Find the slope of the secant line through the points \(\left(x,f(x)\right)\) and \(\left(x+h,f(x+h)\right)\). The answer will be an algebraic expression, not a number. This expression should look familiar. What is another name for this expression?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-67 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-67">
+  <div class="problem-number">8-67</div>
+  <p>Given vectors \(\vec{\text{u}}=\langle -3,2\rangle\) and \(\vec{\text{v}}=\langle 4,-1\rangle\), if \(\vec{\text{w}}=2\vec{\text{u}}-3\vec{\text{v}}\), what is \(||\vec{\text{w}}||\)?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-68 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-68">
+  <div class="problem-number">8-68</div>
+  <p>Consider the graphs of \(y=\sin(x+\pi)\) and \(y=-\sin(x)\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Sketch both graphs on separate axes.</p></li>
+    <li><p>What do you notice?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

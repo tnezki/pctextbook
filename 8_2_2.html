@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8_2_2.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{ page-break-before:always; }
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+.lesson-header{ margin-bottom:18px; }
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{ margin-bottom:8px; }
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{ margin-bottom:6px; }
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 8.2.2</h1>
+<div class="lesson-header">
+  <h2>8.2.2 How can I picture it?</h2>
+  <div class="lesson-subtitle">Trigonometric Functions, Geometrically</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-73 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-73">
+  <div class="problem-number">8-73</div>
+  <p>Given \(\theta=\frac{\pi}{3}\), what is the <em>exact</em> value of each of the following trigonometric expressions?</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\sec\left(\theta\right)\)</p></li>
+    <li><p>\(\csc\left(\theta\right)\)</p></li>
+    <li><p>\(\tan\left(\theta\right)\)</p></li>
+    <li><p>\(\cot\left(\theta\right)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-74 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-74">
+  <div class="problem-number">8-74</div>
+  <p>Given <em>\(s^2+c^2=1\)</em>, rewrite the following expressions using only <em>\(c\)</em>.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\frac{s}{1+c}\)</p></li>
+    <li><p>\(\frac{c}{1+s}+\frac{c}{1-s}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-75 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-75">
+  <div class="problem-number">8-75</div>
+  <p>The average high temperature for Glen Rock, PA, can be modeled using a sinusoidal function. The highest average temperature of \(85^\circ\text{F}\) occurs on July 17 (Day \(197\)). The lowest average temperature of \(37^\circ\text{F}\) occurs on January 18 (Day \(17\)). Write an equation that will model the temperature in Glen Rock, PA. Use the equation to estimate the high temperature on Valentines Day (Day \(44\)). Assume \(365\) days in a year.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-76 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-76">
+  <div class="problem-number">8-76</div>
+  <p>Write an equation for a fourth-degree polynomial that has a double root at <em>\(x=-3\)</em>, a complex root of <em>\(x=1-2i\)</em>, and passes through the point \(\left(2,-25\right)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-77 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-77">
+  <div class="problem-number">8-77</div>
+  <p>Use the properties of logarithms to write each of the following expressions using a single logarithm.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(2\log\left(m\right)-3\log\left(n\right)+\frac{1}{2}\log\left(p\right)\)</p></li>
+    <li><p>\(\frac{1}{2}\left(\log\left(a\right)+2\log\left(b\right)-3\log\left(c\right)\right)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-78 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-78">
+  <div class="problem-number">8-78</div>
+  <p>Let \(h(x)=\sqrt[3]{2x-1}+10x-5\). Write equations of functions <em>\(f\)</em> and <em>\(g\)</em>, such that:</p>
+  <ol type="a" class="lower-alpha">
+    <li><p><em>\(f(g(x))=h(x)\)</em></p></li>
+    <li><p><em>\(f(x)-g(x)=h(x)\)</em></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-79 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-79">
+  <div class="problem-number">8-79</div>
+  <p>Write the equation of the line tangent to the circle <em>\(x^2+y^2=25\)</em> at the point \(\left(3,4\right)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-80 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-80">
+  <div class="problem-number">8-80</div>
+  <p>Calculate the angle between each pair of vectors below.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\langle -6,3\rangle\) and \(\langle 2,4\rangle\)</p></li>
+    <li><p>\(\langle 1,-2\rangle\) and \(\langle -3,-5\rangle\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>

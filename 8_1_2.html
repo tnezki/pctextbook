@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8_1_2.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 8.1.2</h1>
+<div class="lesson-header">
+  <h2>8.1.2 How are periodic functions used?</h2>
+  <div class="lesson-subtitle">Modeling With Periodic Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-26 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-26">
+  <div class="problem-number">8-26</div>
+  <p>Jade is having a wonderful time riding a carousel. Her distance, <em>d</em> (in feet), from the fence nearest her entrance is given by the equation <em>\(d = 25\sin\left(\frac{\pi}{8}t\right) + 35\)</em>, where <em>t</em> is the time in seconds since the carousel started to move.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>How close can Jade be to the fence?</p></li>
+    <li><p>How much time does it take for the carousel to complete one revolution?</p></li>
+    <li><p>When is Jade 60 feet from the fence for the second time?</p></li>
+    <li><p>Sketch the graph of this situation. Label and scale the axes appropriately.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-27 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-27">
+  <div class="problem-number">8-27</div>
+  <p>Solve the system of equations.</p>
+  <p>
+\[
+\left\{
+\begin{array}{l}
+5^x\cdot 5^y = 25 \\
+\log(x) + \log(y) + 9 = \log(12)
+\end{array}
+\right.
+\]
+</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-28 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-28">
+  <div class="problem-number">8-28</div>
+  <p>The tiny town of Twinypicks is located next to a deep, both of which are in between two mountain peaks. The profile of the landscape can be modeled by the function \(d(x)= -0.0005(x^3 + 3)(x + 1)(x^3 - 4.5)\) where \(x\) is horizontal distance in miles and \(f(x)\) is miles above sea level. The lake is below sea level.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Sketch the graph of the profile of the landscape on the appropriate domain.</p></li>
+    <li><p>If the width of the lake is captured in the profile of the landscape, approximately how wide is the lake?</p></li>
+    <li><p>Approximately how wide is the town if there is nothing above 100 feet over sea level?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-29 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-29">
+  <div class="problem-number">8-29</div>
+  <p>The volume of an open-top box is \(30in^3\). The length of the base is twice the width.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Sketch a labeled diagram.</p></li>
+    <li><p>Express the total outside surface area, \(S\), in terms of the width, \(x\). Simplify.</p></li>
+    <li><p>What width will minimize the surface area?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-30 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-30">
+  <div class="problem-number">8-30</div>
+  <p>An exponential function passes through the points \((1,70)\) and \((3,145)\). The function has a horizontal asymptote at \(y=10\). Write an equation for the function.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-31 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-31">
+  <div class="problem-number">8-31</div>
+  <p>What is the average rate of change for the following functions over the given intervals?</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(f(x)=\sin(x),\ 5\le x\le \pi\)</p></li>
+    <li><p>\(f(x)=\log(x),\ 1.5\le x\le 10\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-32 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-32">
+  <div class="problem-number">8-32</div>
+  <p>Let \(\vec{w}=3\mathbf{i}-2\mathbf{j}\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>What two vectors have the same magnitude as \(\vec{w}\) but are perpendicular to \(\vec{w}\)?</p></li>
+    <li><p>What is the unit vector that is in the same direction as \(\vec{w}\)?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-33 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-33">
+  <div class="problem-number">8-33</div>
+  <p>An indoor physical fitness room consists of a rectangular region with a semicircle on each end. The perimeter of the room has to be a 200-meter running track. Let \(A\) be the area of the rectangular region. Label all parts of the room. Note that \(x\) is the radius of the circular section.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/8-33.png" alt="Figure for problem 8-33">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write an equation for \(y\) in terms of \(x\).</p></li>
+    <li><p>Express \(A\) as a function of \(x\).</p></li>
+    <li><p>What diameter will create a maximum area for the physical fitness room?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-34 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-34">
+  <div class="problem-number">8-34</div>
+  <p>Lauren is playing with a yo-yo and keeping track of its height over time. She has plotted some key points on the graph at right. The \(y\)-values are in inches and the \(x\)-values are in seconds. Complete the following problems below based on the graph.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/8-34.png" alt="Figure for problem 8-34">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>How much time does it take to complete one cycle?</p></li>
+    <li><p>How long is the string?</p></li>
+    <li><p>Write an equation that models the height of the yo-yo over time.</p></li>
+    <li><p>Determine the first two times when the yo-yo is exactly 30 inches above the ground.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-35 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-35">
+  <div class="problem-number">8-35</div>
+  <p>You know that \(\sin^2(\theta)+\cos^2(\theta)=1\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>What does \(\sin^2(\theta)+\cos^2(2\theta)=\ ?\)</p></li>
+    <li><p>What does \(\sin^2(\theta-2)+\cos^2(\theta^2-2)=\ ?\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 8-36 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-8-36">
+  <div class="problem-number">8-36</div>
+  <p>Graph \(f(x)=\frac{1}{x-4}-3\). What is the parent equation of \(f\)? Describe the transformation completely.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>
