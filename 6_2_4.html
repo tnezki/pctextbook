@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6_2_4.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 6.2.4</h1>
+<div class="lesson-header">
+  <h2>6.2.4 How can I multiply vectors?</h2>
+  <div class="lesson-subtitle">The Dot Product</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-125 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-125">
+  <div class="problem-number">6-125</div>
+  <p>Perform the indicated vector operations.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\langle -5,7\rangle+\langle 3,-3\rangle\)</p></li>
+    <li><p>\((-7\mathbf{i}-2\mathbf{j})-2(3\mathbf{i}-\mathbf{j})\)</p></li>
+    <li><p>What is the angle between \(\langle -4,5\rangle\) and \(\langle 2,7\rangle\)?</p></li>
+    <li><p>If \(\vec{\text{u}}=2\mathbf{i}-3\mathbf{j}\) and \(\vec{\text{v}}=-4\mathbf{i}-2\mathbf{j}\), evaluate \(\vec{\text{u}}\cdot\vec{\text{v}}\). What does your answer tell you about the two vectors?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-126 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-126">
+  <div class="problem-number">6-126</div>
+  <p>Construct a unit vector that is perpendicular to \(5\mathbf{i}+12\mathbf{j}\). Note that there are two solutions.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-127 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-127">
+  <div class="problem-number">6-127</div>
+  <p>A jet is flying in a direction \(30^\circ\) north of east with a speed of \(430\) mph. What are the north and east components of its velocity?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-128 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-128">
+  <div class="problem-number">6-128</div>
+  <p>In a triangle, \(A=20^\circ\), \(a=9\), and \(b=23\). Solve the triangle.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-129 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-129">
+  <div class="problem-number">6-129</div>
+  <p>If \(\cos(x)=-\frac{5}{7}\) and \(\pi<x<\frac{3\pi}{2}\), what are the exact values of \(\sin(x)\) and \(\tan(x)\)?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-130 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-130">
+  <div class="problem-number">6-130</div>
+  <p>Solve each of the following equations.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(50x^{2/3}=100\)</p></li>
+    <li><p>\(\log_3(x+1)+\log_3(x)=\log_3(12)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-131 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-131">
+  <div class="problem-number">6-131</div>
+  <p>Solve: \(\frac{2x}{x+3}-\frac{3}{x+2}=\frac{11-2x}{x^2+5x+6}\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-132 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-132">
+  <div class="problem-number">6-132</div>
+  <p>Rewrite the following fraction as a sum of two fractions with linear denominators by using partial fraction decomposition.</p>
+  <p style="text-align:center;">\(\frac{9x+6}{(x+2)(x-1)}\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-133 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-133">
+  <div class="problem-number">6-133</div>
+  <p>To slide a crate across a floor, a rope is attached and pulled with a constant force of \(50\) pounds at an angle of \(30^\circ\). How much work is done if the box is dragged \(10\) feet?</p>
+  <div class="figure-block figure-md">
+    <img src="figures/6-133.png" alt="Figure for problem 6-133">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-134 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-134">
+  <div class="problem-number">6-134</div>
+  <p>Use graph paper to complete the following problems.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Draw \(\vec{\text{a}}=2\mathbf{i}+3\mathbf{j}\), \(\vec{\text{b}}=\mathbf{i}-\mathbf{j}\), and \(\vec{\text{c}}=-3\mathbf{i}+2\mathbf{j}\).</p></li>
+    <li><p>Draw \(\vec{\text{a}}+\vec{\text{b}}\) on the graph paper.</p></li>
+    <li><p>Write \(\vec{\text{a}}+\vec{\text{b}}\) in \(\mathbf{i},\mathbf{j}\) form.</p></li>
+    <li><p>Write \(\vec{\text{b}}+\vec{\text{c}}\) and \(\vec{\text{c}}-\vec{\text{a}}\) in \(\mathbf{i},\mathbf{j}\) form <em>without</em> drawing them.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-135 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-135">
+  <div class="problem-number">6-135</div>
+  <p>Calculate the area of the triangle shown.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/6-135.png" alt="Figure for problem 6-135">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-136 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-136">
+  <div class="problem-number">6-136</div>
+  <p>Graph \(l(x)=2\log_5(x)-1\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-137 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-137">
+  <div class="problem-number">6-137</div>
+  <p>Write a sum that will approximate the area under the curve \(f\left(x\right)=\sin\left(x\right)\) on the interval \(0\le\theta\le\pi\) using ten left endpoint rectangles.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-138 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-138">
+  <div class="problem-number">6-138</div>
+  <p>Sketch the graph of a function that is increasing only on \(x<-2\) and \(x>2\) and concave down only for \(x<0\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-139 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-139">
+  <div class="problem-number">6-139</div>
+  <p>Solve each of the following inequalities.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(0<-x^4+2x^3+4x^2-8x\)</p></li>
+    <li><p>\(\frac{5x-10}{2x^3+x^2-50x-25}\geq0\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-140 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-140">
+  <div class="problem-number">6-140</div>
+  <p>Graph \(r(x)=\frac{2x^2-4x-16}{x^2-9}\). State the locations of any holes and/or asymptotes.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

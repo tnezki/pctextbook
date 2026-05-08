@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6_2_3.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 6.2.3</h1>
+<div class="lesson-header">
+  <h2>6.2.3 Can I review what I have learned?</h2>
+  <div class="lesson-subtitle">Review and Preview</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-101 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-101">
+  <div class="problem-number">6-101</div>
+  <p>Sketch two vectors, one going \(22\) miles due east and the other \(22\) miles due south. What is the resultant, or sum, of the two vectors? State the magnitude and direction of the resultant vector.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-102 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-102">
+  <div class="problem-number">6-102</div>
+  <p>Using the diagram, if you know the magnitude (\(10\)) and direction (\(30^\circ\)) of a vector, how can you determine the components of the vector? State the components of the vector.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/6-102.png" alt="Figure for problem 6-102">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-103 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-103">
+  <div class="problem-number">6-103</div>
+  <p>Vector \(\vec{\text{b}}\) has an initial point of \(\left(-1,0\right)\) and an endpoint of \(\left(2,2\right)\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Express \(\vec{\text{b}}\) in component form.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-104 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-104">
+  <div class="problem-number">6-104</div>
+  <p>Solve each triangle below.</p>
+  <div class="figure-block figure-full">
+    <img src="figures/6-104.png" alt="Figure for problem 6-104">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-105 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-105">
+  <div class="problem-number">6-105</div>
+  <p>An exponential function passes through the points \(\left(2,36\right)\) and \(\left(4,81\right)\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write the equation of an exponential function that passes through the two given points and has a horizontal asymptote of \(y = 0\).</p></li>
+    <li><p>If the function you wrote in part (a) is shifted so that it has a horizontal asymptote of \(y = 20\), and it now passes through the points \(\left(2,56\right)\) and \(\left(4,101\right)\), what will the equation of the new function be?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-106 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-106">
+  <div class="problem-number">6-106</div>
+  <p>What is the inverse of each function below? Use correct notation.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(h(x)=2x^{3/2}\)</p></li>
+    <li><p>\(j(x)=4\log_5(x-1)\)</p></li>
+    <li><p>\(f(x)=4(2x-3)^{1/3}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-107 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-107">
+  <div class="problem-number">6-107</div>
+  <p>Given the triangle, calculate \(AC\).</p>
+  <div class="figure-block figure-md">
+    <img src="figures/6-107.png" alt="Figure for problem 6-107">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-108 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-108">
+  <div class="problem-number">6-108</div>
+  <p>This problem is a checkpoint for graphs, equations, and roots of polynomial functions.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Sketch a graph of the polynomial function \(p(x)=(x-4)(x-2)^2(x+3)^2\). Label the intercepts.</p></li>
+    <li><p>Write a possible equation of a polynomial function, in factored form with real coefficients, that has roots of \(x=-1\), \(-1-3i\), and \(3-\sqrt{3}\).</p></li>
+    <li><p>Determine all of the roots of \(p(x)=2x^4-3x^3+2x^2-6x-4\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-109 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-109">
+  <div class="problem-number">6-109</div>
+  <p>A boat is headed across a river at an angle of \(15^\circ\) with a rate of \(30\) feet per second. The current is heading down stream at a rate of \(7\) feet per second. The river is \(1000\) feet wide.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/6-109.png" alt="Figure for problem 6-109">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>Express the velocity of the boat as a vector in component form without including the effect of the river.</p></li>
+    <li><p>The actual motion of the boat is the combination of the motion of the boat and the current in the river. What is the vector that gives the actual motion of the boat?</p></li>
+    <li><p>How long will it take the boat to cross the river?</p></li>
+    <li><p>How far up river will the boat arrive?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-110 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-110">
+  <div class="problem-number">6-110</div>
+  <p>Use the diagrams below to complete the following problems.</p>
+  <div class="figure-block figure-full">
+    <img src="figures/6-110.png" alt="Figure for problem 6-110">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>Copy \(\vec{\text{a}}\) and \(\vec{\text{b}}\) onto graph paper. Draw \(-\vec{\text{b}}\). Then add \(\vec{\text{a}}\) and \(-\vec{\text{b}}\). Explain why you can label your answer \(\vec{\text{a}} - \vec{\text{b}}\).</p></li>
+    <li><p>Copy \(\vec{\text{r}}\) and \(\vec{\text{s}}\) onto graph paper. Then draw \(\vec{\text{r}} - \vec{\text{s}}\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-111 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-111">
+  <div class="problem-number">6-111</div>
+  <p>Harold, the happy concrete guy, got a call on the phone about some concrete he has to pour for an oddly shaped triangular patio. The only information he is given is that the side lengths were \(5, 6\), and \(8\) meters long.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Calculate the angles for Harold so he can stay happy.</p></li>
+    <li><p>What is the area of the patio that Harold will be forming?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-112 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-112">
+  <div class="problem-number">6-112</div>
+  <p>A \(100\) g sample of a radioactive isotope is taken from a protective container. After \(4\) hours the sample decays to \(85\) g. What is the half-life of the substance?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-113 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-113">
+  <div class="problem-number">6-113</div>
+  <p>Using the smallest possible horizontal shift, write an equation for the graph in terms of:</p>
+  <div class="figure-block figure-md">
+    <img src="figures/6-113.png" alt="Figure for problem 6-113">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>sine</p></li>
+    <li><p>cosine</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-114 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-114">
+  <div class="problem-number">6-114</div>
+  <p>Solve: <em>\(x-\frac{1}{x}=1\)</em></p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 6-115 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-6-115">
+  <div class="problem-number">6-115</div>
+  <p>This problem is a checkpoint for transformations of rational functions. Graph each of the following rational functions. State the locations of any asymptotes.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(r(x)=\frac{1}{x+2}+5\)</p></li>
+    <li><p>\(q(x)=\frac{2x}{x+1}\)</p></li>
+    <li><p>\(t(x)=\frac{4x-1}{x-5}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+
+
+</div>
+</body>
+</html>
