@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7_2_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+.page-break{
+  page-break-before:always;
+}
+
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 7.2.1</h1>
+<div class="lesson-header">
+  <h2>7.2.1 How does the rate change?</h2>
+  <div class="lesson-subtitle">Rates of Change from Data</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-72 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-72">
+  <div class="problem-number">7-72</div>
+  <p>The dew point is the temperature at which the air would be completely saturated with water (\(100\%\) humidity). How can a beaver use the pressure to change the dew point with respect to the change in dew point with respect to the balloon problem, calculate the average rate of change of the dew point with respect to height from \(t=0\) to \(t=360\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-73 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-73">
+  <div class="problem-number">7-73</div>
+  <p>The table shows the prices for various-sized bags of rice offered at a grocery store.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/7-73.png" alt="Figure for problem 7-73">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>What are the costs per pound for each bag?</p></li>
+    <li><p>The answers for part (a) are average rates of change. What other data point is being used, but not shown, in these rate calculations?</p></li>
+    <li><p>Does the unit price increase or decrease with the size of the bag?</p></li>
+    <li><p>Does the rate change more drastically for smaller sizes or for larger sizes?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-74 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-74">
+  <div class="problem-number">7-74</div>
+  <p>Given the graph of \(y=f(x)\) shown below, write at least five limit statements corresponding to this function. The limit statements you write should describe the graph thoroughly so that someone could sketch the general shape of the graph from your limit statements.</p>
+  <div class="figure-block figure-lg">
+    <img src="figures/7-74.png" alt="Figure for problem 7-74">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-75 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-75">
+  <div class="problem-number">7-75</div>
+  <p>Calculate the slope between the points \((3,9)\) and \((3+h,9+6h+h^2)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-76 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-76">
+  <div class="problem-number">7-76</div>
+  <p>Given the magnitude and direction, express each vector in component form.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\|\vec{u}\|=5\) and \(\theta=\frac{\pi}{6}\)</p></li>
+    <li><p>\(\|\vec{u}\|=10\) and \(\theta=\frac{3\pi}{4}\)</p></li>
+    <li><p>\(\|\vec{u}\|=1\) and \(\theta=\frac{5\pi}{4}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-77 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-77">
+  <div class="problem-number">7-77</div>
+  <p>Solve each of the following equations.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(e^{\ln(x)+4}=6\)</p></li>
+    <li><p>\(\log_2(x)=\log_2(3x+12)-\log_2(x-1)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-78 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-78">
+  <div class="problem-number">7-78</div>
+  <p>Write several sentences explaining to someone, who just transferred into the class, how to approximate the area under the curve \(y=x^3+2x+6\) for \(-1\le x\le 3\). Do not actually approximate the area, just explain how to calculate it.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 7-79 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-7-79">
+  <div class="problem-number">7-79</div>
+  <p>Write an equation for each graph below.</p>
+  <div class="figure-block figure-full">
+    <img src="figures/7-79.png" alt="Figure for problem 7-79">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>
