@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12_3_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 12.3.1</h1>
+<div class="lesson-header">
+  <h2>12.3.1 What can I expect from a random variable?</h2>
+  <div class="lesson-subtitle">Expected Value of a Discrete Random Variable</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-129 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-129">
+  <div class="problem-number">12-129</div>
+  <p>Consider the discrete random variable <em>\(X\)</em> with the following distribution.</p>
+  
+  <table class="table-block">
+    <tr>
+      <td><em>\(X\)</em></td>
+      <td>\(5\)</td>
+      <td>\(6\)</td>
+      <td>\(8\)</td>
+      <td>\(12\)</td>
+    </tr>
+    <tr>
+      <td><em>\(P(X)\)</em></td>
+      <td>\(0.2\)</td>
+      <td>\(0.1\)</td>
+      <td>\(0.3\)</td>
+      <td>\(0.4\)</td>
+    </tr>
+  </table>
+  <ol type="a" class="lower-alpha">
+    <li><p>Explain why this is a valid probability model.</p></li>
+    <li><p>Create a relative frequency histogram for this probability distribution.</p></li>
+    <li><p>Calculate the expected value of <em>\(X\)</em>.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-130 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-130">
+  <div class="problem-number">12-130</div>
+  <p>Identify each quantity below as either a discrete random variable or a continuous variable.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>shoe size</p></li>
+    <li><p>foot length</p></li>
+    <li><p>cat’s weight</p></li>
+    <li><p>sheep in a flock</p></li>
+    <li><p>outcome of a coin flip</p></li>
+    <li><p>speed of a car</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-131 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-131">
+  <div class="problem-number">12-131</div>
+  <p>Three coins are flipped. Let <em>\(X=\text{the number of heads}\)</em>.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>List all of the possible heads/tails combinations of outcomes.</p></li>
+    <li><p>Create a probability model for this situation.</p></li>
+    <li><p>Calculate the expected value of <em>\(X\)</em>.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-132 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-132">
+  <div class="problem-number">12-132</div>
+  <p>Jamal hits \(80\%\) of his free throws in basketball. If he shoots four free throws, what is the probability that he hits only one of the four?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-133 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-133">
+  <div class="problem-number">12-133</div>
+  <p>Let <em>\(z_{1}=1-i\)</em> and \(z_2=-1+(\sqrt{3})i\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>What is the distance between <em>\(z_{1}\)</em> and <em>\(z_{2}\)</em>?</p></li>
+    <li><p>What is the midpoint of <em>\(z_{1}\)</em> and <em>\(z_{2}\)</em>?</p></li>
+    <li><p>What are the modulus and argument of <em>\(z_{2}\)</em>?</p></li>
+    <li><p>Evaluate \((z_2)^5\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-134 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-134">
+  <div class="problem-number">12-134</div>
+  <p>Use graph. <em>\(y=g(x)\)</em> is a transformation of <em>\(y=f(x)\)</em>. Write an equation for <em>\(g(x)\)</em> in terms of <em>\(f(x)\)</em>.</p>
+  <div class="figure-block figure-full">
+    <img src="figures/12-134.png" alt="">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-135 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-135">
+  <div class="problem-number">12-135</div>
+  <p>Suppose Benny starts at \((10,3)\) and is crawling along the curve <em>\(y=f(x)\)</em> as <em>\(x\to5^{+}\)</em>. At the same time, Bertha begins at \((0,7)\) and is also crawling along the curve <em>\(y=f(x)\)</em> as <em>\(x\to5^{-}\)</em>. If Benny and Bertha are in contact by cell phone, how will they know if \(\lim\limits_{x\to5} f(x)\) exists?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 12-136 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-12-136">
+  <div class="problem-number">12-136</div>
+  <p>This problem is a checkpoint for working with parametrically-defined functions.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Use graph. <em>\(x(t)=t^2+3,\ y(t)=2t-1\text{ for }-3\le t\le3\)</em>.</p></li>
+    <li><p>Rewrite the parametrically-defined function in part (a) in rectangular form.</p></li>
+  </ol>
+  <p>Check your answers by referring to the selected answers.</p>
+  <p>Ideally at this point you are comfortable working with these types of problems and can complete them correctly. If you feel that you need more confidence when completing these types of problems, then review the Parametrically-Defined Functions Checkpoint materials available at cpm.org and try the practice problems provided. From this point on, you will be expected to do problems like these correctly and with confidence.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>
