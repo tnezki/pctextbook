@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9_1_4.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{ page-break-before:always; }
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+.lesson-header{ margin-bottom:18px; }
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{ margin-bottom:8px; }
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{ margin-bottom:6px; }
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+.table-wrap{
+  overflow-x:auto;
+  margin:10px 0;
+}
+table.values{
+  margin:0 auto;
+  border-collapse:collapse;
+}
+table.values td, table.values th{
+  border:1px solid #777;
+  padding:8px 10px;
+  text-align:center;
+  min-width:64px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 9.1.4</h1>
+<div class="lesson-header">
+  <h2>9.1.4 How can I use matrices?</h2>
+  <div class="lesson-subtitle">Solving Systems Using Matrix Equations</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-78 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-78">
+  <div class="problem-number">9-78</div>
+  <p>Represent each system of equations below with matrices. Solve the system in part (c).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\begin{aligned}p+2q&=7\\3p+4q&=11\end{aligned}\)</p></li>
+    <li><p>\(\begin{aligned}4m-5n&=-2\\-3m+4n&=9\end{aligned}\)</p></li>
+    <li><p>\(\begin{aligned}4x-y+z&=-5\\2x+2y+3z&=10\\5x-2y+6z&=1\end{aligned}\)</p></li>
+    <li><p>\(\begin{aligned}7w-3x+2z&=41\\-2w+x-z&=-1\\w+y-2z&=12\\x-3z&=1\end{aligned}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-79 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-79">
+  <div class="problem-number">9-79</div>
+  <p>Calculate the area of a parallelogram defined by the vectors \((-4,5)\) and \((6,-15)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-80 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-80">
+  <div class="problem-number">9-80</div>
+  <p>\(xy^2-2x+2y=1\)</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>What is the value of \(y\) when \(x=-1\)?</p></li>
+    <li><p>Solve the equation for \(y\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-81 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-81">
+  <div class="problem-number">9-81</div>
+  <p>Add the fractions and simplify: \(\frac{1}{1-\sin(\theta)}-\frac{1}{1+\sin(\theta)}\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-82 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-82">
+  <div class="problem-number">9-82</div>
+  <p>Solve for \(x\) on the indicated domain.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(2\sin(x)+\sqrt{2}=0,\ 0\leq x&lt;2\pi\)</p></li>
+    <li><p>\(\cos(x)(2\sin(x)+\sqrt{2})=0,\ 0\leq x&lt;2\pi\)</p></li>
+    <li><p>\(\cos(x)(2\sin(x)+\sqrt{2})=0\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-83 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-83">
+  <div class="problem-number">9-83</div>
+  <p>A car travels \(45\) mph for \(3\) hours and \(55\) mph for the next two hours.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Draw a speed vs. time graph of the situation.</p></li>
+    <li><p>What was the car's average velocity during this trip?</p></li>
+    <li><p>What is the area under your curve from \(0\leq h\leq 5\)? What does it represent in this situation?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-84 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-84">
+  <div class="problem-number">9-84</div>
+  <p>Calculate the area of the triangle shown.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/9-84.png" alt="Figure for problem 9-84">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-85 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-85">
+  <div class="problem-number">9-85</div>
+  <p>This problem is a checkpoint for evaluating limits from graphs and tables.</p>
+  <ol type="a" class="lower-alpha">
+    <li>
+      <p>Use the graph of the piecewise-defined function, \(f\), to evaluate each of the limits below.</p>
+      <div class="figure-block figure-md">
+        <img src="figures/9-85.png" alt="Graph for problem 9-85 part a">
+      </div>
+      <ol type="i" class="lower-roman">
+        <li><p>\(\lim\limits_{x\to -5}f(x)\)</p></li>
+        <li><p>\(\lim\limits_{x\to -2^-}f(x)\)</p></li>
+        <li><p>\(\lim\limits_{x\to 1}f(x)\)</p></li>
+        <li><p>\(\lim\limits_{x\to 1^+}f(x)\)</p></li>
+      </ol>
+    </li>
+    <li>
+      <p>Let \(f(x)=\frac{4^x-3^x}{x}\). Copy and complete the table of values below to estimate the value of \(\lim\limits_{x\to 0}\frac{4^x-3^x}{x}\).</p>
+      
+      <div class="table-wrap">
+        <table class="values">
+          <tr>
+            <th>\(x\)</th>
+            <td>\(-0.01\)</td>
+            <td>\(-0.001\)</td>
+            <td>\(-0.0001\)</td>
+            <td>\(0.0001\)</td>
+            <td>\(0.001\)</td>
+            <td>\(0.01\)</td>
+          </tr>
+          <tr>
+            <th>\(f(x)\)</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-86 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-86">
+  <div class="problem-number">9-86</div>
+  <p>Juanita wants to solve the following problem using matrices, but it is not sure how. The cost of two pencils, two pens, and two erasers is \(\$2.46\). The cost of two pencils, five pens, and one eraser is \(\$4.38\). The cost of one pencil, one pen, and two erasers is \(\$1.38\). What is the cost of each item?</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Explain how she should do.</p></li>
+    <li><p>Solve this problem.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-87 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-87">
+  <div class="problem-number">9-87</div>
+  <p>Solve for \(y\) in terms of \(x\) if \(\frac{1}{x}+\frac{2}{y}=5\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-88 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-88">
+  <div class="problem-number">9-88</div>
+  <p>Let \(M=\begin{bmatrix}1 & 0\\-1 & 2\end{bmatrix}\) and \(N=\begin{bmatrix}a & b\\c & d\end{bmatrix}\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Calculate \(MN\).</p></li>
+    <li><p>For what values of \(a,b,c,\) and \(d\) does \(MN=I\)?</p></li>
+    <li><p>Use the result of part (b) to write the matrix \(M^{-1}\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-89 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-89">
+  <div class="problem-number">9-89</div>
+  <p>Solve each of the following equations, where \(0\leq \theta &lt; 2\pi\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\csc(\theta)=-2\)</p></li>
+    <li><p>\(\cos(\theta)=-\frac{\sqrt{3}}{2}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-90 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-90">
+  <div class="problem-number">9-90</div>
+  <p>Calculate the exact value of \(\sec(a+b)\) where \(\cos(a)=\frac{3}{4}\), \(a\) is in Quadrant IV, \(\tan(b)=-\frac{12}{5}\), and \(b\) is in Quadrant III. Hint: Calculate \(\cos(a+b)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-91 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-91">
+  <div class="problem-number">9-91</div>
+  <p>This problem is a checkpoint for average and instantaneous rates of change. Let \(f(x)=3x^2-4\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Calculate the average rate of change from \(x=10\) to \(x=12\).</p></li>
+    <li><p>Calculate the average rate of change from \(x=11\) to \(x=11+h\).</p></li>
+    <li><p>Evaluate the expression in part (b) as \(h\to 0\). What does this tell you about the function at \(x=11\)?</p></li>
+    <li><p>Calculate the instantaneous rate of change at \(x=11\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-92 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-92">
+  <div class="problem-number">9-92</div>
+  <p>Solve for the exact value of \(x\) without using a calculator.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(3e^x-5=13\)</p></li>
+    <li><p>\(\ln(x+1)=3.2\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-93 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-93">
+  <div class="problem-number">9-93</div>
+  <p>A woman cycles \(10\) mi/h faster than she runs. Every morning she cycles \(10\) miles and runs \(2.25\) miles for a total of \(1\) hour of exercise. How fast does she run?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>

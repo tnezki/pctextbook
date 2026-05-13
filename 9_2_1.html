@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9_2_1.html</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{ page-break-before:always; }
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+.lesson-header{ margin-bottom:18px; }
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{ margin-bottom:8px; }
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{ margin-bottom:6px; }
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Lesson 9.2.1</h1>
+<div class="lesson-header">
+  <h2>9.2.1 What are linear transformations?</h2>
+  <div class="lesson-subtitle">Linear Transformations</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-102 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-102">
+  <div class="problem-number">9-102</div>
+  <p>Write the matrix associated with counterclockwise rotation through each of the given angle measures.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(90^\circ\)</p></li>
+    <li><p>\(150^\circ\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-103 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-103">
+  <div class="problem-number">9-103</div>
+  <p>A matrix \(M\) takes \(v=(1,0)\) to \((2,0)\) and \(w=(0,1)\) to \((0,2)\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write the matrix \(M\) explicitly.</p></li>
+    <li><p>Describe how \(M\) does to any vector.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-104 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-104">
+  <div class="problem-number">9-104</div>
+  <p>Solve the system using matrix equations.</p>
+  <p>\(\begin{aligned}
+x+2y-3z&=2\\
+2x-4y+z&=3\\
+x+4y+2z&=8
+\end{aligned}\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-105 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-105">
+  <div class="problem-number">9-105</div>
+  <p>Given the points \((12,-1)\), \((-1,9)\), \((-7,12)\), calculate the area of:</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>The triangle formed by these points.</p></li>
+    <li><p>The parallelogram formed by these points.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-106 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-106">
+  <div class="problem-number">9-106</div>
+  <p>Verify each of the following trigonometric identities.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\frac{\cos(y)}{\sec(y)}+\frac{\csc(y)}{\tan(y)}=2\sec(y)\)</p></li>
+    <li><p>\(\frac{\tan(x)\cos(x)}{\sin(x)+\cos(x)}=\sin(x)\cos(x)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-107 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-107">
+  <div class="problem-number">9-107</div>
+  <p>Two forces with magnitudes of \(120\) N and \(250\) N act on an object of negligible mass as shown in the diagram.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/9-107.png" alt="Figure for problem 9-107">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p>Determine the magnitude and direction of the resultant force if \(\theta=25^\circ\).</p></li>
+    <li><p>Determine the magnitude and direction of the resultant force if \(\theta=45^\circ\).</p></li>
+    <li><p>Determine the magnitude and direction of the resultant force if \(\theta=65^\circ\).</p></li>
+    <li><p>Express the magnitude of the resultant force as a function of \(\theta\), where \(0^\circ\leq\theta\leq180^\circ\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-108 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-108">
+  <div class="problem-number">9-108</div>
+  <p>Graph \(f(x)=3\log(x+9)+9\). State the domain and range.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 9-109 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-9-109">
+  <div class="problem-number">9-109</div>
+  <p>Complete the following division problem. Express any remainder as a fraction.</p>
+  <p style="text-align:center;">\(\frac{x^2-1}{x-1}\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+</div>
+</body>
+</html>
