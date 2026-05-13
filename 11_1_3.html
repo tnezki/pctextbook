@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11_1_3.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 11.1.3</h1>
+<div class="lesson-header">
+  <h2>11.1.3 What does it look like?</h2>
+  <div class="lesson-subtitle">Families of Polar Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-39 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-39">
+  <div class="problem-number">11-39</div>
+  <p>Describe the graph of:</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(x^2+y^2=16\)</p></li>
+    <li><p>\(r=4\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-40 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-40">
+  <div class="problem-number">11-40</div>
+  <p>Make a table and graph \(r=6\sin(\theta)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-41 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-41">
+  <div class="problem-number">11-41</div>
+  <p>Solve the following system of equations:</p>
+  <p style="text-align:center;">\(y-24=(3+\sqrt{2x-1})^2\)</p>
+  <p style="text-align:center;">\(y=10(3+\sqrt{2x-1})\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-42 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-42">
+  <div class="problem-number">11-42</div>
+  <p>Solve each of the following equations. Use exact values.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\ln(x+4)=3\)</p></li>
+    <li><p>\(e^{3x}-6=22\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-43 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-43">
+  <div class="problem-number">11-43</div>
+  <p>Write an equation for a sixth-degree polynomial function that has roots of \(x=-2\pm\sqrt{3}\), a double root at \(x=0\), a complex root of \(x=5+3i\), and passes through the point \((-1,-12)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-44 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-44">
+  <div class="problem-number">11-44</div>
+  <p>Approximate the area under the curve \(f(x)=-\frac{1}{2}x^2+8\sqrt{x}-1\) over the interval \(1\le x\le 5\) using 12 right endpoint rectangles.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-45 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-45">
+  <div class="problem-number">11-45</div>
+  <p>Write two equations that will generate each of the graphs below, one in terms of sine and one in terms of cosine. Use graph.</p>
+  <!-- figure for 11-45 -->
+  <div class="figure-block figure-full">
+    <img src="figures/11-45.png" alt="Figure for problem 11-45">
+  </div>
+  <ol type="a" class="lower-alpha">
+    <li><p></p></li>
+    <li><p></p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-46 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-46">
+  <div class="problem-number">11-46</div>
+  <p>Complete the following matrix computations.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\begin{bmatrix}1&2\end{bmatrix}\begin{bmatrix}2&-1\\4&0\end{bmatrix}\)</p></li>
+    <li><p>\(\begin{bmatrix}2&4\end{bmatrix}\begin{bmatrix}2&-1\\4&0\end{bmatrix}\)</p></li>
+    <li><p>Use the results of the pattern of parts (a) and (b) to state the product \(\begin{bmatrix}10&20\end{bmatrix}\begin{bmatrix}2&-1\\4&0\end{bmatrix}\) without computing.</p></li>
+    <li><p>Verify your result for part (c) by multiplication.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-47 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-47">
+  <div class="problem-number">11-47</div>
+  <p>Investigate the graph of \(r^2=a^2\cos(2\theta)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-48 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-48">
+  <div class="problem-number">11-48</div>
+  <p>Plot each of the following points given in polar coordinates. Then state the other three equivalent polar forms of the coordinates.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\left(-1,\frac{\pi}{2}\right)\)</p></li>
+    <li><p>\(\left(-5,-\frac{2\pi}{3}\right)\)</p></li>
+    <li><p>\(\left(2,-\frac{5\pi}{4}\right)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-49 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-49">
+  <div class="problem-number">11-49</div>
+  <p>The pesticide DDT was widely used in the United States until its ban in 1972. DDT is toxic to a wide range of animals and aquatic life, and is suspected to cause cancer in humans. Scientists and environmentalists worry about such substances because these hazardous materials continue to be dangerous for many years after their disposal. The half-life of DDT is estimated to be 15 years.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write an equation to model the amount of DDT in an object after <em>t</em> years if 500 mg of the substance is detected.</p></li>
+    <li><p>A concentration of just 2.73 mg per pound in a person can cause headaches, nausea, vomiting, confusion, and tremors. How much DDT is this for a person who weighs 130 pounds? Use your equation to determine how long it would take for the 500 mg to decay to a safe level for this person.</p></li>
+    <li><p>Even smaller amounts of DDT can affect small microorganisms. For example, water that contains just 0.0001 mg of DDT per liter can slow down growth and photosynthesis in green algae. Determine how long it would take for 500 mg of DDT present in one liter to decay to this level.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-50 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-50">
+  <div class="problem-number">11-50</div>
+  <p>Divide \(x^3+3x^2-2x+1\) by \(x^2+x-2\). Remember to express any remainder as a fraction.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-51 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-51">
+  <div class="problem-number">11-51</div>
+  <p>Given \(\cot(\beta)=\frac{\sqrt{7}}{3}\) and \(\beta\) is in Quadrant III \(\left(\pi&lt;\beta&lt;\frac{3\pi}{2}\right)\), calculate each of the following values.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\cos(\beta)\)</p></li>
+    <li><p>\(\csc(\beta)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-52 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-52">
+  <div class="problem-number">11-52</div>
+  <p>Rewrite each of the following equations in graphing form, identify the conic, and sketch the graph. Also include all of the key information, such as the locations of the foci and/or the equations of any asymptotes.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(4x^2+9y^2+24x-36y=-36\)</p></li>
+    <li><p>\(3x^2-12x-y=-17\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-53 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-53">
+  <div class="problem-number">11-53</div>
+  <p>In a baseball game, Alex hits a ball with an initial velocity of 110 ft/s at an angle of 53° with the horizontal. The ball was struck at an initial height of 4 feet. Alex will hit a homerun if the ball travels 330 feet and has a height of at least 10 feet. Does Alex hit a homerun? How far will the ball have traveled horizontally when it hits the ground?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-54 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-54">
+  <div class="problem-number">11-54</div>
+  <p>Rationalize the denominators of the following fractions.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\frac{7}{3-\sqrt{2}}\)</p></li>
+    <li><p>\(\frac{1}{\sqrt{x^3}}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>

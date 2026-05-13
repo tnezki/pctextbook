@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11_1_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 11.1.1</h1>
+<div class="lesson-header">
+  <h2>11.1.1 Can I plot points in a different way?</h2>
+  <div class="lesson-subtitle">Plotting Polar Coordinates</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-5 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-5">
+  <div class="problem-number">11-5</div>
+  <p>Plot the following polar coordinate points on polar graph paper.</p>
+  <p style="text-align:center;">\(A=\left(1,\frac{\pi}{2}\right)\qquad B=(-2,\pi)\qquad C=\left(-1,-\frac{\pi}{4}\right)\qquad D=\left(1,-\frac{3\pi}{2}\right)\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-6 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-6">
+  <div class="problem-number">11-6</div>
+  <p>Write the polar coordinates of the points shown on the graph. Use graph.</p>
+  <!-- figure for 11-6 -->
+  <div class="figure-block figure-sm">
+    <img src="figures/11-6.png" alt="Figure for problem 11-6">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-7 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-7">
+  <div class="problem-number">11-7</div>
+  <p>Recall the definition \(i=\sqrt{-1}\). Simplify the following expressions.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\sqrt{-16}\)</p></li>
+    <li><p>\(\sqrt{-49}\)</p></li>
+    <li><p>\(5\cdot\sqrt{-9}\)</p></li>
+    <li><p>\(\frac{\sqrt{-12}}{-4}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-8 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-8">
+  <div class="problem-number">11-8</div>
+  <p>Write the equation of the inverse for each function below.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(f(x)=\frac{x+1}{3}\)</p></li>
+    <li><p>\(g(x)=\frac{11x+5}{2}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-9 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-9">
+  <div class="problem-number">11-9</div>
+  <p>Sketch the graph of \(f(x)=-(x+4)^2(x)(x-2)^2(x-3)\) without using a graphing calculator. Do not scale your axes, but be sure to label the important points.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-10 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-10">
+  <div class="problem-number">11-10</div>
+  <p>Graph \(g(x)=\frac{3}{x-2}\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Analyze the graph of \(y=g(x)\) and complete the following statements:</p></li>
+  </ol>
+  <p style="text-align:center;">\(\lim\limits_{x\to\infty} g(x)=\underline{\hspace{1.5cm}}\qquad \lim\limits_{x\to-\infty} g(x)=\underline{\hspace{1.5cm}}\)</p>
+  <p>Record both of these limit statements next to your graph.</p>
+  <ol type="a" class="lower-alpha" start="2">
+    <li><p>Rewrite \(g(x)\) as transformation of the parent curve \(y=\frac{1}{x}\). How does this form of the equation relate to your answers to part (a)?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-11 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-11">
+  <div class="problem-number">11-11</div>
+  <p>Solve each equation.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\log_5(2y)=3\)</p></li>
+    <li><p>\(\log_4(x+1)=-1\)</p></li>
+    <li><p>\(\log_2(4)-\log_2(3)=2\)</p></li>
+    <li><p>\(2\log_3(6)+\log_3(y)=4\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-12 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-12">
+  <div class="problem-number">11-12</div>
+  <p>Graph each of the following equations. State all of the key information, such as the locations of the foci and/or the equations of any asymptotes.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(x^2-y^2=9\)</p></li>
+    <li><p>\(\frac{(x-5)^2}{16}+\frac{(y+2)^2}{9}=1\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

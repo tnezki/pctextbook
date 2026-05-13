@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11_2_3.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 11.2.3</h1>
+<div class="lesson-header">
+  <h2>11.2.3 How are complex numbers polar?</h2>
+  <div class="lesson-subtitle">Polar Form of Complex Numbers</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-114 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-114">
+  <div class="problem-number">11-114</div>
+  <p>Write the polar form of each complex number given below. Approximate your values to three decimal places. (Remember to think about the correct quadrant when you determine the value of \(\theta\) or \(\phi\).)</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(3-4i\)</p></li>
+    <li><p>\(-12-5i\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-115 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-115">
+  <div class="problem-number">11-115</div>
+  <p>Write the rectangular form of each complex number. Use exact values.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(z=-6\left(\cos\left(\frac{4\pi}{6}\right)+i\sin\left(\frac{4\pi}{6}\right)\right)\)</p></li>
+    <li><p>\(z=7\left(\cos\left(\frac{5\pi}{4}\right)+i\sin\left(\frac{5\pi}{4}\right)\right)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-116 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-116">
+  <div class="problem-number">11-116</div>
+  <p>Marsha and Edwin want to know how far they will have to swim to get across a small pond. They have a 100-foot rope that they place at the water’s edge (in a straight line), then stand at each end of the rope. Marsha’s angle is \(67^\circ\). Edwin’s angle is \(81^\circ\). How far will they have to swim to get to the other side of the pond?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-117 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-117">
+  <div class="problem-number">11-117</div>
+  <p>Let \(h(x)=\dfrac{1}{g(x)}\) where \(g(x)=\left\{\begin{array}{cc}2x+2&\text{for }x&lt;1\\3-x&\text{for }x\ge 1\end{array}\right.\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Sketch \(y=h(x)\).</p></li>
+    <li><p>What is the domain of \(h(x)\)?</p></li>
+    <li><p>What is the domain of \(h(g(x))\)?</p></li>
+    <li><p>What is \(\lim\limits_{x\to 1}h(x)\)?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-118 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-118">
+  <div class="problem-number">11-118</div>
+  <p>Suppose \(\alpha\) is an angle in Quadrant I and \(\beta\) is an angle in Quadrant IV such that \(\sin(\alpha)=\frac{2}{3}\) and \(\cos(\beta)=\frac{3}{4}\). Determine the exact value of:</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\cos(\alpha)\)</p></li>
+    <li><p>\(\sin(\beta)\)</p></li>
+    <li><p>\(\sin(\alpha+\beta)\)</p></li>
+    <li><p>\(\cos(\alpha+\beta)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-119 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-119">
+  <div class="problem-number">11-119</div>
+  <p>Let \(M=\begin{bmatrix}1&2\\3&0\end{bmatrix}\) and \(N=\begin{bmatrix}a&4\\c&d\end{bmatrix}\). Determine the values of \(a\), \(c\), and \(d\) if \(MN=NM\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-120 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-120">
+  <div class="problem-number">11-120</div>
+  <p>A ball is thrown from a height of 6.5 feet, travels a horizontal distance of 120 feet, and hits the ground after 2.5 seconds. What was the initial velocity of the ball?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-121 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-121">
+  <div class="problem-number">11-121</div>
+  <p>When driving at 60 mph, a certain car gets 27 mi/gal with the air conditioning off and 25 mi/gal with the air conditioning on.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>If gas costs \$1.59 a gallon, how much does it cost per hour to run the air conditioner?</p></li>
+    <li><p>If a car drives at a rate of \(x\) mi/h, it gets \(y\) mi/gal with the air conditioning off and \(y-1\) mi/gal with the air conditioning on. If gas costs \(g\) per gallon, how much does it cost per hour to run the air conditioner?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>

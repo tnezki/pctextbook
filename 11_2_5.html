@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11_2_5_from_144.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 11.2.5</h1>
+<div class="lesson-header">
+  <h2>11.2.5 Is there a shortcut for \((a+bi)^n\)?</h2>
+  <div class="lesson-subtitle">Powers and Roots of Complex Numbers</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-144 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-144">
+  <div class="problem-number">11-144</div>
+  <p>Use De Moivre&rsquo;s Theorem to evaluate \(\left(\cos\left(\frac{\pi}{12}\right)+i\sin\left(\frac{\pi}{12}\right)\right)^6\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-145 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-145">
+  <div class="problem-number">11-145</div>
+  <p>Use graph. Points are plotted on a Cartesian grid. What are the polar coordinates of these points?</p>
+  <!-- figure for 11-145 -->
+  <div class="figure-block figure-md">
+    <img src="figures/11-145.png" alt="Figure for problem 11-145">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-146 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-146">
+  <div class="problem-number">11-146</div>
+  <p>Solve the system: \(\log_2(A)+\log_2(B)=4\)</p>
+  <p style="text-align:center;">\(\log_3(A)-\log_3(B)=2\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-147 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-147">
+  <div class="problem-number">11-147</div>
+  <p>Given \(\cos(A)=\frac{5}{13}\) where \(0&lt;A&lt;\frac{\pi}{2}\), evaluate \(\csc(A)\) and \(\cos(2A)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-148 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-148">
+  <div class="problem-number">11-148</div>
+  <p>Given \(f(x)=\frac{4x-5}{2x-3}\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Rewrite \(f(x)\) in the form of \(y=k+\frac{a}{2x-3}\).</p></li>
+    <li><p>State all of the asymptotes in the graph.</p></li>
+    <li><p>Evaluate \(\lim\limits_{x\to -\infty} f(x)\).</p></li>
+    <li><p>Evaluate \(\lim\limits_{x\to 1.5^+} f(x)\).</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-260"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-149 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-149">
+  <div class="problem-number">11-149</div>
+  <p>Express the function \(y=x^3+1\) and its inverse using parametric equations.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-150 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-150">
+  <div class="problem-number">11-150</div>
+  <p>Ms. Lang determines her children&rsquo;s allowance based on the following situations: The amount of money they each receive in a week is directly proportional to the number of hours of work they each have done in the yard and inversely proportional to \(5-\text{GPA}\) where GPA is the grade point average from the last report card. Dana received \(\$14.40\) this week. Her last report card had a GPA of 3.5 and she worked 10 hours in the yard during the week.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write the formula that Ms. Lang uses to determine the amount of money she will give each child each week.</p></li>
+    <li><p>This week Kaitlyn worked 15 hours in the yard and received \(\$20\). What was her GPA from her last report card?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-151 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-151">
+  <div class="problem-number">11-151</div>
+  <p>This problem is a checkpoint for operations with matrices.</p>
+  <p>Let \(A=\begin{bmatrix}-4&8\\-1&-12\end{bmatrix}\), \(B=\begin{bmatrix}-9&0&10\\-10&3&-8\end{bmatrix}\), \(C=\begin{bmatrix}-8&0\\0&-5\\-8&-11\end{bmatrix}\), and \(D=\begin{bmatrix}2&1&6\\-7&-8&-11\end{bmatrix}\). Compute each of the following matrices or values, if possible.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(2B-D\)</p></li>
+    <li><p>\(BC\)</p></li>
+    <li><p>\(CB\)</p></li>
+    <li><p>\(\det(A)\)</p></li>
+    <li><p>\(A^{-1}\)</p></li>
+    <li><p>\(\det(C)\)</p></li>
+  </ol>
+  <p>Check your answers by referring to the selected answers located at the back of your book.</p>
+  <p>Ideally at this point you are comfortable working with these types of problems and can complete them correctly. If you feel that you need more confidence when completing these types of problems, then review the Operations with Matrices Checkpoint materials available at cpm.org and try the practice problems provided. From this point on, you will be expected to do problems like these correctly and with confidence.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-152 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-152">
+  <div class="problem-number">11-152</div>
+  <p>What are the four fourth roots of \(-16\)?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-153 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-153">
+  <div class="problem-number">11-153</div>
+  <p>Given \(z_1=3\left(\cos\left(\frac{\pi}{2}\right)+i\sin\left(\frac{\pi}{2}\right)\right)\) and \(z_2=9\left(\cos\left(\frac{3\pi}{4}\right)+i\sin\left(\frac{3\pi}{4}\right)\right)\), evaluate \(z_1z_2\) and \(\frac{z_1}{z_2}\). Express your answers in both trigonometric (polar) and \(a+bi\) forms.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-154 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-154">
+  <div class="problem-number">11-154</div>
+  <p>Suppose \(g(x)=3^x\). Approximate the instantaneous rate of change at \(x=2\) to the nearest 0.001.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-155 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-155">
+  <div class="problem-number">11-155</div>
+  <p>Show that \(\sin(4\theta)=4\sin(\theta)\cos(\theta)\cos(2\theta)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-156 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-156">
+  <div class="problem-number">11-156</div>
+  <p>Rewrite the following rational expression as a sum of two fractions with linear denominators by using partial fraction decomposition.</p>
+  <p style="text-align:center;">\(\frac{13x+2}{(-2-x)(x-2)}\)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-157 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-157">
+  <div class="problem-number">11-157</div>
+  <p>What is the angle between two forces of 23 N and 90 N if the resultant force is 107 N?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-158 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-158">
+  <div class="problem-number">11-158</div>
+  <p>Suppose \(R\) is the linear transformation matrix for 45&deg; counterclockwise rotation and \(M\) is the linear transformation matrix for horizontal reflection.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write the matrix associated with \(R\).</p></li>
+    <li><p>Write the matrix associated with \(M\).</p></li>
+    <li><p>Write the matrix for the composition of \(R\) followed by \(M\).</p></li>
+    <li><p>Is the composition of \(M\) followed by \(R\) the same as your result in part (c)? Explain.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-159 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-159">
+  <div class="problem-number">11-159</div>
+  <p>Write and solve an absolute value inequality for the following situation.</p>
+  <p>The gas consumption of a particular car averages 30 miles per gallon on the highway, but the actual mileage varies from the average by at most 4 miles per gallon. How far can the car travel on a 12-gallon tank of gas?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>

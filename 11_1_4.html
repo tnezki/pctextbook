@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11_1_4.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 11.1.4</h1>
+<div class="lesson-header">
+  <h2>11.1.4 How can I convert it?</h2>
+  <div class="lesson-subtitle">Converting Between Polar and Rectangular Forms</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-65 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-65">
+  <div class="problem-number">11-65</div>
+  <p>Convert the rectangular coordinates below to polar coordinates. Sketch a graph to verify that your polar coordinates lie in the correct quadrant.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\((5,9)\)</p></li>
+    <li><p>\((-7,0)\)</p></li>
+    <li><p>\((-10,3)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-66 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-66">
+  <div class="problem-number">11-66</div>
+  <p>Rewrite each of the following equations in polar form.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(6x-x^2=y^2\)</p></li>
+    <li><p>\(2x+3y=5\)</p></li>
+    <li><p>\(x^2+y^2=7\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-67 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-67">
+  <div class="problem-number">11-67</div>
+  <p>A channel flows from north to south at a rate of 15 mph. A sailboat heads at an angle of 30° upstream at a rate of 40 mph. A strong wind blows directly northwest at a rate of 30 mph.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write each of the vectors in component form.</p></li>
+    <li><p>What is the resultant vector in component form?</p></li>
+    <li><p>What will the sailboat’s true course and speed be?</p></li>
+    <li><p>If the channel is 20 miles wide, how long will it take to cross the channel?</p></li>
+    <li><p>How far north from its starting position will the sailboat exit the channel?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-68 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-68">
+  <div class="problem-number">11-68</div>
+  <p>Given \(\log_b(M)=3.2\), \(\log_b(N)=-1.5\), and \(\log_b(P)=2.4\), evaluate \(\log_b\left(\frac{M^2N}{P}\right)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-69 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-69">
+  <div class="problem-number">11-69</div>
+  <p>Complete the parts below to completely factor \(x^4+2x^2+81\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>To make a perfect square, what does the middle term need to be (instead of \(2x^2\))?</p></li>
+    <li><p>Explain how \(x^4+18x^2+81-16x^2\) is equivalent to the original expression.</p></li>
+    <li><p>Factor \(x^4+18x^2+81\).</p></li>
+    <li><p>Factor \(u^2-16x^2\).</p></li>
+    <li><p>Let \(u=x^2+9\) and use your answers to parts (a) through (d) to factor the original expression completely.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-70 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-70">
+  <div class="problem-number">11-70</div>
+  <p>Evaluate each of the following trigonometric expressions. Give exact answers.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\sin\left(\frac{3\pi}{8}\right)\)</p></li>
+    <li><p>\(\cos\left(\frac{x}{2}\right)\) if \(\cos(x)=\frac{1}{6}\), \(\pi\le x&lt;2\pi\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-71 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-71">
+  <div class="problem-number">11-71</div>
+  <p>Compute the area of a parallelogram defined by the vectors \(\langle 1,10\rangle\) and \(\langle -2,-6\rangle\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-72 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-72">
+  <div class="problem-number">11-72</div>
+  <p>Two lines are drawn tangent to the circle \(x^2+y^2=25\), one at the point \((4,3)\) and the other at the point \((-3,4)\). What is the point of intersection for the two tangent lines?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-73 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-73">
+  <div class="problem-number">11-73</div>
+  <p>Suppose you are given a graph of \(r=f(\theta)\) where \(f\) is some function.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>What equation would rotate the graph 90° counterclockwise?</p></li>
+    <li><p>What equation would rotate the graph 90° clockwise?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-74 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-74">
+  <div class="problem-number">11-74</div>
+  <p>Rewrite each of the following equations in rectangular form.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(r=6\sec(\theta)\)</p></li>
+    <li><p>\(r+3\sin(\theta)=0\)</p></li>
+    <li><p>\(r(2\cos(\theta)+\sin(\theta))=4\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-75 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-75">
+  <div class="problem-number">11-75</div>
+  <p>Graph each of the following polar functions on the same set of axes.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(r=5\csc(\theta)\)</p></li>
+    <li><p>\(r=5\csc(\theta-\pi)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-76 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-76">
+  <div class="problem-number">11-76</div>
+  <p>Compute each of the following products of complex numbers. Recall that \(i^2=-1\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\((3+2i)(3-2i)\)</p></li>
+    <li><p>\((\sqrt{5}-i\sqrt{3})(\sqrt{5}+i\sqrt{3})\)</p></li>
+    <li><p>What does \(\sqrt{3}+7i\) need to be multiplied by so that the result is a whole number?</p></li>
+    <li><p>What does \(a+bi\) need to be multiplied by so that the result is a real number?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-77 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-77">
+  <div class="problem-number">11-77</div>
+  <p>Given \(f(x)=x^2+2x\), solve for \(x\) if \(f(x+2)=0\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-78 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-78">
+  <div class="problem-number">11-78</div>
+  <p>Graph \(f(x)=\frac{x^3-2x^2-9x+18}{x^2-3x+2}\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Is the function even, odd, or neither?</p></li>
+    <li><p>Completely describe the function.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-79 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-79">
+  <div class="problem-number">11-79</div>
+  <p>Verify each of the following trigonometric identities.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\sec^2(x)+\csc^2(x)=(\sec^2(x))(\csc^2(x))\)</p></li>
+    <li><p>\(\frac{\cot(\alpha)+\tan(\alpha)}{\sin(\alpha)\cos(\alpha)}=\csc^2(\alpha)\sec^2(\alpha)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 11-80 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-11-80">
+  <div class="problem-number">11-80</div>
+  <p>A golf ball is hit at an angle of 30° with an initial velocity of 100 ft/s. If the ball was struck from the ground, how long was it in the air and how far will it travel down the fairway?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>
