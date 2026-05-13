@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10_2_2.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 10.2.2</h1>
+<div class="lesson-header">
+  <h2>10.2.2 How can I use parametric equations?</h2>
+  <div class="lesson-subtitle">Applications of Parametrically-Defined Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-125 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-125">
+  <div class="problem-number">10-125</div>
+  <p>Write a set of parametric equations to model the position of a plane \(t\) hours after takeoff if the plane is headed directly northeast at \(200\) mph, and a wind is blowing east at \(40\) mph.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-126 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-126">
+  <div class="problem-number">10-126</div>
+  <p>Use a graphing calculator when necessary to complete the parts below.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Graph <em>\(x(t)=t\)</em> and <em>\(y(t)=t^3-3\)</em> for \(-2\le t\le 2\).</p></li>
+    <li><p>Express <em>\(y\)</em> in terms of <em>\(x\)</em>.</p></li>
+    <li><p>On the same set of axes, graph <em>\(x(t)=t^3-3\)</em> and <em>\(y(t)=t\)</em>.</p></li>
+    <li><p>Express <em>\(y\)</em> in terms of <em>\(x\)</em> from part (c).</p></li>
+    <li><p>What is the relationship between the functions of parts (a) and (c)?</p></li>
+    <li><p>What is the relationship between the functions of parts (b) and (d)?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-127 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-127">
+  <div class="problem-number">10-127</div>
+  <p>Which of the following equations is the equation of a hyperbola? How can you tell? What is the shape of the graph of the other equation? After you have decided on the shapes, sketch their graphs.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\frac{(x-1)^2}{9}+\frac{(y+2)^2}{4}=1\)</p></li>
+    <li><p>\(\frac{(y-3)^2}{16}-\frac{(x+2)^2}{25}=1\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-128 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-128">
+  <div class="problem-number">10-128</div>
+  <p>Evaluate \(\lim\limits_{x\to 0}\frac{f(x)}{x}\) where \(f(x)=\frac{1}{1-\sin(x)}-\frac{1}{1+\sin(x)}\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-129 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-129">
+  <div class="problem-number">10-129</div>
+  <p>Solve for all possible triangles given <em>\(AB=11\)</em> cm, <em>\(BC=7\)</em> cm, and <em>\(A=35^\circ\)</em>.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-130 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-130">
+  <div class="problem-number">10-130</div>
+  <p>Simplify: \(\frac{x^{8/3}-x^{2/3}}{x^{2/3}+x^{-1/3}}\) (Hint: Factor out <em>\(x^{-1/3}\)</em> first.)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-131 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-131">
+  <div class="problem-number">10-131</div>
+  <p>Solve \(\sin^2(\theta)+\sin(\theta)=0.75\) for all real <em>\(\theta\)</em>.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-132 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-132">
+  <div class="problem-number">10-132</div>
+  <p>Evaluate each of the following trigonometric expressions. Use exact values.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(\sin\left(\frac{7\pi}{8}\right)\)</p></li>
+    <li><p>\(\cos(105^\circ)\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-133 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-133">
+  <div class="problem-number">10-133</div>
+  <p>A very fast bug is walking counterclockwise around the edge of a circular table with a radius of \(3\) feet. At time <em>\(t=0\)</em> she starts at the point \((3,0)\) and walks at a rate of \(3\) ft/s.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Explain why the angle at which the bug has traveled to her position after \(1\) second is \(1\) radian.</p></li>
+    <li><p>Explain why the angle through which the bug has traveled to her position after <em>\(t\)</em> seconds is <em>\(t\)</em> radians.</p></li>
+    <li><p>Explain why the <em>\(x\)</em>-coordinate of the bug is \(3\cos(t)\) after <em>\(t\)</em> seconds.</p></li>
+    <li><p>What is the <em>\(y\)</em>-coordinate of the bug after <em>t</em> seconds?</p></li>
+    <li><p>Model the motion of the bug with a set of parametric equations.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-134 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-134">
+  <div class="problem-number">10-134</div>
+  <p>For each of the following sets of parametric equations, write an equation relating <em>\(x\)</em> and <em>\(y\)</em>.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(x(t)=\cos(t)\)  \(y(t)=\sin(t)\)</p></li>
+    <li><p>\(x(t)=\cos(t^3)\)  \(y(t)=\sin(t^3)\)</p></li>
+    <li><p>\(x(t)=t^4-2t^2\)  \(y(t)=t^2\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-135 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-135">
+  <div class="problem-number">10-135</div>
+  <p>The slope of the tangent line that touches the curve <em>\(y=3x^2+7\)</em> at <em>\(x=2\)</em> is \(12\).</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Verify this is reasonable by sketching the function and drawing a tangent line to the curve at <em>\(x=2\)</em>.</p></li>
+    <li><p>Use the information above to write the equation of the line tangent to the curve at <em>\(x=2\)</em>.</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-136 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-136">
+  <div class="problem-number">10-136</div>
+  <p>Divide each of the following polynomials, <em>\(P(x)\)</em>, by <em>\(D(x)\)</em> to determine the quotient <em>\(Q(x)\)</em>. Then rewrite the polynomial in the form <em>\(P(x)=D(x)\cdot Q(x)+R\)</em>, where <em>\(R\)</em> is the remainder.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(P(x)=2x^4-x^2+3x+5\)  \(D(x)=x-1\)</p></li>
+    <li><p>\(P(x)=x^5-2x^3+1\)  \(D(x)=x-3\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-137 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-137">
+  <div class="problem-number">10-137</div>
+  <p>The pedal shaft on a standard bicycle is about \(7\) inches long, and the center of the bottom bracket to which the pedal shaft is attached is about \(11\) inches above the ground. Sketch a graph that shows the relationship of the height of the pedal above the ground as a rider pedals the bike. Assume the pedal starts in its lowest position and takes \(2\) seconds to make one complete rotation.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>Write an equation for a function that represents your graph.</p></li>
+    <li><p>Jack feels that the best position for the pedal to start riding is when the pedal is at \(10\) inches and heading downward. What is the first time the pedal will be in this position?</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-138 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-138">
+  <div class="problem-number">10-138</div>
+  <p>Calculate the area of a triangle with vertices at \((-3,7)\), \((13,-10)\), and \((-5,1)\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-139 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-139">
+  <div class="problem-number">10-139</div>
+  <p>Solve for <em>\(x\)</em>.</p>
+  <ol type="a" class="lower-alpha">
+    <li><p>\(2x^2-5=2x\)</p></li>
+    <li><p>\(6x^4=x^2+5\)</p></li>
+    <li><p>\(\sqrt{x+21}+\sqrt{x}=7\)</p></li>
+    <li><p>\(2+\frac{5}{x-1}=\frac{12}{(x-1)^2}\)</p></li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 10-140 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-10-140">
+  <div class="problem-number">10-140</div>
+  <p>What are the dimensions of a rectangle whose width is \(78\%\) of its length and has a diagonal of length \(30\) cm?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>
