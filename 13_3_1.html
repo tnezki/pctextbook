@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13_3_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 13.3.1</h1>
+<div class="lesson-header">
+  <h2>13.3.1 How are velocity and position related?</h2>
+  <div class="lesson-subtitle">Velocity and Position Graphs</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-102 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-102">
+  <div class="problem-number">13-102</div>
+  <p>Sketch a position graph and a velocity graph for the following scenario: Walk slowly for 5 seconds, stop for 5 seconds, walk slowly for 5 seconds, run to finish.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-103 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-103">
+  <div class="problem-number">13-103</div>
+  <p>Given \(f(x)=\frac{1}{x}\), complete the following problems.</p>
+  <ol type="a">
+    <li>Compute the average rate of change from \(x=2\) to \(x=3\).</li>
+    <li>Show that the average rate of change from \(2\) to \(2+h\) is \(-\frac{1}{2(2+h)}\).</li>
+    <li>Show that the average rate of change from \(x\) to \(x+h\) is \(-\frac{1}{x(x+h)}\).</li>
+    <li>What is the \(\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\)?</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-104 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-104">
+  <div class="problem-number">13-104</div>
+  <p>Evaluate the following limits.</p>
+  <ol type="a">
+    <li>\(\lim\limits_{x\to\infty}\frac{5x^2+2x+3}{9x^2+1}\)</li>
+    <li>\(\lim\limits_{x\to -3}\frac{x^3+27}{x^2+4x+3}\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-105 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-105">
+  <div class="problem-number">13-105</div>
+  <p>Sam accelerates his car according to the formula \(v(t)=6t^{2}\), where \(t\) is the time in seconds and \(v(t)\) is velocity in ft/s.</p>
+  <ol type="a">
+    <li>Sketch a velocity vs. time graph for the first two seconds.</li>
+    <li>How can the graph be used to approximate distance?</li>
+    <li>Jake approximated the distance traveled by the car during the first two seconds by writing distance \(=(0.1)[6(0.1)^2+6(0.2)^2+6(0.3)^2+\dots+6(2)^2]\). Explain what he is doing. Include as much detail as you can.</li>
+    <li>Rewrite Jake’s distance equation in part (c) in sigma notation.</li>
+    <li>Margaret approximated the distance traveled by the car during the first two seconds by using midpoint rectangles. Write Margaret’s sum in sigma notation if she used the same number of rectangles as Jake.</li>
+    <li>Use your area program to evaluate Jake’s sum and approximate the distance traveled.</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-106 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-106">
+  <div class="problem-number">13-106</div>
+  <p>Recall that when two dice are rolled, the probability of getting a sum of \(7\) is \(\frac{1}{6}\). If two dice are rolled six times, what the probability that a sum of \(7\) shows up exactly four times?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-107 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-107">
+  <div class="problem-number">13-107</div>
+  <p>Let \(z=2-2i\). Evaluate:</p>
+  <ol type="a">
+    <li>\(z^{6}\)</li>
+    <li>\(z^{1/3}\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-108 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-108">
+  <div class="problem-number">13-108</div>
+  <p>Simplify the following rational expressions.</p>
+  <ol type="a">
+    <li>\(\frac{2x^3y^2-4x^2y^2+2xy^2}{3xy^3-3y^3}\)</li>
+    <li>\(\frac{(x+h)^2-x^2}{h}\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-109 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-109">
+  <div class="problem-number">13-109</div>
+  <p>At noon, John is \(60\) miles directly south of Cactus Junction and driving north at \(40\) miles per hour. At the same time, Amy is \(20\) miles west of Cactus Junction and driving east at \(30\) miles per hour.</p>
+  <ol type="a">
+    <li>Express the distance of John’s car <em>north</em> of Cactus Junction as a function of time.</li>
+    <li>Express the distance of Amy’s car <em>east</em> of Cactus Junction as a function of time.</li>
+    <li>Calculate the distance between John and Amy at the time \(t\) hours after noon.</li>
+    <li>When are John and Amy’s cars closest together? (Hint: Graph the distance equation you found in part (c).)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13_2_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 13.2.1</h1>
+<div class="lesson-header">
+  <h2>13.2.1 Can I use trapezoids?</h2>
+  <div class="lesson-subtitle">Trapping Area With Trapezoids</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-60 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-60">
+  <div class="problem-number">13-60</div>
+  <p>A car travels \(60-10t\) miles per hour for \(0\le t\le3\) hours.</p>
+  <ol type="a">
+    <li>Draw a graph of the situation. Label the axes appropriately.</li>
+    <li>Compute the exact area under the curve.</li>
+    <li>Explain why it is reasonable to say that the car traveled \(135\) miles in those three hours.</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-61 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-61">
+  <div class="problem-number">13-61</div>
+  <p>Write down the sums (but <em>do not</em> add them up) that you would use to approximate \(A(2^x,1\le x\le4)\) using six sub-intervals and:</p>
+  <ol type="a">
+    <li>Left endpoint rectangles</li>
+    <li>Right endpoint rectangles</li>
+    <li>Trapezoids</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-62 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-62">
+  <div class="problem-number">13-62</div>
+  <p>Suppose you want to approximate the area under the curve of a function <em>\(f\)</em> over the interval \(1\le x\le10\) using \(25\) sub-intervals.</p>
+  <ol type="a">
+    <li>What is the width of each rectangle?</li>
+    <li>What will be the height of the first rectangle be if left endpoint rectangles are used?</li>
+    <li>What will be the height of the first rectangle be if right endpoint rectangles are used?</li>
+    <li>What will be the height of the last rectangle be if left endpoint rectangles are used?</li>
+    <li>What will be the height of the last rectangle be if right endpoint rectangles are used?</li>
+    <li>How would your answers change if the interval were \(B\le x\le E\) and the width of each rectangle were \(W\)?</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-63 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-63">
+  <div class="problem-number">13-63</div>
+  <p>Evaluate each of the following limits.</p>
+  <ol type="a">
+    <li>\(\lim\limits_{x\to\infty}\frac{3x^2-5x+2}{7-5x^2}\)</li>
+    <li>\(\lim\limits_{x\to1}\frac{4x^2-4}{x^3-x}\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-64 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-64">
+  <div class="problem-number">13-64</div>
+  <p>Use a calculator to evaluate each of the following sums. Recall that \(5!\), for example, means \(5\cdot4\cdot3\cdot2\cdot1\).</p>
+  <ol type="a">
+    <li>\(\displaystyle\sum_{k=0}^{4}\frac{1}{k!}\)</li>
+    <li>\(\displaystyle\sum_{k=0}^{10}\frac{1}{k!}\)</li>
+    <li>What is the value of \(\lim\limits_{n\to\infty}\displaystyle\sum_{k=0}^{n}\frac{1}{k!}\)?</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-65 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-65">
+  <div class="problem-number">13-65</div>
+  <p>The seventh term of an arithmetic series is \(-3.2\) and the twelfth term is \(2.9\). What is the sum of the first \(25\) terms of the series?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-66 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-66">
+  <div class="problem-number">13-66</div>
+  <p>Let \(w=5\left(\cos\left(\frac{\pi}{3}\right)+i\sin\left(\frac{\pi}{3}\right)\right)\) and \(z=2\sqrt{2}\left(\cos\left(\frac{5\pi}{4}\right)+i\sin\left(\frac{5\pi}{4}\right)\right)\). Compute:</p>
+  <ol type="a">
+    <li>\(zw\)</li>
+    <li>\(\frac{w}{z}\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-67 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-67">
+  <div class="problem-number">13-67</div>
+  <p>Two submarines left the Long Beach Shipyard, one at a speed of \(25\) knots and the other at a speed of \(35\) knots. Their courses diverged by \(35^\circ\). After \(3\) hours, how far apart are they? (Note: A knot is a measure of speed defined as one nautical mile per hour. A nautical mile is \(1852\) meters or \(1.852\) kilometers.)</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+</div>
+</body>
+</html>

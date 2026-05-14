@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13_3_3.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 13.3.3</h1>
+<div class="lesson-header">
+  <h2>13.3.3 Can I get a SLOPE?</h2>
+  <div class="lesson-subtitle">Slope Functions</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-127 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-127">
+  <div class="problem-number">13-127</div>
+  <p>Let \(g(x)=3x+\frac{12}{x}\) for \(x&gt;0\).</p>
+  <ol type="a">
+    <li>Sketch a graph of \(y=g(x)\), showing that the minimum value of the function occurs when \(x=2\).</li>
+    <li>Calculate the slope of the line tangent to \(y=g(x)\) when \(x=2\).</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-128 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-128">
+  <div class="problem-number">13-128</div>
+  <p>Steady Freddy always drives his car at a constant rate of \(30\) miles per hour.</p>
+  <ol type="a">
+    <li>Write an equation for Freddy’s velocity as a function of time. Sketch a graph of this function.</li>
+    <li>How far has Freddy traveled after \(1\) hour? After \(2\) hours? After \(3\) hours?</li>
+    <li>Using your answers to part (b), what is Freddy’s position as a function of time?</li>
+    <li>How is Freddy’s position function related to the graph of Freddy’s velocity function?</li>
+    <li>How is Freddy’s velocity function related to his position function?</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-129 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-129">
+  <div class="problem-number">13-129</div>
+  <p>Suppose that the distance traveled by a toy car in the first \(t\) seconds is \(d(t)=20t^2\). What is the velocity of the car at time \(t\)?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-130 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-130">
+  <div class="problem-number">13-130</div>
+  <p>Given the distance graph, sketch the related velocity graph.</p>
+  <div class="figure-block figure-md">
+    <img src="figures/13-130.png" alt="Problem 13-130 figure">
+  </div>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-131 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-131">
+  <div class="problem-number">13-131</div>
+  <p>Evaluate the following limits.</p>
+  <ol type="a">
+    <li>\(\displaystyle \lim_{x\to 2}\frac{2x^3-8x}{x^2+x-6}\)</li>
+    <li>\(\displaystyle \lim_{x\to -\infty}\frac{2x^3-8x}{x^2+x-6}\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-132 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-132">
+  <div class="problem-number">13-132</div>
+  <p>Rewrite the following rational expression as a sum of two fractions with linear denominators by using partial fraction decomposition.</p>
+  <p class="centered-math">\[\frac{-20x+61}{-3x^2+17x-10}\]</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-133 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-133">
+  <div class="problem-number">13-133</div>
+  <p>An exponential function has an asymptote at \(y=10\). The function passes through the points \((4,6)\) and \((7,8)\). Determine the \(y\)-intercept for the function exactly and then approximate it to three decimal places.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-134 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-134">
+  <div class="problem-number">13-134</div>
+  <p>This problem is a checkpoint for rewriting polar equations.</p>
+  <p>Rewrite each of the following polar equations in rectangular form.</p>
+  <ol type="a">
+    <li>\(r^2=\cos(\theta)\sin(\theta)\)</li>
+    <li>\(r=-3\csc(\theta)\)</li>
+  </ol>
+  <p>Rewrite each of the following equations in polar form.</p>
+  <ol type="a" start="3">
+    <li>\(y=\sqrt{x}\)</li>
+    <li>\(6y+y^2=x^2\)</li>
+  </ol>
+  <p>Check your answers by referring to the selected answers.</p>
+  <p>Ideally at this point you are comfortable working with these types of problems and can complete them correctly. If you feel that you need more confidence when completing these types of problems, then review the Polar Equations Checkpoint materials available at cpm.org and try the practice problems provided. From this point on, you will be expected to do problems like these correctly and with confidence.</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+</div>
+</body>
+</html>

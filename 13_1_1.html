@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13_1_1.html</title>
+
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- Proper MathJax setup -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- Frozen base used for current worksheet builds -->
+<!-- ====================================================== -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+.container{max-width:900px;margin:0 auto;}
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+.page-break{page-break-before:always;}
+
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.15rem;margin-top:4px;margin-bottom:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+.problem p{margin-bottom:8px;}
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+.problem li{margin-bottom:6px;}
+
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- LESSON HEADER -->
+<!-- ====================================================== -->
+<h1>Lesson 13.1.1</h1>
+<div class="lesson-header">
+  <h2>13.1.1 Who's the boss?</h2>
+  <div class="lesson-subtitle">A Race to Infinity</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-7 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-7">
+  <div class="problem-number">13-7</div>
+  <p>Evaluate each of the following limits.</p>
+  <ol type="a">
+    <li>\(\lim\limits_{x\to\infty} a(x)\), where \(a(x)=x^6\)</li>
+    <li>\(\lim\limits_{x\to\infty} b(x)\), where \(b(x)=x^6-12x^5+7x^3-400\)</li>
+    <li>\(\lim\limits_{x\to\infty} c(x)\), where \(c(x)=-3x^7\)</li>
+    <li>\(\lim\limits_{x\to\infty} d(x)\), where \(d(x)=-3x^7+1000x+48{,}000\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-8 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-8">
+  <div class="problem-number">13-8</div>
+  <p>Evaluate the limits of the above functions as \(x\to -\infty\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-9 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-9">
+  <div class="problem-number">13-9</div>
+  <p>Given the function \(f(x)=\frac{x+2}{(x+1)^2}\).</p>
+  <ol type="a">
+    <li>Use a calculator to create a table for \(f(x)\). As \(x\to\infty\), describe what happens to \(f(x)\).</li>
+    <li>Describe how the table values are reflected in the graph of \(y=f(x)\).</li>
+    <li>Make a table for \(-3\le x\le 1\) using increments of \(0.2\). Use your table values to evaluate the following limits: \(\lim\limits_{x\to -1^-} f(x)\) and \(\lim\limits_{x\to -1^+} f(x)\).</li>
+    <li>What happens in the table at \(x=-1\)? How is this reflected in the graph?</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-10 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-10">
+  <div class="problem-number">13-10</div>
+  <p>What is the sum of the first \(20\) terms of the series \(100-20+90-18+80-16+\dots\)? Describe your technique. Can you find a method where you do not have to add up each of the terms individually?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-11 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-11">
+  <div class="problem-number">13-11</div>
+  <p>Rewrite each of the following equations in rectangular form.</p>
+  <ol type="a">
+    <li>\(3r\cos(\theta)=2(r\sin(\theta)+1)\)</li>
+    <li>\(r=6\cos(\theta)-8\sin(\theta)\)</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-12 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-12">
+  <div class="problem-number">13-12</div>
+  <p>Solve \(8\cos(x)\sin(x)=2\) for all values of \(x\).</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-13 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-13">
+  <div class="problem-number">13-13</div>
+  <p>Leigh needs to make \(500\) mL of a \(20\%\) alcohol solution. All she has available is a \(10\%\) alcohol solution and pure alcohol. How much of each solution should she use?</p>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PROBLEM 13-14 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-13-14">
+  <div class="problem-number">13-14</div>
+  <p>Write the equation of each conic described below.</p>
+  <ol type="a">
+    <li>A circle whose center lies on the line \(3x+y=6\). The circle has a radius of \(4\) and is tangent to the \(y\)-axis.</li>
+    <li>A parabola with the focus at \((3,2)\) and a directrix of \(x=-5\).</li>
+  </ol>
+  <div class="workspace-label">Workspace</div>
+  <div class="workspace workspace-220"></div>
+</section>
+
+</div>
+</body>
+</html>
